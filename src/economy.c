@@ -100,6 +100,14 @@ static request *oa;
 #define RECRUIT_MERGE 1
 static int rules_recruit = -1;
 
+static int GOBLIN_KILL = -1;
+
+void economy_config_init(void) {
+    parameter_value_t gk_default = { .b = true };
+
+    GOBLIN_KILL = register_config_parameter("rules.goblinsteal.kill", gk_default, BOOL_TYPE); /**< Goblin-Spezialklau kann tödlich enden */
+}
+
 static void recruit_init(void)
 {
     if (rules_recruit < 0) {
@@ -2212,7 +2220,7 @@ static void expandstealing(region * r, request * stealorders)
         if (u && u->region == r) {
             n = get_pooled(u, rsilver, GET_ALL, INT_MAX);
         }
-        if (!eressea_parameter_bool(E_RULES_GOBLIN_KILL) && oa[j].type.goblin) {    /* Goblin-Spezialklau */
+        if (!eressea_parameter_bool(GOBLIN_KILL) && oa[j].type.goblin) {    /* Goblin-Spezialklau */
             int uct = 0;
             unit *u2;
             assert(effskill(oa[j].unit, SK_STEALTH, r) >= 4

@@ -55,6 +55,7 @@ void game_done(void)
 
 void game_init(void)
 {
+    config_init();
     kernel_init();
     register_triggers();
     register_xmas();

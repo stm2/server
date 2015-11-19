@@ -103,10 +103,25 @@ struct settings global = {
     "Eressea",                    /* gamename */
 };
 
+static int num_parameters = 0;
+static config_parameter configuration_parameters[63];
+
+int register_config_parameter(char *key, parameter_value_t fallback, parameter_type_t type) {
+    assert(num_parameters < 63);   /* FIXME grow array dynamically when necessary */
+    configuration_parameters[num_parameters].key = _strdup(key);
+    configuration_parameters[num_parameters].fallback = fallback;
+    configuration_parameters[num_parameters].initialized = -1;
+    configuration_parameters[num_parameters].type = type;
+    configuration_parameters[num_parameters].id = num_parameters;
+    return num_parameters++;
+}
+
 
 config_parameter eressea_parameter(int param, parameter_type_t type) {
-    config_parameter par = configuration_parameters[param];
+    config_parameter par;
     const char *c;
+    assert(param >= 0);
+    par = configuration_parameters[param];
     assert(par.type == type || !"wrong parameter type");
     if (par.initialized == -1) {
         switch (par.type) {

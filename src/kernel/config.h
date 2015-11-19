@@ -80,7 +80,7 @@ typedef struct config_parameter {
     parameter_value_t val;
 } config_parameter;
 
-extern config_parameter configuration_parameters[];
+int register_config_parameter(char *key, parameter_value_t fallback, parameter_type_t type);
 
 int eressea_parameter_int(int par);
 double eressea_parameter_flt(int par);

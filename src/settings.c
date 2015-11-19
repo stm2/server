@@ -20,8 +20,10 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include <platform.h>
 #include <kernel/config.h>
 
+#include "economy.h"
+#include "move.h"
 
-config_parameter configuration_parameters[ERESSEA_NUMPARAMETERS] = {
-    { E_RULES_GOBLIN_KILL, "rules.goblinkill", { .b = true }, -1, BOOL_TYPE, }, /**< Goblin-Spezialklau kann tödlich enden */
-    { E_RULES_TROLLBELT_MULTIPLIER, "rules.trollbelt.multiplier", { .i = 50 }, -1, INT_TYPE, },
-};
+void config_init(void) {
+    economy_config_init();
+    move_config_init();
+}

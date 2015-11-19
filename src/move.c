@@ -105,6 +105,13 @@ typedef struct follower {
     const region_list *route_end;
 } follower;
 
+static int TROLLBELT_MULTIPLIER = -1;
+
+void move_config_init(void) {
+    parameter_value_t tb_default = { .i = 50 };
+    TROLLBELT_MULTIPLIER = register_config_parameter("rules.trollbelt.multiplier", tb_default, INT_TYPE);
+}
+
 static void
 get_followers(unit * target, region * r, const region_list * route_end,
 follower ** followers)
@@ -319,7 +326,7 @@ int walkingcapacity(const struct unit *u)
     if (rbelt) {
         int belts = i_get(u->items, rbelt->itype);
         if (belts) {
-            int multi = eressea_parameter_int(E_RULES_TROLLBELT_MULTIPLIER);
+            int multi = eressea_parameter_int(TROLLBELT_MULTIPLIER);
             n += _min(people, belts) * (multi - 1) * u_race(u)->capacity;
         }
     }

@@ -17,11 +17,7 @@
 extern "C" {
 #endif
 
-typedef enum {
-    E_RULES_GOBLIN_KILL,
-    E_RULES_TROLLBELT_MULTIPLIER,
-    ERESSEA_NUMPARAMETERS
-} parameter_name_t;
+void config_init(void);
 
 /* TODO: turn defines into config parameters */
 

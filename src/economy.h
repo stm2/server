@@ -22,6 +22,8 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 extern "C" {
 #endif
 
+    void economy_config_init(void);
+
     /* Welchen Teil des Silbers die Bauern fuer Unterhaltung ausgeben (1/20), und
      * wiviel Silber ein Unterhalter pro Talentpunkt bekommt. */
 

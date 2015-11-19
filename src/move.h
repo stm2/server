@@ -46,6 +46,8 @@ extern "C" {
     ** wagen wird von zwei pferden gezogen und traegt total 140, davon 40 die
     ** pferde, macht nur noch 100, aber samt eigenem gewicht (40) macht also 140. */
 
+    void move_config_init(void);
+
     /* movewhere error codes */
     enum {
         E_MOVE_OK = 0,              /* possible to move */
