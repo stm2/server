@@ -26,9 +26,75 @@ extern "C" {
     /* this should always be the first thing included after platform.h */
 #include "types.h"
 
+/* globale settings des Spieles */
+typedef struct settings {
+    const char *gamename;
+    struct attrib *attribs;
+    unsigned int data_turn;
+    struct param *parameters;
+    void *vm_state;
+    int data_version; /* TODO: eliminate in favor of gamedata.version */
+    struct _dictionary_ *inifile;
+
+    struct global_functions {
+        int(*wage) (const struct region * r, const struct faction * f,
+            const struct race * rc, int in_turn);
+        int(*maintenance) (const struct unit * u);
+    } functions;
+    /* the following are some cached values, because get_param can be slow.
+     * you should almost never need to touch them */
+    int cookie;
+    double producexpchance_;
+} settings;
+
+extern settings global;
+
+void set_param(struct param **p, const char *key, const char *data);
+const char *get_param(const struct param *p, const char *key);
+int get_param_int(const struct param *p, const char *key, int def);
+int check_param(const struct param *p, const char *key, const char *searchvalue);
+double get_param_flt(const struct param *p, const char *key, double def);
+void free_params(struct param **pp);
+
+
+typedef enum {
+    INT_TYPE,
+    FLT_TYPE,
+    BOOL_TYPE,
+    STRING_TYPE
+} parameter_type_t;
+
+typedef union {
+    int i;
+    double f;
+    bool b;
+    const char *string;
+} parameter_value_t;
+
+typedef struct config_parameter {
+    int id;
+    char *key;
+    parameter_value_t fallback;
+    int initialized;
+    parameter_type_t type;
+    parameter_value_t val;
+} config_parameter;
+
+extern config_parameter configuration_parameters[];
+
+int eressea_parameter_int(int par);
+double eressea_parameter_flt(int par);
+bool eressea_parameter_bool(int par);
+const char * eressea_parameter_string(int par);
+
+
+/************************************************************************************************
+ * TODO: Almost everything below this line should become config parameters and go into settings.h
+ *************************************************************************************************/
+
+
     /* experimental gameplay features (that don't affect the savefile) */
     /* TODO: move these settings to settings.h or into configuration files */
-#define GOBLINKILL              /* Goblin-Spezialklau kann tödlich enden */
 #define HERBS_ROT               /* herbs owned by units have a chance to rot. */
 #define INSECT_POTION           /* Spezialtrank für Insekten */
 #define ORCIFICATION            /* giving snotlings to the peasants gets counted */
@@ -243,40 +309,12 @@ extern "C" {
     void kernel_init(void);
     void kernel_done(void);
 
-    /* globale settings des Spieles */
-    typedef struct settings {
-        const char *gamename;
-        struct attrib *attribs;
-        unsigned int data_turn;
-        struct param *parameters;
-        void *vm_state;
-        int data_version; /* TODO: eliminate in favor of gamedata.version */
-        struct _dictionary_ *inifile;
-
-        struct global_functions {
-            int(*wage) (const struct region * r, const struct faction * f,
-                const struct race * rc, int in_turn);
-            int(*maintenance) (const struct unit * u);
-        } functions;
-        /* the following are some cached values, because get_param can be slow.
-         * you should almost never need to touch them */
-        int cookie;
-        double producexpchance_;
-    } settings;
-
     typedef struct helpmode {
         const char *name;
         int status;
     } helpmode;
 
     const char *dbrace(const struct race *rc);
-
-    void set_param(struct param **p, const char *key, const char *data);
-    const char *get_param(const struct param *p, const char *key);
-    int get_param_int(const struct param *p, const char *key, int def);
-    int check_param(const struct param *p, const char *key, const char *searchvalue);
-    double get_param_flt(const struct param *p, const char *key, double def);
-    void free_params(struct param **pp);
 
     bool ExpensiveMigrants(void);
     int NMRTimeout(void);
@@ -298,7 +336,6 @@ extern "C" {
     extern struct helpmode helpmodes[];
     extern const char *parameters[];
     extern const char *localenames[];
-    extern settings global;
 
     extern bool battledebug;
     extern bool sqlpatch;

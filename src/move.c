@@ -319,7 +319,7 @@ int walkingcapacity(const struct unit *u)
     if (rbelt) {
         int belts = i_get(u->items, rbelt->itype);
         if (belts) {
-            int multi = get_param_int(global.parameters, "rules.trollbelt.multiplier", STRENGTHMULTIPLIER);
+            int multi = eressea_parameter_int(E_RULES_TROLLBELT_MULTIPLIER);
             n += _min(people, belts) * (multi - 1) * u_race(u)->capacity;
         }
     }

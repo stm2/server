@@ -103,6 +103,48 @@ struct settings global = {
     "Eressea",                    /* gamename */
 };
 
+
+config_parameter eressea_parameter(int param, parameter_type_t type) {
+    config_parameter par = configuration_parameters[param];
+    const char *c;
+    assert(par.type == type || !"wrong parameter type");
+    if (par.initialized == -1) {
+        switch (par.type) {
+        case INT_TYPE:
+            par.val.i = get_param_int(global.parameters, par.key, par.fallback.i);
+            break;
+        case FLT_TYPE:
+            par.val.f = get_param_flt(global.parameters, par.key, par.fallback.f);
+            break;
+        case BOOL_TYPE:
+            par.val.b = get_param_int(global.parameters, par.key, par.fallback.b);
+            break;
+        case STRING_TYPE:
+            c = get_param(global.parameters, par.key);
+            par.val.string = c ? c : par.fallback.string;
+            break;
+        }
+    }
+    return par;
+}
+
+int eressea_parameter_int(int param) {
+    return eressea_parameter(param, INT_TYPE).val.i;
+}
+
+double eressea_parameter_flt(int param) {
+    return eressea_parameter(param, FLT_TYPE).val.f;
+}
+
+bool eressea_parameter_bool(int param) {
+    return eressea_parameter(param, FLT_TYPE).val.b;
+}
+
+const char * eressea_parameter_string(int param) {
+    return eressea_parameter(param, FLT_TYPE).val.string;
+}
+
+
 bool lomem = false;
 FILE *logfile;
 bool battledebug = false;

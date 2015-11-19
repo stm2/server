@@ -2212,11 +2212,10 @@ static void expandstealing(region * r, request * stealorders)
         if (u && u->region == r) {
             n = get_pooled(u, rsilver, GET_ALL, INT_MAX);
         }
-#ifndef GOBLINKILL
-        if (oa[i].type.goblin) {    /* Goblin-Spezialklau */
+        if (!eressea_parameter_bool(E_RULES_GOBLIN_KILL) && oa[j].type.goblin) {    /* Goblin-Spezialklau */
             int uct = 0;
             unit *u2;
-            assert(effskill(oa[i].unit, SK_STEALTH) >= 4
+            assert(effskill(oa[j].unit, SK_STEALTH, r) >= 4
                 || !"this goblin\'s skill is too low");
             for (u2 = r->units; u2; u2 = u2->next) {
                 if (u2->faction == u->faction) {
@@ -2225,7 +2224,6 @@ static void expandstealing(region * r, request * stealorders)
             }
             n -= uct * 2;
         }
-#endif
         if (n > 10 && rplane(r) && (rplane(r)->flags & PFL_NOALLIANCES)) {
             /* In Questen nur reduziertes Klauen */
             n = 10;

@@ -10,6 +10,21 @@
  without prior permission by the authors of Eressea.
  */
 
+#ifndef H_SETTINGS
+#define H_SETTINGS
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef enum {
+    E_RULES_GOBLIN_KILL,
+    E_RULES_TROLLBELT_MULTIPLIER,
+    ERESSEA_NUMPARAMETERS
+} parameter_name_t;
+
+/* TODO: turn defines into config parameters */
+
 /*
  * Contains defines for the "free" game (Eressea) .
  * Include this file from settings.h to make eressea work.
@@ -39,3 +54,8 @@
 #define ARENA_MODULE 1
 
 #undef REGIONOWNERS             /* (WIP) region-owner uses HELP_TRAVEL to control entry to region */
+
+#ifdef __cplusplus
+}
+#endif
+#endif

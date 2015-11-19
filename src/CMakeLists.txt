@@ -93,6 +93,7 @@ set (ERESSEA_SRC
   donations.c
   seen.c
   eressea.c
+  settings.c
   callback.c
   direction.c
   keyword.c
