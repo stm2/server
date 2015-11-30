@@ -1,4 +1,5 @@
 .. role:: e3a
+   :class: special
 
 .. comment?
 
