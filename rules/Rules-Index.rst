@@ -5,7 +5,8 @@
 
 .. _heading:
 
-=== Heading ==
+Heading
+=====
 
 1. What is Eressea?
 2. How to play: Your faction, report and orders.
