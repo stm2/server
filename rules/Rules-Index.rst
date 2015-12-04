@@ -3,6 +3,9 @@
 
 .. comment?
 
+.. _heading:
+
+=== Heading ==
 
 1. What is Eressea?
 2. How to play: Your faction, report and orders.
@@ -14,6 +17,11 @@
 8. Combat resolution.
 9. History of Eressea.
 
+link to `Heading`__
+
+link to `section Heading <#Heading>`__
+
+inline _`Heading` reference
 
 <b>hello</b>
 
