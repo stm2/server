@@ -1,0 +1,186 @@
+# TODO Hauptseite
+1	Regeln
+1	Einleitung
+1	Welt
+1	Parteien
+1	Einheiten
+# eigtl. Kategorie:Rassen
+1	Rassen
+2	Talentmodifikatoren
+
+1	Talente
+
+1	Reisen
+2	Pferd und Wagen
+2	Schiffsreise
+1	Produktion
+2	Rohstoffe
+2	Waren
+2	Straße
+2	Schiff
+2	Gebäude
+3	Burg
+3	Andere Gebäude
+1	Geld
+#2	Einnahmen
+#2	Ausgaben
+#2	Hunger
+#2	Handel
+1	Materialpool	Der Silber- und Materialpool
+1	Krieg
+2	Kriegstabellen
+1	Allianz
+1	Magie
+2	Magiegebiete
+2	Tränke
+2	Kräuter
+
+1	Befehl	Befehle
+2	Kurzbeschreibung
+2	Befehlsreihenfolge
+2	Befehlsreihenfolge (E3)	Befehlsreihenfolge
+3	;
+3	KOMMENTAR
+3	ARBEITE
+3	ATTACKIERE
+3	BANNER
+3	BEANSPRUCHE
+3	BEFÖRDERE
+3	BEKLAUE
+3	BENENNE
+3	BENUTZE
+3	BESCHREIBE
+3	BETRETE
+3	BEWACHE
+3	BEZAHLE
+3	BOTSCHAFT
+3	DEFAULT
+3	EINHEIT
+3	EMAIL
+3	ENDE
+3	ERESSEA
+3	FAHRE
+3	FOLGE
+3	FORSCHE
+3	GIB
+3	GRUPPE
+3	HELFE
+3	KAMPFZAUBER
+3	KAUFE
+3	KOMMENTAR
+3	KONTAKTIERE
+3	KÄMPFE
+3	LEHRE
+3	LERNE
+3	MACHE
+3	NACH
+3	NEUSTART
+3	NUMMER
+3	NÄCHSTER
+3	OPTION
+3	PASSWORT
+3	PFLANZE
+3	PIRATERIE
+3	PRÄFIX
+3	REGION
+3	REKRUTIERE
+3	RESERVIERE
+3	ROUTE
+3	SABOTIERE
+3	SORTIERE
+3	SPIONIERE
+3	STIRB
+3	TARNE
+3	TRANSPORTIERE
+3	TREIBE
+3	UNTERHALTE
+3	URSPRUNG
+3	VERGISS
+3	VERKAUFE
+3	VERLASSE
+3	ZAUBERE
+3	ZEIGE
+3	ZERSTÖRE
+3	ZÜCHTE
+
+1	Der erste Zug
+1	Befehle einschicken
+#2	Hilfsmittel
+2	CSMap
+2	ECheck
+2	EHMV
+2	Magellan
+2	Vorlage
+1	Hinweise
+#2	Eingabe
+#2	Fehler im Spiel
+#2	Bugreport
+#2	Schummeln
+#2	Nachfordern
+#2	Die Eressea-Gemeinde
+#2	Fragen
+
+1	Xontormia-Express
+1	Danksagung
+
+1	Das dritte Zeitalter
+
+#1	Anhang
+2	Ankündigungen (E2)	Ankündigungen E2
+#2	Kurzbeschreibung
+2	Liste der Talente
+2	Tabellen: Tränke und Kräuter
+2	Zauberliste E2	Zauberliste
+2	Zauberbeschreibungen E2	Zauberbeschreibungen
+2	Allgemeine Tabellen
+3	Geländearten
+#3	Gebäude	TODO Gebäudetabelle
+#3	Schiffe TODO Schiffstabelle
+#3	Waren	TODO Warentabelle
+3	Kampfmodifikatoren
+2	CR Format	CR-Format
+2	Atlantis
+2	Atlantis-Regeln
+2	Technische Daten
+
+#1	Apokryphen
+2	Anfängertipps
+2	Tipps und Tricks
+2	Tarnung
+2	Wahrnehmung
+2	Taktik
+2	Weihnachten
+3	Adamantium
+3	Adamantiumrüstung
+3	Mistelzweig
+3	Sonnensegel
+3	Schneemann
+3	Sternenstaub
+3	Weihnachtsbaum
+2	Monster
+3	Drachen
+3	Untote
+2	Bauernvermehrung
+2	Bauernwanderung
+2	Bewaffnet
+
+1	Das dritte Zeitalter
+2	Ankündigungen (E3)	Ankündigungen E3
+2	Zauberliste E3	Zauberliste
+2	Zauberbeschreibungen E3	Zauberbeschreibungen
+
+
+# Redirects:
+2	Kampfseite
+2	Schlacht
+2	Musterung
+2	Kampfattacken
+2	Boni und Mali
+2	Die Flucht
+2	Kampf auf Schiffen
+2	Piraterie
+2	Kampfende
+
+# ungenutzt:
+# 2	Belagerung
+# 3	BELAGERE

@@ -1,0 +1,10 @@
+- redirects
+- eliminate pseudo-html: <Gebäude-nr> and raw html <div>
+- tabellenformat latex
+- Talentmodifikatoren, Kräuter, BEFÖRDERE zu breit
+- Tabelle ARBEITE
+- Formatierung: Befehelssyntax
+- BEZAHLE
+- __TOC__
+- <tt>[[PIRATERIE|...
+- get images
