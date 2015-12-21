@@ -1,0 +1,15 @@
+<section>
+  <info>
+    <title>$title$</title>
+$if(date)$
+    <date>$date$</date>
+$endif$
+  </info>
+$for(include-before)$
+$include-before$
+$endfor$
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+</section>
