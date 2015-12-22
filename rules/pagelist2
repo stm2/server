@@ -1,10 +1,128 @@
-# TODO Hauptseite
+###
+### prefix explanatory comments with ###
+### unused page with #
+### 
+### Redirects:
+R	//
+R	ARBEITEN
+R	Adamantiumrüstung
+R	Akademie
+R	Alchemie
+R	Anleitung (PDF)
+R	Anmelden wie?
+R	Ausgaben
+R	BEFÖRDERUNG
+R	BEKLAUEN
+R	BENENNEN
+R	BENUTZEN
+R	BESCHREIBEN
+R	BETRETEN
+R	BEWACHEN
+R	Befehle
+R	Bergwerk
+R	Boni und Mali
+R	Bugreport
+R	Burgen
+R	CSMapFX
+R	Damm
+R	Die Eressea-Gemeinde
+R	Die Flucht
+R	Dämon
+R	Dämonen
+R	E2K9
+R	E3
+R	E3A
+R	Eingabe
+R	Einnahmen
+R	Elf
+R	Elfen
+R	Fehler im Spiel
+R	Fragen
+R	Gegenstand
+R	Gegenstände
+R	Goblin
+R	Goblins
+R	Hafen
+R	Halbling
+R	Halblinge
+R	Handel
+R	Helden
+R	Hilfsmittel
+R	Hunger
+R	Insekt
+R	Insekten
+R	KONTAKTIEREN
+R	Kampf
+R	Kampf auf Schiffen
+R	Kampfattacken
+R	Kampfende
+R	Kampfseite
+R	Kampftabellen
+R	Karawanserei
+R	Katze
+R	Katzen
+R	Kräuterkunde
+R	Kurze Befehle
+R	KÄMPFE AGGRESSIV
+R	KÄMPFE DEFENSIV
+R	KÄMPFE FLIEHE
+R	KÄMPFE HELFE
+R	KÄMPFE HINTEN
+R	KÄMPFE NICHT
+R	Lange Befehle
+R	Leuchtturm
+R	Magellan und E2K9
+R	Magierturm
+R	Mailinglisten
+R	Meermensch
+R	Meermenschen
+R	Mensch
+R	Menschen
+R	Modifikatoren im Kampf
+R	Monument
+R	Musterung
+R	Nachfordern
+R	Ork
+R	Orks
+R	Partei
+R	Parteipool
+R	Pferdedressur
+R	Pferdezucht
+R	Piraterie
+R	SPIONIEREN
+R	Schiffe
+R	Schiffsreisen
+R	Schlacht
+R	Schmiede
+R	Schummeln
+R	Silberpool
+R	Spionage
+R	Steinbruch
+R	Straßen
+R	Straßenbau
+R	Sägewerk
+R	TREIBEN
+R	Taverne
+R	Trank
+R	Troll
+R	Trolle
+R	Tunnel
+R	UNTERHALTEN
+R	VERGESSE
+R	VERKAUFEN
+R	VERLASSEN
+R	Wagen
+R	Zauberbeschreibungen
+R	Zwerg
+R	Zwerge
+
+### TODO Hauptseite
 1	Regeln
 1	Einleitung
 1	Welt
 1	Parteien
 1	Einheiten
-# eigtl. Kategorie:Rassen
+### eigtl. Kategorie:Rassen
 1	Rassen
 2	Talentmodifikatoren
 
@@ -22,10 +140,6 @@
 3	Burg
 3	Andere Gebäude
 1	Geld
-#2	Einnahmen
-#2	Ausgaben
-#2	Hunger
-#2	Handel
 1	Materialpool	Der Silber- und Materialpool
 1	Krieg
 2	Kriegstabellen
@@ -105,27 +219,19 @@
 
 1	Der erste Zug
 1	Befehle einschicken
-#2	Hilfsmittel
 2	CSMap
 2	ECheck
 2	EHMV
 2	Magellan
 2	Vorlage
 1	Hinweise
-#2	Eingabe
-#2	Fehler im Spiel
-#2	Bugreport
-#2	Schummeln
-#2	Nachfordern
-#2	Die Eressea-Gemeinde
-#2	Fragen
 
 1	Xontormia-Express
 1	Danksagung
 
 1	Das dritte Zeitalter
 
-#1	Anhang
+###1	Anhang
 2	Ankündigungen (E2)	Ankündigungen E2
 #2	Kurzbeschreibung
 2	Liste der Talente
@@ -135,7 +241,7 @@
 2	Allgemeine Tabellen
 3	Geländearten
 #3	Gebäude	TODO Gebäudetabelle
-#3	Schiffe TODO Schiffstabelle
+#3	Schiff	TODO Schiffstabelle
 #3	Waren	TODO Warentabelle
 3	Kampfmodifikatoren
 2	CR Format	CR-Format
@@ -143,7 +249,7 @@
 2	Atlantis-Regeln
 2	Technische Daten
 
-#1	Apokryphen
+###1	Apokryphen
 2	Anfängertipps
 2	Tipps und Tricks
 2	Tarnung
@@ -151,7 +257,7 @@
 2	Taktik
 2	Weihnachten
 3	Adamantium
-3	Adamantiumrüstung
+#3	Adamantiumrüstung
 3	Mistelzweig
 3	Sonnensegel
 3	Schneemann
@@ -168,19 +274,60 @@
 2	Ankündigungen (E3)	Ankündigungen E3
 2	Zauberliste E3	Zauberliste
 2	Zauberbeschreibungen E3	Zauberbeschreibungen
+1	Geschichte von Eressea
 
 
-# Redirects:
-2	Kampfseite
-2	Schlacht
-2	Musterung
-2	Kampfattacken
-2	Boni und Mali
-2	Die Flucht
-2	Kampf auf Schiffen
-2	Piraterie
-2	Kampfende
 
-# ungenutzt:
-# 2	Belagerung
-# 3	BELAGERE
+### ungenutzt:
+2	Belagerung
+3	BELAGERE
+
+### keine Regelseiten
+#0	4. Welt
+#0	Aktuelle Ereignisse
+#0	Automatisierung Ereignissreaktion
+#0	Automatisierung Handel
+#0	Automatisierung Lernketten
+#0	Automatisierung Transport
+#0	Bekannte Fehler
+#0	BELAGERE
+#0	Belagerung
+#0	ChatLog Sophie
+#0	Du spielst zuviel Eressea, wenn...
+#0	E2K9FAQ
+#0	E3CommandParser
+#0	Enno
+#0	Ennos Vorlageskript
+#0	Entwicklung
+#0	Eressea
+#0	ExtendedCommands
+#0	File:Example.jpg
+#0	File:Example-white-bg.jpg
+#0	File:M-en-interwiki lang.png
+#0	File:M-en-pagetabs.png
+#0	File:M-en-recentchanges.png
+#0	File:M-en-sidebar.png
+#0	File:M-en-userlinks.png
+#0	File:PD-Help icon.png
+#0	Geschichte von Eressea
+#0	Hauptseite
+#0	Jutta's Vorlage Tutorial für Anfänger
+#0	Kampfregeln
+#0	Lebkuchenherz mit der Aufschrift 'Erz und Stein, das ist fein'
+#0	Magellan und E3A
+#0	Meropis
+#0	Optimierung Lernketten
+#0	Optimierung Produktion
+#0	Optimierung Transport
+#0	Optimierung Wegfindung
+#0	Pentagramm und Tirawon
+#0	Ponnuki
+#0	Rassen im dritten Zeitalter
+#0	Regeln (komplett)
+#0	Spiel 2007
+#0	Spielerseiten
+#0	Treffen Berlin Mai 2008
+#0	Umstellung auf Unicode
+#0	Wunschkonzert
+#0	XML Format
+#0	XML Format/Menouthisbeispiel

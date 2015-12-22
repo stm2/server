@@ -1,10 +1,14 @@
-- redirects
 - eliminate pseudo-html: <Gebäude-nr> and raw html <div>
-- tabellenformat latex
+- Tabelle ARBEITE, Waren, Schiffe
+- refactor ewiki_filters
+- tabellenformat latex (passen nicht auf die Seite)
 - Talentmodifikatoren, Kräuter, BEFÖRDERE zu breit
-- Tabelle ARBEITE
-- Formatierung: Befehelssyntax
+- Formatierung: Befehlssyntax
 - BEZAHLE
 - __TOC__
+- Tote Links
 - <tt>[[PIRATERIE|...
 - get images
+- python vom bash-Skript aus auszurufen ist langsam! Alles in Python?
+- Mediawiki Seiteneinbindungen {{:subpage}} wären praktisch, zum Beispiel für Tabellen
+
