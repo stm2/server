@@ -11,4 +11,4 @@
 - get images
 - python vom bash-Skript aus auszurufen ist langsam! Alles in Python?
 - Mediawiki Seiteneinbindungen {{:subpage}} wären praktisch, zum Beispiel für Tabellen
-
+- import in Magellan

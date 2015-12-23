@@ -284,6 +284,7 @@ done
 
 if ((DO_HTML0==1)); then
     echo "</ul></body></html>" >> "$html0_contentsfile"
+    cp common.css "$HTML_DIR"
 fi
 
 if ((DO_HTML1==1)); then
@@ -292,6 +293,7 @@ if ((DO_HTML1==1)); then
 	-V title="$main_title" -V pagetitle="$main_title" -V css="common.css" \
 	--template="$html1_templatefile" --toc --toc-depth=2 \
 	> "$html1_file"
+    cp common.css "$HTML_DIR"
     # rm -f "$html1_tmpfile"
 fi
 
