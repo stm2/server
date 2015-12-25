@@ -15,7 +15,8 @@ DO_PDF=1
 
 main_title="Eressea-Regeln"
 
-PAPER_SIZE=a4
+PAPER_SIZE=a4paper
+LANGUAGE=de
 
 verbose=3
 
@@ -36,6 +37,8 @@ JSON_DIR=json
 DOCBOOK_DIR=docbook
 HTML_DIR=html
 LATEX_DIR=latex
+TEMPLATE_DIR=templates
+FILTERS_DIR=filters
 
 DOC_EXT=.xml
 JSON_EXT=.json
@@ -50,14 +53,20 @@ real_pagelist=pagelist.real
 redirect_pagelist=pagelist.redirect
 
 html0_contentsfile=$HTML_DIR/Inhalt$HTML_EXT
-html0_templatefile=wikitemplate0.html
-html1_templatefile=wikitemplate0.html
+html0_templatefile=$TEMPLATE_DIR/wikitemplate0.html
+html1_templatefile=$TEMPLATE_DIR/wikitemplate0.html
 html1_tmpfile=$HTML_DIR/html1_tmp$HTML_EXT
 html1_file=$HTML_DIR/Regeln_komplett$HTML_EXT
 
+doc_templatefile=$TEMPLATE_DIR/wikitemplate.docbook
+
+
 latex_file=$LATEX_DIR/Regeln_komplett.tex
+latex_templatefile=$TEMPLATE_DIR/wikitemplate.tex
 
 concat_file="$DOCBOOK_DIR/allpages.xml"
+
+export PYTHONPATH=$PYTHONPATH:lib
 
 function check_file {
     if [ ! -r "$1" ]; then
@@ -151,6 +160,7 @@ if ((DO_PAGELIST==1)); then
 fi
 
 if ((DO_CONCAT==1)); then
+    rm "$concat_file"
     if [ -e "$concat_file" ]; then
 	if ((verbose>=ERROR_LEVEL)); then
 	    echo "$concat_file exists, aborting."
@@ -229,7 +239,7 @@ cat $PAGELIST | while read pageline; do
     fi
 
     if [ "$depth" = "R" ]; then
-	redirect=$(pandoc -f mediawiki -t plain --filter=ewiki_filter_redirect.py "$rawfile")
+	redirect=$(pandoc -f mediawiki -t plain --filter="$FILTERS_DIR/ewiki_filter_redirect.py" "$rawfile")
 	add_redirect "$page" "$redirect" 
 	continue
     fi
@@ -244,8 +254,8 @@ cat $PAGELIST | while read pageline; do
 	    echo "---$redirects--"
 	fi
 	cat "$jsonfile" | 
-	pandoc -f json -t html -M id-prefix="$page_id." -M redirects="$redirects" --filter=ewiki_filter_html0.py \
-	    --id-prefix="$page_id." -s -V title="$title" -V pagetitle="$title" -V css="common.css" \
+	pandoc -f json -t html -M id-prefix="$page_id." -M redirects="$redirects" --filter="$FILTERS_DIR/ewiki_filter_html0.py" \
+	    --id-prefix="$page_id." -s -V title="$title" -V pagetitle="$title" -V css="$TEMPLATE_DIR/common.css" \
 	    -V contents="Inhalt.html" --template="$html0_templatefile" --toc --toc-depth=2 \
 	    > "$htmlfile" 
 	url=$(url_encode "$page")
@@ -259,7 +269,7 @@ cat $PAGELIST | while read pageline; do
 	fi
 	echo "<h1 id=\"$page_id.\">$title</h1>" >> "$html1_tmpfile"
 	cat "$jsonfile" | 
-	pandoc -f json -t html -M id-prefix="$page_id." -M redirects="$redirects" --filter=ewiki_filter_html1.py \
+	pandoc -f json -t html -M id-prefix="$page_id." -M redirects="$redirects" --filter="$FILTERS_DIR/ewiki_filter_html1.py" \
 	    --id-prefix="$page_id." \
 	    >> "$html1_tmpfile"
 	echo "" >> "$html1_tmpfile"
@@ -267,8 +277,8 @@ cat $PAGELIST | while read pageline; do
 
     if ((DO_DOCBOOK==1)); then
 	cat "$jsonfile" | 
-	  python ewiki_filter.py | 
-	  pandoc -f json -t docbook -s --id-prefix="$page_id." --template=eresseawikidoc.template \
+	  python "$FILTERS_DIR/ewiki_filter_doc.py" | 
+	  pandoc -f json -t docbook -s --id-prefix="$page_id." --template="$doc_templatefile" \
 	      --base-header-level=$((depth+1)) -V title="$title" |
 	  # replace sect1 by section
 	  sed -e "s/sect[0-9]/section/" \
@@ -284,16 +294,16 @@ done
 
 if ((DO_HTML0==1)); then
     echo "</ul></body></html>" >> "$html0_contentsfile"
-    cp common.css "$HTML_DIR"
+    cp $TEMPLATE_DIR/common.css "$HTML_DIR"
 fi
 
 if ((DO_HTML1==1)); then
     cat "$html1_tmpfile" |
     pandoc -f html -t html -M id-prefix="$page_id." -s \
-	-V title="$main_title" -V pagetitle="$main_title" -V css="common.css" \
+	-V title="$main_title" -V pagetitle="$main_title" -V css="$TEMPLATE_DIR/common.css" \
 	--template="$html1_templatefile" --toc --toc-depth=2 \
 	> "$html1_file"
-    cp common.css "$HTML_DIR"
+    cp $TEMPLATE_DIR/common.css "$HTML_DIR"
     # rm -f "$html1_tmpfile"
 fi
 
@@ -303,9 +313,11 @@ if ((DO_PDF==1)); then
     fi
     check_file "$html1_tmpfile"
     cat "$html1_tmpfile" |
-    pandoc -f html -t latex -s -M title="$main_title" \
-	-V title="$main_title" -V linkcolor=blue -V lot=true -V papersize=$PAPER_SIZE \
-	--toc --toc-depth=2 --id-prefix="ewiki." \
+    pandoc -f html -t latex -s -M title="$main_title" --template="$latex_templatefile" \
+	-V title="$main_title" -V linkcolor=blue -V lot=true --toc --toc-depth=2 \
+	-V lang=$LANGUAGE -V babel-lang=german -V papersize=$PAPER_SIZE \
+	-V geometry="top=2cm, bottom=2cm, left=1.5cm, right=1.5cm" \
+	--id-prefix="ewiki." \
 	> "$latex_file"
     status=$?
     if ((verbose>=INFO_LEVEL)); then
