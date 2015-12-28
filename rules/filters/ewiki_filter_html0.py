@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# encoding: utf-8
 
 """
 Pandoc filter to convert mediawiki elements to html elements.
@@ -7,8 +7,7 @@ Pandoc filter to convert mediawiki elements to html elements.
 
 from pandocfilters import toJSONFilter, RawInline, RawBlock, Link, walk, Para, Str
 import ewiki
-import logging, sys, re, string
-
+import logging, re, string
 
 next_pattern = re.compile('\{\{weiter\|(link=)*([^|]*)(\|text=(.*))*\}\}')
 category_pattern = re.compile('(Kategorie|Category):(.*)')
@@ -19,7 +18,8 @@ next_chapter_title = "N&auml;chstes Kapitel: "
 
 count = 0
 meta_infos = None
-DEBUG='html0.log'
+'''Set to file name, e.g. html0.log, for debugging'''
+DEBUG=None
 
 if DEBUG != None:
     logging.basicConfig(filename=DEBUG,filemode='w',level=logging.DEBUG)
@@ -34,27 +34,32 @@ def meta_info(info):
 id_prefix = ''
 
 def convert_internal_link(link):
-  m = link_pattern.match(link.encode('utf-8'))
+  m = link_pattern.match(link)
+  logging.debug(link+"("+id_prefix+"):")
+  logging.debug('rrrr'+str(ewiki.redirects))
   if m.group(1) == "":
-    return '#' + ewiki.link_id(m.group(3) or '', id_prefix)
+    logging.debug(id_prefix+"####"+('---' if m.group(3)==None else m.group(3)))
+    result = '#' + ewiki.link_id(m.group(3) or '', id_prefix)
   else:
     target = m.group(1).replace('_', ' ')
     subject = None
     target = ewiki.find_redirect(target)
+    target = target.replace('_', ' ')
     if '#' in target:
         subject = target[string.find(target, '#')+1:]
         target = target[:string.find(target, '#')]
     else:
-        if m.group(2) != None:
-            subject = m.group(2)
+        subject = m.group(3)
 
-    logging.debug(link.encode('utf-8')+":"+target+"###"+('---' if subject==None else subject))
-    logging.debug('rrrr'+str(ewiki.redirects))
+    logging.debug(target+"###"+('---' if subject==None else subject))
 
     if subject == None:
       return ewiki.url_encode(ewiki.url_encode(target)) + ".html"
     else:
-      return ewiki.url_encode(ewiki.url_encode(target)) + ".html" + '#' + ewiki.link_id(subject or "", target+".")
+      return ewiki.url_encode(ewiki.url_encode(target)) + ".html" + '#' + ewiki.link_id(subject or "", target)
+
+  logging.debug(result)
+  return result
 
 def mwiki_specials(key, value, format, meta):
   global count
@@ -87,16 +92,19 @@ def mwiki_specials(key, value, format, meta):
       return []
     else:
       return Link(value[0], [convert_internal_link(value[1][0]), ""])
+      
+  if key == "Header":
+      value[1][0] = ewiki.link_id(value[1][0], id_prefix)
 
   return None
 
 def mwiki_specials2(key, value, format, meta):
   global count, meta_infos, id_prefix
-  if 'id-prefix' not in meta:
-    id_prefix = 'ewiki-foo.'
-  else:
-    id_prefix = str(meta['id-prefix']['c'])
-  ewiki.parse_redirects(str(meta['redirects']['c'].encode('utf-8')))
+
+  id_prefix = unicode(meta['id-prefix']['c'])
+  ewiki.parse_redirects(unicode(meta['redirects']['c']))
+
+
   if count > 0:
     count-=1
   if DEBUG:

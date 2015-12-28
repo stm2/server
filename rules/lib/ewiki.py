@@ -15,32 +15,29 @@ def elem(k, v):
   return {'t' : k, 'c': v}
 
 def url_encode(name):
-  return ul.quote(name)
-
+  if type(name) == type(u''):
+    return ul.quote(name.encode('utf-8'))
+  else:
+    return ul.quote(name)
 
 def link_id(raw, prefix):
-  global chars_to_keep
-
-  def replace(a):
-    if a in chars_to_keep:
-      return a.lower()
-    return "_"
-
-  prefix = ''.join(map(replace, prefix))
-  if not prefix.startswith("ewiki-"):
-    prefix = "ewiki-" + prefix
-
-  return prefix + ''.join(map(replace, raw))
+  try:
+    if raw == None:
+      return html_encode(prefix.lower())
+    else:
+      return (html_encode(prefix.lower())+"-"+html_encode(raw.lower()))
+  except Exception as exc:
+    raise Exception(raw, type(raw), prefix, type(prefix), exc)
 
 def html_encode(text):
-   t = u''
-   for i in text:
-     if ord(i) in entity.codepoint2name:
-       name = entity.codepoint2name.get(ord(i))
-       t += "&" + name + ";"
-     else:
-       t += i
-   return t
+  t = u''
+  for i in text:
+    if ord(i) in entity.codepoint2name:
+      name = entity.codepoint2name.get(ord(i))
+      t += "&" + name + ";"
+    else:
+      t += i
+  return t
 
 
 def page_list(filename):
@@ -55,9 +52,7 @@ def parse_redirects(input):
   global redirects
   redirects = json.loads(input)
   for r in redirects:
-      target = redirects[r].encode('utf-8')
-  for r in redirects:
-      target = redirects[r].encode('utf-8')
+      target = redirects[r]
       ccc=0
       while target in redirects:
           target = redirects[target]
@@ -70,3 +65,8 @@ def find_redirect(target):
   if target in redirects:
     return redirects[target]
   return target
+
+def json_header(title, level=1):
+  id = link_id("", title)
+  header = { "t" : "Header", "c" : [level, [ id, [], []], [ { "t" : "Str", "c" : title } ] ] }
+  return header

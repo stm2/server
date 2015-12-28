@@ -12,6 +12,7 @@ DO_DOCBOOK=0
 DO_CONCAT=0
 DO_HTML1=1
 DO_PDF=1
+DO_CLEAN=1
 
 main_title="Eressea-Regeln"
 
@@ -44,6 +45,7 @@ DOC_EXT=.xml
 JSON_EXT=.json
 WIKI_EXT=.mediawiki
 HTML_EXT=.html
+TMP_EXT=.tmp
 
 charset=utf-8
 
@@ -52,19 +54,18 @@ all_pagelist=pagelist.all
 real_pagelist=pagelist.real
 redirect_pagelist=pagelist.redirect
 
+redirect_file=$RAW_DIR/redirects.tmp
+concat_file=$RAW_DIR/concat.tmp
+
 html0_contentsfile=$HTML_DIR/Inhalt$HTML_EXT
 html0_templatefile=$TEMPLATE_DIR/wikitemplate0.html
 html1_templatefile=$TEMPLATE_DIR/wikitemplate0.html
-html1_tmpfile=$HTML_DIR/html1_tmp$HTML_EXT
 html1_file=$HTML_DIR/Regeln_komplett$HTML_EXT
 
 doc_templatefile=$TEMPLATE_DIR/wikitemplate.docbook
 
-
 latex_file=$LATEX_DIR/Regeln_komplett.tex
 latex_templatefile=$TEMPLATE_DIR/wikitemplate.tex
-
-concat_file="$DOCBOOK_DIR/allpages.xml"
 
 export PYTHONPATH=$PYTHONPATH:lib
 
@@ -92,8 +93,9 @@ function check_dir {
 }
 
 function link_id {
-    id=$(echo -n "$1" | tr -c -s '[a-z][A-Z][0-9][_.-]' '_')
-    python -c "from ewiki import link_id; print link_id('', '$id')"
+#    id=$(echo -n "$1" | tr -c -s '[a-z][A-Z][0-9][_.-]' '_')
+    id="$1"
+    python -c "from ewiki import link_id; print link_id(None, u'$id')"
 }
 
 function url_encode {
@@ -107,8 +109,6 @@ function html_encode {
 function page_titles {
     python -c "from ewiki import page_list; print('#cwsh#'.join(page_list('$1')))"
 }
-
-redirects=""
 
 function add_redirect {
     if [ -z "$redirects" ]; then
@@ -159,17 +159,6 @@ if ((DO_PAGELIST==1)); then
     rm  .pl.cwsh1 .pl.cwsh2
 fi
 
-if ((DO_CONCAT==1)); then
-    rm "$concat_file"
-    if [ -e "$concat_file" ]; then
-	if ((verbose>=ERROR_LEVEL)); then
-	    echo "$concat_file exists, aborting."
-	fi
-	exit -1
-    fi
-    touch "$concat_file"
-fi
-
 if ((DO_HTML0==1)); then
     echo "<html><head>"  > "$html0_contentsfile"
     echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=$charset\">"  >> "$html0_contentsfile"
@@ -178,9 +167,21 @@ if ((DO_HTML0==1)); then
     echo "<b>Inhalt</b><br /><div id='content'><ul>" >> "$html0_contentsfile"
 fi
 
+DO_CONCAT=0
+
 if ((DO_HTML1==1)); then
-    rm -f "$html1_tmpfile"
+    DO_CONCAT=1
 fi
+
+if ((DO_PDF==1)); then
+    DO_CONCAT=1
+fi
+
+if ((DO_CONCAT==1)); then
+    rm -f "$concat_file"
+fi
+
+redirects=""
 
 cat $PAGELIST | while read pageline; do
     if [ -z "$pageline" ]; then
@@ -209,7 +210,8 @@ cat $PAGELIST | while read pageline; do
     if [ -z "$page_id" ]; then
 	page_id=$page
     fi
-    page_id=$(link_id "$page_id")
+#    page_id=$(link_id "$page_id")
+#    echo $page_id
 
     
     if ((verbose>=INFO_LEVEL)); then
@@ -222,6 +224,7 @@ cat $PAGELIST | while read pageline; do
 
     rawfile=$RAW_DIR/$page$WIKI_EXT
     jsonfile=$JSON_DIR/$page$JSON_EXT
+    json_tmpfile=$JSON_DIR/$page$TMP_EXT$JSON_EXT
     htmlfile=$HTML_DIR/$(url_encode "$page$HTML_EXT")
     outputfile=$DOCBOOK_DIR/$page$DOC_EXT
     
@@ -253,9 +256,11 @@ cat $PAGELIST | while read pageline; do
 	if ((verbose>=DEBUG_LEVEL)); then
 	    echo "---$redirects--"
 	fi
-	cat "$jsonfile" | 
-	pandoc -f json -t html -M id-prefix="$page_id." -M redirects="$redirects" --filter="$FILTERS_DIR/ewiki_filter_html0.py" \
-	    --id-prefix="$page_id." -s -V title="$title" -V pagetitle="$title" -V css="$TEMPLATE_DIR/common.css" \
+	#"$jsonfile" | 
+	cat "$jsonfile" |
+	pandoc -f json -t html -M id-prefix="$page_id" -M redirects="$redirects" \
+	    --filter="$FILTERS_DIR/ewiki_filter_html0.py" \
+	     -s -V title="$title" -V pagetitle="$title" -V css="$TEMPLATE_DIR/common.css" \
 	    -V contents="Inhalt.html" --template="$html0_templatefile" --toc --toc-depth=2 \
 	    > "$htmlfile" 
 	url=$(url_encode "$page")
@@ -263,16 +268,18 @@ cat $PAGELIST | while read pageline; do
         echo "<li><a href="$url">$title</a></li>" >> "$html0_contentsfile"
     fi
 
-    if ((DO_HTML1==1)); then
-	if ((verbose>=DEBUG_LEVEL)); then
-	    echo "---$redirects--"
+    if ((DO_CONCAT==1)); then
+	if [ ! -w "$concat_file" ]; then
+	    echo "[" > "$concat_file"
+	else
+	    echo -n "," >> "$concat_file"
 	fi
-	echo "<h1 id=\"$page_id.\">$title</h1>" >> "$html1_tmpfile"
-	cat "$jsonfile" | 
-	pandoc -f json -t html -M id-prefix="$page_id." -M redirects="$redirects" --filter="$FILTERS_DIR/ewiki_filter_html1.py" \
-	    --id-prefix="$page_id." \
-	    >> "$html1_tmpfile"
-	echo "" >> "$html1_tmpfile"
+	echo "[\"$json_tmpfile\", \"$title\"]" >> "$concat_file"
+
+	cat "$jsonfile" |
+	pandoc -f json -t json -s -M id-prefix="$title" -M redirects="$redirects" \
+	    --filter="$FILTERS_DIR/ewiki_filter_tex.py" \
+	    > "$json_tmpfile"
     fi
 
     if ((DO_DOCBOOK==1)); then
@@ -285,35 +292,55 @@ cat $PAGELIST | while read pageline; do
 	      > "$outputfile" 
     fi
 
-    if ((DO_CONCAT==1)); then
-	check_file "$outputfile"
-	cat "$outputfile" >> "$concat_file"
-    fi
+    echo $redirects > "$redirect_file"
 done
 
+check_file "$redirect_file"
+redirects=$(cat $redirect_file)
 
 if ((DO_HTML0==1)); then
     echo "</ul></body></html>" >> "$html0_contentsfile"
     cp $TEMPLATE_DIR/common.css "$HTML_DIR"
 fi
 
+if ((DO_CONCAT==1)); then
+    echo "]" >> "$concat_file"
+fi
+
 if ((DO_HTML1==1)); then
-    cat "$html1_tmpfile" |
-    pandoc -f html -t html -M id-prefix="$page_id." -s \
+    if ((verbose>=DEBUG_LEVEL)); then
+	echo "---$redirects--"
+    fi
+    if ((verbose>=INFO_LEVEL)); then
+	echo "creating single html file"
+    fi
+
+    check_file "$concat_file"
+
+    python lib/concat_json.py "$concat_file" |
+    pandoc -f json -t html  \
+	-s -M title="$main_title" --template="$latex_templatefile" \
 	-V title="$main_title" -V pagetitle="$main_title" -V css="$TEMPLATE_DIR/common.css" \
 	--template="$html1_templatefile" --toc --toc-depth=2 \
 	> "$html1_file"
+    status=$?
+
     cp $TEMPLATE_DIR/common.css "$HTML_DIR"
-    # rm -f "$html1_tmpfile"
 fi
 
 if ((DO_PDF==1)); then
+    if ((verbose>=DEBUG_LEVEL)); then
+	echo "---$redirects--"
+    fi
     if ((verbose>=INFO_LEVEL)); then
 	echo "creating tex file"
     fi
-    check_file "$html1_tmpfile"
-    cat "$html1_tmpfile" |
-    pandoc -f html -t latex -s -M title="$main_title" --template="$latex_templatefile" \
+
+    check_file "$concat_file"
+
+    python lib/concat_json.py "$concat_file" |
+    pandoc -f json -t latex  \
+	-s -M title="$main_title" --template="$latex_templatefile" \
 	-V title="$main_title" -V linkcolor=blue -V lot=true --toc --toc-depth=2 \
 	-V lang=$LANGUAGE -V babel-lang=german -V papersize=$PAPER_SIZE \
 	-V geometry="top=2cm, bottom=2cm, left=1.5cm, right=1.5cm" \
@@ -324,12 +351,25 @@ if ((DO_PDF==1)); then
 	echo "creating pdf file"
     fi
     if (($status==0)); then    
-	pdflatex --output-directory "$LATEX_DIR" -halt-on-error "$latex_file" > /dev/null && \
-	    pdflatex --output-directory "$LATEX_DIR" -halt-on-error "$latex_file" > /dev/null && \
-	    pdflatex --output-directory "$LATEX_DIR" -halt-on-error "$latex_file" > /dev/null
+	pdflatex --output-directory "$LATEX_DIR" -interaction nonstopmode "$latex_file" > /dev/null && \
+	    pdflatex --output-directory "$LATEX_DIR" -interaction nonstopmode "$latex_file" > /dev/null && \
+	    pdflatex --output-directory "$LATEX_DIR" -interaction nonstopmode "$latex_file" > /dev/null
+	status=$?
+	if (($status!=0)); then
+	    if ((verbose>=ERROR_LEVEL)); then
+		echo "error creating pdf file, see $LATEX_DIR/*.log"
+	    fi
+	fi
     fi
 fi
 
+if ((DO_CLEAN==1)); then
+    rm $RAW_DIR/*
+    rm $JSON_DIR/*
+    rm $DOCBOOK_DIR/*
+    rm $LATEX_DIR/*~ $LATEX_DIR/*aux $LATEX_DIR/*lot $LATEX_DIR/*out  $LATEX_DIR/*toc
+    rm "$raw_pagelist"
+fi
 
 # works:
 # mediawiki2latex -o eresseawiki.pdf -c eresseatree -u http://localhost/testwiki/index.php/Regeln_\(komplett\)

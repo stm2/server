@@ -152,7 +152,7 @@ R	Zwerge
 1	Befehl	Befehle
 2	Kurzbeschreibung
 2	Befehlsreihenfolge
-2	Befehlsreihenfolge (E3)	Befehlsreihenfolge
+2	Befehlsreihenfolge (E3)
 3	;
 3	KOMMENTAR
 3	ARBEITE
@@ -181,7 +181,6 @@ R	Zwerge
 3	HELFE
 3	KAMPFZAUBER
 3	KAUFE
-3	KOMMENTAR
 3	KONTAKTIERE
 3	KÄMPFE
 3	LEHRE
@@ -230,6 +229,7 @@ R	Zwerge
 1	Danksagung
 
 1	Das dritte Zeitalter
+2	Ankündigungen (E3)	Ankündigungen E3
 
 ###1	Anhang
 2	Ankündigungen (E2)	Ankündigungen E2
@@ -238,6 +238,8 @@ R	Zwerge
 2	Tabellen: Tränke und Kräuter
 2	Zauberliste E2	Zauberliste
 2	Zauberbeschreibungen E2	Zauberbeschreibungen
+2	Zauberliste E3
+2	Zauberbeschreibungen E3
 2	Allgemeine Tabellen
 3	Geländearten
 #3	Gebäude	TODO Gebäudetabelle
@@ -270,10 +272,6 @@ R	Zwerge
 2	Bauernwanderung
 2	Bewaffnet
 
-1	Das dritte Zeitalter
-2	Ankündigungen (E3)	Ankündigungen E3
-2	Zauberliste E3	Zauberliste
-2	Zauberbeschreibungen E3	Zauberbeschreibungen
 1	Geschichte von Eressea
 
 
