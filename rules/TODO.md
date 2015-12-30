@@ -1,16 +1,15 @@
-- eliminate pseudo-html: <Gebäude-nr> and raw html <div>
+- eliminate pseudo-html: `<Gebäude-nr>` and raw html `<div>`
 - Tabelle ARBEITE, Waren, Schiffe
-- refactor ewiki_filters
 - tabellenformat latex (passen nicht auf die Seite)
 - Talentmodifikatoren, Kräuter, BEFÖRDERE zu breit
 - Formatierung: Befehlssyntax
-- BEZAHLE
-- __TOC__
+- `<tt>[[PIRATERIE|...`
+- BEZAHLE: E3A-Vorlage
+- Mediawiki Seiteneinbindungen `{{:subpage}}` wären praktisch, zum Beispiel für Tabellen
+- `__TOC__`
 - Tote Links
-- <tt>[[PIRATERIE|...
 - get images
-- python vom bash-Skript aus auszurufen ist langsam! Alles in Python?
-- Mediawiki Seiteneinbindungen {{:subpage}} wären praktisch, zum Beispiel für Tabellen
-- import in Magellan
 - wohin mit den Bildern?
+- python vom bash-Skript aus auszurufen ist langsam! Alles in Python?
+- import in Magellan
 - refactor filter_tex/html1
