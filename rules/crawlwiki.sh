@@ -2,22 +2,24 @@
 
 #set -x
 
-PAGELIST=pagelist2
 
 DO_PAGELIST=1
-DO_RAW=1
+DO_RAW=0
 DO_JSON=1
 DO_HTML0=1
 DO_DOCBOOK=0
 DO_CONCAT=0
 DO_HTML1=1
 DO_PDF=1
-DO_CLEAN=1
+DO_CLEAN=0
+
+PAGELIST=pagelist.en
+LANGUAGE_SUFFIX=_en
 
 main_title="Eressea-Regeln"
 
 PAPER_SIZE=a4paper
-LANGUAGE=de
+LATEX_LANGUAGE=en
 
 verbose=3
 
@@ -33,11 +35,11 @@ RAWACTION="&redirect=no&action=raw"
 PAGELIST_URL="http://wiki.eressea.de/index.php?title=Spezial%3AAlle+Seiten&from=&to=&namespace=0"
 REDIRECT_OPTION="&hideredirects=1"
 
-RAW_DIR=mediawiki
-JSON_DIR=json
-DOCBOOK_DIR=docbook
-HTML_DIR=html
-LATEX_DIR=latex
+RAW_DIR=mediawiki$LANGUAGE_SUFFIX
+JSON_DIR=json$LANGUAGE_SUFFIX
+DOCBOOK_DIR=docbook$LANGUAGE_SUFFIX
+HTML_DIR=html$LANGUAGE_SUFFIX
+LATEX_DIR=latex$LANGUAGE_SUFFIX
 TEMPLATE_DIR=templates
 FILTERS_DIR=filters
 
@@ -55,7 +57,7 @@ real_pagelist=pagelist.real
 redirect_pagelist=pagelist.redirect
 
 redirect_file=$RAW_DIR/redirects.tmp
-concat_file=$RAW_DIR/concat.tmp
+concat_file=$JSON_DIR/concat.json
 
 html0_contentsfile=$HTML_DIR/Inhalt$HTML_EXT
 html0_templatefile=$TEMPLATE_DIR/wikitemplate0.html
@@ -112,6 +114,8 @@ function page_titles {
 
 function add_redirect {
     if [ -z "$redirects" ]; then
+	redirects="{ \"$1\": \"$2\" }"
+    elif [ "$redirects" = "{}" ]; then
 	redirects="{ \"$1\": \"$2\" }"
     else
 	redirects="${redirects:0:-1}, \"$1\": \"$2\" }"
@@ -181,7 +185,7 @@ if ((DO_CONCAT==1)); then
     rm -f "$concat_file"
 fi
 
-redirects=""
+redirects="{}"
 
 cat $PAGELIST | while read pageline; do
     if [ -z "$pageline" ]; then
@@ -206,7 +210,7 @@ cat $PAGELIST | while read pageline; do
 	title=$page
     fi
 
-    page_id=${linearray[3]}
+#    page_id=${linearray[3]}
     if [ -z "$page_id" ]; then
 	page_id=$page
     fi
@@ -342,7 +346,7 @@ if ((DO_PDF==1)); then
     pandoc -f json -t latex  \
 	-s -M title="$main_title" --template="$latex_templatefile" \
 	-V title="$main_title" -V linkcolor=blue -V lot=true --toc --toc-depth=2 \
-	-V lang=$LANGUAGE -V babel-lang=german -V papersize=$PAPER_SIZE \
+	-V lang=$LATEX_LANGUAGE -V babel-lang=german -V papersize=$PAPER_SIZE \
 	-V geometry="top=2cm, bottom=2cm, left=1.5cm, right=1.5cm" \
 	--id-prefix="ewiki." \
 	> "$latex_file"
@@ -358,6 +362,8 @@ if ((DO_PDF==1)); then
 	if (($status!=0)); then
 	    if ((verbose>=ERROR_LEVEL)); then
 		echo "error creating pdf file, see $LATEX_DIR/*.log"
+		echo "or just try running"
+		echo "pdflatex -interaction nonstopmode --output-directory $LATEX_DIR $latex_file"
 	    fi
 	fi
     fi
