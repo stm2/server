@@ -1,0 +1,40 @@
+== Factions and Units ==
+
+As a player you lead one faction in Eressea. A faction consists of up to 1000 units. These units can consist of one man, a few men or even thousands of men of the player's race. Every unit can possess as many items and as much silver as desired and learn any skill available in Eressea. Every turn you give orders to the units which they will execute to the best of their ability. You will be eliminated from the game if there are no members of your faction left, i.e. if all your units have been destroyed or dissolved, or if you have not sent any orders for three turns in a row.
+
+You start the game with a single unit consisting of one man with 4200 silver, 30 wood and 30 stones. Additionally, each race gets a small startup bonus (skills, items or other presents). Remember that to find out more about new objects you encounter in the game, you can use the [[SHOW|SHOW "item"]] command.
+
+This first man is not special or unique; he is simply the first man belonging to your new faction. Using him, you can recruit more men and later on, produce items, construct buildings and ships, tame horses, forge weapons and so on.
+
+Notice: this first unit is "disguised", i.e. its faction membership (the name and the number of the faction) is not visible to other players. For more information check the order HIDE. A demon faction's unit (to learn more about the different races check [[Races|this]] chapter) automatically gets a random type of stealth.
+
+New units are made by creating them with an existing one. A new unit does not contain any people, those will have to be either transferred from an existing unit to the new one or recruited immediately). Therefore the unit needs an appropriate amount of silver. Units which are made by other units aboard ships or inside buildings start right there, i.e. on the ship or inside the building. Here are some examples for possible units:
+
+  * Konrad Rabenhelm (tb2), 1 human, agressive, 20 silver, skills: melee 1,
+    taxation 2, has: sword, "TAXATION"; Konrad
+    Rabenhelm is a typical knight of his order. The Order of
+    Justice is known by his gloomy and reserved members.
+    They all seem to gnaw at a dark experience.
+  
+  - Ambassador of the Clan (2ow), anonymous, 1 dwarf, has: horse,
+    moneybag; The Ambassador is looking for allied peoples as well
+    as for those who want to become allied to the Clan.
+  
+  - Pebblenoses (pebb), Friends of Rocks (135), 4 trolls, has: 1 cart, 30
+    gems.
+
+Your own units are marked with a *, units of other factions with a -. Units belonging to factions you will HELP are prefixed with a +. Less information is available about units of other factions than your own units.
+
+Every unit has a unique ID (usually assigned automatically) which is to be used in all orders. In the example above the first unit has the unit ID 'tb2'. All IDs are in 'base36' format i.e. it may consist of any combination of the numbers 0 through 9 and the letters a through z. Every unit has a name ("Konrad Rabenhelm") while a description (following the semicolon) is optional. In addition the units possessions and skills are listed.
+
+That first unit of the example is the unit of the player who got this report. It consists of one human of his faction (the player's own faction name is not shown), has 20 silver and can fight in melee: its [[Skills|skill]] is at level 1. It also masters the taxation skill at level 2. As you can see, Konrad Rabenhelm has a sword. If he does not get new orders for the coming turn, he will continue collecting taxes.
+
+The next unit is number 2ow, constists of a dwarf and has a horse and a moneybag. The moneybag indicates that the dwarf carries more than 500 silver. If the dwarf had more than 5000 silver, you would see a moneychest in his inventory. Which faction the foreign unit belongs to cannot be seen because it is disguised, i.e. it [[HIDE|hides]] its faction membership. This is not a good choice for an ambassador because in that case the other players cannot get the player's email address. But there is the opportunity of sending an email directly to the unit or faction. To do so, send an email to <tt>unit-2ow@eressea.upb.de</tt>. The syntax for sending email to a unit in game is simple: <tt>unit-<unit no.>@eressea.upb.de</tt>; to send to a faction: <tt>faction-<faction no.>@eressea.upb.de</tt>. And finally there are a few trolls transporting gems on a cart.
+
+In addition to humans, dwarves and trolls, there are many other races in Eressea. You can learn more about them in the [[Races|races chapter]].
+
+With the [[COMBAT]] order you can tell your units to how to behave during combat. You might want to position your fighters in the front row while placing the magicians at the back. Other units like lumberjacks or smiths might be better off escaping from the battle-field.
+
+When a units gets wounded in combat its description will show an appropriate note (e.g. "exhausted", "wounded" or even "heavily wounded").
+
+A unit guarding the region prevents all other factions from collecting taxes or producing raw materials there. To allow allied factions logging, collecting taxes and/or producing raw materials in regions guarded by your unit, you can give a [[HELP|HELP GUARD]] order. If a hostile faction wants to collect taxes or chop trees in a guarded region without permission, it has to attack the guarding unit.

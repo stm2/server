@@ -1,0 +1,87 @@
+* navigation
+** mainpage|mainpage-description
+** Rules#top|Rules
+** Table of orders|Table of Orders
+** Production|Production
+** recentchanges-url|recentchanges
+** randompage-url|randompage
+** helppage|help
+* SEARCH
+* TOOLBOX
+* LANGUAGES
+* Rules
+** Introduction|Introduction
+** Preface|Preface
+** Warning|::A Warning
+** Questions|::Got Questions?
+** How to play|How to play
+** Getting started|::Getting started
+** System Requirements|::System Requirements
+** Send Orders|::Sending in your Orders
+** Things to remember|::Things to remember
+** Bugs|Bugs and Exploits
+** How to deal with Bugs|::How to deal with Bugs
+** Reporting a Bug|::Reporting a Bug
+** Cheating and Exploits|::Cheating and Exploits
+** World|The World
+** Faction|Your Faction
+** Races|Races
+** Profiles|::Profiles
+** Modifiers|::Modifiers
+** Skills|Skills
+** Skills explained|::Skills explained
+** Travel|Travel
+** Roads|::Roads
+** Horses and Carts|::Horses and Carts
+** Ship Movement|::Ship Movement
+** Production|Production
+** Goods|::Goods
+** Buildings Roads|::Roads
+** Ships|::Ships
+** Buildings|::Castles and buildings
+** Types of buildings|::Types of buildings
+** Income and Expenses|Income and Expenses
+** Expenses|::Expenses
+** Income|::Income
+** Theft|::Theft
+** Trade|::Trade
+** Pools|::Pools
+** The Art of War|The Art of War
+** Siege|::Siege
+** Taking Sides|::Taking Sides
+** The Battle|::The Battle
+** Muster|::Muster
+** Melee Combat|::Melee Combat
+** Missile Combat|::Missile Combat
+** Bonuses and Penalties|::Bonuses and Penalties
+** Escape|::Escape
+** Ships and Piracy|::Ships and Piracy
+** The End|::The End
+** Tables|::Tables
+** Alliances|Alliances
+** Types of Support|::Types of Support
+** Magic|Magic
+** Spells|::Spells
+** Schools of Magic|Schools of Magic
+** Illaun|::Illaun
+** Tybied|::Tybied
+** Cerddor|::Cerddor
+** Gwyrrd|::Gwyrrd
+** Draig|::Draig
+** Alchemy and Herbalism|Alchemy and Herbalism
+** Potions|::Potions
+** Advice for Beginners|Advice for Beginners
+** Orders Reference|Orders Reference
+** Sample Turn|::Sample Turn
+** Credits|Credits
+** Acknowledgements|::Acknowledgements
+** Technical Tidbits|::Technical Tidbits
+** About this Document|::About this Document
+** Appendix|Appendix
+** Mail|Mail
+** Useful Addresses|::Useful Addresses
+** Table of orders|Table of orders
+** Table of skills|Table of skills
+** Table of alchemy and herbs|Table of alchemy and herbs
+** General tables|General tables
+** Special:Allpages|Index

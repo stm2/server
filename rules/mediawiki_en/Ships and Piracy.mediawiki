@@ -1,0 +1,21 @@
+== Ships ==
+
+Battle upon ships is much the same as battle upon land. The ships board each other and the enemy units fight against each other. Combat on the ocean allows everyone involved to execute long orders.
+
+Ships get 5% damage for every round after round 1 (up to 20%) if somebody on the ship gets hit during the battle. Ships without or with too few men drift out of control.
+
+If you want to disembark units from a ship in a guarded region, they must first leave the ship before they can attack in the next turn. This gives the enemy a chance to react.
+
+You can attack from land without delay. The fight between ships is only possible on the ocean.
+
+== Piracy ==
+
+Piracy gives a captain the possibility to capture enemy ships in neighboring regions.
+
+The captain is lying in wait for ships which move into the neighboring regions. He steers the ship into the region when a ship belonging to a targeted faction arrives nearby. Factions can be targeted by using the [[PIRACY|PIRACY <faction num.>]] command. You can follow a ship with the order [[FOLLOW|FOLLOW SHIP]].
+You should pay attention to a few facts:
+
+* This also works if the ship is on the coast. So it is an effective possibility for securing a coastline.
+* Pirate captains are really stupid. They can't judge if their target is more powerful than themselves. They will willingly move their ship and attack a fleet of 100 ships. Piracy has its risks.
+* If there are more than one target, the captain picks one randomly.
+* If a pirate of an allied faction who is in the same region, has found a target, your captain will attack the same ship if this is also an allowed target.

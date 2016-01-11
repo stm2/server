@@ -1,0 +1,9 @@
+There are five schools of magic in Eressea. Every faction can dedicate itself to only of them. On the first you want a unit to learn the magic skill you have to use the [[LEARN|LEARN Magic <school name>]] order. This will make the unit learn magic and set the magic school for your faction - from then on you cannot switch to a different school.
+
+The following descriptions of the five schools of magic should give a rough idea of what kind of magic they represent. They are intentionally vague to leave room for interpretation and imagination on behalf of the players.
+
+# [[Illaun]]
+# [[Tybied]]
+# [[Cerddor]]
+# [[Gwyrrd]]
+# [[Draig]]

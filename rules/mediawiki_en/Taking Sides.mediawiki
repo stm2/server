@@ -1,0 +1,52 @@
+== Taking sides: resolving allegiances ==
+
+Use the [[ATTACK]] order to order one of your units to attack another player's units. The timing of [[ATTACK]] orders is randomly executed. During an attack, all units in the region gather and fight man to man. A battle lasts at most 5 rounds, plus a special round called the tactician's round.
+
+The attackers are all units who had the order [[ATTACK]] against one or more units of the defenders.
+
+The defenders are units which were attacked directly, combat ready units of the attacked faction (units in [[COMBAT]], [[COMBAT|COMBAT AGGRESSIVE]], [[COMBAT|COMBAT REAR]] or [[COMBAT|COMBAT DEFENSIV]] stance), and combat ready units of any factions allied with the attacked faction (i.e. allied using [[HELP|HELP COMBAT]]).
+
+There are different reasons why a unit joins the battle. These are in following priority:
+
+# The combat-ready unit attacks another unit. This unit will always enter combat.
+# The unit is attacked by another unit. In this case the unit takes its position in the battle formation according to its [[COMBAT]] stance.
+# An unit of the own faction is attacked by somebody. The unit enters combat if neither [[COMBAT|COMBAT NOT]] or [[COMBAT|COMBAT FLEE]] is set. In the latter case the unit does not try to flee, because it was not directly threatened. Instead, it will stay in the region and not participate in the fighting.
+# A unit of an allied faction (a faction in which [[HELP|HELP COMBAT]] was set) is attacked by somebody. The unit enters combat if neither [[COMBAT|COMBAT NOT]] or [[COMBAT|COMBAT FLEE]] is set. In the latter case it does not flee, because it is not directly threatened. Instead, it will stay in the region and not participate in the fighting.
+
+Allies help the defenders automatically only if the defender himself does not attack. Attacked units defend themselves with the whole faction except units which explicitly have orders keeping them from fighting. For an attack the [[COMBAT]] stance matters. Units with [[COMBAT|COMBAT NOT]] or [[COMBAT|COMBAT FLEE]] settings cannot attack.
+
+Warning! Units in a besieged castle cannot help units outside the castle.
+
+If more factions want to attack a single faction they should ally by setting [[HELP|HELP COMBAT]] to each other, because it is possible that the attacked faction will counter-attack one of the two factions. In this case, the two factions will help each other only when this status is set.
+
+To attack a common enemy together every faction has to attack at least one unit of the enemy. To defend against a common enemy it is enough to have set [[HELP|HELP COMBAT]] amongst each other.
+
+Normally, two factions are considered allied when they both have [[COMBAT|COMBAT HELP]] set towards each other, and neither attacks a faction that the other is also allied with.
+
+Example 1:
+
+    A helps B and C. C attacks B, A joins the fight because B is allied.
+    C is not allied because it attacked an allied faction. 
+
+Who fight against whom?
+
+A faction fights against its enemies. Its enemies are factions which attack it, factions which it attacks, or factions that attack its allies. A faction "helps" everyone who is fighting against one of its enemies. In this case, the [[COMBAT]] stance doesn't matter.
+
+Example 2:
+
+    A helps B and C. B and C attack each other. A helps neither B nor C,
+    because nobody counts as ally and nobody is enemy of A. 
+
+Example 3:
+
+    A attacks B and C. B and C help each other even if they are not 
+    allied, because A is a mutual enemy. If B has only archers and C 
+    only front fighters the fighters of C save the archers of B. 
+    Exception: B and C are enemies, because for example B fights against 
+    D, an ally of C. In this case they do not help each other and 
+    also not against A. 
+
+Example 4:
+
+    A and B attack C. A and B help each other even if they are not
+    allied, because C is a mutual enemy.

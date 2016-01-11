@@ -1,0 +1,7 @@
+The first line of your orders must begin with [[ERESSEA|ERESSEA <faction no.> <password>]], where you replace <faction no.> with the id of your faction, and <password> with your password. A line containing the word [[NEXT]] should be at the very end of your order file, telling the server that your orders are finished completely, and that it should ignore everything else in your email.
+
+You can write one order per line. If your mail program breaks long lines, then you have to add a continuation character at the end of the line. Simply add a \ at the end to tell the game server to continue processing in the next line, like this:
+
+  DESCRIBE UNIT "The heroes of the second war on Andune have enjoyed \
+       their retirement for long. Now their country depends upon \
+       them once again, and they march against the Dark Alliance."

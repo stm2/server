@@ -1,0 +1,35 @@
+Only with ships can you leave your island and make contact with or engage in trade with other factions on other islands. With a ship it is possible to move up to 7 regions (even more than 7 regions with the help of aquarians or with magic!).
+
+All ships greater in size than a boat can only come onto a land region (landing if you will) at Plains or Forest regions. All other terrain (region) types require someone to build a harbour in them in order for ships greater than a boat in size to land at. Ships can, however, cast off from any region. One can build a ship and set sail from any region.
+
+No ship can move directly from one land (coastal) region to another land (coastal) region. Any ship that is landed must first then sail onto the ocean before it can move to another land region. Additionally, a ship that is landed can only sail out onto the ocean in the direction from which it came from when it landed or in a direction adjacent to the direction from which it arrived at the land (coastal) region. For example, a ship arrives onto a land (coastal) region from the west, if this ship wishes then to depart (sail out) from this region it can only go west, northwest, or southwest. Ships on land in a region with a harbour can move toward any direction, so long as the region they are moving to is an ocean region and your faction commands the harbour building or the faction that does command the harbour building has [[HELP|HELP GUARD]] for your faction.
+
+On the open sea (ocean regions that are not adjacent to any land regions) it is possible your ships can be sent off course or even damaged by storms, beware!
+
+In order to move a ship you need trained a trained crew, that is a unit (or units) that have learned the skill "Sailing". On this chart under "Captain" is listed the minimum skill of the Ship Captain (that is the first unit on your report under the named ship) in order for the unit to move the ship. Example, in order to move a caravel, the ship captain unit must at least have Sailing skill 3. In addition to this, on board the ship must be a certain amount of "Total skill" in sailing skill, depending on the type of ship. The below chart lists the total sailing skill needed on board a ship to move it. This total sailing skill includes the captain unit and also includes any allies of the ship captain unit on board the ship that have sailing skill. The range of the ship is the distance in numbers of region such a ship can move in one week. Note, however, that any ship that has an aquarian Ship Captain receives a bonus of +1 to it's range, therefore a Trireme captained by an aquarian can move 8 regions per week. (Migrant aquarians in a human faction do not receive this bonus).
+
+{| border="0" cellspacing="1" align="center"
+|- style="background-color:#aaaaaa"
+!Type 	!!Range 	!!Capacity 	!!Captain 	!!Total skill
+|+Ships - Range, Capacity, required skills
+|- style="background-color:#eeeeee"
+|Boat   	||2 	||50 	||1 	||2
+|- style="background-color:#cccccc"
+|Longboat 	||3 	||500 	||1 	||10
+|- style="background-color:#eeeeee"
+|Dragonship 	||5 	||1000 	||2 	||50
+|- style="background-color:#cccccc"
+|Caravel 	||5 	||3000 	||3 	||30
+|- style="background-color:#eeeeee"
+|Trireme 	||7 	||2000 	||4 	||120
+|}
+
+Any ship without enough qualified crew can not sail out. If, for whatever reason, a ship on the ocean finds itself without enough qualified crew then the ship can not be controlled and will drift randomly until the ship drifts onto land. However, any ship that is adrift will break apart (takes damage), such that after a short period of time it will sink (see also [[Ships|here]]).
+
+Every ship type has a carrying capacity. Any ship that is overloaded can not sail out. The weight of everything on board a ship counts towards the ships carrying capacity (people, silver, horses, carts, etc.) The listing of ship capacity is found in this chart and is also listed in your report
+
+A unit that finds itself on a ship on the ocean at the start of any week can not do any long orders, except aquarians. Aquarians are permitted to do long orders on the ocean. Of course, all ship captains (regardless of their race) are allowed to move the ship with the long order [[MOVE]] or [[ROUTE]]. In any case, units on board a ship, just as on land, require 10 silver per week per person to live (representative of food). Hint: Make sure you keep an eye on that.
+
+Any unit that wishes to get off of a ship onto land must do so with the [[LEAVE]] order. If the region wherein the unit gets off of the ship ([[LEAVE]]) is not guarded by a non-ally, then the unit may move with the [[MOVE]] order in that same week, otherwise, the unit must wait one week before it may move if the region is indeed guarded by a non-ally. These same rules apply to attempting movement by [[RIDE]] and [[CARRY]] orders after getting off of a ship
+
+Aquarians can swim from an ocean region onto a directly adjacent land region (with the [[MOVE]] order), but the reverse is not true. Aquarians can not swim from a land region onto any ocean region. Swimming aquarians can take with them anything (items, etc.) with the exception of horses.

@@ -1,0 +1,23 @@
+== Silver and item pools ==
+
+Especially with big factions you might lose track of the available amounts of silver and other items. Obviously, distributing silver among your units is a burden.
+
+The silver pool relieves the player from this task. When a unit is given the recruit order, it automatically takes enough silver (if the faction possesses enough silver on all its units in that region) to recruit the new persons. The same occurs when a unit tries to learn a skill that costs silver. Remember that using the silver pool may take away silver needed to feed other units.
+
+Buildings can likewise be supplied out of the silver pool if the silver is in the region at the beginning of the turn. If the faction which owns the building cannot pay the maintenance costs, the building is ineffective for this turn. At the end of the turn, the faction will try to pay the maintenance costs again. If there is still not enough materials or silver, the building collapses.
+
+Units will never give away silver which they need for their own food. If you want them to hold on to more or all of their money, you can order them to [[RESERVE]] the silver.
+
+TEMP units cannot reserve silver. They take the money they need to recruit out of the silver pool, but if they need any money or items when moving into another region, it must be explicitly given to them from other units with the [[GIVE]] order.
+
+Beware: When TEMP units receive silver, they will use it to recruit men to reach their desired size. If you give a TEMP unit 100 silver, it may not have 100 silver after it is done recruiting up to full size.
+
+Silver that is transferred with the [[GIVE]] or [[GIVE|@GIVE]] order is automatically reserved and will not be used in the silver pool.
+
+The silver pool and [[RESERVE]] orders will not stop units from sharing silver to feed each other. All silver in a region will be used to feed a faction's units, despite any [[RESERVE]] orders or the turning off of the [[OPTION|OPTION SILVERPOOL]] order.
+
+The item pool is identical to the silver pool regarding materials. Every unit which needs something (stones, wood, etc.) for the construction of buildings will take it from any unit in the region. Units can also [[RESERVE]] materials so that no other unit will use them for another purpose. As with silver, all items transferred with the [[GIVE]] or [[GIVE|@GIVE]] orders are automatically reserved.
+
+Beware: The item pool only works for production, i.e. the [[MAKE]] order. If a unit needs weapons for collecting taxes, those weapons must be transferred with the [[GIVE]] order first.
+
+Inexperienced factions should think carefully about using the item pool, it is easy to accidentally take resources from other units and upset orders.

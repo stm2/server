@@ -1,0 +1,8 @@
+<tt>BUY amount luxury-item   <L*></tt>
+
+Given this order a unit tries to buy the specified amount of the specified luxury item. The unit needs to be skilled in trading, the luxury item needs to be for sale and there has to be a trading post or larger castle in the region. The unit can acquire 10 luxury items per person and trading skill level. For more information see the chapter on [[Trade|trade]].
+
+BUY and [[SELL]] are pseudo-long orders, i.e. a unit can carry out any number of BUY and [[SELL]] orders in the same turn but no other long order. Note that the limitation of 10 luxury items per person and trading skill level applies to all BUY and SELL orders of a unit in total.
+
+
+[[Category:Orders]]

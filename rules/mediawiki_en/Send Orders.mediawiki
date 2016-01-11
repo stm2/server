@@ -1,0 +1,18 @@
+Once you've written your orders, you must send them to the game server. They must be sent to [mailto:eressea-server@eressea.kn-bremen.de eressea-server@eressea.kn-bremen.de]  with the subject '''ERESSEA ORDERS''' in order to be recognized and processed. If you have already sent in orders, and find that you want to make changes, send in a second set of orders; they will override the old ones. A lot of players send in preliminary orders early in the week, and another set later in the week, when diplomacy with other players has made changes necessary. Make sure your computer's clock is set correctly. The game server uses the time at which you send the orders to determine the latest orders, not the time of their arrival.
+
+Remember: Your turn has to be sent as plain text. Today, many mailers offer rich text or even HTML formatted text. These are not readable by the game server. If you want to send your orders as an attachment, they have to be encoded as text/plain MIME attachments. If you don't know what that is, or if you don't want to take chances, paste the orders into the body of your e-mail instead. Due to the increasing number of different formats, mail tools, and buggy implementations that exist today, the number of players who get this wrong increases steadily.
+
+When your orders reach the game server, they are processed by a simple form of our syntax checker, ECheck. The results of this check will be sent to you, and you should read them carefully. While an English version of ECheck exists, it is not perfect, and inconsistencies between it and the server may occur. Orders which ECheck considers legitimate may be ignore by the server, and vice versa. This is an example of sample output you will receive in the mail from ECheck:
+
+  ECHECK (Version 3.4.2, Jun 12 2000), Zug-Checker für Eressea - Freeware!
+  
+  Verarbeite Datei `faroul@beyond.kn-bremen.de,2'.
+  
+  Es wurden Befehle für 1 Partei und 100 Einheiten gelesen.
+  Die Befehle scheinen in Ordnung zu sein.
+
+The last two lines of the output are the important ones. In this case, they translate to: "There were orders for 1 faction and 100 units sent in. The orders seem to be okay". If it says 0 factions, or even 0 units, your mail may not be in a proper format. '''Remember, the English ECheck is not perfect, and may not match what the server will accept'''. To make sure your orders are valid, ask someone for help; the Eressea help list [mailto:eressea-help@eressea.kn-bremen.de eressea-help@eressea.kn-bremen.de] is a good place to start.
+
+The game server parses incoming orders immediately. If you do not get a reply to your orders within 20 minutes, there is something wrong, and you should consider sending them again. Try sending them from an alternative mail account if you have one.
+
+If you fail to send in orders for three consecutive weeks, you will be removed from the game.

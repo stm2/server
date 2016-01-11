@@ -1,0 +1,21 @@
+A battle lasts at most 5 rounds plus a possible tactician's ambush. In every round the combatants attack in random order.
+
+Generally, units that participate in combat (these are units showing up in the list of combatants) cannot execute long orders. Exceptions are [[Ships and Piracy|battles on the ocean]] and battles in regions which are guarded by at least one units that has a [[HELP|HELP GUARD]] status or belongs to the combatant's own faction. In this case the unit can carry out further long orders.
+Formations
+
+In the battle there are four rows, composed of the units that are actually in the battle. For more information consult [[COMBAT]].
+
+1st row: units that have set [[COMBAT]] or [[COMBAT|COMBAT AGGRESSIVE]].
+2nd row: units that have set [[COMBAT|COMBAT REAR]] or [[COMBAT|COMBAT DEFENSIVE]]
+3rd row: units that have set [[COMBAT|COMBAT NOT]]
+4th row: persons that try to flee. These are fighters who have a [[COMBAT|COMBAT FLEE]] stance and such person who have taken too much damage (see also [[Escape|escaping]]).
+
+Only the first two rows are able to attack (with melee or missile weapons). Units in the third row will stay out of combat until the rows in front of it are overrun, and fleeing units stay all the way to the back, trying to [[Escape|escape]].
+
+Units which fight in the second row can only be attacked in close combat if they join the front. They defend against ranged attacks from range fighters with their best combat skill.
+
+Magicians can cast spells in first and second row. If no combat spell is set the magicians arm themselves and fight with their weapons. They defend themselves with their equipped weapon.
+
+== Overrunning ==
+
+If a faction and its allies have more than three times more enemies at the front row, all units from second row move to front, making themselves vulnerable to close combat. If the second row is empty, the third and fourth row get drawn into combat. This is checked before every combat turn.

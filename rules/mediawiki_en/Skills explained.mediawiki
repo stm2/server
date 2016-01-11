@@ -1,0 +1,65 @@
+= Miscellaneous details about certain skills =
+
+== Production of resources and objects ==
+
+All items and resources are made with the [[MAKE]] order. Most resources only need the appropriate region and skill level 1 to be produced. Most objects and items need higher skill levels. This table lists all resources and objects, and what skills and resources are need to produce them.
+
+To produce an item, you must give a a unit the [[MAKE|MAKE "<object name>"]] order. For example, [[MAKE|MAKE "iron"]], [[MAKE|MAKE "sword"]], etc. You can also specify how many objects should be produced by putting the number between the [[MAKE]] order and the object name. For example, [[MAKE|MAKE 10 "shield"]]. The unit will produce 10 shields if there is enough iron and it has the necessary level of skill in armoursmithing (i.e. 2), and the combined total skill levels needed (i.e. 20 total, such as 10 men with skill level 2 each, or 2 men with skill level 10 each).
+
+== Perception, Stealth and Espionage ==
+
+The stealth skill can hide units, but if this unit is used to guard a region, or is on a ship or in a building, it will never be hidden, and is always visible.
+
+Other units can spot hidden units using the perception skill. A unit cannot be seen if the stealth skill level is greater than the perception skill level of another unit. In this case, the stealthy unit is invisible to the other unit. A unit if displayed if the perception skill level of your unit is as high or greater than the stealth skill level of another unit.
+
+Successfully hidden units can steal silver form other units with the [[STEAL]] order. To discover the theft, the unit with the highest skill level in perception is compared with the stealth skill level of the robber. If the stealth level is as high as the perception level, the victim is only told that money has been stolen. If the perception level is greater than the stealth level, the victim gets detailed information about the theft, such as the indentity of the robber.
+
+A unit with a stealth skill level that is at least 3 levels above the highest sieging unit's perception level can leave the sieged castle at will. The most common use of this is to smuggle silver inside to feed the inhabitants.
+
+With the [[SPY]] order, you can receive information about another faction's units. The espionage level of the spying unit is compared with the added skill values of perception and stealth of the target unit. If the espoinate level of the spy is lower than combined value of the two skill, the spy learns nothing. If the two values are equal to the espionage level, the spy learns what skills the target unit has, but not their levels. If the espionage level is greater than the combined value, the spy learns both the skills and their skill levels. Any successful attempt also reveals the faction the target unit belongs to.
+
+Then the perception skill level of the victim is compared with the stealth skill level of the spy. If the perception level is less than the stealth level, the victim learns nothing. If these skills are equal, then the victim knows he was spied upon, but not by whom. If the perception level is greater than the stealth level, the victim receives information about which unit spied upon him.
+
+It costs 100 silver per person per week to learn espionage. Successfully using the stealth or espionate skills makes the unit more experienced in them.
+
+== Walking, Riding, Sailing and Shipcraft ==
+
+There are many means to travel between regions. Walking, riding, sailing, etc. The [[MOVE]] order controls all of these.
+
+A unit does not need any special abilities for walking. In order to ride horses, a unit needs the riding skill. The advantage to riding horses is that a unit can both go further and carry more, especially when using carts.
+
+You will need a unit with the taming skill to catch wild horses and the cartmaking skill to make carts. Use the [[MAKE|MAKE "horse"]] and [[MAKE|MAKE "cart"]] orders respectively.
+
+A unit with the riding skill can ride/lead two horses per person per skill level. Every two horses can lead a cart, so that large amounts of products can be transported between regions. If a unit uses carts, the persons in the unit sit in the cart, and not on the horses. Therefore, the weight of the unit's members is subtracted from the cart's carrying capacity.
+
+In order to sail, a unit needs both a ship and the sailing skill. The shipcraft skill is used to make boats from wood.
+
+The captain is the unit that steers a ship. It must have a certain skill level to sail different size vessels. This [[Ship_Movement|table]] lists the various ship types and the skills required to sail. The remaining skill needed to sail a vessel can come from any source. A trireme and a captain with level 4 sailing and 116 sailors with sailling 1, is just as good as the same captain with 20 men and sailing level 6.
+
+== Masonry and Roadwork ==
+
+There are many buildings with various functions in Eressea. For example, castles, smithies, sawmilles, and lighthouses. To build any of these, you need a unit with the masonry skill and the appropriate resources for construction.
+
+A castle is built with the [[MAKE|MAKE CASTLE]] order. Any other kind of building is constructed with the [[MAKE|MAKE "<building type>"]] order. A smithy, for example, would be build with the [[MAKE|MAKE "smithy"]] order. You will need stone to build a castle. Most other types of buildings require wood, iron, and silver. Mage Towers even require Laen and Mallorn wood.
+
+You can also build roads to speed travel between regions. With the roadwork skill, you can build roads and bridges so that units can travel more than one region per turn. In some regions, you will need to build special buildings before you can build roads: Swamps require a dam, Deserts require a caravanserai, and Glaciers require a tunnel.
+
+== Magic ==
+
+You can also use and experiment with spells using the magic skill. Spells fall into several categories, combat, ship, normal, etc. Each faction is only allowed to have up to 3 magicians, although Elves are allowed to have 4 as a special ability. It costs at least 100 silver per person per week to learn magic. See this [[Magic|table]] for the costs of learning magic at all skill levels.
+
+You cast spells with the [[CAST]] order. You also use this order to make magical items.
+
+== Alchemy and Herbalism ==
+
+A unit needs the herbalism skill to search for herbs. In every region a certain kind of herb is available. A unit can find about one herb per skill level and person.
+
+Units need the alchemy skill to turn those herbs into potions. Learning these skills costs 200 silver per person per week. Only 3 alchemists are allowed per faction.
+
+== Weapon skills and Endurance ==
+
+Eressea has 5 different weapon skills: bow (bow, mallorn bow, elven bow), crossbow (crossbow, mallorn crossbow), catapult (catapult), melee (sword, claymore, axe, laensword), and polearm (spear, mallorn spear, lance, mallorn lance, halberd).
+
+Units gain additional hit points if they have skill levels in the endurance skill. See this [[The_Art_of_War|table]] for the benefits of each level of endurance.
+
+More information about fighting is available in the [[The_Art_of_War|combat]] chapter.

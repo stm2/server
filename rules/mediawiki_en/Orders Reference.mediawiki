@@ -1,0 +1,7 @@
+This chapter explains all the possible orders that you can give to your units. We'll start by explaining the notation we have used throughout. As an example, let's take [[HELP|HELP faction-id COMBAT [ NOT ]]], an order to specify whether or not you do or don't help another faction when it is attacked.
+
+* Keywords, in this case HELP, COMBAT, and NOT, are written in capital letters. You don't have to write them in capital letters yourself, though most people do.
+* Place holders are written as in small letters. You're not supposed to copy them, but instead to fill them in with your own. In this case, instead of faction-id, write the id of the faction that you want to apply the order to.<br>Occasionally, you see this written as <faction-id>. It means the same thing, and the < and > symbols must not appear in your orders.
+* Words in [] brackets are optional so they may or may not be part of the order. In this case, NOT does not have to be included - but the order has different meanings depending on whether or not you include it.
+
+Long orders are marked with an <L>.

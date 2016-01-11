@@ -1,0 +1,7 @@
+After this the fallen men are counted and all useful items from the dead are handed out to the survivors. All materials have only a 50% chance of surviving a battle.
+
+After the fight magicians can save units which have died.
+
+Units which were damaged in battle stay damaged. This is shown in reports.
+
+Wounds heal over time. Wounded units get 5% of their maximum hit points every turn, but at least 1 hit point per turn. Undead units cannot regenerate hit points.

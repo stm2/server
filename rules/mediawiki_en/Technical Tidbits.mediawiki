@@ -1,0 +1,5 @@
+These are frequently out of date. In January 2006, the only running game of Eressea can be described by the following numbers:
+
+* Eressea has a total of over 100.000 lines of code for server and tools which are written in C, C++ and LUA. In addition to code, there are approximately 900 kilobytes of XML configuration files. It was originally based on Russell Wallace's Atlantis 1.0, which had a mere 7000 lines of code.
+* The world of Eressea takes up 120 MBytes of disk space. There are more than 360.000 units in 1000 factions.
+* Running the server takes about 15 minutes. Compressing and sending all of the reports however takes half an hour.

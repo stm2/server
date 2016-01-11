@@ -1,0 +1,36 @@
+Any unit with the riding skill and enough horses can use the horses for transportation when moving. This allows the unit to travel one additional region.
+
+Any unit without the riding skill can lead one horse by hand, per person. This means the unit still move by foot, but leads the horse with him. A unit leading a horse would move one region on foot, two regions if complete roads are present.
+
+If a unit does have the riding skill, the number of horses and carts it may travel with is dependant on the riding skill of the unit, and how far the unit is ordered to travel. If the unit only moves 1 region (or 2 regions along a road), each person in a unit with riding skill can move up to 4 horses per level of riding skill. If moving 2 regions (or 3 regions along a road), each person in a unit with riding skill can move up to 2 horses per level of riding skill. You allways need riding skill to use carts and then for every 2 horses, a unit is allowed to use 1 cart. If a unit is allowed to travel with 8 horses, it may also use 4 carts. If it only uses 2 horses, it may move 1 cart.
+
+Most [[Races|races]] have a carrying capacity of 5.4 weight units. A horse has a carrying capacity of 20 weight units. Therefore, 2 persons could ride on one horse, or one person could ride a horse carrying 10 swords. In theory, everything can be transported by a unit, including other units. Note that carts weight 40 weight units. A unit with horses or using carts can go on foot and not use up space in the cart. In this manner, the unit can carry additional items in addition to what the cart can carry. Simply put, the unit is walking alongside the cart, rather than riding in it. A unit moving only 1 region on land, or 2 regions along roads is automatically considered to be moving by foot.
+
+   A unit with 4 persons and a riding skill of 1 can move at most, 
+   20 horses and one reagion (or 2 regions on roads). This is calculated 
+   as follows: 4 people can lead 4 horses. In addition, each person can 
+   lead an additional 4 horses beause of their riding skill level 
+   (4 + (4 * 4) = 20).
+  
+   A unit with 5 dwarves without the riding skill can move one region on foot
+   (or 2 regions along roads) with up to 5 horses. In this case, the carrying
+   capacity of these 5 dwarves and 5 horses is 127 weight units 
+   ((5 * 5.2) + (5 * 20) = 127).
+
+Carts have a carrying capacity of 140 weigt units, which means they can carry large amounts of goods. Each cart needs 2 horses (or 4 Trolls) to pull it. Horses that are pulling a cart cannot carry anything else as it takes all their strength to pull the cart. Note that 2 horses have a carry capacity of 40 weight units, which is identical to the weight of the cart itself. However, 4 Trolls can push a cart plus an additional 3.2 weight units. In either case, if you wish to move carts without using Trolls, you must have the riding skill and horses. Carts can still be carryed as freight rather than used to transport goods, but they are very heavy, weighin 40 weight units a piece.
+
+    Example, one person with riding skill 1 has one cart and two horses, 
+    and wishes to move two regions without roads. In this case, the owner 
+    of the cart can move 130 weight units with him (i.e. 130 swords) as 
+    the two horses pull the cart. The cart can carry up to 140 weight 
+    units, but 10 units of this is occupied by the cart owner as he rides
+    along with the cargo. In another example, a unit with 4 persons and 
+    riding skill 1 could move eight carts using 16 horses one region, or 
+    it could move 4 carts with 8 horses two regions. If you want to move 
+    1 person with 1 cart and 2 horses on a ship, then the ship must have 
+    150 weight units available on board to carry the person, 2 horses and 
+    cart (10 + 40 + 100 = 150).
+
+If a unit has too many horses, or is carrying too much weight, the unit cannot move.
+
+Note that carrying capacity is calculated on a unit by unit basis. Therefore 1 Person with Riding skill 3 and 6 horses and 3 carts wishing to move 1 region (walking in this case) has a carrying capacity of ((3 * 140) + 5.4) = 425.4 WU and therefore this example unit can move 7 stones if it wishes only to move one region. If this example unit wants to move 2 regions (not on a road) then it can only carry 6 stones, as the person must ride on the cart and this means then that carrying capacity of the unit is 420 WU minus 10 WU (the weight of the driver on the cart) = 410 WU. 7 Stones weigh (7 * 60) 420 WU. So, this unit can not move 2 regions (without roads) with 7 stones, as it would be overloaded.

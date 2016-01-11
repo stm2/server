@@ -1,0 +1,37 @@
+<tt>WORK <L></tt>
+
+Tells the unit to do manual labor, working in agriculture or fishing. It will produce enough silver to survive, but little more. The exact salary depends on the size of the biggest local fortification. Orcs will earn less than others. A unit aboard a landed ship cannot work if the region is guarded by a faction that is not allied with it.
+
+
+{| border="0" cellspacing="1" align="center"
+|- style="background-color:#aaaaaa"
+!       !!None 	!!Fortification 	!!Tower 	!!Stronghold 	!!Fortress 	!!Citadel
+|- style="background-color:#eeeeee"
+|Income 	||10 	||11 	||12 	||13 	||14 	||15
+|- style="background-color:#cccccc"
+|Orcs    	||10 	||11 	||11 	||12 	||12 	||13
+|}
+
+There is a limit on workers in a region depending on its Terrain. Additionally, each tree in a region will take up space and reduce this number by 8 workers.
+
+{| border="0" cellspacing="1" align="center"
+|- style="background-color:#aaaaaa"
+!               !!Max. Workers 	!!Max. Trees
+|- style="background-color:#eeeeee"
+|Mountain 	||1000  	||125
+|- style="background-color:#cccccc"
+|Plain  	||10000 	||1250
+|- style="background-color:#eeeeee"
+|Glacier 	||100   	||12
+|- style="background-color:#cccccc"
+|Highlands 	||4000  	||500
+|- style="background-color:#eeeeee"
+|Swamp  	||2000  	||250
+|- style="background-color:#cccccc"
+|Desert 	||500   	||62
+|- style="background-color:#eeeeee"
+|Volcano 	||500   	||62
+|}
+
+
+[[Category:Orders]]

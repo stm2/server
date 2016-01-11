@@ -1,0 +1,21 @@
+
+;[[HELP|HELP <faction no.> GIVE]]
+:Your own units will accept everything given to them by units of the indicated faction (silver, items etc.) This order is like a permanent [[CONTACT]] order.
+:In order to give men or units to units of a different faction, the receiving unit still has to use the order [[CONTACT|CONTACT <unit no.>]]
+
+;[[HELP|HELP <faction no.> COMBAT]]
+:Your own units (both FRONT or REAR position) will take part in any fight in which the indicated allied faction is attacked. If you are allied with both sides of the warring factions your units will not take part in the fight.
+
+;[[HELP|HELP <faction no.> SILVER]]
+:You will support the indicated faction with silver coins if necessary. Should any of the other faction's units need silver for nourishment the silver will be taken from your faction. Your units will never give away silver that they need to support themselves.
+
+;[[HELP|HELP <faction no.> GUARD]]
+:Normally, if a region is guarded, no other faction will be able to tax, recruit or produce raw materials. Sometimes units moving through the guarded territory may be stopped.
+:If you order your faction to [[HELP|HELP <faction no.> GUARD]], the indicated faction will be allowed to move, tax or produce raw materials in regions guarded by your faction.
+:This order will also allow the indicated faction to enter your ships and castles.
+
+;[[HELP|HELP <faction no.> FACTIONSTEALTH]]
+:If you disguise your units via the [[HIDE|HIDE FACTION NUMBER faction-id]] order as belonging to a different faction, all factions provided with this help status can discover the true identity of such units.
+
+;[[HELP|HELP <faction no.> ALL]]
+:This order will help the indicated faction in all of the above areas.

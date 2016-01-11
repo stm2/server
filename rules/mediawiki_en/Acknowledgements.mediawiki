@@ -1,0 +1,10 @@
+Many people have helped to make Eressea the game it is today. The development team would like to thank (in no particular order):
+
+* Benni Bärmann, Sören Schwarz, Martin Hershoff, Ingo Wilken and Stefan Reich for additional programming.
+* The volunteers of eressea-help for relieving us of much of the support work.
+* The authors of all the nice tools for Eressea.
+* Everyone who ever organized one of the Eressea gatherings.
+* Christian Büthe and Raphael Sturm, as well as everyone else who took part in the often heated debates about gameplay.
+* Andreas Krawinkel, for his technical support.
+
+Special thanks goes to Alex Schröder, who published his source for German Atlantis, and Russell Wallace, who invented and wrote the original Atlantis.

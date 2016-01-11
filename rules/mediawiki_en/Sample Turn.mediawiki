@@ -1,0 +1,67 @@
+An extended version of these orders was actually the first turn of a real faction. It might not be the best way to start, though. Note that all orders exceeding one line are augmented with a \ (backslash) at the line break.
+
+   ERESSEA 1 "gnuibaz" ; server generated password
+  
+   ; ECHECK -Len -z -l -w4 -r75
+  
+   REGION 0,0;      Xontormia
+   Unit 1;   Unit 1 [1,7000$]
+     Name Faction "Hekolat's disciple of the blue moon"
+     Name Unit "Ibna Hekolat"
+     Describe Unit "A keen eye and a strong arm \
+          are this man's riches."
+     Recruit 1
+     Learn Magic
+     Password "Never make your password public"
+  
+     Make Temp 1
+       Name Unit "Yob Nakkela"
+       Describe Unit "A roaming monk."
+       Recruit 1
+       Move west
+     End
+     Give Temp 1 500 silver
+  
+     Make Temp 2
+       Name Unit "Kensanata's Lumberjacks"
+       Recruit 3
+       Learn Forestry
+     End
+     Give Temp 2 300 silver
+  
+     Make Temp 3
+       Name Unit "Marina Nakkela"
+       Describe Unit "A roaming ambassador."
+       Recruit 1
+       Move east
+     End
+     Give Temp 3 300 silver
+  
+     Make Temp 4
+       Name Unit "Parsival's Men"
+       Describe Unit "Every evening they entertain the locals \
+            with their feats."
+       Recruit 10
+       Learn Entertainment
+     End
+     Give Temp 4 1000 silver
+  
+     Make Temp 5
+       Name Unit "The Guard"
+       Describe Unit "They provide for law and order in this \
+              region."
+       Recruit 10
+       Learn Polearm
+     End
+     Give Temp 5 1000 silver
+  
+     Make Temp 6
+       Name Unit "Mandrago"
+       Describe Unit "Dripping with sweat they toil \
+            in their smithy."
+       Recruit 5
+       Learn Weaponsmithing
+     End
+     Give Temp 6 500 silver
+  
+   Next

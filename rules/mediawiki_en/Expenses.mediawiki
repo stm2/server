@@ -1,0 +1,13 @@
+== food, maintenance recruitment costs ==
+
+Every person of a faction and each peasant require 10 silver each turn to buy themselves the supplies needed to survive. Units of a faction help each other with silver when staying in the same region, i.e. it is basically enough if one unit has enough silver for all persons present (which can lead to catastrophes when done wrong and nobody else has any silver!). Units which move have to be suplied where they will arrive. Usually this is done by having the moving unit carry enough silver to feed itself.
+
+Without enough silver, units will suffer from hunger. Each starving unit is damaged by between 13 and 24 points of damage. Halflings are an exception: these greedy small folk suffer between 15 and 28 points of damage whenever there is nothing for dinner. If a person is damaged more than it has hitpoints, it will die. A starving unit is not able to do anything besides WORK, and it cannot give persons to other units. (Exception to that are [[Races|Demons]].) Finally, the skill levels of starving units are reduced by half (i. e. the effective level of skill is reduced by half, rounded down).
+
+Even some buildings require weekly maintenance costs in order to function and not collapse. These maintenance costs are due at the start of each turn, they must be collected the turn before and are due as soon as the construction of the building has started (so it's the same with unfinished buildings). If there is not enough money, the building will not function. If there is enough money by the end of the turn, the building will be protected from collapsing at least. More information on buildings can be found [[Buildings|here]].
+
+If you want to recruit persons, you will not need anything more than some silver, because the peasants to be recruited are often especially hungry and thirsty. For each person that is going to be recruited you must to pay them between 40 and 150 silver per person. The exact cost depends upon the faction's race, more information can be found in the [[Races|races]] chapter.
+
+If a region is guarded by a foreign faction, that has neither set HELP GUARD nor HELP ALL for your faction, you cannot recruit any new persons in that region. There is one exception to this: if your STEALTH exceeds the PERCEPTION of the guarding faction you can recruit new persons. Newly created (empty) TEMP-Units can recruit new persons if the unit issuing the MAKE TEMP command is 'invisible' to the guarding faction.
+
+You can only recruit persons of your own race! Persons from foreign races can only be admitted to human factions and they have to be given to them by other factions.

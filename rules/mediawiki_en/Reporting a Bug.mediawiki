@@ -1,0 +1,14 @@
+== How to report a bug ==
+
+If you encounter a bug, no matter how serious it may seem, please report it. But first, read the manual again. Many of the reported "bugs" stem from simple misunderstandings. Check if there were any recent announcements about the kind of bug you reported. Don't report known bugs. If you can, please ask experienced players if what you see is really a bug. If you find out it is, or if you're really, really sure, send it to the developers, together with a good bug report.
+
+A good bug report should include:
+
+* Your faction's id.
+* The ids of all involved units, ships, or other objects.
+* Messages from the report that are relevant to the event.
+* The full name of the region it occurred in.
+* A cutout from the text report of the region, or the relevant parts of the region.
+* Orders for the units involved.
+
+Use [http://eressea.upb.de/mantis/ Mantis] to report an issue by providing this information including a detailed description. Do not send all of your orders, the full report or the computer report. That's usually far too much information. We try to reply to all bug reports, but sometimes it might take a while.

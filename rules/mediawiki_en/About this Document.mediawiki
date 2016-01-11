@@ -1,0 +1,5 @@
+;Initial HTML and LaTeX version:
+:Henning Peters
+
+;English version:
+:Enno Rehling, Jonathan Hsu, Jens Feldkamp, Art Dieterly, Gary Jones, Thomas Deiler, Stefan Garnatz, Hans Germany, Michael Klöppel, Zerofoks, Hephaistos

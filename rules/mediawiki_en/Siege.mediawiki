@@ -1,0 +1,7 @@
+If you have enough armed men, you can besiege a castle. How many men you need depends on the size of the castle: for every size-point of the castle you need two men. Therefore you need 128 men to siege a size 64 castle. These men must be armed or have a catapult, and must be able to use their weapons (i.e. have the appropriate weapon skills).
+
+You must guard the region with the castle one week before you can start sieging the castle. After this, in the next turn, you can start the siege. Therefore you must be careful about guarding units of foreign factions. If a castle is besieged, its inhabitants are cut of from the outer world and all sources of income. If the besiegers have catapults, they fire these and slowly destroy the castle.
+
+If a unit's stealth skill exceeds the perception skill of the besieging unit by at least three levels, it can leave and enter the castle at will e.g. to smuggle goods into the castle.
+
+You can besiege a castle as long as you want. If the besieged faction can't end the siege through negotiation then only an attack against the besieging faction can end the siege.

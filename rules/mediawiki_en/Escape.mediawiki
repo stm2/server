@@ -1,0 +1,12 @@
+Men trying to escape will attempt to do so every round, and may take damage before they successfully escape.
+
+* Men with [[COMBAT|COMBAT FLEE]] will try to flee if they are [[ATTACK]]ed.
+* Men with [[COMBAT|COMBAT NOT]] or [[COMBAT|COMBAT DEFENSIVE]] will try to flee if they fall below 90% of their total hit points.
+* Men with [[COMBAT]] or [[COMBAT|COMBAT REAR]] will try to flee if they fall below 20% of their total hit points.
+* Men with [[COMBAT|COMBAT AGGRESSIVE]] will never flee.
+
+The basic chance to flee is 25% (50% for halflings) plus 10% if one has a horse and 5% for each level in stealth, but its capped at 75% (90% for halflings).
+
+Units that flee retreat from battle and watch its outcome from a safe distance. If during a fight at least one person is fleeing from a unit, then the entire unit leaves the building they were standing in.
+
+All units with STATUS FLEE are allowed to move after the battle, even if they aren't allowed to execute long orders. Units with STATUS FLEE cannot guard the region. If a unit with this status is currently guarding a region, it will stop doing so from this week on.

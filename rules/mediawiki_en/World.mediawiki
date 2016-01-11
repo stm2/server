@@ -1,0 +1,101 @@
+== Geography of Eressea ==
+
+::''Restfully, Selen Ard'Ragorn watched the door when Rahel, her young novice, clumsily stumbled into the small chamber in the library panel of the temple. A little bit amused she regarded the nervously twitching tail of the young cat, who desperatly but unsuccessfully tried to even her creased robe.''
+
+::''"Come closer, my child", Selen asked. Rahel bashfully neared the decorated table where the abbess sat. As the young cat caught sight of the big parchment spreaded on the table, she amazedly miaowed. She saw a detailed handdrawn map of the whole known world. Informations from all countries controlled by the Gold-Eyed Cat had been collected and sketched in this map by skilled hands. Rahel discerned Andune, the little island almost divided into two, amid of the sea. Around Andune she saw the well-known contours of the neighboring islands, embedded in the eternal ocean.''
+
+The world of Eressea consists of many islands and continents with entirely different sizes. Islands and oceans are segmented to regions. The units of the players, buildings and ships as well as peasants and several raw materials are found in the regions.
+
+Rahel still regarded the map, which was actually secret, when Selen pointed her finger on an island at the margin of the map. "Look at this, Rahel. There is an island that was just sketched in. Do you understand the way our mapmakers work?"
+
+
+http://www.eressea.de/rules/de/pics/Karte.gif
+
+
+
+::''The novice contemplated the map. Appearently it was confined to the essential, the discovered districts where only roughly classified. Rahel recognised forrests and mountains, many swamps and some plains.''
+
+In this example, a swamp is located at (0,0), in its northeast at (0,1) you can find a mountain. Every faction in Eressea has its own coordinate system, which can be shifted with the command [[ORIGIN]]. This can be comfortable if you want to adjust your map to the one of another faction.
+
+::''"Good", Selen comfirmed the so much younger cat. "These maps are mostly used for navigating our ships. But you notice they contain only little informations. Because of that..." - Selen opened a big, heavy book beside the map, - "...our scouts send us detailled reports about the explored regions every week. We gather these reports, because they are important for our decisions."''
+
+== The Lands of Eressea ==
+
+::''Selen pointed her finger on the open page. "Take a look at this and tell me, what you see." Rahel looked at the text and started.''
+
+The report is your survey of all regions your units passed through, you can see from a lighthouse and of course of those your units are staying in:
+
+  Tetos (-1,0), plain, 1042 peasants, 73/5 trees, 10953 silver, 132 horses. 
+  To the northwest lies the the forest of Faldorn (-2,1), to the northeast 
+  the plain of Litforuvys (-1,1), to the east the plain of Tumyvesfod (0,0),
+  to the southeast the swamp of Titymovut (0,-1), to the southwest the plain
+  of Livedfir (-1,-1) an to the west the mountain of Nipevan (-2,0).
+
+::''"First, there is the region's name and of what kind it is. We can also see how many peasants live there and how much silver they've got. Finally, the scout has reported the amount of trees and horses he has found in this region."''
+
+You can integrate peasants in your party by the command [[RECRUIT]], [[MAKE]] is used to cut trees and tame wild horses.
+
+::''"Look, Rahel. There are some more informations."''
+
+  The local market offers incense at a price of 4 silver. Traders can 
+  sell balm for 12 silver, spice for 10 silver, gems for 21 silver, myrrh 
+  for 15 silver, oil for 12 silver and silk for 30 silver.
+  
+  Statistics for Tetos (-1,0):
+  
+  Entertainment: max. 547 silver
+  Worker's salary: 11 silver
+  Recruits: max. 26 peasants
+  Luxury goods at this price: 10
+  People: 20
+  silver: 821
+  wood: 13
+  swords: 2
+  horses: 4
+
+::''"This are further informations our scouts found out. First, they went to the market and notated the prices. Then there are facts about the peasants and their money: How much silver will they spend for musicians and showmen, how are the wages for simple jobs, how many peasants are willing to join a faction and what amount of luxuries can be buyed or sold on the market to the prices above. In the last lines is remarked, how many members of our faction are staying in that region and what items they have got."''
+
+At Luxuries you can see the amount of goods buyed or sold by the peasants for the "list price" (see also Luxuries). Trading more goods will change the price durably! For further informations look at the chapter [[TRADE]].
+
+::''"Excellent, my child. This is a complete report. Sometimes we only get less extensive ones, especially when our scout only passed through a region with his horse."''
+
+::''Selen pointed at a chair. "You may sit down." Rahel took place, purring silent, a littlebit satisfied she had not disappointed her teacher, but also wondering what comes next. The ordinated of the Gold-Eyed Cat leaned back in her chair and watched her. "This are just numbers, usefull and worth to be preserved. But exploring the laws they are based on is very important, too."''
+
+::''Standing up, Selen took out another parchment of the bag she placed beneath the table and spreaded it above the map. Rahel tried to understand the chaotic drawing of almost horizontal lines, but she couldn't make head or tail of it. "Explain it to me, please."''
+
+::''"This, my child, is an attempt to find out about natural laws. Every week, the amount of peasants, trees and horses are changing in the regions. They die, are born or emigrate. I tried to find out why they do so, whithout having asked them." A silent smile appeared on Selens face. "It seems that most depends on the space, peasants, trees and horses must share." The young novice pointed at two little drawings scribbled at the edge of the parchment. "And what does this mean? It looks similar to the big one." "In the big picture, I sketched in the figures of a plain near the ocean with fertile soil. The little one describes the development of an inhospitable swamp. You see, it's similar, but the swamp's got less of all.''
+
+See also [[RECRUIT]], [[ENTERTAIN]]
+
+== The Calendar of Eressea ==
+
+Selen Ard'Ragorn rised of her chair. Rahel also stood up and admired how supple the old abtress moved. She already knew what would follow. At the end of every instruction, they were taking a walk through the spacious garden of the temple. Thereby, she also got some more lections.
+
+They walked through a little grove, when Selen said: "Do you notice the descending sun? So early... Soon, it will be winter. Anon, the "storm moon" will be expelled by "hearth fire". A deprivating time for most of us. Very hard for the insects, they can't breed in winter." "But, magistra, our sailors are relieved that the time of destructive storms has gone and the sea turns safe again." "You're right, Rahel. So, you can find everywhere something positive."
+
+Even when it was night, the guardians of the temple saw the two cats strolling through the garden, lightened by magic...
+
+Eresseas year is divided into nine months with each three weeks:
+
+{| border="0" cellspacing="0" align="center"
+|- style="background-color:#eeeeee"
+|harvest moon 	||summer
+|- style="background-color:#cccccc"
+|impenetrable fog 	||autumn
+|- style="background-color:#eeeeee"
+|storm moon 	||autumn
+|- style="background-color:#cccccc"
+|hearth fire 	||winter
+|- style="background-color:#eeeeee"
+|icewind 	||winter
+|- style="background-color:#cccccc"
+|snowbane 	||winter
+|- style="background-color:#eeeeee"
+|flowerrain 	||spring
+|- style="background-color:#cccccc"
+|mild winds 	||spring
+|- style="background-color:#eeeeee"
+|sunfire 	||summer
+|}
+
+Every turn of the game corresponds one week in Eresseas world. Many things can be done in one week. But there are some actions lasting almost the whole week, you can only do one of them in one turn (See also the chapter [[Advice for Beginners|Length of commands]]).

@@ -1,0 +1,8 @@
+== The Races of Eressea ==
+
+When you start the game, you must choose one of the following races. Your faction will consist of people from this race only. A person can carry a weight of up to 5.4 stones (1 st = 14 lb), and weighs 10 st., with the exception of trolls, goblins and several monsters.
+
+Choose carefully, every race has its advantages and disadvantages, encouraging cooperation between players.
+
+# [[Profiles]]
+# [[Modifiers]]

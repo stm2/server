@@ -1,0 +1,48 @@
+All units need skills to produce or use items, gather knowledge about magic or special information of regions etc. Skills are always accounted on a per-unit basis, i.e. all members of a unit have the same skills. Skills can be acquired and improved by learning them, some skills also improve when being used.
+
+The progress of learning a skill is measured in a so-called skill level which is recorded for every skill the unit masters. A skill level of 0 usually means that the unit is not experienced in that skill and thus cannot apply it. The higher the skill level the better a unit masters that skill.
+
+Only Aquarians can [[LEARN]] on a ship which is on the ocean. If the ship is at land, all passengers can do something, except for the captain of the ship, should he wish to sail somewhere. Pay attention to the fact that men on the ship cannot [[WORK]], [[TAX]], or [[ENTERTAIN]] if the region is guarded by an un-allied faction.
+
+== Learning ==
+
+A unit can try to advance in a skill by spending a turn learning it using the [[LEARN]] order. Learning a skill for a turn is not equivalent to reaching a new skill level since it becomes more and more difficult to advance in a skill with higher levels, i.e. the unit has to learn longer for each new skill level.
+
+Basically, a unit has to learn for as many turns as the value of the next skill level it can reach to actually acquire this level. Thus a unit at skill level 0 has to learn on average for 1 week to reach level 1. Getting to level 2 now takes another 2 weeks on average, acquiring level 3 another 3 weeks and so on.
+
+Your units can have good or bad luck with learning and the duration of gaining a new skill level may vary somewhat but on average you can stick to the above rule. How long your units have to learn for certain skill levels also depends on the skill modifiers of your race.
+
+== Skill Modifiers ==
+
+All races have different [[Modifiers|modifiers]] on their skills (have a look at the race [[Profiles|profiles]] on how race and terrain affect skills and learning). A positive skill modifier makes it easier for units of that race to learn or apply a skill, a negative modifier makes it harder, respectively.
+
+The effective skill level is calculated simply by adding the modifier to the skill level acquired by learning the skill. Usually, the effective skill level is your daily bread and butter: it is listed in your report and accounted for when applying skills, i.e. producing items, building ships, fighting etc. So in general, these rules always refer to the modified skill level if not stated otherwise.
+
+Take a freshly recruitet Dwarven unit for example:
+At first it has no skills at all but to earn some money it needs to learn the taxation skill which it has a modifier of +1 for. Without learning, this modifier doesn't buy the unit anything, it still has to learn at least for one turn and thus reach skill level 1. Now the modifier comes into play - its value is added to the skill level reached through learning so the effective skill level is 2. This modified skill level is what the unit can actually make use of: in this case when taxing the peasants it is accounted a skill level of 2 instead of 1.
+
+Obviously, skill modifiers influence how quickly a unit can reach a certain skill level. E.g. Dwarfs need to learn the taxation skill only once to reach a skill level of 2 while Elves (with a modifier of 0) need to reach levels 1 and 2 successively taking them 3 weeks on average to get there.
+
+With a negative modifier things are essentially the same: a Halfling unit learning taxation for one turn would reach skill level 1 without taking the modifier into account. Unfortunately, Halflings have a pretty lousy physique to make much of an impression on peasants (actually, anyone) to get taxes out of them so their modifier on taxation is -1. Thus, one turn of learning does not get them anywhere, they still have an effective skill level of 0 (which might not show up in your report, still the Eressea server records it). The unit has to learn for another two weeks (on average, as always) to reach an effective skill level of 1 while that amount of learning would suffice for level 2 with Elves and level 3 with Dwarfes.
+
+== Applying Skills ==
+
+In most cases it should be obvious which skill you require for which action in Eressea; details are listed below. Most skills a unit can actively use or apply (e.g. production skills) improve through such usage. But this is a rather slow process - on average it takes three times longer to reach the next skill level compared to learning.
+
+== Teaching ==
+
+In Eressea, highly trained units can pass their experience to units with lower skill levels which cuts the time they spend learning for a skill level by half. For this to work the teaching unit uses the [[TEACH|TEACH <unit-id> [<unit-id> ...]]] order specifying the pupil units it wants to teach and the pupil unit uses the [[LEARN|LEARN <skill>]] order with the skill to learn. The teacher does not specify the skill he wants to train a pupil in as this is determined by the pupil's order. Thus a teacher could even teach different pupil units in different skills.
+
+Teaching comes with these restrictions: the skill level of the teaching unit has to exceed the unit's skill level by at least 2 levels. Furthermore a teacher can share his knowledge with up to ten pupils, thus common combinations of teacher-to-pupil unit sizes are 1 to 10 or 10 to 100. When more than ten pupils try to benefit from a teacher their progress in learning is reduced proportionally.
+
+== Transferring and Recruiting Men ==
+
+When men are added to a unit, these men bring their knowledge or their inexperience with them, which can lead to a dilution of the unit's skills.
+
+To determine a skill level after adding men to a unit calculate the average of the original skill levels weighted with the amount of men: when a unit with 2 fighters at a melee skill level of 3 recruits one peasant (which is treated as if a person with skill level 0 is added to the unit), the resulting skill level of that unit is (<tt><existing men> * <skill level> + <added men> * <skill level>) / <total men></tt>, i.e. <tt>(2 * 3 + 1 * 0) / 3 = 2</tt>).
+
+== Expensive Skills ==
+
+The skills magic, alchemy, herbalism, espionage, and tactics are all difficult to learn, hence you must pay to learn them. Espionage costs 100 silver per man for a week of training. Alchemy, herbalism, and tactics each cost 200 silver per man for a week of training. The costs for learning magic increase with skill level. You start with a cost of 100 silver, and may end up with a training cost of over 1000 silver. This [[Magic|table]] shows the costs for increasing magic from level 0 to level 20. It does not matter if the unit has a teacher or not (although if it does, it will gain 60 skill points). The unit which wants to learn (or be taught) must have all the silver in its possession.
+
+If the unit does not have the full amount of silver it's progress in learning is reduced proportionally.

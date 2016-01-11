@@ -1,0 +1,64 @@
+== Keep your Password Secret ==
+
+There have been several occasions in the past when careless players lost their factions because another player submitted a QUIT order in their name. This can only happen if you give away your password. You should never give the password to anyone, not even your allies, and you should change it on a regular basis. Nothing is worse than losing two years of empire-building to something like this.
+
+== Eressea is a Fantasy Game ==
+
+While there are many players that play Eressea simply for the strategic aspects, the majority does a good deal of socializing and roleplaying. Try adding some atmosphere to the world, or at least don't break the atmosphere intentionally. Names like "Cyborg Elves" are out of place in Eressea.
+
+== How to Get Gelp ==
+
+If you have problems when writing your first orders or if you don't understand why something happened, you can be helped. E-mails to [mailto:eressea-help@eressea.kn-bremen.de eressea-help@eressea.kn-bremen.de] are answered by a team of volunteers. Almost everyone makes a mistake in the beginning. Even experienced players have lost half their resources in an initial blunder and recovered. Don't be discouraged if something goes wrong.
+
+== Use ECheck ==
+
+ECheck is a little tool that checks your orders for 'grammatical' correctness. When submitting orders you get an automated reply with a very simple syntactical check. By installing ECheck at home the checks can be much more thorough. Be warned, sometimes ECheck accepts/rejects orders the server doesn't and the server may not be using the most recent version. ECheck was not written by the creators of Eressea and is not always perfect.
+
+== Comment Your Orders ==
+
+There are two forms of comments; persistent comments beginning with // (two slashes) 'survive' a turn, i.e. your next turn's report still contains them. Temporary comments starting with ; (a semicolon) are discarded by the Eressea server. Persistent comments in your orders can help you to remember why you did something or what you want to do next week. They can also be very helpful if you're on vacation and someone else is taking care of your faction.
+
+  REGION 4,4 ; Lochinver
+  ; remember to recruit a magician before sending this in
+  UNIT zbt ; Ezra, 2 elves
+  MAKE swords
+  GIVE sjur 5 swords
+  // next turn, make spears for 45zt
+
+== What You Should Do in the First Few Weeks ==
+
+Your first goal should be to explore your immediate surroundings and find out who your neighbors are. Look for the important resources, stake your claims, and get in touch with the other players. When sending out scouts, make sure they have enough money to survive but not so much that they cannot move. If the scouting unit needs to recruit, remember that it uses some of the money that you give it to pay the recruitment.
+
+You should also start to create an infrastructure. Try getting a regular income either through entertainment or taxation; they are the easiest forms of making money. Working is not, and you cannot trade before you have at least two regions with some form of castle. Aim at getting your first armed units. There are some skills that may not seem important at the beginning but you should nevertheless try to learn them as soon as possible - perception and tactics are two of them often neglected by beginners.
+
+Keep an eye on the expenses to supply your units with food. Large units need huge sums of silver to survive and if they do not have it they will starve. You need only one unit with the sufficient amount of silver, it will give as much to your other units as they need to survive. However, remember that your startup money is meant to be invested. Only by spending it your faction can grow and your units improve their abilities. If you save more than you need to, you will gradually fall behind.
+
+== There is no 'Winner' ==
+
+The open-ended nature of Eressea ensures that the game cannot be won by a single player. There is not even a goal that you should achieve other than enjoying the game. Even so it is possible to lose. A warmonger may wipe you out, powerful monsters might threaten your people, and you might consider giving up. The history of Eressea is filled with such defeats. But there are also inspiring stories of people who did not give up even in the grimmest situations. Some chose exile and shipped the last of their units into a new land, rebuilding what they lost, finding new allies and occasionally triumphing after many years. There is probably nothing that is more rewarding than making such a comeback. Don't give up lightly. After all, it is just a game.
+
+== Submitting Orders ==
+
+The easiest way to write orders is to use the order template at the end of your report. It lists all your units with their default orders and you simply replace these with the orders you would like them to execute in the coming turn. Simply cut and paste the template from the report, edit the orders, and mail the result back to the game server.
+
+While there is no official graphical interface for Eressea, several have been created by dedicated players. At the time of this writing, Magellan and EMap are by far the most popular of them, each boasting a user base of several hundred. We recommend that you give them a try.
+
+Except for your password, the orders are case-insensitive. Names that include spaces must be quoted. Some examples:
+
+  NAME SHIP "Titanic II"
+  USE "Great Amulet of the Chickenpox"
+  LEARN "Unarmed Combat"
+
+== Long and short orders ==
+
+There are two fundamental types of orders. Long orders take an entire turn to complete, and your unit can only perform one of them during a turn. Short orders are instantaneous, and any number of them can be issued.
+
+The long orders are:
+
+::[[BUY]], [[CAST]], [[ENTERTAIN]], [[FOLLLOW]], [[GROW]], [[LEARN]], [[MAKE]] (except [[MAKE|MAKE TEMP]]), [[MOVE]], [[PLANT]], [[RESEARCH]], [[RIDE]], [[ROUTE]], [[SELL]], [[SIEGE]], [[SPY]], [[STEAL]], [[TAX]], [[TEACH]], [[WORK]],
+
+If a unit receives a long order, this order will become its persistent default order for the next turn. Your order template for the next week will show it. The only exception to this is [[MOVE]].
+
+== How to make short orders persistent using @ ==
+
+Sometimes giving the same short order continuously makes sense even for short orders. A weaponsmith might want to always give the swords he made to another unit using a [[GIVE]] order. This can be achieved by prefixing the order with a @ character. The order [[GIVE|@GIVE trsp 100 sword]] for example would become a persistent order that reappears in your order template every week.

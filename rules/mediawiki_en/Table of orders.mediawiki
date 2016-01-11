@@ -1,0 +1,224 @@
+The "S/L" column indicates whether an order is [[Advice_for_Beginners|(S)hort or (L)ong]].
+
+{| border="0" cellspacing="0" align="center"
+|+ Short List of Orders
+|- style="background-color:#aaaaaa"
+! Order !! Description 	!! S/L
+|- style="background-color:#eeeeee"
+|<tt>[[ATTACK|ATTACK unit-id]]</tt> 	||attacks the unit 	||(L)
+|- style="background-color:#cccccc"
+|<tt>[[BANNER|BANNER "text"]]</tt>  	||Sets text for the address list 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[BUY|BUY amount luxury-item]]</tt> ||buy luxury item 	||L
+|- style="background-color:#cccccc"
+|<tt>[[CARRY|CARRY unit-id]]</tt>  	||transport another unit 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[CAST|CAST "spell"]]</tt>   	||cast spell 	||L
+|- style="background-color:#cccccc"
+|<tt>[[CLAIM|CLAIM [amount] item]]</tt> 	||claims items from the faction pool 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[COMBAT]]</tt>         	||set the combat behaviour 	||S
+|- style="background-color:#cccccc"
+|<tt>[[COMBAT|COMBAT NOT]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[COMBAT|COMBAT REAR]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[COMBAT|COMBATSPELL "spell"]]</tt> 	||set spell for combat 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[COMBAT|CONTACT unit-id]]</tt> 	||contact foreign unit 	||S
+|- style="background-color:#cccccc"
+|<tt>[[DEFAULT|DEFAULT order]]</tt> 	||sets the default order for the next turn 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[DESCRIBE|DESCRIBE BUILDING "text"]]</tt> ||	  	||S
+|- style="background-color:#cccccc"
+|<tt>[[DESCRIBE|DESCRIBE PRIVATE "text"]]</tt> ||	  	||S
+|- style="background-color:#eeeeee"
+|<tt>[[DESCRIBE|DESCRIBE REGION "text"]]</tt> ||	  	||S
+|- style="background-color:#cccccc"
+|<tt>[[DESCRIBE|DESCRIBE SHIP "text"]]</tt> 	||  	||S
+|- style="background-color:#eeeeee"
+|<tt>[[DESCRIBE|DESCRIBE UNIT "text"]]</tt> 	||describes object 	||S
+|- style="background-color:#cccccc"
+|<tt>[[DESTROY]]</tt>        	||"building, ship, or road" 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[EMAIL|EMAIL email@adresse]]</tt> 	||sets the e-mail address the report is sent to 	||S
+|- style="background-color:#cccccc"
+|<tt>[[END]]</tt> 	||ends a MAKE TEMP block 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[ENTER|ENTER CASTLE building-id]]</tt> 	||Enter building. CASTLE must be used regardless of building type 	||S
+|- style="background-color:#cccccc"
+|<tt>[[ENTER|ENTER SHIP ship-id]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[ENTERTAIN|ENTERTAIN [amount]]]</tt> 	||earn 20 or more silver 	||L
+|- style="background-color:#cccccc"
+|<tt>[[ERESSEA|ERESSEA faction-id "password"]]</tt> 	||marks the beginning of a faction's orders 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[FOLLOW|FOLLOW SHIP ship-id]]</tt> 	||follows a ship 	||(L)
+|- style="background-color:#cccccc"
+|<tt>[[FOLLOW|FOLLOW UNIT unit-id]]</tt> 	||follows a unit 	||(L)
+|- style="background-color:#eeeeee"
+|<tt>[[FORGET|FORGET skill]]</tt> 	||forget the skill 	||S
+|- style="background-color:#cccccc"
+|<tt>[[GIVE|GIVE 0 amount MEN]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[GIVE|GIVE 0 amount item]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[GIVE|GIVE unit-id CONTROL]]</tt> 	  	|| ||S
+|- style="backgroun]]</tt>d-color:#eeeeee"
+|<tt>[[GIVE|GIVE unit-id HERBS]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[GIVE|GIVE unit-id UNIT]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[GIVE|GIVE unit-id amount MEN]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[GIVE|GIVE unit-id amount item]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[GROUP|GROUP ["name"]]]</tt> 	||forms groups of units 	||S
+|- style="background-color:#cccccc"
+|<tt>[[GROW]]</tt> 	||grow herbs or horses (needs a stable) 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[GUARD|GUARD [NOT]]]</tt> 	||guard the region 	||S
+|- style="background-color:#cccccc"
+|<tt>[[HELP|HELP faction-id ALL [NOT]]]</tt> 	||set up/revoke an unilateralb> alliance 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[HELP|HELP faction-id COMBAT [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[HELP|HELP faction-id GIVE [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[HELP|HELP faction-id GUARD [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[HELP|HELP faction-id silver [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[HIDE|HIDE FACTION [NOT]]]</tt> 	||hide faction membership 	||S
+|- style="background-color:#cccccc"
+|<tt>[[HIDE|HIDE [level]]]</tt> 	||set hide level 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[HIDE|HIDE race]]</tt> 	||Demon: disguise as another race 	||S
+|- style="background-color:#cccccc"
+|<tt>[[LEARN|LEARN skill]]</tt> 	||learn a skill 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[LEAVE]]</tt> 	||leave ship or building 	||S
+|- style="background-color:#cccccc"
+|<tt>[[MAKE]]</tt> 	||extend a building or ship 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[MAKE|MAKE TEMP unit-alias-id ["name"]]]</tt> 	||creates a new unit 	||S
+|- style="background-color:#cccccc"
+|<tt>[[MAKE|MAKE [amount] HERBS]]</tt> 	||pick herbs 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[MAKE|MAKE [amount] item]]</tt> 	||make an item 	||L
+|- style="background-color:#cccccc"
+|<tt>[[MAKE|MAKE [amount] potion]]</tt> 	||make a potion 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[MAKE|MAKE [level] ROAD direction]]</tt> 	||build road 	||L
+|- style="background-color:#cccccc"
+|<tt>[[MAKE|MAKE [level] SHIP [ship-id]]]</tt> 	||extend a ship 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[MAKE|MAKE [level] building-type [building-id]]]</tt> 	||erect or or extend a building 	||L
+|- style="background-color:#cccccc"
+|<tt>[[MAKE|MAKE [level] ship-type]]</tt> 	||build a new ship 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[MESSAGE|MESSAGE CASTLE building-id "text"]]</tt> 	||Send a message 	||S
+|- style="background-color:#cccccc"
+|<tt>[[MESSAGE|MESSAGE FACTION faction-id "text"]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[MESSAGE|MESSAGE REGION "text"]]</tt> 	||Send a message 	||S
+|- style="background-color:#cccccc"
+|<tt>[[MESSAGE|MESSAGE SHIP ship-id "text"]]</tt> 	||Send a message 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[MESSAGE|MESSAGE UNIT unit-id "text"]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[MOVE|MOVE direction [direction etc.]]]</tt> 	||move unit 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[NAME|NAME [FOREIGN] BUILDING "name"]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[NAME|NAME [FOREIGN] FACTION "name"]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[NAME|NAME REGION "name"]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[NAME|NAME [FOREIGN] SHIP "name"]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[NAME|NAME [FOREIGN] UNIT "name"]]</tt> 	||names the specified object 	||S
+|- style="background-color:#cccccc"
+|<tt>[[NEXT]]</tt> 	||ends the orders of a faction 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[NUMBER|NUMBER CASTLE [new_id]]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[NUMBER|NUMBER SHIP [new_id]]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[NUMBER|NUMBER UNIT [new_id]]]</tt> 	||gives a new id 	||S
+|- style="background-color:#cccccc"
+|<tt>[[OPTION|OPTION ADDRESSES [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[OPTION|OPTION BZIP2 [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[OPTION|OPTION COMPUTER [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[OPTION|OPTION ITEMPOOL [NOT]]]</tt> 	||Turns the item pool on or off. 	||S
+|- style="background-color:#cccccc"
+|<tt>[[OPTION|OPTION REPORT [NOT]]]</tt> 	||various options 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[OPTION|OPTION SILVERPOOL [NOT]]]</tt> 	||Turns the silver pool on or off. 	||S
+|- style="background-color:#cccccc"
+|<tt>[[OPTION|OPTION STATISTICS [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[OPTION|OPTION SCORE [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[OPTION|OPTION TEMPLATE [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[OPTION|OPTION ZIPPED [NOT]]]</tt> 	  	|| ||S
+|- style="background-color:#cccccc"
+|<tt>[[ORIGIN|ORIGIN [x y]]]</tt> 	||Sets the origin of the coordinate system to x,y 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[PASSWORD|PASSWORD "new password"]]</tt> 	||set new password 	||S
+|- style="background-color:#cccccc"
+|<tt>[[PIRACY|PIRACY [faction_1 [faction_2 [...] ] ] ]]</tt> 	||commit acts of piracy 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[PLANT]]</tt> 	||plant seed, mallorn seed, or herb 	||L
+|- style="background-color:#cccccc"
+|<tt>[[PREFIX|PREFIX [prefix]]]</tt> 	||prepend the race name with a prefix 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[PROMOTION]]</tt> 	||promote a unit to heroes 	||S
+|- style="background-color:#cccccc"
+|<tt>[[QUIT|QUIT "password"]]</tt> 	||quit the game 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[RECRUIT|RECRUIT amount]]</tt> 	||recruit more men 	||S
+|- style="background-color:#cccccc"
+|<tt>[[REGION|REGION x,y]]</tt> 	||no function (only for tools) 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[RESEARCH|RESEARCH HERBS]]</tt> 	||search for herbs 	||L
+|- style="background-color:#cccccc"
+|<tt>[[RESERVE|RESERVE amount item]]</tt> 	||reserve item 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[RESTART|RESTART race "password"]]</tt> 	||restarts a faction with a new race 	||S
+|- style="background-color:#cccccc"
+|<tt>[[RIDE|RIDE unit-id]]</tt> 	||be transported by unit-id 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[ROUTE|ROUTE direction [direction etc.]]]</tt> 	||travel 	||L
+|- style="background-color:#cccccc"
+|<tt>[[SABOTAGE|SABOTAGE SHIP]]</tt> 	  	|| ||L
+|- style="background-color:#eeeeee"
+|<tt>[[SELL|SELL amount luxury-product]]</tt> 	||sell specified luxury goods 	||L
+|- style="background-color:#cccccc"
+|<tt>[[SHOW|SHOW "spell"]]</tt> 	||retrieve spell description 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[SIEGE|SIEGE building-id]]</tt> 	||siege the building 	||L
+|- style="background-color:#cccccc"
+|<tt>[[SORT|SORT AFTER unit-id]]</tt> 	  	|| ||S
+|- style="background-color:#eeeeee"
+|<tt>[[SORT|SORT BEFORE unit-id]]</tt> 	||sort unit in report 	||S
+|- style="background-color:#cccccc"
+|<tt>[[SPY|SPY unit-id]]</tt> 	||spy on unit 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[STEAL|STEAL unit-id]]</tt> 	||steal 50 Silver or more 	||L
+|- style="background-color:#cccccc"
+|<tt>[[TAX|TAX [amount]]]</tt> 	||tax peasants (max. 20 silver/skill level) 	||L
+|- style="background-color:#eeeeee"
+|<tt>[[TEACH|TEACH unit-id [unit-id etc.]]]</tt> 	||teach units 	||L
+|- style="background-color:#cccccc"
+|<tt>[[UNIT|UNIT unit-id]]</tt> 	||marks the beginning of a unit's orders 	||S
+|- style="background-color:#eeeeee"
+|<tt>[[USE|USE potion]]</tt> 	||uses potion 	||S
+|- style="background-color:#cccccc"
+|<tt>[[WORK]]</tt> 	||earns 10 silver or more 	||L
+|-
+|}

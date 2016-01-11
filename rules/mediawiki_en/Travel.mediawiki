@@ -1,0 +1,37 @@
+== Movement: On Land and Sea ==
+
+In one week, a unit may move one land region by foot. If the unit has sufficient riding skill and an appropriate number of horses, the unit may move up to two land regions. If the regions are connected by roads, units on foot may move two land regions, and units mounted on horses may move up to three regions.
+
+In order to regulate unit movement, the world of Eressea is divided into a hexagonal grid. The six directions allowed are: Northeast, East, Southeat, Northwest, West, Southwest. Direct movement to the north or south is no possible.
+
+The [[CARRY|CARRY <unit id>]] order allows units to carry another whiel moving. The carried unit must be given the [[RIDE|RIDE <unit id>]] order. With the [[CARRY]] and [[RIDE]] system is is possible for units that have no riding skill to ride with a unit that does have riding skill and horses or carts. Units on foot can [[CARRY]] other units if their total carry capacity is sufficient. Carrying units do not need horses or carts, sufficient numbers of men can carry other units. See the races chapter for the weight and capacity of certain races.
+
+While travelling through a region, units can have their movement prevented by other units guarding the region with the [[GUARD]] order.
+
+A unit or ship is overloaded when its carrying capacity is exceeded. In all situations, any unit or ship that is overloaded cannot move. The weight a unit is carrying including silver and all items, as well as any units it is carrying. The table below lists the weights and carrying capacities of all races and other vehicles. [[Goods|This]] table lists the weights of all items in the game.
+
+{| border="0" cellspacing="1" align="center"
+|- style="background-color:#aaaaaa"
+!Race/Item 	!!Weight 	!!Carry Capacity
+|+ Weights and carrying capacities of races and vehicles. 
+|- style="background-color:#eeeeee"
+|Trolls 	||20 	||10.8
+|- style="background-color:#cccccc"
+|Goblins 	||6 	||4.4
+|- style="background-color:#eeeeee"
+|Other Races 	||10 	||5.4
+|- style="background-color:#cccccc"
+|Horse 	||50 	||20
+|- style="background-color:#eeeeee"
+|Cart 	||40 	||140
+|- style="background-color:#cccccc"
+|Boat 	||N/A 	||50
+|- style="background-color:#eeeeee"
+|Longboat 	||N/A 	||500
+|- style="background-color:#cccccc"
+|Dragonship 	||N/A 	||1000
+|- style="background-color:#eeeeee"
+|Trireme 	||N/A 	||2000
+|- style="background-color:#cccccc"
+|Caravel 	||N/A 	||3000
+|}

@@ -1,0 +1,5 @@
+Money makes the world go round; even in Eressea. Many different ways to earn money exist in Eressea: You can earn money by working, entertaining the peasants, collecting taxes, trading, or even theft.
+
+Working is more of a type of stopgap, units working will earn barely enough to feed themselves. You can make quite a lot of money with entertainment and taxation. Especially at the beginning of your ventures, trading might be the biggest source of income, profits of some thousands of silver are possible! Silver has its own weight: each 100 pieces of silver equal one unit of weight (UW). When calculating weight it is a common rule to round up; even one piece of silver can be too much.
+
+Because persons (of most [[Races|races]]) can carry 5.4 units of weight, they can carry up to 540 silver with them; when carrying 541 silver a single person is overloaded. A boat (50 UWs capacity) for example, can carry one person (10 UWs in most cases) with 4000 silver; even 4001 silver would be too much.
