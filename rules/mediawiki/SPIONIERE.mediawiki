@@ -1,0 +1,41 @@
+<tt>'''SPIONIERE''' ''einheit-nr''</tt>
+
+Mit Spionage kann man Einheiten einer anderen Partei ausspionieren. Dabei wird das Spionagetalent des Spions mit dem [[Tarnung|Tarnungstalent]] der Zieleinheit verglichen.
+
+Die Grundchance für einen erfolgreichen Spionage-Versuch ist 10%. Für jede Talentstufe, den das Spionagetalent das Tarnungstalent des Opfers übersteigt, erhöht sich dieses um 5%.
+
+Ist der Spionageversuch erfolgreich, erfährt der Spion den Kampfstatus, die Gegenstände im Besitz der Einheit, die Talente und auch die wahre Parteizugehörigkeit.
+
+Die Parteizugehörigkeit kann nur ermittelt werden, wenn das Spionagetalent mindestens 6 Talentstufen über dem Tarnungstalent der Einheit liegt. Alle anderen Informationen können schon bei einem einfachen Erfolg ermittelt werden. 
+
+Anschließend wird - unabhängig vom Erfolg - gewürfelt, ob der Spionageversuch bemerkt wurde. Die Wahrscheinlichkeit dafür ist
+: (100 - SpionageSpion*5 + WahrnehmungOpfer*2)%.
+
+{{Geruecht|author=Ralf D.|text=Spione sind sinnvollerweise immer 1-Personen-Einheiten, da offenbar NICHT pro Person in der Spion-Einheit ein Spionageversuch durchgeführt wird, sondern nur einmal für die ganze Einheit. Wie alle Tätigkeiten die von Wahrscheinlichkeiten abhängen kann man auch den Spionageerfolg somit steigern, indem man mit vielen 1-Personen-Einheiten die gleiche Zieleinheit ausspioniert.
+
+
+'''Beispiel:'''<br />
+Spione mit Spionage 10 spionieren eine Kampfeinheit mit Tarnung 1 aus.
+* 1 Einheit hat eine Chance von 10% + (10 - 1)* 5% = 55% die Zieleinheit auszuspionieren
+* 5 Einheiten haben somit die Chance 100% - (100% - 55%)^5 = 98,2%
+
+Interessant ist dabei auch folgendes (immer gegen Tarnung 1 der Zieleinheit):
+* 5 Einheiten mit Spionage 2 haben ebenfalls 55% Erfolgschance<br />
+* 8 Einheiten mit Spionage 1 haben 57% Erfolgschance<br />
+* 22 Einheiten mit Spionage 1 haben 90% Erfolgschance<br />
+
+Interessant sind dann die Kostenbetrachtungen:
+* 1 Einheit Spionage 10 -> 55 Runden (ohne Lehrer) -> 5500 Silber + sonstige Ausbildung und Rekrutieren<br />
+* 5 Einheiten Spionage 2 -> 3 Runden * 5 Personen -> 1500 Silber + ...<br />
+* 8 Einheiten Spionage 1 -> 1 Runde * 8 Personen -> 800 Silber + ...<br />
+
+'''Fazit:'''<br />
+Hohe Spionagetalente lohnen nur, falls die Einheit(en) auch andere Ausbildung genossen hat/haben oder man aufgrund des Einheitenlimits selbst in den Situationen in denen man die Spionage braucht, die Einheiten nicht aufteilen kann.
+
+Als Gegenmassnahme hilft gegen viele schlechte Spione eine Grundausbildung in Tarnung. Allerdings muss immer mehr Aufwand in Tarnung gesteckt werden, als die Spione in Spionage stecken müssen.
+
+Klar ist, dass Spionageversuche mit vielen schlechten Einheiten mit fast 100% Sicherheit auffallen werden.
+
+'''ACHTUNG''': Sofern die Spielmechanik dahingehend verändert wird, dass die Zieleinheit nur einmal pro Runde einen zufälligen Grenzwert berechnet, dann gilt für alle gleich guten Spione das gleiche Ergebnis, womit diese Betrachtung hier falsch wird. Momentan gibt es aber unterschiedliche Ergebnisse für gleiche Spione.}}
+
+[[Kategorie:Befehle]]

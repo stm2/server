@@ -1,0 +1,18 @@
+<tt>'''BETRETE''' GEBÄUDE ''gebäude-nr''<br/>
+'''BETRETE''' SCHIFF ''schiff-nr''</tt>
+
+Betritt das angegebene [[Gebäude]] oder [[Schiff]]. Die Einheit mit dem [[Gebäude#Einheiten_und_Gebäude|Kommando]] über das Gebäude oder Schiff muss den Zutritt erlauben. Das tut sie, wenn sie zur eigenen Partei gehört, [[HELFE]] BEWACHE für die eigene Partei gesetzt hat oder in dieser Runde den [[KONTAKTIERE]] Befehl für die Einheit gibt. Anderenfalls wird der Zutritt verweigert.
+
+Ein BETRETE impliziert [[VERLASSE]], wenn die Einheit sich auf einem Schiff oder in einem Gebäude befindet.
+{{E3A|text=Ein Ausnahme sind Gebäudebesitzer. Diese müssen entweder ein explizites [[VERLASSE]] setzen, oder [[GIB]] KOMMANDO verwenden.}}
+BETRETE hat immer Vorrang vor [[VERLASSE]], wenn beide Befehle gegeben werden.
+
+Es ist durchaus möglich, auf hoher See von einem Schiff auf ein anderes zu wechseln.
+
+{{Geruecht|author=Solthar|text=Um in E3 ein Gebäude zu verlassen und gleichzeitig das Kommando weiterzugeben, kann man Folgendes machen:
+  VERLASSE
+  BETRETE BURG b2
+  GIB u2 KOMMANDO}}
+
+
+[[Kategorie:Befehle]]

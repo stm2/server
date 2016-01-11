@@ -1,0 +1,458 @@
+Selbst wenn die Ankündigungen andernorts archiviert werden, sammeln wir sie hier nochmal, wo sie auch editierbar sind, falls mal etwas unverständlich war, und wegen der Möglichkeit zum Feedback über die Diskussions-Seite.
+
+== Siehe auch ==
+
+* [https://bugs.eressea.de/changelog_page.php Mantis-Roadmap]
+
+== 21. November 2015 (Version 3.7) ==
+
+([http://www.pbem-spiele.de/forum/viewtopic.php?f=16&t=4043&p=33403&sid=511d03511d6e09b01bf885f6302c8e77#p33403 Forum])
+
+* [https://bugs.eressea.de/view.php?id=0002053 0002053]: [General] Monster greifen nicht an (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002143 0002143]: [AtTACKIERE] Monster attackieren Burginsassen (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002119 0002119]: [General] Talenttrunk (skillpotion) hat keine Beschreibung (MrTurner) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002137 0002137]: [MaCHE] learning-by-doing respektiert die Anzahl der Arbeiter nicht (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002136 0002136]: [General] Negative Punkte (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0001818 0001818]: [General] E2: Fehler- und Erfolgsmeldung bei Personenübergabe (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002135 0002135]: [General] Wochenbericht wird nciht mit der Auswertung verschickt (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0001685 0001685]: [Featurewunsch] Unbeabsichtige Abgabe an Bauern (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002128 0002128]: [NaCH/ROUTE] Durchreisemeldung im NR ist oft zu lang (Enno) - resolved.
+
+Insbesondere dass die Monster wieder angreifen ist wohl wichtig zu wissen.
+
+== 29. August 2015 (Version 3.6) ==
+
+(im [http://www.pbem-spiele.de/forum/viewtopic.php?f=16&t=4020 Forum], nicht über E-Announce)
+
+* Die Formel für die Verlangsamung von beschädigten Schiffen wurde korrigiert. ([https://bugs.eressea.de/view.php?id=2126 2126])
+* Bei Einheiten mit mehr als einem langen Befehl wählt der Server einen davon aus, und nicht unbedingt den selben wie früher. ([https://bugs.eressea.de/view.php?id=2080 2080])
+* Vulkane werden nach dem Ausbruch inaktiv, damit sie nicht zweimal in sofortiger Folge ausbrechen können ([https://bugs.eressea.de/view.php?id=2112 2112])
+* Der BELAGERE Befehl ist aus dem Spiel entfernt worden ([https://bugs.eressea.de/view.php?id=1896 1896])
+* Katapulte und Wagen können nicht mehr in den Zauberbeutel gesteckt werden ([https://bugs.eressea.de/view.php?id=1949 1949])
+* Die Wirkung des Giftelementar erstreckt sich über mehrere Runden ([https://bugs.eressea.de/view.php?id=1838 1838])
+* Eine geflohene Einheit kann in der selben Woche nicht BEWACHEn ([https://bugs.eressea.de/view.php?id=1950 1950])
+* Nach einem Kampf werden alle nicht-alliierte Einheiten aus Schiffen und Burgen geworfen ([https://bugs.eressea.de/view.php?id=2059 2059], [https://bugs.eressea.de/view.php?id=2108 2108])
+
+
+== 16. May 2015 (Version 3.5) ==
+
+
+* [https://bugs.eressea.de/view.php?id=0002095 0002095]: Entfernung des Limits auf GIB PERSONEN in E2
+* [https://bugs.eressea.de/view.php?id=0002085 0002085]: Tippfehler in Zauberbeschreibung "Plappermaul".
+* [https://bugs.eressea.de/view.php?id=0002090 0002090]: Tippfehler in Zauberbeschreibung "Auratransfer".
+* [https://bugs.eressea.de/view.php?id=0002091 0002091]: Tippfehler in Zauberbeschreibung "Bannlied".
+* [https://bugs.eressea.de/view.php?id=0002092 0002092]: Tippfehler in Zauberbeschreibung "Braue Bauernblut".
+* [https://bugs.eressea.de/view.php?id=0001510 0001510]: Gürtel der Trollstärke ist zu mächtig.
+* [https://bugs.eressea.de/view.php?id=0001504 0001504]: Schiffsschaden im Kampf nicht korrekt berechnet.
+* [https://bugs.eressea.de/view.php?id=0002067 0002067]: Die Adressliste enthält Parteien doppelt.
+* [https://bugs.eressea.de/view.php?id=0002066 0002066]: Magische-Pfad-Meldungen vertauscht.
+* [https://bugs.eressea.de/view.php?id=0001511 0001511]: Schöne Träume sind schlechte Träume.
+* [https://bugs.eressea.de/view.php?id=0001830 0001830]: Zauber "Schöne Träume" verursacht Alpträume.
+* [https://bugs.eressea.de/view.php?id=0002058 0002058]: Burgenbonus im Kampf kaputt.
+* [https://bugs.eressea.de/view.php?id=0002059 0002059]: (TEMP?)-Einheit in feindlichem Gebäude nach Kampf.
+* [https://bugs.eressea.de/view.php?id=0002068 0002068]: Vertraute aus Rasse der Partei ausgewählt, nicht des Magiers.
+* [https://bugs.eressea.de/view.php?id=0002077 0002077]: Ents entstehen als "Untote"?.
+* [https://bugs.eressea.de/view.php?id=0002086 0002086]: Zauber Alp funktioniert nicht und sollte entfernt werden.
+* [https://bugs.eressea.de/view.php?id=0001802 0001802]: Seeschlange in E3 heißt Seeschlangen.
+* [https://bugs.eressea.de/view.php?id=0002057 0002057]: Seeschlangenname verhunzt.
+
+
+== 1. Februar 2015 (Version 3.4) ==
+
+Diese Änderungen betreffen teils auch E2!
+
+* (Effektiv erst ab 28. Februar.) Silber wiegt wieder eine Gewichtseinheit (ed.: gemeint ist 0,01 GE). Es ist seit einer Weile schon gewichtslos, was ein Fehler ist. Bitte sorgt vor, und achtet darauf dass keines Eurer Schiffe wegen Überladung liegen bleibt! 
+* BEFÖRDERE wurde in der Befehlsreihenfolge direkt hinter REKRUTIERE verschoben. Damit kommt es unmittelbar vor BEZAHLE NICHT und der Bezahlung von Gebäudeunterhalt.
+* Regionseigentümer (in E3 und Deveron, nicht E2) bezahlen ab sofort den Gebäudeunterhalt für leere Leuchttürme, Märkte und Häfen in der Region. Sie profitieren dann auch von den Gebäuden als wären sie der Besitzer. Ein Regionseigentümer kann den Unterhalt für ein leeres Gebäude einstellen durch den Befehl BEZAHLE NICHT <gebäudenr>, oder für alle leeren Gebäude der Region durch BEZAHLE NICHT ohne weitere Parameter. Wie gewöhnlich ist das ein kurzer Befehl, der jede Woche neu gesetzt werden muss.
+* ZERSTÖRE ist nun ein langer Befehl.
+* E3 und E4 haben eine "Auto-Lehre-Funktion". Diese bewirkt, dass Einheiten doppelt so schnell lernen, wenn die Summer der Lernwochen, die ihren Talenten entspricht geringer als Spielwoche / 2 ist. Beispiel: In Woche 300 wird eine Einheit mit Hiebwaffen 13 und Ausdauer 10 (das entspricht 13 * 14 / 2 + 10 * 11 / 2 = 146 Lernwochen) im Durchschnitt nur 7 Wochen brauchen um auf Hiebwaffen 14 aufzusteigen. Eine Einheit mit Hiebwaffen 15 und Ausdauer 10 braucht wie bisher im Schnitt 16 Wochen.
+* Schiffe können in einer Region mit einem Hafen, in der sie sonst nicht landen könnten, nur noch dann landen, wenn der Hafenbesitzer den HELFE BEWACHE ihrem Kapitän gegenüber hat (und alle weiteren Voraussetzungen erfüllt sind).
+* Deutsche Befehle sollten immer die Imperativform benutzen, also ARBEITE, BEFÖRDERE, VERGISS. Einige Befehle haben (weiterhin) keine Imperativform: ALLIANZ, BANNER, BOTSCHAFT, DEFAULT, EMAIL, GRUPPE, KAMPFZAUBER, NACH, NUMMER, OPTION, PASSWORT, PIRATERIE, PRÄFIX, ROUTE, URSPRUNG. Die veralteten Versionen (ARBEITEN, BEFÖRDERUNG, VERGESSEN) werden vorläufig noch funktionieren, dass könnte sich aber irgendwann ändern.
+* Der englische Befehl COMBAT wird wieder richtig erkannt (und unterscheidet sich von COMBATSPELL und HELP COMBAT). FIGHT wird vorläufig als alternative Version von COMBAT erkannt, aber auch das könnte sich in Zukunft ändern.
+* Monster greifen wieder an, attackieren aber keine Einheiten in Gebäuden (ein Zugeständnis an E3, wo Tarnung nicht existiert). Drachen verhalten sich möglicherweise aber anders.
+* Wenn eine Einheit durch eine Region reist, die von einer nicht verbündeten Partei (kein HELFE BEWACHE) bewacht wird, hängt die Chance, dass sie aufgehalten wird von mehreren Faktoren ab: Sie wird vergrößert durch die Anzahl der feindlichen Bewacher, den Regionstyp (es wird schwerer in Sümpfen, Gletschern, Bergen und Vulkanen), das Wahrnehmungstalent der feindlichen Bewacher, Amulette des Wahren Sehens, sowie die Größe der Burg des Regionsbesitzers, falls dieser nicht verbündet ist. Sie wird verringert durch die Anzahl der verbündeten Bewacher und das Tarnungstalent der Einheit, sowie Ringe der Unsichtbarkeit.
+* Monster in E3 und Deveron werden Region PLÜNDERn, statt Steuern einzutreiben. PLÜNDERE ist ein Kommando, was nur Monstern zur Verfügung steht und verschafft den Monstern Silber, aber es zerstört auch Regionssilber und vermindert die Moral. Drachen können fliegen, also ignorieren sie (nicht fliegende) Bewacher.
+
+=== Sonstige Änderungen ===
+
+* Die Nachrichten, die die Dauer Magischer Pfade angeben, wurden korrigiert (https://bugs.eressea.de/view.php?id=2066).
+* Monster haben keine kryptischen Namen mehr (https://bugs.eressea.de/view.php?id=2057).
+* Nach dem Kampf erweckte Untote Helden und ähnliche Einheiten behalten ihre Ausrüstung (https://bugs.eressea.de/view.php?id=1962).
+* Vulkanausbrüche verursachen konsequent Meldungen in Nachbarregionen.
+* Leere Gebäude, für die kein Unterhalt gezahlt wurde, erzeugen eine Regionsmeldung.
+* Das Einheitenlimit wird im CR angezeigt (Bug https://bugs.eressea.de/view.php?id=2055).
+* Fliegende Einheiten werden nur noch von anderen fliegenden Einheiten aufgehalten.
+* Der Bonus für natürliche Rüstungsklasse wird korrekt angewendet.
+Hunger reduziert das Segeltalent nur noch um eins, statt um die Hälfte, wie bei anderen Talenten.
+* Ein paar Bauern (oder Spielereinheiten) dürfen arbeiten, auch wenn die Arbeitsplätze der Region eigentlich von Bäumen verdrängt werden würden.
+Regionen ohne Bauern, aber mit guten Bedingungen werden ein paar Siedler (aus anderen Welten?) anziehen.
+* Viele, viele kleinere Korrekturen, Verbesserungen am Code und Tests.
+
+
+
+=== Änderungen in früheren Versionen ===
+
+Nicht alle Änderungen der letzten Versionen sind unbedingt in einer Ankündigung erwähnt worden, daher hier noch ein paar aus früheren Zeiten, die ich evtl. vergessen habe:
+
+* RESERVIERE nimmt anderen Einheiten keine Gegenstände mehr weg, wenn diese Einheiten sie selbst reserviert haben. Beispiel: Einheit a hat 5 Silber, Einheit b hat 12 Silber und beide Einheiten haben RESERVIERE 10 Silber als Befehl. Dann hat anschließend Einheit a 7 Silber und Einheit b 10 Silber. Bisher hing das Ergebnis von der Einheitenreihenfolge ab.
+* RESERVIERE ALLES funktioniert jetzt.
+* FOLGE SCHIFF zählt, wie FOLGE EINHEIT, nur dann als langer Befehl, wenn das Ziel einen Bewegungsbefehl hat.
+* Die Reihenfolge bezüglich VERLASSE/GIB KOMMANDO wurde geändert (für E3).
+* Die Richtungsangabe "Wirbel" für den Zauber Chaossog funktioniert.
+* Monster greifen wieder an.
+* Der CR enthält nun eine Zeile mit der genauen Build-Nummer des Servers.
+* Leuchttürme reduzieren die Chance des Abtreibens auf 0.
+* Dämonen werden nicht mehr plötzlich zu Goblins.
+* PIRATERIE wurde repariert.
+* Der "Schutzzauber" wurde repariert.
+* Fliehende Einheiten erhalten nicht mehr das Kommando von Burgen.
+* Eisen- und Steingolems wurden repariert. 
+
+== 20. Juli 2014 ==
+
+Diese Änderung betreffen jetzt auch E2!
+
+* Änderung am Befehl RESERVIERE: Eine Einheit nimmt keine Gegenstände von einer anderen, wenn diese sie auch reserviert
+hat. Technisch wird dies als ein Zwei-Phasen-Strategie implementiert.
+
+Beispiel:
+Einheiten A und B haben beide 100 Silber. Sie geben folgende Befehle:
+
+  EINHEIT a
+     RESERVIERE 150 Silber
+  EINHEIT b
+     RESERVIERE 80 Silber
+
+Jetzt werden Einheit A und B zuerst ihr eigenes Geld (100 und 80
+Silber) reservieren, und in einem zweiten Schritt das restliche
+erforderliche Silber von der anderen nehmen (A nimmt B die nicht
+reservierten Reste von 20 Silber ab). Im Ergebnis hat A 120 Silber,
+und B hat 80.
+
+
+== 29. August 2010 ==
+
+* Ab sofort ist es mit TARNE PARTEI [NICHT] wieder möglich, seine Parteizugehörigkeit zu anonymisieren. Die Tarnung als eine andere Partei ist auch weiterhin nicht möglich. 
+
+== 27. März 2010 ==
+
+* Burgen: Die Rasse der Besitzereinheit ist egal, nur die Parteirasse ist relevant dafür, ob eine Burg den Zwergen//Halblings-bonus bekommt (Nur Halblingsparteien bekommen ihn).
+
+* GIB PERSONEN betrifft nur E2, nicht E3. In E3 können auch weiterhin keine Personen übergeben werden.
+
+* Erklärung maximale Moral: Moral steigt bei Steinburgen nicht höher als 2 Punkte, und bei Holzburgen nicht höher als 1 Punkt über die aktuell für Steuern nutzbare Moral.
+
+
+== 24. März 2010 ==
+
+Es gibt mal wieder ein paar Änderungen an E3.
+
+=== Moral ===
+* Moral steigt nicht höher als für die nächste Burgengröße der größten Burg der Region nutzbar.
+* Regionen mit höherer Moral als 2 Punkte über diesem Maximum fallen pro Runde um 1 Moralpunkt.
+* Der Moralverlust von 2 bei GIB KOMMANDO bleibt wie bisher.
+* Bei einem Wechsel zu einem Herrscher aus der gleichen Allianz fällt die Moral um 2 Punkte, auch wenn der Wechsel nicht in der selben Woche passiert.
+* Bei einem Wechsel zu einem nicht-alliierten Herrscher fällt die Moral auf 0 wie bisher.
+* Regionen ohne Herrscher verlieren pro Runde 1 Punkt Moral, bis ein Wert von 1 erreicht wird.
+
+=== Halbling- und Zwergenboni ===
+* Eine Burg im Besitz eines Halblingsspielers braucht nur 80% der Größe einer normalen Burg, um die nächste Ausbaustufe zu erreichen. Das heißt, eine Burg der Größe 8 ist mit einem Zwergenbesitzer bereits eine Befestigung, mit Größe 40 ein Turm, usw.
+* Als kleiner Ausgleich fällt dafür der bisherige Moralbonus weg.
+
+=== GIB PERSONEN ===
+* [NUR E2:] Um Personen an Einheiten einer fremden Partei zu übergeben, muss der Empfänger die Geber-Einheit KONTAKTIEREn. In E3 können weiterhin keine Personen übergeben werden.
+
+== 11. Februar 2010 ==
+
+Zunächst einmal möchten wir vom Designteam uns für die hohe Beteiligung
+an der Umfrage bedanken (110 Antworten bis Montag 08.02.10 14:00). Euer
+Feedback hat uns bei einigen bereits geplanten Änderungen bestätigt und
+uns Ideen für weitere gegeben.
+
+Mit großem Abstand ist die fehlende Interaktion in Allianzen die durch
+das eliminieren von GIB geschaffen wurde als Kritikpunkt genannt worden.
+Dreimal so häufig wie z.B. der Handel mit den Märkten. Deshalb sehen wir
+uns bestätigt in unserer ohnehin schon länger Vorbereiteten '''Änderung''' an
+den '''Übergaberegeln''':
+
+# Ab sofort kann Silber 2:1 übergeben werden.
+# Für alle anderen Gegenstände gilt wieder 1:1. 
+
+Wie bereits in der Umfrage erwähnt zieht dies natürlich eine '''Änderung''' nach sich, besonders für '''Zwerge''':
+# Der Steinbonus für Zwerge wird ersatzlos gestrichen.
+# Es ist ab sofort wieder erlaubt an Gebäuden anderer Parteien zu bauen.
+# Der 40% Eisenbonus entfällt, als Ersatz wird der Turmschild um ein Eisen billiger und eine neue Rüstung wird eingeführt.
+
+Der Schuppenpanzer kann nur von Zwergen gebaut werden. Tragen können ihn
+Zwerge und Halblinge:
+
+* Schuppenpanzer:
+: Rüstung 3
+: Nahkampf/Fernkampf  +10%/+5%
+: Gewicht: 3 GE
+: Kosten: 2 Eisen
+: Bautalent: Rüstungsbau 5
+
+== 6. Februar 2010 ==
+
+* Die Auraregeneration wurde erhöht.
+
+* Beim Aussscheiden einer Partei, egal ob durch Stirb oder NMR, erhalten
+Allianz-Partner ihre Gegenstände 1:1. Es wird der selbe Schlüssel zum
+verteilen unter den Allierten verwendet wie in E2.
+
+* Allierte und nur noch diese, bekommen nun automatisch eine Warnmeldung
+wenn ein Allianzmitglied eine NMR hatte.
+
+== 9. Januar 2010 ==
+
+=== Neue Mallornschiffe===
+Ab der nächsten Auswertung gibt es zwei neue Schiffe, die Königsbarke
+und den Katamaran. Beide benötigen Mallorn und Silber um gebaut zu
+werden. Sie sind schneller als ähnliche Schiffe welche aus Holz gebaut
+wurden und haben einen zusätzlichen Schutz vor Stürmen. Der Katamaran
+ist das schnellste Schiff überhaupt. Die Einzelheiten der Schiffe sind
+wie alle anderen Regeln für E3 auch im Wiki zu finden:
+[[Das_dritte_Zeitalter#Schiffe]]
+
+=== Trauerwoche===
+Da es zu der Regionsübergabe (Gib Kommando durch den Burgenbesitzer)
+immer wieder Fragen gibt, hier nochmal die Erklärung.
+
+Wenn eine Region ihren Eigentümer verliert oder der Eigentümer wechselt,
+sinkt die Moral auf 0. Wechselt eine Region den Besitzer durch GIB
+KOMMANDO, fällt ihre Moral nur um zwei Punkte, anstatt wie üblich auf
+Null zu fallen.
+Ob der Regionsbesitzer durch Kampf oder ein versehentliches VERLASSE
+wechselt ist dabei egal!
+
+Bei JEDEM wechsel des Regionsbesitzers gilt:
+Wechsel des Regionsherrschers veranlasst die Bauern, in der FOLGERUNDE
+eine Woche der Trauer einzulegen. Sie arbeiten nur das Nötigste (10
+Silber/Bauer) und zahlen auch keine Steuern an den neuen Regionseigentümer.
+
+In der Übergabewoche bekommt der neue Eigentümer also Steuern und im
+Report wird bei der Bauernmoral mit dem Präfix "trauernde" angezeigt. In
+der Folgewoche gibt es dann keine Steuern.
+
+== 22. Oktober 2009 ==
+
+Nach der bisherigen Regelung war es möglich, dass Dämonen durch ihre
+Talentverschiebung ein Talent komplett vergessen. Einmal vergessen
+musste dieses Talent komplett neu gelernt werden, was insbesondere bei
+teuren Talenten zu Unmut geführt hat. Deshalb fällt ab sofort kein
+Talent mehr unter den Wert 1 (Vor Rassenmodifikation).
+
+Einheiten welche aus einem Gebäude geflohen sind konnten bisher das
+Gebäude wieder besetzen, bevor die Eroberer dies tun konnten. Ab sofort
+wird "betrete" für Einheiten welche geflohen sind nach allen anderen
+Einheiten ausgeführt.
+
+== 13.Oktober 2009 ==
+
+=== Schiffsänderungen ===
+Ab sofort gibt es drei Verbesserungen bei der Seefahrt.
+
+* Einbäume zählen als '''Flußschiffe''' und können in beliebige Richtungen ablegen, egal an welcher Küste sie liegen. Dies repräsentiert die Möglichkeit, den Einbaum auf einem kleinen Fluß oder notfalls von Hand zum anderen Ende der Region zu bringen.
+* Die '''Kutter''' haben ab sofort eine um 5 erhöhte '''Lastkapazität'''. Somit hat man die Möglichkeit, auf einen Kutter genug Holz für einen Wachturm zu laden, ohne das die Matrosen hungern müssen.
+* Die '''Personenkapazität''' der '''Barke''' wurde auf 11 erhöht, damit es einem Kapitän möglich ist, eine 10er Einheit zu transportieren.
+
+== 21.September 2009 ==
+
+=== Änderungen an GIB und Beute ===
+Es haben schon einige gemeldet: Man kann im Kampf wieder Beute machen.
+Die Chance, das ein Gegenstand nach einem Kampf zu Beutegut wird, ist
+allerdings nicht sehr hoch.
+
+Grund, das wir Beute abgeschaltet hatten, war das wir keine Möglichkeit
+lassen wollten, GIB zu umgehen, damit jede Partei für sich selbst sorgt.
+Und weil wir es jetzt doch eingebaut haben, wird GIB auch zugelassen.
+Allerdings mit einem Haken: Von je 3 übergebenen Gegenständen an eine
+andere Partei bekommt die Zieleinheit nur einen, 2/3 aller Güter fallen
+der Korruption zum Opfer. Das gilt für alle Gegenstände ausser
+Luxusgütern und Kräutern, für die wir GIB ja ohnehin schon zugelassen
+hatten. Und wie sonst auch wird abgerundet. Beispiel:
+
+ EINHEIT abc
+  GIB cde 300 Silber ; Einheit cde bekommt 100 Silber
+  GIB def 6 Schwerter ; Einheit def bekommt 2 Schwerter
+  GIB xyz 4 Holz ; xyz bekommt 1 Holz
+
+== 12.September 2009 ==
+=== Gebäudeunterhalt ===
+"BEZAHLE NICHT" stellt Unterhaltszahlung und Funktion eines
+unterhaltspflichtigen Gebäudes für eine Woche ab (@BEZAHLE NICHT ist
+natürlich möglich).
+
+Bezahle 2. Versuch wurde entfernt. Dadurch kosten neu errichtete Gebäude
+in der Bauwoche keinen Unterhalt mehr. Gebäude für die nicht rechtzeitig
+Unterhalt bezahlt wird funktionieren einfach nicht. Das Einstürzen von
+Gebäuden welche nicht bezahlt werden wurde deaktiviert.
+
+=== Gib Kommando ===
+Um die Übergabe von Gebäuden zu erleichtern wurde der Befehl "Gib
+Kommando" vor "Verlasse" in der Befehlsreihenfolge geschoben.
+
+=== Einheitenlimit ===
+Das Einheitenlimit für E3 beträgt derzeit 200 Einheiten
+
+=== Helden ===
+Kleine Korrektur: Im Wiki hatte jemand eingetragen, dass man Helden
+nicht zusammen legen kann. Das stimmt natürlich nicht!
+
+== 04.August 2009 ==
+=== ZAT-Termin === 
+Ab sofort ist nur noch am Sonntag ZAT. Wir schauen mal, ob das zu
+übermäßigen Entzugserscheinungen führt.
+
+=== Burgenbau === 
+Klarstellung: Um eine Burg von 9 auf 10 auszubauen bedarf es nur einem
+Talent von 1.
+Neuregelung: Es kann nur an Burgen gebaut werden, die eine eigene
+Einheit als Besitzer haben (ausser Neubauten natürlich). Auch leere
+Burgen kann man nicht weiterbauen ohne sie zu betreten und in Besitz zu
+nehmen.
+
+=== Bewachungen === 
+Eigene Regionen gelten de facto als seien sie bewacht, auch ohne
+explizites BEWACHE. Es ist sogar unnötig, bewaffnete Einheiten in der
+Region zu haben. Das ist mit Hinblick auf lange Befehle nach dem Kampf
+diese Woche relevant. Alle die länger nicht Eressea gespielt haben
+sollten unbedingt die Regel zu Kampf, Bewachung und langen Befehlen
+nochmal studieren.
+
+=== Moral === 
+Mit Wirkung nach Runde 10 (also noch nicht in der kommenden Auswertung)
+gibt es nur noch 0.5% Regionssilber pro Punkt Moral der Bauern. Die
+Moral kann dafür dann aber bis 10 steigen, und tut das schneller als
+bisher. Wir haben uns in der Wirkung ganz einfach verschätzt.
+
+== 25. Juli 2009 ==
+
+=== Moral ===
+Wechselt eine Region den Besitzer durch GIB KOMMANDO, fällt ihre
+Moral nur um einen Punkt, anstatt wie üblich auf Null zu fallen.
+
+=== Trauer ===
+Wechsel des Regionsherrschers veranlasst die Bauern, in der
+Folgerunde eine Woche der Trauer einzulegen. Sie arbeiten nur das
+nötigste (10 Silber/Bauer) und zahlen auch keine Steuern an den neuen
+Regionseigentümer.
+
+=== Talente ===
+Bis wir den Algorithmus ein wnig überarbeitet haben, wird das
+beschleunigte Lernen von Talenten erst einmal wieder abgeschaltet.
+
+=== Handel ===
+Ab sofort ist es möglich, mit dem GIB Befehl Zauberkomponenten
+(Luxusgüter und Kräuter) an Einheiten anderer Parteien zu übergeben.
+HELFE GIB gibt es dementsprechend auch wieder.
+
+=== Goblins ===
+Beginnend nach der Auswertung #9 haben Goblins auf Burgenbau
+Bonus 0 and auf Waffenbau -1.
+
+== 12. Juli 2009 ==
+
+Zur Erinnerung: Der nächste ZAT ist am Sonntag um 9.00 Uhr 
+
+=== Noch nicht aufgeben! === 
+
+Es gab ein paar Leute, die Probleme hatten, den ersten Zug einzusenden. Ihr habt das Spiel noch nicht verloren! :-) Wenn Ihr jedoch nicht zum Sonntag Befehle einsendet, nehmen wir die Partei aus dem Spiel und machen die Startregion weniger attraktiv für Eure Nachbarn.
+
+=== Frösche und Feuerwände === 
+
+Wenn in eurem Report Feuerwand-Regionen oder Frösche auftauchen: Das passiert, wenn wir vermuten, dass eine Partei Doppelspiel betreibt. Kommende Runde nehmen wir 13 Parteien aus dem Spiel, und die Feuerwand-Regionen werden terraformt.
+
+=== Neue Regel: Fischerei === 
+
+Bis zu zwei Personen auf einem Schiff der Boot-Klasse brauchen nicht für ihren Unterhalt zu zahlen, wenn ihr Zug in einer Ozean-Region <s>endet</s> beginnt. Das Ziel dieser Regel ist natürlich, Erkundungsreisen einfacher zu machen.
+
+=== Neue Regel: HELFE SILBER === 
+
+Wenn eine Einheit Hilfe bei der Silberversorgung braucht, wird sie sich zuerst an den regionseigentümer wenden, wenn dieser ihr HELFE SILBER gesetzt hat. Erst wenn dieser kein Silber zur Versorgung hat, wendet sie sich an andere Helfer.
+
+=== Partner === 
+
+Beginnend mit dem nächsten Zug steht die Allianz der Partei im Report. Es kann jetzt auch mit dem BENENNE-Befehl der Name der Allianz gewechselt werden, zum Beispiel: BENENNE ALLIANZ "Die sieben Zwerge".
+
+Bitte beachtet, dass eine derartige Allianz nur für HELFE KÄMPFE relevant ist, und keinen Einfluss auf andere Helfe-Stati hat, insbesondere nicht auf HELFE SILBER.
+
+== 06. Juli 2009 ==
+
+=== ZAT-Termine ===
+
+Der erste ZAT ist '''ausnahmsweise''' am Mittwoch um 9:00 Uhr morgens. In Zukunft wird ZAT jeweils am Mittwoch um 19:00 Uhr und Sonntag um 9:00 Uhr (gleichzeitig mit Eressea) sein.
+
+Bis zum Ende des Anfängerschutzes halten wir den 2x wöchentlichen Rhythmus aufrecht so gut es geht, und werden dann die Spieler befragen, ob sie lieber wöchentliche ZATs wollen.
+
+=== Doppelanmeldungen ===
+
+Auf den ersten Blick sehe ich jetzt schon eine handvoll Spieler, die sich doppelt angemeldet haben. Das kann passieren, wenn jemand meinte, seine Email-Adresse funktioniert nicht, oder weshalb auch immer. Es kann auch sein, dass zwei Spieler im selben Haushalt spielen: Ihr werdet über kurz oder lang auf meinem Radar auftauchen, es wäre also prima, wenn ihr mir das '''jetzt''' sagt, damit ich Euch nicht später rauswerfe.
+
+Im Laufe der suche nach Doppelspielern und des allgemeinen Spielablaufes kann es vorkommen, das wir persönliche Daten wie IP-Adressen oder Mailheader von Euch sammeln. Damit gehen wir sorgsam um, aber falls Euch das nicht passt, meldet Euch bitte wieder ab.
+
+=== Regeländerungen ===
+
+Es wird gerade zu Beginn eine Menge Regeländerungen geben, die teilweise sehr schnell und mit kurzer Vorwarnzeit eingeführt werden. Wir diskutieren gerne darüber, aber im Endeffekt machen wir dann das, was wir für richtig halten (ihr könnt uns überzeugen, aber nicht überstimmen). Wer damit ein Problem hat, ist im falschen Spiel, aber ich denke, das wussten alle vorher.
+
+=== Burgen und Silber ===
+
+Jede Startregion hat in der ersten Woche 50.000 Silber im Regionsschatz. Bei Hochländern ist ein Fehler im Report - Ihr könnt aber '''trotzdem mit 50.000 Silber rechnen''', das ist repariert worden. Durch die Heimatburg, die ihr dort besitzt, verdient jeder Spieler in der ersten Woche 1% des Regionsschatzes, also 500 Silber. Eure Bauern verdienen 11 Silber, und verbrauchen davon 10 für sich selbst und stecken 1 in den Regionsschatz.
+
+Die Burg in Eurer Startregion ist also phänomenal wichtig. Wer sie verlässt, ist praktisch bankrott, da dann die Moral der Bauern auf Null sinkt, und der Spieler keinerlei Einkommen mehr hat. Als Schutz davor ist es jetzt notwendig, vor dem NACH ein VERLASSE zu machen, wenn man Besitzer der Burg ist, aber ich bin mir sicher es wird jemand einen genialen Weg finden, das zu umgehen (mit GIB PERSONEN o.ä.).
+
+=== Mailinglisten und Hilfe ===
+
+Es gibt es auch weiterhin die Adresse [mailto:eressea-help@kn-bremen.de eressea-help@kn-bremen.de] für Fragen zum Spiel, die vielleicht nicht öffentlich gestellt werden sollen.
+
+Für Rollenspiel-Mails aller Art haben wir die Liste [http://groups.google.com/group/eressea-rpg eressea-rpg] eingerichtet. Hier werden Eressea '''und''' E3 diskutiert, es hilft also evtl. schon im Subject das Spiel zu erwähnen.
+
+Für '''dringende''' Probleme die Euren Zug oder andere ZAT-kritische Probleme betreffen, schreibt am besten direkt eine Mail an [mailto:eressea+enno@kn-bremen.de eressea+enno@kn-bremen.de] damit die so schnell wie möglich aus der Welt geschafft werden.
+
+=== Wirklich häufige Fragen und Antworten ===
+
+
+* ''Kann ich meine Befehle mehrfach einsenden?''
+: Ja. Es ist sogar eine gute Idee, früh einen Entwurf der Befehle zu schicken, und dann eine bessere Version später, weil wir dann als Spielleitung schonmal gucken können, ob es Mißverständnisse oder technische Probleme gibt.
+
+* ''Bekommt man auf Stufe 1 immer noch den Zauber zum Geld verdienen?''
+: Ja, aber er macht nur noch 25 Silber pro Stufe.
+
+* ''Wenn eine Burg oder Wache gebaut wird, bekommt man dann in der selben Runde schon Steuern?''
+: Nein.
+
+* ''Wie lange dauert der Anfängerschutz, und wie wirkt er?''
+: In den ersten 8 Runden kann weder attackiert werden, noch kann mit BEWACHE Rohstoffabbau, Rekrutierung o.ä. verhindert werden.
+
+Noch mehr Fragen und Antworten [[Diskussion:Das_dritte_Zeitalter|gibt es hier]].
+
+== 15. Mai 2009 ==
+Am 24. Juni beginnt das dritte Zeitalter von Eressea.
+
+"Das dritte Zeitalter" ist eine neue Welt, in der sich einiges an den
+Eressea-Regeln ändert. Weniger Micromanagement und eine klarere Trennung
+der Rassen sind die beiden obersten Designziele. Teilnahme an der neuen
+Partie ist kostenlos, ZAT ist anfangs zweimal wöchentlich, und wir
+hoffen auf ein neues "Spiel im Fluss", bei dem wir mit den Regeln mehr
+experimentieren als das im alten Eressea zuletzt der Fall war.
+
+Zur Anmeldung gelangst du über diesen Link:
+* [http://www.eressea.de/de/register.php Registrierung (geschlossen)]
+
+Nach dem 24. Juni nehmen wir keine neuen Parteien auf, die Welt bleibt
+also abgeschlossen. Wie immer ist Doppelspiel nicht erlaubt! Bitte nur
+eine Anmeldung pro Spieler.
+
+Bevor Du Dich anmeldest, willst Du sicher mehr über das Spiel erfahren.
+Dafür haben wir zwei Webseiten angelegt.
+
+Eine Übersicht der Gedanken, die wir uns bei den Rassen gemacht haben:
+* [[Rassen im dritten Zeitalter]]
+Eine Liste aller Regeländerungen gegenüber dem alten Eressea-Spiel:
+* [[Das dritte Zeitalter]]
+
+Sollten noch Fragen bleiben, stellst du die am besten auf der
+Diskussionsseite im Wiki - dort haben alle etwas von der Antwort.
+
+[[en:Announcements (E3)]]

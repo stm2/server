@@ -1,0 +1,28 @@
+<tt>'''NACH''' ''himmelsrichtung'' [''himmelsrichtung'']...</tt>
+
+Mit dem Befehl <tt>NACH</tt> bewegt sich die Einheit durch die Welt von Eressea. Die Himmelsrichtungen sind in Eressea Nordosten, Nordwesten, Osten, Westen, Südosten und Südwesten. Die Koordinaten werden nicht verwendet.
+
+{|border="1"
+! Richtung 	!! Abkürzungen
+|-
+|Nordosten 	|| NO, Nordo
+|-
+|Osten 	|| O
+|-
+|Südosten 	|| SO, Suedo
+|-
+|Nordwesten 	|| NW, Nordw
+|-
+|Westen 	|| W 	
+|-
+|Südwesten  || SW, Suedw
+|}
+
+
+== Siehe auch ==
+
+* [[Reisen]]
+* [[ROUTE]]
+* [[FOLGE]]
+
+[[Kategorie:Befehle]]

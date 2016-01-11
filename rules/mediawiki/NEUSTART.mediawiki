@@ -1,0 +1,10 @@
+<tt>'''NEUSTART''' ''rasse'' "''passwort''"<br/></tt>
+
+Mit diesem Befehl kann man seine Partei auflösen und gleichzeitig mit einer anderen Rassen neu starten. Voraussetzung dafür ist, dass die Partei mindestens 81 Wochen alt ist.
+
+Die neue Partei entsteht in der Region, wo der Befehl gegeben wurde, wobei dies weder Ozean noch einige andere "exotische" Regionen sein dürfen. Das Magiegebiet der Partei bleibt gleich; ansonsten gelten die selben Startbedingungen wie bei einem regulären Neustart.
+
+Das Alter einer Partei ist im CR unter age gespeichert
+
+
+[[Kategorie:Befehle]]

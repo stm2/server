@@ -1,0 +1,42 @@
+Mit dem [[Talente|Talent]] '''Tarnung''' kann man sich vor anderen Einheiten tarnen. [[BEWACHE|Bewacht]] eine Einheit allerdings die Region oder befindet sie sich auf einem Schiff oder in einem Gebäude, ist sie immer sichtbar.
+
+== Gegenmaßnahmen ==
+Getarnte Einheiten kann man mit dem Talent [[Wahrnehmung]] entdecken. Ist das beste Wahrnehmungstalent in der Region kleiner als das Tarnungstalent einer fremden Einheit, erscheint die getarnte Einheit nicht in der Auswertung - sie wird unsichtbar. Sind Wahrnehmungstalent und Tarnungstalent gleich groß, so erscheint die getarnte Einheit in der Auswertung. Dies ist die Ausgangslage wenn man das Spiel beginnt, da alle neuen Einheiten Tarnung und Wahrnehmung auf Stufe 0 haben.
+
+== Bewachen und Belagerung unterlaufen ==
+Für erfolgreich getarnte Einheiten zählen die Restriktionen von [[BEWACHE]] nicht. Sie können somit Unterhalten, Steuern eintreiben, Resourcen abbauen und Bauern rekrutieren.
+
+Wird eine Burg [[BELAGERE|belagert]], kann man mit einer Einheit, deren Tarnungstalent um mindestens 3 Stufen höher als die Wahrnehmung der belagernden Einheiten, die belagerte Burg betreten und verlassen, und somit z.B. dringend benötigtes Silber in die Burg schmuggeln.
+
+== Fluchtchance erhöhen ==
+Die Standardfluchtchance einer Einheit beträgt 25% (Halblinge 50%). Mit jeder Stufe Tarnung steigt die Fluchtchance der Einheit um 5%. Ein Pferd steigert die Fluchtchance einer Person einmalig um 10% (5 Pferde bringen einer Person also NICHT +50% sondern nur +10), dabei ist es nicht relevant ob die Einheit Reiten kann. Die maximale Fluchtchance beträgt 75% (Halblinge 90%).
+
+== Diebstahl von Silber ==
+Erfolgreiche Tarner können anderen Einheiten mit dem Befehl [[BEKLAUE]] Silber stehlen. Bei der Entdeckung von Dieben zählt das höchste Wahrnehmungstalent der eigenen Partei in der Region. Sind Tarnung der Täter und Wahrnehmung der Opfer gleich groß, erhält das Opfer eine unbestimmte Warnung. Ist die Wahrnehmung des Opfers größer, kann es die Einheit bestimmen, welche den Diebstahl versucht hat.
+
+Goblins klauen, sofern sie Tarnung bis mindesten Stufe 4 gelernt haben, immer mindesten 50 Silber, auch wenn ihre Tarnung unter den Wahrnehmungstalent liegt. Solcher Diebstahl fällt natürlich auf und ist daher nur unter bestimmten Umständen sinnvoll. Man hört Goblinarmeen haben den Gegner schon durch Nahrungsentzug den entscheidenden Schlag versetzt.
+
+Rechnet man damit erfolgreich beklaut zu werden, hilft es nur Silber in die betroffene Region zu schaffen, da selbst die Einnahmen aus Unterhaltung, Steuereintreiben, Arbeiten und Handel von den Dieben geklaut werden können.
+
+Diebstahl stellt hin und wieder eine effektive Möglichkeit dar Spione die ihrerseits gut getarnt sind zur Strecke zu bringen, da diese bei Angriffen durch ihre hohe Tarnung eine hohe Fluchtchance haben.
+
+== Spionage verhindern ==
+Dabei wird das [[Spionage|Spionagetalent]] des Spions mit dem Wert der Tarnung der Zieleinheit verglichen. Die Grundchance für einen erfolgreichen Spionageversuch ist 10%. Für jede Talentstufe, die das Spionagetalent das Tarnungstalent des Opfers übersteigt, erhöht sich dieses um 5%. Ein hohes Tarnungstalent hilft also der Einheit einen erfolgreichen Spionageversuch zu erschweren. Um eine Erfolgschance von 50% zu erreichen muss der Spion 8 Stufen besser sein. Lernt man nun wenigstens Tarnung 2 braucht der Spion überproportional länger um die 8 Stufen zu erreichen.
+
+Die Parteizugehörigkeit kann ein Spion nur ermitteln, wenn das Spionagetalent mindestens 6 Talentstufen über dem Tarnungstalent der Einheit liegt. Alle anderen Informationen können schon bei einem einfachen Erfolg ermittelt werden. Eine hohe Tarnung ist also sinnvoll für eine gelungene Parteitarnung.
+
+== Einschätzung ==
+Da es neben den Standardrassen viele Rassen gibt die gar keine oder nur begrenzte Wahrnehmungsfähigkeiten haben, ist ein Minimum an Tarnungsfähigkeiten nahezu jeder Einheit zu empfehlen. Einheiten die gern ausspioniert werden, dürfen auch gern etwas Tarnung lernen.
+
+Viele Völker lagern ihre Waren bei einer sehr gut getarnten Einheit pro Region ([[KÄMPFE|Kampfstatus]]: Kämpfe Nicht oder Fliehe). Die Gegenstände sind so vor einer Vielzahl von Gefahren geschützt, solange kein gegnerischer Wahrnehmer den Tarner auffliegen lässt.
+
+Neben diesen passiven Anwendungen von Tarnung kann man natürlich mit gut ausgebildeten Tarnern auf Informationsbeschaffung gehen oder die Möglichkeit des Diebstahls nutzen.
+
+== Siehe auch ==
+
+* [[Wahrnehmung]]
+* [[Spionage]]
+* [[BEWACHE]]
+* [[Einnahmen]]
+
+[[Kategorie:Talente]]

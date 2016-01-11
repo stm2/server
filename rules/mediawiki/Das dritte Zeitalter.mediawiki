@@ -1,0 +1,682 @@
+'''Das dritte Zeitalter''' (Englisch: [http://wiki.eressea.de/en/The_third_age The Third Age]) ist der Titel für ein neues Spiel auf Eressea mit radikal unterschiedlichen Regeln. Diese Seite fasst die Regeländerungen für das Spiel zusammen. Änderungen können und werden jedoch noch jederzeit auftreten (E3A ist ein Spiel im Fluss:). Updates zur Entwicklung können auf http://twitter.com/eresseadev verfolgt werden.
+
+Jeder Spieler ist angehalten, auftretende Fehler dem Spielleiter zu melden, auch und besonders dann, wenn sie davon Vorteile haben. Dazu trägt man am besten den betreffenden Ausschnitt des Reports mit einer Erklärung in [http://bugs.eressea.de/ Mantis] ein. Dieser [[Bugreport]] sollte in jedem Fall die Partei-Nummer, die Nummern betroffener Einheiten und die Koordinaten der betroffenen Regionen enthalten. Ebenso sind die Befehle der fehlererzeugenden Runde der Einheiten hilfreich.
+
+Das Spiel hat am am 1. Juli 2009 mit 452 Spielern begonnen, eine '''Anmeldung ist nicht mehr möglich'''. Am Samstag, 16. Mai 2010 erfolgte Auswertung Nr. 50. Zu diesem Zeitpunkt waren noch 187 Parteien im Spiel.
+
+Die seither erfolgten Hinweise und Änderungen findet man hier: [[Ankündigungen (E3)]] 
+
+== Diverses == 
+
+# [[Befehle]] werden mit dem Betreff E3 BEFEHLE an eressea-server@eressea.de [[Befehle einschicken|gesendet]].
+# Um die Menge der Einheiten zu verringern, gibt es weder Wahrnehmung oder Tarnung, und auch keinen Diebstahl. 
+# Alle gelderzeugenden Befehle (KAUFEN / VERKAUFEN / TREIBE / UNTERHALTE) wurden entfernt. 
+# Das Einheitenlimit liegt bei 250 Einheiten pro Partei.
+# Der LEHRE Befehl wurde gestrichen. 
+# Der SABOTAGE Befehl wurde gestrichen. 
+# Der SPIONAGE Befehl wurde gestrichen. 
+# Der LIEFERE Befehl wurde gestrichen. Mit @GIB kann das gleiche Resultat erzielt werden. 
+# Der BELAGERE Befehl wurde gestrichen. 
+# Der ARBEITE Befehl verschafft der Einheit gerade genug Silber zum Überleben (ihre Unterhaltskosten).
+# Silber kann nur noch zu einem Kurs von 2 zu 1 per [[GIB]] an andere Spieler übergeben werden ('''ACHTUNG:''' Es wird Einheitenweise abgerundet! Wenn zwei Einheiten je 1 Silber übergeben kommt nichts an.). GIB ... PERSONEN funktioniert nicht mehr an andere Parteien.
+# <tt>GIB ... KOMMANDO</tt> wurde vor <tt>VERLASSE</tt> in der [[Befehlsreihenfolge (E3)|Befehlsreihenfolge]] geschoben, funktioniert ansonsten normal, auch an andere Parteien.
+# [[Hunger]] verhindert keine langen Befehle.
+# [[TARNE|TARNE PARTEI [NICHT]]] funktioniert, Tarnen als andere Partei und die Dämonen-Fähigkeit zur Rassentarnung wurden deaktiviert.
+# [[#Kampf|Taktik]] lernen kosten 500 Silber (statt 200). Die Kosten für das Erlernen von [[Magie]] ändern sich nicht (50+25*(1+Stufe)*Stufe).
+# [[BEWACHE]] behält seine bisherige Wirkung, Steuereinnahmen sind allerdings nicht mehr betroffen. Geplant, jedoch noch nicht eingebaut, ist es den [[BELAGERE]]-Befehl dahingehend zu verändern, dass er die Regionseinnahmen blockiert.
+# Einheiten in einem [[Leuchtturm]] sehen automatisch den maximalen Wirkungsradius, es wird kein Talent mehr benötigt.
+# Gebäudebesitzer müssen einen [[VERLASSE]] Befehl geben, ehe sie sich bewegen können.
+# Natürliche Rüstung wirkt nun symmetrisch-halbadditiv, d.h. zum größeren Rüstungswert wird die Hälfte des kleineren addiert.
+# Verbündete mit zu wenig Silber werden nun zuerst vom Regionseigentümer mit Silber versorgt bevor auf die Reserven anderer zurückgegriffen wird.
+# Es gibt auch eine (durch die neuen Befehle) leicht abgewandelte [[Befehlsreihenfolge_(E3)|Reihenfolge der Befehle]].
+# Flieht eine Einheit gänzlich aus einem Kampf, so wird sie in der Regionsreihenfolge an die letzte Stelle sortiert.
+
+== Allianzen == 
+
+# Es gibt kein [[HELFE]] KÄMPFE 
+# Es gibt einen neue ALLIANZ Befehl, um ein Bündnis zu gründen. 
+# Allianzen sind nach aussen hin nicht sichtbar.
+# Man kann zu jedem Zeitpunkt nur in maximal einer Allianz sein.
+# Alle Mitglieder der Allianz haben automatisch einen HELFE KÄMPFE Status zueinander. 
+# Alle Gruppen einer Partei haben die selben HELFE KÄMPFE Stati wie die Hauptpartei.
+# Jede Allianz verfügt über einen Administrator; in der Regel die Partei, die die Allianz gegründet hat. 
+# ALLIANZ AUSSTOSSEN <partei-nr> -- eine Partei aus der Allianz ausschließen (nur für den Administrator).
+# ALLIANZ VERLASSEN -- aus der aktuellen Allianz austreten.
+# ALLIANZ KOMMANDO <partei-nr> -- eine andere Partei zum Administrator machen (nur für den Administrator).
+# ALLIANZ NEU -- eine neue Allianz mit der eigenen Partei als Administrator erstellen.
+# ALLIANZ EINLADEN <partei-nr> -- eine andere Partei in dieser Runde ins Bündnis einladen (nur Administratoren).
+# ALLIANZ BEITRETEN <allianz-nr> -- einer anderen Allianz beitreten (wenn sie eine Einladung in der gleichen Runde erhält).
+# BENENNE ALLIANZ "allianzname" -- der Allianz einen Namen geben.
+# Der Wechsel einer Allianz wird innerhalb einer Runde möglich sein.
+# Allianzpartner sind mit 'o' im NR gekennzeichnet (im Gegensatz zu '*', '+' und '-').
+
+== Rassen ==
+
+Zur Design-Philosopie der Rassen siehe [[Rassen im dritten Zeitalter]].
+
+# Jede Partei verfügt über eine wählbare Rasse, deren Rekrutierung 100 Silber (Goblins 60) pro Person kostet , und eine dazugehörige teurere sekundäre Rasse. 
+# Gültige Rassenkombinationen (mit sekundärer Rasse) sind: Mensch (Elf), Halbling (Zwerg), Goblin (Dämon), Ork (Troll).
+# Es gibt keine Katzen, Insekten oder Meermenschen als Spielerrassen.
+# Neue Syntax: [[REKRUTIERE]] 10 <Rasse> -- Rekrutierung der sekundären Rasse, z. B. REKRUTIERE 10 TROLL. Einheiten können nicht gemischtrassig sein. Rekrutiere ohne Parameter rekrutiert immer die Primärrasse.
+# Die [[Magie#Vertraute|Vertrauten]] werden überarbeitet.
+# Alle Rassen beginnen mit 20 Trefferpunkten, mit Ausnahme von Goblins (16) und Dämonen (30). 
+# Neu rekrutierte Orks starten nicht mehr mit Waffenfähigkeiten. 
+# [[Hunger]] kann eine voll ausgeruhte Einheit nicht mehr in der ersten Woche umbringen. 
+# Hungern wirkt sich negativ auf die Lerngeschwindigkeit aus
+# Hungernde Einheiten regenerieren keine Lebenspunkte
+
+
+=== Liste der Talente ===
+
+{| border="0" cellspacing="1" align="center" width="70%"
+|- style="background-color:#999999"
+![[Talente|Talent]] !!Goblins !!Dämonen !!Menschen !!Elfen !!Halblinge !!Zwerge !!Orks !!Trolle
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Rekrutierungskosten
+|align="center"|60
+|align="center"|360
+|align="center"|100
+|align="center"|200
+|align="center"|100
+|align="center"|240
+|align="center"|100
+|align="center"|260
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Magieresistenz
+|align="center"|-5
+|align="center"|15
+|align="center"|
+|align="center"|10
+|align="center"|5
+|align="center"|5
+|align="center"|-5
+|align="center"|10
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|nat. Rüstung
+|align="center"|
+|align="center"|2
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|1*
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Magie
+|align="center"|N/A
+|align="center"|
+|align="center"|N/A
+|align="center"|
+|align="center"|N/A
+|align="center"|
+|align="center"|N/A
+|align="center"|
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Ausdauer
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Armbrustschießen
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|2
+|align="center"|
+|align="center"|
+|align="center"|
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Bogenschießen
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|2
+|align="center"|-1
+|align="center"|-1
+|align="center"|
+|align="center"|-2
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Katapultbedienung
+|align="center"|1
+|align="center"|
+|align="center"|
+|align="center"|-2
+|align="center"|-1
+|align="center"|2
+|align="center"|
+|align="center"|2
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Hiebwaffen
+|align="center"|
+|align="center"|1
+|align="center"|
+|align="center"|
+|align="center"|-1
+|align="center"|1
+|align="center"|
+|align="center"|1
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Stangenwaffen
+|align="center"|
+|align="center"|1
+|align="center"|
+|align="center"|
+|align="center"|-1
+|align="center"|
+|align="center"|
+|align="center"|
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Taktik
+|align="center"|-2
+|align="center"|-1
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|1
+|align="center"|-1
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Reiten
+|align="center"|
+|align="center"|-1
+|align="center"|1
+|align="center"|
+|align="center"|-1
+|align="center"|-2
+|align="center"|
+|align="center"|N/A
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Pferdedressur
+|align="center"|
+|align="center"|-3
+|align="center"|
+|align="center"|2
+|align="center"|-1
+|align="center"|-2
+|align="center"|-1
+|align="center"|-1
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Bergbau
+|align="center"|1
+|align="center"|
+|align="center"|
+|align="center"|-2
+|align="center"|1
+|align="center"|2
+|align="center"|1
+|align="center"|1
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Steinbau
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|-1
+|align="center"|
+|align="center"|2
+|align="center"|1
+|align="center"|2
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Holzfällen
+|align="center"|
+|align="center"|1
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|-1
+|align="center"|1
+|align="center"|
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Rüstungsbau
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|-1
+|align="center"|
+|align="center"|2
+|align="center"|
+|align="center"|2
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Waffenbau
+|align="center"|-1
+|align="center"|1
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|2
+|align="center"|2
+|align="center"|
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Burgenbau
+|align="center"|
+|align="center"|
+|align="center"|
+|align="center"|-1
+|align="center"|1
+|align="center"|2
+|align="center"|1
+|align="center"|2
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Straßenbau
+|align="center"|-2
+|align="center"|
+|align="center"|
+|align="center"|-1
+|align="center"|1
+|align="center"|2
+|align="center"|
+|align="center"|2
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Wagenbau
+|align="center"|-1
+|align="center"|-2
+|align="center"|
+|align="center"|
+|align="center"|2
+|align="center"|
+|align="center"|-1
+|align="center"|
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#999999"|Schiffbau
+|align="center"|-2
+|align="center"|-1
+|align="center"|2
+|align="center"|-1
+|align="center"|-1
+|align="center"|-1
+|align="center"|-1
+|align="center"|-1
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#aaaaaa"|Segeln
+|align="center"|-2
+|align="center"|-1
+|align="center"|2
+|align="center"|-1
+|align="center"|-2
+|align="center"|-2
+|align="center"|-1
+|align="center"|-1
+|}
+
+:: *+1 je 4 Stufen Ausdauer<br>
+:: N/A: Kann nicht gelernt werden
+
+=== Rasseneigenschaften ===
+
+'''Goblins:'''
+# Erhalten den Rekrutierungsbonus von [[Orks]] (2 Goblins kosten 1 Bauern).
+# Kosten nur 6 [[Ausgaben|Unterhalt]] pro Woche.
+# Können keine Plattenpanzer benutzen.
+# Können keine schweren Nahkampfwaffen benutzen (siehe [[#Waffen und Rüstungen|Waffen und Rüstungen]]).
+# Wiegen nur 6GE, können aber auch nur 4,4GE tragen. 
+# In [[#Schiffe|Schiffen]] belegen Goblins nur 0,6 Plätze.
+# Wenn sie mit dreifacher Übermacht angreifen, erhalten sie einen Attackebonus.
+# Unbewaffnete Goblins haben einen Bonus von +2 auf ihre Verteidigung.
+# Starten mit 16 Trefferpunkten (statt 20).
+# Verwundete Goblins regenerieren sich mit 10% ihrer Trefferpunkte. 
+
+
+'''Dämonen:'''
+# Regenerieren Aura etwas schneller.
+# Haben eine natürliche Rüstung von 2.
+# 10 Dämonen fressen pro Woche einen Bauern.
+# Dämonen, die ihrem Gegner Waffenschaden durch Fernwaffe, Klauen oder Nahkampfwaffen zufügen, erhalten 20% davon als eigene HP gutgeschrieben.
+# Alle Talente, in denen sie mindestens Talentstufe 1 haben, verschieben sich mit einer Wahrscheinlichkeit von 25% um bis zu 3 Talentstufen nach oben (mit 60% Chance) oder unten (mit 40% Chance; das Talent steigt oder sinkt also, nicht beides). Die Verschiebung erfolgt nach den langen Befehlen und der Bewegung. Negative Talentwerte entstehen dabei nicht; ein Talent kann nicht unter 1 (ohne Rassenmodifikator) fallen.
+# Dämonen, die keine Bauern zu fressen bekommen, erleiden keinen Schaden mehr, die Talentverschiebung erfolgt jedoch mit höherer Wahrscheinlichkeit und nur noch nach unten.
+# Die erhöhte Talentverscheibung nach unten wirkt auch bei herkömmlichem Hungern.
+# Rassentarnung von Dämonen wurde deaktiviert.
+# Rekrutierte Dämonen werden nicht vom Bauernpool abgezogen. Aus spieltechnischen Gründen gilt aber trotzdem das Rekrutierungslimit.
+# Dämonen, die abgegeben werden, kehren in ihre Heimatsphäre zurück, sie werden nicht zu Bauern.
+# Im Nahkampf bewirkt jeder Treffer eines Dämons bei einem Gegner eine "Ein-Personen-Panik": die betroffene Person hat -1 auf ihr Kampftalent bis zum Ende des Kampfes.
+# Starten mit 30 Trefferpunkten (statt 20).
+# Dämonen vertreiben keine Bauern mehr.
+# Verwundete Dämonen regenerieren sich mit 7,5% ihrer Trefferpunkte. 
+
+'''Menschen'''
+# Haben weder rassenbedingte Vorteile noch Nachteile.
+# Können keine [[Menschen|Migranten]] mehr aufnehmen.
+
+'''Elfen'''
+# Regenerieren Aura etwas schneller.
+# Machen mit Bögen 1 Schadenspunkt mehr.
+# Regenerieren ihre Lebenspunkte im Wald schneller.
+# Erhalten im Wald einen Taktikbonus.
+# Jeder Elf in der Region (bis zu maximal 1/8 der Regionsbevölkerung) erhöht die Chance eines Baums, in einer Sommer- oder Herbstwoche einen Samen abzuwerfen. Das kann je nach Anzahl der Elfen einen ganz deutlichen Unterschied ausmachen. 
+# Sind die einzige Spielerrasse die [[#Waffen und Rüstungen|Elfenbögen]] bauen und benutzen kann.
+# Haben nur noch 3 Magier, wie alle anderen Rassen auch.
+# In Wäldern bekommen Elfen +1 auf ihre Zauberstufe (analog zu und kumulativ mit dem Ring der Macht).
+
+'''Halblinge'''
+# Erhalten einen +1 Bonus auf ihre Verteidigung.
+# Können die [[#Waffen und Rüstungen|Repetierarmbrust]] bedienen und Schuppenpanzer tragen.
+# Haben einen Angriffs-Bonus und einen Schadens-Bonus von je +5 im Kampf gegen [[Drachen]].
+# Bekommen mehr Luxusgüter aus Märkten
+
+'''Zwerge'''
+# Haben [[Das_dritte_Zeitalter#Geb.C3.A4ude|Zwergenburgen]]
+# Regenerieren Aura etwas langsamer.
+# Erhalten in Bergen und Gletschern einen Bonus von +1 auf Taktik.
+# Können als einzige Rasse [[#Waffen und Rüstungen|Turmschilde, Schuppenpanzer und Repetierarmbrüste]] bauen.
+# Können Turmschilde, Schuppenpanzer und Repetierarmbrüste benutzen.
+# Haben lange Bärte.
+
+'''Orks'''
+# Verlieren den 1 zu 2 Rekrutierungsbonus.
+# Lernen Kampftalente (Armbrust, Bogen, Stange, Hieb und Katapult) schneller als andere Rassen.
+# Lernen alle anderen [[Talente]] langsamer als andere Rassen.
+# Unbewaffnete Orks kämpfen im Nahkampf nicht wie andere Rassen mit -2, sondern mit (bestes Nahkampftalent -3). Orks ohne Waffentalent kämpfen, wie alle anderen Rassen auch, mit -2
+
+'''Trolle'''
+# Verlieren den Steinabbaubonus.
+# Starten mit einer natürlichen Rüstung von 1.
+# Erhalten alle 4 Stufen Ausdauer 1 Punkt natürliche Rüstung hinzu.
+# Kavallerie erhält gegen Trolle einen geringeren Bonus.
+# Trolle sind stark und können doppelt soviel [[Pferd und Wagen|tragen]] wie andere (10,8 GE), wiegen aber auch doppelt soviel (20 GE) und brauchen in Schiffen zwei Plätze. 
+# Trolle können nicht reiten, jedoch weiterhin ein Pferd pro Person führen.
+# Je vier Trolle können einen Wagen ziehen, sich allerdings auch nur ein Feld weit bewegen.
+# Unbewaffnete Trolle machen 2-6 Trefferpunkte Schaden.
+# Verwundete Trolle regenerieren sich mit 7,5% ihrer Trefferpunkte.
+
+== Waffen und Rüstungen == 
+
+# Goblins können bestimmte schwere [[Kriegstabellen|Waffen und Rüstungen]] nicht verwenden. Diese sind Plattenpanzer, Lanze, Mallornlanze, Elfenbogen, Axt, Bihänder und Hellebarde.
+# Zwerge können einen neuen Schild [[Produktion|herstellen]], den Turmschild.
+# Zwerge können eine neue Rüstung herstellen, den Schuppenpanzer. Dieser kann nur von Zwergen und Halblingen getragen werden.
+# Zwerge könne eine Repetierarmbrust bauen, die nur eine Runde geladen werden muß (3 Schüsse in 5 bzw. 6 Kampfrunden).
+# Nur Zwerge können Turmschilde verwenden.
+# Nur Halblinge und Zwerge können Repetierarmbrüste verwenden.
+# Der Schaden des Laenschwertes wird auf 2W9+4 reduziert. 
+# Der Schaden des Elfenbogens wird auf 2W4+5 reduziert. 
+# Die Mallornlanze erhält +1 Schaden und richtet nun 1d5+2 / 2d6+7 Schaden an.
+# Nur Elfen können Elfenbögen bauen und benutzen.
+# Änderungen an den Rüstungen:
+{| border="0"
+!| Rüstung
+!| RS
+!| +Nah*
+!| +Fern*
+!| Gew.
+!| Kosten
+!|
+!| Bautalent
+|-
+| Schild || 0 || * -10% || * -10% || 1 || 1 Eisen || || 2
+|-
+| Turmschild || 0 || * -15% || * -25% || 2 || 1 Eisen || (nur Zwerge) || 4
+|-
+| Laenschild || 1 || * -10% || * -10% || 0 || 1 Laen || || 7
+|-
+| Kettenhemd || 2 || * +10% ||  || 2 || 2 Eisen || || 3
+|-
+| Schuppenpanzer || 3 || * +10% || * +5% || 3 || 2 Eisen || (nur Z/H) || 5
+|-
+| Plattenpanzer || 3 || * +15% ||  || 4 || 4 Eisen || || 4
+|-
+| Laenkettenhemd || 3 ||  || * -10% || 1 || 2 Laen || || 9
+|}
+:: * Modifikator zur Trefferchance feindlicher Angriffe im Nah- bzw. Fernkampf
+:: ** Druckfehler sind nicht ausgeschlossen
+
+{| border="0"
+! Waffen
+! zu Fuß
+! zu Streitroß
+! OB
+! DB
+! H/S
+!| Einschränkung
+! Bautalent
+! Baukosten
+! Gewicht
+|-
+| Armbrust || 3d3+5  || 3d3+5 || 0 || 0 || || || 3 || 1 Holz || 1GE
+|-
+| Mallornarmbrust || 3d3+6  || 3d3+6 || 0 || 0 || || || 5 || 1 Mallorn || 1GE
+|-
+| Repetierarmbrust || 4d3+3 || 4d3+3 || 0 || 0 || || Z/H || 5 || 1H, 1E || 2GE
+|-
+| Bogen || 1d11+1 || 1d11+1 || -2 || 0 ||  || || 2 || 1 Holz || 1GE
+|-
+| Mallornbogen || 1d11+2 || 1d11+2 || -2 || 0 ||  ||  || 5 || 1 Mallorn || 1GE
+|-
+| Elfenbogen || 2d4+5 || 2d4+5 || -2 || 0 ||  || E || 5 || 2 Mallorn || 1GE
+|-
+| Katapult|| 3d10+5, 6 mal || 3d10+5, 6 mal || -4 || 0 ||  ||  || 5 ||  10 Holz|| 100GE
+|-
+| Speer || 1d10 || 1d12+2 || 0 || 0 || S ||  || 2 || 1 Holz || 1GE
+|-
+| Mallornspeer || 1d10+1 || 1d12+3 || 0 || 0 || S ||  || 5 || 1 Mallorn || 1GE
+|-
+| Lanze || 1d5 || 2d6+5 || 0 || -2 || S || -G, || 2 || 2 Holz || 2GE
+|-
+| Mallornlanze || 1d5+2 || 2d6+7 || 0 || -2 || S || -G, || 5 || 2 Mallorn || 2GE
+|-
+| Hellebarde || 2d6+3 || 2d6+3 || -1 || +2 || S || -G, -S || 3 || 2H, 1E || 2GE
+|-
+| Schwert || 1d9+2 || 1d9+2 || 0 || 0 || H ||  || 3 || 1Eisen || 1GE
+|-
+| Laenschwert || 2d9+4 || 2d9+4 || +1 || +1 || H ||  || 8 || 1 Laen || 1GE
+|-
+| Bihänder || 2d8+3  || 2d8+3  || -1 || -2 || H || -G, -S || 4 || 2 Eisen || 2GE
+|-
+| Kriegsaxt || 2d6+4 || 2d6+4 || +1 || -2 || H || -G || 3 || 1H, 1E || 2GE
+|-
+| Unbewaffnete || 1d5 || 1d6 || -2 || -2 ||  ||  ||  || || 
+|-
+| " Goblins|| 1d5 || 1d6 || -2 || 0 ||  ||  ||  || || 
+|-
+| " Trolle|| 1d5+1 || - || -2 || -2 ||  ||  ||  || || 
+|}
+:-G: kann nicht von Goblins verwendet werden. E: kann nur von Elfen gebaut und verwendet werden. Z/H: kann nur von Zwergen und Halblingen verwendet werden. -S: wenn die Waffe getragen wird, kann kein Schild verwendet werden.
+: Von [[Kriegstabellen]] kopiert. Druckfehler sind nicht ausgeschlossen, bitte ggf. nachbessern.
+
+== Gebäude ==
+
+# [[Andere Gebäude#Allgemein|Bau- und Unterhaltskosten]] der [[Gebäude]] sind derzeit identisch mit E2.
+# <tt>[[BEZAHLE|BEZAHLE NICHT]]</tt> stellt Unterhaltszahlung und Funktion eines unterhaltspflichtigen Gebäudes für eine Woche ab (@BEZAHLE NICHT ist natürlich möglich). "Bezahle [[Befehlsreihenfolge|2. Versuch]]" wurde [[Befehlsreihenfolge (E3)|entfernt]]. Dadurch kosten neu errichtete Gebäude in der Bauwoche keinen Unterhalt mehr. Gebäude für die nicht rechtzeitig Unterhalt bezahlt wird funktionieren einfach nicht. Das Einstürzen von Gebäuden welche nicht bezahlt werden wurde deaktiviert. 
+# [[Leuchtturm|Leuchttürme]] brauchen keine Wahrnehmung mehr um zu funktionieren.
+# Der [[Hafen]] hat nur noch zwei Funktionen:
+#*[[#Schiffe|Schiffe]] größer als ein Boot können auch in Nichtebenen anlegen, wenn ein Hafen vorhanden ist. 
+#*Eine Region mit Hafen kann als "Kanalregion" genutzt werden, d.h. ein Schiff in dem Hafen kann in jede beliebige andere Richtung mit Ozean davonsegeln. Voraussetzung ist allerdings, daß der Hafeneigner dem Kapitän [[HELFE|HELFE BEWACHE]] gesetzt hat oder der selben Partei angehört
+#*Ein Hafen funktioniert nur, wenn er voll ausgebaut ist! Es kann nur einen Hafen pro Region geben. Wer zuerst fertig ist, hat gewonnen... Der halbfertige Hafen kann mit dem Befehl [[ZERSTÖRE]] zerstört werden. 
+
+{|border="0"
+! [[Burg]]
+! Baumaterial
+! ab Grösse*/ZH
+! Verdienst
+! Bauernlohn
+! Bautalent
+! DB
+! Moral max.
+|-
+| Gerüst || Holz || 1/1  || 0% || 11  || 1 || 0 || 1 ||
+|-
+| Wache || Holz ||  5/5 || 0,5% || 11  || 2 || 0 || 2 ||
+|-
+| Wachturm || Holz || 10/10  || 1% || 11  || N/A || 1 || 3 ||
+|-
+| Grundmauern || Stein || 1/1  || 0% ||  11 || 1 || 0 || 2 ||
+|-
+| Befestigung || Stein || 10/8  || 1% || 11  || 2 || 1 || 4 ||
+|-
+| Turm || Stein || 50/40  || 2% || 12  || 3 || 2 ||  6 ||
+|-
+| Burg || Stein ||  250/200 || 3% || 13 || 4 || 3 || 8 ||
+|-
+| Festung || Stein ||  1250/1000 || 4% || 14 || 5 || 4 || 10 ||
+|-
+| Zitadelle || Stein || 6250/5000 || 5% || 15 || 6 || 5 || 10 ||
+|}
+
+:: *Die Talentkosten jedes Punktes hängen von der aktuellen Größe ab, d.h. der 5. Punkt einer Wache bzw. der 10.<br>einer Burg kosten nur 1 Bautalent, der 6. bzw. 11. kosten 2 usw.
+
+== Regionsbesitz == 
+
+# Die Partei mit der größten Burg oder Wache (siehe unten) in einer Region ist der Eigentümer dieser Region. 
+# Eine Wache oder gar ein Wachturm ist einer Grundmauer, egal welcher Grösse, stets überlegen.
+# Eigene Regionen gelten de facto als seien sie bewacht, auch ohne explizites [[BEWACHE]]. Es ist sogar unnötig, bewaffnete Einheiten in der Region zu haben.
+# Ein neues Gebäude, die Wache, gibt es in drei Größen: 1-4: Gerüst, 5-9: Wache, 10: Wachturm. Sie wird mit "MACHE Wache" gebaut. Der Preis beträgt 1 Holz pro Größenpunkt. Das Gerüst benötigt ein Bautalent von 1, Wache und Wachturm ein Bautalent von 2.
+# Der Eigentümer einer Region bekommt jede Woche 0,5%-5% des Silbers der Region in Form von Steuern, je nach Burgengrösse und Moral der Region. 
+#* Beispiel: Startregion mit 50000 Silber, 10er Befestigung (1%), Moral 4 (2%) -> Min(1%, 2%) * 50000 Silber = 500 Silber Einnahmen
+# Die Steuer bekommt der Eigentümer der größten Burg (oder Wache). 
+# Steuern werden in der [[Befehlsreihenfolge (E3)|Befehlsreihenfolge]] vor dem ARBEITEN-Befehl gezahlt.
+# Regionsbesitz wird nach dem Besteuern neu bestimmt.
+# Wechsel des Regionsherrschers veranlasst die Bauern, in der Folgerunde eine Woche der Trauer einzulegen. Sie arbeiten nur das Nötigste (10 Silber/Bauer) und zahlen auch keine Steuern an den neuen Regionseigentümer. 
+# Silber, das über HELFE SILBER verteilt wird, wird zuerst vom Regionsbesitzer genommen. Erst wenn dieser kein Silber zur Versorgung hat, springen andere Helfer ein. 
+
+{| border="0"
+! [[Geländearten|Region]]
+! Bauern
+! Kavallerie
+|-
+| Ebene/Wald || 4000 || Ja/Nein
+|-
+| Hochland || 2300 || Ja
+|-
+| Sumpf || 1200 ||
+|-
+| Berg || 600 ||
+|-
+| Vulkan || 400 ||
+|-
+| Wüste || 400 || Ja
+|-
+| Gletscher || 150 || 
+|}
+
+== Magie und Alchemie == 
+
+# Es gibt keinen [[Astralraum]].
+# Es gibt (noch) keine [[Wurmlöcher]].
+# Nur die Sekundärrassen (Dämon, Zwerg, Elf, Troll) können [[Magie]] lernen. 
+# Alle Sekundärrassen haben Magie 0.
+# Der Regenerationsbonus bzw. -malus von Dämonen, Elfen und Zwergen wurde beibehalten, jedoch stark abgeschwächt.
+# [[Alchemie]] und [[Kräuterkunde]] sind gestrichen worden. Wichtige [[Tränke]] werden durch magische Artefakte oder Zauber ersetzt. 
+# Wasser des Lebens wird extrem abgeschwächt. 
+# Es gibt nur 4 [[Magiegebiete]] (Gwyrrd, Draig, Cerddor und Illaun) mit neuen [[Zauberliste E3|Zauberlisten]]. Tybied wird gestrichen.
+# Anzahl der Magier = 3 pro Partei (auch die Elfen!)
+
+== Kampf == 
+
+# Die [[Kampfattacken|Talentdifferenz]] zwischen Angreifer und Opfer wird nicht mehr zum Schaden addiert. 
+# Kämpfer mit Hellebarden oder Bihändern erhalten keinen [[Boni und Mali|Reiten-Bonus]], wenn sie auf Pferden kämpfen.
+# Kämpfer mit Hellebarde oder Bihänder können keinen Schild mehr benutzen.
+# [[Helden]] haben 3 Attacken pro Kampfrunde, nicht 10. 
+# Taktik gibt 10% Chance pro Talentpunkt Unterschied zum Feind, in der Taktikrunde einen Schlag auszuführen bis zu einem Maximum von 100% (statt früher 100% unabhängig vom Talentwert des Feindes).
+# Gewöhnliche Pferde geben '''keinen''' Vorteil im Kampf außer einer 10% Erhöhung der Chance zu [[Die Flucht|fliehen]].
+# T1 Reiter mit Streitross genießen '''keinerlei''' Vorteile im Kampf, außer einer 10% Erhöhung der Chance zu fliehen.
+# Es gibt ein neues Pferd, das Streitross. Streitrosse können in einer Pferdezucht mit Pferdedressur 4, 1 Eisen, 200 Silber und einem Pferd hergestellt werden.
+# Gegen Trolle wird der Talent-Bonus durch Reiten halbiert. 
+# Streitrosse geben einen Bonus auf das Nahkampftalent und den Schaden, und +20% auf die Fluchtchance.
+{|border="0"
+! Reiten
+! Talent
+! gegen Trolle
+! Schaden
+|-
+| 2 || +1 || --  || +1
+|-
+| 4 || +2 || +1 || +2
+|-
+| 6 || +3 || +1 || +3
+|-
+| 8 || +4 || +2 || +4
+|}
+:: Reiten über Stufe 8 bringt keinen weiteren Bonus.
+
+== Wirtschaft und Moral == 
+
+# Bauern in allen Regionen haben zu Anfang des Spiels eine Moral von 1. 
+# Wenn eine Region ihren Eigentümer verliert oder der Eigentümer wechselt, sinkt die Moral auf 0. Wechselt eine Region den Besitzer durch [[GIB|GIB KOMMANDO]], fällt ihre Moral nur um zwei Punkte, anstatt wie üblich auf 0 zu fallen. Bei einem Wechsel zu einem Herrscher aus der gleichen Allianz fällt die Moral um 2 Punkte, auch wenn der Wechsel nicht in der selben Woche passiert.
+# Darüber hinaus werden die Bauern in der Folgerunde eine Woche der Trauer einlegen. Sie arbeiten nur das nötigste (10 Silber/Bauer) und zahlen auch keine Steuern an den neuen Regionseigentümer. In der ''Übergabewoche'' bekommt der neue Eigentümer also evtl. Steuern und im Report wird bei der Bauernmoral der Zusatz "trauernd" angezeigt. In der ''Folgewoche'' gibt es dann keine Steuern.
+# Regionen ohne Herrscher verlieren pro Runde 1 Punkt Moral.
+# Nach einigen Runden unter dem gleichen Eigentümer steigt die Moral einer Region um einen Punkt auf bis zu 10.
+# Halblinge haben einen höheren Einfluss auf die Moral der Bauern
+# Der Regionsbesitzer bekommt einen Prozentsatz des Regionssilbers an Steuern, der nach der Moral (0,5% pro Punkt) oder der Ausbaustufe der größten Burg richtet, je nachdem, was geringer ist.
+# Die Moral ist im NR textcodiert:
+#: 0 = aufständisch
+#: 1 = wütend
+#: 2 = zornig
+#: 3 = unruhig
+#: 4 = gleichgültig
+#: 5 = entspannt
+#: 6 = zufriedene
+#: 7 = glückliche
+#: 8 = treue
+#: 9 = ergebene
+#: 10 = unterwürfige
+# Ein neues [[Gebäude]], der Marktplatz, ersetzt Handel und Kräuterkunde.
+## Mit einem Marktplatz können Parteien Kräuter und Luxusgüter in der Region und ihren 6 angrenzenden Regionen erwirtschaften. Ozeane geben weder Luxusgüter noch Kräuter ab.
+## Jede Partei kann nur einen Marktplatz pro Region haben. Alle weiteren Märkte werden ignoriert. 
+## Märkte müssen eine Größe von 10 haben. Jeder Größenpunkt kostet 1 Holz und 1 Stein. Märkte baut man mit Burgenbau 3.
+## Ein Marktplatz kostet 200 Silber pro Runde.
+## Handel kostet, außer dem Unterhalt für den Marktplatz, kein weiteres Silber.
+## Märkte erlauben nur den Kauf, nicht den Verkauf von Waren.
+# [[Kräuter#Kräuterliste|Kräuter]] und Luxusgüter werden als [[Magie|Zauberzutaten]] (auch für [[Alchemie|Tränke]]) benötigt.
+# Kräuter verrotten nicht.
+{{Geruecht|author=|text=Regionen mit mindestens 50 Bauern werfen 1 Kraut ab, je 500 Bauern mehr bringen 1 Kraut mehr; Regionen mit mindestens 50 Bauern werfen 1 Stück Luxusgut ab, je 1000 Bauern mehr werfen 1 Luxusgut mehr ab. [http://www.pbem-spiele.de/forum/viewtopic.php?f=16&t=3351]}}
+
+== Schiffe ==
+
+# Die [[Schiffe]] sind komplett überarbeitet.
+# Abtreibende Schiffe nehmen keinen Schaden mehr.
+# Schiffsschaden reduziert nur die Laderaumgrösse, nicht die Passagierzahl
+# Personen und Ladung werden getrennt behandelt.
+# Die Zahl der Personen wird in Gewicht gerechnet. Auf eine Karavelle passen zum Beispiel 150 Menschen, Elfen, Zwerge..., aber 250 Goblins und nur 75 Trolle.
+# Die angegebene Ladung gilt nur für Gegenstände.
+# Kapitäne erhalten einen Bonus von +1 auf die Reichweite ihrer Schiffe für je 6 Stufen Segeln-Talent über dem halben Mindest-Kapitänstalent (aufgerundet).
+#: Beispiele:
+#:: Einbaum mit Talent 7 = +1, 13 = +2, 19 = +3
+#:: Trireme mit Talent 10 = +1, 16 = +2, 22 = +3
+# Die Kriegsschiffe geben den Insassen einen Verteidigungsbonus, wenn diese in einen Kampf verwickelt werden. Dieser Bonus wirkt nur bei Seeschlachten.
+# Die Insassen von Ruderschiffen bekommen einen Angriffsbonus und haben eine 20% Chance pro Talentpunkt Differenz des eigenen Taktikers, in der Taktikerrunde angreifen zu können, anstatt nur 10% (siehe geänderte Taktikregel). Dieser Bonus wirkt nur bei Seeschlachten.
+# Es gibt vier Schiffsklassen:
+## Boote, die (mit einer Ausnahme) nur an Küsten entlangsegeln können
+## Handelsschiffe, mit viel Platz für Ladung
+## Kriegsschiffe, für Vollgerüstete und Extra-Ladung
+## Schnelle Ruderschiffe, für Leichtgerüstete
+
+{| style="border:0; text-align:left" cellspacing="5"  valign="baseline"
+|-
+! Typ !! Deutsch (Englisch) !! RW* !! Pers* !! Ladung in GE !! Kosten !! Kapitän/ Bau !! Segeln !! Spezial
+|-
+| ''Boote'' || Einbaum (canoe) || 3 || 2 || 20 || 3 Holz || 1 || 2 || Boot, ''Fischerei'', ''Flussschiff''
+|-
+| || Floß (raft) || 1 || 5 || 500 || 10 Holz || 1 || 5 || Boot, ''Fischerei'', Anlegen nur in Ebene/Sumpf/Wüste
+|-
+| || Kutter (cutter) || 2 || 5 || 55 || 10 Holz || 2 || 5 || Boot, ''Fischerei'', hochseetauglich
+|-
+| || Barke (barge) || 3 || 11 || 50 || 10 Holz || 2 || 5 || Boot, ''Fischerei''
+|-
+| ''Mallornschiffe'' || Königsbarke (royal barge) || 5 || 11 || 50 || 10 Mallorn, 1000 Silber || 5 || 10 || Boot, ''Fischerei'', ''Starker Schutz vor Stürmen'' 
+|-
+| || Katamaran (catamaran) || 7 || 22 || 100 || 30 Mallorn, 3000 Silber|| 7 || 20 || ''Starker Schutz vor Stürmen''  
+|-
+| ''Handel'' || Kogge (cog) || 4 || 50 || 2000 || 100 Holz || 4 || 20 || ''Schutz vor Stürmen''
+|-
+| || Karavelle (caravel) || 4 || 150 || 6000 || 300 Holz || 6 || 30 || ''Schutz vor Stürmen''
+|-
+| ''Krieg'' || Fregatte (frigate) || 4 || 110 || 1000 || 100 Holz, 1000 Silber || 5 || 40 || +0/+2 OB/DB
+|-
+| || Galeone (galleon) || 4 || 310 || 3000 || 300 Holz, 3000 Silber || 7 || 60 || +0/+2 OB/DB
+|-
+| ''Ruder'' || Drachenschiff (dragonship) || 6 || 110 || 500 || 100 Holz, 1000 Silber || 5 || 60 || +1/+0 OB/DB, ''Rammen und Entern''
+|-
+| || Trireme (trireme) || 6 || 310 || 1500 || 300 Holz, 3000 Silber || 7 || 90 || +1/+0 OB/DB, ''Rammen und Entern''
+|}
+:: *''RW'': Reichweite, ''Pers'': (Pers*10)GE können an Personengewicht mitgenommen werden
+:: ''Boote'' können nicht auf offene See, dafür an allen Küsten anlegen.
+:: ''Fischerei'' sorgt dafür, dass bis zu zwei Insassen kein Silber zum Unterhalt benötigen, wenn das Boot am Anfang einer Woche auf einem Ozeanfeld stand (gilt nicht für Packeis o.ä.).
+:: ''Handelsschiffe'' werden seltener von Stürmen abgetrieben (halbe Chance).
+:: ''Ruderschiffe'' geben den Insassen die doppelte Chance, in der Taktikerrunde anzugreifen (Rammen und Entern).
+:: ''Schutz vor Stürmen'' reduziert die Wahrscheinlichkeit abzutreiben deutlich.
+:: ''Starker Schutz vor Stürmen'' reduziert die Wahrscheinlichkeit abzutreiben auf ein Minimum.
+:: ''Flussschiffe'' sind an keine Ablegerichtung gebunden.
+
+[[en:The third age]]

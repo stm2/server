@@ -1,0 +1,8 @@
+<tt>'''BANNER''' "''text''"</tt>
+
+Hiermit kann man eine Beschreibung setzen, die in der Adressliste von <tt>[[OPTION]] ADRESSE</tt> erscheint. Darin kann der Name des Spielers stehen, oder eine alternative eMail-Adresse für die Mitspieler. Ebenso wird hier vermerkt, wenn eine Urlaubsvertretung spielt.
+
+'''Beispiel''':
+  BANNER "Henning Peters, Bremen. eMail auch faroul@gmx.de"
+
+[[Kategorie:Befehle]]

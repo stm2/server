@@ -1,0 +1,18 @@
+LaTeX- und HTML-Satz der Doku (bis 2001):
+
+  Henning Peters, eMail: [mailto:faroul@eressea-pbem.de faroul@eressea-pbem.de]
+
+Adresse des Spielleiters:
+
+  Enno Rehling, eMail: [mailto:enno@eressea.de enno@eressea.de]
+
+Die Anleitung kann man in verschiedenen Formaten [http://www.eressea.de/de/downloads.shtml runterladen].
+
+Ein paar technische Daten (Stand Januar 2006; Eressea läuft ca. 455 Runden):
+
+* Eressea hat ca. 100.000 Zeilen Code für Server und Tools, die in C, C++ und LUA geschrieben sind, sowie etwa 900 KB XML-Konfigurationsdaten. Es basiert auf dem German Atlantis von Alexander Schröder, welches nur ca. 7000 Zeilen umfaßt.
+* Das Datenfile ist über 120 MB groß. Es gibt ca. 1000 Parteien mit insgesamt ca. 360.000 Einheiten.
+* Eine Auswertung dauert ca. 15 Minuten, dazu kommt etwa eine halbe Stunde für die Kompression und dem Verschicken der Auswertungen per Mail.
+* Wenn jeder der 1000 Spieler nur zwei Stunden pro Woche für Eressea aufbringt, so sind das 2000 Stunden pro Woche. Eine 40-Stunden-Woche angenommen, sind das 50 Wochen - ca. ein Mannjahr Arbeit werden hier Woche für Woche "vernichtet". Und da fragt uns doch tatsächlich einer, ob wir das von Hand auswerten...
+
+[[Kategorie:Regeln]]

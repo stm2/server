@@ -1,0 +1,34 @@
+== Was ist der Xontormia Express? ==
+
+Der Xontormia Express ist die Zeitung für Eressea, deren Artikel von Spielern geschrieben werden. Es ist der Ort für Propaganda und Fantasien aller Art. Er erschien mit Unterbrechungen in verschiedenen Medien und wurde im Jahre 2008 wegen zu geringer Beteiligung vorläufig eingestellt. 2015 wurde er wieder eingeführt. Er wird zusammen mit dem Report versendet und erscheint damit wöchentlich, sofern Artikel eingereicht wurden.
+
+Aufbau der Artikel:
+
+Der XONTORMIA EXPRESS teilt sich verschiedene Rubriken, die nicht in jeder Ausgabe alle vertreten sein müssen. Mögliche Rubriken wären z.B. Politik, Krieg in der 13. Welt oder Kochrezepte. Wenn du einen Artikel schreibst, füge bitte eine gewünschte Rubrik als Zeile am Anfang ein. Die Reaktion behält sich vor Rubriken zusammenzufassen, möglichst kontexttreu. Es wird aber auch die Rubrik "offensichtliche Propaganda" geben. Veröffentlicht wird alles, sofern es nicht gegen die offensichtlichen Regeln verstößt. Werbung ist ausdrücklich gestattet.
+
+Zwei Zeilen darunter kommt die Überschrift deines Artikel, gerne in Großbuchstaben.
+
+Nach einer weiteren Freizeile kannst du deinen Artikel schreiben, der so lang sein kann, wie du willst, er darf Absätze und Leerzeilen haben, nur nicht abstrus viele.
+
+Enden sollte ein Artikel mit dem Namen des Autoren.
+
+Donnerstag 14:00Uhr ist Einsendeschluss für Artikel die noch in der selben Woche erscheinen sollen.
+
+Die Mailadresse, an die jeder Spieler Artikel schicken kann ist [mailto:express@eressea.de express@eressea.de]. 
+
+Ein '''Beispielartikel''' könnte so aussehen:
+
+ Krieg in der 13. Welt
+ 
+ 
+ Skandal! Wilde Trolle überfallen Nifelheim
+ 
+ Wir sind entsetzt! Heute haben 30.000 randalierende Trolle
+ von der Nachbarinsel Klumphausen unsere Festung in
+ Nifelheim überfallen. 3000 unserer Bauern wurden dabei
+ auf brutale Art erschlagen. Wir, die Schrumpfbauch-
+ Goblins schwören blutige Rache.
+ 
+ Gibli der Schreiber-Goblin
+
+{{weiter|Danksagung}}

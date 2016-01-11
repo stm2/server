@@ -1,0 +1,14 @@
+<tt>'''ZEIGE''' "zauberspruch"<br/>
+'''ZEIGE''' "Gegenstand"<br/>
+'''ZEIGE''' "Trank"<br/>
+'''ZEIGE''' ALLE ZAUBER<br/>
+'''ZEIGE''' ALLE TRÄNKE<br/>
+'''ZEIGE''' "Rasse"</tt>
+
+Der Befehl '''ZEIGE''' zeigt die Beschreibung zu einem Zauberspruch, das Rezept eines alchemistischen Trankes an oder die Beschreibung eines Gegenstands an. Die Einheit, die den Befehl gibt, muß den Gegenstand besitzen, bzw. Kenntnis des Zaubers oder des Tranks haben.
+Befindet sich ein Gegenstand im [[Parteipool]], kann eine beliebige Einheit der Partei den Zeigebefehl geben.
+
+
+== Syntax ==
+
+[[Kategorie:Befehle]]

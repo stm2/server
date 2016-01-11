@@ -1,0 +1,14 @@
+<tt>'''ATTACKIERE''' ''einheit-nr''</tt>
+
+Dieser Befehl attackiert die betreffende Einheit in der aktuellen Region. Pro Einheit, die angegriffen werden soll, muß ein Befehl gegeben werden.
+
+Der <tt>ATTACKIERE</tt>-Befehl ist ein pseudolanger Befehl. Er ist kurz in der Hinsicht, dass man mehrere <tt>ATTACKIERE</tt>-Befehle geben kann. Er ist lang, da er weitere lange Befehle ausschließt, falls es tatsächlich zum "langen" Kampf kommen sollte. Wann ein "langer" Kampf gegeben ist, wird unter [[Kampfende]] erläutert.
+
+Einheiten, die nicht vorne (KÄMPFE oder KÄMPFE AGGRESSIV) oder hinten (KÄMPFE HINTEN oder KÄMPFE DEFENSIV) [[KÄMPFE|kämpfen]], können auch nicht attackieren.
+
+== Siehe auch ==
+
+* [[Krieg]]
+* [[KÄMPFE]]
+
+[[Kategorie:Befehle]]

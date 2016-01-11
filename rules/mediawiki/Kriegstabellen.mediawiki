@@ -1,0 +1,263 @@
+Auf dieser Seite sind kampfrelevante Eigenschaften von Waffen, Rüstungen und Rassen aufgeführt. 
+
+== Waffeneigenschaften ==
+
+{| border="0" cellspacing="1" align="center"
+|+Waffenschäden
+|- style="background-color:#aaaaaa; "
+!Waffe 	!!Schaden/Fuß 	!!Schaden/Pferd 	!!  OB 	!!  DB 	!!H/S !!{{E3Akurz|Schaden}}  !!{{E3Akurz}}
+|- style="background-color:#eeeeee"
+|Katapult 	
+|align="center"|3d10+5, 6 mal 
+|align="center"|3d10+5, 6 mal 
+|align="right"|-4 	
+|align="right"|0 	 ||
+|- style="background-color:#cccccc"
+|Armbrust 	
+|align="center"|3d3+5 	
+|align="center"|3d3+5 	
+|align="right"|0 	
+|align="right"|0 	 ||
+|- style="background-color:#eeeeee"
+|Mallornarmbrust 
+|align="center"|3d3+6 	
+|align="center"|3d3+6 	
+|align="right"|0 	
+|align="right"|0 	 ||
+|- style="background-color:#cccccc"
+|Bogen   	
+|align="center"|1d11+1 	
+|align="center"|1d11+1 	
+|align="right"|-2   	
+|align="right"|0 	 ||
+|- style="background-color:#eeeeee"
+|Mallornbogen 	
+|align="center"|1d11+2 	
+|align="center"|1d11+2 	
+|align="right"|-2 	
+|align="right"|0 	 ||
+|- style="background-color:#cccccc"
+|Elfenbogen 	
+|align="center"|2d6+4 	
+|align="center"|2d6+4 	
+|align="right"|-2 	
+|align="right"|0 	 ||
+|align="center"|2d4+5 
+|style="background-color:#ffffff"|E
+|- style="background-color:#eeeeee"
+|Speer 	
+|align="center"|1d10 	
+|align="center"|1d12+2 	
+|align="right"|0     	
+|align="right"|0 	
+|align="center"|S
+|- style="background-color:#cccccc"
+|Mallornspeer 	
+|align="center"|1d10+1 	
+|align="center"|1d12+3 	
+|align="right"|0 	
+|align="right"|0 	
+|align="center"|S
+|- style="background-color:#eeeeee"
+|Hellebarde 	
+|align="center"|2d6+3 	
+|align="center"|2d6+3 	
+|align="right"|-1 	
+|align="right"|+2 	
+|align="center"|S
+|style="background-color:#ffffff"|
+|style="background-color:#ffffff"| -G
+|- style="background-color:#cccccc"
+|Lanze   	
+|align="center"|1d5   	
+|align="center"|2d6+5 	
+|align="right"|0    	
+|align="right"|-2 	
+|align="center"|S
+|style="background-color:#ffffff"|
+|style="background-color:#ffffff"| -G
+|- style="background-color:#eeeeee"
+|Mallornlanze 	
+|align="center"|1d5+1 	
+|align="center"|2d6+6 	
+|align="right"|0 	
+|align="right"|-2 
+|align="center"|S
+|align="center"|1d5+2 / 2d6+7
+|style="background-color:#ffffff"| -G
+|- style="background-color:#cccccc"
+|Schwert 	
+|align="center"|1d9+2 	
+|align="center"|1d9+2 	
+|align="right"|0 	
+|align="right"|0 	
+|align="center"|H
+|- style="background-color:#eeeeee"
+|Bihänder 	
+|align="center"|2d8+3 	
+|align="center"|2d8+3 	
+|align="right"|-1 	
+|align="right"|-2 	
+|align="center"|H
+|style="background-color:#ffffff"|
+|style="background-color:#ffffff"|-G
+|- style="background-color:#cccccc"
+|Kriegsaxt 	
+|align="center"|2d6+4 	
+|align="center"|2d6+4 	
+|align="right"|+1 	
+|align="right"|-2 	
+|align="center"|H
+|style="background-color:#ffffff"|
+|style="background-color:#ffffff"| -G
+|- style="background-color:#eeeeee"
+|Laenschwert 	
+|align="center"|3d6+10 	
+|align="center"|3d6+10 	
+|align="right"|+1 	
+|align="right"|+1 	
+|align="center"|H
+|align="center"|2d9+4
+|- style="background-color:#cccccc"
+|Unbewaffnete 	
+|align="center"|1d5   	
+|align="center"|1d6   	
+|align="right"|0 	
+|align="right"|0 	|| 
+|- style="background-color:#eeeeee"
+|" Trolle
+|align="center"|1d5+1   	
+|align="center"|-  	
+|align="right"|0 	
+|align="right"|0 	|| 
+|- style="background-color:#cccccc"
+|Repetierarmbrust 	
+|align="center"|
+|align="center"|
+|align="right"|0 	
+|align="right"|0 	 ||
+|align="center"|4d3+3 
+|style="background-color:#ffffff"|HZ
+|}
+
+* d steht für dice, Würfel. Ein d5 ist also ein 5-seitiger Würfel. Die Zahl vor dem d gibt an, wieviele dieser Würfel geworfen werden. Und schließlich wird noch ein Festwert addiert. Ein Bogen erreicht also 2 bis 12 Schadenspunkte, eine Hellebarde (2d6+3) 5 bis 15.
+* Der Schaden zu Pferd gilt nur in Verbindung mit dem [[Boni und Mali|Pferdebonus]].
+* OB und DB sind der Offensiv- und Defensiv-Bonus; so ist eine Kriegsaxt eher als Angriffswaffe ausgelegt, derweil eine Hellebarde eher der Verteidigung dienlich ist.
+* Bei einem Armbrusttreffer wird der Rüstungsschutz des Gegners halbiert und abgerundet.
+* Unter H/S ist angegeben, ob die Waffe eine Hieb- oder Stangenwaffe ist. 
+* Alle Mallornwaffen erhöhen die Magieresistenz um 15%, alle Laenwaffen und -rüstungen um 30%. Details zur Magieresistenz folgen unten.
+* E: kann nur von Elfen benutzt werden; -G: kann nicht von Goblins benutzt werden: HZ: kann nur von Halblingen und Zwergen benutzt werden (nur E3).
+
+== Fernwaffen ==
+{| border="0" cellspacing="0" align="center"
+|+ Schusswaffen - Proben, Zeitaufwand und Treffer
+|- style="background-color:#aaaaaa"
+!Waffe 	!!Talent 	!!Probe 	!!Nachladen
+|- style="background-color:#eeeeee"
+|Armbrust 	||Armbrustschießen 	
+|align="right"|0 	
+|align="right"|2
+|- style="background-color:#cccccc"
+|Katapult 	||Katapultbedienung 	
+|align="right"|4 	
+|align="right"|5
+|- style="background-color:#eeeeee"
+|Bogen/Elfenbogen 	||Bogenschießen 	
+|align="right"|2 	
+|align="right"|0
+|}
+
+Dabei ist unter Nachladen angegeben, wie lange es dauert, die Waffe wieder schußbereit zu machen. Ein Katapult kann also in jedem Kampf nur einmal eingesetzt werden. Eine Armbrust kann demnach jede dritte Runde schießen, Bögen sogar jede Runde.
+
+
+== Ausdauer ==
+
+{| border="0" cellspacing="1" align="center"
+|+Erhöhte Trefferpunkte durch Ausdauer<br>Die Formel dazu ist (Talent/2)^(1,5)*20% 
+|- style="background-color:#aaaaaa"
+!Talent 	!!1 	!!2 	!!3 	!!4 	!!5 	!!6 	!!7 	!!8 	!!9 	!!10 	!!... 	!!15 	!!... 	!!20
+|- style="background-color:#eeeeee"
+|Trefferpunkte 	||+7% 	||+20% 	||+37% 	||+57% 	||+79% 	||+104% 	||+131% 	||+160% 	||+191% 	||+224 	||... 	||+410% 	||... 	||+632%
+|}
+
+== Rüstung ==
+
+{| border="0" cellspacing="1" align="center"
+|+Rüstungen
+|- style="background-color:#aaaaaa"
+!Rüstung 	!!Panzerung 	!!Trefferchance/Nah- und Fernkampf !!{{E3Akurz|Panzerung}} !!{{E3Akurz|Chance Nah / Fern}} 
+|- style="background-color:#eeeeee"
+|Plattenpanzer 	||5 	||* 130% || 3 ||* 115% / 100%
+|- style="background-color:#cccccc"
+|Kettenhemd 	||3 	||* 115% || 2 ||* 110% / 100%
+|- style="background-color:#eeeeee"
+|Schild 	||1 	||* 85% || 0 ||* 90% / 90%
+|- style="background-color:#cccccc"
+|Laenschild 	||2 	||* 75% || 1 ||* 90% / 90%
+|- style="background-color:#eeeeee"
+|Laenkettenhemd 	||6 	||- || 3 ||* 100% / 90%
+|- style="background-color:#cccccc"
+|Turmschild 	||- 	||- || 0 ||* 85% / 75%
+|- style="background-color:#cccccc"
+|Schuppenpanzer	||- 	||- || 3 ||* 110% / 105%
+|}
+
+Es kann jeweils nur eine Rüstung benutzt werden, mehrere Rüstungen schützen nicht mehrfach.
+
+Schilde können, obwohl sie als Rüstung zählen, zusammen mit einer Rüstung benutzt werden und wirken dann additiv zur Rüstung, aber auch nur jeweils ein Schild pro Person.
+
+Ein Plattenpanzer fängt also von jedem Treffer 5 Punkte ab, erhöht die Chance, selber getroffen zu werden, aber um 30%; ein Schild fängt einen Trefferpunkt ab und erniedrigt die Chance, getroffen zu werden, um 15%.
+Diese Werte werden '''nicht''' einfach zur Trefferchance des Gegners addiert! Sondern die Trefferchance wird um diesen Anteil ihrerselbst erhöht (siehe Beispiele unten).
+
+Natürliche Rüstungen einzelner Rassen wirken halbkumulativ, d.h. die Hälfte des natürlichen Rüstungswertes (abgerundet) wird aufgeschlagen. Damit kann eine Rasse mit natürlicher Rüstung von 2 einen maximalen Rüstungswert von 9 (Laenausrüstung) bzw. 7 (konventionelle Ausrüstung) erreichen.
+
+    Ein Kämpfer schlägt auf einen Ungerüsteten und hat dabei eine Chance von 60%,
+    ihn zu treffen. Trägt dieser Verteidiger jedoch ein Kettenhemd, erhöht sich 
+    diese Chance auf 60%+(60%*15%)=69%. Trägt er stattdessen ein Schild, vermindert
+    sie sich auf 60%-(60%*15%)=51%. Hat er ein Laenschild, sinkt sie auf 45%.
+    Rüstungen und Schilde zusammen multiplizieren sich. Trägt er ein Kettenhemd 
+    und benutzt einen Schild, so ist die Chance am Ende 
+       60%+(60%*15%)=69%(Kettenhemd) 69%-(69%*15%)=58,65%.(Kettenhemd und Schild).
+    Das Endergebnis wird immer zu ungunsten des Verteidigers gerundet, sprich 
+    der Verteidigungswert abgerundet.
+
+== Rasseneigenschaften ==
+
+{| border="0" cellspacing="1" align="center"
+|+Trefferpunkte, Magieresistenz und natürliche Rüstung
+|- style="background-color:#aaaaaa"
+!Rasse 	!!Trefferpunkte 	!!Magieres. 	!!nat. Rüstung
+|- style="background-color:#eeeeee"
+|Menschen 	||20 	||0 	||0
+|- style="background-color:#cccccc"
+|Meermenschen 	||20 	||0 	||0
+|- style="background-color:#eeeeee"
+|Zwerge 	||24 	||5 	||0
+|- style="background-color:#cccccc"
+|Orks   	||24 	||-5 	||0
+|- style="background-color:#eeeeee"
+|Elfen   	||18 	||10 	||0
+|- style="background-color:#cccccc"
+|Halblinge 	||18 	||5 	||0
+|- style="background-color:#eeeeee"
+|Goblins 	||16 	||-5 	||0
+|- style="background-color:#cccccc"
+|Trolle 	||30 	||10 	||1
+|- style="background-color:#eeeeee"
+|Dämonen 	||50 	||15 	||2
+|- style="background-color:#cccccc"
+|Insekten 	||24 	||5 	||2
+|- style="background-color:#eeeeee"
+|Katzen 	||20 	||0 	||0
+|}
+
+Die natürliche Rüstung reduziert den Schaden von Treffern. Sie wirkt zur Hälfte additiv zu normaler Rüstung.
+
+== Magieresistenz ==
+Die Magieresistenz ist eine besondere Eigenschaft, die sowohl durch Rasse und Ausrüstung aber auch durch einige Zauber beeinflusst werden kann. Sie gibt bei Kampfzaubern an, wie viel Prozent von einem magischen Schaden abgezogen werden. 
+
+Alle Mallornwaffen erhöhen die Magieresistenz um 15%, alle Laenwaffen und -rüstungen um 30%. Dabei wird die Kombination aus natürlicher Magieresistenz, Waffe, Rüstung und Schild nicht einfach addiert, sondern wie die Trefferchancemodifikation multipliziert. 
+
+Ein Elf mit Laenschwert und kompletter Laenrüstung (Schild+Kette) hat also *nicht* 10+30+30+30=100% Resistenz sondern 90%*70%*70%*70%=31% -> 69% Magieresistenz.
+
+[[Kategorie:Regeln]]

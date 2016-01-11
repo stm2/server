@@ -1,0 +1,5 @@
+<tt>'''BENUTZE''' [''anzahl''] "''trank''" [''einheit-nr'']</tt>
+
+Benutzt den angegebenen alchemistischen Trank. Die Einheitennummer darf nur bei Dumpfbackenbrot angegeben werden. Pro Runde und Einheit kann nur ein Tranktyp benutzt werden, also keine verschiedenen Tränke zur Zeit. Man kann einen Trank aber mehrfach benutzen, um die Wirkung auf mehr als 10 Personen auszudehnen.
+
+[[Kategorie:Befehle]]

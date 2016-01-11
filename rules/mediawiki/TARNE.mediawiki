@@ -1,0 +1,30 @@
+<tt>'''TARNE''' [''stufe'']<br/>
+'''TARNE''' PARTEI [NICHT]<br/>
+'''TARNE''' PARTEI NUMMER ''nummer''<br/>
+'''TARNE''' ''rasse''</tt>
+
+Mit der ersten Variante kann man einstellen, wie "intensiv" eine Einheit sich zu tarnen versucht. <tt>stufe</tt> kann natürlich nicht höher als das [[Tarnung|Talent]] der Einheit sein. Ohne Parameterangabe wird das Maximum gesetzt.
+
+Mit <tt>TARNE PARTEI</tt> kann man seine Parteizugehörigkeit zu verbergen versuchen. Im Gegensatz zum normalen Tarnung/Wahrnehmungs-Mechanismus kann man die Parteizugehörigkeit einer solchen Einheit nur noch mit [[Liste der Talente|Spionage]] erkennen.
+
+<tt>TARNE PARTEI NUMMER nummer</tt> tarnt die Einheit mit einer anderen Parteinummer, gibt sich also als einer beliebigen anderen Partei zugehörig aus. Es gibt keinen einfachen Weg, diese Form der Tarnung zu durchschauen. Um wieder der eigenen Partei zugehörig zu erscheinen, muß für <tt>nummer</tt> die eigene Parteinummer verwendet werden. Die angegebene Partei muß der Partei, welche den Befehl gibt, bekannt sein, d.h. in deren Report auftauchen, ansonsten schlägt der Befehl fehl. Parteien, die von der Partei oder Gruppe der Einheit [[HELFE|HELFE xyz PARTEITARNUNG]] bekommen, können die wahre Parteizugehörigkeit der Einheit sehen.
+
+Mit <tt>TARNE rasse</tt> können [[Dämonen]] sich als andere Rasse tarnen.
+
+Soweit, so einfach. Diese Tarnung bringt jedoch ein paar Besonderheiten mit sich, die hier in loser Reihenfolge aufgezählt werden:
+
+* Die (scheinbare) Rasse der Einheit ändert sich dadurch nicht, ein Goblin bleibt ein Goblin, auch wenn er sich als der Partei der Lichtelfen zugehörig ausgibt.
+* Die Einheiten ändern ihr Verhalten durch die Tarnung nicht. Sie spenden z.B. kein Silber an die Verbündeten der Partei, als die sie sich tarnen. Wer also die Tarnung perfektionieren will, sollte mit den Einheiten eine Gruppe bilden und für diese Gruppe entsprechende Helfe-Stati setzen. <br/> So getarnte Einheiten können auch nicht plötzlich Gebäude oder Schiffe betreten, die sie ansonsten nicht betreten dürfen, oder Steuern eintreiben, wo ihnen das normalerweise untersagt ist.
+* Im Kampf bilden derartige Einheiten ein eigenes Heer. Beispiel: Es gibt drei Parteien, die Waldelfen, die Flusselfen und die Eisenzwerge. Alle Parteien habe jeweils eine Einheit: Waldelf, Flusself und Eisenzwerg. Während Waldelf sich als Flusself tarnt, behalten alle anderen Einheiten ihre wahre Identität bei.    <br />   Nun greift der Eisenzwerg den Flusself an. Dadurch erscheinen im Kampfreport drei Heere: Die Eisenzwerge, und zwei Flusselfen-Heere.
+
+[[GRUPPE]] hat allerdings auch die Nebenwirkung mit den mehreren Heeren. Auf diese Weise kann man also nicht sehen ob Einheiten sich als eine fremde Partei ausgeben oder ob der Betreffende nur mehrere Gruppen hat.
+
+
+== Siehe auch ==
+
+* [[Tarnung]]
+* [[Wahrnehmung]]
+
+
+
+[[Kategorie:Befehle]]

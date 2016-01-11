@@ -1,0 +1,33 @@
+<tt>'''FOLGE''' EINHEIT ''einheit-nr''<br/>
+'''FOLGE''' SCHIFF ''schiff-nr'' [''Geschwindigkeit'']</tt>
+
+Hiermit kann man Einheiten bzw. Schiffen folgen.
+
+Mit <tt>FOLGE EINHEIT ''einheit-nr''</tt> wird die eigene Einheit die angegebene Einheit "beobachten" und dieser folgen, wenn sie sich bewegt. Wenn die verfolgte Einheit allerdings schneller als die folgende Einheit ist, entkommt sie der Verfolgung. Die Verfolger folgen der verfolgten Einheit so weit wie möglich. Einheiten auf einem Schiff können nicht mit <tt>FOLGE EINHEIT</tt> verfolgt werden.
+Hat die verfolgte Einheit keinen Bewegungsbefehl gesetzt (<tt>NACH, ROUTE, FAHRE, FOLGE oder PIRATERIE</tt>), kann die eigene Einheit ihren langen Befehl ausführen.
+
+Mit <tt>FOLGE SCHIFF ''schiff-nr''</tt> können Schiffe verfolgt werden, welche in der aktuellen oder der vorigen Runde die Region durchquert haben. Hat der Kapitän den Befehl <tt>FOLGE SCHIFF ''schiffnummer''</tt> gegeben, wird das Schiff dann dem Kurs des angegebenen Schiffes folgen, bis es - wenn das eigene Schiff schnell genug ist - eingeholt wurde. Ist der optionale Parameter ''Geschwindigkeit'' angegeben, wird das verfolgende Schiff maximal so viele Regionen weit segeln.
+
+Achtung, nicht gefolgt werden kann Schiffen, die selber <tt>FOLGE SCHIFF</tt> oder <tt>PIRATERIE</tt> als Befehl haben.
+
+<tt>FOLGE SCHIFF</tt> ist genau wie <tt>FOLGE EINHEIT</tt> nur dann ein langer Befehl, wenn das Ziel einen Bewegungsbefehl hat und ersetzt dann allen anderen langen Befehlen.
+
+<tt>FOLGE</tt> hält nur in der Runde an, in der der Befehle gegeben wird. Soll der Befehl länger andauern, muss ihm ein <tt>@</tt> vorgestellt werden.
+
+ EINHEIT 87b6
+   @FOLGE EINHEIT hz7
+   UNTERHALTE
+
+Einheit 87b6 wird nun Einheit hz7 beobachten und ihr folgen, wenn sie sich bewegt. Ansonsten wird sie mit Unterhaltung Geld verdienen.
+Durch das <tt>@</tt> bleiben beide Befehle erhalten. 
+
+== Siehe auch ==
+
+* [[Reisen]]
+* [[NACH]]
+* [[ROUTE]]
+* [[FAHRE]]
+* [[TRANSPORTIERE]]
+* [[PIRATERIE]]
+
+[[Kategorie:Befehle]]

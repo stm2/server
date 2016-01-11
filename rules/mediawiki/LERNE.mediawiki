@@ -1,0 +1,7 @@
+<tt>'''LERNE''' ''talent''</tt>
+
+Mit diesem Befehl verbringt die Einheit eine Runde damit, das angegebene [[Talente|Talent]] zu lernen (siehe auch: [[Liste der Talente]]). Im Mittel dauert der Aufstieg in eine neue Talentstufe durch reines Lernen in etwa eine Anzahl von Wochen entsprechend der angepeilten Talentstufe ohne Berücksichtigung von Modifikationen durch Rasse oder Terrain. Normalerweise ist ein Talentwert von 2 doppelt so effektiv wie ein Talentwert von 1, ein Talentwert von 3 dreimal so effektiv und so weiter.
+
+Durch den Einsatz von [[LEHRE|Lehrern]] kann man die benötigten Lernzeiten halbieren.
+
+[[Kategorie:Befehle]]

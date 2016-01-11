@@ -1,0 +1,495 @@
+Alchemistische '''Tränke''' werden mit Hilfe von [[Kräuter|Kräutern]] gebraut und können dann von jeder Einheit angewandt werden. Um einen Trank herstellen zu können, braucht man natürlich das Talent [[Liste der Talente|Alchemie]], und um die benötigten Kräuter finden zu können, braucht man das Talent [[Liste der Talente|Kräuterkunde]].
+
+Tränke werden mit dem Befehl <tt>[[MACHE]] "Trank"</tt> hergestellt. Pro Trank braucht man diverse verschiedene Kräuter. Welche dies sind, erfährt man aus den Rezepten, die man mit Erlangen einer neuen Stufe in Alchemie automatisch für diese Stufe erfährt. Um einen Trank herstellen zu können, muss die Stufe des Alchemisten doppelt so hoch sein wie die Stufe des Trankes. Ein Alchemist kann jede Runde Talentstufe/(Trankstufe*2) Tränke herstellen. Ein Alchemist der Stufe 6 kann also maximal einen Trank der Stufe 3, einen der zweiten Stufe oder drei Tränke der ersten Stufe herstellen.
+
+Will man einen Trank anwenden, so tut man dies mit dem Befehl <tt>[[BENUTZE]] [anzahl] "Trank" [einheit-nr]</tt>. Pro Runde und Einheit darf nur eine "Trankart" benutzt werden, man darf also keine zwei verschiedenen "Trankarten" nutzen (Ausnahmen sind Tränke, die automatisch wirken, wie der Heiltrank). Man kann allerdings eine "Trankart" mehrfach benutzen, um so die Wirkung auszudehnen (z.B. für 20 Personen). Ebenso läßt sich ein Trank nicht auf mehrere Einheiten aufteilen - man kann aber nach der Trank-Benutzung eine große Einheit in mehrere kleinere Einheiten aufteilen.
+
+Die meisten Tränke nutzen der Einheit, die sie anwendet. Ausnahmen sind Tränke, die sich auf eine Region beziehen - hier wird der Effekt in der Region erzielt, in der sich die Einheit bei Zugbeginn aufhält - oder die auf andere Einheiten wirken (Dumpfbackenbrot). Aber auch hier gilt die Beschränkung von einem Trank pro Einheit!
+
+Ein Trank wirkt normalerweise für 10 Personen bzw. Gegenstände (dies ist in den Rezepten auch angegeben), und zwar in der Runde, in der er benutzt wurde. Viele Tränke wirken so, dass zu viele Personen in der Einheit nichts ausmachen, d.h. bei 12 Personen und einem Trank (wirkt für 10) betrifft die Wirkung eben nur 10 der 12 Leute. Beim "Berserkerblut" ist dies nicht möglich, da im Kampf die Beteiligten nicht als Einheit auftreten. Hier ist es notwendig, dass vor dem Kampf alle Personen der Einheit die Wirkung des Trankes haben, da er sonst nicht wirkt!
+
+Die "Restwirkung" von Tränken verfällt nicht bei allen Tränken, so dass z.B. eine Person nach Anwendung von einem Gehirnschmalz oder Schaffenstrunk zehn Wochen von der Wirkung profitieren kann. Ebenso kann die Bauernblutwirkung mehrere Wochen auf eine Region anhalten, wobei sich die Wirkung nur auf alle Einheiten der anwendenden Partei verteilt.
+
+== Trankliste ==
+
+{| border="0" cellspacing="0" align="center"
+|+ Trankliste
+|- style="background-color:#aaaaaa"
+! Stufe   !!  Kürzel	!!	Name  	!!      Kräuter     !! Beschreibung
+|- style="background-color:#eeeeee"
+!1
+|Sm
+|Siebenmeilentee 	
+|Blauer Baumringel, Windbeutel 
+|10 Leute schnell wie Pferde
+|- style="background-color:#cccccc"
+!1 	
+|Gw
+|Goliathwasser
+|Gurgelkraut, Fjordwuchs 
+|10 Leute Tragkraft wie Pferde
+|- style="background-color:#eeeeee"
+!1 	
+|WL
+|Wasser des Lebens
+|Elfenlieb, Knotiger Saugwurz 
+|Macht aus 10 Holz/Mallorn 10 Schößlinge/Mallornschößlinge
+|- style="background-color:#cccccc"
+!1 	
+|TW
+|Trank der Wahrheit
+|Flachwurz, Fjordwuchs 
+|Anwender durchschaut Illusionen
+|- style="background-color:#eeeeee"
+!2 	
+|St
+|Schaffenstrunk
+|Alraune, Spaltwachs, Wuerziger Wagemut 
+|verdoppelt Produktivität von 10 Leuten (nur bei <tt>MACHE</tt>)
+|- style="background-color:#cccccc"
+!2 	
+|Ws
+|Wundsalbe
+|Blauer Baumringel, Weißer Wüterich, Würziger Wagemut 
+|Bringt bis zu 400 Trefferpunkte zurück
+|- style="background-color:#eeeeee"
+!2 	
+|Ba
+|Bauernblut
+|Höhlenglimm, Fjordwuchs, Blauer Baumringel 
+|Bis zu 100 Dämonen brauchen keinen Bauern zum Fraß
+|- style="background-color:#cccccc"
+!3 	
+|Gs
+|Gehirnschmalz
+|Wasserfinder, Steinbeißer, Windbeutel, Gurgelkraut 
+|Erhöhte Lernchance für 10 Personen
+|- style="background-color:#eeeeee"
+!3 	
+|Db
+|Dumpfbackenbrot*
+|Eulenauge, Grüner Spinnerich, Höhlenglimm, Fjordwuchs 
+|bei 10 Leuten: kein Lernen oder Lehrer bringt nichts oder vergessen 1 Woche des besten Talents
+|- style="background-color:#cccccc"
+!3 	
+|Nw
+|Nestwärme
+|Eisblume, Grüner Spinnerich, Spaltwachs, Kakteenschwitz
+|Insekten können auch im Winter rekrutieren
+|- style="background-color:#eeeeee"
+!3 	
+|Pg
+|Pferdeglück
+|Blauer Baumringel, Sandfäule, Kakteenschwitz, Knotiger Saugwurz 
+|50 Pferde vermehren sich bis zu vier mal
+|- style="background-color:#cccccc"
+!3 	
+|Be
+|Berserkerblut
+|Weisser Wueterich, Alraune, Flachwurz, Sandfäule 
+|10 Leute im Kampf Angriff +1
+|- style="background-color:#eeeeee"
+!4 	
+|Bl
+|Bauernlieb
+|Alraune, Schneekristall, Steinbeißer, Blasenmorchel, Elfenlieb 
+|gibt bis zu 1000 Bauern in der Region die zehnfache Chance, sich zu vermehren
+|- style="background-color:#cccccc"
+!4 
+|EM
+|Elixier der Macht
+|Elfenlieb, Wasserfinder, Windbeutel, Grüner Spinnerich, Blasenmorchel 
+|Gibt 10 Personen fünffache Trefferpunkte
+|- style="background-color:#eeeeee"
+!4
+|Ht
+|Heiltrank
+|Gurgelkraut, Windbeutel, Eisblume, Elfenlieb, Spaltwachs 
+|4 Personen überleben sonst tödlichen Treffer mit einer Chance von 50%
+|}
+
+<noWiki>*</noWiki>  Der Trank Dumpfbackenbrot wird auf eine andere Einheit mit dem Befehl BENUTZE Dumpfbackenbrot abcd angewandt. Hierbei ist zu beachten: Ist das Tarnungstalent des Anwenders kleiner oder gleich Wahrnehmung+2 des Opfers so geht die Anwendung fehl. Im Falle dass die Anwendung schief geht, bleibt das Dumpfbackenbrot beim Anwender und er bekommt eine Fehlermeldung. 
+
+Um einen Trank herstellen zu können, braucht man das Alchemie-Talent in Höhe der doppelten Trank-Stufe.
+Tränke, die auf die Gegenstände einer Einheit wirken, verfallen, wenn sie nicht benutzt werden können, weil die Einheit diese Gegenstände nicht (mehr) hat.
+
+== Kräutermatrix ==
+
+{|align="center" border="1"
+!Kraut
+!TW
+!Sm
+!Gw
+!WL
+!Ba
+!St
+!Ws
+!Be
+!Db
+!Gs
+!Pg
+!Nw
+!Bl
+!EM
+!Ht
+|-
+|Flachwurz
+|X
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|
+|
+|
+|
+|
+|-
+|Würziger Wagemut
+|
+|
+|
+|
+|
+|X
+|X
+|
+|
+|
+|
+|
+|
+|
+|
+|-
+|Eulenauge
+|
+|
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|
+|
+|
+|
+|-
+|Grüner Spinnerich
+|
+|
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|X
+|
+|X
+|
+|-
+|Blauer Baumringel
+|
+|X
+|
+|
+|X
+|
+|X
+|
+|
+|
+|X
+|
+|
+|
+|
+|-
+|Elfenlieb
+|
+|
+|
+|X
+|
+|
+|
+|
+|
+|
+|
+|
+|X
+|X
+|X
+|-
+|Gurgelkraut
+|
+|
+|X
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|
+|
+|X
+|-
+|Knotiger Saugwurz
+|
+|
+|
+|X
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|
+|
+|-
+|Blasenmorchel
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|X
+|X
+|
+|-
+|Wasserfinder
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|
+|X
+|
+|-
+|Kakteenschwitz
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|X
+|X
+|
+|
+|
+|-
+|Sandfaeule
+|
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|X
+|
+|
+|
+|
+|-
+|Windbeutel
+|
+|X
+|
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|
+|X
+|X
+|-
+|Fjordwuchs
+|X
+|
+|X
+|
+|X
+|
+|
+|
+|X
+|
+|
+|
+|
+|
+|
+|-
+|Alraune
+|
+|
+|
+|
+|
+|X
+|
+|X
+|
+|
+|
+|
+|X
+|
+|
+|-
+|Steinbeisser
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|X
+|
+|
+|-
+|Spaltwachs
+|
+|
+|
+|
+|
+|X
+|
+|
+|
+|
+|
+|X
+|
+|
+|X
+|-
+|Hoehlenglimm
+|
+|
+|
+|
+|X
+|
+|
+|
+|X
+|
+|
+|
+|
+|
+|
+|-
+|Eisblume
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|X
+|-
+|Weisser Wueterich
+|
+|
+|
+|
+|
+|
+|X
+|X
+|
+|
+|
+|
+|
+|
+|
+|-
+|Schneekristall
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|X
+|
+|
+|}
+
+
+{{weiter|Befehl}}

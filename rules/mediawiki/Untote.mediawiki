@@ -1,0 +1,9 @@
+Untote stellen den größten Teil der [[Monster|Monster-Partei]]. Sie entstehen da, wo Bauern sterben (durch [[Hunger|Hungersnöte]] und Seuchen oder als Opfer von [[Drachen]]) oder wo Krieger im [[Krieg|Kampf]] fallen. Untote können verschiedene [[Talente]] lernen und werden dadurch gefährlicher. Sie können aber auch mutieren, wodurch sie nochmals deutlich stärker werden. Untote können (wie alle Monster) Spieler-Einheiten angreifen. Im Kampf verfügen sie über verschiedene Spezial-Angriffe und Imunitäten. Sie können mit bloßen Händen angreifen (gelten auch dann als [[bewaffnet]]), können aber auch Waffen tragen.
+
+Es gibt sieben Arten von Untoten:
+* '''Untote''' -- veraltet, existieren nur noch in den alten Welten, wenn überhaupt
+* '''Skelette''', mutieren zu '''Skelettherren'''
+* '''Ghoule''', mutieren zu '''Ghasten'''
+* '''Zombies''', mutieren zu '''Juju-Zombies'''
+
+Manche [[Magie]]r sind in der Lage, Untote zu kontrollieren.

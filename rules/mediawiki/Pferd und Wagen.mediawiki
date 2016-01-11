@@ -1,0 +1,24 @@
+Die '''Bewegungsgeschwindigkeit''' zu Fuß beträgt ohne [[Straße]] eine Region pro Runde; mit Straße sind es zwei. Zu Pferd kann man sich ohne Straße zwei Regionen weit bewegen, mit Straße drei. Die Einheit reitet automatisch wenn sie für alle Pferde genug Reittalent vorhanden ist. Pro 2 Pferde wir ein Talentpunkt benötigt.
+
+'''Pferde''' haben eine Kapazität von 20GE.
+
+'''Wagen''' haben eine Kapazität von 100GE. Dazu müssen sie von 2 Pferden oder 4 [[Troll|Trolle]] pro Wagen gezogen werden.
+Man kann aber auch Wagen als Fracht transportieren (z.B. auf einem Schiff oder wenn die Einheit zu wenige Pferde dabei hat), sie haben ein Gewicht von 40GE.
+
+'''Zu Fuß''' kann jede Person (auch ohne das Talent Reiten) ein Pferd eine Region weit führen. Zusätzlich kann jede Person pro Talentstufe Reiten vier Pferde führen (eine Person mit Reiten 1 also insgesamt 5 Pferde). Führen Trolle sowohl Pferde als auch Wagen mit sich, so ziehen bevorzugt die Pferde die Wagen. Trolle die ein Pferd führen können keine Wagen ziehen.
+
+'''Zu Pferd''' kann jede Person pro Talentstufe Reiten zwei Pferde mitnehmen. Dabei ist zu beachten, dass die Reiter selbst von der Kapazität des Gespanns abgezogen werden müssen.
+
+* ''Eine Einheit mit 4 [[Elf]]en und Reiten 1 kann max. 20 Pferde (4 Pferde ohnehin, dazu 4*4 Pferde durch Reiten 1) zu Fuß mitführen. Wenn sie nicht mehr als 8 Pferde dabei hat, kann sie sich zwei Felder weit bewegen (mit Straßen natürlich jeweils ein Feld mehr).''
+* ''Wenn also dieselbe Einheit nur 8 Pferde und 2 Wagen mitnimmt, hat sie zu Pferd eine Kapazität von 320GE (2*100GE für die Wagen +8*20GE für die Pferde -4*10GE für die Reiter).''
+* ''Eine Einheit mit 5 [[Zwerg]]en ohne Reitentalent kann 5 Pferde eine Region (mit Straßen zwei Regionen) weit führen und dabei 127GE transportieren (5,4GE pro Zwerg und 20GE pro Pferd). Zusätzlich könnte diese Einheit auch noch 2 Wagen mitführen, was die Kapazität auf 327 erhöhen würde.''
+* ''Eine Einheit mit 4 Trollen ohne Reitentalent kann 4 Pferde und 2 Wagen eine Region (mit Straßen zwei Regionen) weit führen und dabei 323,2GE transportieren (10,8GE pro Troll, 200GE auf dem Wagen und je 20GE auf den 4 Pferden) Trolle können nur entweder ein Pferd führen oder einen Wagen ziehen. Mit 3 Wagen würde der dritte Wagen aufgeladen und die freie Kapazität würde auf 283,2 GE fallen.''
+* ''Eine Einheit mit 4 Trollen ohne Reitentalent und ohne Pferde kann einen Wagen eine Region (mit Straßen zwei Regionen) weit ziehen und dabei 143,2GE transportieren (10,8GE pro Troll und 100GE auf dem Wagen).''
+* ''Ein Fuhrmann mit einem Wagen und zwei Pferden kann 130 Schwerter zwei Regionen weit transportieren (der Fuhrmann wiegt 10 und muß von der Kapazität abgezogen werden, wenn er auf dem Wagen sitzt). Eine Einheit mit Reiten 1 und 4 Personen könnte 20 Pferde und 10 Wagen eine Region weit und 8 Pferde und vier Wagen zwei Regionen weit bewegen.''
+* ''Soll ein leerer Wagen mit zwei Pferden auf einem Schiff transportiert werden, muß das Schiff dafür eine Kapazität von 140GE (40 für den Wagen +2*50 für die Pferde) frei haben. ''
+
+Sind zu viele Pferde vorhanden, kann sich die Einheit nicht mehr bewegen.
+
+Sind in einer Einheit mehrere Pferde und Wagen, so wird deren Tragekapazität einfach addiert. So passen z.B. auf drei Wagen sieben Steine.
+
+[[Kategorie:Regeln]]

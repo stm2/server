@@ -1,0 +1,62 @@
+== Konventionen ==
+
+In diesen Regeln gelten die folgenden Konventionen:
+
+  GIB einheit-nr [anzahl|ALLES] [gegenstand]
+
+* Schlüsselwörter wie GIB, MACHE, NICHT sind in Großbuchstaben gesetzt. Das ist nicht Pflicht, wir empfehlen es aber.
+* Platzhalter sind in Kleinbuchstaben. Sie sollen nicht wörtlich übernommen werden, sondern müssen durch konkrete Werte ersetzt werden, also zum Beispiel einheit-nr durch die Nummer der gewünschten Einheit. Manchmal schreiben wir dies auch als <einheit-nr>, in diesem Fall sind die <- und >-Symbole ''nicht'' zu übernehmen.
+* Worte in []-Klammern sind optional. Sie können also weggelassen werden, ändern dadurch aber die Bedeutung des Befehls. Alternativen sind dabei durch | getrennt. Obiges Beispiel lässt also <tt>GIB 123 ALLES</tt> oder auch <tt>GIB abc 4 Schwert</tt> zu.
+
+Bis auf das Passwort sind dem Server Groß- und Kleinschreibung egal. <tt>lerNE armBRUSTschiessen</tt> ist völlig legal (wird aber nicht empfohlen, da es für Menschen schwer lesbar ist).
+
+Texte, die Leerzeichen enthalten, müssen in Anführungszeichen (") eingeschlossen werden oder die Leerzeichen durch ~ (Tilde) ersetzt. Ferner dürfen Umlaute durch die entsprechende Umschreibung (Ä=AE usw.) ersetzt werden:
+
+    BENENNE Schiff "Großer Blauer Vogel"
+    GIB einh 5 Würziger~Wagemut
+    KAEMPFE HINTEN
+
+
+== Kurze und Lange Befehle ==
+
+Es gibt in Eressea kurze und lange '''Befehle'''. Die langen Befehle sind:
+
+[[ARBEITE]], [[ATTACKIERE]], [[BEKLAUE]], [[BELAGERE]], [[FAHRE]], [[FOLGE]], [[FORSCHE]], [[KAUFE]], [[LEHRE]], [[LERNE]], [[MACHE]] (Ausnahme: MACHE TEMP), [[NACH]], [[PFLANZE]], [[PIRATERIE]], [[ROUTE]], [[SABOTIERE|SABOTIERE SCHIFF]], [[SPIONIERE]], [[TREIBE]], [[UNTERHALTE]], [[VERKAUFE]], [[ZAUBERE]], [[ZERSTÖRE]], [[ZÜCHTE]].
+
+Alle anderen Befehle sind kurze Befehle ([[Kurzbeschreibung]] aller Befehle). Man kann beliebig viele kurze Befehle pro Einheit eingeben. Eine Einheit kann in der Regel nur einen langen Befehl haben. Es gibt ein paar Ausnahmen, die so genannten pseudolangen Befehle (<tt>ATTACKIERE, FOLGE, KAUFE, VERKAUFE, ZAUBERE</tt>), von denen unter Umständen mehrere gegeben werden können.
+
+Wird einer Einheit ein langer Befehl gegeben, wird sie diesen als DEFAULT-Befehl übernehmen und damit den vorherigen Default-Befehl ersetzen. Der Default-Befehl steht in der Befehlsvorlage immer als Vorschlag für einen langen Befehl. Man braucht also einem Pferdedresseur nur einmal den Befehl MACHE pferd zu geben und dieser Befehl erscheint solange in der Befehlsvorlage, bis sie einen anderen langen Befehl erhält (z.B. LERNE Pferdedressur).
+
+Sinnvollerweise werden nicht alle langen Befehle als Default-Befehle übernommen. Das betrifft z.B. NACH, ATTACKIERE und ZAUBERE.
+
+Eine Einheit, die einer Runde arbeitete, in der kommenden Runde nach Norden zog und dann keinen Befehl mehr bekam, wird sich in der darauf folgenden Runde niederlassen und wieder arbeiten (es sei denn natürlich, sie erhält in dieser Runde einen anderen langen Befehl). 
+
+Bitte beachte, dass pro Einheit nur ein Befehl pro Einheit im normalen Report (NR) angezeigt wird. Die restlichen DEFAULT-Befehle werden in der Befehlsvorlage und im Computerreport angezeigt.
+
+== Kurze Befehle dauerhaft ausführen ==
+
+Manchmal ist es sinnvoll, daß ein kurzer Befehl jede Runde ausgeführt wird, so z.B. GIB, weil die Bergarbeiter das abgebaute Eisen ständig an die Schmiede liefern sollen.
+
+Hierzu kann man vor jeden kurzen Befehl ein @ (At-Zeichen, Klammeraffe) setzen. Solche Befehle werden einfach in die Befehlsvorlage der kommenden Runde kopiert und - so man sie nicht wieder löscht - wieder ausgeführt.
+
+'''Ein Beispiel''':
+  EINHEIT berg;         Bergarbeiter [5,400$,U500]
+    MACHE Eisen
+    @GIB schm ALLES Eisen;   immer an die Schmiede liefern
+  EINHEIT schm;         Schmiede [3,1343$,U250]
+    MACHE Schwerter
+
+== Die Befehlsvorlage ==
+
+Am einfachsten ist es, wenn man die Befehlsvorlage verwendet, die am Ende der Auswertung steht. Dort sind alle Einheiten aufgeführt, so daß man niemanden vergißt. Viele Befehle lassen sich abkürzen, wobei man es nicht übertreiben sollte, da dies fehlerträchtig ist: VER paßt auf VERGISS, VERKAUFE und VERLASSE und wird darum als Fehler angemerkt; hier sollte man also mindestens vier Buchstaben verwenden. Außerdem sind allzu kryptische Verkürzungen nicht sonderlich leserlich, wenn man später seine Züge durchsieht...
+Am sichersten ist es immer noch, wenn man seine Befehle nicht abkürzt, zumal es Befehle und Talente geben kann, die absichtlich nicht in der Anleitung stehen aber ähnlich anfangen wie bekannte Befehle und Talente.
+
+
+== Siehe auch ==
+* [[Befehlsreihenfolge]]
+* [[Kurzbeschreibung]]
+
+{{weiter|Befehlsreihenfolge}}
+
+[[Kategorie:Befehle]]
+[[Kategorie:Regeln]]

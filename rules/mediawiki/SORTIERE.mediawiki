@@ -1,0 +1,15 @@
+<tt>'''SORTIERE''' VOR ''einheit-nr'' <br/>
+'''SORTIERE''' HINTER ''einheit-nr''</tt>
+
+Mit diesem Befehl ändert man die Reihenfolge, in der eigene Einheiten im Report und der Zugvorlage auftauchen. Dies ist nützlich, um z.B. Schüler und Lehrer direkt untereinander stehen zu haben.
+Folgende Einschränkungen gibt es:
+
+* <tt>''einheit-nr''</tt> muß eine eigene Einheit sein.
+* Man kann sich nicht in ein Gebäude oder ein Schiff rein- oder raussortieren. Beide Einheiten müssen entweder in demselben Gebäude bzw. demselben Schiff sein, oder beide außerhalb.
+* Man kann sich nicht VOR einen Gebäudebesitzer oder Schiffskapitän einsortieren. Dafür nutzt man den Befehl [[GIB|GIB einheit-nr KOMMANDO]]
+* Ein Gebäudebesitzer oder Schiffskapitän kann den Befehl gar nicht benutzen.
+
+Die Sortierung erfolgt ganz am Ende der Runde, nach der Bewegung. Man kann also Einheiten, die mittels [[NACH]] oder [[FAHRE]] in die Region gelangt sind, gleich passend einsortieren.
+
+
+[[Kategorie:Befehle]]

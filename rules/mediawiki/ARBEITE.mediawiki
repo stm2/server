@@ -1,0 +1,68 @@
+<tt>'''ARBEITE'''</tt> 
+
+Die Einheit arbeitet in der Landwirtschaft und verdient zwischen 10 und 15 Silber pro Mann und Runde (s.a. [[Einnahmen#Beispiele zu den Verdienstmöglichkeiten|diese Tabelle]]).
+
+{| border="1" cellspacing="0" cellpadding="5"
+!Verdienst Burg	!!keine 	!!Befestigung 	!!Turm 	!!Burg 	!!Festung 	!!Zitadelle
+|-
+|Lohn
+|10
+|11
+|12
+|13
+|14
+|15
+|-
+|Ork-Lohn
+|10
+|11
+|11
+|12
+|12
+|13
+|-
+|}
+  
+
+Dabei stehen in verschiedenen Regionen unterschiedlich viele Arbeitsplätze zur Verfügung. Jeder Bauer nimmt einen, jeder Schössling vier und jeder Baum acht Arbeitsplätze weg. Sollte die Zahl der verfügbaren Plätze überschritten sein, können auch keine Spieler-Einheiten in dieser Region mehr arbeiten. Unter "max. Bäume" ist angegeben, wieviele Bäume den gesamten Platz für "Feldarbeiter" einnehmen. Es können durchaus mehr Bäume in einer Region stehen.
+
+Bauern und Bäume in Regionen:
+{| border="1" cellspacing="0" cellpadding="5"
+    !Gelände 	!!max. arb. Bauern 	!!max. Bäume
+|-    
+|Gebirge 	
+|1000 	
+|125
+|-
+|Ebene 	
+|10000 	
+|1250 
+|-
+|Gletscher 	
+|100 	
+|13 
+|-
+|Hochland 	
+|4000 	
+|500 
+|-
+|Sumpf 	
+|2000 	
+|250 
+|-
+|Wüste 	
+|500 	
+|63 
+|-
+|Wald 	
+|10000 	
+|1250 
+|-
+|Vulkan 	
+|500 	
+|63 
+|-
+|}
+Einheiten an Bord von Schiffen in bewachten Regionen können weder arbeiten noch unterhalten (siehe <tt>[[BEWACHE]]</tt>, <tt>[[HELFE]]</tt> und <tt>[[UNTERHALTE]]</tt>).
+
+[[Kategorie:Befehle]]

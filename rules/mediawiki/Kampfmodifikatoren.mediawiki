@@ -1,0 +1,28 @@
+Verschiedene Faktoren können die Chance, jemanden zu treffen (Attacke) oder einen Treffer abzuwehren (Parade), modifizieren. Alle Boni und Mali wirken sich direkt auf das Talent aus und werden vor einer eventuellen Talent-Halbierung durch Fernkämpfer angerechnet. Die Schadenspunkte, die eine Person austeilt, werden durch die Boni und Mali nicht verändert, hier zählen die unmodifizierten Talentwerte.
+
+{| border="1"
+|+ Modifikatoren im Kampf
+! Person !! Angriff !! Verteidigung
+|-
+! Unbewaffneter || -2 || -2
+|-
+! Unbewaffneter Ork || (bestes Nahkampftalent)-3 || (bestes Nahkampftalent)-3
+|-
+!Bewaffneter ohne Talent || -2 || -2
+|-
+!Verteidiger in einer Burg ||  || +1 ... +5
+|-
+!Reiter mit Reiten 2 ||	+2 	|| +2
+|-
+!Lanze/Speer zu Pferd mit Reiten 2* || +1 ||
+|-
+!Speer/Hellebarde gegen Reiter 	  || ||	+1
+|-
+!Bewaffneter mit Waffe || colspan="2" | [[Kriegstabellen|je nach Waffe]]
+|}
+
+Alle Boni addieren sich. Reiter bekommen ihren Bonus nur in Ebenen, Wüsten und Hochländern; nicht in einer Burg.
+
+Weitere Tabellen zum Kampf sind im Kapitel [[Kriegstabellen|Kampf]].
+
+[[Kategorie:Regeln]]

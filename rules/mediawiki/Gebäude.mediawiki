@@ -1,0 +1,34 @@
+Es gibt verschiedene Gebäude in Eressea, die unterschiedliche Vorteile bieten. Außer Burgen und Monumente brauchen alle Gebäude einen laufenden Unterhalt, der die Funktion  sicherstellt.
+
+== Unterhalt ==
+
+Diese Unterhaltskosten sind meistens unabhängig von der Größe des Gebäudes und müssen am Anfang der Runde bezahlt werden, zwischen dem <tt>[[GIB]]</tt>-Befehl und den langen Befehlen (siehe [[Befehlsreihenfolge]]). Eine Einheit kann also nicht Steuern eintreiben und dann mit dem eingetriebenen Geld den Unterhalt bezahlen. Ist zu diesem Zeitpunkt kein Geld da, funktioniert das Gebäude nicht. Ist am Ende des Zuges genügend Geld vorhanden, so wird der Unterhalt dann bezahlt. Das Geld wird vom Eigentümer des Gebäudes abgezogen, also der ersten Einheit im Gebäude. Reicht am Ende der Runde das Geld noch immer nicht, so helfen Parteien mit <tt>[[HELFE|HELFE SILBER]]</tt> aus.
+
+Der Unterhalt ist voll fällig, sobald an dem Gebäude gebaut wird; allerdings noch nicht in der Runde, in der es mit <tt>[[MACHE|MACHE ''Gebäude'']]</tt> angefangen wird. Dies hat zur Folge, dass unterhaltspflichtige Gebäude die in nur einer Runde fertiggestellt werden, in der Bauwoche nicht funktionieren, da zu Beginn der Woche kein Unterhalt bezahlt wurde.
+
+== Einheiten und Gebäude ==
+
+Unter einem Gebäude sind die Einheiten eingerückt, die sich in dem betreffenden Gebäude befinden. Die erste Einheit hat das Kommando über das Gebäude. Sie bestimmt, welche anderen Einheiten das Gebäude betreten dürfen, und sie darf das Gebäude umbenennen und beschreiben. Der Burgherr der größten Burg einer Region darf sogar die Region, über die sie herrscht, umbenennen und beschreiben. {{E3A|Der Gebäudebesitzer kann das Gebäude nur verlassen, wenn er explizit den [[GIB]] Kommando oder den [[VERLASSE]] Befehl verwendet.}}
+
+Die Wirkung von Gebäuden (auch von Burgen) wird einheitenweise angerechnet. Einheiten, die also nicht mehr in die noch freie Kapazität reinpassen, bekommen keinen Bonus durch das Gebäude - auch dann, wenn sie die einzige Einheit sind!
+
+Sind mehrere Einheiten in einem Gebäude, werden diese der Reihe nach von oben nach unten abgefragt. Die erste zu große Einheit "sperrt" das Gebäude dann für weitere, auch dann, wenn kommende Einheiten passen würden, wenn die zu große nicht dort wäre. Der [[SORTIERE]]-Befehl kann hier abhelfen. 
+
+== Bau ==
+
+Gebäude werden mit dem [[MACHE]]-Befehl gebaut und erweitert. Wie bei anderen Produktionsbefehlen ist die Bauleistung von Talent und Größe der Baumeistereinheit und vom erforderlichen Mindesttalent abhängig.
+Eine Einheit kann pro Runde (Talentstufe x Personen / Mindesttalent) Größenpunkte bauen; man kann also mit einer hinreichend guten Einheit und genug Steinen problemlos in einer Woche einen Turm bauen.
+
+== Siehe auch ==
+
+* [[Burg|Burgen]]
+* [[Andere Gebäude]]
+* [[Produktion]]
+* [[Ausgaben]]
+
+<noinclude>
+{{weiter|link=Burg|text=Burgen}}
+
+[[en:Buidlings]]
+[[Kategorie:Regeln]]
+</noinclude>

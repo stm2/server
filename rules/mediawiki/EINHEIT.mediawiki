@@ -1,0 +1,10 @@
+<tt>'''EINHEIT''' ''einheit-nr''</tt>
+
+Mit diesem Befehl beginnt man die Befehlseingabe für eine der eigenen Einheiten.
+
+   EINHEIT 45
+     NACH WESTEN
+   EINHEIT 46
+     BETRETE GEBÄUDE 7
+
+[[Kategorie:Befehle]]

@@ -1,0 +1,12 @@
+Ich (Christian Schlittchen) habe allerlei Personen zu danken, die mir bei der Weiterentwicklung des Spieles geholfen haben. Zuallererst Katja Zedel, die mir beim Testen sehr geholfen, eigene Ideen eingebracht und mich moralisch gestützt hat, Henning Peters für seine Arbeit an der Dokumentation und Benni Bärmann, Enno Rehling und Sören Schwarz für ihre aktive und unschätzbare Hilfe. Christian Büthe und Raphael Sturm danke ich, ebenso wie allen, die sich aktiv an den oft hitzigen aber auch interessanten Diskussionen zum Spiel beteiligt haben, für ihre wertvollen Ideen und Anregungen. Ohne sie wäre das Projekt Eressea nicht möglich gewesen.
+
+Mein besonderer Dank geht an Alex Schröder, der mir den Source von German-Atlantis zur Verfügung gestellt hat und an den Autor von Atlantis 1.0, Russell Wallace, dafür, daß er solch ein exzellentes Spiel entwickelt und den Source freigegeben hat.
+
+Der Sourcecode für Atlantis 1.0 wurde von Russell Wallace der Öffentlichkeit unter folgenden Bedingungen übergeben:
+
+''This program may be freely used, modified and distributed. It may not be sold or used commercially without prior written permission from the author.''
+
+Alexander Schröder hat das Spiel auf Deutsch übersetzt, abgeändert, und ein neues Regelwerk geschrieben. Für seine Version von Atlantis gelten dieselben Bedingungen. Der Sourcecode von Eressea war anfangs nicht frei erhältlich, er war Eigentum der Entwickler.
+Unter [[Enno]] wurde der [https://github.com/eressea/server/ Code] später jedoch ebenfalls freigegeben.
+
+{{weiter|Das dritte Zeitalter}}

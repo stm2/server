@@ -1,0 +1,56 @@
+== Reisen: Zu Land und zur See ==
+
+In jeder Runde kann man zu Land eine Region weit gehen. Hat eine Einheit genug Pferde und hat sie das Talent Reiten, so kommt sie eine Region weiter als zu Fuß. Sind die aneinanderliegenden Regionen durch Straßen verbunden, können sich die Einheiten zu Fuß bis zu 2 Regionen und zu Pferd bis zu 3 Regionen weit bewegen.
+
+Bewegung ist nur in die sechs Richtungen Nordost, Nordwest, Osten, Westen, Südost und Südwest möglich. Eine direkte Bewegung nach Norden oder Süden geht nicht. Dafür verwendet man die Befehle [[NACH]] und [[ROUTE]]
+
+Mit dem Befehl [[TRANSPORTIERE]] fahrgast-einheit können Einheiten andere Einheiten mitnehmen. Die zu transportierende Einheit muß dazu den Befehl [[FAHRE]] transporter-einheit geben. Durch diesen Befehl ist es z.B. möglich, Einheiten, die nicht reiten können, auf Pferden oder Wagen mitzunehmen. Die transportierende Einheit muß dazu natürlich Tragekapazität für die Passagiere und deren Besitztümer haben.
+
+Reisende Einheiten können von bewachenden Einheiten in einer Region gestoppt werden (siehe [[BEWACHE]]).
+
+Wenn eine Einheit oder ein Schiff zu schwer beladen ist, können sie sich nicht fortbewegen. Dazu wird das Gesamtgewicht der zu transportierenden Einheit samt mitgeführten Waren und Silber mit der Tragekapazität verglichen (siehe [[Waren|diese]] Tabelle für die Gewichte).
+
+{| border="0" cellspacing="0" align="center"
+|+ Gewichte und Kapazitäten
+|- style="background-color:#aaaaaa"
+! 	!!Gewicht  	!!Kapazität
+|- style="background-color:#eeeeee"
+|Trolle 	||20 	||10,8
+|- style="background-color:#cccccc"
+|Goblins 	||6 	||4,4
+|- style="background-color:#eeeeee"
+|alle anderen Rassen 	||10 	||5,4
+|- style="background-color:#cccccc"
+|Pferd 	||50 	||20
+|- style="background-color:#eeeeee"
+|Wagen 	||40 	||100
+|- style="background-color:#cccccc"
+|Boot 	||-/- 	||50
+|- style="background-color:#eeeeee"
+|Langboot 	||-/- 	||500
+|- style="background-color:#cccccc"
+|Drachenschiff 	||-/- 	||1000
+|- style="background-color:#eeeeee"
+|Karavelle 	||-/- 	||3000
+|- style="background-color:#cccccc"
+|Trireme 	||-/- 	||2000
+|-
+|}
+
+== Straßen ==
+
+Durch den Bau von Straßen kann die Reisegeschwindigkeit um eine Region erhöht werden. Dabei müssen alle Regionen, durch die man reist, ein komplettes Straßennetz aufweisen.
+
+Näheres zum Bau von Straßen kann man [[Straße|hier]] nachlesen.
+
+== Pferd und Wagen ==
+{{:Pferd und Wagen}}
+
+== Schiffsreisen ==
+{{:Schiffsreisen}}
+
+<noinclude>
+{{weiter|Produktion}}
+
+[[Category:Regeln]]
+</noinclude>

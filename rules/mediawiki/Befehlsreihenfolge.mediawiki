@@ -1,0 +1,76 @@
+Die Befehle von Eressea werden in einer festen Reihenfolge ausgewertet. Befehle, die unter der selben Nummer stehen, werden zur gleichen Zeit ausgeführt.
+
+Einige Befehle werden zuerst in einer Liste gemerkt, bis alle Einheiten der Region den Befehl gegeben haben. Erst dann werden sie gesammelt ausgeführt. Dies betrifft ARBEITE, UNTERHALTE, TREIBE, REKRUTIERE, KAUFE, VERKAUFE und MACHE von Rohstoffen. Rohstoffe sind Steine, Eisen, Laen, Holz, Mallorn, Kräuter und Pferde. MACHE BURG oder MACHE SCHIFF wird also sofort ausgeführt.
+
+Der Sinn davon ist, daß alle Parteien gleichmäßig "bedient" werden und nicht die Einheit, die als erstes drankommt, alle Rohstoffe bekommt.
+
+# neue Default-Befehle werden gesetzt
+# [[GRUPPE]], [[MACHE|MACHE TEMP]]
+# [[BENENNE]], [[BESCHREIBE]], [[BEWACHE|BEWACHE NICHT]], [[HELFE]], [[KÄMPFE]], [[KAMPFZAUBER]], [[TARNE]], [[URSPRUNG]], [[ZEIGE]]
+# [[BANNER]], [[EMAIL]], [[OPTION]], [[PASSWORT]]
+# [[BOTSCHAFT]]
+# [[BENUTZE]]
+# [[BETRETE]], [[KONTAKTIERE]]; 1. Versuch
+# [[VERLASSE]]
+# Kontakte werden gelöscht, dann [[ATTACKIERE]]
+# [[RESERVIERE]], [[BEANSPRUCHE]]
+# [[BELAGERE]]
+# BETRETE, KONTAKTIERE; 2. Versuch
+# [[FOLGE]] wird gesetzt
+# [[GIB]], [[VERGISS]]
+# [[ZERSTÖRE]]
+# [[REKRUTIERE]] wird erst gemerkt, dann personenweise ausgeführt
+# [[BEFÖRDERE]]
+# Unterhaltskosten für unterhaltspflichtige Gebäude fallen an; sonst haben sie keine Funktion!
+# [[NEUSTART]], [[STIRB]], [[ZAUBERE]]
+# [[LEHRE]]
+# [[LERNE]]
+# [[ARBEITE]], [[BEKLAUE]], [[KAUFE]], [[VERKAUFE]], [[MACHE]], [[PFLANZE]], [[SABOTIERE]], [[SPIONIERE]], [[TREIBE]], [[UNTERHALTE]], [[ZÜCHTE]]
+# jetzt erst werden einige Befehle ausgeführt, und zwar "schrittweise", d.h. Rohstoffe werden einzeln gefördert usw.
+## Produktion von Rohstoffen (einzeln)
+## Unterhaltung (Silberstückweise)
+## Arbeiten (Silberstückweise)
+## Steuern eintreiben (in Teilen von je 10 Silber)
+## Kaufen (einzeln)
+## Verkaufen (einzeln)
+## Beklauen (Silberstückweise)
+# Schiffe mit mangelnder Besatzung nehmen Schäden
+# BETRETE, KONTAKTIERE; 3. Versuch
+# [[NACH]] und [[ROUTE]], dabei wird auch [[FAHRE]] und [[TRANSPORTIERE]] ausgeführt und Verfolger folgen
+# [[BEWACHE]] an; das geht nur, wenn die Einheit sich nicht bewegt hat
+# Schiffe treiben auf hoher See
+# [[DEFAULT]]
+# leere Einheiten werden beseitigt
+# die Bauern, Pferde und Wälder vermehren sich, falls möglich; die übriggebliebenen Bauern wandern umher
+# Silber für die Versorgung der Einheiten wird abgezogen
+# bislang unbezahlte Unterhaltskosten für unterhaltspflichtige Gebäude fallen an
+# [[SORTIERE]]
+# [[NUMMER]]
+
+
+Die Befehle müssen aber nicht zwingend in dieser Reihenfolge eingegeben werden. Es ist durchaus zulässig, folgendes einzugeben:
+
+ GIB TEMP 5 300 Silber
+ MACHE TEMP 5
+   REKRUTIERE 1
+   KÄMPFE NICHT
+   LERNE HOLZFÄLLEN
+ ENDE
+
+Die neue Einheit wird zuerst erschaffen, kämpft nicht mehr, erhält 300 Silber, rekrutiert 1 und lernt schlußendlich Holzfällen - obwohl das nicht der Reihenfolge entspricht, in der die Befehle eingegeben wurden.
+
+
+== Erläuterungen ==
+; Betrete 1./2./3. Versuch: 
+: Das bedeutet, dass man vor einem Angriff noch eine Burg betreten kann. Es bedeutet nicht, dass Einheiten, die ein Schiff verlassen, noch in derselben Runde attackieren können, da sich der Server merkt, wer Schiffe verlassen hat, und das entsprechend abfängt. Wenn man im Kampf eine Gebäudebesatzung restlos tötet oder vertreibt, kann man die Burg nach dem Kampf betreten.
+
+== Siehe auch ==
+
+* [[Befehle]]
+* [[Kurzbeschreibung]]
+* [[Befehlsreihenfolge (E3)]]
+
+{{weiter|Kurzbeschreibung}}
+
+[[Kategorie:Befehle]]
+[[Kategorie:Regeln]]

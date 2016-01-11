@@ -1,0 +1,26 @@
+'''Atlantis''' ist der Urvater von Eressea.
+
+== Projekte ==
+* [http://www.atlantis-pbem.org/ Atlantis 4 und 5]
+* [http://www.prankster.com/project/ Atlantis 1 bis 3]
+
+== Aktive Atlantis-Spiele ==
+* [http://arno-saxena.de/atlantis/atl_home.php Arnos Atlantis] - Atlantis 4.0.10k, seit April 2004
+* [http://vinyambar.de/rules.shtml#wdw Vinyambar (WDW)] - Variante basierend auf Eressea
+* [http://www.fantasya-pbem.de/ Fantasya]
+* [http://www.pbem-spiele.de/forum/viewtopic.php?f=16&t=3743 Ennos Atlantis, Codename Atlas]
+
+== Ehemalige Partien ==
+* [http://vinyambar.de/rules.shtml#kdm Vinyambar (KDM)] - Variante basierend auf Eressea
+* [http://www.german-atlantis.de/ German Atlantis (GA)] 
+* Rorqual
+* [http://www.ciao.de/Empiria_PBeM__412684 Empiria] - Variante basierend auf Eressea
+* Sitanleta
+* [http://allanon-pbem.de/ Allanon (dead link)] - basiert auf GA
+* [http://www.menouthis.net/ Menouthis (dead link)] - Neuentwicklung in Java, von den Allanon-Machern. Start Mai 2008.
+
+== Externe Links ==
+
+* [http://en.wikipedia.org/wiki/Atlantis_PbeM Wikipedia]
+* [http://home.arcor.de/sinn/links.html Eine Fanseite]
+* [http://groups.yahoo.com/group/atlantisdev/ Atlantis Developer Mailingliste]

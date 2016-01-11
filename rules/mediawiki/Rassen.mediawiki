@@ -1,0 +1,122 @@
+Neben den Menschen gibt es in Eressea noch viele andere Rassen (=Parteitypen), unter denen der Spieler wählen kann. Jede Rasse hat gewisse Vor- und Nachteile, die sich durch [[Talentmodifikatoren|Boni bzw. Mali]] in einigen Talenten äußern und manchmal gewisse andere spezielle Fähigkeiten; außerdem hat jede Rasse verschiedene [[Talentmodifikatoren|Rekrutierungskosten]]. Eine Person wiegt in der Regel 10 Gewichtseinheit (GE) und kann 5,4 GE tragen. Ausnahmen sind Trolle, Goblins und verschiedene Monster.
+
+Jeder neu beginnende Spieler muß sich eine Rasse aussuchen, die er fortan spielen will. Diese Rasse wird bei der Anmeldung angegeben und kann danach nicht mehr geändert werden. Die Auswahl sollte also gut überdacht werden.
+
+Einen schnellen Überblick gibt es in der [[Talentmodifikatoren | Tabelle rassenspezifischer Vor- und Nachteile ]].
+
+==Dämonen==
+'''Dämonen''' sind grausam und unberechenbar. Sie fressen die Bauern der Umgebung und überraschen immer wieder mit neuen Fähigkeiten.
+
+    **Achtung!** Dämonen sind denkbar ungeeignet für unerfahrene Eressea-Spieler!
+
+* Alle Talente, in denen sie mindestens Talentstufe 1 haben, verschieben sich mit einer Wahrscheinlichkeit von 25% um bis zu 3 Talentstufen nach oben (mit 60% Chance) oder unten (mit 40% Chance; das Talent steigt oder sinkt also, nicht beides). Die Verschiebung erfolgt nach den langen Befehlen und der Bewegung. Negative Talentwerte entstehen dabei nicht; ein Talent kann nicht unter 0 fallen.
+* Dämonen fressen jede Runde Bauern. Ein Bauer ernährt zehn Dämonen, und ein Dämon, der keine Nahrung bekommt, verliert Trefferpunkte und unterliegen der Talenthalbierung nach der normalen [[Hunger|Hungerregel]]. Sie können im Gegensatz zu anderen Rassen jedoch auch während sie hungern lange Befehle ausführen. Talente lernen sie nur mit halber Geschwindigkeit, und sie regenerieren während des Hungerns keine Lebenspunkte.
+* Rekrutierte Dämonen werden nicht vom Bauernpool abgezogen. Aus spieltechnischen Gründen gilt aber trotzdem das Rekrutierungslimit.
+* Dämonen, die abgegeben werden, kehren in ihre Heimatsphäre zurück, sie werden nicht zu Bauern.
+* Dämonen können sich als eine andere Rasse tarnen.
+* Im Nahkampf bewirkt jeder Treffer eines Dämons bei einem Gegner eine "1-Personen-Panik": die betroffene Person hat -1 auf ihr Kampftalent.
+* Verwundete Dämonen regenerieren sich mit 7,5% ihrer Trefferpunkte.
+
+==Elfen==
+'''Elfen''' sind ein geradezu magisches Volk. Schwere Arbeiten sind nicht unbedingt ihre Stärke, dafür umso mehr die feine Muse und die Magie der Natur.
+
+* Jeder Elf in der Region (bis zu maximal 1/8 der Regionskapazität für Bauern, das entspricht z.B. bis zu 250 Elfen in einem Sumpf) erhöht die Chance eines Baums, in einer Sommer- oder Herbstwoche einen Samen abzuwerfen. Das kann je nach Anzahl der Elfen einen ganz deutlichen Unterschied ausmachen.
+* Elfen haben in Wäldern zusätzlich Tarnung und Wahrnehmung +1 und Taktik +2.
+* Elfen dürfen sechs (statt fünf) Magier besitzen.
+* Elfenmagier regenerieren Aura deutlich schneller
+* Elfen machen mit Bögen einen Schadenspunkt mehr.
+* Nur Elfen können Elfenbögen bauen.
+* Verwundete Elfen regenerieren sich mit 5% ihrer Trefferpunkte.
+
+==Goblins==
+'''Goblins''' sind feige und hinterhältig, lieber verstecken sie sich, als daß sie zur Tat schreiten. Bei ihnen gilt: "Masse statt Klasse."
+
+* Wenn sie mit mindestens zehnfacher Übermacht angreifen, erhalten sie Angriffsbonus.
+* Goblins sind mit 6 GE leichter als andere Rassen, dafür ist aber auch ihre Tragekapazität von 4,4 GE geringer.
+* Wenn Goblins mit einem Tarnungstalent von mindestens 4 klauen, bekommen sie mindestens 50 Silber, selbst dann, wenn sie erwischt werden.
+* Unbewaffnete Goblins haben einen Bonus von +2 auf ihre Verteidigung.
+* Verwundete Goblins regenerieren sich mit 10% ihrer Trefferpunkte.
+
+==Halblinge==
+'''Halblinge''' sind kleine Gesellen mit haarigen Füßen. Sie sind gute Händler und verstehen es, die Bauern zu unterhalten. Sie sind gute Baumeister, Pferde und [[Schiff]]e überlassen sie aber lieber anderen. Der Umgang mit Waffen zählt nicht gerade zu ihren Stärken.
+
+* Halblinge, die in einem Kampf verusuchen zu fliehen, haben dabei eine Grundchance von 50% (alle anderen Rassen 25%). Die maximale Chance ist bei ihnen 90% (sonst 75%, siehe <tt>[[KÄMPFE|KÄMPFE FLIEHE]]</tt>).
+* Halblinge haben einen Angriffs- und Schadens-Bonus von je +5 im Kampf gegen Drachen.
+* Halblinge nehmen durch Hungern zwischen 15 und 28 Punkten (1d14+14) Schaden.
+* Verwundete Halblinge regenerieren sich mit 5% ihrer Trefferpunkte.
+
+==Insekten==
+'''Insekten''' leben in einem streng organisiertem Staat. Sie hassen die Kälte und fühlen sich in feucht-warmen Gegenden am wohlsten. Ihr harter Panzer schützt sie vor so manchen Übergriffen.
+
+    Insekten sind nicht sehr geeignet für unerfahrene Eressea-Spieler.
+
+* Insekten mögen Wärme und Feuchtigkeit und hassen die Kälte: In Wüsten und Sümpfen haben sie +1 auf alle Talente, in denen sie wenigstens Talent 1 haben, in Gebirgen -1.
+* Insekten können Gletscher nicht betreten, es ist ihnen zu kalt. Sie können auch nicht von anderen Rassen in oder durch einen Gletscher gebracht werden.
+* Insekten können in den Wintermonaten Herdfeuer, Eiswind und Schneebann nur in Wüsten rekrutieren. Es kann allerdings durch [[Liste der Talente|Alchemie]] ein [[Tränke|Trank]] (Nestwärme) hergestellt werden, der die Rekrutierung in anderem Terrain möglich macht.
+* Insekten sind automatisch durch ihren Chitinpanzer geschützt. Diese Rüstung wirkt zur Hälfte additiv zu einer Rüstung, die Insekten tragen.
+* Insekten bekommen einen [[Taktik]]-Bonus, wenn sie in Massen auftreten. Ein Insektentaktiker bekommt einen Bonus von log10(Anzahl der Kämpfer in seinem Heer)-1 auf Taktik. Das kann bei sehr wenigen Kämpfern auch einen Malus ergeben!
+* Insekten können in Wüsten und Sümpfen auch ohne Burgen handeln.
+* Verwundete Insekten regenerieren sich mit 5% ihrer Trefferpunkte.
+
+==Katzen==
+Die '''Katzen''' zählen kaum zu den Handwerkern. Ihre feinen Sinne und ihre Geschmeidigkeit helfen jedoch bei einigen Dingen, die andere erst mühsam erlernen müssen.
+
+* "Sieben Leben": Katzen überleben einen ansonsten tödlichen Treffer mit 1/7 Wahrscheinlichkeit; sie haben dann wieder volle Trefferpunkte.
+* Katzen benutzen keine Plattenpanzer.
+* Ihre Gewandheit verleiht Katzen einen Bonus von +1 auf Verteidigung
+* Verwundete Katzen regenerieren sich mit 5% ihrer Trefferpunkte.
+
+==Meermenschen==
+'''Meermenschen''' sind im Wasser zu hause, im Gebirge fühlen sie sich dagegen unwohl. Schiffe bauen und bedienen sie so leicht, als seien es Bauklötzchen, während ihnen andere Arbeiten nicht ganz so leicht fallen.
+
+* Alle Schiffe mit Meermenschen-Kapitän einer Meermenschen-Partei können sich ein Feld weiter [[Reisen|bewegen]].
+* Meermenschen können auch auf Schiffen [[Befehl|lange Befehle]] ausführen. Achtung, dies hat einige implizite Folgen: Meermenschen können sich z.B. von einer an eine Landregion angrenzende Ozeanregion auf die Landregion begeben!
+* Bis zu 100 Meermenschen pro Ozeanfeld können auf hoher See mit dem Befehl <tt>[[ARBEITE]]</tt> je 10 Silber verdienen.
+* Verwundete Meermenschen regenerieren sich mit 5% ihrer Trefferpunkte.
+
+==Menschen==
+'''Menschen''' können alles ein bißchen, nichts so richtig schlecht aber auch nichts so richtig gut. Sie kommen mit allen Völkern gut aus und sind überall zu finden.
+
+* Eine Mensch-Partei kann einige Personen anderer Rassen haben, wobei ein Mischen von verschiedenen Rassen in einer Einheit nicht möglich ist. Diese Personen kann die Partei aber nicht selber rekrutieren, sondern muß sie sich von anderen Parteien der entsprechenden Rassen geben lassen.
+* Verwundete Menschen regenerieren sich mit 5% ihrer Trefferpunkte.
+
+=== Migranten ===
+
+Die Anzahl der ''Migranten'' errechnet sich als <tt>log10(Parteigröße÷50)×20</tt>. Hat man durch eine Katastrophe oder Kampf plötzlich zu viele Migranten, werden diese nicht entfernt, man kann nur keine neuen mehr aufnehmen.
+
+Es gibt keine Migranten mit sog. "teuren Talenten", also z.B. Magier oder Taktiker.
+
+==Orks==
+'''Orks''' sind ein recht kämpferisches Volk; schon in der Kindergrube wissen sie mit einer Waffe umzugehen. Kontakte zu anderen Völkern haben sie am liebsten bei Überfällen mit dreifacher Übermacht.
+
+* Neu rekrutierte Orks starten mit je Talentstufe 1 in Hiebwaffen und Stangenwaffen.
+* Orks verdienen mit <tt>[[ARBEITEN]]</tt> weniger als andere Rassen (siehe [[ARBEITE|dort]]).
+* Rekrutierte Orks werden - ähnlich dem zwergischen Eisenbonus - nur zu 50% von den Regionsbauern abgezogen. Ein rekrutierter Ork wird deshalb nur zur Hälfte vom Rekrutierungslimit der Region abgezogen. Es wird aufgerundet.
+* Analog gilt: Gibt man Orks mit <tt>[[GIB|GIB 0]]</tt> an die Bauern, so werden sie nur zur Hälfte zu den Bauern addiert. Hierbei wird allerdings abgerundet.
+* Unbewaffnete Orks kämpfen im Nahkampf nicht wie andere Rassen mit -2, sondern mit (bestes Nahkampftalent -3). Zum Steuereintreiben benötigen sie trotzdem Waffen.
+* Orks sind langsame Denker und lernen generell alle Nichtkampftalente etwas langsamer als andere Rassen.
+* Verwundete Orks regenerieren sich mit 5% ihrer Trefferpunkte.
+
+==Trolle==
+'''Trolle''' stapfen wandelnden Felsbrocken gleich unübersehbar durch die Lande. Mit Steinen können sie mit ihren riesigen Kräften perfekt umgehen, dafür aber umso weniger mit Pferden, und auch das Schwimmen ist nicht ihre Meisterdisziplin.
+
+* Trolle sind stark und können doppelt soviel tragen wie andere (10,8 GE), wiegen aber auch doppelt soviel (20 GE).
+* Es gibt keine Troll-Kavallerie, d.h. Trolle erhalten keinen Pferdebonus. Auf den Warentransport und die Bewegungsgeschwindigkeit berittener Trolle hat das keine Auswirkungen.
+* Von Trollen abgebaute Steine werden nur zu 75% vom "Regionsvorrat" abgezogen. Dieser Effekt ist kumulativ zu einem Steinbruch (siehe [[Andere_Gebäude#Steinbruch|hier]] und [[Rohstoffe#Vom_Bergbau|hier]]).
+* Gegen Trolle hat Kavallerie nur einen Bonus von +1.
+* Je vier Trolle können einen Wagen ziehen, sich allerdings auch nur ein Feld weit bewegen. Trolle sind jedoch faul: wenn sie Pferde dabei haben, werden diese vor die Wagen gespannt - sofern sie reiten können.
+* Unbewaffnete Trolle machen 2-6 Trefferpunkte Schaden.
+* Verwundete Trolle regenerieren sich mit 7,5% ihrer Trefferpunkte.
+
+==Zwerge==
+'''Zwerge''' leben in den Bergen. Ihre Schmiedekünste sind vielgerühmt, ihre Bauten weltbekannt. Magie ist ihnen ein Greuel, Pferde nicht ganz geheuer und auch das Wasser ist nicht gerade ihr Element.
+
+* Von Zwergen abgebautes Eisen wird nur zu 60% vom "Regionsvorrat" abgezogen. Dieser Effekt ist kumulativ zu einem Bergwerk (siehe [[Andere_Gebäude#Bergwerk|hier]] und [[Rohstoffe#Vom_Bergbau|hier]]).
+* Zwerge haben im Gebirge und in Gletschern +1 auf [[Taktik]].
+* Zwergenmagier regenerieren Aura deutlich langsamer
+* Verwundete Zwerge regenerieren sich mit 5% ihrer Trefferpunkte.
+
+
+{{weiter|Talente}}
+
+[[Kategorie:Regeln]]

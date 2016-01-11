@@ -1,0 +1,38 @@
+'''Straßen''' erhöhen die Reisegeschwindigkeit über Land. Dazu müssen von der Start- bis zur Zielregion inklusive Straßen existieren. Diese Straßen erlauben ein leichtes Fortkommen, da sie bei Regen nicht versumpfen, nicht vom Wald überwachsen werden und Flüsse und Schluchten von Brücken überspannt werden. Um Straßen in einer Region zu bauen, braucht eine Einheit das Talent Straßenbau und Steine (siehe Tabelle).
+
+In jeder Region kann man in die sechs Himmelsrichtungen eine Straße errichten, solange die Zielregion kein Ozean ist. Damit eine Straße komplett ist, muß in der Region der entsprechenden Richtung in der Gegenrichtung auch eine Straße sein. Baut man z.B. in der Region bei (6,-3) eine Straße Richtung Nordosten, so muß in der Region (6,-2) eine Straße Richtung Südwesten gebaut werden.
+Um Strassen zu bauen, benötigt man ein Mindest-Bautalent von 1, pro Talentstufe Strassenbau kann man einen Stein verbauen.
+
+Einige Regionen sind so ungastlich, daß zuvor ein [[Andere Gebäude|Gebäude]] erreichtet werden muß: in Gletschern ein [[Tunnel]], in Sümpfen ein [[Damm]] und in Wüsten eine [[Karawanserei]].
+
+{| border="0" cellspacing="0" align="center"
+|+ Straßenbau
+|- style="background-color:#aaaaaa"
+! Gelände !! Steine für Straßenstück
+|- style="background-color:#eeeeee"
+|Gebirge
+|align="right"|250
+|- style="background-color:#cccccc"
+|Ebene 	  
+|align="right"|50
+|- style="background-color:#eeeeee"
+|Gletscher 	
+|align="right"|250
+|- style="background-color:#cccccc"
+|Hochland 	
+|align="right"|100
+|- style="background-color:#eeeeee"
+| Sumpf 	
+|align="right"|75
+|- style="background-color:#cccccc"
+| Wüste 	
+|align="right"|100
+|- style="background-color:#eeeeee"
+|Wald 	  
+|align="right"|50
+|- style="background-color:#cccccc"
+|Vulkan 	
+|align="right"|250
+|}
+
+{{weiter|Schiff}}

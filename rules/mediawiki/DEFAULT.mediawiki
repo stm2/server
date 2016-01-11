@@ -1,0 +1,13 @@
+<tt>'''DEFAULT''' "''befehl''"</tt>
+
+Dieser Befehl ermöglicht es, für eine Einheit einen Befehl für die nächste Runde festzulegen. Dieser Befehl wird in die Zugvorlage der nächsten Runde als Default-Befehl eingesetzt. Wenn dieser Befehl mehr als ein Wort umfasst, muss er in Anführungszeichen gesetzt werden.
+
+    DEFAULT "Lerne Wahrnehmung"
+
+Man kann Anführungszeichen auch schachteln. Beispiel:
+
+    DEFAULT 'BANNER "Ich will mein Banner erst in der nächsten Runde setzen."'
+
+Achtung! Der normale Default-Befehl wird damit überschrieben! Somit kann man sogar den Befehl <tt>NACH</tt> als Default setzen.
+
+[[Kategorie:Befehle]]

@@ -1,0 +1,12 @@
+<tt>'''BEZAHLE''' </tt>
+<tt>'''BEZAHLE''' NICHT</tt>
+<tt>'''BEZAHLE''' NICHT ''gebäude-nr''</tt>
+
+
+{{E3A|text=Die erste Variante hat keine Wirkung. 
+
+Die zweite Variante bewirkt, dass die Einheit den Unterhalt für das Gebäude, dessen Besitzer sie ist, nicht bezahlt.
+
+Die dritte Variante bewirkt, dass die Einheit den Unterhalt für ein bestimmtes Gebäude nicht bezahlt. Dieses Gebäude darf keine Insassen haben muss in der selben Region sein und die Einheit muss der Regionsbesitzer sein. Damit kann zum Beispiel ein Regionsbesitzer den Unterhalt für einen leeren Hafen einsparen. Der Hafen funktioniert dann in dieser Runde natürlich nicht.}}
+
+[[Kategorie:Befehle]]

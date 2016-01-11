@@ -1,0 +1,66 @@
+== Man muss nicht immer reiten können ==
+
+Schon früh im Spiel lohnt sich Handel und Transport. Auch wenn man nicht reiten kann, kann man pro Person ein Pferd mit sich führen - was dann die Kapazität der Einheit von 5,4 auf 25,4 GE pusht (4 [[Troll|Trolle]] können sogar noch einen Wagen mitnehmen und kommen mit 4 Pferden auf eine Kapazität von 223,2GE). So kann man mit ein paar wenigen Leuten schon Steine, Handelsgüter und anderes schweres Zeug herumtragen.
+
+== Wie rüste ich meine Truppen aus? ==
+
+Die beste Rüstung ist Plattenpanzer + Schild. Wer nachrechnet, stellt fest das ein Kämpfer mit Schild, Rüstung und Schwert 6 GE trägt, und sich nicht bewegen kann. Deshalb hatten in früheren Tagen Ritter Knappen dabei - und in Eressea Pferde. Für je 20 GE Überlast tut man 1 Pferd in die Einheit, und schon können sich die Truppen wieder bewegen. Wie schon erwähnt, braucht man dafür nicht einmal reiten können. Alternativ kann man pro 100 Personen auch 70 Plattenpanzer und 30 Kettenhemden ausrüsten, dann wiegt die Ausrüstung der Einheit genau 540GE, also exakt so viel Gewicht wie sie maximal tragen kann.
+
+(Teilt der Gegner pro Treffer einen sehr hohen Schaden aus, so kann es besser sein, den Plattenpanzer durch ein Kettenhemd zu ersezten oder gar ganz wegzulassen, weil sonst die höhere Trefferwahrscheinlichkeit nicht durch den Rüstungsschutz kompensiert wird.)
+
+== Was sollen meine Truppen lernen? ==
+
+Truppen lernen Ausdauer + Waffentalent. Es gibt, abhängig von der Rasse, einen Punkt an dem man besser Ausdauer lernen sollte als das Waffentalent zu verbessern. Irgendwann kosten neue Stufen im Waffentalent nämlich soviel Lernzeit wie mehrere Stufen Ausdauer. Wo dieser Punkt erreicht ist, kann man sich ausrechnen, oder an den Waffentalenten der Feinde ausrichten - denn auf keinen Fall sollte man weit hinter den Feinden zurückbleiben.
+
+Der Vorteil davon, zwei Talente zu lernen ist auch, das es leichter ist, immer Lehrer zu haben - für das eine oder andere Talent.
+
+== Was brauche ich in der ersten Runde auf jeden Fall? ==
+
+Unabhängig von der Rasse und den dadurch notwendigen Unterhaltern/Steuereintreibern sollte man in der ersten Runde auf jeden Fall zumindest einen Wahrnehmer und vielleicht noch einen Tarner ausbilden, um so nicht ins Hintertreffen zu geraten, da vor allem die in Tarnung besonders begabten Rassen die Fähigkeit zum Klauen oft ausnutzen, wenn man ihnen die Gelegenheit bietet.
+
+== Handelsgüter einkaufen ==
+
+Bei übermäßigem Einkauf steigt zwar der Preis für das Handelsgut zeitweilig, aber solange er unter dem Verkaufspreis bleibt, sollte man trotzdem mehr kaufen. In der Regel kann man in weitaus mehr Regionen ein Gut verkaufen, als kaufen - und Händler können mehrere verschieden Güter pro Runde verkaufen.
+(Es gibt sogar Situationen, in denen es sinnvoll ist, Handelsgüter ''über'' dem maximalen Verkaufspreis einzukaufen, aber das führt vielleicht zu weit.)
+
+Mit Handel kann man große Mengen an Geld machen, das "aus dem Nichts" entsteht, also nicht vom Regionsvorrat der Bauern abgezogen wird, das sollte man sich auf keinen Fall entgehen lassen.
+
+== Leben am Rande des Einheiten-Limits ==
+Hat eine Partei 2500 Einheiten (E3:1000), so kann sie keine neuen Einheiten mehr erschaffen. Zunächst müssen einige Einheiten aufgelöst werden, in dem man mehrere Einheiten zusammenlegt (verhungern lassen, Kämpfe verlieren und GIB 0 geht natürlich auch). Da leere Einheiten aber erst kurz vor Ende der Befehlsreihenfolge aufgelöst werden, kann man auf die Weise erst in der nächsten Woche neue Einheiten erschaffen. 
+
+Manchmal kann man mit einem kleinen Trick doch noch beides in einer Runde erledigen: Einheit A übergibt alle ihre Personen an Einheit B. Die nun leere Einheit A kann sofort Rekrutieren (kommt nach GIB). Vorraussetzung ist natürlich, dass man in der Region, in der man rekrutieren will auch zwei Einheiten hat, die man zusammenlegen kann.
+
+== Bauern als Kundschafter ==
+[[Bauernwanderung|Umherwandernde Bauern]] bringen aufschlußreiche Informationen aus Nachbarregionen mit. Erhöht sich die Zahl der Bauern einer Region plötzlich deutlich schneller als dies durch die natürliche [[Bauernvermehrung]] erklärbar ist, dann sind aus Nachbarregionen zugewanderte Bauern die Ursache. Häufig sind dafür Monster verantwortlich, die sich in der Nachbarschaft eingenistet haben und dort Bauern verscheuchen. Die zweite Alternative sind Bauern, die in ihrer Heimat keine Arbeit finden.
+
+Fazit: Wer auf die Entwicklung der Bevölkerungszahl achtet, wirft damit auch einen Blick auf die Nachbarregionen.
+
+== Warenlager ==
+Ein Warenlager in einer Region besteht aus einer Einheit, die möglichst weit oben in der Zugvorlage steht (z.B. der Burgherr der ältesten Burg) und an die überschüssige Waren abgegeben werden. Benötigt eine andere Einheit etwas davon, so kann sie es sich (bei eingeschaltetem Materialpool) per [[RESERVIERE]] selbst nehmen. Das Warenlager sollte deshalb weit oben stehen, weil <tt>RESERVIERE</tt> die Einheiten einer Region der Reihe nach durchgeht und sich benötigte Gegenstände von der ersten verfügbaren Einheit nimmt, die diese Gegenstände besitzt. Ein weiterer Vorteil, man sieht auf einem Blick, welche Gegenstände verfügbar sind.
+
+
+[E2-Tipp]: Lernt das Warenlager permanent Tarnung, entzieht sich der Lagerbestand hoffentlich einem wenig talentierten herumziehenden oder anschwimmenden Spion einer unfreundlichen Partei. Eine andere Theorie fordert ein hohes Wahrnehmungstalent, damit das Lager nur schwer bestohlen werden kann - um dies zu verhindern reicht aber auch ein guter Wahrnehmer der gleichen Partei zusätzlich zum Lager.
+
+== Dem Hungertode entrinnen==
+Magier, Wahrnehmer, Taktiker und andere wichtige Einheiten sollten im NR so weit wie möglich oben stehen. Silber wird eigentlich immer (eine Garantie seitens der SL gibt es hierfür nicht!) von oben nach unten verteilt. Gibt es in einer Region durch eine Unachtsamkeit oder Diebstahl nicht genug Silber um alle Personen zu versorgen nehmen sich die oberen Einheiten zuerst das Essen und die unteren müssen (ver-)hungern. Hungert von einer Einheit auch nur eine einzelne Person so unterliegt die ganze Einheit dem Nachteil nur Arbeiten zu können. Die 100er Einheit Steuereintreiber ganz unten in der Region stehen zu haben ist also eventuell auch nicht so clever.
+
+In die gewünschte Reihenfolge bekommt man die Einheiten mit dem Befehl [[SORTIERE]].
+
+== Sichere (Schiffs-)routen ==
+Bei großen Parteien verliert man schnell mal die Übersicht über die Flotte. Leicht kann es passieren, dass ein vergessener ROUTE-Befehl (oder ein NMR) dazu führt, dass ein Schiff, das eigentlich schon sein Ziel erreicht hat, in der nächsten Runde weiterfährt und gegen einen Berg knallt. Dagegen hilft, ROUTE Befehle mit doppeltem PAUSE abzuschließen, also etwa
+  ROUTE no no no no o o o o o o nw nw nw so PAUSE PAUSE
+Das bewirkt, das bei erreichen des letzten PAUSE als Default-Befehl für die nächste Runde ROUTE PAUSE no no no no o o o o o o nw nw nw so PAUSE gesetzt wird. Das gibt zwar eine Fehlermeldung, aber das Schiff bewegt sich auch nicht mehr weiter.
+
+== TEMP-Einheiten ==
+Mit TEMP-Einheiten kann man jede Menge Quatsch machen und Beschränkungen umgehen, die einem der Server aus übertriebener Fürsorge auferlegt. Will man zum Beispiel ein Gebäude oder Schiff VERLASSEN und ist sich nicht sicher, was mit dem Kommando passiert? Ganz einfach
+  GIB TEMP 123 ALLES
+  GIB TEMP 123 ALLES PERSONEN
+  MACHEN TEMP 123
+  ; ... BENENNEN und andere neue Befehle der Einheit
+  ENDE
+  GIB neu KOMMANDO
+setzenl, die leere Einheit übergibt brav das Kommando an die richtige Einheit und die neue TEMP-Einheit übernimmt die alte (allerdings mit neuer Nummer.
+
+== Siehe auch ==
+* [[Bekannte Fehler]]
+* [[Hinweise]]

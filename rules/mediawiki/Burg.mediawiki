@@ -1,0 +1,93 @@
+Burgen bieten mehrere Vorteile: als Wichtigstes ist zu nennen, dass ohne Burgen kein Handel mit Luxusgütern in der Region möglich ist. Weiterhin erhöht eine Burg den Verdienst der Bauern, und schließlich bietet sie ihren Insassen Schutz bei Angriffen. Burgen werden mit dem Befehl [[MACHE|MACHE BURG]] aus Steinen gebaut. Ab welcher Größe eine Burg in eine neue Kategorie aufsteigt, steht in der Tabelle weiter unten. Je größer die Burg, um so schwieriger ist sie zu erweitern. Um an einer Burg weiterzubauen, braucht man mindestens das angegebene Talent Burgenbau. Eine Einheit kann pro Runde Talentstufe x Personen / Mindesttalent Steine verbauen; man kann also mit einer hinreichend guten Einheit und genug Steinen problemlos in einer Woche einen Turm bauen.
+
+Burgen haben auch Nummern, die man für die Befehle gebraucht. Hier ein Beispiel für eine Burg:
+
+   Großer Tempel der goldäugigen Katze (58), Größe 58, Turm; Weiß glänzt
+   der Tempel in der Sonne, eingerahmt vom zarten Grün der Bäume des Parks.
+   Weithin sichtbar ist der schlanke Turm, der sich hoch über die Stadt
+   erhebt. Nördlich des Tempels erstreckt sich die Stadt Xontormia entlang
+   des Whyren, der in der Nähe des Hafens von einer gigantisch hohen und
+   langen Brücke überspannt wird.
+
+Einheiten in Burgen werden von dieser geschützt, und zwar wird pro Größeneinheit der Burg eine Person geschützt. Nur die geschützten Personen profitieren bei einem Überfall vom Bonus, den eine Burg den Insassen verleiht (weiteres hierzu siehe Kapitel [[Krieg]], insbesondere die Liste der [[Boni und Mali]]). Jeder Größenpunkt der Burg benötigt einen Stein.
+
+Eine größere Burg verbessert die Versorgung der Bevölkerung: Alle Arbeiter und Bauern profitieren beim Arbeiten von einem Bonus, der davon abhängt, wie groß die größte Burg in einer Region ist (siehe auch [[#Übersicht|untere Tabelle]]), außerdem bekommt der Eigentümer der größten Burg einen Anteil von den Erlösen der Verkäufe anderer Spieler.
+
+==Beispiele==
+
+* Die Einheit "Thors Baumeister", die aus 20 Leuten besteht, welche mit dem Burgenbautalent 1 arbeiten und 100 Steine haben, verfügt aufgrund ihrer Talentstufe und der Personenzahl über 20 Produktionspunkte, mit denen, abhängig vom nötigen Mindesttalent, unterschiedlich viele Steine verbaut werden können.
+  
+* Wenn diese Einheit beginnt, eine neue Burg zu errichten, kann sie in der ersten Runde 10 Steine verbauen: für Grundmauern und Handelsposten liegt das Mindesttalent bei 1; um einen Stein zu verbauen, wird ein Produktionspunkt benötigt, die Einheit baut also erstmal den Handelsposten bis zur Größe 10 aus, womit das Gebäude zur Befestigung wird. Nun sind noch 10 Produktionspunkte übrig, aufgrund des nun nötigen Mindestbautalents von 2 für Befestigungen verfallen diese jedoch.
+  
+* Hat die Einheit ein Burgenbautalent der Stufe 2, beginnt sie mit 40 Produktionspunkten, von denen wieder 10 für den Ausbau des Handelspostens zur Befestigung benötigt werden. Jetzt kann sie die aber die verbleibenden 30 Produktionspunkte für den Ausbau der Befestigung noch in der gleichen Runde nutzen. Allerdings bedeutet ein Mindesttalent von 2 auch, dass pro Stein 2 Produktionspunkte aufzuwenden sind. Somit wächst die Befestigung um 15 Steine und insgesamt entsteht in einer Runde eine Befestigung der Größe 25.
+  
+* Mit dem Talentwert 2 werden die Baumeister innerhalb von weiteren 2 Runden die Befestigung bis zur Größe 50 ausbauen, wodurch ein Turm entsteht, den sie wegen des damit notwendigen Mindesttalentwerts von 3 nicht erweitern können.
+
+== Übersicht ==
+
+{| border="0" cellspacing="0" cellpadding="3" align="center"
+|+ Burgenbau - Baumaterial, Mindesttalent, Bonus und Erlösanteil
+|- style="background-color:#aaaaaa"
+!Typ    	!!ab Größe 	!!Burgenbau 	!!Silberbonus 	!!Erlösanteil  !!Verteidigungsbonus
+|- style="background-color:#eeeeee"
+|Grundmauern 	
+|align="right"|1     	
+|align="center"|1     	
+|align="right"|0 Silber 	
+|align="right"|nichts
+|align="center"|0
+|- style="background-color:#cccccc"
+|Handelsposten 	
+|align="right"|2     	
+|align="center"|1     	
+|align="right"|0 Silber 	
+|align="right"|6%
+|align="center"|0
+|- style="background-color:#eeeeee"
+|Befestigung 	
+|align="right"|10    	
+|align="center"|2     	
+|align="right"|1 Silber 	
+|align="right"|12%
+|align="center"|+1
+|- style="background-color:#cccccc"
+|Turm   	
+|align="right"|50    	
+|align="center"|3     	
+|align="right"|2 Silber 	
+|align="right"|18%
+|align="center"|+2
+|- style="background-color:#eeeeee"
+|Burg   	
+|align="right"|250    	
+|align="center"|4     	
+|align="right"|3 Silber 	
+|align="right"|24%
+|align="center"|+3
+|- style="background-color:#cccccc"
+|Festung 	
+|align="right"|1250  	
+|align="center"|5     	
+|align="right"|4 Silber 	
+|align="right"|30%
+|align="center"|+4
+|- style="background-color:#eeeeee"
+|Zitadelle 	
+|align="right"|6250  	
+|align="center"|6     	
+|align="right"|5 Silber 	
+|align="right"|36%
+|align="center"|+5
+|}
+
+== Siehe auch == 
+
+* [[Andere Gebäude]]
+* [[Gebäude]]
+* [[Boni und Mali]]
+* [[Einnahmen]]
+
+{{weiter|Andere Gebäude}}
+
+[[en:Castle]]
+[[Kategorie:Gebäude]]

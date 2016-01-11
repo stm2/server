@@ -1,0 +1,36 @@
+Nur mit Schiffen kann man seine Insel verlassen und so z.B. neue Märkte erschließen oder direkten Kontakt zu anderen Parteien aufnehmen. Mit einem Schiff kann man bis zu 7 Regionen weit segeln, unter Einsatz von Meermenschen oder Magie sogar noch weiter.
+
+Alle Schiffe größer als ein Boot (das schließt Langboote ein) können nur in Ebenen und Wäldern anlegen. Alle anderen Regionstypen (z.B. Berge, Hochländer, Sümpfe) brauchen einen [[Andere_Gebäude#Hafen|'''Hafen''']], damit dort Schiffe anlegen können. Ablegen können Schiffe überall, man kann also Schiffe in allen Küstenregionen bauen und dann zu Wasser lassen.
+
+Schiffe können aber nicht direkt - ohne über eine Ozeanregion zu segeln - von einer Küste in die benachbarte Küstenregion gelangen. Ebenso können sie nicht in alle Richtungen ablegen, sondern nur in die Richtung, aus der sie kamen und deren Nachbarrichtungen. Ein Schiff, welches aus Osten kam (im Report steht dann auch an der Ostkueste), kann also nach Osten, Nordosten und Südosten ablegen. Verfügt eine Region jedoch über einen Hafen, dann können Schiffe des Hafeneigners und von Parteien, die vom Hafeneigner [[HELFE]] BEWACHE haben, auch in andere Richtungen ablegen, sofern es sich um Ozeanregionen handelt.
+
+Auf hoher See - das sind Ozeanregionen, an die keine Landregion grenzt - können Schiffe durch Stürme in eine Nachbarregion abtreiben und Schaden nehmen.
+
+Um ein Schiff segeln zu können, braucht man ausgebildete Matrosen, sprich Einheiten, die das Talent Segeln erlernt haben. In der folgenden Tabelle steht unter "Kapitän" der Mindesttalentwert, den der Kapitän (die erste Einheit auf dem Schiff im Report) des Schiffes in Segeln haben muß. Zudem braucht man auf dem Schiff eine gewisse Anzahl Matrosen. In der Tabelle steht, wieviele Talentstufen Segeln insgesamt auf dem Schiff "versammelt" sein müssen. Haben die Matrosen also einen Talentwert von 2 im Segeln, braucht man nur noch halb so viele Matrosen, wie in der Liste stehen. Für das Gesamttalent werden alle Einheiten an Bord berücksichtigt, auch die von anderen und nicht einmal mit dem Kapitän alliierten Parteien. Die in der Tabelle aufgeführte Reichweite gilt pro Runde, d.h. ein Schiff kann pro Runde maximal so weit segeln. Schiffe, die von einem Meermenschen einer Meermenschenpartei gesteuert werden (ein Migranten-Meermensch einer Menschenpartei zählt also nicht), können jeweils ein Feld weiter segeln.
+
+{| border="0" cellspacing="0" align="center"
+|+ Schiffe - Reichweite, Kapazität, Talente
+|- style="background-color:#aaaaaa"
+!Typ 	!!Reichweite 	!!Kapazität 	!!Kapitän 	!!Gesamttalent
+|- style="background-color:#eeeeee"
+|Boot 	||2 	||50 	||1 	||2
+|- style="background-color:#cccccc"
+|Langboot 	||3 	||500 	||1 	||10
+|- style="background-color:#eeeeee"
+|Drachenschiff 	||5 	||1000 	||2 	||50
+|- style="background-color:#cccccc"
+|Karavelle 	||5 	||3000 	||3 	||30
+|- style="background-color:#eeeeee"
+|Trireme 	||7 	||2000 	||4 	||120
+|-
+|}
+
+Ist ein Schiff nicht mit genug Matrosen ausgerüstet, kann es nicht ablegen. Passiert dies auf See (z.B. durch einen Kampf oder Einheiten verhungerten wegen Silbermangel), treibt es steuerlos umher, bis es an eine Küstenregion trifft. Dabei nimmt es ständig Schaden, so daß es nach kurzer Zeit versinken wird (siehe auch [[Schiffe|hier]] ).
+
+Befindet sich eine Einheit auf einem Schiff, so muß das Gesamtgewicht der Einheit einschließlich des Gewichtes von Pferden, Wagen, Leuten und natürlich aller Waren und Silber der Einheit vom Schiff getragen werden können. Ist dies nicht der Fall, so kann das Schiff nicht segeln (es wird allerdings auch nicht sofort untergehen). Die Kapazitäten der Schiffe werden in der obigen Tabelle aufgeführt und sind immer im Report angezeigt. Die Gewichte der Gegenstände sind in [[Waren|dieser]] Tabelle zu finden, die der Personen der verschiedenen Rassen in [[Reisen|dieser]].
+
+Einheiten, die sich auf einem Schiff auf hoher See befinden, können keine langen Befehle ausführen (Ausnahme sind die Meermenschen) - außer dem Kapitän natürlich, der das Schiff mit [[NACH]] oder [[ROUTE]] steuert. Trotzdem verbrauchen alle Einheiten auf dem Schiff den wöchentlichen Unterhalt, man sollte also stets genug Silber an Bord haben.
+
+Wollen Einheiten ein Schiff verlassen, so müssen sie dies erst mit [[VERLASSE]] tun. Sofern die Region nicht von einer nicht-alliierten Partei bewacht wird, können die Einheiten sich dann mit NACH bewegen, ansonsten erst in der kommenden Runde. Dies gilt natürlich genauso für [[FAHRE]] und [[TRANSPORTIERE]].
+
+Meermenschen können von einem Schiff direkt auf eine benachbarte Landregion schwimmen, nicht aber umgekehrt. Dabei können sie zwar Gegenstände mitnehmen, aber keine Pferde und auch keine Personen anderer Rassen.

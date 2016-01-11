@@ -1,0 +1,210 @@
+Geld regiert die Welt - das ist auch in Eressea der Fall. Es gibt verschiedene Möglichkeiten, an Geld heranzukommen: man kann [[ARBEITE|Arbeiten]], [[UNTERHALTE|Unterhalten]], [[TREIBE|Steuern eintreiben]] oder [[HANDEL|Handeln]].
+
+Während Arbeiten eher eine Notlösung ist, kann man mit Unterhaltung und dem Eintreiben von Steuern schon recht viel Geld verdienen. Der Handel kann in Eressea, Regionen mit entsprechenden Luxusgütern vorausgesetzt, besonders am Anfang die größte Einnahmequelle sein.
+
+Silber hat ein Gewicht: je 100 Silberstücke wiegen eine Gewichtseinheit. Bei der Berechnung des Gewichtes wird immer aufgerundet - allein ein Silberstück kann also zuviel sein.
+
+Da Personen (der meisten [[Rassen]]) 5,4 GE tragen können, können sie bis zu 540 Silber mit sich führen; bei 541 Silber sind sie überladen. Ein Boot (50 GE Tragekapazität) kann z.B. eine Person (10 GE bei den meisten [[Rassen]]) mit 4000 Silber tragen; schon 4001 Silber wären zu viel.
+
+== Ausgaben ==
+
+=== Rekrutieren ===
+
+Will man Personen rekrutieren, benötigt man nichts weiter als genügend Kleingeld, denn die Rekrutierungswilligen sind oft besonders durstig... Pro angeheuerter Person muss man zwischen 40 und 150 Silber an Rekrutierungskosten ausgeben.
+
+Wird die Region von einer fremden Partei bewacht, die zur eigenen weder HELFE BEWACHE noch HELFE ALLES gesetzt hat, so verhindert dies die Rekrutierung von Personen für die eigene Partei (siehe [[BEWACHE]] und [[HELFE]]), es sei denn man ist durch ein höheres Tarnungstalent "unsichtbar". Bei einer leeren TEMP-Einheit gilt die erschaffende als Sichtbarkeitsreferenz. Anders ausgedrückt: Entscheidend ist in diesem Fall, ob die Einheit gesehen wird, welche die TEMP-Einheit erschaffen hat.
+
+Die Höhe der Rekrutierungskosten hängt von der Rasse ab und ist in [[Rassen|dieser]] Tabelle nachzulesen.
+
+Man kann nur Personen seiner eigenen Rasse rekrutieren! Personen fremder Rassen können nur Menschenparteien aufnehmen, und diese müssen sie von anderen Parteien übergeben bekommen.
+
+=== Unterhaltskosten ===
+
+Jede Person der Spieler und jeder Bauer benötigen jede Runde 10 Silber, um sich die nötigen Vorräte kaufen zu können. Einheiten einer Partei in derselben Region helfen sich allerdings gegenseitig mit Silber aus, d.h. es reicht prinzipiell, wenn eine Einheit genug Silber für alle anwesenden Personen hat (was aber bei Fehlern sehr fatal sein kann, wenn sonst keiner Silber hat!). Sollte die eigene Partei nicht genügen Silber haben, so helfen auch andere Parteien, die [[HELFE|HELFE SILBER]] zur eigenen Partei gesetzt haben (Siehe [[Allianz|hier]]). Einheiten, die sich bewegen, müssen dort versorgt werden, wo sie ankommen.
+
+Ohne ausreichend Silber leiden die Leute [[Hunger]]. Jede hungernde Einheit nimmt zwischen 13 und 24 Punkte Schaden. Eine Ausnahme sind Halblinge, diese verfressenen Wichte nehmen zwischen 15 und 28 Punkten Schaden, wenn das Mittagessen ausbleibt. Nimmt die Person dadurch mehr Schaden, als sie Trefferpunkte hat, stirbt sie. Eine hungernde Einheit kann nichts außer [[ARBEITEN]], und sie kann keine Personen an andere Einheiten abgeben. Eine Ausnahme dazu sind Dämonen (Siehe [[Rassen|hier]]). Zudem fallen bei hungernden Einheiten die Talentwerte um die Hälfte (also: Der effektive Talentwert sinkt um die Hälfte, abgerundet).
+
+Auch einige Gebäude brauchen wöchentliche Unterhaltskosten, um zu funktionieren und nicht einzustürzen. Diese Unterhaltskosten fallen schon am Rundenanfang an, müssen also bereits in der Vorrunde eingenommen werden und sind fällig, sobald das Gebäude begonnen wurde (also auch bei halbfertigen Gebäuden). Steht nicht genug Geld zur Verfügung, kann die Funktion des Gebäudes nicht benutzt werden. Ist am Rundenende genug Geld vorhanden, so wird das Gebäude zumindest vor dem Einsturz bewahrt. Näheres zu den Gebäuden ist [[Produktion|hier]] nachzulesen.
+
+== Hunger ==
+
+=== Hunger bei Spieler-Einheiten (siehe auch [[Ausgaben]]) ===
+
+Jede hungernde Einheit nimmt zwischen 13 und 24 Punkte (1d12+12) Schaden. Eine Ausnahme sind Halblinge: diese verfressenen Wichte nehmen zwischen 15 und 28 Punkten (1d14+14) Schaden, wenn das Mittagessen ausbleibt. Nimmt die Person dadurch mindestens soviel Schaden, wie sie Trefferpunkte hat, stirbt sie. Eine hungernde Einheit kann in der Regel nichts außer ARBEITEN, und sie kann keine Personen an andere Einheiten abgeben. Eine Ausnahme dazu sind [[Dämon|Dämonen]]. Zudem fallen bei hungernden Einheiten die Talentwerte um die Hälfte (also: Der effektive Talentwert sinkt um die Hälfte, abgerundet).
+
+Das Talent Segeln wird bei hungernden Einheiten nur um eine Stufe reduziert. Dennoch ist Hunger auf See eine kritische Situation. Zum einen kann dort niemand außer [[Meermensch|Meermenschen]] arbeiten, man ist also auf Silber von außen angewiesen. Zum anderen kann es geschehen, dass man auf Grund der Talentreduzierung nicht mehr genügend Segeltalent zum Manövrieren des Schiffes zusammenbekommt wodurch das Schiff [[Schiff|Schaden]] nimmt und abtreiben kann.
+
+Nahezu tödlich ist Hunger bei Feindkontakt, hervorgerufen z.B. durch Diebstahl, in Folge einer Flucht oder wegen Fehlplanung. Man verliert Trefferpunkte, man kann dem Gegner nicht mehr ausweichen und kämpft in einem eventuell folgenden Kampf deutlich schwächer. Sollte man so einen Kampf trotzdem überleben, besteht noch die Gefahr, dass man weiter hungert, weil man wegen des Kampfes nicht arbeiten konnte (siehe [[Kampfende]]).
+
+Beherrscht man das [[Kriegstabellen|Ausdauertalent]] auf hohem Niveau, so kann es nach dem Hungern zu dem seltsamen Effekt kommen, dass eine Einheit laut Bericht "sehr stark" ist (d.h. sie hat mehr Trefferpunkte als sie normalerweise haben dürfte).
+Ein Troll mit Ausdauer 8 hat 78 Trefferpunkte. Verliert er durch Hunger 13, so bleiben noch 65 übrig. Das Ausdauertalent wurde aber auf 4 halbiert und er dürfte nur noch 47 haben.
+
+=== Hunger bei Bauern ===
+
+Auch Bauern benötigen Unterhalt, den sie normalerweise selbst verdienen oder dem Regionsvorrat entnehmen. Ist der Regionsvorrat erschöpft, hungern die Bauern und sterben. Dies kann verschiedene Ursachen haben:
+* Die Region ist überbevölkert. In einer Ebene ohne Bäume, in der jeder Bauer 12$ verdient, können langfristig nur 12000 Bauern überleben, weil nur 10000 Bauern arbeiten, dabei 120000$ verdienen, was nur für 12000 Bauern ausreicht. Kurzfristig kann die Zahl der Bauern höher liegen, so lange noch genügend Silber im Regionsvorrat ist.
+* Die Region ist zwar nicht überbevölkert, aber [[ARBEITE|arbeitende]] Spieler-Einheiten belegen einen Teil der Arbeitsplätze.
+* Die Bauern verdienen zwar genug Silber, aber Spieler-Einheiten [[TREIBE|treiben]] dieses Silber ein, bevor sich die Bauern damit selbst versorgen können.
+* Des weiteren gibt es Gerüchte über besondere Ereignisse, die zeitweilig oder dauerhaft die Fruchtbarkeit einer Region verschlechtern können, wodurch die Bauern nicht mehr ihren eigenen Unterhalt erarbeiten können.
+
+Verhungerte Bauern können später als [[Untote]] wiederauferstehen.
+
+== Einnahmen ==
+
+=== Arbeiten ===
+
+Geld kann man mit Arbeit in der Landwirtschaft verdienen (siehe Befehl [[ARBEITEN]]). Je größer allerdings die Wälder in einer Region sind, um so weniger bebaubare Fläche gibt es, und um so weniger Bauern (und auch Spielereinheiten) können arbeiten: pro Baum können acht Bauern oder Spieler nicht mehr arbeiten, jeder Schössling belegt 4 Arbeitsplätze. Wieviele Personen maximal, d.h. ohne jeglichen Wald, in einer Region arbeiten (nicht wohnen) können, hängt vom Terrain ab (siehe die Tabelle beim Befehl [[ARBEITEN]]).
+
+Ein Bauer verdient normalerweise 11 Silber pro Runde. Dieser Lohn kann sich durch den Bonus einer Zitadelle bis auf 16 Silber pro Bauer und Runde erhöhen (s.a. [[Burg|diese]] Tabelle). Wird z.B. eine Zitadelle in einer Ebene errichtet und ist der Wald abgeholzt, können 10000 Bauern in einer Runde sich selber ernähren und weitere 60000 Silber werden dem Regionssilber hinzugefügt.
+
+Arbeitende Einheiten von Spielern verdienen jedoch weniger - schließlich sind sie nur Hilfsarbeiter. Wieviel sie verdienen können, ist zum einen im Report angegeben, zum anderen kann man das in der Tabelle beim Befehl [[ARBEITEN|ARBEITE]] nachlesen.
+
+=== Steuereintreiben ===
+
+Bewaffnete und trainierte Schergen können mit dem Befehl [[TREIBE]] pro Mann und Talentstufe Steuereintreiben 20 Silber an Steuern aus den Bauern herausquetschen. Hierzu braucht man natürlich das Talent Steuereintreiben, außerdem z.B. Schwerter, Speere, Bögen oder Armbrüste und die entsprechenden Talente Hiebwaffen, Stangenwaffen, Bogen- oder Armbrustschießen.
+
+Andererseits kann jede Partei eine Region bewachen. Dazu gibt sie den Befehl [[BEWACHE]] und wird dann in der folgenden Runde die Region bewachen. Bewachende Einheiten werden sofort für jedermann sichtbar. Sie verhindern unter anderem, dass Parteien, die nicht [[HELFE|HELFE BEWACHE]] von der bewachenden Partei haben, Steuern eintreiben können.
+
+Bewachen mehrere Parteien eine Region, können nur die Parteien Steuern eintreiben, die von allen bewachenden Parteien HELFE BEWACHE bekamen.
+
+Wenn die Bauern nahe am Maximum der Bevölkerungsdichte leben, werden fast alle Geldreserven von den Bauern selber aufgebraucht, so daß sie kein Silber mehr für Steuern "übrig" haben. Man kann trotzdem Steuern eintreiben, aber die nicht versorgten Bauern werden dann verhungern (und dadurch werden die Verdienste auch nicht mehr...). Gerade hier ist es sinnvoll, eine Burg zu bauen, da damit der Arbeitslohn steigt: schon bei 12 statt 11 Silbern verdienen 2000 Bauern auch 2000 Silber pro Runde mehr!
+
+=== Unterhaltung ===
+
+Das Geld, das den Bauern nach den Steuern noch übrig bleibt, fügen sie dem Regionssilber (quasi der Silbervorrat der Bauern) zu. Von diesem Silber sind 5% durch Unterhaltung zu erwirtschaften. Jeder Unterhalter kann pro Runde und Talentstufe Unterhaltung mit dem Befehl [[UNTERHALTE]] bis zu 20 Silber verdienen, falls die Bauern genügend Geld zur Verfügung haben.
+
+===Beispiele zu den Verdienstmöglichkeiten===
+
+{| border="0" cellspacing="0" align="center"
+|+ Verdienst und Lebenskosten
+|- style="background-color:#aaaaaa"
+!Region 	!!Bäume 	!!Bauern 	!!Lohn 	!!Einnahmen 	!!Lebenskosten 	!!Überschuß 	!!Unterhaltung
+|- style="background-color:#eeeeee"
+|Ebene 	
+|align="right"|200 	
+|align="right"|3742 	
+|align="right"|11 	
+|align="right"|41162 	
+|align="right"|37420 	
+|align="right"|3742 	
+|align="right"|187
+|- style="background-color:#cccccc"
+|Ebene 	
+|align="right"|200 	
+|align="right"|3742 	
+|align="right"|14 	
+|align="right"|52388 	
+|align="right"|37420 	
+|align="right"|14968 	
+|align="right"|784
+|- style="background-color:#eeeeee"
+|Wald 	
+|align="right"|818 	
+|align="right"|3742 	
+|align="right"|11 	
+|align="right"|38016 	
+|align="right"|37420 	
+|align="right"|596 	
+|align="right"|29
+|- style="background-color:#cccccc"
+|Wald 	
+|align="right"|818 	
+|align="right"|3742 	
+|align="right"|12 	
+|align="right"|41472 	
+|align="right"|37420 	
+|align="right"|4052 	
+|align="right"|202
+|}
+
+Pro Baum können 8 Bauern pro Schößling 4 Bauern in der Region nicht arbeiten.
+
+Im letzten Beispiel kann man auch nachrechnen, daß nicht alle Bauern der Region arbeiten konnten: zu viele Bäume machen Ackerland zunichte.
+
+Nicht berücksichtigt wurde, daß die Bauern meist eine Rücklage haben, von denen sie zum einen bei Überbevölkerung zehren können, und die zum anderen für die Berechnung der Ausgaben für Unterhaltung benutzt werden. In der Regel kann daher auch mehr Silber durch Unterhaltung verdient werden, denn die 5% beziehen sich auf diese Rücklage.
+
+=== Diebstahl: der unehrliche Weg ===
+
+Neben den ehrlichen Wegen, Geld zu verdienen (und auch auszugeben) gibt es die unehrliche Variante: Diebstahl. Einheiten, die sich getarnt haben, können versuchen, bei anderen Einheiten Silber zu stehlen.
+
+Ist das [[Tarnung|Tarnungstalent]] des Diebes höher als die [[Wahrnehmung]] der besten Einheit der bestohlenen Partei in der Region, so klaut sie pro Talentstufe Unterschied 50 Silber. Hierbei wird '''immer''' aus dem gesamten [[Geld#Der Silber- und Materialpool|Silberpool]] der Partei in der Region gestohlen, auch dann, wenn die bestohlene Partei eigentlich den Silberpool nicht aktiv hat. Die bestohlene Partei erhält eine Meldung, daß sie bestohlen wurde, aber nicht, von wem.
+Ist der Dieb nur gleich gut wie der Wahrnehmer, klappt der Diebstahl nicht, und die bestohlene Partei erhält eine anonyme Meldung über den Versuch.
+Ist der Dieb zu schlecht, bekommt die Partei, die bestohlen werden sollte, eine Meldung mit dem Namen des Diebes.
+[[Goblins]] haben beim Beklauen spezielle Fähigkeiten.
+
+== Handel ==
+
+In jeder Region fertigen die einheimischen Bauern ein Luxusgut an. Dieses Produkt kann man ihnen abkaufen. In allen Regionen, die dieses Produkt nicht produzieren, besteht eine ständig steigende Nachfrage nach diesen Produkten. Wer die Risiken der Reisen nicht scheut, kann durch den Handel sehr viel Geld verdienen.
+
+Um Handel zu treiben, braucht man das Talent Handeln. Pro Talentstufe kann eine Person maximal 10 Luxusgüter kaufen bzw. verkaufen (siehe [[KAUFE|hier]]). Je besser der Händler ist, um so mehr Güter können pro Runde eingekauft bzw. verkauft werden.
+
+Außerdem ist eine Burg nötig, die wenigstens die Größe eines Handelspostens hat, in der sozusagen der Markt stattfindet. Wem dieses Gebäude gehört, ist für den Handel egal - der Burgeigentümer kann (regeltechnisch) nicht verhindern, daß in der Region Handel getrieben wird. Er kann aber sehr wohl versuchen, den Handel z.B. durch bewaffnete Einheiten zu unterbinden, genauer, die Händler anzugreifen.
+
+Von einem Schiff aus kann man nur dann Handel treiben, wenn die Region nicht bewacht ist oder man von allen bewachenden Parteien kontaktiert wird oder ein [[HELFE|HELFE BEWACHE]] hat.
+
+Der Eigentümer der größten Burg einer Region bekommt von allen Verkäufen der anderen Spieler einen Erlösanteil. Dieser Erlösanteil wird von den Einnahmen des Händlers abgezogen. Sind zwei Burgen der Region gleich groß, erhält niemand diesen Anteil. Die Höhe des "Steuersatzes" steht in [[Burgen|dieser]] Tabelle.
+
+In der folgenden Tabelle ist ein Grundpreis angegeben. Dies ist der Preis, zu dem man die unter Luxusgüter zum angegebenen Preis angegebene Anzahl Luxusgüter ohne Preissteigerung kaufen kann. Sobald jeweils diese Anzahl (entsprechend 1% der Bauern) an Luxusgütern von den Spielern gekauft wurde, steigt der Einkaufspreis um den Grundpreis. Der Einkaufspreis sinkt in der nächsten Runde wieder auf den einfachen Grundpreis, da die Luxusgüter wieder produziert werden.
+
+{| border="0" cellspacing="0" align="center"
+|+ Grundpreise von Luxusgütern 
+|- style="background-color:#aaaaaa"
+!Luxusgut 	!!Grundpreis
+|- style="background-color:#eeeeee"
+|Balsam 	
+|align="center"|4 	
+|- style="background-color:#cccccc"
+|Öl     	
+|align="center"|3 	
+|- style="background-color:#eeeeee"
+|Gewürz 	
+|align="center"|5
+|- style="background-color:#cccccc"
+|Seide  	
+|align="center"|6 	
+|- style="background-color:#eeeeee"
+|Juwelen 	
+|align="center"|7 	
+|- style="background-color:#cccccc"
+|Weihrauch 	
+|align="center"|4
+|- style="background-color:#eeeeee"
+|Myrrhe 	
+|align="center"|5
+|} 
+
+Der Verkaufspreis eines Luxusgutes ist ein Vielfaches des Grundpreises und ist im Regionsreport angegeben. Sobald in einer Runde jeweils 1% der Bauern ein Produkt gekauft hat, sinkt der Verkaufspreis um den Grundpreis und steigt in den nächsten Wochen erst langsam wieder an. Jede Runde besteht für jedes Luxusgut eine 10%ige Chance, daß sich der Verkaufspreis um den Grundpreis erhöht. In Regionen, in denen ein [[Andere Gebäude|Hafen]] ist, liegt diese Chance bei 20%.
+
+Die angegebenen Preise und Maxima gelten für alle Spieler der Region zusammen und nicht pro Spieler, allerdings pro Luxusgut. Ohne eine entsprechende Absprache untereinander kann man sich so den Verkaufspreis schneller "versauen", als einem lieb ist...
+
+Alle Käufe und Verkäufe von Luxusgütern werden regelmäßig unter den Spielern verteilt. Die Preissteigerung bzw. der Preisverfall betrifft also gleichmäßig alle Spieler, die in der Runde kaufen oder verkaufen.
+
+  Angenommen, in einer Region mit 8000 Bauern wird für Weihrauch 4 Silber verlangt,
+  und für Gewürze werden 15 Silber geboten. 1% der Bauern sind 80. Verkauft ein 
+  Händler nun 200 Gewürze, werden die ersten 80 Gewürze zu 15 Silber verkauft, die 
+  nächsten 80 Gewürze zu 10 Silber, und die restlichen 40 Gewürze zu 5 Silber. In 
+  der kommenden Woche würden Gewürze hier nur noch für 5 Silber verkauft werden 
+  können - wenn der Preis nicht mit einer Wahrscheinlichkeit von 10% wieder auf 10 
+  gesteigen ist.
+
+  Werden in der selben Region 100 Weihrauch gekauft, so kosten die ersten 80 
+  Weihrauch 4 Silber, und die nächsten 20 Weihrauch kosten 8 Silber. In der 
+  kommenden Woche liegt der Preis für Weihrauch wieder bei 4 Silber und man kann 
+  die ersten 80 Weihrauch wieder für diesen Preis einkaufen. 
+
+Das Geld, das die Bauern ausgegeben haben, kommt den Händlern zugute. Trotzdem verliert die Region kein Silber, denn die Bauern besitzen ja Luxusgüter, mit denen sie die Steuern bezahlen können. Das Geld entsteht nicht aus dem Nichts - es ist der Wert der Güter, die in einer anderen Region produziert worden sind.
+
+Es lohnt sich, ein Schiff auszurüsten und in See zu stechen. Obwohl man mit den zwei Produkten, die auf einer Insel produziert werden, Handel treiben kann, bleiben die Gewinne relativ gering. Kehrt man aber von einer fremden Insel mit einer Ladung seltener Güter heim, kann man astronomische Gewinne erzielen, wobei die Entfernung der Inseln aber keine Rolle spielt. Solche Expeditionen sollten dafür ausgerüstet sein, in der neuen Welt eine Niederlassung zu gründen - denn man kann ja nur in der Nähe von Befestigungen Handel treiben.
+
+<noinclude>
+== Siehe auch ==
+
+* [[GIB]]
+* [[RESERVIERE]]
+* [[Materialpool]]
+* [[Tarnung]]
+
+{{weiter|Materialpool}}
+
+[[Kategorie:Regeln]]
+</noinclude>

@@ -1,0 +1,11 @@
+<tt>'''ZAUBERE''' [REGION ''x'' ''y''] [STUFE ''nr''] "''Zauberspruch''" [''parameter'']...</tt>
+
+Mit diesem Befehl wird eine Magiereinheit versuchen, den genannten Zauberspruch zu zaubern. ZAUBERE ist zwar kein langer Befehl, er schließt aber weitere lange Befehle aus. Man kann aber weitere Zauber sprechen.
+
+Achtung die Modifikatoren REGION und STUFE sind nicht für jeden Zauber zutreffend. REGION kann nur bei [[Magie#Fernzauber|Fernzaubern]] verwendet werden und STUFE macht nur bei Zaubersprüchen mit variablen [[Magie#Komponenten|Kosten]] Sinn. Manche Zauber haben noch weitere Parameter.
+
+Die Anwendung der Zauber ist zum einen im Kapitel [[Magie]] genauer erklärt, zum anderen ist sie bei der Zauberbeschreibung selbst zu finden. Diese erhält man, wenn man den Zauber neu erhält und kann ihn sich mit <tt>[[ZEIGE|ZEIGE ALLE ZAUBER]]</tt> nochmal anzeigen lassen.
+
+Kampfzauber können nicht einfach so gezaubert werden. Will man diese gegen eine Einheit verwenden, muß man den <tt>[[KAMPFZAUBER]]</tt> setzen und dann eine Einheit [[ATTACKIERE|attackieren]] oder attackiert werden. Dies kann allerdings zu größeren Schlachten führen!
+
+[[Kategorie:Befehle]]

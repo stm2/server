@@ -1,0 +1,18 @@
+<tt>'''HELFE''' ''partei-nr'' GIB [NICHT]<br/>
+'''HELFE''' ''partei-nr'' KÄMPFE [NICHT]<br/>
+'''HELFE''' ''partei-nr'' SILBER [NICHT]<br/>
+'''HELFE''' ''partei-nr'' BEWACHE [NICHT]<br/>
+'''HELFE''' ''partei-nr'' PARTEITARNUNG [NICHT]<br/>
+'''HELFE''' ''partei-nr'' ALLES [NICHT]</tt>
+
+Mit diesem Befehl kann eine Partei verschiedene Stufen der Unterstützung für eine andere Partei setzen. Die Gegenpartei erfährt von einer Änderung des Status nichts und muss auch nicht den selben Status haben.
+
+Die einzelnen Modi sind [[Allianz|hier]] erklärt.
+Beispiel: 
+
+  HELFE 7 GIB NICHT
+
+{{E3A|text= HELFE KÄMPFE hat in E3A keine Funktion mehr, da dies über den neuen [[Das_dritte_Zeitalter#Allianzen|Allianzen]] geregelt wird. Da Parteitarnung abgeschafft wurde hat auch HELFE PARTEITARNUNG keine Funktion mehr.}}
+
+
+[[Kategorie:Befehle]]

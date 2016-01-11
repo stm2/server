@@ -1,0 +1,11 @@
+<tt>'''ENDE'''</tt>
+
+Dieser Befehl beendet die Eingabe der Befehle für eine temporäre Einheit, die mit <tt>[[MACHE|MACHE TEMP]]</tt> erschaffen wurde.
+
+  MACHE TEMP 1
+    BENENNE EINHEIT "Joggonarag Thorggh"
+    REKRUTIERE 1
+    LERNE Magie
+  ENDE
+
+[[Kategorie:Befehle]]

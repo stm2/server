@@ -1,0 +1,121 @@
+Um Produkte herzustellen und zu benutzen, brauchen die [[Einheiten]] Talente. Alle Mitglieder einer Einheit haben dieselben Talente. Talente kann man lernen. Manche Talente verbessern sich zudem noch, wenn man sie anwendet. Um genau zu sein, kann eine Einheit mit dem Befehl [[LERNE]] pro Zug einen Versuch machen, in eine neue Stufe aufzusteigen. Wendet sie das Talent lediglich an, ist die Chance in eine neue Stufe zu kommen auf 1/3 der Chance beim Lernen reduziert, man steigt dadurch also etwa mit 1/3 der Geschwindigkeit des exklusiven Lernens auf. Eine weitere Talentstufe zu erreichen wird von Stufe zu Stufe schwieriger.
+
+== Talente erlernen ==
+
+Im Mittel dauert der Aufstieg in eine neue Talentstufe durch reines Lernen in etwa Anzahl von Wochen entsprechend der angepeilten Talentstufe ohne Berücksichtigung von Modifikationen durch [[Rassen|Rasse]] oder Terrain. Die minimale Lernzeit beträgt eine Woche. Die maximale Lernzeit übersteigt dabei 2 x neue Stufe nicht. Ein [[Zwerg]] benötigt beispielsweise für den Aufstieg im Talent Bergbau von Stufe 3 nach Stufe 4 im Schnitt zwei Wochen, da Zwerge auf Bergbau einen +2 Modifikator haben.
+
+Um die Zeit herabzusetzen, die man zum Erlernen eines Talentes benötigt, kann eine zweite Einheit, die besser ist, die erste Einheit das Talent [[LEHRE|lehren]]. Diese Einheit muss eine Talentstufe haben, die um mindestens 2 größer ist als die Talentstufe der Schüler. Damit lernt man doppelt so schnell, als wenn man versucht, ein Talent auf eigene Faust zu verbessern. Ein Lernen in einer [[Akademie]] bringt einen weiteren Zeitvorteil.
+
+Eine Lehrerperson kann maximal 10 Schüler lehren. Eine Lehrereinheit kann dabei beliebig viele Personen fassen. Hat die "Schüler-Einheit" mehr Personen, als der Lehrer lehren kann, so wird dies auf die Chance, die neue Stufe zu erreichen angerechnet. Man kann eine Einheit mit mehreren Einheiten lehren, ebenso kann man mit einem Lehrer mehrere Einheiten lehren, wobei natürlich jeder Schüler nur von maximal einem Lehrer profitieren kann.
+Vorsicht! Lehrt man mit mehreren Lehrer-Einheiten mehrere Schüler-Einheiten in verschiedenen Talenten oder Talentstufen seitens der Lehrer, kann es passieren, dass einige Schüler keinen oder nicht den richtigen Lehrer abbekommen. Dies lässt sich aufgrund der Interna von Eressea nicht anders gestalten. Hier sollte man also ggf. durch Umstrukturieren der Lehrer-Einheiten "klare Verhältnisse" schaffen.
+
+[[Magie]], [[Liste der Talente|Alchemie]], [[Liste der Talente|Kräuterkunde]], [[Liste der Talente|Spionage]] und [[Taktik]] zu erlernen ist besonders schwer und aufwendig. Spionage zu erlernen kostet 100 Silber pro Person und Runde, Alchemie, Kräuterkunde und Taktik sogar 200 Silber pro Person und Woche. Das Erlernen von Magie kostet auf hohen Stufen leicht mehreren Tausend Silber (siehe [[Magie|Tabelle]]). Die Einheit, welche eines dieser Talente lernt, muss dieses Silber bei sich tragen. Dabei ist es für die Kosten unerheblich, ob die Einheit gelehrt wird oder nicht.
+Befindet sich die Einheit in einer [[Andere_Gebäude#Akademie|Akademie]], verdoppeln sich die Lernkosten teurer Talente
+
+Wenn der lernenden Einheit zum Zeitpunkt des Bezahlens nicht der volle Betrag des Geldes zur Verfügung steht, lernt sie anteilig je nach vorhandener Geldmenge, das heißt, wenn sie beispielsweise nur 500 von 550 Silber hat, sinkt ihre Lernchance um etwa 10%.
+
+An Bord eines Schiffes auf einer Ozeanregion können nur [[Meermenschen]] lernen und lehren. Befindet sich das Schiff an Land, können alle Passagiere etwas tun, nicht jedoch der Kapitän, wenn das Schiff sich in der Runde fortbewegen soll. Dabei ist zu beachten, dass man von einem Schiff aus nicht [[ARBEITE|arbeiten]], [[UNTERHALTE|unterhalten]] oder [[TREIBEN|Steuern eintreiben]] kann, wenn die Region von einer nicht-alliierten Partei bewacht wird.
+
+Werden Personen in eine Einheit transferiert oder rekrutiert, berechnen sich die neuen Talentstufen aus dem arithmetischen Mittel der ursprünglichen Stufen.
+
+Beispiel: ''Eine Einheit mit zwei Kämpfern mit Hiebwaffen 3 rekrutiert einen Bauern; Bauern haben keine Talente, also wird hier 0 dazugerechnet. Das neue Talent berechnet sich neu aus den insgesamt erlernten Stufen: 2×3=6, also hat die neue, dreiköpfige Einheit Hiebwaffen 2.''
+
+== Produktion von Rohstoffen und Gegenständen ==
+
+Alle Rohstoffe und Gegenstände werden mit dem Befehl [[MACHE]] produziert. Die meisten Rohstoffe erfordern nur Grundkenntnisse der entsprechenden Talente (Stufe 1), während die meisten Gegenstände höhere Talentstufen erfordern (siehe [[Waren|hier]]).
+
+Rohstoffe können nur dann abgebaut werden, wenn die Region NICHT von einer fremden Partei bewacht wird. Es sei denn, diese hat [[HELFE|HELFE BEWACHE]] oder [[HELFE|HELFE ALLES]] zur eigenen Partei gesetzt.
+
+Mit dem entsprechenden Talent können Rohstoffe und Gegenstände hergestellt werden. Um zu produzieren, gibt man einfach den Befehl <tt>MACHE ''gegenstand''</tt>, also z.B. <tt>MACHE Eisen, MACHE Schwert</tt> oder <tt>MACHE Elfenbogen</tt>. Dabei kann man zwischen MACHE und dem Gegenstand angeben, wie viele davon man produzieren möchte: <tt>MACHE 10 Schilde</tt> lässt die Einheit also 10 Schilde herstellen - vorausgesetzt, sie hat genug Eisen, mindestens Rüstungsbau 2 und insgesamt 20 Talentstufen (10 Schilde x Mindesttalent 2=20).
+
+== Wahrnehmung, Tarnung und Spionage ==
+
+Mit dem Talent [[Tarnung]] kann man sich vor anderen Einheiten tarnen. Bewacht eine Einheit allerdings die Region oder befindet sie sich auf einem Schiff oder in einem Gebäude, ist sie immer sichtbar.
+
+Getarnte Einheiten kann man mit dem Talent [[Wahrnehmung]] entdecken. Ist das beste Wahrnehmungstalent in der Region kleiner als das Tarnungstalent einer fremden Einheit, erscheint die getarnte Einheit nicht in der Auswertung - sie wird unsichtbar. Sind Wahrnehmungstalent und Tarnungstalent gleich groß, so erscheint die getarnte Einheit in der Auswertung. Dies ist die Ausgangslage wenn man das Spiel beginnt, da alle neuen Einheiten Tarnung und Wahrnehmung auf Stufe 0 haben.
+
+Für erfolgreich getarnte Einheiten zählen die Restriktionen von [[BEWACHE]] nicht. Außerdem können erfolgreiche Tarner anderen Einheiten mit dem Befehl [[BEKLAUE]] Silber stehlen. Bei der Entdeckung von Dieben zählt das höchste Wahrnehmungstalent der eigenen Partei in der Region. Sind Tarnung der Täter und Wahrnehmung der Opfer gleich groß, erhält das Opfer eine unbestimmte Warnung. Ist die Wahrnehmung des Opfers größer, kann es die Einheit bestimmen, welche den Diebstahl versucht hat.
+
+Wird eine Burg [[Belagerung|belagert]], kann man mit einer Einheit, deren Tarnungstalent um mindestens 3 Stufen höher als die Wahrnehmung der belagernden Einheiten, die belagerte Burg betreten und verlassen, und somit z.B. dringend benötigtes Silber in die Burg schmuggeln.
+
+Mit dem Befehl [[SPIONIERE]] kann man Einheiten einer anderen Partei ausspionieren. Dabei wird das Spionagetalent des Spions mit dem Wert der Tarnung der Zieleinheit verglichen. Die Grundchance für einen erfolgreichen Spionage-Versuch ist 10%. Für jede Talentstufe, die das Spionagetalent das Tarnungstalent des Opfers übersteigt, erhöht sich dieses um 5%. Ist der Spionageversuch erfolgreich, erfährt der Spion den Kampfstatus, die Gegenstände im Besitz der Einheit, die Talente und auch die wahre Parteizugehörigkeit.
+
+Die Parteizugehörigkeit kann nur ermittelt werden, wenn das Spionagetalent mindestens 6 Talentstufen über dem Tarnungstalent der Einheit liegt. Alle anderen Informationen können schon bei einem einfachen Erfolg ermittelt werden. Anschließend wird - unabhängig vom Erfolg - gewürfelt, ob der Spionageversuch bemerkt wurde. Die Wahrscheinlichkeit dafür ist (100 - SpionageSpion*5 + WahrnehmungOpfer*2)%.
+
+Um Spionage zu erlernen, braucht man pro Person und Runde 100 Silber.
+
+== Arbeiten, Unterhaltung, Steuern und Handel ==
+
+Um auf dem Feld zu [[ARBEITEN]], benötigt man kein Talent. Dafür ist der Verdienst auch bescheiden.
+
+Mit dem Befehl [[UNTERHALTE]] kann man mehr Silber verdienen: pro Talentstufe und Person bis zu 20 Silber. In der Statistik der Region ist angegeben, wieviel Silber die Bauern für Unterhaltung auszugeben bereit sind. Dies gilt für die ganze Region und alle Parteien. Dieses Silber wird notfalls anteilig auf alle Einheiten verteilt, die in der Region unterhalten.
+
+Will man mehr Silber von den Bauern eintreiben, so verlangt man Steuern von ihnen. Der Befehl [[TREIBE]] weist eine Einheit an, eben dies zu tun. Allerdings muss eine solche Einheit bewaffnet sein und auch mit dieser Waffe umgehen können. Welche Waffe dies ist und wie gut sie die beherrscht, ist dabei irrelevant - lediglich Katapulte können nicht benutzt werden.
+
+Wird eine Region von einer Partei [[BEWACHE|bewacht]], die zur eigenen Partei kein [[HELFE|HELFE ALLES]] oder [[HELFE|HELFE BEWACHE]] gesetzt hat, so kann in dieser Region zwar Unterhalten, aber nicht Steuern eingetrieben werden.
+
+Pro Talentstufe Steuereintreiben und Person können so 20 Silber von den Bauern eingetrieben werden. Dabei geben die Bauern auch Silber weg, welches sie eigentlich zum Leben bräuchten. Mit entsprechenden Konsequenzen: die Bauern verhungern oder wandern in reichere Nachbarregionen ab. Dieses Talent steigt bei Anwendung nicht, ebensowenig das benutzte Waffentalent.
+
+Der [[Handel]] mit Luxusgütern kann sehr lukrativ sein, außerdem belastet es die Bauern nicht. Jede Region verkauft ein Luxusgut und kauft alle anderen. Die Preise sind im Report angegeben. Mit den Befehlen [[KAUFE]] und [[VERKAUFE]] kann man Luxusgüter von den Bauern kaufen bzw. an sie verkaufen. Es ist allerdings mindestens eine Befestigung vonnöten, um einen Markt abhalten zu können.
+
+Die Möglichkeiten, Geld zu verdienen, sind nochmal genau im Kapitel [[Einnahmen]] erklärt.
+
+== Wandern, Reiten, Segeln und Schiffbau ==
+
+In Eressea gibt es mehrere Möglichkeiten, sich fortzubewegen: man geht zu Fuß, man reitet auf Pferden oder fährt auf Wagen oder man segelt über Ozeane. Für alle Varianten wird der Befehl [[NACH]] oder [[ROUTE]] benutzt.
+
+Das Wandern benötigt keine weiteren Fähigkeiten. Will man jedoch auf Pferden reiten, benötigt man das Talent [[Liste der Talente|Reiten]]. Mit Pferden kommt man zum einen weiter voran, zum anderen kann man mehr Waren transportieren, besonders dann, wenn man Wagen benutzt.
+
+Um überhaupt ab Pferde zu kommen, benötigt man das Talent [[Liste der Talente|Pferdedressur]]. Damit kann eine Einheit mit [[MACHE|MACHE PFERDE]] freilebende Pferde einfangen. Für die Produktion von Wagen braucht man das Talent Wagenbau und natürlich Holz.
+
+Eine Einheit mit dem Talent Reiten kann pro Person und Talentstufe zwei Pferde "reiten", also entsprechend weit bewegen (siehe auch [[Pferd und Wagen]]). Hinter je zwei Pferde kann man dann auch einen Wagen spannen und so große Mengen Waren transportieren. Die Personen der Einheit selber sitzen dann auf den Wagen und nicht den Pferden. So oder so wird ihr Gewicht natürlich von der vorhandenen Transportkapazität abgezogen.
+
+Die Reise über See erfordert natürlich [[Schiffe]]. Um diese zu bauen, benötigt man das Talent Schiffbau und Holz.
+
+Um Schiffe dann über den Ozean steuern zu können, benötigt man eine Mannschaft, die das Talent Segeln beherrscht. Dabei muss der Kapitän, also die Einheit, die das Kommando über das Schiff hat, ein gewisses Mindesttalent haben (siehe [[Schiffe|Tabelle]]). Wie dann die restlichen Talentstufen aufgebracht werden, ist egal; es zählen alle Einheiten, die auf dem Schiff sind. Eine Trireme ließe sich also mit einem Kapitän mit Segeln Stufe 4 und 116 weiteren Personen mit Segeln 1 genauso steuern wie mit einer Einheit, die 20 Personen Segeln Stufe 6 hat.
+
+== Burgenbau und Straßenbau ==
+
+In Eressea gibt es viele [[Gebäude]] mit unterschiedlichen Funktionen. Neben den klassischen Burgen gibt es z.B. Schmieden, Leuchttürme und Sägewerke. Alle Gebäude benötigen das Talent Burgenbau, oftmals in höheren Stufen.
+
+Die klassische Burg wird mit [[MACHE|MACHE BURG]] gebaut, die anderen Gebäude mit MACHE gebäudetyp, eine Schmiede also mit MACHE SCHMIEDE, einen Leuchtturm mit MACHE LEUCHTTURM. Neben Steinen, die man mit dem Talent Steinbau in Bergen und Gletschern brechen kann, brauchen alle Gebäude außer der Burg noch Holz, Eisen und Silber, der Magierturm sogar Laen und Mallorn.
+
+Will man sich schneller durch Eresseas Länder bewegen, so sind neben Pferden Straßen äußerst nützlich. Mit dem Talent Strassenbau kann man Straßen und Brücken errichten, die so das Fortkommen erleichtern (je eine Region weiter als ohne Straßen). Allerdings sind in einigen Regionen zuvor Bauwerke notwendig, um den Straßenbau zu ermöglichen: in Sümpfen ein [[Andere_Gebäude#Damm|Damm]], in Wüsten eine [[Andere_Gebäude#Karawanserei|Karawanserei]] und in Gletschern ein [[Andere_Gebäude#Tunnel|Tunnel]].
+
+== Magie ==
+
+Mittels [[Magie]] kann man Zaubersprüche anwenden. Auch für den Kampf gibt es diverse Zauber. Es darf pro Partei maximal drei Personen mit Magietalent geben. Um Magie zu erlernen, braucht man pro Person und Runde Silber. Hat man eine neue Stufe erreicht, so erhält man in der Regel einige neue Zaubersprüche. Deren Beschreibung steht dann im Report und kann jederzeit mit [[ZEIGE]] "zauberspruch" angezeigt werden.
+
+Zauber werden mit dem Befehl ZAUBERE gesprochen. Dies umfasst auch die Herstellung magischer Gegenstände: ZAUBERE "Erschaffe magischen Gegenstand". Mehr zum Thema Magie gibt es [[Magie|hier]].
+
+
+== Alchemie und Kräuterkunde ==
+
+Das Talent Kräuterkunde ist notwendig, um Kräuter zu suchen. In jeder Landschaft gibt es ein [[Kräuter|Kraut]], welches man für alchemistische [[Tränke]] braucht. Pro Talentstufe und Person der Einheit kann (muss aber nicht) ein Kraut gefunden werden.
+
+Für eben jene Tränke braucht man das Talent Alchemie. Die Talente [[Liste der Talente|Alchemie und Kräuterkunde]] zu erlernen kostet 200 Silber pro Person und Runde. Pro Partei darf es nur drei Alchemisten geben.
+
+== Waffentalente und Ausdauer ==
+
+Es gibt sechs verschiedene Waffentalente in Eressea:
+
+;Armbrustschießen
+:wird für Armbrüste und Mallornarmbrüste benötigt,
+;Bogenschießen
+:für normale Bögen, Mallornbögen und Elfenbögen,
+;Hiebwaffen
+:für Schwerter, Bihänder, Laenschwerter und Kriegsäxte,
+;Stangenwaffen
+:für Speere, Lanzen (und deren Mallorn-Äquivalente) und Hellebarden,
+;Katapultbedienung 
+:für Katapulte  und schließlich
+;Waffenloser Kampf
+:für bestimmte Monsterrassen.
+
+Außerdem gibt es das Talent Ausdauer, mit dem Einheiten sich stärken und so im Kampf mehr Trefferpunkte einstecken zu können.
+
+<noinclude>
+{{weiter|Talentmodifikatoren}}
+
+[[Kategorie:Regeln]]
+</noinclude>

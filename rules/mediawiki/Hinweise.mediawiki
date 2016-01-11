@@ -1,0 +1,104 @@
+== Anmeldung ==
+
+Im Moment ist eine reguläre Neuanmeldung nicht möglich.
+siehe http://www.pbem-spiele.de/forum/viewtopic.php?t=3110
+
+Unter dem folgenden [http://www.eressea.de/de/register.php Link] kann man sich jedoch für kommende Partien Eressea vormerken lassen bzw. sich für das experimentelle Aussetzen in den alten Welten von Eressea melden.
+
+=== Wie man sich früher zum Spiel anmeldete ===
+
+Man kann sich [http://www.eressea.de/de/register.php hier] zu Eressea anmelden.
+
+Eressea ist kein gewöhnliches Spiel. Es hat keine aufwendige Grafik, und lebt viel von der Interaktion der Spieler. In gewissem Sinne ist Eressea so gut, wie seine Spieler es machen. Nicht jedem liegt diese Art von Spiel. Ein großer Teil der Spieler scheitert außerdem daran, dass sie in den Regeln unsicher sind. Um sicherzustellen, dass Du weißt, was auf Dich zukommt, und schon ein wenig Übung hast, wurde eine zweite Welt (das Tutorium) eingerichtet. In dieser Welt können neue Spieler ein paar Züge zum ausprobieren spielen.
+
+Wer sich zu Eressea mit einer Mailadresse anmeldet, die wir noch nicht kennen, kommt in diese Tutorium. Er erhält dann eine E-Mail an die angemeldete Adresse geschickt - mit einer Kundennummer und einem Passwort. Dies gibt man auf einer Bestätigungsseite ein; hierdurch wird die Existenz der Mailadresse gecheckt.
+
+Das Tutorial dauert 5 Runden und hat einen schnelleren Rhythmus als das eigentliche Eressea-Spiel - die Züge werden jeweils Montag, Mittwoch und Sonnabend 9.00 Uhr ausgewertet. Die Befehle müssen an [mailto:tutorial@eressea.de tutorial@eressea.de] geschickt werden mit dem Betreff '''ERESSEA BEFEHLE'''.
+
+Nach den 5 Runden erhält der Spieler eine Mail, die ihm sagt, dass er durch ist, und sich jetzt fürs richtige Spiel anmelden kann. Das geht auf der gleichen [http://www.eressea.de/de/register.shtml Seite] und muß mit der Adresse geschehen, die für das Tutorium genutzt wurde. Die Datenbank weiss dann, dass mit dieser Mailadresse schon einmal jemand das Tutorium absolviert hat, und die neue Anmeldung geht dann ins richtige Spiel. '''Ohne erneute Anmeldung kein Spiel!''' Jede Anmeldung, die gemacht wird, bevor diese Mail kommt, geht wieder ins Tutorium! Es ist möglich, dass bei eine erfolgreiche Anmeldung nicht sofort am nächsten Auswertungstag zu einem ersten Report führt. Dann sind wahrscheinlich nicht genügend Neuspieler zusammengekommen, um eine neue Insel zu "eröffnen".
+
+Die Tutoriumspartei wird nach 10 Runden automatisch gelöscht, man kann also zum Üben auch nach Erhalt der "Bestanden!" Mail noch ein bißchen weiterspielen.
+
+Die [[Rassen]] im Tutorium muss nicht die gleiche sein wie hinterher im Spiel - das sind zwei voneinander unabhängige Anmeldungen.
+
+== Fehler im Spiel ==
+
+Ein so großes und komplexes Programm wie Eressea beinhaltet unausweichlich Fehler. Das Design-Team versucht, diese Fehler schnellstmöglich zu finden und zu beheben, trotzdem können (und werden) Fehler auftauchen.
+
+'''Wer damit nicht leben kann, sollte Eressea nicht spielen!'''
+
+Es ist nicht möglich, für einen einzelnen Spieler eine Runde nochmals auszuwerten. Eine neue Auswertung wird nur dann gemacht, wenn der Fehler viele Parteien schwerwiegend betraf.
+
+Ebenso ist es nicht immer möglich, durch Fehler aufgetretene Verluste u.ä. auszugleichen bzw. zu ersetzen, besonders dann nicht, wenn Personen oder Gegenstände wie Schiffe oder Gebäude verloren gingen.
+
+Es liegt alleine im Ermessen des Spielleiters, betroffenen Spielern Ersatz z.B. in Form von Silber zu geben. Gerade kleinere Fehler betreffen oftmals viele Parteien, so daß es sich im Großen und Ganzen von alleine ausgleicht.
+
+Jeder Spieler ist angehalten, auftretende Fehler dem Spielleiter zu melden, auch und besonders dann, wenn sie davon Vorteile haben. Dazu trägt man am besten den betreffenden Ausschnitt des Reports mit einer Erklärung in [http://bugs.eressea.de/ Mantis] ein. Dieser [[Bugreport]] sollte in jedem Fall die Partei-Nummer, die Nummern betroffener Einheiten und die Koordinaten der betroffenen Regionen enthalten. Ebenso sind die Befehle der fehlererzeugenden Runde der Einheiten hilfreich.
+
+== Bugreport ==
+
+Eressea ist nicht fehlerfrei, doch es hat sehr wenige Fehler. Wenn man meint, einen Fehler zu gefunden haben, gehe man wie folgt vor:
+
+# Überprüfe nochmal genau, ob der Fehler im Programm liegt. Manchmal hat man einfach eine Kleinigkeit übersehen.
+# Lese die Mails in der Liste "Announce" oder die Bugreports in Mantis: manchmal wurde der Fehler schon gefunden, und Deine Meldung wäre überflüssig.
+# Überlege Dir, wie es wohl zu dem Fehler kam. Stelle alles notwendige dafür zusammen. Ein Bugreport sollte folgendes enthalten:
+## Parteinummer
+## Nummer der betroffenen Einheiten, Schiffe oder anderer Objekte
+## Meldungen aus dem Report, welche für das Ereignis relevant sind
+## Name der Region, in der es passiert ist
+## relevante Ausschnitte aus dem aktuellen und ggf. älteren Reports
+## Ausschnitte aus den Befehlsdateien.
+## Server-Version in welcher der Fehler aufgetreten ist
+# Trage diese Zusammenstellung mit einer genauen Beschreibung in [http://bugs.eressea.de/ Mantis] ein
+
+Meist wird nach kurzer Zeit jemand aus dem Design-Team antworten. Bitte nicht gleich ungeduldig werden, wenn nicht sofort eine Antwort kommt. Wir Designer bekommen täglich mehrere Mails allen zu Fehlern und gehen denen nach, doch wir haben nicht nur Zeit für Eressea.
+
+== Schummeln ==
+
+'''Schummeln''' führt zum Ausschluss aus dem Spiel.
+
+Schummeln verdirbt anderen Spielern und oft auch einem selber den Spielspaß. Konkret werden unter anderem die folgenden Punkte als Schummelversuch angesehen:
+
+=== Einsenden von Befehlen für fremde Parteien ===
+
+Ausnahmen sind Urlaubsvertretungen, die die zu vertretende Partei im Banner (siehe Befehle EMAIL und BANNER) die Vertretung einträgt; die Vertretung von mehr als 3 Wochen ist vorher bei der Spielleitung anzuzeigen.
+
+=== Doppelspiel ===
+
+Wer mehr als eine Partei führt, erschummelt sich damit einen Vorteil gegenüber anderen Spielern mit nur einer Partei. Es darf jedoch eine weitere Partei angefangen werden, wenn die geführte Partei mindestens 150 Runden alt ist.
+
+Mehrere Spieler, die sich einen Mail-Account teilen, können zu Eressea nicht zugelassen werden - die Gefahr des Schummelns ist hier zu groß.
+
+=== Übernahme einer bestehenden Partei ===
+
+Die Übernahme einer bestehenden Partei ist verboten. Wer mit dem Spiel aufhört, hat selber dafür Sorge zu tragen, dass seine Ressourcen an Freunde übergeben werden, ehe die Partei stirbt. Nur im Falle einer Urlaubsvertretung darf die Partei unter Anzeige im BANNER übergeben werden.
+
+=== Ausnutzen von Fehlern im Programm ===
+
+Wer Fehler des Programms nicht dem Spielleiter meldet sondern zu seinem Vorteil ausnutzt, schummelt.
+
+=== Unsoziales Verhalten auf Spieler-Ebene ===
+
+Seid nett zueinander. Auch euer ärgster Feind im Spiel ist sicherlich ein netter Mensch und verdient es nicht, mit Werbe-Mails, "Igitt-Bildern" und anderen Dingen bombardiert zu werden.
+
+
+== Die Eressea-Gemeinde ==
+
+Hier kann man auf andere Eresseaspieler treffen:
+
+* [http://groups.google.com/group/eressea-rpg RPG] Für jede Art von Veröffentlichung "in der Rolle" ("in character")
+* [http://www.pbem-spiele.de/forum/viewforum.php?f=16 Eressea-Forum] Forum bei Pbem-Spiele
+* #eressea im Chat ([http://www.ircnet.org/ IRCnet], [http://whoiswho.draig.de/ Who is who?], [http://webchat.xs4all.nl/ Zugang übers Web])
+* [http://groups.google.com/group/eressea-client Client] Für technische Diskussionen, die Hilfsmittel für Eressea betreffen
+* [http://eressea.qyanu.com/caup/announces.txt E-Announce] Uralte, offizielle Mitteilungen auf inoffiziellem Server.
+* [http://eressea.upb.de/cgi-bin/mailman/listinfo/announce-en Announce (en) -- offline] Offizielle Mitteilungen (engl.)
+
+
+== Fragen zum Spiel und an die Spielleiter ==
+
+Eressea wird von mehreren Leuten programmiert und geleitet. Wer Fragen zum Spiel und den Regeln hat, der schicke bitte eine eMail an [mailto:eressea-help@eressea.de?subject=Frage eressea-help@eressea.de]. Diese eMail erreicht einige erfahrene Mitspieler, die Unklarheiten zum Spiel beantworten.
+
+Wer meint, dass die Informationen, die zur Frage gehören, zu "brisant" sind, oder Fehler im Programm gefunden hat, benutzt bitte [http://bugs.eressea.de/ Mantis]. Siehe dazu auch das Kapitel über [[Hinweise#Bugreports|Fehlermeldungen]].
+
+{{weiter|Anfängertipps}}
+[[Kategorie:Regeln]]

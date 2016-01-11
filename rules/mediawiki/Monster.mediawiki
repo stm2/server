@@ -1,0 +1,7 @@
+Die Partei der Monster ist derzeit die einzige NPC-Partei in Eressea. Sie hatte die Nummer 0. Seit etwa der Runde 572 trägt sie die Nummer (ii). Wer sich fragt, "Wieso eigentlich (ii)?", der rechne ii vom 36er-System mal ins Dezimalsystem um.
+
+Es gibt über 16 verschiedene Monster-Rassen mit unterschiedlichen Eigenschaften und Fähigkeiten. Am verbreitetsten sind die verschiedenen [[Untote|Untoten-Typen]] sowie [[Drachen]] und ihr Gefolge. Einige Monsterarten sind eher selten, wenn nicht gar einmalig. Andere, wie z.b. die [[Hirntöter]], findet man nur in bestimmten Gegenden.
+
+Einheiten der Monster-Partei sind sehr häufig [[TARNE|parteigetarnt]]. 
+
+Auch Spieler können unter bestimmten Umständen Einheiten mit Monster-Rassen (z.B. Skelette) besitzen.

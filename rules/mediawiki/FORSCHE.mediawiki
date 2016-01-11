@@ -1,0 +1,5 @@
+<tt>'''FORSCHE''' KRÄUTER</tt>
+
+Hiermit versucht die Einheit herauszufinden, welches Kraut in einer Region wächst und wie viele davon vorhanden sind. Dazu muss sie mindestens Kräuterkunde 7 haben.
+
+[[Kategorie:Befehle]]

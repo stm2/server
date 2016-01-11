@@ -1,0 +1,9 @@
+'''ECheck''' ist der Zugchecker, der auch auf dem Eressea-Server seinen Dienst tut.
+
+Sowohl im Quelltext als auch als Kommandozeilenprogramm für Windows und Linux erhältlich.
+
+== Externe Links ==
+
+* [http://sourceforge.net/projects/eressea/ ECheck Download]
+
+[[Kategorie:Software]]

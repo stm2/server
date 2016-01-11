@@ -1,0 +1,10 @@
+<tt>'''PFLANZE''' [''anzahl''] KRÄUTER<br/>
+'''PFLANZE''' [''anzahl''] BÄUME<br/>
+'''PFLANZE''' [''anzahl''] MALLORNSAMEN<br/>
+'''PFLANZE''' [''anzahl''] SAMEN</tt>
+
+Für <tt>PFLANZE KRÄUTER</tt> braucht man mindestens [[Liste der Talente|Kräuterkunde]] 6. Die Einheit versucht die angegebene Anzahl an Kräutern zu pflanzen, maximal jedoch pro Talentstufe ein Kraut; sie benötigt dazu die passende Anzahl Kräuter des entsprechenden Typs sowie eine Phiole "Wasser des Lebens". Es können dadurch keine Kräutertypen gewechselt werden, es wird immer versucht, den in der Region festgelegten Typ zu pflanzen.
+
+Mit <tt>PFLANZE BÄUME</tt> oder <tt>PFLANZE SAMEN</tt> versucht die Einheit die angegebene Anzahl an Samen zu pflanzen, maximal jedoch pro Talentstufe einen Samen. In Mallornregionen können nur Mallornsamen gepflanzt werden. Dazu benötigt man mindestens Kräuterkunde 7. Um normale Samen zu pflanzen braucht man mindestens Kräuterkunde 6.
+
+[[Kategorie:Befehle]]

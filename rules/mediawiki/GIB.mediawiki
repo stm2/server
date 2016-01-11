@@ -1,0 +1,68 @@
+<tt>'''GIB''' ''einheit-nr'' KRÄUTER<br/>
+'''GIB''' ''einheit-nr'' KOMMANDO<br/>
+'''GIB''' ''einheit-nr'' EINHEIT<br/>
+'''GIB''' ''einheit-nr anzahl'' PERSONEN<br/>
+'''GIB''' ''einheit-nr anzahl gegenstand''<br/>
+'''GIB''' ''einheit-nr'' ALLE PERSONEN<br/>
+'''GIB''' ''einheit-nr'' ALLES [''gegenstand'']<br/>
+'''GIB''' ''einheit-nr'' JE ''anzahl'' ''gegenstand''<br/>
+'''GIB''' 0 ''anzahl'' PERSONEN<br/>
+'''GIB''' 0 ''anzahl gegenstand''</tt>
+
+Mit <tt>GIB</tt> können Einheiten alle Waren, die sie haben, an andere Einheiten geben. Bedingung ist, dass die angegebene Einheit Sachen annimmt. Dies tut sie nur, wenn sie zur eigenen oder einer alliierten Partei gehört (<tt>HELFE GIB</tt>), oder wenn sie diese Runde den Befehl <tt>KONTAKTIERE</tt> für die Gebereinheit gegeben hat. Die meisten Sachen können zudem auch weggeworfen, bzw. in Landregionen den Bauern übergeben werden (<tt>GIB 0 ...</tt>). Personen, Silber und Pferde vergrößern den Bauern-, Silber- bzw. Pferdevorrat der Region. Alle anderen Gegenstände verschwinden einfach.
+
+Geber- wie Empfängereinheit müssen sich natürlich in der selben Region aufhalten. Die Übergabe klappt auch auf hoher See, zwischen Schiffen und von Schiffen an Land und umgekehrt.
+
+'''Achtung:''' Auch <tt>GIB</tt> benutzt den [[Materialpool]], ausgenommen im Kontext von GIB ALLES, wo die Einheit nur eigene, nicht reservierte Gegenstände gibt. Alle Gegenstände und Silber, die mit <tt>GIB</tt> übergeben wurden, sind automatisch reserviert und können vom Materialpool nicht von der Einheit genommen werden.
+
+Statt einer Anzahl kann man auch den Parameter <tt>ALLES</tt> (oder <tt>ALLE</tt>) benutzen. <tt>GIB ''einheit-nr'' ALLE Schwerter</tt> übergibt zum Beispiel alle Schwerter, die die Einheit zu dem Zeitpunkt hat. <tt>GIB ''einheit-nr'' ALLES</tt> übergibt sämtliche Gegenstände, Kräuter, Tränke und Silber, nicht aber die Personen der Einheit. Gibt man explizit den Befehl <tt>GIB ''einheit-nr'' ALLE PERSONEN</tt>, so werden alle Personen übergeben und die Einheit aufgelöst.
+
+'''Tip:''' Mit <tt>@GIB</tt> kann man automatische Übergaben einrichten. Zum Beispiel wird eine Einheit mit <tt>@GIB abc ALLES Eisen</tt> der Einheit abc jede Woche alles Eisen übergeben.
+
+Die Variante <tt>GIB xyz JE</tt> übergibt ''anzahl'' Gegenstände pro Person der Zieleinheit. Hat die Einheit xyz also zum Beispiel 10 Personen, so übergibt <tt>GIB xyz JE 20 Silber</tt> ihr also 200 Silber.
+
+Will man Personen verschiedener Einheiten zusammenführen, so geschieht dies mit <tt>GIB ''einheit-nr'' anzahl PERSONEN</tt>. Dabei werden dann auch die Talente vermischt, und man sollte die Gegenstände nicht vergessen, da sie sonst evtl. den Bauern zufallen.
+
+Mit <tt>GIB ''einheit-nr'' EINHEIT</tt> wird die komplette Einheit mit allen Gegenständen einer anderen Partei gegeben, d.h. sie wechselt zur Partei der Empfänger-Einheit, und wird nicht zur Empfängereinheit zugefügt! Die Einheit führt in der Runde keine weiteren Befehle aus!
+{{E3A|In E3 können maximal 5 Personen pro Runde von einer Partei aufgenommen werden}}
+
+
+Hat die Einheit zudem ein Schiff oder ein Gebäude unter ihrem Kommando - ist sie also die erste aufgeführte Einheit im Schiff oder in dem Gebäude - kann sie das Kommando auch an eine andere Einheit übergeben. Die Einheit mit dem Kommando bestimmt, welche anderen Einheiten das Schiff oder das Gebäude betreten dürfen.
+
+<tt>GIB einheit KOMMANDO</tt> sollte man immer anwenden, auch wenn die Einheit mit dem Kommando das Schiff oder die Gebäude verlässt und die folgende Einheit das Kommando erhalten soll. Die Reihenfolge der Einheiten ist während der Auswertung nicht immer die dem Report entsprechende. Neue Besitzer eines Gebäudes werden am Ende der Runde an die erste Position im Gebäude gestellt und profitieren somit erst in der Folgerunde von dem Gebäude (z.B. Bergbaubonus). ([http://bugs.eressea.de/view.php?id=1825 Achtung], das Kommando kann nicht an TEMP-Einheiten oder andere "leere" Einheiten (z.B. nach einem Kampf) übergeben werden.)
+
+        GIB k3f 300 Silber
+        ; Gibt der Einheit k3f 300 Silber.
+  
+        GIB 0 5 Steine
+        ; Wirft 5 Steine weg.
+  
+        GIB TEMP 3 7 PERSONEN
+        ; Gibt 7 Personen an die neu geschaffene Einheit TEMP 3.
+
+Vorsicht: Zwischen <tt>MACHE TEMP</tt> und <tt>ENDE</tt> stehen Befehle für die neue Einheit - und diese hat kein Geld. Folgendes funktioniert also nicht:
+
+      MACHE TEMP 1
+        GIB TEMP 1 200 Silber  ;  sinnlos!
+        REKRUTIERE 2
+        NACH WESTEN
+      ENDE
+
+Stattdessen muss es so geschrieben werden:
+
+      GIB TEMP 1 200 Silber
+      MACHE TEMP 1
+        REKRUTIERE 2
+        NACH WESTEN
+      ENDE
+      ; GIB TEMP 1 200 Silber  ;  oder hier!
+
+== Siehe auch ==
+
+* [[RESERVIERE]]
+* [[Materialpool]]
+* [[Schiff]]
+* [[Gebäude]]
+
+
+[[Kategorie:Befehle]]

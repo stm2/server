@@ -1,0 +1,13 @@
+Dies ist die Anleitung zu dem Postspiel "Eressea".
+
+Eressea wird ausschließlich per eMail gespielt. Wer keine eigene E-Mail-Adresse hat, kann bei Eressea leider nicht mitspielen. Der Zugrhythmus liegt bei einer Woche, ZAT (Zug-Abgabe-Termin) ist jeweils Samstag Abend 21:00h (CET). Kam beim Spielleiter kein Zug an, so gibt das einen sog. NMR (No Moves Received). Bei drei NMRs in Folge wird die Partei automatisch aus dem Spiel genommen. D.h. beim 4. NMR wird die Partei gelöscht. Ebenso werden Parteien aus dem Spiel entfernt, die ihre ersten beiden Züge nicht abgeben.
+
+== Ein Wort der Warnung ==
+
+Eressea ist ein Spiel im Fluss. Es hat in den letzten Jahren kontinuierliche Verbesserungen erfahren, und wir werden auch in Zukunft daran arbeiten, es weiter zu verbessern. Das bedeutet, dass Regeln sich ändern können. Da solche Änderungen in der Vergangenheit leider zu ausgedehnten Streitereien zwischen der Spielleitung und einigen wenigen unzufriedenen Spielern geführt haben, weisen wir hiermit ausdrücklich darauf hin, dass wir uns das Recht vorbehalten, alle Regeln jederzeit zu ändern, unter besonderen Umständen auch ohne vorherige Ankündigung.
+
+Das '''Editieren der Regeln''' ist erlaubt, beachtet aber bitte unbedingt die [[Eressea:Mitmachen|Hinweise zum Editieren der Regeln]]!
+
+{{weiter|link=Einleitung}}
+
+[[Kategorie:Regeln]]

@@ -1,0 +1,200 @@
+Magie ist ein mystischer und machtvoller Weg, Dinge zu verändern, und kann im [[Krieg|Kampf]] unter den Feinden viel Schaden anrichten.
+
+Es gibt fünf [[Magiegebiete]]: Illaun, Tybied, Gwyrrd, Cerddor und Draig. Jede Partei muß sich für ein Magiegebiet entscheiden. Dies geschieht mit Hilfe des Befehls [[LERNE|LERNE MAGIE "Magiegebiet"]] im Spiel. Ein einmal gewähltes Magiegebiet kann nicht verändert werden. Alle Magier einer [[Partei]] erlernen automatisch das von der Partei gewählte Magiegebiet, es ist nicht möglich, ein anderes Magiegebiet zu erlernen. Es ist deshalb natürlich nicht möglich das Magiegebiet zu wechseln wenn bereits eine Einheit Magie gelernt hat.
+
+Es darf maximal fünf Magier pro Partei geben, lediglich Elfenparteien dürfen sechs Magier besitzen. Magiereinheiten dürfen immer nur eine Person haben. Magier können keine Personen übergeben.
+Das Talent Magie zu erlernen kostet (50+25*(1+Stufe)*Stufe) Silber pro Person und Runde.
+
+{| border="0" cellspacing="1" align="center"
+|+ Lernkosten
+|- style="background-color:#aaaaaa"
+!Nächste Stufe 	!!1 	 !!2 	 !!3 	 !!4 	 !!5 	 !!6 	 !!7 	 !!8 	 !!9 	 !!10 	 !!11 	 !!12 	 !!13 	 !!14 	 !!15 	 !!... 	 !!20 	 !!... 	 !!30 	 !!... 	 !!40
+|- style="background-color:#eeeeee"
+|Kosten 	||100 	 ||200 	 ||350 	 ||550 	 ||800 	 ||1100 	 ||1450 	 ||1850 	 ||2300 	 ||2800 	 ||3350 	 ||3950 	 ||4600 	 ||5300 	 ||6050 	 ||... 	 ||10550 	 ||... 	 ||23300 	 ||... 	 ||41050
+|}
+
+Ein ungelernter Magier bezahlt also 100 Silber für seine ersten Lektionen; hat er schon Stufe 5 im Magietalent, so muß er 1100 Silber pro Lernwoche bezahlen.
+
+Lernen in einer [[Andere Gebäude|Akademie]] kostet das Doppelte. Unterrichtet werden können nur Magier des gleichen Magiegebietes wie der Lehrer. Ein Draig-Magier kann also keinen Illaun-Magier lehren.
+
+Hat ein Magier nicht genug Silber zum Lernen, lernt er in der Woche nur anteilig entsprechend der Silbermenge, die er bezahlen kann.
+
+Mit jeder Stufe, die der Magier erreicht, kann er neue Sprüche bekommen. Es gibt zur Zeit meistens einen Spruch in jeder Stufe, in Ausnahmefällen auch einmal mehrere oder gar keinen. Hat man eine neue Stufe erreicht, so werden die Sprüche in der Auswertung beschrieben. Hat man die Beschreibung vergessen, kann man sie sich mit dem Befehl [[ZEIGE]] nochmals zeigen lassen.
+
+Eine so angezeigte Spruchbeschreibung sieht ungefähr so aus:
+<pre>
+                 Große Explosion
+
+ Beschreibung:
+ Dieser Zauber zerstört eine komplette Insel. Der Magier wird dabei
+ in eine zufällige Region teleportiert.
+
+ Art: Normaler Zauber
+ Komponenten:
+   1500 Aura
+   10 permanente Aura
+   1 Drachenkopf
+ Modifikationen: Keine
+ Stufe: 20
+ Rang: 5
+
+ Syntax:
+ ZAUBERE "Große Explosion"
+</pre>
+
+(Nein, diesen Spruch gibt es nicht!)
+
+== Art ==
+
+Normale Zauber werden mit dem Befehl [[ZAUBERE]] gezaubert. [[ZAUBERE]] ist ein pseudolanger Befehl vergleichbar mit [[ATTACKIERE]]. Eine Einheit kann also mehrmals pro Runde zaubern, allerdings keinen anderen langen Befehl ausführen. Das ganze hat aber einen Haken: Die Aura-Kosten der Zauber erhöhen sich. Der erste Zauber, den ein Magier in einer Runde zaubert, kostet die normale, beim Zauber angegebene Aura. Der zweite kostet das doppelte, der dritte das vierfache, der vierte das achtfache usw. Kampfzauber werden davon gesondert behandelt, sie erhöhen die Kosten für normale Zauber nicht und kosten selbst auch immer nur die angegebene Aura. Für das Lernen von Magie durch Anwendung spielt es keine Rolle, ob der Zauberer einen oder mehrere Zauber gewirkt hat.
+
+Außerdem gibt es drei verschiedene Arten von Kampfzaubern: '''Präkampfzauber''', '''Kampfzauber''', und '''Postkampfzauber'''. Alle drei Zauber können mit dem Befehl [[KAMPFZAUBER]] "Zauber" gesetzt werden. Löschen kann man einen bestimmten mit [[KAMPFZAUBER|KAMPFZAUBER "Zauber" NICHT]] oder alle gesetzten Kampfzauber mit [[KAMPFZAUBER|KAMPFZAUBER NICHT]].
+
+Hat ein Magier einen gesetzten Prä- oder Postkampfzauber und wird in einen Kampf gezogen, so zaubert er einmal, vor Beginn bzw. nach Ende des Kampfes, diesen Zauber. Dies tut er auch dann wenn er auf kämpfe nicht oder fliehe steht. Aber nur wenn der Magier explizit mit dem Befehl [[ATTACKIERE]] angegriffen worden ist!
+
+Seinen normalen Kampfzauber zaubert er einmal in jeder Kampfrunde, immer vorausgesetzt natürlich, er besitzt noch ausreichend Aura.
+Kampfzauber zählen dabei nicht zu den in der Runde gezauberten Zaubern, sie kosten immer nur ihre normalen Kosten und erhöhen die Kosten normaler Zauber in derselben Runde nicht.
+
+Überlebt der Magier den Kampf und hat er noch ausreichend Aura, zaubert er anschließend den Postkampfzauber.
+
+Kampfzauber können nicht wie normale Zauber gezaubert werden, sie wirken nur im Kampf. Damit ein Magier durch [[ATTACKIERE]] in den Kampf eingreifen kann, muß dieser in der ersten oder besser in der zweiten Reihe kämpfen (siehe [[KÄMPFE]]).
+
+== Aura ==
+
+Aura ist die magische Kraft, mit deren Hilfe ein Zauberer seine Magie ausübt. Aura wird durch das Zaubern verbraucht und regeneriert sich mit der Zeit wieder. Ein Magier kann eine bestimmte maximale Menge Aura aufnehmen. Wieviel, wird - ebenso wie die Auraregeneration - durch das Magietalent des Magiers bestimmt. Die genauen Angaben für jeden Magier stehen in seinem Report, als Faustregel gilt aber, daß ein Magier etwa Talent^2 Aura aufnehmen kann und pro Woche im Durchschnitt etwa Talent-Stufe Aura regeneriert (das kann aber zwischen fast gar nichts und Talent-Stufe schwanken). Magische Rassen regenerieren Aura schneller, nichtmagische Rassen deutlich langsamer.
+
+Die maximale Aura ist nicht unveränderlich: Zum einen gibt es einen Zauber, mit dessen Hilfe ein Magier Aura auf einen anderen Magier transferieren kann. Der Zielmagier kann dadurch kurzfristig mehr Aura erhalten, als er normalerweise maximal aufnehmen kann. Dadurch kann er Zauber wirken, deren Kosten über seiner Maximalaura liegen. Überschüssige Aura geht aber am Ende einer Runde wieder verloren.
+
+Außerdem gibt es Zauber (und möglicherweise andere Dinge), die den Magier permanente Aura kosten, wie etwa das obige Beispiel. Das heißt, daß der Magier fortan weniger maximale Aura speichern kann. In der Regel sind das sehr mächtige Zaubersprüche oder Artefaktmagie, die permanente Effekte hervorrufen.
+
+== Modifikationen ==
+
+Bei einigen Zaubern kann man eine Stufe angeben, auf der man den Zauber sprechen möchte. Diese muß gleich oder niedriger sein als die Stufe des Magiers und kann auch unter der normalen Stufe des Zaubers liegen. So kann man den Zauber auf einer niedrigeren Stufe als sein eigenes Talent zaubern. Sehr viele Zauber haben stufenabhängige Wirkungen und Kosten, und es kann sinnvoll sein, einen Zauber auf einer niedrigeren Stufe als der maximal möglichen zu zaubern.
+
+  ZAUBERE STUFE <nr> "Zauber"
+
+Diese Modifikation funktioniert auch bei Kampfzaubern:
+
+  KAMPFZAUBER STUFE <nr> "Kampfzauber"
+
+Das macht vor allem Sinn, wenn man sich etwas Aura aufsparen will um für einen Postkampfzauber noch etwas Aura übrig zu haben.
+
+== Komponenten ==
+
+Steht dort einfach nur Anzahl Aura, so heißt das, daß die Kosten fix sind: Große Explosion kostet immer 1500 Aura. Steht dort eine Angabe wie etwa 3 Aura * Stufe, dann heißt das, daß für einmal Zaubern 3 multipliziert mit der Stufe, auf welcher der Zauber gesprochen wird, Aurakosten anfallen. Die Stufe entspricht in aller Regel (aber nicht immer) dem Magietalent des Magiers der den Zauber spricht. Erfordert der Spruch permanente Aura, so verringert sich die Maximale Aura des Magiers um diesen Wert. Weitere Komponenten können Kräuter, Rohstoffe, Silber, Tränke oder auch seltene Gegenstände sein.
+
+== Fernzauber ==
+
+Bei Fernzaubern besteht die Möglichkeit, den Zauber in einer anderen Region als die des Magiers wirken zu lassen. Bei diesen Zaubern kann man dann die folgende Syntax benutzen:
+
+  ZAUBERE REGION <x> <y> "Zauber"
+
+In diesem Fall wird der Zauber in der angegebenen Region 'gezündet'. Diese Modifikation erhöht die Kosten aller Komponenten des Zaubers allerdings drastisch: Die Kosten für Materialkomponenten werden mit 2<sup>Entfernung</sup> zwischen dem Ort des Magiers und dem Ziel multipliziert. Spricht der Magier in einer Runde mehrere Sprüche, werden die Aurakosten mit 2<sup>X-1</sup> multipliziert, wobei X die Anzahl des Spruches ist. Folgende Tabellen zur Illustration:
+
+{| border="0" cellspacing="1" align="center"
+|- style="background-color:#aaaaaa"
+!Entfernung (Regionen) 	!!0 	!!1 	!!2 	!!3 	!!4
+|- style="background-color:#eeeeee"
+|Anzahl der benötigten Komponenten 	||1 Stein<br>5 Eisen<br>10 Holz 	||2 Steine<br>10 Eisen<br>20 Holz 	||4 Steine<br>20 Eisen<br>40 Holz 	||8 Steine<br>40 Eisen<br>80 Holz 	||16 Steine<br>80 Eisen<br>160 Holz
+|}
+
+
+{| border="0" cellspacing="1" align="center"
+|- style="background-color:#aaaaaa"
+!Entfernung (Regionen)   	!!0 	!!1 	!!2 	!!3 	!!4
+|- style="background-color:#eeeeee"
+|Aurakosten (1. Spruch) 	||1 Aura 	||2 Aura 	||4 Aura 	||8 Aura 	||16 Aura
+|- style="background-color:#cccccc"
+|Aurakosten (2. Spruch) 	||2 Aura 	||4 Aura 	||8 Aura 	||16 Aura 	||32 Aura
+|- style="background-color:#eeeeee"
+|Aurakosten (3. Spruch) 	||4 Aura 	||8 Aura 	||16 Aura 	||32 Aura 	||64 Aura
+|}
+
+Die beiden Modifikatoren können auch verknüpft werden:
+
+  ZAUBERE REGION <x> <y> STUFE <nr> "Zauber"
+
+Dabei ist wichtig, daß man erst die Region und dann die Stufe angibt.
+
+Neben den Fernzaubern gibt es auch noch zwei andere Klassen von besonderen Sprüchen. Generell können Zauber '''nicht von ablegenden Schiffen''' aus gezaubert werden. Eine Ausnahme bilden nur die als '''Schiffszauber''' bezeichneten Sprüche. Und Sprüche, die als '''Seezauber''' gekennzeichnet sind, können auch von Nicht-Meermenschen auf dem Ozean gezaubert werden.
+
+== Personen- und Objektzauber ==
+
+Mit einigen Zaubern kann man Personen und Objekte magisch beeinflussen. Hierbei ist zu beachten, dass die allermeisten Zauber, die auf befreundete Einheiten gezaubert werden sollen, erfordern, dass die Zieleinheit mit [[KONTAKTIERE]] den Magier kontaktiert. Teleports und andere Verzauberungen können ja gut gemeint sein, aber oft auch zu Missetaten benutzt werden, und mit [[KONTAKTIERE]] signalisiert das Ziel, dass es mit der Verzauberung einverstanden ist.
+
+== Rang ==
+
+Die Reihenfolge der normalen Zauber ergibt sich aus dem Rang des Zaubers. Es werden innerhalb einer Runde immer diejenigen Zauber mit einem niedrigeren Rang vor denjenigen mit einem höheren ausgeführt. Dabei ist Rang 1 der niedrigste und Rang 9 der höchste. Die meisten Zauber haben den Standardrang 5, Antimagiezauber aber haben fast alle Rang 2, werden also gegebenenfalls vor den normalen Zaubern gezaubert. Zauber gleichen Rangs werden in der im Zug angegebenen Reihenfolge gezaubert.
+
+'''Beispiel:'''
+
+Es gäbe drei Zauber, genannt "Aaaa", "Beee" und "Ceee".
+
+"Aaaa" hat Rang 5 und kostet 10 Aura.
+
+"Beee" hat Rang 2 und kostet 20 Aura.
+
+"Ceee" hat Rang 5 und kostet 5 Aura.
+
+Angenommen ein Magier hat die Befehle
+
+    ZAUBERE "Ceee"
+    ZAUBERE "Beee"
+    ZAUBERE "Aaaa"
+
+in dieser Reihenfolge. Zuerst wird "Beee" gezaubert, denn der Zauber hat Rang 2. Es ist der erste Zauber des Magiers in dieser Woche, daher kostet er 20 Aura. Dann wird "Ceee" gezaubert, denn "Aaaa" und "Ceee" haben den selben Rang und "Ceee" steht vor "Aaaa". "Ceee" ist der zweite Zauber, er kostet also 5*2^1=10 Aura. Nun kommt noch "Aaaa". "Aaaa" ist der dritte Zauber, er kostet also 10*2^2=40 Aura.
+
+== Patzer ==
+
+Es gibt viel Nichtoffensichtliches im Magiesystem und in den Sprüchen. Generell gilt: Viele Sprüche beinhalten direkte oder indirekte Risiken. Zudem kann ein Zauberer einen Spruch auch verpatzen.
+
+Ein Spruch kann also einfach so fehlschlagen, auch wenn eigentlich alle Komponenten vorhanden sind und die Aura des Magiers ausreicht. Das ist kein Bug und gibt auch eine ganz normale Meldung im Report ("Der Zauber schlägt fehl."). Fehlen Komponenten oder Aura wird dies in der Meldung auch erwähnt.
+
+Die Wahrscheinlichkeit für einen Patzer hängt von vielen Faktoren ab, unter anderem von der Stufe, Schwierigkeitsgrad des Spruchs im Verhältnis zur Stufe, auf der der Spruch vom Magier gezaubert wird, dem Magiegebiet, dem Spruch, der Umgebung, dem Ziel usw.
+
+Patzer können äußerst unangenehme Nebenwirkungen haben!
+
+== Magieresistenz ==
+ 
+Die Magieresistenz einer Person/Einheit ist die jeder Person innewohnende Fähigkeit, einem gegen sie gerichteten Zauber zu widerstehen, und wie stark eine Person von magischem Schaden im Kampf betroffen wird. Grundsätzlich ist die Magieresistenz gleich der natürlichen Magieresistenz der [[Rassen]]. Die Magieresistenz gegen einen Verzauberungsversuch wird zusätzlich von der Erfahrung der Einheit beeinflußt. Hierbei gibt es einen Bonus, der vom höchsten Talentwert der Person abhängt und durch das Talent des Magiers, der den Spruch wirkt, modifiziert wird. Der Grundwert ist abhängig vom Zauber, liegt aber in der Regel bei 50%, wenn Magier und Opfer das gleiche Talent haben.
+
+Die Kampfmagieresistenz wird wiederum von bestimmten Waffen oder Rüstungen beeinflußt. Gegen magischen Schaden wirken sonst nur magischer Schutz und die natürliche Rüstung.
+
+Auch "unbelebte Materie", also Regionen, Schiffe, Gebäude usw. haben bisweilen eine Magieresistenz.
+
+== Magierturm ==
+
+Ein [[Andere Gebäude#Magierturm|Magierturm]] erhöht die Aura-Regeneration um 75% und erhöht die effektive Stufe jedes Zaubers, der in ihnen gezaubert wird, um 1 &mdash; gegebenenfalls zusätzlich zu einem Ring der Macht &mdash; ohne die Kosten zu erhöhen. Außerdem wird die Wahrscheinlichkeit eines Zauberpatzers deutlich verringert.
+
+== Vertraute ==
+
+'''Hinweis:''' Wenn Du die Anleitung zum ersten Mal liest, kannst Du diesen Abschnitt getrost überspringen. Vertraute sind nur für Parteien mit einem gewissen Alter interessant.
+
+Einem erfahrenen Magier wird irgendwann auf seinen Wanderungen ein ungewöhnliches Exemplar einer Gattung begegnen, welches sich dem Magier anschließen wird. Welcher Gattung dieses Tier angehört, hängt vor allem von der Geisteshaltung des Magiers ab.
+
+Das spezielle Band zu seinem Vertrauten ermöglicht dem Magier, Sprüche durch diesen zu wirken. So gezauberte Sprüche wirken auf die Region des Vertrauten und brauchen keine Fernzauber zu sein. Die maximale Entfernung dafür entspricht dem Talent des Magiers. Einen Spruch durch das Vertrautenband zu richten ist jedoch gewissen Einschränkungen unterworfen. Die Stufe des Zaubers kann nicht größer als das Magietalent des Vertrauten oder das halbe Talent des Magiers sein. Auch verdoppeln sich die Kosten für den Spruch. Um einen Zauber durch den Vertrauten zu wirken, gibt man statt dem Magier dem Vertrauten den Befehl ZAUBERE. Trotzdem kann der Magier in dieser Runde keine langen Befehle mehr ausführen.
+
+Vertraute selbst besitzen normalerweise nicht die Gabe der Magie, sie dienen ausschließlich als Medium für ihren Meister. Daher besitzen sie auch keine eigene Aura - wann immer der Magier durch sie zaubert, setzt er ausschließlich eigene Aura ein. In seltenen Fällen jedoch können es magiebegabte Wesen sein, welche sich als Vertraute binden lassen, und die mit der Zeit eigene Zaubersprüche erlernen. Diese Zauber können sich völlig von denjenigen unterscheiden, die ihr Meister beherrscht. Auch solche Vertraute besitzen jedoch zusätzlich die Fähigkeit, als Mittler für die Zauber des Magiers zu agieren.
+
+Zusätzlich können viele Vertraute bestimmte Talente lernen oder haben besondere Fähigkeiten. Aufgrund ihrer grundlegend anderen Sichtweise, können Vetraute jedoch ihr Wissen nicht durch Lehren weitergeben. Der Vertraute verleiht dem Magier einen Bonus in Höhe des halben Talentwertes auf jedes Talent (ausgenommen Magie), welches der Vertraute beherrscht. Einem Magier sei jedenfalls angeraten, sich diese Fähigkeiten seines Vertrauten über ein [[ZEIGE]] genau in Erinnerung zu rufen.
+
+== Der Astralraum ==
+
+'''Hinweis:''' Auch diesen Abschnitt kannst du auslassen, wenn du die Anleitung zum ersten Mal liest, denn es dauert viele Wochen, bis eine Partei den Astralraum bereisen kann.
+
+So unterschiedlich wie die Meinungen, worum es sich dabei eigentlich handelt, sind auch die Namen, die dieser zweiten Ebene des Seins verliehen worden sind: Manche nennen sie die ''Welt der Geisterwesen'', andere wiederum die ''astrale Welt'', am bekanntesten jedoch ist der Begriff ''Astralraum''.
+
+Nur durch Magie kann die Wirklichkeit derart verändert werden, dass Lebewesen in diese andere Welt, in welcher auch die Naturgesetze völlig andere sind, übertreten. Hierbei können sie keine Steine, Pferde, Wagen oder Katapulte mitnehmen. Die Sinne vermögen nicht, konkrete Wahrnehmungen zu erkennen. Das Auge erblickt die Umgebung bloß als schemenhafte Nebel, und alle Geräusche sind dumpf und gedämpft.
+
+Wer den Astralraum betritt, verschwindet vollständig aus der realen Welt. Diese Tatsache mag der einzige Grund sein, dass der Astralraum überhaupt noch ein praktischer Anwendungsbereich der Magie geblieben ist. Wer es schafft, den Übergang zwischen Astralraum und Wirklichkeit durch seine magischen Kräfte zum richtigen Zeitpunkt verwischen zu lassen, kann daraus große Vorteile erlangen - sei es durch die Wahrnehmung von Dingen auf der jeweils anderen Seite, ohne selbst dabei gesehen zu werden, oder durch die schnelle Reise über große Entfernungen. Wer sich nämlich einmal in den Schemen zurechtfindet, wird feststellen, dass er darin um ein vielfaches schneller voran kommt. Die Entfernungen scheinen dem Wanderer im Astralraum deutlich kürzer als sonst.
+
+Doch sei jeder vor dem unbedachten Übertritt in den Astralraum gewarnt, wird dieser doch von schrecklichen Wesen bewohnt, welche durch gewöhnliche Waffen nicht zu besiegen sind, und die ihren Opfern unbarmherzig Willen und Gedächtnis rauben. Nur wer mächtige magische Waffen oder Verbündete mit sich führt oder sich vor unfreundlichen Blicken außerordentlich gut zu verbergen mag, wird vor diesen Schrecken des Astralraums gefeit sein.
+
+== Listen aller Zauber ==
+
+Zu den Anfangszeiten von Eressea, waren die genauen Spruchlisten geheim, um "das gespannte Zittern haben zu können ob und welche neuen Sprüche man beim erreichen einer neuen Stufe erhält". Inzwischen läuft Eressea aber so lange, dass es einen zu großen Nachteil für neue Spieler gegenüber Veteranen bedeuten würde, wenn die Sprüche nicht bekannt wären. Deshalb gibt es nun eine [[Zauberliste E2|Liste aller Zauber]] und [[Zauberbeschreibungen E2|Zauberbeschreibungen]].
+
+{{weiter|Magiegebiete}}
+
+[[Kategorie:Regeln]]
+[[Kategorie:Talente]]

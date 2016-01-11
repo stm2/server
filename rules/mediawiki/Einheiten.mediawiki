@@ -1,0 +1,40 @@
+Das Spiel beginnt man mit einer '''Einheit''', bestehend aus einer Person mit 4200 Silber, 30 Holz, 30 Steinen und einem rassenspezifischen Startgeschenk. Was das genau ist, wird hier nicht verraten. Ein Tip: wer nicht weiß, was er da hat, probiere mal [[ZEIGE|ZEIGE "gegenstand"]]. Diese erste Person ist in keiner Weise speziell; es ist einfach die erste Person, die zur neuen Partei gehört. Man kann nun weitere Personen rekrutieren, später dann Gegenstände produzieren, [[Gebäude]] und [[Schiffe]] bauen, [[Pferd und Wagen|Pferde]] zähmen, [[Kriegstabellen|Waffen]] schmieden und so weiter.
+
+Achtung: diese erste Einheit ist "anonym", d.h. ihre Parteizugehörigkeit (sprich der Name und die Nummer der Partei) ist für andere Spieler nicht sichtbar. Näheres dazu siehe bei dem Befehl [[TARNE]]. Die Einheit einer Dämonen-Partei (zu den Parteirassen siehe [[Rassen|hier]]) bekommt außerdem automatisch einen zufälligen Tarntypus zugewiesen.
+
+Neue Einheiten werden gemacht, indem man mit einer bestehenden Einheit eine neue generiert [[MACHE|MACHE TEMP]]. Eine neue Einheit enthält noch keine Leute, diese müssen entweder von einer bestehenden in die neue Einheit [[GIB|transferiert]] oder frisch rekrutiert werden (siehe [[Ausgaben]]), wozu die Einheit dann das notwendige Geld bekommen muß. Einheiten, die von Einheiten auf Schiffen oder in Gebäuden gemacht werden, starten dort, also auf dem Schiff bzw. in dem Gebäude. Eine Partei kann nicht nur eine bestimmte Zahl von Einheiten, bekannt als das Einheitenlimit, haben. Das liegt derzeit bei 2500 Einheiten und wird auch im Report angezeigt.
+
+Hier ein Beispiel für Einheiten:
+
+   * Konrad Rabenhelm (tb2), 1 Mensch, vorne, bewacht die Region, Talente:
+     Hiebwaffen 1, Steuereintreiben 2, hat: Schwert, 20 Silber, "TREIBEN";
+     Konrad Rabenhelm ist ein typischer Ritter seines Ordens. Der Orden der
+     Gerechtigkeit ist bekannt für seine düsteren und zurückhaltenden 
+     Mitglieder. Sie scheinen alle an einem finsteren Erlebnis zu nagen.
+   &nbsp;
+   - Botschafter des Clans (2ow), anonym, 1 Zwerg, hat: Pferd,
+     Silberbeutel; Der Botschafter ist auf der Suche nach befreundeten Völkern
+     und solchen, die es werden wollen.
+   &nbsp;
+   + Kieselnasen (kies), Gesteinsfreunde (135), 4 Trolle, hat: 1 Wagen, 30
+     Juwelen.
+
+Eigene Einheiten sind mit einem '*' markiert, Einheiten anderer Parteien mit einem '-' oder einem '+', wenn man der Partei [[Allianz|hilft]]. Über Einheiten anderer Parteien stehen viel weniger Informationen zur Verfügung.
+
+Jede Einheit besitzt eine eindeutige Nummer, die vom Computer vergeben wird und die bei allen Befehlen verwendet wird, im ersten Fall hier die Nummer tb2. Der Begriff "Nummer" mutet hier seltsam an, denn in Eressea werden die Einheiten mit "base36"-Zahlen versehen; neben den Ziffern 0-9 sind also die Buchstaben a-z als "Ziffern" gültig. Jede Einheit hat zudem einen Namen ("Konrad Rabenhelm") und vielleicht eine Beschreibung (nach dem Semikolon). Zudem werden Besitz und, falls die Information verfügbar ist, Talente angezeigt.
+
+Diese erste Einheit des Beispiels ist die Einheit des Spielers, der diesen Report bekam. Sie besteht aus einem Menschen der eigenen Partei (wird nicht angezeigt), hat 20 Silber, und kann mit Hiebwaffen kämpfen: in diesem Talent hat die Einheit die Stufe 1. Das Talent [[TREIBE|Steuereintreiben]] beherrscht sie auf Stufe 2 (näheres zu den Talenten siehe [[Talente|hier]]). Wie man sieht, hat Konrad Rabenhelm ein Schwert. Bekommt diese Einheit keine neuen Befehle für die nächste Runde, so wird sie weiterhin Steuern eintreiben.
+
+Die nächste Einheit hat die Nummer 2ow, besteht aus einem [[Zwerg|Zwergen]] und hat ein Pferd und einen Silberbeutel. Das heißt, daß er mehr als 500 Silber bei sich hat. Hätte er gar mehr als 5000 Silber bei sich, sähe man eine Silberkassette. Welcher Partei die fremde Einheit angehört, kann man nicht sehen, denn sie hat sich parteigetarnt, verbirgt also ihre Parteizugehörigkeit (s.a. Befehl [[TARNE]]). Dies ist bei Botschaftern natürlich keine besonders kluge Wahl, da die anderen Spieler so auch nicht an die eMail-Adresse des Spielers kommen. Man kann einer solchen Einheit eine [[BOTSCHAFT]] zukommen lassen.
+
+Und schließlich ein paar befreundete [[Trolle]], die Juwelen geladen haben.
+
+Neben [[Mensch]]en, [[Zwerg]]en und [[Troll]]en gibt es noch viele andere Rassen in Eressea. Sie werden [[Rassen|hier]] näher behandelt.
+
+Einheiten können den Status "flieht", "kämpft nicht", "defensiv", "hinten", "vorne" oder "aggressiv" haben (zu den Einzelheiten siehe im Kapital [[Krieg]] den Abschnitt [[Schlacht#Kampfreihen|Kampfreihen]] sowie die Erklärung zum Befehl [[KÄMPFE]]).
+
+Eine Einheit kann eine Region bewachen (zu den Auswirkungen siehe [[BEWACHE]]). In diesem Fall steht bei ihr zusätzlich "bewacht die Region".
+
+Schlussendlich kann eine Einheit durch einen [[Krieg|Kampf]] oder durch Hunger verwundet sein. In diesem Fall steht bei der Einheit noch "erschöpft", "verwundet" oder gar "schwer verwundet".
+
+[[Kategorie:Regeln]]

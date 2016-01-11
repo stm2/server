@@ -1,0 +1,27 @@
+'''Kräuter''' werden mit dem Befehl [[MACHE|MACHE KRÄUTER]] gemacht. Je nach Talentwert in [[Liste der Talente|Kräuterkunde]] findet man mehr oder weniger Kräuter der Region, in der man sich befindet, wobei jede Region nur ein Kraut hat. Kräuter wachsen ähnlich wie Bäume nach; wenn man nicht aufpaßt, kann man durchaus alle Kräuter einer Region pflücken und muß dann mittels [[ZÜCHTE|ZÜCHTE KRÄUTER]] zuerst wieder welche anpflanzen.
+
+Mit [[FORSCHE|FORSCHE KRÄUTER]] kann man ungefähr feststellen, wie viele Kräuter in der Region wachsen; dazu benötigt man Kräuterkunde der Stufe 7 oder höher.
+
+Achtung, Kräuter halten nicht ewig. Sie verrotten im Laufe der Zeit.
+
+== Kräuterliste ==
+
+{| border="0" cellspacing="1" align="center"
+|+ Liste der Kräuter und ihrer Verbreitung inkl. engl. Bezeichnung
+|- style="background-color:#aaaaaa"
+! Verbreitung !! Kräuter  	!! Herbs (english names)
+|- style="text-align:left;background-color:#eeeeee"
+| Wald/Ebene || Flachwurz, Würziger Wagemut, Eulenauge, Grüner Spinnerich, Blauer Baumringel, Elfenlieb || flatroot, tangy temerity, owlsgaze, spider ivy, cobalt fungus, elvendear
+|- style="background-color:#cccccc"
+| Sumpf || Gurgelkraut, Knotiger Saugwurz, Blasenmorchel 	|| bugleweed, knotroot, bubblemorel
+|- style="background-color:#eeeeee"
+| Wüste || Wasserfinder, Kakteenschwitz, Sandfäule 	|| waterfinder, peyote, sand reeker
+|- style="background-color:#cccccc"
+| Hochland || Windbeutel, Fjordwuchs, Alraune 	|| windbag, fjord fungus, mandrake
+|- style="background-color:#eeeeee"
+| Gebirge || Steinbeißer, Spaltwachs, Höhlenglimm 	|| rock weed, gapgrowth, cave lichen
+|- style="background-color:#cccccc"
+| Gletscher || Eisblume, Weißer Wüterich, Schneekristall 	|| ice begonia, white hemlock, snowcrystal petal
+|}
+
+[[Kategorie:Regeln]]

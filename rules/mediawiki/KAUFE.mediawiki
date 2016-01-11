@@ -1,0 +1,25 @@
+<tt>'''KAUFE''' ''anzahl'' ''luxusgut''</tt>
+
+Wenn die Einheit das Talent "Handeln" hat, wird sie versuchen, die genannte Anzahl Luxusgüter zu kaufen. Dies geht nur, wenn sich in der Region erstens ein Handelsposten oder ein größerer Burgtyp befindet, in dessen Nähe der Markt abgehalten werden kann, und zweitens das Produkt überhaupt in der Region produziert wird. Um etwas zu kaufen, ist kein Kontakt zum Burgherren notwendig; trotzdem ist es natürlich diplomatischer, vorher zu fragen... Weitere Informationen im Kapitel [[Handel]].
+
+<tt>KAUFE</tt> ist wie <tt>[[VERKAUFE]]</tt> ein [[Befehl|"pseudolanger" Befehl]]. Man kann insgesamt Talentstufe(Handeln)*10 Luxusgüter umsetzen, allerdings keine anderen langen Befehle geben.
+
+Beispiel:
+
+  EINHEIT hndl;     Marktschreier [1, $1000]
+    ; Handel 3 [180]
+    VERKAUFE 15 Juwelen
+    VERKAUFE 15 Öl
+    KAUFE 10 Weihrauch
+
+Dieser Händler wird 10 Weihrauch kaufen, 15 Juwelen und 5 Öl verkaufen. KAUF-Order haben Priorität vor Verkäufen, und für Verkäufe gilt die Reihenfolge der Befehlsabgabe, so daß nach 5 Öl sein Limit erreicht ist.
+
+<tt>KAUFE</tt> wie <tt>VERKAUFE</tt> tauchen nicht im Normalreport auf, so daß es scheint, als hätte die Einheit keinen Defaultbefehl. Dies ist aber nur, damit nicht eine große Liste von Befehlen dort steht. Im Computerreport und der Zugvorlage sind alle Befehle nur aufgeführt, wenn ihnen ein @ vorangestellt ist.
+
+== Siehe auch ==
+
+* [[Handel]]
+* [[Geld]]
+* [[VERKAUFE]]
+
+[[Kategorie:Befehle]]

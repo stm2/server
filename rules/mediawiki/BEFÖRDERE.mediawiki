@@ -1,0 +1,120 @@
+<tt>'''BEFÖRDERE'''</tt>
+
+Befördert eine Einheit der eigenen Parteirasse zum Helden.
+
+Helden sind besonders stark im [[Krieg|Kampf]]. Sie schlagen in jeder Kampfrunde 10 mal zu.
+'''Achtung!''' Dies gilt nicht für magische Angriffe, auch nicht für Armbrüste und Katapulte.
+
+Wenn eine Einheit befördert werden soll, benötigt sie pro Person (Gesamt-Personen-Zahl der Partei) Silber. Fehlendes Silber wird wie gewöhnlich aus dem [[Silberpool]] genommen, wenn genug da ist.
+Die maximale Anzahl der Helden ist begrenzt, steigt aber mit der Parteigröße. Die Formel dafür ist log10(Parteigröße÷50)×20.
+Befördert werden können nur Personen der eigenen Rasse, also weder Monster noch Migranten.
+Die <tt>BEFÖRDERUNG</tt> findet nach REKRUTIERE statt. Sowohl für die Zahl der möglichen Helden als auch für die Kosten von Befördere werden die Personenzahlen nach dem rekrutieren in der aktuellen Wochen herangezogen.
+
+Einheiten die befördert wurden, können keine weiteren Personen rekrutieren und können auch nicht mit anderen Nicht-Helden-Einheiten zusammengeführt werden.
+
+Für Rechenfaule hier eine Tabelle, bei welcher Personenzahl in der Partei wie viele Helden verfügbar sind.
+
+
+
+{| border="0" cellspacing="1"
+|-
+!style="background-color:#aaaaaa;text-align:left;"| Personen 
+|style="background-color:#eeeeed;text-align:right"| 57
+|style="background-color:#aaaaaa;text-align:right"| 63
+|style="background-color:#eeeeed;text-align:right"| 71
+|style="background-color:#aaaaaa;text-align:right"| 80
+|style="background-color:#eeeeed;text-align:right"| 89
+|style="background-color:#aaaaaa;text-align:right"| 100
+|style="background-color:#eeeeed;text-align:right"| 112
+|style="background-color:#aaaaaa;text-align:right"| 126
+|style="background-color:#eeeeed;text-align:right"| 141
+|style="background-color:#aaaaaa;text-align:right"| 159
+|style="background-color:#eeeeed;text-align:right"| 178
+|style="background-color:#aaaaaa;text-align:right"| 200
+|style="background-color:#eeeeed;text-align:right"| 224
+|style="background-color:#aaaaaa;text-align:right"| 251
+|style="background-color:#eeeeed;text-align:right"| 282
+|style="background-color:#aaaaaa;text-align:right"| 316
+|style="background-color:#eeeeed;text-align:right"| 354
+|style="background-color:#aaaaaa;text-align:right"| 398
+|style="background-color:#eeeeed;text-align:right"| 446
+|style="background-color:#aaaaaa;text-align:right"| 500
+|style="background-color:#eeeeed;text-align:right"| 562
+|style="background-color:#aaaaaa;text-align:right"| 630
+|style="background-color:#eeeeed;text-align:right"| 707
+|style="background-color:#aaaaaa;text-align:right"| 793
+|style="background-color:#eeeeed;text-align:right"| 890
+|style="background-color:#aaaaaa;text-align:right"| 998
+|style="background-color:#eeeeed;text-align:right"| 1120
+|style="background-color:#aaaaaa;text-align:right"| 1256
+|style="background-color:#eeeeed;text-align:right"| 1410
+|style="background-color:#aaaaaa;text-align:right"| 1582
+
+|style="background-color:#eeeeed;text-align:right"| 2812
+
+|style="background-color:#aaaaaa;text-align:right"| 5000
+
+|style="background-color:#eeeeed;text-align:right"| 8892
+
+|style="background-color:#aaaaaa;text-align:right"| 15812
+
+|style="background-color:#eeeeed;text-align:right"| 28118
+
+|style="background-color:#aaaaaa;text-align:right"| 50000
+
+|style="background-color:#eeeeed;text-align:right"| 88914
+
+|style="background-color:#aaaaaa;text-align:right"| 158114
+
+|style="background-color:#eeeeed;text-align:right"| 281171
+
+|style="background-color:#aaaaaa;text-align:right"| 500000
+|style="background-color:#eeeeed;text-align:right"| ....
+
+|-
+!style="background-color:#aaaaaa;text-align:left;"|Helden
+|style="background-color:#eeeeed;text-align:right"| 1
+|style="background-color:#aaaaaa;text-align:right"| 2
+|style="background-color:#eeeeed;text-align:right"| 3
+|style="background-color:#aaaaaa;text-align:right"| 4
+|style="background-color:#eeeeed;text-align:right"| 5
+|style="background-color:#aaaaaa;text-align:right"| 6
+|style="background-color:#eeeeed;text-align:right"| 7
+|style="background-color:#aaaaaa;text-align:right"| 8
+|style="background-color:#eeeeed;text-align:right"| 9
+|style="background-color:#aaaaaa;text-align:right"| 10
+|style="background-color:#eeeeed;text-align:right"| 11
+|style="background-color:#aaaaaa;text-align:right"| 12
+|style="background-color:#eeeeed;text-align:right"| 13
+|style="background-color:#aaaaaa;text-align:right"| 14
+|style="background-color:#eeeeed;text-align:right"| 15
+|style="background-color:#aaaaaa;text-align:right"| 16
+|style="background-color:#eeeeed;text-align:right"| 17
+|style="background-color:#aaaaaa;text-align:right"| 18
+|style="background-color:#eeeeed;text-align:right"| 19
+|style="background-color:#aaaaaa;text-align:right"| 20
+|style="background-color:#eeeeed;text-align:right"| 21
+|style="background-color:#aaaaaa;text-align:right"| 22
+|style="background-color:#eeeeed;text-align:right"| 23
+|style="background-color:#aaaaaa;text-align:right"| 24
+|style="background-color:#eeeeed;text-align:right"| 25
+|style="background-color:#aaaaaa;text-align:right"| 26
+|style="background-color:#eeeeed;text-align:right"| 27
+|style="background-color:#aaaaaa;text-align:right"| 28
+|style="background-color:#eeeeed;text-align:right"| 29
+|style="background-color:#aaaaaa;text-align:right"| 30
+|style="background-color:#eeeeed;text-align:right"| 35
+|style="background-color:#aaaaaa;text-align:right"| 40
+|style="background-color:#eeeeed;text-align:right"| 45
+|style="background-color:#aaaaaa;text-align:right"| 50
+|style="background-color:#eeeeed;text-align:right"| 55
+|style="background-color:#aaaaaa;text-align:right"| 60
+|style="background-color:#eeeeed;text-align:right"| 65
+|style="background-color:#aaaaaa;text-align:right"| 70
+|style="background-color:#eeeeed;text-align:right"| 75
+|style="background-color:#aaaaaa;text-align:right"| 80
+|style="background-color:#eeeeed;text-align:right"| ....
+
+|}
+
+[[Kategorie:Befehle]]

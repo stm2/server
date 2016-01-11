@@ -1,0 +1,16 @@
+<tt>'''ZÜCHTE''' PFERDE<br/>
+'''ZÜCHTE''' [''anzahl''] KRÄUTER</tt>
+
+<tt>'''ZÜCHTE'''</tt> ist ein langer Befehl, mit dem Einheiten in einer [[Andere Gebäude#Pferdezucht|Pferdezucht]] Pferde züchten oder versuchen, in einer Region neue Kräuter zu pflanzen.
+
+Mit <tt>ZÜCHTE PFERDE</tt> kann pro Person und Talentstufe [[Liste der Talente|Pferdedressur]] ein Pferd mit einer Wahrscheinlichkeit von [Pferdedressur]% entstehen.
+
+3 Personen mit Pferdedressur 5 haben 3×5 Chancen zu je 5%, ein Pferd dazuzubekommen. 
+
+Man braucht mindestens zwei Pferde in der Pferdezucht, um Pferde züchten zu können. Außerdem muß pro "Zuchtchance" jeweils ein Pferd vorhanden sein (in obigem Beispiel also 15 Pferde).
+
+Für <tt>ZÜCHTE KRÄUTER</tt> braucht man mindestens [[Liste der Talente|Kräuterkunde]] 6. Die Einheit versucht die angegebene Anzahl an Kräutern zu pflanzen, maximal jedoch pro Talentstufe ein Kraut; sie benötigt dazu die passende Anzahl Kräuter des entsprechenden Typs sowie eine Phiole "Wasser des Lebens". Es können dadurch keine Kräutertypen gewechselt werden, es wird immer versucht, den in der Region festgelegten Typ zu pflanzen.
+
+{{Geruecht|author=Xolgrim|text=Angeblich funktioniert das Züchten von Kräutern auch mit dem Befehl ZÜCHTE BLUMEN.}}
+
+[[Kategorie:Befehle]]

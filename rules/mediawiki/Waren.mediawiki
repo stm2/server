@@ -1,0 +1,107 @@
+== Produktion von Waren ==
+
+Die Endprodukte können in beliebiger Menge hergestellt werden. Beschränkung sind hier lediglich zum einen natürlich das vorhandene Rohmaterial und zum anderen Anzahl und Talentwert der herstellenden Personen.
+
+Die folgende Tabelle zeigt die Gegenstände, die es auf Eressea gibt. Sie können nur gemacht werden, wenn die betreffende Einheit auch das entsprechende Talent hoch genug hat. Die Gesamt-Talentstufen werden bei der Produktion von Gegenständen immer durch das Mindesttalent geteilt (siehe [[Produktion|diese Beispiele]]). Dies gilt auch für Rohstoffe! Ein Bergbauer mit Bergbau 4 in einer Region mit '20 Eisen/4' kann 4 Eisen pro Runde abbauen (und nicht nur 1 Eisen).
+
+
+{| border="0" cellspacing="0" align="center"
+|+ Gewicht, Talente und Materialbedarf<br>*) Laen benötigt ein Bergwerk zum Abbau.<br>**) Elfenbögen können nur von Elfen hergestellt werden.
+|- style="background-color:#aaaaaa"
+!Gegenstand  	!!Gewicht  	!!Talent  	!!mind.  	!!Rohstoffe
+|- style="background-color:#eeeeee"
+|Silber 	||0,01  	||-/-    	||-/- 	||-/-
+|- style="background-color:#cccccc"
+|Juwelen 	||1     	||Handeln 	||1 	||-/-
+|- style="background-color:#eeeeee"
+|Weihrauch 	||2     	||Handeln 	||1 	||-/-
+|- style="background-color:#cccccc"
+|Balsam 	||2     	||Handeln 	||1 	||-/-
+|- style="background-color:#eeeeee"
+|Gewürz 	||2     	||Handeln 	||1 	||-/-
+|- style="background-color:#cccccc"
+|Myrrhe 	||2     	||Handeln 	||1 	||-/-
+|- style="background-color:#eeeeee"
+|Öl     	||3     	||Handeln 	||1 	||-/-
+|- style="background-color:#cccccc"
+|Seide        	||3     	||Handeln 	||1 	||-/-
+|- style="background-color:#eeeeee"
+|Kräuter 	||0     	||Kräuterkunde 	||1 	||-/-
+|- style="background-color:#cccccc"
+|Tränke 	||0     	||Alchemie 	||2 	||Kräuter
+|- style="background-color:#eeeeee"
+|Samen  	||0,1     	||Kräuterkunde 	||3 	||-/-
+|- style="background-color:#cccccc"
+|Mallornsamen 	||0,1     	||Kräuterkunde 	||4 	||-/-
+|- style="background-color:#eeeeee"
+|Eisen  	||5     	||Bergbau 	||1 	||-/-
+|- style="background-color:#cccccc"
+|Laen*  	||2     	||Bergbau|| 	7|| 	-/-
+|- style="background-color:#eeeeee"
+|Holz   	||5 	||Holzfällen 	||1 	||-/-
+|- style="background-color:#cccccc"
+|Mallorn 	||5 	||Holzfällen 	||2 	||-/-
+|- style="background-color:#eeeeee"
+|Stein  	||60 	||Steinbau 	||1 	||-/-
+|- style="background-color:#cccccc"
+|Pferd  	||50 	||Pferdedressur ||1 	||-/-
+|- style="background-color:#eeeeee"
+|Wagen  	||40 	||Wagenbau 	||1 	||5 Holz
+|- style="background-color:#cccccc"
+|Katapult 	||100 	||Wagenbau 	||5 	||10 Holz
+|- style="background-color:#eeeeee"
+|Katapultmunition||10 	||Steinbau 	||3 	||1 Stein
+|- style="background-color:#cccccc"
+|Schwert 	||1 	||Waffenbau 	||3 	||1 Eisen
+|- style="background-color:#eeeeee"
+|Laenschwert 	||1 	||Waffenbau 	||8 	||1 Laen
+|- style="background-color:#cccccc"
+|Bihänder 	||2 	||Waffenbau 	||4 	||2 Eisen
+|- style="background-color:#eeeeee"
+|Speer  	||1 	||Waffenbau 	||2 	||1 Holz
+|- style="background-color:#cccccc"
+|Mallornspeer 	||1 	||Waffenbau 	||5 	||1 Mallorn
+|- style="background-color:#eeeeee"
+|Lanze  	||2 	||Waffenbau 	||2 	||2 Holz
+|- style="background-color:#cccccc"
+|Mallornlanze 	||1 	||Waffenbau 	||5 	||2 Mallorn
+|- style="background-color:#eeeeee"
+|Hellebarde 	||2 	||Waffenbau 	||3 	||1 Eisen, 2 Holz
+|- style="background-color:#cccccc"
+|Kriegsaxt 	||2 	||Waffenbau 	||3 	||1 Eisen, 1 Holz
+|- style="background-color:#eeeeee"
+|Armbrust 	||1 	||Waffenbau 	||3 	||1 Holz
+|- style="background-color:#cccccc"
+|Mallornarmbrust||1     ||Waffenbau 	||5 	||1 Mallorn
+|- style="background-color:#eeeeee"
+|Bogen  	||1 	||Waffenbau 	||2 	||1 Holz
+|- style="background-color:#cccccc"
+|Mallornbogen 	||1 	||Waffenbau 	||5 	||1 Mallorn
+|- style="background-color:#eeeeee"
+|Elfenbogen** 	||1 	||Waffenbau 	||5 	||2 Mallorn
+|- style="background-color:#cccccc"
+|Kettenhemd 	||2 	||Rüstungsbau 	||3 	||3 Eisen
+|- style="background-color:#eeeeee"
+|Laenkettenhemd ||1 	||Rüstungsbau 	||9 	||3 Laen
+|- style="background-color:#cccccc"
+|Plattenpanzer 	||4 	||Rüstungsbau 	||4 	||5 Eisen
+|- style="background-color:#eeeeee"
+|Schild 	||1 	||Rüstungsbau 	||2 	||1 Eisen
+|- style="background-color:#cccccc"
+|Laenschild 	||0 	||Rüstungsbau 	||7 	||1 Laen
+|- style="background-color:#eeeeee"
+|}
+
+== Siehe auch ==
+
+
+* [[Produktion]]
+* [[Rohstoffe]]
+* [[Straßen]]
+* [[Gebäude]]
+
+<noinclude>
+{{weiter|Straße}}
+
+[[Kategorie:Regeln]]
+</noinclude>

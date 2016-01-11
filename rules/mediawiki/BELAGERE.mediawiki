@@ -1,0 +1,11 @@
+<tt>'''BELAGERE''' ''burg-nr''</tt>
+
+''' Dies ist ein alter Befehl der mit Version 3.6 aus dem Spiel entfernt wurde!'''
+
+Hiermit wird die angegebene Burg belagert.
+
+== Siehe auch ==
+
+* [[Belagerung]]
+
+[[Kategorie:Befehle]]

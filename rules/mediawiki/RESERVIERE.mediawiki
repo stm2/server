@@ -1,0 +1,46 @@
+<tt>'''RESERVIERE''' ''anzahl'' ''gegenstand''<br/>
+'''RESERVIERE''' ALLES ''gegenstand''<br/>
+'''RESERVIERE''' JE ''anzahl'' ''gegenstand''</tt>
+
+Hiermit kann sich eine Einheit Gegenstände oder Silber von anderen Einheiten der Region nehmen und "sichern". Dabei ist zu beachten, dass die Einheit sich ihre Waren von irgendeiner Einheit nimmt (in der Regel von oben nach unten entsprechend der Reihenfolge im NR), es sei denn, diese Einheit hat ihrerseits diesen Gegenstand reserviert (siehe dazu aber [[Materialpool]]!).
+
+Mit <tt>RESERVIERE ALLES ''gegenstand''</tt> reserviert eine Einheit von dem angegebenen Gegenstand alles, was sie besitzt.
+
+Mit <tt>RESERVIERE JE</tt> werden <tt>''anzahl''</tt> Gegenstände ''pro Person'' reserviert.
+
+ RESERVIERE JE 100 Silber
+
+reserviert bei einer Einheit mit 10 Personen also 1000 Silber.
+
+
+== Fehlerquellen ==
+
+* <tt>TEMP</tt>-Einheiten können nicht reservieren! Silber wie Gegenstände müssen ihnen mit <tt>[[GIB]]</tt> übergeben werden.
+* <tt>RESERVIERE</tt> kommt vor [[GIB]] und [[REKRUTIERE]] in der [[Befehlsreihenfolge]]. Also bezieht sich <tt>JE</tt> auf die Anzahl der Personen vor Personenübergabe und Rekrutierungen.
+* Wird von den Einheiten einer Partei mehr von einem Gegenstand reserviert, als in der Region (im Materialpool) insgesamt vorhanden ist, ist das Ergebnis schwer vorhersagbar. Für weitere Details siehe [[Materialpool]].
+* Wird ein und derselbe Gegenstand von einer Einheiten mehrmals reserviert, so gilt nur der letzte Eintrag.
+
+== Beispiele ==
+
+Mit
+
+  RESERVIERE JE 1 Schwert
+  RESERVIERE JE 1 Schild
+  GIB depo ALLES
+
+kann eine Einheit, auch nach einem verlustreichen Kampf, pro Person eine Waffe und einen Schild behalten und alles andere (Beute) an eine Depot-Einheit abgeben.
+
+Mit
+
+  @RESERVIERE 100 Silber
+  RESERVIERE 1 Schwert
+  RESERVIERE 50 Silber
+
+wird die Einheit ein Schwert und 50 Silber reservieren.
+
+== Siehe auch ==
+
+* [[Materialpool]]
+* [[GIB]]
+
+[[Kategorie:Befehle]]

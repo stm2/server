@@ -1,0 +1,24 @@
+<tt>'''BEWACHE''' [NICHT]</tt>
+
+Einheiten können ihre Region bewachen. Dazu muss die Einheit mit mindestens einer [[Kriegstabellen#Waffeneigenschaften|Waffe]] [[bewaffnet]] sein und das passende Waffentalent haben. Wenn eine Partei eine Region bewacht, gelten für Einheiten, die mit ihr nicht [[Allianz|alliiert]] sind ([[HELFE|HELFE BEWACHE]]), folgende Einschränkungen:
+
+* Sie können in dieser Region keine Steuern mehr eintreiben, Rohstoffe abbauen oder Bauern rekrutieren.
+* Sie werden auf der Durchreise mit einer gewissen Wahrscheinlichkeit gestoppt. 
+* Befinden sie sich auf einem Schiff, so können sie nicht [[ARBEITE|ARBEITEN]], [[UNTERHALTE|UNTERHALTEN]], [[ATTACKIERE|ATTACKIEREN]] oder sofort über Land weiterziehen. Um die Aktionen in der Folgewoche ausführen zu können, müssen sie das Schiff erst [[VERLASSE|VERLASSEN]] haben.
+Wenn die Einheit nicht gesehen wird, beispielsweise weil sie ein höheres Tarnungstalent hat als das beste Wahrnehmungstalent der bewachenden Partei in der Region ist, so gelten die ersten beiden Beschränkungen nicht.
+
+Für mit Bewachern alliierte Einheiten gilt:
+* Sie können trotz Kämpfen noch lange Befehle ausführen (siehe [[Kampfende]]).
+
+In der Runde, in der der <tt>BEWACHE</tt>-Befehl gegeben wurde, gelten all diese Beschränkungen allerdings noch nicht, denn die bewachende Einheit muss erst einmal herausfinden, wo fremde Einheiten überall Silber eintreiben könnten etc. Die bewachende Einheit wird sofort für alle anderen Einheiten in der Region sichtbar, egal wie hoch ihr Tarnungstalent ist.
+
+Mit <tt>BEWACHE NICHT</tt> wird der Bewachungsstatus einer Einheit aufgelöst. Das passiert außerdem, wenn sich die Einheit fortbewegt. 
+Einheiten mit dem Kampfstatus [[KÄMPFE|KÄMPFE FLIEHE]] können nicht bewachen und Einheiten, aus denen im Kampf alle überlebenden Person flieht, beenden ebenfalls das Bewachen.
+
+Geben mehrere Parteien gleichzeitig oder nacheinander den <tt>BEWACHE</tt>-Befehl, so bewachen sie alle die Region. Nur Parteien, die mit allen bewachenden Parteien alliiert sind, können dann noch Steuern eintreiben, rekrutieren oder Rohstoffe abbauen.
+
+Wenn eine Einheit durch eine Region reist, die von mindestens einer nicht verbündeten Partei bewacht wird, hängt die Chance, dass sie aufgehalten wird von mehreren Faktoren ab: Sie wird vergrößert durch die Anzahl der feindlichen Bewacher, den Regionstyp (es wird schwerer in Sümpfen, Gletschern, Bergen und Vulkanen), das Wahrnehmungstalent der feindlichen Bewacher, Amulette des Wahren Sehens, sowie die Größe der Burg des Regionsbesitzers, falls dieser nicht verbündet ist. Sie wird verringert durch die Anzahl der verbündeten Bewacher und das Tarnungstalent der Einheit, sowie Ringe der Unsichtbarkeit.
+
+Hinweis: [[Monster]] Einheiten der Partei (ii) gelten durch ihre Klauen, Zähne, Krallen und sonstige Extremitäten prinzipiell als bewaffnet, auch wenn sie keine sichtbare Waffe tragen. Dies gilt auch für von Spielern magisch beschworene Monster.
+
+[[Kategorie:Befehle]]

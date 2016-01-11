@@ -1,0 +1,5 @@
+<tt>'''EMAIL''' "''adresse@example.com''"</tt>
+
+Mit diesem Befehl setzt der Spieler seine eMail-Adresse, an die die Auswertung geschickt wird.
+
+[[Kategorie:Befehle]]

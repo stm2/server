@@ -1,0 +1,17 @@
+<tt>'''VERKAUFE''' ''anzahl'' ''luxusgut''<br/>
+'''VERKAUFE''' ALLES ''luxusgut''</tt>
+
+Die im [[Handel|Handeln]] kundige Einheit kann mit diesem Befehl Luxusgüter, in deren Besitz sie ist, an die Bauern verkaufen. Dies geht nur, wenn sich in der Region erstens ein Handelsposten oder ein größerer [[Burgen|Burgtyp]] befindet, in dessen Nähe der Markt abgehalten werden kann, und wenn zweitens überhaupt eine Nachfrage nach dem Produkt besteht. Um etwas zu verkaufen, ist kein Kontakt zum Burgherren notwendig; trotzdem ist es natürlich diplomatischer, vorher zu fragen...
+
+Mit <tt>VERKAUFE ALLES</tt> wird soviel verkauft, wie die Nachfrage der Region ist. Das klappt auch mit mehreren Parteien und auch, wenn in der gleichen Woche das Handelsvolumen (z.B. durch Rekrutierungen) sinkt.
+
+<tt>VERKAUFE</tt> ist wie <tt>[[KAUFE]]</tt> ist ein [[Befehl|"pseudolanger" Befehl]]. Man kann insgesamt Talentstufe(Handeln)*10 Luxusgüter verkaufen und kaufen, allerdings keine anderen langen Befehle geben.
+
+<tt>KAUFE</tt> wie <tt>VERKAUFE</tt> tauchen nicht im Normalreport auf, so daß es scheint, als hätte die Einheit keinen [[Befehl|Defaultbefehl]]. Dies ist aber nur, damit nicht eine große Liste von Befehlen dort steht. Im Computerreport und der Zugvorlage sind alle Befehle nur aufgeführt, wenn ihnen ein @ vorangestellt ist.
+
+== Siehe auch ==
+
+* [[Handel]]
+* [[KAUFE]]
+
+[[Kategorie:Befehle]]

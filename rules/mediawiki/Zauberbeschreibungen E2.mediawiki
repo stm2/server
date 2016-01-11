@@ -1,0 +1,1741 @@
+{{TOC right|level=2}}
+
+
+== A.. ==
+
+=== Alp ===
+
+'''Beschreibung''':<br />Der Magier beschwört ein kleines Monster, einen Alp.  Dieses bewegt sich langsam auf sein Opfer zu (das sich an einem beliebigen Ort an der Welt befinden kann, der Magier oder seine Partei braucht es nicht zu sehen). Sobald das Opfer erreicht ist, wird es gnadenlos gequält, und nur durch einen starken Gegenzauber oder den Tod des beschwörenden Magiers kann das Opfer wieder Frieden finden. Bei der Beschwörung des Alps verliert der Magier einen kleinen Teil seiner Aura für immer.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 15<br />
+'''Rang''': 5<br />
+'''Komponenten''': 350 Aura, 5 permanente Aura, 1 Blasenmorchel<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Alp" <Einheit-Nr><br /> 
+
+=== Astraler Ausgang ===
+
+'''Beschreibung''':<br />Der Magier konzentriert sich auf die Struktur der Realität und kann so die astrale Ebene verlassen. Er kann insgesamt (Stufe-3)*15 GE durch das kurzzeitig entstehende Tor schicken. Ist der Magier erfahren genug, den Zauber auf Stufen von 11 oder mehr zu zaubern, kann er andere Einheiten auch gegen ihren Willen auf die andere Ebene zwingen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 7<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Astraler Ausgang" <x> <y> <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+=== Astraler Riss ===
+
+'''Beschreibung''':<br />Der Schwarzmagier kann mit diesem dunklen Ritual einen Riss in das Gefüge der Magie bewirken, der alle magische Kraft aus der Region reißen wird. Alle magisch begabten in der Region werden einen Großteil ihrer Aura verlieren.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 3<br />
+'''Komponenten''': 35 Aura, 1 Drachenblut<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Astraler Riss"<br /> 
+
+=== Astraler Ruf ===
+
+'''Beschreibung''':<br />Ein Magier, der sich in der astralen Ebene befindet, kann mit Hilfe dieses Zaubers andere Einheiten zu sich holen. Der Magier kann  (Stufe-3)*15 GE durch das kurzzeitig entstehende Tor schicken. Ist der  Magier erfahren genug, den Zauber auf Stufen von 13 oder mehr zu zaubern,  kann er andere Einheiten auch gegen ihren Willen auf die andere Ebene  zwingen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 7<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Astraler Ruf" <x> <y> <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+=== Astraler Weg ===
+
+'''Beschreibung''':<br />Alte arkane Formeln ermöglichen es dem Magier, sich und andere in die astrale Ebene zu schicken. Der Magier kann (Stufe-3)*15 GE durch das kurzzeitig entstehende Tor schicken. Ist der Magier erfahren genug, den Zauber auf Stufen von 11 oder mehr zu zaubern, kann er andere Einheiten auch gegen ihren Willen auf die andere Ebene zwingen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 7<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Astraler Weg" <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+=== Astrales Chaos ===
+
+'''Beschreibung''':<br />Dieses Ritual, ausgeführt vor einem Kampf, verwirbelt die astralen Energien auf dem Schlachtfeld und macht es so feindlichen Magier schwieriger, ihre Zauber zu wirken.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 2<br />
+'''Komponenten''': 6 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Astrales Chaos"<br /> 
+
+=== Astrale Schwächezone ===
+
+'''Beschreibung''':<br />Mit diesem Zauber kann der Magier eine Zone der astralen Schwächung erzeugen, ein lokales Ungleichgewicht im Astralen Feld. Dieses Zone wird bestrebt sein, wieder in den Gleichgewichtszustand  zu gelangen. Dazu wird sie jedem in dieser Region gesprochenen  Zauber einen Teil seiner Stärke entziehen, die schwächeren gar  ganz absorbieren.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 2<br />
+'''Komponenten''': 3 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Astrale Schwächezone"<br /> 
+
+=== Astralschutzgeister ===
+
+'''Beschreibung''':<br />Dieses Ritual beschwört einige Elementargeister der Magie und schickt sie in die Reihen der feindlichen Magier. Diesen wird das Zaubern für die Dauer des Kampfes deutlich schwerer fallen.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 2<br />
+'''Komponenten''': 5 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Astralschutzgeister"<br /> 
+
+=== Aufruhr beschwichtigen ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses magischen Gesangs kann der Magier eine Region in Aufruhr wieder beruhigen. Die Bauernhorden werden sich verlaufen und wieder auf ihre Felder zurückkehren. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 15<br />
+'''Rang''': 5<br />
+'''Komponenten''': 30 Aura<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Aufruhr beschwichtigen"<br /> 
+
+=== Aufruhr verursachen ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses magischen Gesangs versetzt der Magier eine ganze Region in Aufruhr. Rebellierende Bauernhorden machen jedes Besteuern unmöglich, kaum jemand wird mehr für Gaukeleien Geld spenden und es können keine neuen Leute angeworben werden. Nach einigen Wochen beruhigt sich der Mob wieder. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 16<br />
+'''Rang''': 5<br />
+'''Komponenten''': 40 Aura<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Aufruhr verursachen"<br /> 
+
+=== Auratransfer ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses Zauber kann der Magier eigene Aura im Verhältnis 2:1 auf einen anderen Magier des gleichen Magiegebietes oder im Verhältnis 3:1 auf einen Magier eines anderen Magiegebietes übertragen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 1<br />
+'''Komponenten''': 1 Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Auratransfer" <Einheit-Nr> <Aura><br /> 
+
+=== Aushorchen ===
+
+'''Beschreibung''':<br />Erliegt die Einheit dem Zauber, so wird sie dem Magier alles erzählen,  was sie über die gefragte Region weiß. Ist in der Region niemand  ihrer Partei, so weiß sie nichts zu berichten. Auch kann sie nur das  erzählen, was sie selber sehen könnte. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 5<br />
+'''Komponenten''': 4 Aura, 100 Silber<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Aushorchen" <Einheit-Nr> <x> <y><br /> 
+
+
+== B.. ==
+
+=== Bannlied ===
+
+'''Beschreibung''':<br />Dieser schrille Gesang hallt über das ganze Schlachtfeld. Die besonderen Dissonanzen in den Melodien machen es Magier fast unmöglich, sich auf ihre Zauber zu konzentrieren.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 2<br />
+'''Komponenten''': 5 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Bannlied"<br /> 
+
+=== Belebtes Gestein ===
+
+'''Beschreibung''':<br />Dieses kräftezehrende Ritual beschwört mit Hilfe einer Kugel aus konzentriertem Laen einen gewaltigen Erdelementar und bannt ihn  in ein Gebäude. Dem Elementar kann dann befohlen werden, das  Gebäude mitsamt aller Bewohner in eine Nachbarregion zu tragen.  Die Stärke des beschworenen Elementars hängt vom Talent des  Magiers ab: Der Elementar kann maximal [Stufe-12]*250 Größeneinheiten  große Gebäude versetzen. Das Gebäude wird diese Prozedur nicht  unbeschädigt überstehen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 13<br />
+'''Rang''': 5<br />
+'''Komponenten''': 10 Aura * Stufe, 1 permanente Aura, 5 Laen<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Belebtes Gestein" <Gebäude-Nr> <Richtung><br /> 
+
+=== Bergwächter ===
+
+'''Beschreibung''':<br />Erschafft einen Wächtergeist, der in Gletschern und Bergen Eisen- und Laenabbau durch nichtalliierte Parteien (HELFE BEWACHE) verhindert,  solange er die Region bewacht. Der Bergwächter ist  an den Ort der Beschwörung gebunden.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 3 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Bergwächter"<br /> 
+
+=== Beschleunigung ===
+
+'''Beschreibung''':<br />Dieser Zauber beschleunigt einige Kämpfer auf der eigenen Seite so, dass sie während des gesamten Kampfes in einer Kampfrunde zweimal angreifen können. <br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 5<br />
+'''Komponenten''': 5 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Beschleunigung"<br /> 
+
+=== Beschwöre einen Erdelementar ===
+
+'''Beschreibung''':<br />Der Druide beschwört mit diesem Ritual einen Elementargeist der Erde und bringt ihn dazu, die Erde erbeben zu lassen. Dieses Erdbeben wird alle Gebäude in der Region beschädigen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 25 Aura, 2 Laen<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Beschwöre einen Erdelementar"<br /> 
+
+=== Beschwöre einen Sturmelementar ===
+
+'''Beschreibung''':<br />Die Beschwörung von Elementargeistern der Stürme ist ein uraltes Ritual. Der Druide bannt die Elementare in die Segel der Schiffe, wo sie helfen, das Schiff mit hoher Geschwindigkeit über die Wellen zu tragen. Je mehr Kraft der Druide in den Zauber investiert, desto größer ist die Zahl der Elementargeister, die sich bannen lassen. Für jedes Schiff wird ein Elementargeist benötigt.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 6 Aura * Stufe<br />
+'''Modifikationen''': Seezauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Beschwöre einen Sturmelementar" <Schiff-Nr> [<Schiff-Nr>  ...]<br /> 
+
+=== Beschwöre Schattendämonen ===
+
+'''Beschreibung''':<br />Mit Hilfe dunkler Rituale beschwört der Zauberer Dämonen aus der Sphäre der Schatten. Diese gefürchteten Wesen können sich fast unsichtbar unter den Lebenden bewegen, ihre finstere Aura ist jedoch für jeden spürbar. Im Kampf sind Schattendämonen gefürchtete Gegner. Sie sind schwer zu treffen und entziehen ihrem Gegner Kraft.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 5<br />
+'''Komponenten''': 3 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Beschwöre Schattendämonen"<br /> 
+
+=== Beschwöre Schattenmeister ===
+
+'''Beschreibung''':<br />Mit Hilfe dunkler Rituale beschwört der Zauberer Dämonen aus der Sphäre der Schatten. Diese gefürchteten Wesen können sich fast unsichtbar unter den Lebenden bewegen, ihre finstere Aura ist jedoch für jeden spürbar. Im Kampf sind Schattenmeister gefürchtete Gegner. Sie sind schwer zu treffen und entziehen ihrem Gegner Kraft und Leben.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 5<br />
+'''Komponenten''': 7 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Beschwöre Schattenmeister"<br /> 
+
+=== Beschwörung eines Hitzeelementar ===
+
+'''Beschreibung''':<br />Dieses Ritual beschwört wütende Elementargeister der Hitze. Eine Dürre sucht das Land heim. Bäume verdorren, Tiere verenden, und die Ernte fällt aus. Für Tagelöhner gibt es kaum noch Arbeit in der Landwirtschaft zu finden.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 13<br />
+'''Rang''': 5<br />
+'''Komponenten''': 600 Aura<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Beschwörung eines Hitzeelementar"<br /> 
+
+=== Beschwörung eines Wasserelementares ===
+
+'''Beschreibung''':<br />Der Magier zwingt mit diesem Ritual die Elementargeister des Wassers in seinen Dienst und bringt sie dazu, das angegebene Schiff schneller durch das Wasser zu tragen. Zudem wird das Schiff nicht durch ungünstige Winde oder Strömungen beeinträchtigt.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Beschwörung eines Wasserelementares" <Schiff-Nr><br /> 
+
+=== Beute Bewahren ===
+
+'''Beschreibung''':<br />Dieser Zauber verhindert, dass ein Teil der sonst im Kampf zerstörten Gegenstände beschädigt wird. Die Verluste reduzieren sich um 5% pro Stufe des Zaubers bis zu einem Minimum von 25%.<br />
+'''Art''': Postkampfzauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Beute Bewahren"<br /> 
+
+=== Blick des Basilisken ===
+
+'''Beschreibung''':<br />Dieser schwierige, aber effektive Kampfzauber benutzt die Elementargeister des Steins, um eine Reihe von Gegnern für die Dauer des Kampfes in Stein zu verwandeln. Die betroffenen Personen werden nicht mehr kämpfen, können jedoch auch nicht verwundet werden.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Blick des Basilisken"<br /> 
+
+=== Blick in die Realität ===
+
+'''Beschreibung''':<br />Der Magier kann mit Hilfe dieses Zaubers aus der Astral- in die materielle Ebene blicken und die Regionen und Einheiten genau erkennen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 10<br />
+'''Rang''': 5<br />
+'''Komponenten''': 40 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Blick in die Realität"<br /> 
+
+=== Blutrausch ===
+
+'''Beschreibung''':<br />In diesem blutigen Ritual opfert der Magier vor der Schlacht ein Neugeborenes vor den Augen seiner Armee. Die so gerufenen Blutgeister werden von den Soldaten Besitz ergreifen und sie in einen Blutrausch versetzen.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 4<br />
+'''Komponenten''': 5 Aura * Stufe, 1 Bauer<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Blutrausch"<br /> 
+
+
+== C.. ==
+
+=== Chaosfluch ===
+
+'''Beschreibung''':<br />Dieser heimtückische Fluch beeinträchtigt die magischen Fähigkeiten des Opfers erheblich. Eine chaosmagische Zone um das Opfer vermindert seine Konzentrationsfähigkeit und macht es ihm sehr schwer Zauber zu wirken.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 4<br />
+'''Komponenten''': 4 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Chaosfluch" <Einheit-Nr><br /> 
+
+=== Chaossog ===
+
+'''Beschreibung''':<br />Durch das Opfern von 200 Bauern kann der Chaosmagier ein Tor zur astralen Welt öffnen. Das Tor kann in der Folgewoche verwendet werden, es löst sich am Ende der Folgewoche auf.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 14<br />
+'''Rang''': 5<br />
+'''Komponenten''': 150 Aura, 200 Bauern<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Chaossog"<br /> 
+
+
+== D.. ==
+
+=== Drachenruf ===
+
+'''Beschreibung''':<br />Mit diesem dunklen Ritual erzeugt der Magier einen Köder, der für Drachen einfach unwiderstehlich riecht. Ob die Drachen aus der Umgebung oder aus der Sphäre des Chaos stammen, konnte noch nicht erforscht werden. Es soll beides bereits vorgekommen sein. Der Köder hält etwa 6 Wochen, muss aber in einem drachengenehmen Terrain platziert werden.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 11<br />
+'''Rang''': 5<br />
+'''Komponenten''': 80 Aura, 1 Drachenkopf<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Drachenruf"<br /> 
+
+
+== E.. ==
+
+=== Eisiger Drachenodem ===
+
+'''Beschreibung''':<br /><br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER "Eisiger Drachenodem"<br /> 
+
+=== Eisiger Drachenodem ===
+
+'''Beschreibung''':<br /><br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER "Eisiger Drachenodem"<br /> 
+
+=== Eisnebel ===
+
+'''Beschreibung''':<br />Tötet die Feinde mit Kälte.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER "Eisnebel"<br /> 
+
+=== Erschaffe Antimagiekristall ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses Zauber entzieht der Magier einem Quarzkristall all seine magischen Energien. Der Kristall wird dann, wenn er zu feinem Staub zermahlen und verteilt wird, die beim Zaubern freigesetzten magischen Energien aufsaugen und die Kraft aller Zauber reduzieren, welche in der betreffenden Woche in der Region gezaubert werden.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 5<br />
+'''Komponenten''': 50 Aura, 3000 Silber<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe Antimagiekristall"<br /> 
+
+=== Erschaffe ein Amulett der Keuschheit ===
+
+'''Beschreibung''':<br />Dieses Amulett in Gestalt einer orkischen Matrone unterdrückt den Fortpflanzungstrieb eines einzelnen Orks sehr zuverlässig. Ein Ork  mit Amulett der Keuschheit wird sich nicht mehr vermehren.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 5<br />
+'''Komponenten''': 50 Aura, 1 permanente Aura, 3000 Silber<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe ein Amulett der Keuschheit"<br /> 
+
+=== Erschaffe ein Amulett des wahren Sehens ===
+
+'''Beschreibung''':<br />Der Spruch ermöglicht es einem Magier, ein Amulett des Wahren Sehens zu erschaffen. Das Amulett erlaubt es dem Träger, alle Einheiten, die durch einen Ring der Unsichtbarkeit geschützt sind, zu sehen. Einheiten allerdings, die sich mit ihrem Tarnungs-Talent verstecken, bleiben weiterhin unentdeckt.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 50 Aura, 3000 Silber, 1 permanente Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe ein Amulett des wahren Sehens"<br /> 
+
+=== Erschaffe einen Aurafocus ===
+
+'''Beschreibung''':<br /><br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 5<br />
+'''Komponenten''': 100 Aura, 1 permanente Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe einen Aurafocus"<br /> 
+
+=== Erschaffe einen Beutel des Negativen Gewichts ===
+
+'''Beschreibung''':<br />Dieser Beutel umschließt eine kleine Dimensionsfalte, in der bis zu 200 Gewichtseinheiten transportiert werden können, ohne dass sie auf das Traggewicht angerechnet werden.  Pferde und andere Lebewesen sowie besonders sperrige Dinge (Wagen und Katapulte) können nicht in dem Beutel transportiert werden. Auch ist es nicht möglich, einen Zauberbeutel in einem anderen zu transportieren. Der Beutel selber wiegt 1 GE.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 10<br />
+'''Rang''': 5<br />
+'''Komponenten''': 30 Aura, 1 permanente Aura, 5000 Silber<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe einen Beutel des Negativen Gewichts"<br /> 
+
+=== Erschaffe einen Gürtel der Trollstärke ===
+
+'''Beschreibung''':<br />Dieses magische Artefakt verleiht dem Träger die Stärke eines ausgewachsenen Höhlentrolls. Seine Tragkraft erhöht sich auf das 50fache und auch im Kampf werden sich die erhöhte Kraft und die trollisch zähe Haut positiv auswirken.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 5<br />
+'''Komponenten''': 20 Aura, 1 permanente Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe einen Gürtel der Trollstärke"<br /> 
+
+=== Erschaffe einen magischen Kräuterbeutel ===
+
+'''Beschreibung''':<br />Der Druide nehme etwas präpariertes Leder, welches er in einem großen Ritual der Reinigung von allen unreinen Geistern befreie, und binde dann einige kleine Geister der Luft und des Wassers in das Material. Aus dem so vorbereiteten Leder fertige er nun ein kleines Beutelchen, welches in ihm aufbewahrte Kräuter besser zu konservieren vermag.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 5<br />
+'''Komponenten''': 30 Aura, 1 permanente Aura, 1 Wasser des Lebens<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe einen magischen Kräuterbeutel"<br /> 
+
+=== Erschaffe einen Ring der Macht ===
+
+'''Beschreibung''':<br />Dieses mächtige Ritual erschafft einen Ring der Macht. Ein Ring der Macht erhöht die Stärke jedes Zaubers, den sein Träger zaubert, als wäre der Magier eine Stufe besser.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 5<br />
+'''Komponenten''': 100 Aura, 1 permanente Aura, 4000 Silber<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe einen Ring der Macht"<br /> 
+
+=== Erschaffe einen Ring der Regeneration ===
+
+'''Beschreibung''':<br /><br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 5<br />
+'''Komponenten''': 100 Aura, 1 permanente Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe einen Ring der Regeneration"<br /> 
+
+=== Erschaffe einen Ring der Unsichtbarkeit ===
+
+'''Beschreibung''':<br />Mit diesem Spruch kann der Zauberer einen Ring der Unsichtbarkeit erschaffen. Der Träger des Ringes wird für alle Einheiten anderer Parteien unsichtbar, egal wie gut ihre Wahrnehmung auch sein mag. In einer unsichtbaren Einheit muss jede Person einen Ring tragen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 50 Aura, 3000 Silber, 1 permanente Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe einen Ring der Unsichtbarkeit"<br /> 
+
+=== Erschaffe eine Sphäre der Unsichtbarkeit ===
+
+'''Beschreibung''':<br />Mit diesem Spruch kann der Zauberer eine Sphäre der Unsichtbarkeit erschaffen. Die Späre macht ihren Träger sowie neunundneunzig weitere Personen in derselben Einheit unsichtbar.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 13<br />
+'''Rang''': 5<br />
+'''Komponenten''': 150 Aura, 30000 Silber, 3 permanente Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe eine Sphäre der Unsichtbarkeit"<br /> 
+
+=== Erschaffe ein Flammenschwert ===
+
+'''Beschreibung''':<br />'Und so reibe das Blut eines wilden Kämpfers in den Stahl der Klinge und beginne die Anrufung der Sphären des Chaos. Und hast du alles zu ihrem Wohlgefallen getan, so werden sie einen niederen der ihren senden, das Schwert mit seiner Macht zu beseelen...'<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 5<br />
+'''Komponenten''': 100 Aura, 1 Berserkerblut, 1 Schwert, 1 permanente Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe ein Flammenschwert"<br /> 
+
+=== Erschaffe ein Runenschwert ===
+
+'''Beschreibung''':<br />Mit diesem Spruch erzeugt man ein Runenschwert. Die Klinge des schwarzen  Schwertes ist mit alten, magischen Runen verziert, und ein seltsames  Eigenleben erfüllt die warme Klinge. Um es zu benutzen, muss man  ein Schwertkämpfer von beachtlichem Talent (7) sein.  Der Träger des Runenschwertes erhält einen Talentbonus von +4 im Kampf und wird so gut wie immun gegen alle Formen von Magie.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 100 Aura, 1 permanente Aura, 1000 Silber, 1 Laenschwert<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe ein Runenschwert"<br /> 
+
+=== Erschaffe ein Traumauge ===
+
+'''Beschreibung''':<br />Ein mit diesem Zauber belegtes Drachenauge, welches zum Abendmahle verzehrt wird, erlaubt es dem Benutzer, in die Träume einer anderen Person einzudringen und diese zu lesen. Lange Zeit wurde eine solche Fähigkeit für nutzlos erachtet, bis die ehemalige waldelfische Magistra für Kampfmagie, Liarana Sonnentau von der Akademie Thall, eine besondere Anwendung vorstellte: Feldherren träumen vor großen Kämpfen oft unruhig und verraten im Traum ihre Pläne. Dies kann dem Anwender einen großen Vorteil im kommenden Kampf geben. Aber Vorsicht: Die Interpretation von Träumen ist eine schwierige Angelegenheit.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 14<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Drachenkopf, 5 permanente Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Erschaffe ein Traumauge"<br /> 
+
+=== Erschaffe Eisengolems ===
+
+'''Beschreibung''':<br />Je mehr Kraft der Magier investiert, desto mehr Golems können geschaffen werden. Jeder Golem hat jede Runde eine Chance von 15 Prozent zu Staub zu zerfallen. Gibt man den Golems den Befehl MACHE SCHWERT/BIHÄNDER oder MACHE SCHILD/KETTENHEMD/PLATTENPANZER, so werden pro Golem 4 Eisenbarren verbaut und der Golem löst sich auf. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 2<br />
+'''Rang''': 4<br />
+'''Komponenten''': 2 Aura * Stufe, 1 Eisen * Stufe, 1 Wasser des Lebens<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Erschaffe Eisengolems"<br /> 
+
+=== Erschaffe Steingolems ===
+
+'''Beschreibung''':<br />Man befeuchte einen kluftfreien Block aus feinkristallinen Gestein mit einer Phiole des Lebenswassers bis dieses vollständig vom Gestein aufgesogen wurde. Sodann richte man seine Kraft auf die sich bildende feine Aura des Lebens und forme der ungebundenen Kraft ein Gehäuse. Je mehr Kraft der Magier investiert, desto mehr Golems können geschaffen werden, bevor die Aura sich verflüchtigt. Jeder Golem hat jede Runde eine Chance von 10 Prozent zu Staub zu zerfallen. Gibt man den Golems die Befehle MACHE BURG oder MACHE STRASSE, so werden pro Golem 4 Steine verbaut und der Golem löst sich auf. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 4<br />
+'''Komponenten''': 2 Aura * Stufe, 1 Stein * Stufe, 1 Wasser des Lebens<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Erschaffe Steingolems"<br /> 
+
+=== Erwecke Ents ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses Zaubers weckt der Druide die in den Wälder der Region schlummernden Ents aus ihrem äonenlangen Schlaf. Die wilden Baumwesen werden sich ihm anschließen und ihm beistehen, jedoch nach einiger Zeit wieder in Schlummer verfallen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 10<br />
+'''Rang''': 5<br />
+'''Komponenten''': 6 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Erwecke Ents"<br /> 
+
+
+== F.. ==
+
+=== Feuerball ===
+
+'''Beschreibung''':<br />Der Zauberer schleudert fokussiertes Chaos in die Reihen der Gegner. Das ballförmige Chaos wird jeden verwunden, den es trifft.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 2<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Feuerball"<br /> 
+
+=== Feuersturm ===
+
+'''Beschreibung''':<br />Tötet die Feinde mit Feuer.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER "Feuersturm"<br /> 
+
+=== Feuerteufel ===
+
+'''Beschreibung''':<br />Diese Elementarbeschwörung ruft einen Feuerteufel herbei, ein Wesen aus den tiefsten Niederungen der Flammenhöllen. Der Feuerteufel wird sich begierig auf die Wälder der Region stürzen und sie in Flammen setzen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 10<br />
+'''Rang''': 5<br />
+'''Komponenten''': 50 Aura, 1 Öl<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Feuerteufel"<br /> 
+
+=== Feuerwalze ===
+
+'''Beschreibung''':<br />Verletzt alle Gegner.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 5<br />
+'''Komponenten''': 24 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER "Feuerwalze"<br /> 
+
+=== Feuerwand ===
+
+'''Beschreibung''':<br />Der Zauberer erschafft eine Wand aus Feuer in der angegebenen Richtung. Sie verletzt jeden, der sie durchschreitet.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 4<br />
+'''Komponenten''': 6 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Feuerwand" <Richtung><br /> 
+
+=== Firuns Fell ===
+
+'''Beschreibung''':<br />Dieser Zauber ermöglicht es dem Magier Insekten auf magische Weise vor der lähmenden Kälte der Gletscher zu bewahren. Sie können Gletscher betreten und dort normal agieren. Der Spruch wirkt auf Stufe*10 Insekten. Ein Ring der Macht erhöht die Menge der verzauberbaren Insekten zusätzlich um 10.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Firuns Fell" <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+=== Fluch brechen ===
+
+'''Beschreibung''':<br />Dieser Zauber ermöglicht dem Magier, gezielt eine bestimmte Verzauberung einer Einheit, eines Schiffes, Gebäudes oder auch der Region aufzulösen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 3<br />
+'''Komponenten''': 3 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Fluch brechen" ( REGION | EINHEIT  <Einheit-Nr> | SCHIFF <Schiff-Nr> | BURG <Gebäude-Nr> ) <Zauber-ID><br /> 
+
+=== Fluch der Pestilenz ===
+
+'''Beschreibung''':<br />In einem aufwendigen Ritual opfert der Schwarzmagier einige Bauern und verteilt dann die Leichen auf magische Weise in den Brunnen der Region.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 5<br />
+'''Komponenten''': 30 Aura, 50 Bauern<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Fluch der Pestilenz"<br /> 
+
+=== Friedenslied ===
+
+'''Beschreibung''':<br />Dieses Lied zähmt selbst den wildesten Ork und macht ihn friedfertig und sanftmütig. Jeder Gedanke, dem Sänger zu schaden, wird ihm entfallen. Unbehelligt kann der Magier in eine Nachbarregion ziehen.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Friedenslied"<br /> 
+
+=== Furchteinflößende Aura ===
+
+'''Beschreibung''':<br />Panik.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 5<br />
+'''Komponenten''': 12 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER "Furchteinflößende Aura"<br /> 
+
+
+== G.. ==
+
+=== Gabe des Chaos ===
+
+'''Beschreibung''':<br />Der Magier öffnet seinen Geist den Sphären des Chaos und wird so für einige Zeit über mehr magische Kraft verfügen. Doch die Hilfe der Herren der Sphären hat seinen Preis, und so wird die Phase der Macht abgelöst von einer Phase der Schwäche.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 3<br />
+'''Komponenten''': 6 Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Gabe des Chaos"<br /> 
+
+=== Gaukeleien ===
+
+'''Beschreibung''':<br />Cerddormagier sind _die_ Gaukler unter den Magiern, sie lieben es das Volk zu unterhalten und im Mittelpunkt zu stehen. Schon Anfänger lernen die kleinen Kunststücke und magischen Tricks, mit denen man das Volk locken und verführen kann, den Geldbeutel ganz weit zu öffnen, und am Ende der Woche wird der Gaukler 50 Silber pro Stufe verdient haben.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Gaukeleien"<br /> 
+
+=== Geister bannen ===
+
+'''Beschreibung''':<br />Wie die alten Lehren der Druiden berichten, besteht das, was die normalen Wesen Magie nennen, aus Elementargeistern. Der Magier beschwört und bannt diese in eine Form, um den gewünschten Effekt zu erzielen. Dieses Ritual nun vermag es, in diese Welt gerufene Elementargeister zu vertreiben, um so ein Objekt von Magie zu befreien.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 2<br />
+'''Komponenten''': 6 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Geister bannen" ( REGION | EINHEIT  <Einheit-Nr> [<Einheit-Nr> ...] | SCHIFF <Schiff-Nr> | BURG <Gebäude-Nr> )<br /> 
+
+=== Gesang der Angst ===
+
+'''Beschreibung''':<br />Dieser Kriegsgesang sät Panik in der Front der Gegner und schwächt  so ihre Kampfkraft erheblich. Angst wird ihren Schwertarm schwächen  und Furcht ihren Schildarm lähmen. <br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 5<br />
+'''Komponenten''': 5 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Gesang der Angst"<br /> 
+
+=== Gesang der Friedfertigkeit ===
+
+'''Beschreibung''':<br />Dieser mächtige Bann verhindert jegliche Attacken. Niemand in der ganzen Region ist fähig seine Waffe gegen irgendjemanden zu erheben. Die Wirkung kann etliche Wochen andauern. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 5<br />
+'''Komponenten''': 20 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Gesang der Friedfertigkeit"<br /> 
+
+=== Gesang der Furcht ===
+
+'''Beschreibung''':<br />Ein gar machtvoller Gesang aus den Überlieferungen der Katzen, der tief in die Herzen der Feinde dringt und ihnen Mut und Hoffnung raubt. Furcht wird sie zittern lassen und Panik ihre Gedanken beherrschen. Voller Angst werden sie versuchen, den gräßlichen Gesängen zu entrinnen und fliehen.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Gesang der Furcht"<br /> 
+
+=== Gesang der Melancholie ===
+
+'''Beschreibung''':<br />Mit diesem Gesang verbreitet der Barde eine melancholische, traurige  Stimmung unter den Bauern. Einige Wochen lang werden sie sich in ihre  Hütten zurückziehen und kein Silber in den Theatern und Tavernen lassen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 11<br />
+'''Rang''': 5<br />
+'''Komponenten''': 40 Aura<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Gesang der Melancholie"<br /> 
+
+=== Gesang der Versklavung ===
+
+'''Beschreibung''':<br />Dieser mächtige Bann raubt dem Opfer seinen freien Willen und unterwirft sie den Befehlen des Barden. Für einige Zeit wird das Opfer sich völlig von seinen eigenen Leuten abwenden und der Partei des Barden zugehörig fühlen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 13<br />
+'''Rang''': 5<br />
+'''Komponenten''': 40 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Gesang der Versklavung" <Einheit-Nr><br /> 
+
+=== Gesang der Verwirrung ===
+
+'''Beschreibung''':<br />Aus den uralten Gesängen der Katzen entstammt dieses magisches Lied, welches vor einem Kampfe eingesetzt, einem entscheidende strategische Vorteile bringen kann. Wer unter den Einfluss dieses Gesangs gelangt, der wird seiner Umgebung nicht achtend der Melodie folgen, sein Geist wird verwirrt und sprunghaft plötzlichen Eingebungen nachgeben. So sollen schon einst wohlgeordnete Heere plötzlich ihre Schützen weit vorne und ihre Kavallerie bei den Lagerwachen kartenspielend wiedergefunden haben (oder ihren Anführer schlafend im lange verlassenen Lager, wie es in den Großen Kriegen der Alten Welt wirklich geschehen sein soll).<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Gesang der Verwirrung"<br /> 
+
+=== Gesang des Auratransfers ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses Zaubers kann der Magier eigene Aura im Verhältnis 2:1 auf einen anderen Magier des gleichen Magiegebietes übertragen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 1<br />
+'''Komponenten''': 2 Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Gesang des Auratransfers" <Einheit-Nr> <Aura><br /> 
+
+=== Gesang des Lebens analysieren ===
+
+'''Beschreibung''':<br />Alle lebenden Wesen haben ein eigenes individuelles Lebenslied. Nicht zwei Lieder gleichen sich, auch wenn sich alle Lieder einer Art ähneln. Jeder Zauber verändert dieses Lied auf die eine oder andere Art und gibt sich damit zu erkennen. Dieser Gesang hilft, jene Veränderungen im Lebenslied einer Person zu erlauschen, welche magischer Natur sind. Alle Verzauberungen, die nicht stärker maskiert sind als Eure Fähigkeit, werdet Ihr so entschlüsseln und demaskieren können.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 5<br />
+'''Komponenten''': 10 Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Gesang des Lebens analysieren" <Einheit-Nr><br /> 
+
+=== Gesang des schwachen Geistes ===
+
+'''Beschreibung''':<br />Dieses Lied, das in die magische Essenz der Region gewoben wird, schwächt die natürliche Widerstandskraft gegen eine  Verzauberung einmalig um 15%. Nur die Verbündeten des Barden  (HELFE BEWACHE) sind gegen die Wirkung des Gesangs gefeit. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 2<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Gesang des schwachen Geistes"<br /> 
+
+=== Gesang des wachen Geistes ===
+
+'''Beschreibung''':<br />Dieses magische Lied wird, einmal mit Inbrunst gesungen, sich in der  Region fortpflanzen, von Mund zu Mund springen und eine Zeitlang  überall zu vernehmen sein. Nach wie vielen Wochen der Gesang aus dem  Gedächnis der Region entschwunden ist, ist von dem Geschick des Barden  abhängig. Bis das Lied ganz verklungen ist, wird seine Magie allen  Verbündeten des Barden (HELFE BEWACHE), und natürlich auch seinen  eigenem Volk, einen einmaligen Bonus von 15%  auf die natürliche Widerstandskraft gegen eine Verzauberung  verleihen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 10<br />
+'''Rang''': 2<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Gesang des wachen Geistes"<br /> 
+
+=== Gesang des Werbens ===
+
+'''Beschreibung''':<br />Aus 'Die Gesänge der Alten' von Firudin dem Weisen: 'Diese verführerische kleine Melodie und einige einschmeichelnde Worte überwinden das Misstrauen der Bauern im Nu. Begeistert werden sie sich Euch anschliessen und selbst Haus und Hof in Stich lassen.'<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Gesang des Werbens"<br /> 
+
+=== Gestaltwandlung ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses arkanen Rituals vermag der Traumweber die wahre Gestalt einer Gruppe zu verschleiern. Unbedarften Beobachtern erscheint sie dann als einer anderen Rasse zugehörig.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Gestaltwandlung" <Einheit-Nr> <Rasse><br /> 
+
+=== Grauen der Schlacht ===
+
+'''Beschreibung''':<br />Der Traumweber beschwört vor dem Kampf grauenerregende Trugbilder herauf, die viele Gegner in Panik versetzen. Die Betroffenen werden versuchen, vor den Trugbildern zu fliehen.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 2<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Grauen der Schlacht"<br /> 
+
+=== Großer Drachenodem ===
+
+'''Beschreibung''':<br /><br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 5<br />
+'''Komponenten''': 3 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER "Großer Drachenodem"<br /> 
+
+
+== H.. ==
+
+=== Hagel ===
+
+'''Beschreibung''':<br />Im Kampf ruft der Magier die Elementargeister der Kälte an und bindet sie an sich. Sodann kann er ihnen befehlen, den Gegner mit Hagelkörnern und Eisbrocken zuzusetzen.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Hagel"<br /> 
+
+=== Hainzauber ===
+
+'''Beschreibung''':<br />Wo sonst aus einem Stecken nur ein Baum sprießen konnte, so treibt nun jeder Ast Wurzeln. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 2<br />
+'''Rang''': 5<br />
+'''Komponenten''': 4 Aura * Stufe, 1 Holz * Stufe, 1 Wasser des Lebens<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Hainzauber"<br /> 
+
+=== Heiliger Boden ===
+
+'''Beschreibung''':<br />Dieses Ritual beschwört verschiedene Naturgeister in den Boden der Region, welche diese fortan bewachen. In einer so gesegneten Region werden niemals wieder die Toten ihre Gräber verlassen, und anderswo entstandene Untote werden sie wann immer möglich meiden.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 5<br />
+'''Komponenten''': 80 Aura, 3 permanente Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Heiliger Boden"<br /> 
+
+=== Heilung ===
+
+'''Beschreibung''':<br />Nicht nur der Feldscher kann den Verwundeten einer Schlacht helfen. Druiden vermögen mittels einer Beschwörung der Elementargeister des Lebens Wunden zu schließen, gebrochene Knochen zu richten und selbst abgetrennte Glieder wieder zu regenerieren.<br />
+'''Art''': Postkampfzauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Heilung"<br /> 
+
+=== Heimstein ===
+
+'''Beschreibung''':<br />Mit dieser Formel bindet der Magier auf ewig die Kräfte der Erde in die Mauern der Burg, in der er sich gerade befindet. Weder magisch noch mit schwerem Geschütz können derartig gestärkte Mauern zerstört werden, und auch das Alter setzt ihnen weniger zu. Das Gebäude bietet sodann auch einen besseren Schutz gegen Angriffe mit dem Schwert wie mit Magie.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 5<br />
+'''Komponenten''': 50 Aura, 1 permanente Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Heimstein"<br /> 
+
+=== Heldengesang ===
+
+'''Beschreibung''':<br />Dieser alte Schlachtengesang hebt die Moral der eigenen Truppen und und hilft ihnen auch der angsteinflößenden Aura dämonischer und untoter Wesen zu widerstehen. Ein derartig gefestigter Krieger wird auch in schwierigen Situationen nicht die Flucht ergreifen und sein überlegtes Verhalten wird ihm manch Vorteil in der Verteidigung geben.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 4<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Heldengesang"<br /> 
+
+=== Hohe Kunst der Überzeugung ===
+
+'''Beschreibung''':<br />Aus 'Wanderungen' von Firudin dem Weisen: 'In Weilersweide, nahe dem Wytharhafen, liegt ein kleiner Gasthof, der nur wenig besucht ist. Niemanden bekannt ist, das dieser Hof bis vor einigen Jahren die Bleibe des verbannten Wanderpredigers Grauwolf war. Nachdem er bei einer seiner berüchtigten flammenden Reden fast die gesammte Bauernschaft angeworben hatte, wurde er wegen Aufruhr verurteilt und verbannt. Nur zögerlich war er bereit mir das Geheimniss seiner Überzeugungskraft zu lehren.' <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 14<br />
+'''Rang''': 5<br />
+'''Komponenten''': 20 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Hohe Kunst der Überzeugung"<br /> 
+
+=== Hohes Lied der Gaukelei ===
+
+'''Beschreibung''':<br />Dieser fröhliche Gesang wird sich wie ein Gerücht in der Region ausbreiten und alle Welt in Feierlaune versetzen. Überall werden Tavernen und Theater gut gefüllt sein und selbst die Bettler satt werden.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 2<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Hohes Lied der Gaukelei"<br /> 
+
+
+== K.. ==
+
+=== Kleine Flüche ===
+
+'''Beschreibung''':<br />In den dunkleren Gassen gibt es sie, die Flüche und Verhexungen auf Bestellung. Aber auch Gegenzauber hat der Jünger des Draigs natürlich im Angebot. Ob nun der Sohn des Nachbarn in einen Liebesbann gezogen werden soll oder die Nebenbuhlerin Pickel und Warzen bekommen soll, niemand gibt gerne zu, zu solchen Mitteln gegriffen zu haben.  Für diese Dienstleistung streicht der Magier 50 Silber pro Stufe ein.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Kleine Flüche"<br /> 
+
+=== Kleines Blutopfer ===
+
+'''Beschreibung''':<br />Mit diesem Ritual kann der Magier einen Teil seiner Lebensenergie opfern, um dafür an magischer Kraft zu gewinnen. Erfahrene Ritualmagier berichten, das sich das Ritual, einmal initiiert, nur schlecht steuern ließe und die Menge der so gewonnenen Kraft stark schwankt. So steht im 'Buch des Blutes' geschrieben: 'So richte Er aus das Zeichen der vier Elemente im Kreis des Werdens und Vergehens und Weihe ein jedes mit einem Tropfen Blut. Sodann begebe Er in der Mitten der Ewigen Vierer sich und lasse Leben verrinnen, auf das Kraft geboren werde.'<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 1<br />
+'''Komponenten''': 16 Trefferpunkte<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Kleines Blutopfer"<br /> 
+
+=== Kriegsgesang ===
+
+'''Beschreibung''':<br />Wie viele magischen Gesänge, so entstammt auch dieser den altem  Wissen der Katzen, die schon immer um die machtvolle Wirkung der Stimme wussten. Mit diesem Lied wird die Stimmung der Krieger aufgepeitscht, sie gar in wilde Raserrei und Blutrausch versetzt. Ungeachtet eigener Schmerzen werden sie kämpfen bis zum Tode und niemals fliehen. Während ihre Attacke verstärkt ist achten sie kaum auf sich selbst. <br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 4<br />
+'''Komponenten''': 5 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Kriegsgesang"<br /> 
+
+
+== L.. ==
+
+=== Lebenslied festigen ===
+
+'''Beschreibung''':<br />Jede Verzauberung beeinflußt das Lebenslied, schwächt und verzerrt es.  Der kundige Barde kann versuchen, das Lebenslied aufzufangen und zu  verstärken und die Veränderungen aus dem Lied zu tilgen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 2<br />
+'''Komponenten''': 5 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Lebenslied festigen" ( REGION | EINHEIT  <Einheit-Nr> [<Einheit-Nr> ...] | SCHIFF <Schiff-Nr> | BURG <Gebäude-Nr> )<br /> 
+
+=== Lied der Heilung ===
+
+'''Beschreibung''':<br />Nicht nur der Feldscher kann den Verwundeten einer Schlacht helfen. Die Barden kennen verschiedene Lieder, die die Selbstheilungskräfte des Körpers unterstützen. Dieses Lied vermag Wunden zu schließen, gebrochene Knochen zu richten und selbst abgetrennte Glieder wieder zu regenerieren.<br />
+'''Art''': Postkampfzauber<br />
+'''Stufe''': 2<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Lied der Heilung"<br /> 
+
+=== Lied der Verführung ===
+
+'''Beschreibung''':<br />Mit diesem Lied kann eine Einheit derartig betört werden, so dass  sie dem Barden den größten Teil ihres Bargelds und ihres Besitzes  schenkt. Sie behält jedoch immer soviel, wie sie zum Überleben  braucht. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 12 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Lied der Verführung" <Einheit-Nr><br /> 
+
+=== Lied des Ortes analysieren ===
+
+'''Beschreibung''':<br />Wie Lebewesen, so haben auch Schiffe und Gebäude und sogar Regionen  ihr eigenes Lied, wenn auch viel schwächer und schwerer zu hören.  Und so, wie wie aus dem Lebenslied einer Person erkannt werden kann,  ob diese unter einem Zauber steht, so ist dies auch bei Burgen,  Schiffen oder Regionen möglich. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 5<br />
+'''Komponenten''': 3 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Lied des Ortes analysieren" ( REGION | EINHEIT  <Einheit-Nr> [<Einheit-Nr> ...] | SCHIFF <Schiff-Nr> | BURG <Gebäude-Nr> )<br /> 
+
+=== Luftschiff ===
+
+'''Beschreibung''':<br />Diese magischen Runen bringen ein Boot oder Langboot für eine Woche zum fliegen. Damit kann dann auch Land überquert werden. Die Zuladung  von Langbooten ist unter der Einwirkung dieses Zaubers auf 100 Gewichtseinheiten begrenzt. Für die Farbe der Runen muss eine spezielle Tinte aus einem Windbeutel und einem Schneekristall angerührt werden.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 10 Aura, 1 Windbeutel, 1 Schneekristall<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Luftschiff" <Schiff-Nr><br /> 
+
+
+== M.. ==
+
+=== Mächte des Todes ===
+
+'''Beschreibung''':<br />Nächtelang muss der Schwarzmagier durch die Friedhöfe und Gräberfelder der Region ziehen um dann die ausgegrabenen Leichen beleben zu können. Die Untoten werden ihm zu Diensten sein, doch sei der Unkundige gewarnt, dass die Beschwörung der Mächte des Todes ein zweischneidiges Schwert sein kann.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 5 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Mächte des Todes"<br /> 
+
+=== Machtübertragung ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses Zaubers kann der Magier eigene Aura im Verhältnis 2:1 auf einen anderen Magier des gleichen Magiegebietes übertragen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 1<br />
+'''Komponenten''': 2 Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Machtübertragung" <Einheit-Nr> <Aura><br /> 
+
+=== Magie analysieren ===
+
+'''Beschreibung''':<br />Mit diesem Spruch kann der Magier versuchen, die Verzauberungen eines einzelnen angegebenen Objekts zu erkennen. Von allen Sprüchen, die seine eigenen Fähigkeiten nicht überschreiten, wird er einen Eindruck ihres Wirkens erhalten können. Bei stärkeren Sprüchen benötigt er ein wenig Glück für eine gelungene Analyse.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Magie analysieren" ( REGION | EINHEIT <Einheit-Nr>  [<Einheit-Nr> ...] | SCHIFF <Schiff-Nr> | BURG <Gebäude-Nr> )<br /> 
+
+=== Magiefresser ===
+
+'''Beschreibung''':<br />Dieser Zauber ermöglicht dem Magier, Verzauberungen einer Einheit, eines Schiffes, Gebäudes oder auch der Region aufzulösen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 2<br />
+'''Komponenten''': 4 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Magiefresser" ( REGION | EINHEIT  <Einheit-Nr> [<Einheit-Nr> ...] | SCHIFF <Schiff-Nr> | BURG <Gebäude-Nr> )<br /> 
+
+=== Magischer Pfad ===
+
+'''Beschreibung''':<br />Durch Ausführung dieser Rituale ist der Magier in der Lage einen mächtigen Erdelementar zu beschwören. Solange dieser in den Boden gebannt ist, wird kein Regen die Wege aufweichen und kein Fluß Brücken zerstören können. Alle Reisende erhalten damit die gleichen Vorteile, die sonst nur ein ausgebautes gepflastertes Straßennetz bietet. Selbst Sümpfe und Gletscher können so verzaubert werden. Je mehr Kraft der Magier in den Bann legt, desto länger bleibt die Straße bestehen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe, 1 Stein, 1 Holz<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Magischer Pfad"<br /> 
+
+=== Mahlstrom ===
+
+'''Beschreibung''':<br />Dieses Ritual beschört einen großen Wasserelementar aus den Tiefen des Ozeans. Der Elementar erzeugt einen gewaltigen Strudel, einen Mahlstrom, welcher alle Schiffe, die ihn passieren, schwer beschädigen kann.       <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 15<br />
+'''Rang''': 5<br />
+'''Komponenten''': 200 Aura, 1 Seeschlangenkopf<br />
+'''Modifikationen''': Seezauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Mahlstrom"<br /> 
+
+=== Mauern der Ewigkeit ===
+
+'''Beschreibung''':<br />Mit dieser Formel bindet der Magier auf ewig die Kräfte der Erde in die Mauern des Gebäudes. Ein solchermaßen verzaubertes Gebäude ist  gegen den Zahn der Zeit geschützt und benötigt keinen Unterhalt mehr.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 5<br />
+'''Komponenten''': 50 Aura, 1 permanente Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Mauern der Ewigkeit" <Gebäude-Nr><br /> 
+
+=== Meditation ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses Zaubers kann der Magier eigene Aura im Verhältnis 2:1 auf einen anderen Magier des gleichen Magiegebietes übertragen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 1<br />
+'''Komponenten''': 2 Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Meditation" <Einheit-Nr> <Aura><br /> 
+
+=== Meteorregen ===
+
+'''Beschreibung''':<br />Ein Schauer von Meteoren regnet über das Schlachtfeld.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Meteorregen"<br /> 
+
+=== Miriams flinke Finger ===
+
+'''Beschreibung''':<br />Die berühmte Bardin Miriam bhean'Meddaf war bekannt für ihr außergewöhnliches Geschick mit der Harfe. Ihre Finger sollen sich so schnell über die Saiten bewegt haben, das sie nicht mehr erkennbar waren. Dieser Zauber, der recht einfach in einen Silberring zu bannen ist, bewirkt eine um das zehnfache verbesserte Geschicklichkeit und Gewandheit der Finger. (Das soll sie auch an anderer Stelle ausgenutzt haben, ihr Ruf als Falschspielerin war berüchtigt). Handwerker können somit das zehnfache produzieren, und bei einigen anderen Tätigkeiten könnte dies ebenfalls von Nutzen sein.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 11<br />
+'''Rang''': 5<br />
+'''Komponenten''': 20 Aura, 1000 Silber, 1 permanente Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Miriams flinke Finger"<br /> 
+
+=== Mob aufwiegeln ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses magischen Gesangs überzeugt der Magier die Bauern  der Region, sich ihm anzuschließen. Die Bauern werden ihre Heimat jedoch  nicht verlassen, und keine ihrer Besitztümer fortgeben. Jede Woche  werden zudem einige der Bauern den Bann abwerfen und auf ihre Felder  zurückkehren. Wie viele Bauern sich dem Magier anschließen hängt von der Kraft seines Gesangs ab. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 10<br />
+'''Rang''': 5<br />
+'''Komponenten''': 4 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Mob aufwiegeln"<br /> 
+
+=== Monster friedlich stimmen ===
+
+'''Beschreibung''':<br />Dieser einschmeichelnde Gesang kann fast jedes intelligente Monster  zähmen. Es wird von Angriffen auf den Magier absehen und auch seine  Begleiter nicht anrühren. Doch sollte man sich nicht täuschen, es  wird dennoch ein unberechenbares Wesen bleiben. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 15 Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Monster friedlich stimmen" <Einheit-Nr><br /> 
+
+
+== O.. ==
+
+=== Opfere Kraft ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses Zaubers kann der Magier einen Teil seiner magischen Kraft permanent auf einen anderen Magier übertragen. Auf einen Tybied-Magier kann er die Hälfte der eingesetzten Kraft übertragen, auf einen Magier eines anderen Gebietes ein Drittel.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 15<br />
+'''Rang''': 1<br />
+'''Komponenten''': 100 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Opfere Kraft" <Einheit-Nr> <Aura><br /> 
+
+
+== P.. ==
+
+=== Pentagramm ===
+
+'''Beschreibung''':<br />Genau um Mitternacht, wenn die Kräfte der Finsternis am größten sind, kann auch ein Schwarzmagier seine Kräfte nutzen um Verzauberungen aufzuheben. Dazu zeichnet er ein Pentagramm in das verzauberte Objekt und beginnt mit einer Anrufung der Herren der Finsternis. Die Herren werden ihm beistehen, doch ob es ihm gelingt, den Zauber zu lösen, hängt allein von seiner eigenen Kraft ab.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 10<br />
+'''Rang''': 2<br />
+'''Komponenten''': 10 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Pentagramm" ( REGION | EINHEIT <Einheit-Nr>  [<Einheit-Nr> ...] | SCHIFF <Schiff-Nr> | BURG <Gebäude-Nr> )<br /> 
+
+=== Plappermaul ===
+
+'''Beschreibung''':<br />Die verzauberte Einheit beginnt hemmungslos zu plappern und erzählt welche Talente sie kann, was für Gegenstände sie mit sich führt und sollte sie magisch begabt sein, sogar welche Zauber sie beherrscht. Leider beeinflußt dieser Zauber nicht das Gedächnis, und so wird sie sich im nachhinein wohl bewußt werden, dass sie zuviel erzählt hat.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 5<br />
+'''Komponenten''': 10 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Plappermaul" <Einheit-Nr><br /> 
+
+
+== R.. ==
+
+=== Regentanz ===
+
+'''Beschreibung''':<br />Dieses uralte Tanzritual ruft die Kräfte des Lebens und der Fruchtbarkeit. Die Erträge der Bauern werden für einige Wochen deutlich besser ausfallen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Regentanz"<br /> 
+
+=== Rindenhaut ===
+
+'''Beschreibung''':<br />Dieses vor dem Kampf zu zaubernde Ritual gibt den eigenen Truppen einen zusätzlichen Bonus auf ihre Rüstung. Jeder Treffer reduziert die Kraft des Zaubers, so dass der Schild sich irgendwann im Kampf auflösen wird.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 2<br />
+'''Komponenten''': 4 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Rindenhaut"<br /> 
+
+=== Ritual der Aufnahme ===
+
+'''Beschreibung''':<br />Dieses Ritual ermöglicht es, eine Einheit, egal welcher Art, in die  eigene Partei aufzunehmen. Der um Aufnahme Bittende muss dazu willig  und bereit sein, seiner alten Partei abzuschwören. Dies bezeugt er  durch KONTAKTIEREn des Magiers. Auch wird er die Woche über  ausschliesslich mit Vorbereitungen auf das Ritual beschäftigt sein.  Das Ritual wird fehlschlagen, wenn er zu stark an seine alte Partei  gebunden ist, dieser etwa Dienst für seine teuere Ausbildung  schuldet. Der das Ritual leitende Magier muss für die permanente  Bindung des Aufnahmewilligen an seine Partei naturgemäß auch  permanente Aura aufwenden. Pro Stufe und pro 1 permanente Aura kann  er eine Person aufnehmen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 5<br />
+'''Komponenten''': 3 Aura * Stufe, 1 permanente Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Ritual der Aufnahme" <Einheit-Nr><br /> 
+
+=== Rosthauch ===
+
+'''Beschreibung''':<br />Mit diesem Ritual wird eine dunkle Gewitterfront beschworen, die sich unheilverkündend über der Region auftürmt. Der magische Regen wird alles Erz rosten lassen und so viele Waffen des Gegners zerstören.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Rosthauch"<br /> 
+
+=== Rostregen ===
+
+'''Beschreibung''':<br />Mit diesem Ritual wird eine dunkle Gewitterfront beschworen, die sich unheilverkündend über der Region auftürmt. Der magische Regen wird alles Erz rosten lassen. Eisenwaffen und Rüstungen werden schartig und rostig. Die Zerstörungskraft des Regens ist von der investierten Kraft des Magiers abhängig. Für jede Stufe können bis zu 10 Eisenwaffen betroffen werden. Ein Ring der Macht verstärkt die Wirkung wie eine zusätzliche Stufe.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Rostregen" <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+=== Ruf der Realität ===
+
+'''Beschreibung''':<br />Ein Magier, welcher sich in der materiellen Welt befindet, kann er mit Hilfe dieses Zaubers Einheiten aus der angrenzenden Astralwelt herbeiholen. Ist der Magier erfahren genug, den Zauber auf Stufen von 13 oder mehr zu zaubern, kann er andere Einheiten auch gegen ihren Willen in die materielle  Welt zwingen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 7<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Ruf der Realität" <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+=== Runen des Schutzes ===
+
+'''Beschreibung''':<br />Zeichnet man diese Runen auf die Wände eines Gebäudes oder auf die Planken eines Schiffes, so wird es schwerer durch Zauber zu beeinflussen sein. Jedes Ritual erhöht die Widerstandskraft des Gebäudes oder Schiffes gegen Verzauberung um 20%. Werden mehrere Schutzzauber übereinander gelegt, so addiert sich ihre Wirkung, doch ein hundertprozentiger Schutz läßt sich so nicht erreichen. Der Zauber hält mindestens drei Wochen an, je nach Talent des Magiers aber auch viel länger. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 2<br />
+'''Komponenten''': 20 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Runen des Schutzes" ( SCHIFF <Schiff-Nr> | BURG <Gebäude-Nr> )<br /> 
+
+=== Rüstschild ===
+
+'''Beschreibung''':<br />Diese vor dem Kampf zu zaubernde Ritual gibt den eigenen Truppen einen zusätzlichen Bonus auf ihre Rüstung. Jeder Treffer reduziert die Kraft des Zaubers, so dass der Schild sich irgendwann im Kampf auflösen wird. <br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 2<br />
+'''Komponenten''': 4 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Rüstschild"<br /> 
+
+
+== S.. ==
+
+=== Säurenebel ===
+
+'''Beschreibung''':<br />Tötet die Feinde mit Säure.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER "Säurenebel"<br /> 
+
+=== Schaler Wein ===
+
+'''Beschreibung''':<br />Aufzeichung des Vortrags von Selen Ard'Ragorn in Bar'Glingal:  'Es heiss, dieser Spruch wäre wohl in den Spelunken der Westgassen  entstanden, doch es kann genausogut in jedem andern verrufenen  Viertel gewesen sein. Seine wichtigste Zutat ist etwa ein Fass  schlechtesten Weines, je billiger und ungesunder, desto  wirkungsvoller wird die Essenz. Die Kunst, diesen Wein in pure  Essenz zu destillieren, die weitaus anspruchsvoller als das einfache  Rezeptmischen eines Alchemisten ist, und diese dergestalt zu binden  und konservieren, das sie sich nicht gleich wieder verflüchtigt, wie  es ihre Natur wäre, ja, dies ist etwas, das nur ein Meister des Cerddor vollbringen kann. Nun besitzt Ihr eine kleine Phiola mit  einer rubinrotschimmernden - nun, nicht flüssig, doch auch nicht  ganz Dunst - nennen wir es einfach nur Elixier. Doch nicht dies ist  die wahre Herausforderung, sodann muss, da sich ihre Wirkung leicht  verflüchtigt, diese innerhalb weniger Tage unbemerkt in das Getränk  des Opfers geträufelt werden. Ihr Meister der Betöhrung und  Verführung, hier nun könnt Ihr Eure ganze Kunst unter Beweis  stellen. Doch gebt Acht, nicht unbedacht selbst von dem Elixier zu  kosten, denn wer einmal gekostet hat, der kann vom Weine nicht mehr  lassen, und er säuft sicherlich eine volle Woche lang. Jedoch nicht  die Verführung zum Trunke ist die wahre Gefahr, die dem Elixier  innewohnt, sondern das der Trunkenheit so sicher ein gar  fürchterliches Leid des Kopfes folgen wird, wie der Tag auf die  Nacht folgt. Und er wird gar sicherlich von seiner besten Fähigkeit  einige Tage bis hin zu den Studien zweier Wochen vergessen haben.  Noch ein Wort der Warnung: Dieses ist sehr aufwendig, und so Ihr  noch weitere Zauber in der selben Woche wirken wollt, so werden sie Euch  schwerer fallen.' <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 5<br />
+'''Komponenten''': 28 Aura, 3 Knotige Saugwurze, 50 Silber<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Schaler Wein" <Einheit-Nr><br /> 
+
+=== Schattenodem ===
+
+'''Beschreibung''':<br />Entzieht Talentstufen und macht Schaden wie Großer Odem.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 5<br />
+'''Komponenten''': 4 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER "Schattenodem"<br /> 
+
+=== Schattenritter ===
+
+'''Beschreibung''':<br />Dieser Zauber vermag dem Gegner ein geringfügig versetztes Bild der eigenen Truppen vorzuspiegeln. Die Schattenritter haben keinen effektiven Angriff und Verwundungen im Kampf zerstören sie sofort.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 4<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Schattenritter"<br /> 
+
+=== Schattenruf ===
+
+'''Beschreibung''':<br />Ruft Schattenwesen.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 5<br />
+'''Komponenten''': 24 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER "Schattenruf"<br /> 
+
+=== Schild des Fisches ===
+
+'''Beschreibung''':<br />Dieser Zauber vermag dem Gegner ein geringfügig versetztes Bild der eigenen Truppen vorzuspiegeln, so wie der Fisch im Wasser auch nicht dort ist wo er zu sein scheint. Von jedem Treffer kann so die Hälfte des Schadens unschädlich abgeleitet werden. Doch hält der Schild nur einige Hundert Schwerthiebe aus, danach wird er sich auflösen. Je stärker der Magier, desto mehr Schaden hält der Schild aus. <br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 2<br />
+'''Komponenten''': 4 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Schild des Fisches"<br /> 
+
+=== Schlaf ===
+
+'''Beschreibung''':<br />Dieser Zauber läßt einige feindliche Kämpfer einschlafen. Schlafende Kämpfer greifen nicht an und verteidigen sich schlechter, sie wachen jedoch auf, sobald sie im Kampf getroffen werden. <br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Schlaf"<br /> 
+
+=== Schlechter Schlaf ===
+
+'''Beschreibung''':<br />Dieser Zauber führt in der betroffenen Region für einige Wochen zu Schlaflosigkeit und Unruhe. Den Betroffenen fällt das Lernen deutlich schwerer.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 5<br />
+'''Komponenten''': 18 Aura<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Schlechter Schlaf"<br /> 
+
+=== Schlechte Träume ===
+
+'''Beschreibung''':<br />Dieser Zauber ermöglicht es dem Träumer, den Schlaf aller nichtaliierten Einheiten (HELFE BEWACHE) in der Region so stark zu stören, das sie vorübergehend einen Teil ihrer Erinnerungen verlieren. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 10<br />
+'''Rang''': 5<br />
+'''Komponenten''': 90 Aura<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Schlechte Träume"<br /> 
+
+=== Schleieraura ===
+
+'''Beschreibung''':<br />Dieser Zauber wird die gesamte Ausrüstung der Zieleinheit für einige Zeit vor den Blicken anderer verschleiern. Der Zauber schützt nicht vor Dieben und Spionen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Schleieraura" <Einheit-Nr><br /> 
+
+=== Schockwelle ===
+
+'''Beschreibung''':<br />Dieser Zauber läßt eine Welle aus purer Kraft über die gegnerischen Reihen hinwegfegen. Viele Kämpfer wird der Schock so benommen machen, daß sie für einen kurzen Moment nicht angreifen können.<br />
+'''Art''': Kampfzauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Schockwelle"<br /> 
+
+=== Schöne Träume ===
+
+'''Beschreibung''':<br />Dieser Zauber ermöglicht es dem Traumweber, den Schlaf aller aliierten Einheiten in der Region so zu beeinflussen, dass sie für einige Zeit einen Bonus in allen Talenten bekommen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 5<br />
+'''Komponenten''': 80 Aura<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Schöne Träume"<br /> 
+
+=== Schutz vor Magie ===
+
+'''Beschreibung''':<br />Dieser Zauber legt ein antimagisches Feld um die Magier der Feinde und behindert ihre Zauber erheblich. Nur wenige werden die Kraft besitzen, das Feld zu durchdringen und ihren Truppen in der Schlacht zu helfen.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 2<br />
+'''Rang''': 2<br />
+'''Komponenten''': 3 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Schutz vor Magie"<br /> 
+
+=== Schutzzauber ===
+
+'''Beschreibung''':<br />Dieser Zauber verstärkt die natürliche Widerstandskraft gegen Magie. Eine so geschützte Einheit ist auch gegen Kampfmagie weniger empfindlich. Pro Stufe reicht die Kraft des Magiers aus, um 5 Personen zu schützen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 2<br />
+'''Komponenten''': 5 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Schutzzauber" <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+=== Schwere Glieder ===
+
+'''Beschreibung''':<br />Dieser Kampfzauber führt dazu, dass einige Gegner im Kampf unter schwerer Müdigkeit leiden. Die Soldaten verschlafen manchmal ihren Angriff und verteidigen sich schlechter.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 5<br />
+'''Komponenten''': 4 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Schwere Glieder"<br /> 
+
+=== Seelenfrieden ===
+
+'''Beschreibung''':<br />Dieses magische Ritual beruhigt die gequälten Seelen der gewaltsam zu Tode gekommenen und ermöglicht es ihnen so, ihre letzte Reise in die Anderlande zu beginnen. Je Stufe des Zaubers werden ungefähr 50 Seelen ihre Ruhe finden. Der Zauber vermag nicht, bereits wieder auferstandene lebende Tote zu erlösen, da deren Bindung an diese Welt zu stark ist.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 2<br />
+'''Rang''': 5<br />
+'''Komponenten''': 3 Aura * Stufe, 1 Wasser des Lebens<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Seelenfrieden"<br /> 
+
+=== Seelenkopie ===
+
+'''Beschreibung''':<br />Dieser mächtige Zauber kann einen Magier vor dem sicheren Tod  bewahren. Der Magier erschafft anhand einer kleinen Blutprobe einen  Klon von sich, und legt diesen in ein Bad aus Drachenblut und verdünntem  Wasser des Lebens.  Anschließend transferiert er in einem aufwändigen Ritual einen Teil  seiner Seele in den Klon. Stirbt der Magier, reist seine Seele in den Klon und der erschaffene Körper dient nun dem Magier als neues Gefäß.  Es besteht allerdings eine geringer Wahrscheinlichkeit, dass die Seele  nach dem Tod zu schwach ist, das neue Gefäß zu erreichen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 5<br />
+'''Komponenten''': 100 Aura, 20 permanente Aura, 5 Drachenblut, 5 Wasser des Lebens<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Seelenkopie"<br /> 
+
+=== Segen der Erde ===
+
+'''Beschreibung''':<br />Dieses Ernteritual verbessert die Erträge der arbeitenden Bauern in der Region um ein Silberstück. Je mehr Kraft der Druide investiert, desto länger wirkt der Zauber.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Segen der Erde"<br /> 
+
+=== Segne Mallornstecken ===
+
+'''Beschreibung''':<br />Diese Ritual verstärkt die Wirkung des magischen Trankes um ein vielfaches. Wo sonst aus einem Stecken nur ein Baum sprießen konnte, so treibt nun jeder Ast Wurzeln.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 5<br />
+'''Komponenten''': 6 Aura * Stufe, 1 Mallorn * Stufe, 1 Wasser des Lebens<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Segne Mallornstecken"<br /> 
+
+=== Segne Steinkreis ===
+
+'''Beschreibung''':<br />Dieses Ritual segnet einen Steinkreis, der zuvor aus Steinen und etwas Holz gebaut werden muss. Die Segnung des Druiden macht aus dem Kreis eine mächtige Stätte magischen Wirkens, die Schutz vor Magie und erhöhte Aura- Regeneration bewirkt. Man sagt, Jungfrauen seien in der Umgebung von Steinkreisen seltsame Wesen begegnet.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 11<br />
+'''Rang''': 5<br />
+'''Komponenten''': 350 Aura, 5 permanente Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Segne Steinkreis" <Gebäude-Nr><br /> 
+
+=== Sog des Lebens ===
+
+'''Beschreibung''':<br />Ein Druide, den es in die Welt der Geister verschlagen hat, kann mit Hilfe dieses Zaubers Stufe*5 Gewichtseinheiten in einen Wald auf der materiellen Welt zurückschicken.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 7<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Sog des Lebens" <x> <y> <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+=== Starkes Tor und feste Mauer ===
+
+'''Beschreibung''':<br />Mit dieser Formel bindet der Magier zu Beginn eines Kampfes einige Elementargeister des Fels in die Mauern des Gebäudes, in dem er sich gerade befindet. Das Gebäude bietet sodann einen besseren Schutz gegen Angriffe mit dem Schwert wie mit Magie.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Starkes Tor und feste Mauer"<br /> 
+
+=== Stehle Aura ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses Zaubers kann der Magier einem anderen Magier seine Aura gegen dessen Willen entziehen und sich selber zuführen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 6<br />
+'''Rang''': 3<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Stehle Aura" <Einheit-Nr><br /> 
+
+=== Störe Astrale Integrität ===
+
+'''Beschreibung''':<br />Dieser Zauber bewirkt eine schwere Störung des Astralraums. Innerhalb eines astralen Radius von Stufe/5 Regionen werden alle Astralwesen, die dem Zauber nicht wiederstehen können, aus der astralen Ebene geschleudert. Der astrale Kontakt mit allen betroffenen Regionen ist für Stufe/3 Wochen gestört.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 14<br />
+'''Rang''': 4<br />
+'''Komponenten''': 140 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Störe Astrale Integrität"<br /> 
+
+=== Süße Träume ===
+
+'''Beschreibung''':<br />Dieser Zauber - dessen Anwendung in den meisten Kulturen streng verboten ist - löst im Opfer ein unkontrollierbares Verlangen nach körperlicher Liebe aus. Die betroffenen Personen werden sich Hals über Kopf in ein Liebesabenteuer stürzen, zu blind vor Verlangen, um an etwas anderes zu denken. Meistens bereuen sie es einige Wochen später...<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 5<br />
+'''Komponenten''': 5 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Süße Träume" <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+
+== T.. ==
+
+=== Tod des Geistes ===
+
+'''Beschreibung''':<br />Mit diesem Zauber greift der Magier direkt den Geist seiner Gegner an. Ein Schlag aus astraler und elektrischer Energie trifft die Gegner, wird die Magieresistenz durchbrochen, verliert ein Opfer permanent einen Teil seiner Erinnerungen. Wird es zu oft ein Opfer dieses Zaubers kann es daran sterben. <br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 11<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Tod des Geistes"<br /> 
+
+=== Todeswolke ===
+
+'''Beschreibung''':<br />Mit einem düsteren Ritual und unter Opferung seines eigenen Blutes beschwört der Schwarzmagier einen großen Geist von der Elementarebene der Gifte. Der Geist manifestiert sich als giftgrüner Schwaden über der Region und wird allen, die mit ihm in Kontakt kommen, Schaden zufügen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 11<br />
+'''Rang''': 5<br />
+'''Komponenten''': 40 Aura, 15 Trefferpunkte<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Todeswolke"<br /> 
+
+=== Tor in die Ebene der Hitze ===
+
+'''Beschreibung''':<br />Dieses mächtige Ritual öffnet ein Tor in die Elementarebene der  Hitze. Eine grosse Dürre kommt über das Land. Bauern, Tiere und  Pflanzen der Region kämpfen um das nackte Überleben, aber eine  solche Dürre überlebt wohl nur die Hälfte aller Lebewesen.  Der Landstrich kann über Jahre hinaus von den Folgen einer  solchen Dürre betroffen sein. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 17<br />
+'''Rang''': 5<br />
+'''Komponenten''': 800 Aura<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Tor in die Ebene der Hitze"<br /> 
+
+=== Traumbilder analysieren ===
+
+'''Beschreibung''':<br />Mit diesem Spruch kann der Traumweber versuchen, die Verzauberungen einer einzelnen Einheit zu erkennen. Von allen Sprüchen, die seine eigenen Fähigkeiten nicht überschreiten, wird er einen Eindruck ihres Wirkens erhalten können. Bei stärkeren Sprüchen benötigt er ein wenig Glück für eine gelungene Analyse.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 5<br />
+'''Komponenten''': 25 Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Traumbilder analysieren" <Einheit-Nr><br /> 
+
+=== Traumbilder entwirren ===
+
+'''Beschreibung''':<br />Dieser Zauber ermöglicht es dem Traumweber die natürlichen und aufgezwungenen Traumbilder einer Person, eines Gebäudes, Schiffes oder einer Region zu unterscheiden und diese zu entwirren.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 2<br />
+'''Komponenten''': 6 Aura * Stufe<br />
+'''Modifikationen''': Fernzauber, Schiffszauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] [STUFE n] "Traumbilder entwirren" ( REGION | EINHEIT  <Einheit-Nr> [<Einheit-Nr> ...] | SCHIFF <Schiff-Nr> | BURG <Gebäude-Nr> )<br /> 
+
+=== Traum der Magie ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses Zaubers kann der Traumweber eigene Aura im Verhältnis 2:1 auf einen anderen Traumweber übertragen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 1<br />
+'''Komponenten''': 2 Aura<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE "Traum der Magie" <Einheit-Nr> <Aura><br /> 
+
+=== Traumdeuten ===
+
+'''Beschreibung''':<br />Mit diesem Zauber dringt der Traumweber in die Gedanken und Traumwelt seines Opfers ein und kann so seine intimsten Geheimnisse ausspähen. Seine Fähigkeiten, seinen Besitz und seine Parteizugehörigkeit wird nicht länger ungewiss sein.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 5<br />
+'''Komponenten''': 20 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Traumdeuten" <Einheit-Nr><br /> 
+
+=== Traumlesen ===
+
+'''Beschreibung''':<br />Dieser Zauber ermöglicht es dem Traumweber, in die Träume einer Einheit einzudringen und so einen Bericht über die Umgebung zu erhalten.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 5<br />
+'''Komponenten''': 8 Aura<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Traumlesen" <Einheit-Nr><br /> 
+
+=== Traumschlößchen ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses Zaubers kann der Traumweber die Illusion eines beliebigen Gebäudes erzeugen. Die Illusion kann betreten werden, ist aber ansonsten funktionslos und benötigt auch keinen Unterhalt. Sie wird einige Wochen bestehen bleiben.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 3<br />
+'''Rang''': 5<br />
+'''Komponenten''': 3 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Traumschlößchen" <Gebäudetyp><br /> 
+
+=== Traumsenden ===
+
+'''Beschreibung''':<br />Der Zauberer sendet dem Ziel des Spruches einen Traum.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Traumsenden" <Einheit-Nr><br /> 
+
+
+== U.. ==
+
+=== Unheilige Kraft ===
+
+'''Beschreibung''':<br />Nur geflüstert wird dieses Ritual an den dunklen Akademien an die Adepten weitergegeben, gehört es doch zu den finstersten, die je niedergeschrieben wurden. Durch die Anrufung unheiliger Dämonen wird die Kraft der lebenden Toten verstärkt und sie verwandeln sich in untote Monster großer Kraft.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 14<br />
+'''Rang''': 5<br />
+'''Komponenten''': 10 Aura * Stufe, 5 Bauern * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Unheilige Kraft" <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+=== Untote Helden ===
+
+'''Beschreibung''':<br />Dieses Ritual bindet die bereits entfliehenden Seelen einiger Kampfopfer an ihren toten Körper, wodurch sie zu untoten Leben wiedererweckt werden. Ob sie ehemals auf der Seite des Feindes oder der eigenen kämpften, ist für das Ritual ohne belang.<br />
+'''Art''': Postkampfzauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Untote Helden"<br /> 
+
+
+== V.. ==
+
+=== Vertrauten rufen ===
+
+'''Beschreibung''':<br />Einem erfahrenen Magier wird irgendwann auf seinen Wanderungen ein ungewöhnliches Exemplar einer Gattung begegnen, welches sich dem Magier anschließen wird.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 10<br />
+'''Rang''': 5<br />
+'''Komponenten''': 100 Aura, 5 permanente Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Vertrauten rufen"<br /> 
+
+=== Vertrauten rufen ===
+
+'''Beschreibung''':<br />Einem erfahrenen Magier wird irgendwann auf seinen Wanderungen ein ungewöhnliches Exemplar einer Gattung begegnen, welches sich dem Magier anschließen wird.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 12<br />
+'''Rang''': 5<br />
+'''Komponenten''': 100 Aura, 5 permanente Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Vertrauten rufen"<br /> 
+
+=== Vertrauten rufen ===
+
+'''Beschreibung''':<br />Einem erfahrenen Magier wird irgendwann auf seinen Wanderungen ein ungewöhnliches Exemplar einer Gattung begegnen, welches sich dem Magier anschließen wird.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 13<br />
+'''Rang''': 5<br />
+'''Komponenten''': 100 Aura, 5 permanente Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Vertrauten rufen"<br /> 
+
+=== Vertrauten rufen ===
+
+'''Beschreibung''':<br />Einem erfahrenen Magier wird irgendwann auf seinen Wanderungen ein ungewöhnliches Exemplar einer Gattung begegnen, welches sich dem Magier anschließen wird.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 5<br />
+'''Komponenten''': 100 Aura, 5 permanente Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE "Vertrauten rufen"<br /> 
+
+=== Verwünschung ===
+
+'''Beschreibung''':<br />Das Ziel des Zauberers wird von einer harmlosen Verwünschung heimgesucht.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Verwünschung" <Einheit-Nr><br /> 
+
+=== Viehheilung ===
+
+'''Beschreibung''':<br />Die Fähigkeiten der Gwyrrd-Magier in der Viehzucht und Heilung sind bei den Bauern sehr begehrt. Gerade auf Märkten sind ihre Dienste häufig sehr gefragt. Manch einer mag auch sein Talent dazu nutzen, ein Tier für einen besseren Preis zu verkaufen. Pro Stufe kann der Magier so 50 Silber verdienen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Viehheilung"<br /> 
+
+
+== W.. ==
+
+=== Wahnsinn des Krieges ===
+
+'''Beschreibung''':<br />Vor den Augen der feindlichen Soldaten opfert der Schwarzmagier die zehn Bauern in einem blutigen, grausamen Ritual und beschwört auf diese Weise Geister des Wahnsinns über die feindlichen Truppen. Diese werden im Kampf verwirrt reagieren und nicht in der Lage sein, den Anweisungen ihrer Offiziere zu folgen.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 8<br />
+'''Rang''': 5<br />
+'''Komponenten''': 3 Aura * Stufe, 10 Bauern<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Wahnsinn des Krieges"<br /> 
+
+=== Wahrsagen ===
+
+'''Beschreibung''':<br />Niemand kann so gut die Träume deuten wie ein Magier des Illaun. Auch die Kunst der Wahrsagerei, des Kartenlegens und des Handlesens sind ihm geläufig. Dafür zahlen ihm die Bauern 50 Silber pro Stufe.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Wahrsagen"<br /> 
+
+=== Weg der Bäume ===
+
+'''Beschreibung''':<br />Große Macht liegt in Orten, an denen das Leben pulsiert. Der Druide kann diese Kraft sammeln und so ein Tor in die Welt der Geistwesen erschaffen. Der Druide kann dann Stufe*5 Gewichtseinheiten durch das Tor entsenden.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 9<br />
+'''Rang''': 7<br />
+'''Komponenten''': 3 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   ZAUBERE [STUFE n] "Weg der Bäume" <Einheit-Nr> [<Einheit-Nr> ...]<br /> 
+
+=== Wiederbelebung ===
+
+'''Beschreibung''':<br />Stirbt ein Krieger im Kampf so macht sich seine Seele auf die lange Wanderung zu den Sternen. Mit Hilfe eines Rituals kann ein Traumweber versuchen, die Seele wieder einzufangen und in den Körper des Verstorbenen zurückzubringen. Zwar heilt der Zauber keine körperlichen Verwundungen, doch ein Behandelter wird den Kampf überleben.<br />
+'''Art''': Postkampfzauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 4<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Wiederbelebung"<br /> 
+
+=== Windschild ===
+
+'''Beschreibung''':<br />Die Anrufung der Elementargeister des Windes beschwört plötzliche Windböen, kleine Windhosen und Luftlöcher herauf, die die gegnerischen Schützen behindern werden.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 4<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Windschild"<br /> 
+
+=== Wirbelwind ===
+
+'''Beschreibung''':<br />Diese Beschwörung öffnet ein Tor in die Ebene der Elementargeister des Windes. Sofort erheben sich in der Umgebung des Tors starke Winde oder gar Stürme und behindern alle Schützen einer Schlacht.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 5<br />
+'''Rang''': 5<br />
+'''Komponenten''': 15 Aura<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Wirbelwind"<br /> 
+
+=== Wolfsgeheul ===
+
+'''Beschreibung''':<br />Nicht wenige Druiden freunden sich im Laufe ihres Lebens in der Natur mit den ältesten Freunden der großen Völker an. Sie erlernen, mit einem einzigen heulenden Ruf viele ihrer Freunde herbeizurufen, um ihnen im Kampf beizustehen.<br />
+'''Art''': Präkampfzauber<br />
+'''Stufe''': 7<br />
+'''Rang''': 5<br />
+'''Komponenten''': 2 Aura * Stufe<br />
+'''Modifikationen''': <br />
+'''Syntax''':   KAMPFZAUBER [STUFE n] "Wolfsgeheul"<br /> 
+
+=== Wunderdoktor ===
+
+'''Beschreibung''':<br />Wenn einem der Alchemist nicht weiterhelfen kann, geht man zu dem gelehrten Tybiedmagier. Seine Tränke und Tinkturen helfen gegen alles, was man sonst nicht bekommen kann. Ob nun die kryptische Formel unter dem Holzschuh des untreuen Ehemannes wirklich geholfen hat - nun, der des Lesens nicht mächtige Bauer wird es nie wissen. Dem Magier hilft es auf jeden Fall... beim Füllen seines Geldbeutels.  50 Silber pro Stufe lassen sich so in einer Woche verdienen.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 1<br />
+'''Rang''': 5<br />
+'''Komponenten''': 1 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Wunderdoktor"<br /> 
+
+=== Wurzeln der Magie ===
+
+'''Beschreibung''':<br />Mit Hilfe dieses aufwändigen Rituals läßt der Druide einen Teil seiner Kraft  dauerhaft in den Boden und die Wälder der Region fliessen. Dadurch wird  das Gleichgewicht der Natur in der Region für immer verändert, und in  Zukunft werden nur noch die anspruchsvollen, aber kräftigen  Mallorngewächse in der Region gedeihen. <br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 16<br />
+'''Rang''': 5<br />
+'''Komponenten''': 250 Aura, 10 permanente Aura, 1 Tiegel mit Krötenschleim<br />
+'''Modifikationen''': Fernzauber<br />
+'''Syntax''':   ZAUBERE [REGION x y] "Wurzeln der Magie"<br /> 
+
+
+== Z.. ==
+
+=== Zeitdehnung ===
+
+'''Beschreibung''':<br />Diese praktische Anwendung des theoretischen Wissens um  Raum und Zeit ermöglicht es, den Zeitfluß für einige Personen zu  verändern. Auf diese Weise veränderte Personen bekommen für einige  Wochen doppelt soviele Bewegungspunkte und doppelt soviele Angriffe pro Runde.<br />
+'''Art''': Normaler Zauber<br />
+'''Stufe''': 11<br />
+'''Rang''': 5<br />
+'''Komponenten''': 5 Aura * Stufe<br />
+'''Modifikationen''': Schiffszauber<br />
+'''Syntax''':   ZAUBERE [STUFE n] "Zeitdehnung" <Einheit-Nr> [<Einheit-Nr> ...]<br />

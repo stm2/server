@@ -1,0 +1,8 @@
+Getarnte Einheiten kann man mit dem [[Talente|Talent]] '''Wahrnehmung''' entdecken. Ist das beste Wahrnehmungstalent der Partei in der Region kleiner als das [[Tarnung|Tarnungstalent]] einer fremden Einheit, erscheint die getarnte Einheit nicht in der Auswertung - sie wird unsichtbar. Sind Wahrnehmungstalent und Tarnungstalent gleich groß, so erscheint die getarnte Einheit in der Auswertung. Dies ist die Ausgangslage wenn man das Spiel beginnt, da alle neuen Einheiten Tarnung und Wahrnehmung auf Stufe 0 haben.
+
+Für erfolgreich getarnte Einheiten zählen die Restriktionen von [[BEWACHE]] nicht. Außerdem können erfolgreiche Tarner anderen Einheiten mit dem Befehl [[BEKLAUE]] Silber stehlen. Auch bei der Entdeckung von Dieben zählt das höchste Wahrnehmungstalent der eigenen Partei in der Region. Sind Tarnung der Täter und Wahrnehmung der Opfer gleich groß, erhält das Opfer eine unbestimmte Warnung. Ist die Wahrnehmung des Opfers größer, kann es die Einheit bestimmen, welche den Diebstahl versucht hat.
+
+Wird eine Burg belagert, kann man mit einer Einheit, deren Tarnungstalent um mindestens 3 Stufen höher als die Wahrnehmung der belagernden Einheiten, die belagerte Burg betreten und verlassen, und somit z.B. dringend benötigtes Silber in die Burg schmuggeln.
+
+
+[[Kategorie:Talente]]

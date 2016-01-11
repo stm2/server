@@ -1,0 +1,498 @@
+Gebäude werden mit dem Befehl [[MACHE|MACHE gebäudetyp]] gebaut und mit [[MACHE|MACHE gebäudetyp gebäude-nr]] wird an einem Gebäude weitergebaut. Beispiele: MACHE [[#Leuchtturm|LEUCHTTURM]] oder MACHE [[#Hafen|HAFEN]] xyz. Für diese Gebäude ist ein Mindesttalentwert in Burgenbau erforderlich, der in der Tabelle angegeben ist. Außerdem können einige Gebäude nur bis zu einer bestimmten Größe ausgebaut werden.
+
+Hier zunächst eine zusammenfassende Tabelle, nähere Erklärungen folgen darunter.
+
+{| border="0" cellspacing="0" align="center"
+|- style="background-color:#aaaaaa"
+!Gebäude 	
+!colspan="4"|Baukosten                        	
+!Talent 	
+!colspan="2"|Unterhalt 	
+!Max. 	
+!Kapazität
+|- style="background-color:#aaaaaa"
+!            
+!Stein 	
+!Holz 	
+!Eisen 	
+!Silber
+!
+!Silber 	
+!Ressourcen
+!
+!
+|+ Gebäude; siehe auch Tabelle [[Burgen|Burgenbau]]<br>Die Kapazität bezieht sich nur auf die Personen, die von dem Gebäude profitieren können.<br>*) außerdem 2 Mallorn und 2 Laen pro Größenpunkt
+|- style="background-color:#eeeeee"
+|[[#Leuchtturm|Leuchtturm]]
+|align="right"|2     	
+|align="right"|1 	
+|align="right"|1     	
+|align="right"|100 	
+|align="center"|3 	
+|align="right"|100   	
+|align="center"|-/-   	
+|align="right"|keins 
+|align="right"|4 Personen
+|- style="background-color:#cccccc"
+|[[#Bergwerk|Bergwerk]] 	
+|align="right"|5     	
+|align="right"|10 	
+|align="right"|1     	
+|align="right"|250 	
+|align="center"|4 	
+|align="right"|500   	
+|align="center"|-/-   	
+|align="right"|keins 
+|align="right"|Größe
+|- style="background-color:#eeeeee"
+|[[#Steinbruch|Steinbruch]] 	
+|align="right"|1     	
+|align="right"|5 	
+|align="right"|1     	
+|align="right"|250 	
+|align="center"|2 	
+|align="right"|250   	
+|align="center"|-/-   	
+|align="right"|keins 
+|align="right"|Größe
+|- style="background-color:#cccccc"
+|[[#Sägewerk|Sägewerk]] 	
+|align="right"|5     	
+|align="right"|5 	
+|align="right"|3     	
+|align="right"|200 	
+|align="center"|3 	
+|align="right"|250   	
+|align="center"|-/-   	
+|align="right"|keins 
+|align="right"|Größe
+|- style="background-color:#eeeeee"
+|[[#Schmiede|Schmiede]] 	
+|align="right"|5     	
+|align="right"|5 	
+|align="right"|2     	
+|align="right"|200 	
+|align="center"|3 	
+|align="right"|300   	
+|align="center"|1 Holz 	
+|align="right"|keins 
+|align="right"|Größe
+|- style="background-color:#cccccc"
+|[[#Pferdezucht|Pferdezucht]] 	
+|align="right"|2     	
+|align="right"|4 	
+|align="right"|1     	
+|align="right"|100 	
+|align="center"|2 	
+|align="right"|150   	
+|align="center"|-/-   	
+|align="right"|keins 
+|align="right"|Größe
+|- style="background-color:#eeeeee"
+|[[#Hafen|Hafen]]  	
+|align="right"|5     	
+|align="right"|5 	
+|align="right"|-/-     	
+|align="right"|250 	
+|align="center"|3 	
+|align="right"|250   	
+|align="center"|-/-   	
+|align="right"|25 	
+|align="right"|Größe
+|- style="background-color:#cccccc"
+|[[#Karawanserei|Karawanserei]] 	
+|align="right"|1     	
+|align="right"|5 	
+|align="right"|1     	
+|align="right"|500 	
+|align="center"|2 	
+|align="right"|3000   	
+|align="center"|2 Pferde 	
+|align="right"|10 	
+|align="right"|Größe
+|- style="background-color:#eeeeee"
+|[[#Akademie|Akademie]] 	
+|align="right"|5     	
+|align="right"|5 	
+|align="right"|1     	
+|align="right"|500 	
+|align="center"|3 	
+|align="right"|1000   	
+|align="center"|-/-   	
+|align="right"|25 	
+|align="right"|Größe
+|- style="background-color:#cccccc"
+|[[#Magierturm|Magierturm]]* 	
+|align="right"|5     	
+|align="right"|3 	
+|align="right"|3     	
+|align="right"|500 	
+|align="center"|5 	
+|align="right"|1000   	
+|align="center"|-/-   	
+|align="right"|50 	
+|align="right"|2 Personen
+|- style="background-color:#eeeeee"
+|[[#Damm|Damm]]   	
+|align="right"|5     	
+|align="right"|10 	
+|align="right"|1     	
+|align="right"|500 	
+|align="center"|4 	
+|align="right"|1000   	
+|align="center"|3 Holz 	
+|align="right"|50 	
+|align="right"|Größe
+|- style="background-color:#cccccc"
+|[[#Tunnel|Tunnel]] 	
+|align="right"|10     	
+|align="right"|5 	
+|align="right"|1     	
+|align="right"|300 	
+|align="center"|6 	
+|align="right"|100   	
+|align="center"|2 Stein 	
+|align="right"|100 	
+|align="right"|Größe
+|- style="background-color:#eeeeee"
+|[[#Taverne|Taverne]] 	
+|align="right"|4     	
+|align="right"|3 	
+|align="right"|1     	
+|align="right"|200 	
+|align="center"|2 	
+|align="right"|5*Größe 	
+|align="center"|-/-   	
+|align="right"|keins 
+|align="right"|Größe
+|- style="background-color:#cccccc"
+|[[#Monument|Monument]] 	
+|align="right"|1     	
+|align="right"|1 	
+|align="right"|1     	
+|align="right"|400 	
+|align="center"|4 	
+|align="right"|keins 	
+|align="center"|-/-   	
+|align="right"|keins 
+|align="right"|Größe
+|- style="background-color:#eeeeee"
+|{{E3Akurz|[[Das_dritte_Zeitalter#Wirtschaft_und_Moral|Markt]]}}	
+|align="right"|1     	
+|align="right"|1 	
+|align="right"|     	
+|align="right"| 	
+|align="center"|3 	
+|align="right"|200 	
+|align="center"|-/-   	
+|align="right"|10
+|align="right"|Größe
+|}
+
+== Leuchtturm ==
+
+<div style="float:left; margin: 5px 1em 5px 5em;">
+{| border="1" float="left"
+|Baukosten pro Größenpunkt: 	||2 Steine, 1 Holz, 1 Eisen, 100 Silber
+|-
+|Mindestbautalent:      	||3
+|-
+|Unterhalt pro Runde:   	||100 Silber
+|-
+|Größenbegrenzung:      	||Keine
+|-
+|Kapazität:             	||4 Personen
+|}
+</div>
+<div style="float:right; margin: 5px 5em 5px 1em">
+{|border="1"
+|Größe || Sichtweite || Wahrnehmung
+|-
+|1 || 0 || - 
+|-
+|10 || 2 || 6 
+|-
+|100 || 3 || 9 
+|-
+|1000 || 4 || 12
+|-
+|colspan="3" | etc
+|}
+</div><div style="clear:both"></div>
+
+* Ab einer Größe von 10 verhindert ein Leuchtturm im Umkreis von log10(Leuchtturmgröße)+1 Feldern das Abtreibens von Schiffen.
+* Ab einer Größe von 10 gibt ein Leuchtturm den Insassen (nur bis zu 4 Personen!) Reports aller Ozeanfelder im Umkreis von log10(Leuchtturmgröße)+1 Feldern. Die Einheit muß dafür mindestens eine Wahrnehmung von Entfernung×3 haben. Einen Report einer drei Felder entfernten Ozeanregion bekommt man also nur, wenn der Leuchtturm mindestens Größe 100 und die Einheit mindestens Wahrnehmung 9 hat.
+{{E3Akurz|Es wird kein Wahrnehmungstalent benötigt, damit der Leuchtturm funktioniert.}}
+
+== Bergwerk ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||5 Steine, 10 Holz, 1 Eisen, 250 Silber
+|-
+|Mindestbautalent: 	||4
+|-
+|Unterhalt pro Runde: 	||500 Silber
+|-
+|Größenbegrenzung: 	||keine
+|-
+|Kapazität: 	||entsprechend Größe
+|}
+
+* Von Einheiten innerhalb des Bergwerks abgebautes Eisen wird nur zur Hälfte vom Regionsvorrat abgezogen. Dieser Effekt wirkt kumulativ zusammen mit eventuell vorhandenen entsprechenden Rassenvorteilen.
+* Die Fördermenge von Erzen erhöht sich, als hätten die Insassen einen Bergbaubonus von +1. Dies gilt jedoch nicht für die Abbautiefe der Erz-Schicht.
+* Nur mit einem Bergwerk ist der Laen-Abbau möglich.
+
+
+
+  10 Zwerge bauen in einer Region 60 Eisen ab. Es werden durch den Zwergenbonus
+  nur 36 Eisen vom Regionsvorrat abgezogen. Befinden sich diese Zwerge auch noch
+  in einem Bergwerk, so werden nur 18 Eisen abgezogen. 
+  Sind nur noch 9 Eisen überhaupt in der Region vorhanden, können die Zwerge 
+  natürlich nur 15 bzw. 30 Eisen abbauen.
+
+== Steinbruch ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||1 Stein, 5 Holz, 1 Eisen, 250 Silber
+|-
+|Mindestbautalent: 	||2
+|-
+|Unterhalt pro Runde: 	||250 Silber
+|-
+|Größenbegrenzung: 	||keine
+|-
+|Kapazität: 	||entsprechend Größe
+|}
+
+* Von Einheiten innerhalb des Steinbruchs abgebaute Steine werden nur zur Hälfte vom Regionslimit abgezogen. Dieser Effekt wirkt kumulativ zusammen mit eventuell vorhandenen entsprechenden Rassenvorteilen.
+* Die Fördermenge von Steinen erhöht sich, als hätten die Insassen einen Steinbaubonus von +1. Dies gilt jedoch nicht für die Abbautiefe.
+
+  10 Trolle bauen in einer Region 40 Steine ab. Es werden durch den Trollbonus
+  nur 30 Steine vom Regionsvorrat abgezogen.
+  Befinden sich diese Trolle auch noch in einem Steinbruch, so werden nur 15 
+  Steine abgezogen.
+  Sind nur noch 7 Steine überhaupt in der Region vorhanden, können die Trolle 
+  natürlich nur 9 bzw. 18 Steine abbauen.
+
+== Sägewerk ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||5 Steine, 5 Holz, 3 Eisen, 200 Silber
+|-
+|Mindestbautalent: 	||3
+|-
+|Unterhalt pro Runde: 	||250 Silber
+|-
+|Größenbegrenzung: 	||keine
+|-
+|Kapazität: 	||entsprechend Größe
+|}
+
+* Von Einheiten innerhalb des Sägewerks abgeholzte Bäume und Mallornbäume werden nur zur Hälfte vom Regionsvorrat abgezogen.
+* Einheiten innerhalb eines Sägewerks fällen mit einem Talentbonus von +1.
+
+== Schmiede ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||5 Steine, 5 Holz, 2 Eisen, 200 Silber
+|-
+|Mindestbautalent: 	||3
+|-
+|Unterhalt pro Runde: 	||300 Silber, 1 Holz
+|-
+|Größenbegrenzung: 	||keine
+|-
+|Kapazität: 	||entsprechend Größe
+|}
+
+* Bei Eisenwaffen und -rüstungen wird nur halb so viel Eisen benötigt. Laen wird in einer Schmiede nicht eingespart.
+* In Schmieden produzierende Einheiten haben einen Bonus von +1 auf Waffenbau und Rüstungsbau.
+
+== Pferdezucht ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||2 Steine, 4 Holz, 1 Eisen, 100 Silber
+|-
+|Mindestbautalent: 	||2
+|-
+|Unterhalt pro Runde: 	||150 Silber
+|-
+|Größenbegrenzung: 	||keine
+|-
+|Kapazität: 	||entsprechend Größe
+|}
+
+* In einer Pferdezucht können mit dem Befehl [[ZÜCHTE]] Pferde gezüchtet werden. Hierzu braucht der Pferdezüchter das Talent Pferdezucht und mindestens zwei Pferde.
+* Die Chance ein Pferd zu züchten entspricht dem Talent des Pferdezüchters. Zusätzlich hat er entsprechend seinem Talent mehrere Versuche. Hat ein Pferdezüchter T5, so hat er 5 Versuche zu je 5% ein Pferd zu züchten.
+* Für jeden Zuchtversuch benötigt der Züchter ein Pferd. Sind nicht genug Pferde vorhanden, verfallen die Versuche.
+{{E3Akurz|In einer Pferdeszucht können mit Pferdedressur 4, 1 Eisen, 200 Silber und einem Pferd Streitrösser gezüchtet werden.}}
+
+== Hafen ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||5 Steine, 5 Holz, 250 Silber
+|-
+|Baukosten gesamt: 	||125 Steine, 125 Holz, 6250 Silber
+|-
+|Mindestbautalent: 	||3
+|-
+|Unterhalt pro Runde: 	||250 Silber
+|-
+|Größenbegrenzung: 	||25
+|-
+|Kapazität: 	||Personen entsprechend Größe, Schiffe egal
+|}
+
+* Schiffe größer als ein Boot können auch in Nichtebenen anlegen, wenn ein Hafen vorhanden ist.
+* Der Eigentümer erhält 10% aller Handelseinnahmen, zusätzlich zu eventuellen Einnahmen durch Burgen.
+* Der Eigentümer erhält (2×Handeln)% aller Luxusgüter, die sich auf einlaufenden Schiffen befinden, es sei denn, die die Gegenstände tragende Einheit ist besser getarnt als die Wahrnehmung des Hafenmeisters (Schmuggel) oder der Schiffskapitän ist mit dem Hafenmeister alliiert.
+* In Regionen mit Hafen steigen die Preise für Luxusgüter mit einer Wahrscheinlichkeit von 20% (normalerweise 10%).
+* Eine Region mit Hafen kann als "Kanalregion" genutzt werden, d.h. ein Schiff in dem Hafen kann in jede beliebige andere Richtung mit Ozean davonsegeln. Voraussetzung ist allerdings, daß der Hafeneigner dem Kapitän [[HELFE|HELFE BEWACHE]] gesetzt hat oder der selben Partei angehört.
+* Ein Hafen funktioniert nur, wenn er voll ausgebaut ist. Es kann nur einen Hafen pro Region geben. Wer zuerst fertig ist, hat gewonnen ... Der halbfertige Hafen kann mit dem Befehl [[ZERSTÖRE]] zerstört werden.
+
+== Akademie ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||5 Steine, 5 Holz, 1 Eisen, 500 Silber
+|-
+|Baukosten gesamt: 	||125 Steine, 125 Holz, 25 Eisen, 12500 Silber
+|-
+|Mindestbautalent: 	||3
+|-
+|Unterhalt pro Runde: 	||1000 Silber
+|-
+|Größenbegrenzung: 	||25
+|-
+|Kapazität: 	||entsprechend Größe
+|}
+
+* Einheiten, die in einer Akademie lernen, können mit einer Chance von 1/3 in dieser Woche einmal zusätzlich lernen, wenn sie einen Lehrer haben sogar mit einer Chance von 2/3.
+* Lehrer, die in einer Akademie lehren, bekommen ebenfalls eine Chance, zu lernen, die je nach Anzahl ihrer Schüler bis zu 1/3 beträgt. Sowohl Schüler als auch Lehrer müssen dazu in der selben Akademie sein.
+* Lernen in einer Akademie kostet bei nicht kostenpflichtigen Talenten 50 Silber pro Person, bei kostenpflichtigen Talenten das Doppelte der normalen Lernkosten.
+* Eine Akademie funktioniert nur, wenn sie voll ausgebaut ist!
+
+== Magierturm ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||5 Steine, 3 Holz, 2 Mallorn, 3 Eisen, 2 Laen, 500 Silber
+|-
+|Baukosten gesamt: 	||250 Steine, 150 Holz, 100 Mallorn, 150 Eisen, 100 Laen, 25000 Silber
+|-
+|Mindestbautalent: 	||5
+|-
+|Unterhalt pro Runde: 	||1000 Silber
+|-
+|Größenbegrenzung: 	||50
+|-
+|Kapazität: 	||2 Personen
+|}
+
+* In einem Magierturm regeneriert ein Magier 75% mehr Aura.
+* Die Stärke jedes Zaubers, der von einem Magierturm aus gesprochen wird, erhöht sich, als wäre der Zauber mit einer Stufe mehr gezaubert worden.
+* Patzer passieren deutlich seltener.
+* Magische Orte, wie ein Magierturm, erhöhen oft den Schutz gegen fremde Magie.
+* Ein Magierturm funktioniert nur, wenn er voll ausgebaut ist
+
+== Karawanserei ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||1 Stein, 5 Holz, 1 Eisen, 500 Silber
+|-
+|Baukosten gesamt: 	||10 Steine, 50 Holz, 10 Eisen, 5000 Silber
+|-
+|Mindestbautalent: 	||2
+|-
+|Unterhalt pro Runde: 	||3000 Silber, 2 Pferde
+|-
+|Größenbegrenzung: 	||10
+|-
+|Kapazität: 	||entsprechend Größe
+|}
+
+* Ermöglicht Straßenbau in Wüsten. Wird die Karawanserei beschädigt oder zerstört, wird die Hälfte der Straße vernichtet. Eine fertige Straße bleibt bestehen, auch wenn der Gebäudeunterhalt nicht bezahlt wird.
+* Verdoppelt in Wüsten das dort mögliche Handelsvolumen. Der Besitzer erhält einen Erlösanteil vom Handel entsprechend den Burgen (siehe [[Burgen|diese]] Tabelle).
+* Die Karawanserei funktioniert nur, wenn sie voll ausgebaut ist!
+
+== Damm ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||5 Steine, 10 Holz, 1 Eisen, 500 Silber
+|-
+|Baukosten gesamt: 	||250 Steine, 500 Holz, 50 Eisen, 25000 Silber
+|-
+|Mindestbautalent: 	||4
+|-
+|Unterhalt pro Runde: 	||1000 Silber, 3 Holz
+|-
+|Größenbegrenzung: 	||50
+|-
+|Kapazität: 	||entsprechend Größe
+|}
+
+* Ein Damm ermöglicht den Straßenbau in Sümpfen. Wird der Damm beschädigt oder zerstört, so wird die Hälfte der Straße vernichtet. Eine fertige Straße bleibt bestehen, auch wenn der Gebäudeunterhalt nicht bezahlt wird.
+* Der Damm funktioniert nur, wenn er voll ausgebaut ist!
+
+== Tunnel ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||10 Steine, 5 Holz, 1 Eisen, 300 Silber
+|-
+|Baukosten gesamt: 	||1000 Steine, 500 Holz, 100 Eisen, 30000 Silber
+|-
+|Mindestbautalent: 	||6
+|-
+|Unterhalt pro Runde: 	||100 Silber, 2 Steine
+|-
+|Größenbegrenzung: 	||100
+|-
+|Kapazität:      	||entsprechend Größe
+|}
+
+* Ein Tunnel ermöglicht den Straßenbau in Gletschern. Wird der Tunnel beschädigt oder zerstört, so wird die Hälfte der Straße vernichtet. Eine fertige Straße bleibt bestehen, auch wenn der Gebäudeunterhalt nicht bezahlt wird.
+* Der Tunnel funktioniert nur, wenn er voll ausgebaut ist!
+
+== Taverne ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||4 Stein, 3 Holz, 1 Eisen, 200 Silber
+|-
+|Mindestbautalent: 	||2
+|-
+|Unterhalt pro Runde: 	||5 Silber pro Größenpunkt
+|-
+|Größenbegrenzung: 	||keine
+|-
+|Kapazität:       	||entsprechend Größe
+|}
+
+* Einheiten in einer Taverne regenerieren 50% schneller.
+* Einheiten in einer Taverne verbrauchen 14 Silber als Unterhalt!
+
+== Monument ==
+
+{| border="1" align="center"
+|Baukosten pro Größenpunkt: 	||1 Stein, 1 Holz, 1 Eisen, 400 Silber
+|-
+|Mindestbautalent: 	||4
+|-
+|Unterhalt pro Runde: 	||Kein Unterhalt
+|-
+|Größenbegrenzung: 	||keine
+|-
+|Kapazität:      	||entsprechend Größe
+|}
+
+* Sind Name und Beschreibung eines Monumentes gesetzt, können sie nicht mehr geändert werden, auch vom Eigentümer nicht.
+* Das Monument hat keine Funktion.
+
+== Siehe auch ==
+
+* [[Gebäude]]
+* [[Burgen]]
+* [[Produktion]]
+
+{{weiter|Geld}}
+
+[[en:Types of Buildings]]
+[[Kategorie:Regeln]]
+__NOTOC__

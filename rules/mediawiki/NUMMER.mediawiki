@@ -1,0 +1,12 @@
+<tt>'''NUMMER EINHEIT''' [''neue-nr'']<br/>
+'''NUMMER PARTEI''' [''neue-nr'']<br/>
+'''NUMMER SCHIFF''' [''neue-nr'']<br/>
+'''NUMMER GEBÄUDE''' [''neue-nr'']</tt>
+
+Hiermit kann man einer Einheit, einem Schiff, einem Gebäude oder gar der eigenen Partei eine neue Nummer zuweisen. Ist die Nummer bereits belegt, so ändert sich die Nummer nicht.
+
+Einheiten, Schiffe, Gebäude und Parteien können Nummern im üblichen Bereich (bis zu vier Stellen 0-9, a-z) bekommen. Ohne Angabe einer Nummer wird eine zufällige Nummer gewählt.
+
+Die Nummer eines Schiffes kann man nur einmal nach dessen Bau ändern.
+
+[[Kategorie:Befehle]]

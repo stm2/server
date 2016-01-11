@@ -1,0 +1,428 @@
+Die verschiedenen [[Rassen]] haben neben ihren Spezialfähigkeiten unterschiedliche Rekrutierungskosten und Modifikatoren auf [[Talente]]. Diese sind in dieser Tabelle zusammengefasst. Im Report sind diese Modifikatoren bereits berücksichtigt, das heißt, es wird immer die effektive Stufe angezeigt.
+
+{| border="0" cellspacing="1" align="center"
+|- style="background-color:#aaaaaa"
+! width="10%" | Talent !![[Zwerge]] !![[Orks]] !![[Elfen]] !![[Katzen]] !![[Dämonen]] !![[Halblinge]] !![[Menschen]] !![[Goblins]] !![[Insekten]] !![[Trolle]] !![[Meermenschen]]
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Rekrutierungskosten 
+|align="center"|110 
+|align="center"|70 
+|align="center"|130 
+|align="center"|90 
+|align="center"|150 
+|align="center"|80 
+|align="center"|75 
+|align="center"|40 
+|align="center"|80 
+|align="center"|90 
+|align="center"|80
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Trefferpunkte 
+|align="center"|24 
+|align="center"|24 
+|align="center"|18 
+|align="center"|20 
+|align="center"|50 
+|align="center"|18 
+|align="center"|20 
+|align="center"|16 
+|align="center"|24 
+|align="center"|30 
+|align="center"|20 
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|nat. Rüstung 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|2 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|2 
+|align="center"|1 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Magieresistenz
+|align="center"|5 
+|align="center"|-5 
+|align="center"|10 
+|align="center"|0 
+|align="center"|15 
+|align="center"|5 
+|align="center"|0 
+|align="center"|-5 
+|align="center"|5 
+|align="center"|10 
+|align="center"|0
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Alchemie
+|align="center"|0 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|+2 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Armbrustschießen 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Ausdauer 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Bergbau 
+|align="center"|+2 
+|align="center"|+1 
+|align="center"|-2 
+|align="center"|-2 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|+1 
+|align="center"|+2 
+|align="center"|-2
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Bogenschießen 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|+2 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-2 
+|align="center"|-2 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Burgenbau 
+|align="center"|+2 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|+2 
+|align="center"|+2 
+|align="center"|-1
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Handeln 
+|align="center"|+1 
+|align="center"|-3 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-3 
+|align="center"|+2 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|+2
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Hiebwaffen 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|+1 
+|align="center"|0
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Holzfällen 
+|align="center"|-1 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Katapultbedienung 
+|align="center"|+2 
+|align="center"|0 
+|align="center"|-2 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|+2 
+|align="center"|0
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Kräuterkunde 
+|align="center"|-2 
+|align="center"|-2 
+|align="center"|+2 
+|align="center"|+1 
+|align="center"|-3 
+|align="center"|+2 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Magie 
+|align="center"|-2 
+|align="center"|-1 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Pferdedressur 
+|align="center"|-2 
+|align="center"|-1 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|-3 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-3 
+|align="center"|-1 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Reiten 
+|align="center"|-2 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-3 
+|align="center"|-2 
+|align="center"|0
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Rüstungsbau 
+|align="center"|+2 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+2 
+|align="center"|+2 
+|align="center"|-1 
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Schiffbau 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|+1 
+|align="center"|-2 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|+3 
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Segeln 
+|align="center"|-2 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|-2 
+|align="center"|-1 
+|align="center"|-2 
+|align="center"|+1 
+|align="center"|-2 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|+3
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Spionage 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|+2 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-3 
+|align="center"|0
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Stangenwaffen 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Steinbau 
+|align="center"|+2 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+2 
+|align="center"|0
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Steuereintreiben 
+|align="center"|+1 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Straßenbau 
+|align="center"|+2 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|-2 
+|align="center"|-1 
+|align="center"|+2 
+|align="center"|-1
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Taktik 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-2 
+|align="center"|-1 
+|align="center"|-1 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Tarnung 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|+1 
+|align="center"|+1 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|-3 
+|align="center"|0
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Unterhaltung 
+|align="center"|-1 
+|align="center"|-2 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-3 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|-2 
+|align="center"|-1 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Waffenbau 
+|align="center"|+2 
+|align="center"|+2 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0
+|- style="background-color:#eeeeee"
+!align="right" bgcolor="#999999"|Wagenbau 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|-2 
+|align="center"|+2 
+|align="center"|0 
+|align="center"|-1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|0
+|- style="background-color:#cccccc"
+!align="right" bgcolor="#aaaaaa"|Wahrnehmung 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|+2 
+|align="center"|+1 
+|align="center"|+1 
+|align="center"|0 
+|align="center"|0 
+|align="center"|+1 
+|align="center"|-1 
+|align="center"|0
+|}
+
+{{weiter|Reisen}}
+
+[[Kategorie:Talente]]
+[[Kategorie:Regeln]]
+[[Kategorie:Rassen]]

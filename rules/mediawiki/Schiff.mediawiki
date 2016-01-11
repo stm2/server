@@ -1,0 +1,91 @@
+Schiffe werden aus Holz mit dem Befehl [[MACHE]] gebaut. In der Tabelle ist aufgeführt, wieviel Holz benötigt wird, um ein Schiff zu bauen. Je größer das Schiff, um so schwerer ist es zu erbauen und zu kommandieren. Um das Schiff zu bauen, braucht man mindestens das in der Tabelle angegebene Schiffbautalent.
+
+Auch Schiffe haben Nummern, die man für die Befehle gebraucht. Hier ein Beispiel für ein Schiff:
+
+    Stolz der Sieben Winde (18), Langboot, (254/500). Dieses schöne
+    Schiff war das erste, welches die Händlersfamilie Plötzbogen
+    einsetzte.  Kapitän Gorm steht auf dem Achterdeck und erteilt
+    Befehle an die Matrosen. Er hat alles voll im Griff.
+
+Unter einem Schiff sind die Einheiten eingerückt, die sich auf dem Schiff befinden. Die erste Einheit, der Kapitän, hat das Kommando über das Schiff. Er bestimmt, welche anderen Einheiten das Schiff betreten dürfen. Der Kapitän darf sein Schiff umbenennen, und er zählt auch als Matrose.
+
+Im Gegensatz zu Gebäuden können Schiffe nicht erweitert werden. Hat man sich also einmal entschlossen, ein Langboot zu bauen, so kann man dies später nicht zu einer Karavelle umbauen.
+
+'''Wichtig:''' Alle Schiffe größer als ein Boot (das betrifft auch Langboote) können nur in Ebenen und Wäldern anlegen. Alle anderen Regionstypen (z.B. Berge, Hochländer, Sümpfe) brauchen einen [[Andere Gebäude|Hafen]], damit dort Schiffe anlegen können. Wenn ein Schiff versucht, in einer ungeeigneten Region anzulegen, nimmt es [[#Schiffschaden|Schaden]]. Ablegen können Schiffe überall, man kann also Schiffe in allen Küstenregionen bauen und dann zu Wasser lassen.
+
+Einheiten, die auf einen Schiff sind, können im Allgemeinen keine langen Befehle ausführen. Der Kapitän des Schiffes kann natürlich jederzeit den Befehl <tt>[[NACH]]</tt> bzw. <tt>[[ROUTE]]</tt> geben, um das Schiff zu steuern. Lediglich Meermenschen können auch auf dem Ozean lange Befehle ausführen, wobei manche natürlich unsinnig sind, wie z.B. <tt>[[TREIBE]]</tt>, <tt>[[UNTERHALTE]]</tt> oder <tt>[[MACHE|MACHE HOLZ]]</tt>. Bis zu 100 Meermenschen können in einer Ozean-Region mit dem Befehl <tt>[[ARBEITE]]</tt> je 10 Silber verdienen.
+
+Befindet sich das Schiff an Land, können alle Einheiten an Bord etwas tun; sie gehen sozusagen zur Arbeit an Land. Dies können sie auch noch dann, wenn das Schiff in der selben Runde ablegt. Sie können, wenn die Region von einer nicht-alliierten Partei bewacht wird, allerdings kein Geld verdienen, weder mit ARBEITE, UNTERHALTE noch mit TREIBE.
+
+Ist ein Schiff zu schwer beladen, kann es nicht ablegen. Ist es auf See, treibt es ab. Bei eigenen Schiffen steht hinter dem Schiffstyp die Beladung und die Kapazität (im Beispiel 254 Gewichtseinheiten von 500).
+
+{| border="0" cellspacing="0" cellpadding="3" align="center"
+|+ Übersicht der Schiffe
+|- style="background-color:#aaaaaa"
+! Typ !!Reichweite !!Kapazität !!Kapitän/Besatzung !!Bautalent !!Bauholz
+|- style="background-color:#eeeeee"
+|Boot
+|align="right"|2
+|align="right"|50 	
+|align="right"|1/2 	
+|align="right"|1 	
+|align="right"|5
+|- style="background-color:#cccccc"
+|Langboot  	
+|align="right"|3	
+|align="right"|500 	
+|align="right"|1/10	
+|align="right"|1
+|align="right"|50
+|- style="background-color:#eeeeee"
+|Drachenschiff  	
+|align="right"|5
+|align="right"|1000
+|align="right"|2/50
+|align="right"|2 	
+|align="right"|100
+|- style="background-color:#cccccc"
+|Karavelle  	
+|align="right"|5
+|align="right"|3000 	
+|align="right"|3/30	
+|align="right"|3
+|align="right"|250
+|- style="background-color:#eeeeee"
+|Trireme  	
+|align="right"|7
+|align="right"|2000 	
+|align="right"|4/120	
+|align="right"|4
+|align="right"|200
+|}
+
+{{E3A|Schiffe wurden in E3 komplett überarbeitet. Bitte lest dazu Folgendes: [[Das_dritte_Zeitalter#Schiffe|Schiffe in E3]]}}
+
+
+== Schiffschaden ==
+
+Eine Seereise ist gefährlich, und Schiffe können auf hoher See - oder wenn sich niemand um sie kümmert - Schaden nehmen. Dieser Schaden wird in Prozent angegeben und reduziert 
+die Kapazität prozentual um den angegebenen Schaden; es wird abgerundet. Die Geschwindigkeit, inklusive aller Beschleunigungsboni (Meermenschenkapitän, Artefakte, Zauber), wird ebenfalls prozentual reduziert; hierbei wird jedoch stets aufgerundet.
+
+Beispiel:
+Ein Boot mit Meermenschenkapitän ist zu 17% beschädigt.
+* Die Kapazität reduziert sich dadurch auf (50)*0,83=41,5 (abrunden) 41GE.
+* Die Geschwindikeit (1+2)*0,83=2,49 (aufrunden) bleibt also bei 3.
+
+Nimmt ein Schiff 100% Schaden, so sinkt es mit Mann und Maus.
+Bei folgenden Ereignissen nimmt ein Schiff Schaden:
+
+* das Schiff ist in einen Kampf verwickelt (siehe [[Kampf auf Schiffen]])
+* das Schiff wird durch einen mächtigen Zauber beschädigt (bis 90%)
+* das Schiff nimmt durch Flutwellen Schäden (50%)
+* wenn das Schiff auf Klippen aufläuft, nimmt es 10% Schaden
+* ist das Schiff auf See nicht ausreichend bemannt, nimmt es 30% Schaden
+* ist das Schiff ohne Besitzer, nimmt es 5% Schaden
+* treibt das Schiff ab, nimmt es 2% Schaden
+
+Ein Schaden am Schiff kann mit [[MACHE|<tt>MACHE SCHIFF ''nummer''</tt>]] ausgebessert werden, genauso, als sei das Schiff noch nicht fertig gebaut.
+
+<noinclude>
+{{weiter|Gebäude}}
+</noinclude>

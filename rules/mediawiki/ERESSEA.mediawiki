@@ -1,0 +1,5 @@
+<tt>'''ERESSEA''' ''partei-nr'' "''passwort''"</tt>
+
+Mit diesem Befehl beginnt man die Befehlsdatei. Dieser Befehl muß unbedingt verwendet werden.
+
+[[Kategorie:Befehle]]

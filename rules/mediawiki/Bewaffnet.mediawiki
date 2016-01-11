@@ -1,0 +1,9 @@
+Eine Einheit gilt als bewaffnet, wenn sie über ein [[Liste der Talente|Kampftalent]] (Hiebwaffen, Stangenwaffen, Bogenschießen, Armbrustschießen, Katapultbedienung) und mindestens eine Waffe des entsprechenden Typs verfügt.
+
+Eine Einheit muss bewaffnet sein, um eine Region [[BEWACHE|bewachen]] oder eine Burg [[Belagerung|belagern]] zu können.
+
+Auch für's Steuereintreiben muss man bewaffnet sein, wobei auch nur die Personen Steuern eintreiben, die eine Waffe haben. Bei einigen Waffen (Katapulte, magische Waffen) gab es in der Vergangenheit Unklarheiten, ob man damit Steuern eintreiben kann/können sollte. Im Zweifelsfall muss man das mal ausprobieren.
+
+[[Monster]] gelten auch dann als bewaffnet, wenn sie keine Waffe tragen. Sie sind sozusagen mit Zähnen und Klauen (oder Tentakeln, Fangarmen usw.) bewaffnet.
+
+[[Kategorie:Regeln]]

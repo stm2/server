@@ -1,0 +1,7 @@
+<tt>'''KAMPFZAUBER''' [STUFE ''n''] "Zauberspruch" [NICHT]</tt>
+
+Der genannte Zauberspruch wird - je nach Zauber - als Prä-, Post- oder normaler Kampfzauber gewählt. Optional kann dabei eine Stufe angegeben werden, was nützlich sein kann, um beispielsweise Aura für einen Postkampfzauber aufzusparen. Die gewählten Zauber werden von der Einheit automatisch eingesetzt, sollte sie in Kämpfe verwickelt werden.
+
+Nicht alle Zaubersprüche sind Kampfzauber, dieses kann der Beschreibung der Zauber, welche man im Spiel erhält, entnommen werden. Die Beschreibung eines Zaubers kann man sich mit dem Befehl <tt>[[ZEIGE]]</tt> erneut zeigen lassen.
+
+[[Kategorie:Befehle]]

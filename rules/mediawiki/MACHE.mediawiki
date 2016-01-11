@@ -1,0 +1,80 @@
+<tt>'''MACHE TEMP''' ''unit-alias-nr'' ["''name''"]<br/>
+'''MACHE''' [''stufen''] ''Gebäudetyp'' [''gebäude-nr'']<br/>
+'''MACHE''' [''stufen''] ''schiffs-typ''<br/>
+'''MACHE''' [''stufen''] SCHIFF [''schiff-nr'']<br/>
+'''MACHE''' [''stufen''] STRASSE ''richtung''<br/>
+'''MACHE''' [''anzahl''] KRÄUTER<br/>
+'''MACHE''' [''anzahl''] ''gegenstand''<br/>
+'''MACHE'''</tt>
+
+Der Befehl <tt>MACHE</tt> ist der allgemeine Produktionsbefehl. Mehr dazu auch im Kapitel [[Produktion]].
+
+== Gegenstände ==
+
+[[Gegenstände]] werden mit <tt>MACHE [''anzahl''] ''gegenstand''</tt> hergestellt. Je nach Gegenstand wird ein bestimmtes Talent und vielleicht auch noch bestimmte Rohstoffe benötigt. Ohne Angabe von anzahl wird die Einheit so viele Gegenstände produzieren, wie Personen, Talent und evtl. Rohstoffe es ihr ermöglichen.
+
+Das Herstellen eines Trankes ist sehr aufwendig und kann nur von besonders talentierten Alchemisten durchgeführt werden. Details dazu findet man im [[Liste der Talente|Alchemie]]-Kapitel.
+
+== Kräuter ==
+
+Kräuter werden mit dem Befehl <tt>MACHE KRÄUTER</tt> von Einheiten mit dem Talent [[Kräuterkunde]] gemacht. Je nach Talentwert findet man mehr oder weniger Kräuter der Region, in der man sich befindet, wobei jede Region nur ein Kraut hat. Kräuter wachsen ähnlich wie Bäume nach; wenn man nicht aufpasst, kann man durchaus alle Kräuter einer Region pflücken und muss dann mittels <tt>[[ZÜCHTE]] KRÄUTER</tt> zuerst wieder welche anpflanzen.
+
+== Einheiten ==
+
+Wenn man neue Einheiten erschafft (<tt>MACHE TEMP</tt>), gibt man der Einheit eine Alias-Nummer, denn man weiß ja zu diesem Zeitpunkt noch nicht, welche Nummer die Einheit schlussendlich noch bekommen wird. Für alle anderen Befehle kann man nun diesen Alias verwenden (mit dem Wort TEMP davor). Die neue Einheit muss allerdings noch Mitglieder bekommen, sonst wird sie stillschweigend am Ende der Runde wieder gelöscht!
+
+Die Alias-Nummer wird als Nummer der Einheit benutzt, wenn diese noch nicht belegt ist. Ebenso kann man schon hier einen Namen der Einheit angeben. So lassen sich die Befehle
+
+  MACHE TEMP 1
+     BENENNE EINHEIT "Clowns"
+     NUMMER EINHEIT lach
+
+verkürzen auf
+
+  MACHE TEMP lach "Clowns"
+
+Pro Partei sind maximal 2500 Einheiten erlaubt. Hat die Partei 2500 oder mehr Einheiten, so können mit <tt>MACHE TEMP</tt> keine neuen Einheiten geschaffen werden, es müssen erst andere Einheiten z.B. durch Zusammenfassen gelöscht werden. Da das Auflösen leerer Einheiten in der Befehlsreihenfolge weit hinten kommt, können neue TEMP-Einheiten erst in der folgenden Woche geschaffen werden.
+
+Nach diesem Befehl werden die Befehle für die neue Einheit angegeben, bis man das Wort ENDE eingibt. Andere Parteien können temporäre Einheiten dann ansprechen, wenn sie nicht selber eine TEMP-Einheit mit der selben Nummer haben. Mit ein wenig Absprache können also auch TEMP-Einheiten fremder Parteien angesprochen werden.
+
+Wenn die neue Einheit Mitglieder neu rekrutieren soll, muss sie auch genug Geld dafür erhalten. Erhält sie das nicht, wird die Einheit niemanden rekrutieren können und am Ende der Woche stillschweigend entfernt werden. Bekommt die Einheit Geld, rekrutiert aber keine Mitglieder, löst sie sich ebenfalls auf und das Geld fällt den Bauern zu.
+
+  EINHEIT 17;       Kämpfer [15,700$]
+  MACHE TEMP 1
+     BENENNE EINHEIT "Drachenreiter"
+     LERNE Hiebwaffen
+  ENDE
+  GIB TEMP 1 5 PERSONEN
+  &nbsp;
+  GIB TEMP 2 100 Silber
+  MACHE TEMP 2
+     REKRUTIERE 1
+     BENENNE EINHEIT "Späher"
+     DEFAULT "LERNE Wahrnehmung"
+     NACH Westen
+  ENDE
+
+== Gebäude ==
+
+Um ein neues Gebäude zu errichten, verwendet man ''MACHE'' [''stufen''] ''Gebäudetyp'' siehe [[Gebäude|hier]]). Will man an einem Gebäude weiterbauen, so lautet der Befehl dafür ''MACHE'' [''stufen''] ''Gebäudetyp'' ''gebäude-nr''. Burgen und die meisten anderen Gebäude können beliebig ausgebaut werden. Um Burgen zu bauen, muss man das Talent Burgenbau und Steine haben, andere Gebäude erfordern i.d.R. weiterhin Holz, Eisen und Silber in verschiedenen Mengen.
+
+== Schiffe ==
+
+Mit <tt>MACHE ''schifftyp''</tt> beginnt man, ein neues [[Schiffe|Schiff]] zu bauen. Schiffe können nicht wie Burgen erweitert werden, sondern man muss bei Baubeginn den Typ festlegen. Mit <tt>MACHE [''stufe''] SCHIFF ''schiff-nr''</tt> kann daran weiterbauen. An Schiffen kann nur bis zu der am Anfang angegebenen Größe weiter gebaut werden. Um Schiffe zu bauen, muss man das Talent Schiffbau und Holz haben.
+
+Sowohl bei Gebäuden als auch bei Schiffen kann man mit stufen angeben, wieviele Stufen man das Gebäude bzw. Schiff bauen/erweitern will. 
+
+* erste Woche: <tt>MACHE LANGBOOT</tt><br />Ein neues Schiff wird gebaut und bekommt vom Computer die Nummer 76.
+* zweite Woche: <tt>MACHE SCHIFF 76</tt><br />An Schiff Nr. 76 wird nun weiter gebaut. 
+
+== Strassen ==
+
+Will man in einer Region das Durchreisen durch Straßen und Brücken erleichtern, verwendet man <tt>MACHE STRASSE ''richtung''</tt>. Um [[Straßen]] zu bauen, braucht man das Talent [[Straßenbau]] und [[Waren|Steine]]. In Gletschern benötigt man dazu vorher einen [[Andere Gebäude#Tunnel|Tunnel]], in Wüsten eine [[Andere Gebäude#Karawanserei|Karawanserei]] und in Sümpfen einen [[Andere Gebäude#Damm|Damm]].
+
+== Siehe auch ==
+
+* [[Produktion]]
+* [[Alchemie]]
+
+
+[[Kategorie:Befehle]]

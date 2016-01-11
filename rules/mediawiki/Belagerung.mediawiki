@@ -1,0 +1,14 @@
+'''Achtung: Belagerung wurde mit Version 3.6 aus dem Spiel entfernt'''
+
+Hat man genug bewaffnete Personen, kann man eine [[Burgen|Burg]] belagern (Befehl [[BELAGERE]]). Wie viele Personen man benötigt, hängt von der Größe der Burg ab: pro Größenpunkt einer Burg braucht man zwei Personen. Für eine Burg der Größe 64 braucht also 128 Personen, um sie zu belagern. Diese Personen müssen bewaffnet sein oder Katapulte haben und natürlich mit ihrer Waffe oder dem Katapult umgehen können.
+
+Um die Burg dann zu belagern, muss eine Einheit die Region mit der Burg erst eine Woche lang bewachen. Für eine Belagerung braucht man nämlich eine mindestens so gute Kontrolle über die Einwohner wie beim Bewachen. Dies gibt zudem allen fremden Einheiten eine Runde Zeit, angemessen zu reagieren. In der nächsten Runde kann man mit der Belagerung beginnen. Bewachende Einheiten fremder Parteien sind also immer mit Vorsicht zu genießen! 
+
+Bei der Belagerung wird jeglicher Kontakt zwischen Burg und der Außenwelt unterbunden. Die Burg kann nicht betreten oder verlassen werden und die Einheiten innerhalb der Burg erhalten auch kein Geld mehr und werden verhungern, falls sie die Belagerung nicht rechtzeitig abschütteln können. Die Belagerer werden ihre Katapulte abfeuern und die Burg langsam zerstören.
+
+Ist die [[Tarnung]] einer Einheit um mindestens 3 Punkte höher als die [[Wahrnehmung]] der belagernden Einheiten, kann eine Einheit die belagerte Burg betreten und verlassen, und somit dringend benötigtes Silber in die Burg schmuggeln.
+
+Die Belagerung kann beliebig lange aufrecht erhalten werden. Wenn belagerte Einheiten durch Verhandlungen die Belagerung nicht beenden können, bleibt ihnen nur noch ein Ausfall, also ein Angriff der Belagerer.
+
+
+[[Kategorie:Regeln]]

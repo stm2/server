@@ -1,0 +1,5 @@
+<tt>'''SABOTIERE''' SCHIFF</tt>
+
+Mit diesem Befehl versucht ein Spion, das Schiff, auf dem er sich befindet, zu versenken (man sollte es also nur an der Küste machen...).
+
+[[Kategorie:Befehle]]

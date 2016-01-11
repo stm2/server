@@ -1,0 +1,27 @@
+<tt>'''FAHRE''' ''einheit-nr''<br/>
+'''TRANSPORTIERE''' ''einheit-nr''</tt>
+
+Mit dem Befehl <tt>FAHRE</tt> schließt sich eine Einheit einer transportierenden Einheit an und kann von dieser, sofern sie den Befehl <tt>TRANSPORTIERE</tt> für die fahrende Einheit gegeben hat, mitgenommen werden. Durch diesen Befehl ist es möglich, auch ohne das Reiten-Talent auf Pferden oder Wagen zu reisen. Voraussetzung dafür ist natürlich, dass die transportierende Einheit über genügend freie Kapazitäten verfügt, um die fahrenden Einheiten samt Gegenständen aufzuladen.
+
+    ''Partei 125:''
+       EINHEIT 311
+         FAHRE 456 ; ich will mitfahren
+         KONTAKTIERE 456
+       [...]
+  &nbsp;
+    ''Partei 300:''
+       EINHEIT 456
+         TRANSPORTIERE 311 ; Lasse 311 mitfahren
+         KONTAKTIERE 311
+
+* [[Meermenschen]] können beim Anschwimmen (siehe <tt>[[VERLASSE]]</tt>) keine anderen Rassen transportieren und auch keine Pferde oder Wagen mitnehmen.
+* [[Insekt|Insekten]] können auch mittels <tt>TRANSPORTIERE</tt> nicht in oder durch einen Gletscher gebracht werden.
+
+
+== Siehe auch ==
+
+* [[Reisen]]
+* [[NACH]]
+* [[ROUTE]]
+
+[[Kategorie:Befehle]]

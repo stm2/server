@@ -1,0 +1,24 @@
+Magellan ist ein vollständiger Client für Eressea. Man kann damit seine Karte anzeigen, Suchen, Befehle geben, und überhaupt braucht man das Programm fast nur noch zu verlassen, um Mails an die Verbündeten zu schreiben. Fast.
+
+Die Energie des Entwicklerteams geht derzeit in '''Magellan 2''', welches aus praktikablen Gründen auf der Seite eines der fleissigsten Entwickler liegt. Dort findet sich auch ein Nightly Build, der jede Nacht erzeugt wird und den aktuellen Stand der Entwicklung beinhaltet.
+
+[http://magellan.log-out.net/images/magellan2.png Screenshot]
+
+Bugreports und Featurerequests zu Magellan 1 (nur Bugs) und Magellan 2 bitte bitte auf unserem [http://magellan-client.sourceforge.net/bugs Bugtracker] melden.
+
+{{E3A|text=An der [[Magellan und E3A|Anpassung von Magellan für E3A]] wird gearbeitet. Die Version 2.0.5 unterstützt Magellan. Bitte rechnet damit, dass es hin und wieder bei Änderungen am Spiel auch in Magellan ein paar Probleme geben kann.}}
+
+
+Das altbekannte Magellan ("Magellan 1") wird nach und nach nicht mehr weiterentwickelt. Es hat einen sehr stabilen Zustand erreicht und beinhaltet keine grösseren Bugs. Diese würden auch nach wie vor ausgemerzt werden. Auf Sourceforge liegt die letzte verfügbare Version.
+
+'''Achtung:''' Bei Neuinstallation von Magellan1 scheint es gehäuft zur Deaktivierung der Kartenanzeige zu kommen, daher, wenn keine Karte zu sehen ist, bitte erst unter Extras -> Optionen -> Karte die Renderoptionen prüfen, ob evtl. Renderer auf 'inaktiv' stehen.
+
+
+== Externe Links ==
+* [http://magellan-client.sourceforge.net/ Magellan 2]
+* [http://sourceforge.net/projects/magellan-client Magellan auf Sourceforge]
+* [http://magellan-client.sourceforge.net/bugs Bugtracker für Magellan]
+
+
+[[Kategorie:Software]]
+[[en:Magellan]]

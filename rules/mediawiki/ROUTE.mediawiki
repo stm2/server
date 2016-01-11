@@ -1,0 +1,33 @@
+<tt>'''ROUTE''' ''himmelsrichtung'' [''himmelsrichtung'' ...]</tt>
+
+Mit diesem Befehl bewegt sich die Einheit genauso wie mit dem Befehl <tt>[[NACH]]</tt> durch die Welt von Eressea.
+
+Mit dem <tt>ROUTE</tt>-Befehl kann jedoch eine "Kreisbewegung" erstellen, so dass eine Einheit immer zwischen zwei oder mehr Punkten pendelt. Alle Bewegungen, die abgearbeitet wurden, werden wieder hinten an den <tt>ROUTE</tt>-Befehl angehängt.
+
+Um eine Bewegung vorzeitig abzubrechen (z.B. bei Schiffen, die nicht so weit segeln sollen, wie sie können), kann man ein <tt>PAUSE</tt> (kann <tt>P</tt> abgekürzt werden) einfügen. Hat eine Einheit ihre Bewegung vollendet und als nächstes kommt ein <tt>PAUSE</tt>, so wird dies mit hinten angehängt, obwohl die Einheit bereits stoppt.
+
+Ein Reiter kommt mit Straßen drei Regionen weit. Er bekommt folgenden <tt>ROUTE</tt>-Befehl:
+
+  ROUTE NO Osten Pause Osten Osten SO Westen Westen Pause SW Westen NW
+
+Nächste Runde sieht der Befehl so aus:
+
+  ROUTE Osten Osten SO Westen Westen Pause SW Westen NW NO Osten Pause
+
+Und in der Runde darauf:
+
+  ROUTE Westen Westen Pause SW Westen NW NO Osten Pause Osten Osten SO
+
+Und in der Runde darauf:
+
+  ROUTE SW Westen NW NO Osten Pause Osten Osten SO Westen Westen Pause
+
+Und schließlich wieder wie am Anfang.
+
+== Siehe auch ==
+
+* [[Reisen]]
+* [[NACH]]
+* [[FOLGE]]
+
+[[Kategorie:Befehle]]

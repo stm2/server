@@ -1,0 +1,64 @@
+Achtet bei der Befehlseingabe darauf, dass ihr die richtige Parteinummer und die richtigen Einheitennummern verwendet habt. Setzt ein [[PASSWORT|Passwort]] und vergesst es nicht. Es ist für alle interessanter, wenn ihr eure Partei und alle Einheiten auf originelle Art und Weise benennt. Beachtet dabei bitte, dass Eressea ein Fantasy-Rollenspiel ist - Namen wie "Barney's Folterknechte der Fernbedienung" (ja, sowas gab es wirklich!) passen partout nicht in die Atmosphäre von Eressea.
+
+Am Ende eurer Auswertung gibt es eine Vorlage für die nächsten Befehle. Verwendet sie. Wenn ihr euch nicht sicher seid, schreibt eine Mail an <tt>eressea-help@eressea.kn-bremen.de</tt>. Man wird euch sicher in den ersten paar Zügen Tips geben können.
+Mit Fragen könnt ihr euch auch im [http://www.pbem-spiele.de/ PbEm-Spiele-Forum] melden. Dort hat Eressea ein eigenes Sub-Forum. Dazu ist zwar eine Anmeldung nötig, aber dort sind immer viele diskussionsfreudige Spieler zu finden.
+
+[[ECheck]] ist ein Programm, mit dem man seine Züge auf ihre Korrektheit überprüfen kann. ECheck wird vom Server automatisch auf die eingehenden Züge angesetzt und das Ergebnis zurückgeschickt.
+
+Verwendet ECheck zu Hause mit der Option -e um zu überprüfen, ob eure Befehle wie erwartet interpretiert werden. ECheck überprüft nur die Schreibweise der Befehle und die Reihenfolge der Parameter. Die Semantik (also Sinn und Unsinn der Befehle) wird von ECheck nicht erfasst, wobei ECheck jedoch verschiedene Tests bezüglich Silber ausführen kann, wenn die Zugvorlage des Servers benutzt wird. Die meisten Spieler benutzen [[Magellan]], ein Programm, was den CR (Computer Report) liest, übersichtlich darstellt und bei der Erstellung der Befehle hilft.
+
+Steckt euch mehrere Ziele, die ihr erreichen wollt. Eines der ersten Ziele sollte die Erkundung der Umgebung sein. Nur so findet ihr wichtige Berg- und Waldregionen, in denen ihr Erz abbauen und Holz fällen könnt. Schickt also einige Einheiten mit nur einer Person und gebt ihr genug Silber mit, um sich eine Weile über Wasser zu halten. Vorsicht: das Silber für die Rekrutierung muss dabei eingerechnet werden!
+
+Erschafft weitere Einheiten und lernt ein paar Talente, die ihr in den nächsten drei bis vier Runden zu brauchen gedenkt. Hier ist vor allem [[UNTERHALTE|Unterhaltung]] gut, um Geld zu verdienen. Auch [[TREIBE|Steuereintreiber]] sind eine gute Einnahmequelle; hierfür braucht man z.B. Metalle ([[Rohstoffe#Vom_Bergbau|Bergbau]]) oder Holz ([[Rohstoffe#Tief_im_Wald|Holzfällen]]), Waffen wie Schwerter oder Speere und natürlich Steuereintreiber mit entsprechendem Waffentalent ([[Talente#Arbeiten.2C_Unterhaltung.2C_Steuern_und_Handel|Steuereintreiben]], [[Talente#Waffentalente_und_Ausdauer|Waffentalente]]). [[Wahrnehmung]] ist ein sehr wichtiges Talent, das von Anfängern häufig unterschätzt wird. Nur Wahrnehmer sind in der Lage, getarnte Einheiten zu sehen und diese an einem Diebstahl zu hindern!
+
+Auch wichtig ist das Erbauen von [[Burg]]en (Steinbau für die Steine und Burgenbau), damit Handel getrieben werden kann. [[Taktik]]er, [[Liste der Talente|Alchemisten]] usw. sollte man erst später ausbilden, da ihre Ausbildung sehr teuer ist (200 Silber pro Runde). [[Magie]]r auszubilden kostet noch mehr Silber, doch ein Magier mit Kampfzaubern kann im Konfliktfall große Vorteile bringen.
+
+Schreibt reichhaltig Kommentare in eure Befehlsdateien, damit ihr in den nächsten Runden auch wisst, wofür dies oder das gemacht wurde. Es ist eine gute Idee, die Befehle nach Regionen zu gruppieren, so dass man ein paar Zeilen an Kommentaren für die Region zur Verfügung hat. Ein guter Ausgangspunkt für eure neue Befehlsdatei ist die an der Auswertung angehängte Vorlage für den nächsten Zug. Bei jeder Einheit kann man noch anmerken, was sie produziert, für wen sie es produziert, wohin sie unterwegs ist, oder welche Art von Handel sie treibt. Hier ein Beispiel für diese Kommentare:
+
+    REGION 4,4 ; Lochinver
+    ; Vorsicht vor der dunklen Horde
+    ; abgeholzt?
+
+    EINHEIT zbt;           Bogenbauer Jog'nabat und seine Sippe [4;100$]
+       Mache Schwerter
+       Gib sjur 5 Schwerter ; wahrscheinlich gibt er nur die 4, die er
+                            ; letzte Runde hatte
+
+    EINHEIT sjur;          Fuhrmann Sjur [2;243$]
+      // Kapazität: 420 = 7 Steine; Silber!
+      Gib 7jht 7 Steine
+      Route Südwest West Pause Ost Nordost Pause
+
+Der Kommentar hinter dem [[EINHEIT|EINHEIT-Befehl]] wird vom Programm in die Befehlsvorlage eingesetzt; hinter dem Namen der Einheit steht in [ ], wie viele Personen in der Einheit sind und wieviel Geld sie dabei hat (hier also 4 Personen mit 100 Silber und 2 mit 243 Silber).
+
+Vorsicht vor den Unterhaltskosten. Große Einheiten brauchen sehr viel Geld, und wenn sie es nicht haben, werden Leute verhungern. Es reicht, wenn in einer Region eine eigene Einheit genug Silber hat, um alle anderen Einheiten zu ernähren. Dabei sollte man Einheiten, die die Region verlassen, nicht vergessen!
+
+In den ersten Runden kann man noch vom Startkapital leben, aber bald braucht man aber ein ständiges Einkommen. Dieser Schatz ist im Allgemeinen nach vier bis sechs Runden aufgebraucht. Einnahmen erwirtschaftet man am schnellsten mit Steuereintreibern und Unterhaltern, und der [[Handel]] mit Luxusgütern verspricht langfristig große Gewinne.
+
+Plant die ersten Wochen vollständig durch. Man kann genau ausrechnen, wieviele Unterhalter, Steuereintreiber, Waffenbauer, Holzfäller ect. man ausheben kann und braucht.
+
+Wenn das Spiel beginnt, sitzen manchmal Einheiten mehrerer Parteien eng benachbart zueinander. Sprecht euch ab und teilt eure Aufgaben auf, damit ihr euch möglichst effizient ausbreiten könnt. Pflegt Kontakt mit vielen Parteien, dies macht das Spiel spannend und es wird euch später helfen. Gerät man in Konflikte, ist es gut zu wissen, dass man nicht alleine dasteht. Kontakte erlauben euch einen Informationsaustausch, z.B. für Karteninformation; sie ermöglichen es, Erfahrungen und Tips auszutauschen, und besonders das gegenseitige Lehren ist sehr hilfreich.
+
+Um Kontakt mit den anderen Parteien aufzunehmen, beschafft euch die Liste der anderen Parteien in euren Regionen mit [[OPTION]] ADRESSEN und kontaktiert sie direkt. Verwendet den Befehl [[BOTSCHAFT]] REGION, um die Mitspieler auf euch aufmerksam zu machen.
+
+Um die Ziele zu erreichen, die ihr euch gesteckt habt, solltet ihr keine Ausgaben scheuen. Das Startkapital ist zur Investition gedacht. Der erste fördert im großen Stil Eisen, der zweite schmiedet Schwerter und der dritte bildet Kämpfer aus. Daneben könnt ihr euch schon eine Reihe weiterer Aufgaben stellen: Kartographieren, Magier-Ausbildung, Schiffbau, Burgenbau, Aufstellen einer Diebesgilde, Aufbau einer kleinen Handelskarawane mit Pferden und Wagen... Für diese Aufgaben könnt ihr wiederum ein paar kleine neue Einheiten erschaffen.
+
+Kriege sollte man besonders in der Anfangsphase vermeiden - zu schnell sind wertvolle Einheiten weg, und die Einnahmen zu gering oder der Nachschub an Material versiegt.
+
+Wenn ihr Kontakt zu einer mächtigen Partei habt, versucht, ihr etwas zu verkaufen. Versucht, Holz zu fällen, Steine zu brechen oder Eisen zu fördern. Es lohnt sich, zwei Burgen ausfindig zu machen oder selber zu bauen, um zwischen ihnen Handel zu treiben. Dafür braucht man Händler und Wagen. Kauft euch einen Wagen und zwei Pferde vom Burgherren oder baut selber einen.
+
+Man muss mit Handelspartnern nicht alliiert sein. Verwendet den Befehl [[KONTAKTIERE]], um mit anderen Parteien Waren und Silber austauschen zu können, ohne alliiert zu sein.
+
+Eine der wichtigsten Tabellen in dieser Anleitung ist die [[Befehlsreihenfolge]], also die Reihenfolge, in der die Befehle beim Server bearbeitet werden. Aus ihr ist ersichtlich, dass man z.B. eiem Waffenbauer durchaus noch in der selben Woche Rohstoffe geben kann, bevor er produziert ([[GIB]] kommt an Position 14, [[MACHE]] an Position 22), man aber keine Tränke übergeben und dann sofort benutzen kann ([[BENUTZE]] ist an Stelle 7).
+
+Es gibt keine Gewinner in diesem Spiel. Das Spiel dauert so lange, bis ihr an euch selber verzweifelt oder eure Feinde euch ausgerottet haben. Danach müsst ihr, falls die Spielleitung das zulässt, als neue Partei anfangen.
+
+Und denkt immer dran: das Spiel ist ein Spiel! Es soll allen Spaß machen. Lasst euch nicht ärgern und zu unüberlegten Dingen hinreißen - wahrscheinlich ist der Spieler der fiesen und gemeinen Orks eigentlich ein netter Mensch...
+
+== Siehe auch ==
+
+* [[Tipps und Tricks]]
+* [[Hinweise]]
+* [[Der erste Zug]]
+
+{{weiter|Xontormia-Express}}

@@ -1,0 +1,74 @@
+Der CR besteht aus Blocks, Attributen und Listeneinträge. Ein Block entspricht meist einem Objekt, ein Attribut einer Variablen des Objektes. Blöcke können Unterblöcke haben.
+
+== Blocks ==
+
+Namen und Anzahl der Blocks sind nicht vordefiniert. Je nach Spiel und Version können unterschiedliche Blocks in einer Datei enthalten sein. Es ist durchaus legitim, eine Teilmenge der Blocks zu erzeugen, etwa um aus einem vollständigen Report 'nur' eine Karte zu machen.
+
+Blocks werden durch ein einzelnes, nur aus den Buchstaben A-Z bestehendes, groß geschriebenes Wort bezeichnet. Blocks können eine Kennzeichnung haben, die aus einem oder mehreren vorzeichenbehafteten 32-bit integern besteht. Die ids sind eindeutig, jede darf in einem CR also pro Block nur einmal erscheinen. Auf die id kann ein mit ';' abgetrennter Kommentar folgen, dies sollte jedoch vermieden werden.
+
+Blocks ohne id sind immer Subblocks des letzten vorangegangenen Blocks mit id. Ein Block dieses Typs darf mehrfach vorkommen, jedoch nur einmal pro übergeordentem Block (Sie sind sozusagen eindeutig in Bezug auf die id des Oberblocks).
+
+Beispiele:
+ VERSION 16
+ REGION -3 -7
+ REGIONSBOTSCHAFTEN
+
+== Attribute ==
+
+Namen und Anzahl der Attribute sind nicht vordefiniert. Ein Attribut besteht aus zwei Teilen: Wert und Tag. Das Tag sollte aus Buchstaben und Zahlen bestehen, aber keine Leerzeichen enthalten. Der Wert ist entweder eine Liste von ein oder mehr integern, oder ein in Anführungszeichen geschriebener String. Wert und Tag sind voneinander durch ein Semikolon getrennt.
+
+Seit Version 35 gilt: Innerhalb eines Blocks darf ein Attribut nur einmal vorkommen. In CR-Versionen vor 35 gab es einige Blocks, die diese Regel mißachteten, beispielsweise den Block ADRESSEN.
+
+Beispiele:
+ 0 0;Bergbau
+ "Xandaryl";Insel
+ 172;Runde
+
+== Listeneinträge ==
+
+Attribute ohne Tag sind gesondert zu behandeln. Dabei handelt es sich um Einträge in einer Listen von Befehlen, Botschaften, etc. Sie sind vom Aufbau her äquivalent zu den String-Attributen, haben jedoch kein Semikolon oder Tag am Ende der Zeile.
+
+Beispiel:
+ "MACHE Haus"
+ "Thorin; ein Recke"
+ "Thorin (thor) konnte kein Silber verdienen"
+
+== Tips für Implementierer ==
+
+Am besten parst man den CR Zeilenweise. Nach dem Einlesen einer Zeile schaut man zuerst, ob es sich um einen Block handelt: Blöcke beginnen als einzige mit einem Buchstaben. Ist es keiner, sondern beginnt mit einem '-' oder einer Zahl, so ist es ein Integer-Attribut, beginnt es mit einem '"', ist es ein String oder Listeneintrag.
+
+=== Blöcke ===
+
+Blöcke parst man, indem man den Namen des Blocks liest (bis zum ersten Leerzeichen), und anschließend die durch Leerzeichen getrennten ids. Auf eventuelle Kommentare (bei Eressea-CRs vor Version 36) achten!
+
+=== Integer-Attribute ===
+
+Die Zahl identifizieren, indem man bis zum ';' liest. Danach den Namen des Tags lesen, bis zum Ende der Zeile. Zu beachten ist, das möglicherweise noch Leerzeichen am Ende der Zeile oder um das ';' herum stehen könnten.
+
+=== Listeneinträge ===
+
+Bis zum nächsten '"' lesen. Aufpassen, es können durchaus Semikolons im String enthalten sein. Folgt auf das '"' kein Semikolon mehr, handelt es sich um ein Listenelement, ansonsten um ein String-Attribut.
+
+=== Stringattribute ===
+
+Der String ist bereits gelesen also das ';' überspringen, und den Namen des Tags finden. Wieder aufpassen auf Leerzeichen um das Semikolon oder am Ende der Zeile.
+
+=== Fallstricke ===
+
+* Ein Integer-attribut kann, wie z.B. bei den Skills, aus mehreren Zahlen bestehen. Die Anzahl integer ist bei Attributen gleichen Namens nicht unbedingt gleich, und sie ist eventuell nicht immer 2 (momentan schon, aber das sei für zukünftige Erweiterungen offengehalten).
+* Leerzeilen: Eigentlich sollten im CR keine Leerzeilen sein. Ein guter Parser sollte aber damit zurecht kommen.
+* Ungültige Zeilen: Oft werden CRs verstümmelt, weil ein Mailtool oder Editor die Zeilen umgebrochen hat. In diesem Fall sollte auf jeden Fall eine Warnung ausgegeben werden, und das Attribut ignoriert werden.
+* CR/LF: Mac, Unix und Windows speichern das Zeilenende jeweils unterschiedlich ab. Der Parser sollte alle Formate erkennen können.
+* Groß/Klein Schreibung: Die Schreibweise der Tags sollte eindeutig sein, also nicht gemischt werden, und nicht umgewandelt. Ein guter Parser erkennt trotzdem zwei Tags als gleich, wenn sie sich in der Groß/Kleinschreibung unterscheiden.
+* Umlaute: Sowohl Strings als auch Tags können Umlaute enthalten. Ein guter Parser erkennt die gängige Umschreibung deutscher Umlaute, und setzt z.B. Bäume = Baeume, Wüste=Wueste.
+* Dateiende: Es kann vorkommen, das hinter der letzten Zeile des CR kein Zeilenumbruch ist. 
+
+== Reservierte Blocks und Tags ==
+
+* VERSION ist der Block, der die Datei beschreibt. Es ist der erste Block im CR. Ein guter Parser sollte mehrere VERSIONs-Blöcke in seiner Eingabe verarbeiten, und diesen Fall so behandeln, als sei ein zweiter Report eingelesen worden (Beispiel: cat 1.cr 2.cr 3.cr | parser).
+* Runde ist ein Tag, in dem das Alter des Blocks enthalten ist. Blocks innerhalb eines CR können unterschiedlich datiert sein, wenn z.B. ein Report aus Informationen mehrere Runden zusammengestellt wurde. Das Runde-Attribut sollte das Datum der aktuellsten Informationen über den Block angeben. Es wird auf Unterblöcke vererbt, falls also diese Blöcke neueren oder älteren Stand repräsentieren, sollten sie ein eigenes Runde-Attribut bekommen. CRs ohne Rundeninformation sind am besten zu behandeln, als seine sie aus Runde 0.
+* Konfiguration ist ein Tag im Versionsblock. Es kann verwendet werden, um den Inhalt des CRs zu beschreiben, z.b. mit dem Namen des Tools, das ihn erzeugt hat, oder einer Beschreibung. Beispielsweise "mercator-karte", "EMap-export". Der Wert "Standard" ist reserviert für den Eressea-Server.
+
+== Siehe auch ==
+* [[XML Format]]
+* [http://dose.0wnz.at/thewhitewolf/cr-format CR-Format Details] gesammelt und aufbereitet von tww

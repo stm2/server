@@ -1,0 +1,5 @@
+<tt>'''TRANSPORTIERE''' ''einheit-nr''</tt>
+
+Siehe [[FAHRE]].
+
+[[Kategorie:Befehle]]

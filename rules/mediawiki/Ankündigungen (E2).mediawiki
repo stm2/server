@@ -1,0 +1,143 @@
+Selbst wenn die Ankündigungen andernorts archiviert werden, sammeln wir sie hier nochmal, wo sie auch editierbar sind, falls mal etwas unverständlich war, und wegen der Möglichkeit zum Feedback über die Diskussions-Seite.
+
+
+== Siehe auch ==
+
+* [https://bugs.eressea.de/changelog_page.php Mantis-Roadmap]
+
+
+== 21. November 2015 (Version 3.7) ==
+
+([http://www.pbem-spiele.de/forum/viewtopic.php?f=16&t=4043&p=33403&sid=511d03511d6e09b01bf885f6302c8e77#p33403 Forum])
+
+* [https://bugs.eressea.de/view.php?id=0002053 0002053]: [General] Monster greifen nicht an (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002143 0002143]: [AtTACKIERE] Monster attackieren Burginsassen (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002119 0002119]: [General] Talenttrunk (skillpotion) hat keine Beschreibung (MrTurner) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002137 0002137]: [MaCHE] learning-by-doing respektiert die Anzahl der Arbeiter nicht (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002136 0002136]: [General] Negative Punkte (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0001818 0001818]: [General] E2: Fehler- und Erfolgsmeldung bei Personenübergabe (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002135 0002135]: [General] Wochenbericht wird nciht mit der Auswertung verschickt (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0001685 0001685]: [Featurewunsch] Unbeabsichtige Abgabe an Bauern (Enno) - resolved.
+* [https://bugs.eressea.de/view.php?id=0002128 0002128]: [NaCH/ROUTE] Durchreisemeldung im NR ist oft zu lang (Enno) - resolved.
+
+Insbesondere dass die Monster wieder angreifen ist wohl wichtig zu wissen.
+
+
+== 29. August 2015 (Version 3.6) ==
+
+(im [http://www.pbem-spiele.de/forum/viewtopic.php?f=16&t=4020 Forum], nicht über E-Announce)
+
+* Die Formel für die Verlangsamung von beschädigten Schiffen wurde korrigiert. ([https://bugs.eressea.de/view.php?id=2126 2126])
+* Bei Einheiten mit mehr als einem langen Befehl wählt der Server einen davon aus, und nicht unbedingt den selben wie früher. ([https://bugs.eressea.de/view.php?id=2080 2080])
+* Vulkane werden nach dem Ausbruch inaktiv, damit sie nicht zweimal in sofortiger Folge ausbrechen können ([https://bugs.eressea.de/view.php?id=2112 2112])
+* Der BELAGERE Befehl ist aus dem Spiel entfernt worden ([https://bugs.eressea.de/view.php?id=1896 1896])
+* Katapulte und Wagen können nicht mehr in den Zauberbeutel gesteckt werden ([https://bugs.eressea.de/view.php?id=1949 1949])
+* Die Wirkung des Giftelementar erstreckt sich über mehrere Runden ([https://bugs.eressea.de/view.php?id=1838 1838])
+* Eine geflohene Einheit kann in der selben Woche nicht BEWACHEn ([https://bugs.eressea.de/view.php?id=1950 1950])
+* Nach einem Kampf werden alle nicht-alliierte Einheiten aus Schiffen und Burgen geworfen ([https://bugs.eressea.de/view.php?id=2059 2059], [https://bugs.eressea.de/view.php?id=2108 2108])
+
+
+== 16. Mai 2015 - Release 3.5 ==
+
+Zum 16. Mai plane ich, den Server auf Version 3.5 zu aktualisieren. Es ist eine Weile Zeit vergangen seit dem letzten Code-Update des Servers, und da haben sich einige Bugfixes angesammelt.
+
+Liste der gefixten Bugs und neuen Features aus Mantis: [[https://bugs.eressea.de/my_view_page.php|Mantis]]
+
+* 0002095: Entfernung des Limits auf [[GIB]] PERSONEN in E2
+* 0002085: Tippfehler in Zauberbeschreibung "Plappermaul".
+* 0002090: Tippfehler in Zauberbeschreibung "Auratransfer".
+* 0002091: Tippfehler in Zauberbeschreibung "Bannlied".
+* 0002092: Tippfehler in Zauberbeschreibung "Braue Bauernblut".
+* 0001510: Gürtel der Trollstärke ist zu mächtig.
+* 0001504: Schiffsschaden im Kampf nicht korrekt berechnet.
+* 0002067: Die Adressliste enthält Parteien doppelt.
+* 0002066: Magische-Pfad-Meldungen vertauscht.
+* 0001511: Schöne Träume sind schlechte Träume.
+* 0001830: Zauber "Schöne Träume" verursacht Alpträume.
+* 0002058: Burgenbonus im Kampf kaputt.
+* 0002059: (TEMP?)-Einheit in feindlichem Gebäude nach Kampf.
+* 0002068: Vertraute aus Rasse der Partei ausgewählt, nicht des Magiers.
+* 0002077: Ents entstehen als "Untote"?.
+* 0002086: Zauber Alp funktioniert nicht und sollte entfernt werden.
+* 0001802: Seeschlange in E3 heißt Seeschlangen.
+* 0002057: Seeschlangenname verhunzt.
+
+Diesmal sind keine großen Regeländerungen dabei, glaube ich, das wird also was man so gerne ein Bugfix- und Stabilitäts-Release nennt.
+
+Falls es noch Fragen gibt, sind die am besten im Forum[[http://www.pbem-spiele.de/forum/viewtopic.php?f=16&t=3989|Forum]] diskutiert.
+Enno. 
+
+== 1. Februar 2015 ==
+
+* (Effektiv erst ab 28. Februar.) Silber wiegt wieder eine Gewichtseinheit (ed.: gemeint ist 0,01 GE). Es ist seit einer Weile schon gewichtslos, was ein Fehler ist. Bitte sorgt vor, und achtet darauf dass keines Eurer Schiffe wegen Überladung liegen bleibt! 
+* [[BEFÖRDERE]] wurde in der Befehlsreihenfolge direkt hinter [[REKRUTIERE]] verschoben. Damit kommt es unmittelbar vor BEZAHLE NICHT und der Bezahlung von Gebäudeunterhalt.
+* [[ZERSTÖRE]] ist nun ein langer Befehl.
+* Schiffe können in einer Region mit einem Hafen, in der sie sonst nicht landen könnten, nur noch dann landen, wenn der Hafenbesitzer den HELFE BEWACHE ihrem Kapitän gegenüber hat (und alle weiteren Voraussetzungen erfüllt sind).
+* Deutsche Befehle sollten immer die Imperativform benutzen, also [[ARBEITE]], [[BEFÖRDERE]], [[VERGISS]]. Einige Befehle haben (weiterhin) keine Imperativform: ALLIANZ, [[BANNER]], [[BOTSCHAFT]], [[DEFAULT]], [[EMAIL]], [[GRUPPE]], [[KAMPFZAUBER]], [[NACH]], [[NUMMER]], [[OPTION]], [[PASSWORT]], [[PIRATERIE]], [[PRÄFIX]], [[ROUTE]], [[URSPRUNG]]. Die veralteten Versionen (ARBEITEN, BEFÖRDERUNG, VERGESSEN) werden vorläufig noch funktionieren, dass könnte sich aber irgendwann ändern.
+* Der englische Befehl COMBAT wird wieder richtig erkannt (und unterscheidet sich von COMBATSPELL und HELP COMBAT). FIGHT wird vorläufig als alternative Version von COMBAT erkannt, aber auch das könnte sich in Zukunft ändern.
+* Monster greifen wieder an, attackieren aber keine Einheiten in Gebäuden (ein Zugeständnis an E3, wo Tarnung nicht existiert). Drachen verhalten sich möglicherweise aber anders.
+* Wenn eine Einheit durch eine Region reist, die von einer nicht verbündeten Partei (kein [[HELFE]] BEWACHE) bewacht wird, hängt die Chance, dass sie aufgehalten wird von mehreren Faktoren ab: Sie wird vergrößert durch die Anzahl der feindlichen Bewacher, den Regionstyp (es wird schwerer in Sümpfen, Gletschern, Bergen und Vulkanen), das Wahrnehmungstalent der feindlichen Bewacher, Amulette des Wahren Sehens, sowie die Größe der Burg des Regionsbesitzers, falls dieser nicht verbündet ist. Sie wird verringert durch die Anzahl der verbündeten Bewacher und das Tarnungstalent der Einheit, sowie Ringe der Unsichtbarkeit.
+
+=== Sonstige Änderungen ===
+
+* Die Nachrichten, die die Dauer Magischer Pfade angeben, wurden korrigiert (https://bugs.eressea.de/view.php?id=2066).
+* Monster haben keine kryptischen Namen mehr (https://bugs.eressea.de/view.php?id=2057).
+* Nach dem Kampf erweckte Untote Helden und ähnliche Einheiten behalten ihre Ausrüstung (https://bugs.eressea.de/view.php?id=1962).
+* Vulkanausbrüche verursachen konsequent Meldungen in Nachbarregionen.
+* Leere Gebäude, für die kein Unterhalt gezahlt wurde, erzeugen eine Regionsmeldung.
+* Das Einheitenlimit wird im CR angezeigt (Bug https://bugs.eressea.de/view.php?id=2055).
+* Fliegende Einheiten werden nur noch von anderen fliegenden Einheiten aufgehalten.
+* Der Bonus für natürliche Rüstungsklasse wird korrekt angewendet.
+Hunger reduziert das Segeltalent nur noch um eins, statt um die Hälfte, wie bei anderen Talenten.
+* Ein paar Bauern (oder Spielereinheiten) dürfen arbeiten, auch wenn die Arbeitsplätze der Region eigentlich von Bäumen verdrängt werden würden.
+Regionen ohne Bauern, aber mit guten Bedingungen werden ein paar Siedler (aus anderen Welten?) anziehen.
+* Viele, viele kleinere Korrekturen, Verbesserungen am Code und Tests.
+
+=== Änderungen in früheren Versionen ===
+
+Nicht alle Änderungen der letzten Versionen sind unbedingt in einer Ankündigung erwähnt worden, daher hier noch ein paar aus früheren Zeiten, die ich evtl. vergessen habe:
+
+* [[RESERVIERE]] nimmt anderen Einheiten keine Gegenstände mehr weg, wenn diese Einheiten sie selbst reserviert haben. Beispiel: Einheit a hat 5 Silber, Einheit b hat 12 Silber und beide Einheiten haben RESERVIERE 10 Silber als Befehl. Dann hat anschließend Einheit a 7 Silber und Einheit b 10 Silber. Bisher hing das Ergebnis von der Einheitenreihenfolge ab.
+* RESERVIERE ALLES funktioniert jetzt.
+* [[FOLGE]] SCHIFF zählt, wie FOLGE EINHEIT, nur dann als langer Befehl, wenn das Ziel einen Bewegungsbefehl hat.
+* Die Richtungsangabe "Wirbel" für den Zauber Chaossog funktioniert.
+* Monster greifen wieder an.
+* Der CR enthält nun eine Zeile mit der genauen Build-Nummer des Servers.
+* Leuchttürme reduzieren die Chance des Abtreibens auf 0.
+* Dämonen werden nicht mehr plötzlich zu Goblins.
+* [[PIRATERIE]] wurde repariert.
+* Der "Schutzzauber" wurde repariert.
+* Fliehende Einheiten erhalten nicht mehr das Kommando von Burgen.
+* Eisen- und Steingolems wurden repariert. 
+
+== 20. Juli 2014 ==
+
+* Änderung am Befehl [[RESERVIERE]]: Eine Einheit nimmt keine Gegenstände von einer anderen, wenn diese sie auch reserviert
+hat. Technisch wird dies als ein Zwei-Phasen-Strategie implementiert.
+
+Beispiel:
+Einheiten A und B haben beide 100 Silber. Sie geben folgende Befehle:
+
+  EINHEIT a
+     RESERVIERE 150 Silber
+  EINHEIT b
+     RESERVIERE 80 Silber
+
+Jetzt werden Einheit A und B zuerst ihr eigenes Geld (100 und 80
+Silber) reservieren, und in einem zweiten Schritt das restliche
+erforderliche Silber von der anderen nehmen (A nimmt B die nicht
+reservierten Reste von 20 Silber ab). Im Ergebnis hat A 120 Silber,
+und B hat 80.
+
+== 22. Oktober 2009 ==
+
+Nach der bisherigen Regelung war es möglich, dass [[Dämon|Dämonen]] durch ihre
+Talentverschiebung ein Talent komplett vergessen. Einmal vergessen
+musste dieses Talent komplett neu gelernt werden, was insbesondere bei
+teuren Talenten zu Unmut geführt hat. Deshalb fällt ab sofort kein
+Talent mehr unter den Wert 1 (Vor Rassenmodifikation).
+
+Einheiten welche aus einem Gebäude geflohen sind konnten bisher das
+Gebäude wieder besetzen, bevor die Eroberer dies tun konnten. Ab sofort
+wird "betrete" für Einheiten welche geflohen sind nach allen anderen
+Einheiten ausgeführt.

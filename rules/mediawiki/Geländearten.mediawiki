@@ -1,0 +1,25 @@
+{| border="1" align="center"
+!Gelände  	!!max. arbeitende Bauern 	!!max. Bäume 	!!Steine f. Straße (in eine Richtung)
+|-
+|Gebirge 	||1000 	||125 	||250
+|-
+|Ebene  	||10000 ||1250 	||50
+|-
+|Gletscher   	||100 	||13 	||250
+|-
+|Hochland 	||4000 	||500 	||100
+|-
+|Sumpf  	||2000 	||250 	||75
+|-
+|Wüste   	||500 	||63 	||100
+|-
+|Wald   	||10000 ||1250 	||50
+|-
+|Vulkan 	||500 	||63 	||250
+|}
+
+Unter "max. Bäume" ist angegeben, wieviele Bäume (1 Schößling wird als 1/2 Baum gezählt) den gesamten Platz für "Feldarbeiter" einnehmen. Es können durchaus mehr Bäume in einer Region stehen.
+
+In Gletschern, Sümpfen und Wüsten ist Straßenbau nur möglich, wenn dort spezielle Gebäude stehen.
+
+[[Kategorie:Regeln]]

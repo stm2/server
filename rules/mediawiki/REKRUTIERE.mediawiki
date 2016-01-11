@@ -1,0 +1,11 @@
+<tt>'''REKRUTIERE''' ''anzahl''</tt>
+
+Hiermit werden neue Personen aus den Bauern der Region angeheuert. Pro angeheuerter Person muss man je nach [[Rassen|Rasse]] zwischen 40 und 150 Silber an [[Talentmodifikatoren|Rekrutierungskosten]] ausgeben. Die Einheit, welche neue Mitglieder rekrutiert, muss dieses Silber bei sich tragen. Wird eine neue Einheit erschaffen, muss man der neuen Einheit das nötige Geld geben, damit sie rekrutieren kann. Hat die Einheit nicht genug Silber, holt sie es sich aus dem [[Silberpool]].
+
+Man kann nur Personen der eigenen Parteirasse anwerben. [[Mensch|Migranten]]-Einheiten werben also keine weiteren Migranten an.
+
+Heuert man weitere Mitglieder in einer bestehenden Einheit an, so verwässern sich die Talente in der Einheit, da die Neuen nichts können außer <tt>[[ARBEITEN]]</tt> (das kann jeder). Die angesammelten Talentstufen der alten Einheit werden einfach auf die neue Anzahl Mitglieder verteilt.
+
+Nachdem man Leute rekrutiert hat, kann man durchaus noch andere Befehle ausführen.
+
+[[Kategorie:Befehle]]

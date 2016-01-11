@@ -1,0 +1,44 @@
+== Abbau von Rohstoffen ==
+
+Beim Abbau aller Rohstoffe ist zu beachten, dass bewachende Einheiten den Abbau verhindern, wenn die bewachende Partei weder HELFE ALLES noch HELFE BEWACHE zur eigenen Partei gesetzt hat (siehe [[BEWACHE]] und [[HELFE]]). Dies gilt nicht, wenn der Bewachende den Produzenten nicht sieht.
+
+=== Vom Bergbau ===
+
+''"Die wichtigsten Rohstoffe sind die, die ihr unter der Erde findet, meine Kinder. Dort liegen die wahren Schätze, die uns diese Welt beschert hat..."''
+
+''Seinen Monolog geistesabwesend fortsetzend schritt Hed'Waerbf weiter durch den Stollen, während seine Schüler, eine ganze Horde junger Zwerge aus der Bergbauakademie der ersten Säule, ihm schweigend folgte.''
+
+''Überraschend blieb Hed'Waerbf stehen und deutete an die Wand des Stollens. Die Gruppe folgte seinem Blick. An der Wand war der rote Schimmer oxidierten Eisens deutlich zu erkennen. "Hier seht ihr eine typische Eisenerzader", dozierte Hed'Waerbf. "Sie liegt recht tief, und ist schwer abzubauen, aber wahrscheinlich führt sie noch weit in den Berg hinein und ist sehr ergiebig. Wir werden mit ihrem Abbau beginnen, wenn wir die weiter oben liegenden Adern abgebaut haben."''
+
+Eisen, Steine und Laen kann man im Gebirge, in Gletschern und manchmal auch in anderen Regionstypen gewinnen, wobei Laen ein Bergwerk und einen besonders hohen Talentwert Bergbau erfordert. Jeder dieser Rohstoffe kann in einer Region unterschiedlich schwer abbaubar sein. Dies ist im Report durch die Zahlenangabe nach dem Schrägstrich erkennbar. Steht im Report beispielsweise '20 Eisen/4', so bedeutet dieses, dass noch 20 Eisen mit der Talentstufe 4 abbaubar sind. Sind diese abgebaut, benötigen die Bergleute einen höheren Talentwert, um weiteres Eisen abzubauen. Im allgemeinen werden die abbaubaren Rohstoffmengen mit steigender Schwierigkeit des Abbaus größer.
+
+=== Tief im Wald ===
+
+''In den Ausläufern des Dunfanaghy-Gebirges auf Andune waren die Berge zwar weniger hoch, doch finden sich viele Wälder auf den weiten Hängen der Hügel. Telerial Eryn'Tur, Patriarch der Familie Eryn'Tur, kontrolliert heute wie jedes Jahr im Frühsommer einen Teil seines Besitzes. Kritisch beäugte er jeden einzelnen Baum, an dem die kleine Elfengruppe vorüberschritt, klopfte hier an die Rinde und zerrieb dort ein Blatt zwischen seinen Fingern.''
+
+Die Entwicklung der Vegetation Eresseas wird von den Jahreszeiten bestimmt. Im Frühjahr treiben die im Boden verborgenen Samen aus, und die Schösslinge des letzten Jahres wachsen zu ausgewachsenen Bäumen heran. In den Sommer- und Herbstmonaten werfen die ausgewachsenen Bäume ihre Samen herab, welche mit MACHE SAMEN bzw. [[MACHE]] MALLORNSAMEN von [[Liste der Talente|Kräuterkundlern]] mit einem Talent von 3 bzw. 4 oder mehr eingesammelt und mit [[PFLANZE]] SAMEN/MALLORNSAMEN anderswo eingepflanzt werden können.
+
+''Telariel wandte sich an die ihn begleitenden anderen Elfen, allesamt Mitglieder seiner weitläufigen Familie. Sein Blick fiel auf Elderiel, einen seiner Schwiegersöhne, welcher unter dem durchdringenden Blick des alten Elfen zu schwitzen begann.''
+
+''Elderiel wusste schon, was der Alte ihm sagen wollte, also holte er tief Luft und kam ihm zuvor: "Wir mussten dieses Jahr mehr Holz einschlagen als geplant," stotterte er unwillkürlich. "Viele Elfen haben dieses Jahr ihre Clanprüfung bestanden und eine eigene Familie gegründet, und sie brauchen Platz, um ihre Häuser zu bauen."''
+
+''Der Blick Telariels wurde noch durchdringender. Elderiel spürte, wie ihm ein Schweißtropfen den Rücken herablief, und bemerkte, wie ihre anderen Begleiter unwillkürlich einen Schritt zurückgetreten waren, und so etwas zusätzlichen Abstand zwischen sich, Elderiel und den Alten gebracht hatten.''
+
+''"Es ist nicht so dramatisch, der Wald wird sich erholen, und ich habe gehört, dass man in Xontormia ein großes Auswanderungsprogramm plant.", beeilte sich Elderiel zu sagen.''
+
+Wird Holz oder Mallorn gefällt, schrumpft der Wald und erholt sich nur sehr langsam. Solange noch genug Holz vorhanden ist, kann es in beliebigen Mengen gefällt werden. Für Mallorn, ein "magisches" Holz, welches man nur in wenigen Regionen findet, gilt gleiches. Mallorn vermehrt sich zwar wie Holz, jedoch wachsen Mallornsamen nur in den dafür geeigneten Regionen an.
+
+=== Und Anderswo ===
+
+Auch Pferde können in beliebiger Menge gefangen werden. Ohne Hilfe vermehren sich nur wildlebende Pferde, man kann jedoch mit einer [[Pferdezucht]] weitere Pferde züchten.
+
+== Siehe auch ==
+
+* [[Produktion]]
+* [[Waren]]
+* [[Straßen]]
+* [[Gebäude]]
+
+{{weiter|Waren}}
+
+[[Kategorie:Regeln]]

@@ -1,0 +1,287 @@
+Unter "K/L" ist vermerkt, ob der [[Befehl]] ein kurzer oder langer Befehl ist, d.h., ob er sofort ausgeführt wird (und danach weitere Befehle möglich sind) oder eine ganze Runde zur Ausführung braucht.
+
+(L) bezeichnet einen pseudolangen [[Befehl]], der einer Einheit mehrfach gegeben werden kann. Allerdings kann kein weiterer anderer langer Befehl ausgeführt werden.
+
+{| border="1" align="center"
+|+ Kurzliste der Befehle
+!Befehl  !!Beschreibung  !!K/L
+|-
+|[[KOMMENTAR|//]]                          ||bleibender Kommentar    ||K
+|-
+|[[ARBEITE|ARBEITE]]                          ||verdient 10 Silber oder mehr     ||L
+|-
+|[[ATTACKIERE|ATTACKIERE einheit-nr]]          ||greift die Einheit an            ||(L)*
+|-
+|[[BANNER|BANNER "text"]]                      ||Setzt Text für Adress-Liste      ||K
+|-
+|[[BEANSPRUCHE|BEANSPRUCHE anzahl gegenstand]] ||holt Gegenstände aus Parteipool  ||K
+|-
+|[[BEFÖRDERE]]                                 ||macht Einheit zu Helden          ||K
+|-
+|[[BEKLAUE|BEKLAUE einheit-nr]]                ||klaut 50 Silber oder mehr        ||L
+|-
+|[[BELAGERE|BELAGERE burg-nr]]                 ||belagert die Burg                ||L
+|-
+|[[BENENNE|BENENNE EINHEIT "name"]]            ||benennt Objekte                  ||K
+|-
+|[[BENENNE|BENENNE PARTEI "name"]]             ||                                 ||K
+|-
+|[[BENENNE|BENENNE GEBÄUDE "name"]]            ||                                 ||K
+|-
+|[[BENENNE|BENENNE SCHIFF "name"]]             ||                                 ||K
+|-
+|[[BENENNE|BENENNE REGION "name"]]             ||                                 ||K
+|-
+|[[BENENNE|BENENNE FREMDE EINHEIT einheit "name"]]||benennt fremde und unbenannte Objekte||K
+|-
+|[[BENENNE|BENENNE FREMDES SCHIFF schiff "name"]]||                               ||K
+|-
+|[[BENENNE|BENENNE FREMDES GEBÄUDE gebäude "name"]]||                             ||K
+|-
+|[[BENENNE|BENENNE FREMDE PARTEI partei "name" ]]||                               ||K
+|-
+|[[BENUTZE|BENUTZE [anzahl] trank]]  ||benutzt alchemistischen Trank              ||K
+|-
+|[[BESCHREIBE|BESCHREIBE EINHEIT "text"]]      ||beschreibt Objekte               ||K
+|-
+|[[BESCHREIBE|BESCHREIBE PRIVAT "text"]]       ||                                 ||K
+|-
+|[[BESCHREIBE|BESCHREIBE GEBÄUDE "text"]]      ||                                 ||K
+|-
+|[[BESCHREIBE|BESCHREIBE SCHIFF "text"]]       ||                                 ||K
+|-
+|[[BESCHREIBE|BESCHREIBE REGION "text"]]       ||                                 ||K
+|-
+|[[BETRETE|BETRETE GEBÄUDE gebäude]]           ||betritt Gebäude                  ||K
+|-
+|[[BETRETE|BETRETE SCHIFF schiff-nr]]          ||betritt Schiffe                  ||K
+|-
+|[[BEWACHE|BEWACHE [NICHT]]]                     ||bewacht die Region               ||K
+|-
+|[[BOTSCHAFT|BOTSCHAFT REGION "text"]]         ||versendet Botschaften            ||K
+|-
+|[[BOTSCHAFT|BOTSCHAFT SCHIFF schiff-nr "text"]]||versendet Botschaften           ||K
+|-
+|[[BOTSCHAFT|BOTSCHAFT GEBÄUDE gebäude-nr "text"]]||versendet Botschaften         ||K
+|-
+|[[BOTSCHAFT|BOTSCHAFT EINHEIT einh-nr "text"]]||                                 ||K
+|-
+|[[BOTSCHAFT|BOTSCHAFT PARTEI partei-nr "text"]]||                                ||K
+|-
+|[[DEFAULT|DEFAULT befehl]]                    ||Setzt Default-Befehl für die nächste Runde.||K
+|-
+|[[EINHEIT|EINHEIT einheit-nr]]                ||beginnt Befehle für eine Einheit  ||K
+|-
+|[[EMAIL|EMAIL email@adresse]]                 ||  setzt die eMail-Adresse  ||K
+|-
+|[[ENDE]]                                      ||  beendet MACHE TEMP  ||K
+|-
+|[[ERESSEA|ERESSEA partei-nr "passwort"]]      ||  beginnt Befehle für Partei  ||K
+|-
+|[[FAHRE|FAHRE einheit-nr]]                    ||  sich transportieren lassen  ||L
+|-
+|[[FOLGE|FOLGE EINHEIT einheit-nr]]            ||  folgt einer Einheit  ||(L)**
+|-
+|[[FOLGE|FOLGE SCHIFF schiff-nr]]              ||  folgt einem Schiff  ||(L)**
+|-
+|[[FORSCHE|FORSCHE KRÄUTER]]                   ||  sucht Kräuter  ||L
+|-
+|[[GIB|GIB einheit-nr KRÄUTER]]                ||  gibt einer Einheit alle Kräuter  ||K
+|-
+|[[GIB|GIB einheit-nr KOMMANDO]]               ||  übergibt Kommando über Schiff/Gebäude  ||K
+|-
+|[[GIB|GIB einheit-nr anzahl SILBER]]          ||  übergibt Silber  ||K
+|-
+|[[GIB|GIB einheit-nr anzahl PERSONEN]]        ||  übergibt Personen  ||K
+|-
+|[[GIB|GIB einheit-nr EINHEIT]]                ||  übergibt Einheit an fremde Partei  ||K
+|-
+|[[GIB|GIB einheit-nr anzahl gegenstand]]      ||  übergibt Gegenstände  ||K
+|-
+|[[GIB|GIB 0 anzahl SILBER]]                   ||  wegwerfen von Gegenständen  ||K
+|-
+|[[GIB|GIB 0 anzahl PERSONEN]]                 ||     ||K
+|-
+|[[GIB|GIB 0 anzahl gegenstand]]               ||     ||K
+|-
+|[[GRUPPE|GRUPPE ["name"]]]                    ||  Gruppieren von Einheiten  ||K
+|-
+|[[HELFE|HELFE partei-nr ALLES [NICHT] ]]     ||  setze/lösche einseitige Allianz  ||K
+|-
+|[[HELFE|HELFE partei-nr GIB [NICHT] ]]      ||     ||K
+|-
+|[[HELFE|HELFE partei-nr KÄMPFE [NICHT]]]      ||     ||K
+|-
+|[[HELFE|HELFE partei-nr BEWACHE [NICHT]]]     ||     ||K
+|-
+|[[HELFE|HELFE partei-nr SILBER [NICHT]]]      ||     ||K
+|-
+|[[HELFE|HELFE partei-nr PARTEITARNUNG [NICHT]]]||     ||K
+|-
+|[[KÄMPFE]]                                    ||  setzt Verhalten im Kampf ||  K
+|-
+|[[KÄMPFE|KÄMPFE AGGRESSIV]]                   ||     ||K
+|-
+|[[KÄMPFE|KÄMPFE DEFENSIV]]                    ||     ||K
+|-
+|[[KÄMPFE|KÄMPFE FLIEHE]]                      ||     ||K
+|-
+|[[KÄMPFE|KÄMPFE HELFE [NICHT]]]               ||  der Einheit wird im Kampf [nicht] geholfen  ||K
+|-
+|[[KÄMPFE|KÄMPFE HINTEN]]                      ||     ||K
+|-
+|[[KÄMPFE|KÄMPFE NICHT]]                       ||     ||K
+|-
+|[[KAMPFZAUBER|KAMPFZAUBER [STUFE n] "zauberspruch" [NICHT]]]    ||  setzt Zauber für Kämpfe  ||K
+|-
+|[[KAUFE|KAUFE anzahl luxusgut]]               ||  kaufe Luxusgüter  ||L***
+|-
+|[[KONTAKTIERE|KONTAKTIERE einheit-nr]]        ||  kontaktiere fremde Einheiten  ||K
+|-
+|[[LEHRE|LEHRE einheit-nr [einheit-nr etc.]]]  ||  lehre Einheiten  ||L
+|-
+|[[LERNE|LERNE talent]]                        ||  Talent lernen  ||L
+|-
+|[[MACHE|MACHE TEMP unit-alias-nr ["name"]]]   ||  erschaffe neue Einheit  ||K
+|-
+|[[MACHE|MACHE [stufe] gebäude-typ [gebäude-nr]]]||  erweitere oder baue neues Gebäude  ||L
+|-
+|[[MACHE|MACHE [stufe] SCHIFF [schiff-nr]]]    ||  baue weiter am Schiff  ||L
+|-
+|[[MACHE]]                                     ||  baue weiter an Gebäude/Schiff  ||L
+|-
+|[[MACHE|MACHE [stufe] BOOT]]                  ||  baue neue Schiffe  ||L
+|-
+|[[MACHE|MACHE [stufe] LANGBOOT]]              ||     ||L
+|-
+|[[MACHE|MACHE [stufe] DRACHENSCHIFF]]         ||     ||L
+|-
+|[[MACHE|MACHE [stufe] KARAVELLE]]             ||     ||L
+|-
+|[[MACHE|MACHE [stufe] TRIREME]]               ||     ||L
+|-
+|[[MACHE|MACHE [stufe] STRASSE richtung]]      ||  baue Straßen  ||L
+|-
+|[[MACHE|MACHE [anzahl] KRÄUTER]]              ||  suche Kräuter der Region  ||L
+|-
+|[[MACHE|MACHE [anzahl] trank]]                ||  mache einen alchemistischen Trank  ||L
+|-
+|[[MACHE|MACHE [anzahl] gegenstand]]           ||  mache einen Gegenstand  ||L
+|-
+|[[NACH|NACH richtung [richtung etc.]]]        ||  Reisen  ||L
+|-
+|[[NÄCHSTER]]                                  ||  Beendet Befehle  ||K
+|-
+|[[NEUSTART|NEUSTART rasse "passwort"]]        ||  Läßt alte Partei mit neuer Rasse starten  ||K
+|-
+|[[NUMMER|NUMMER EINHEIT [neue_nr]]]           ||  vergibt neue Nummer  ||K
+|-
+|[[NUMMER|NUMMER GEBÄUDE [neue_nr]]]           ||     ||K
+|-
+|[[NUMMER|NUMMER PARTEI [neue_nr]]]            ||     ||K
+|-
+|[[NUMMER|NUMMER SCHIFF [neue_nr]]]            ||     ||K
+|-
+|[[OPTION|OPTION AUSWERTUNG [NICHT]]]          ||  verschiedene Optionen  ||K
+|-
+|[[OPTION|OPTION COMPUTER [NICHT]]]            ||     ||K
+|-
+|[[OPTION|OPTION ZIPPED [NICHT]]]              ||     ||K
+|-
+|[[OPTION|OPTION BZIP2 [NICHT]]]               ||     ||K
+|-
+|[[OPTION|OPTION SILBERPOOL [NICHT]]]          ||     ||K
+|-
+|[[OPTION|OPTION MATERIALPOOL [NICHT]]]        ||     ||K
+|-
+|[[OPTION|OPTION ADRESSEN [NICHT]]]            ||     ||K
+|-
+|[[OPTION|OPTION ZUGVORLAGE [NICHT]]]          ||     ||K
+|-
+|[[OPTION|OPTION STATISTIK [NICHT]]]           ||     ||K
+|-
+|[[OPTION|OPTION TALENTVERSCHIEBUNG [NICHT]]]  ||     ||K
+|-
+|[[OPTION|OPTION PUNKTE [NICHT]]]              ||     ||K
+|-
+|[[PASSWORT|PASSWORT "neues-passwort"]]        ||  setze neues Passwort  ||K
+|-
+|[[PFLANZE|PFLANZE [anzahl] KRÄUTER]]          ||  pflanzt Kräuter  ||L
+|-
+|[[PFLANZE|PFLANZE [anzahl] BÄUME]]            ||  pflanzt Samen  ||L
+|-
+|[[PFLANZE|PFLANZE [anzahl] MALLORNSAMEN]]     ||  pflanzt Samen  ||L
+|-
+|[[PFLANZE|PFLANZE [anzahl] SAMEN]]            ||  pflanzt Samen  ||L
+|-
+|[[PIRATERIE|PIRATERIE [partei_1] [partei_2] [...]]]||  Piraterie setzen  ||L
+|-
+|[[PRÄFIX|PRÄFIX [präfix]]]                    ||  gibt der Rassenbezeichnung ein Präfix  ||K
+|-
+|[[REGION|REGION x,y]]                         ||  keine Funktion (nur für Tools)  ||K
+|-
+|[[REKRUTIERE|REKRUTIERE anzahl]]              ||  rekrutiere weitere Personen  ||K
+|-
+|[[RESERVIERE|RESERVIERE anzahl "gegenstand"]] ||  Gegenstände reservieren  ||K
+|-
+|[[RESERVIERE|RESERVIERE anzahl SILBER]]       ||  Silber reservieren  ||K
+|-
+|[[ROUTE|ROUTE richtung [richtung etc.]]]      ||  Reisen  ||L
+|-
+|[[SABOTIERE|SABOTIERE SCHIFF]]                ||  Schiff versenken  ||L
+|-
+|[[SORTIERE|SORTIERE VOR einheit-nr]]          ||  Einheit in Report sortieren  ||K
+|-
+|[[SORTIERE|SORTIERE HINTER einheit-nr]]       ||     ||K
+|-
+|[[SPIONIERE|SPIONIERE einheit-nr]]            ||  Einheit ausspionieren  ||L
+|-
+|[[STIRB|STIRB "passwort"]]                    ||  aus dem Spiel ausscheiden  ||K
+|-
+|[[TARNE|TARNE [stufe]]]                       ||  Tarnstufe setzen  ||K
+|-
+|[[TARNE|TARNE rasse]]                         ||  Dämonen: als andere Rasse tarnen  ||K
+|-
+|[[TARNE|TARNE PARTEI [NICHT]]]                ||  Parteizugehörigkeit verbergen  ||K
+|-
+|[[TARNE|TARNE PARTEI NUMMER nummer]]          ||  Parteizugehörigkeit tarnen  ||K
+|-
+|[[TRANSPORTIERE|TRANSPORTIERE einheit-nr]]    ||  andere Einheiten mitnehmen  ||K
+|-
+|[[TREIBE|TREIBE [betrag]]]                    ||  Steuern eintreiben (max. 20 S/Talentstufe)  ||L
+|-
+|[[UNTERHALTE|UNTERHALTE [betrag]]]            ||  verdiene 20 oder mehr Silber  ||L
+|-
+|[[URSPRUNG|URSPRUNG [x y]]]                   ||  setzt den Koordinaten-Ursprung  ||K
+|-
+|[[VERGISS|VERGISS talent]]                    ||  vergißt das Talent  ||K
+|-
+|[[VERKAUFE|VERKAUFE anzahl luxusgut]]         ||  verkaufe Luxusgüter  ||(L)****
+|-
+|[[VERLASSE|VERLASSE]]                         ||  Schiff oder Gebäude verlassen  ||K
+|-
+|[[ZAUBERE|ZAUBERE [REGION x y] [STUFE n]  "zauberspruch" [...]]]            ||  Zaubern  ||(L)
+|-
+|[[ZEIGE|ZEIGE "zauberspruch"]]                ||  Zeige Beschreibung des Zaubers  ||K
+|-
+|[[ZERSTÖRE|ZERSTÖRE]]                         ||  Gebäude, Schiff oder Straße  ||L
+|-
+|[[ZÜCHTE|ZÜCHTE PFERDE]]                      ||  Pferde züchten - nur in Pferdezucht || L
+|-
+|[[ZÜCHTE|ZÜCHTE KRÄUTER]]                     ||  Kräuter züchten  ||L
+|-
+|[[ZÜCHTE|ZÜCHTE BÄUME]]                       ||  Samen pflanzen  ||L
+|}
+<nowiki>*</nowiki> siehe [[Kampfende]];
+<nowiki>**</nowiki>bewegt sich die verfolgte Einheit nicht, kann stattdessen ein andere langer Befehl ausgeführt werden;
+<nowiki>***</nowiki>kann mit VERKAUFE kombiniert werden;
+<nowiki>****</nowiki>kann mit KAUFE kombiniert werden
+
+== Siehe auch ==
+
+* [[Befehle]]
+* [[Befehlsreihenfolge]]
+
+{{weiter|Der erste Zug}}
+
+[[Kategorie:Befehle]]

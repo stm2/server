@@ -1,0 +1,22 @@
+Als Spieler führt man eine sogenannte '''Partei''' auf Eressea. Eine Partei besteht aus bis zu 2500 [[Einheiten]]. Diese Einheiten bestehen aus einer, einigen wenigen oder gar tausenden von Personen der [[Rassen|Rasse]] des Spielers. Jede Einheit kann beliebig viele Gegenstände und Silber besitzen, und ebenso alle [[Talente]] von Eressea erlernen. Den Einheiten kann man jede Runde [[Befehle]] geben, welche sie so gut wie möglich ausführen.
+
+Man scheidet aus dem Spiel aus, wenn die Partei keine Mitglieder mehr hat - wenn also alle Einheiten zerstört oder aufgelöst worden sind, oder wenn über drei Runden nacheinander keine Befehle eingetroffen sind.
+
+== Der Parteipool ==
+
+Der Parteipool enthält einige besondere Gegenstände, die in der Regel von der Spielleitung zu besonderen Anlässen (z.B. Weihnachten, Eresea-Jubiläen) dort abgelegt werden. Mit dem Befehle [[BEANSPRUCHE]] kann eine beliebige Einheit Gegenstände aus dem Parteipool entnehmen. Ein Zurücklegen ist nicht möglich. 
+
+Sinn des Parteipools ist es, dass der Spieler selbst entscheiden kann, welche Einheit einen bestimmten Gegenstand verwenden soll. Gegenstände im Parteipool haben in den meisten Fällen besondere magische Kräfte. Ihre Wirkung muss man in der Regel selbst erkunden, mittels [[ZEIGE]] erhält man oft nur vage Informationen.
+
+Einige Gegenstände, die bisher im Parteipool abgelegt wurden:
+* [[Adamantium]] (in Runde 574)
+* [[Adamantiumrüstung]] (in Runde 574)
+* [[Geburtstagstorte]] (in Runde 487, 20. August 2006, 10 Jahre Eressea)
+* [[Sonnensegel]] (in Runde 407, Weihnachten 2004)
+* [[Sternenstaub]] (in Runde 454, Weihnachten 2005)
+* [[Weihnachtsbaum]] (in Runde 503, Weihnachten 2006)
+
+
+{{weiter|Rassen}}
+
+[[Kategorie:Regeln]]
