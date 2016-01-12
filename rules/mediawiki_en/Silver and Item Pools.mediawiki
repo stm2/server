@@ -1,5 +1,3 @@
-== Silver and item pools ==
-
 Especially with big factions you might lose track of the available amounts of silver and other items. Obviously, distributing silver among your units is a burden.
 
 The silver pool relieves the player from this task. When a unit is given the recruit order, it automatically takes enough silver (if the faction possesses enough silver on all its units in that region) to recruit the new persons. The same occurs when a unit tries to learn a skill that costs silver. Remember that using the silver pool may take away silver needed to feed other units.
@@ -21,3 +19,4 @@ The item pool is identical to the silver pool regarding materials. Every unit wh
 Beware: The item pool only works for production, i.e. the [[MAKE]] order. If a unit needs weapons for collecting taxes, those weapons must be transferred with the [[GIVE]] order first.
 
 Inexperienced factions should think carefully about using the item pool, it is easy to accidentally take resources from other units and upset orders.
+

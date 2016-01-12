@@ -1,0 +1,508 @@
+There is a large number of items one can produce in Eressea. On the one hand, there are raw materials, such as iron, stones, logs of wood, or horses. On the other hand, there are the end products, such as various kinds of weapons, armor, ships, wagons, buildings, roads, or potions. In order to produce any of this, the appropriate skill is needed. Once a unit has this skill, it can be given the [[Orders Reference#MAKE|<code>MAKE</code>]] order to produce something.
+
+Depending on the desired item, a certain minimum level of skill is reqruied. Some items require high levels of skill, and therefore only a few can be produced. In any case, every will only be able to produce one type of item or product or work on one building or ship per turn. The following examples illustrate this point:
+
+<blockquote>A unit with 4 men and weaponsmithing 5 has altogether 20 production points. Provided the unit has the necessary raw materials, it can e.g. make 6 swords as the required minimum skill level for weaponsmithing is 3 thus you have to divide 20 by 3. Alternatively, the unit could produce 4 elven bows if they are elves, since the minimum skill level in weaponsmithing is 5 or just as well 10 spears (minimum weaponsmithing skill: 2).
+
+If this unit was inside a smithy that would halve its consumption of iron for shields, swords, and the like. The unit would be able to create 10 shields from only 5 iron.
+
+Important: Production points are summed up on a per-unit basis. The minimum skill level is required per man in the unit. A unit with 2 men and a weaponsmithing skill level of 1 is not able to make a spear since the minimum skill level is 2.
+</blockquote>
+All raw materials can be obtained as soon as the necessary skill is acquired. The same applies to horses and herbs. This does not apply to Laen, an extremely rare and magical metal, and Mallorn, a rare magical wood. In order to produce Laen, a mining skill level of 7 is needed, in addition to a mine in the region. In order to produce Mallorn, a minimum forestry skill level of 2 is required.
+
+Certain raw materials such as iron, are limited. If the units in a region wish to produce more than is available, the raw materials present will be divided up among the units according to their numbers and skill levels.
+
+In general, the skill levels of all members of a unit are counted together and divided by the required minimum level of a skill. For each production point calculated this way a building or a ship can be extended by one size point or one item can be produced (provided the necessary raw materials are available). As an in the previous example, 4 men with 5 weaponsmithing each have a total of 20 production points. They can create items that require up to a minimum of weaponsmithing level 5. These men therefore can make up to 6 swords in one turn. (weaponsmithing 3 times 6 swords requires 18 points of weaponsmithing all together).
+
+Once the construction of a building or a ship has started, one can continue building with as many units and men as one wants. It is not possible to build several ships or buildings with only one unit, even if it has enough production points and raw materials to do so. One cannot change the kind of building or ship once construction has begun (i.e. a sawmill will stay a sawmill and never turn into a castle).
+
+For larger factions, the gathering of all the needed materials can be quite a nuisance. Raw materials are found in various different places depending on the type of raw material in question.
+
+== <span id="resources"></span>Raw materials ==
+
+Units guarding the region will prevent producing raw materials if the guarding faction has neither set [[Orders Reference#HELP|HELP ALL]] nor [[Orders Reference#HELP|HELP GUARD]] to your faction (see also [[Orders Reference#GUARD|GUARD]] and [[Orders Reference#HELP|HELP]]). This does not apply if the guards are not able to see the producer.
+
+Iron, stones and laen can be mined and quarried in glaciers, mountains and sometimes in certain regions. A mine and at least a skill level of 7 in the mining skill is required to mine Laen.
+
+After some time of producing raw materials, it gets harder and harder to get more, your report will for example show '20 iron/4', meaning that with a mining skill of 4, you can produce another 20 iron before you will need skill level 5 to continue.
+
+The development of Eressea's vegetation is determined by the seasons. In spring, seeds in the ground become young trees, and last year's young trees grow up to become trees. In the months of summer and autumn the trees drop their seeds which a herbalist with a herbalism skill of 3 resp. 4 or more can pick up by using the order [[Orders Reference#MAKE|MAKE SEED]] or [[Orders Reference#MAKE|MAKE &quot;MALLORN SEED&quot;]] and can plant these in another region by using the [[Orders Reference#PLANT|PLANT SEED / &quot;MALLORN SEED&quot;]].
+
+If a tree or mallorn tree is cut down to make wood, the forest will shrink and it will take time to grow back. Therefore, one has to be careful in the harvesting of trees, lest an entire forest is cut down and permanently destroyed.
+
+As long as there are enough trees, one can cut down as many as one needs. The mount of trees found in a region will be shown in your weekly report. The same applies to the number of Mallorntrees, which provide Mallorn wood. Like Laen, Mallorntrees can only be found in certain regions. Mallorntrees multiply like normal trees, but they will not spread out to other regions. They will remain only in their region of origin.
+
+You can catch and tame as many horses as you like, as long as there is at least one in the region. Only wild horses will breed on their own, but additional horses can be made with the help of horses inside a stable.
+
+End products can be created as desired. The only restrictions are the raw materials in stock, and the total amount of production points of the producing unit.
+
+The following table shows all the items which can be found in Eressea. They all can be obtained in some manner (i.e. taxation for silver, or trading to buy luxury goods). Most can be made if your unit has the appropriate skill level and (if needed) the right raw materials.
+
+<span id="items"></span>
+
+<div align="center">
+
+{|
+|+  Weight, skills and raw materials<br />
+ <sup>*</sup> Laen can only be mined in a mine.<br />
+ <sup>+</sup> Only elves can produce elven bows.
+!Item
+!Weight
+!Skill Required
+!Min. lvl.
+!Materials
+|-
+|Silver
+|0.01
+|-
+|-
+|-
+|-
+|Gems
+|1
+|Trade
+|1
+|-
+|-
+|Incense
+|2
+|Trade
+|1
+|-
+|-
+|Balm
+|2
+|Trade
+|1
+|-
+|-
+|Spice
+|2
+|Trade
+|1
+|-
+|-
+|Myrrh
+|2
+|Trade
+|1
+|-
+|-
+|Oil
+|3
+|Trade
+|1
+|-
+|-
+|Silk
+|3
+|Trade
+|1
+|-
+|-
+|Herbs
+|0
+|Herbalism
+|1
+|-
+|-
+|Potions
+|0
+|Alchemy
+|2
+|Herbs
+|-
+|Seed
+|0.1
+|Herbalism
+|3
+|-
+|-
+|Mallorn Seed
+|0.1
+|Herbalism
+|4
+|-
+|-
+|Iron
+|5
+|Mining
+|1
+|-
+|-
+|Laen<sup>*</sup>
+|2
+|Mining
+|7
+|-
+|-
+|Wood
+|5
+|Forestry
+|1
+|-
+|-
+|Mallorn
+|5
+|Forestry
+|2
+|-
+|-
+|Stone
+|60
+|Quarrying
+|1
+|-
+|-
+|Horse
+|50
+|Taming
+|1
+|-
+|-
+|Cart
+|40
+|Cartmaking
+|1
+|5 Wood
+|-
+|Catapult
+|100
+|Cartmaking
+|5
+|10 Wood
+|-
+|Sword
+|1
+|Weaponsmithing
+|3
+|1 Iron
+|-
+|Laen sword
+|1
+|Weaponsmithing
+|8
+|1 Laen
+|-
+|Claymore
+|2
+|Weaponsmithing
+|4
+|2 Iron
+|-
+|Spear
+|1
+|Weaponsmithing
+|2
+|1 Wood
+|-
+|Mallorn spear
+|1
+|Weaponsmithing
+|5
+|1 Mallorn
+|-
+|Lance
+|2
+|Weaponsmithing
+|2
+|2 Wood
+|-
+|Mallorn lance
+|2
+|Weaponsmithing
+|5
+|2 Mallorn
+|-
+|Halberd
+|2
+|Weaponsmithing
+|3
+|1 Iron, 2 Wood
+|-
+|Axe
+|2
+|Weaponsmithing
+|3
+|1 Iron, 1 Wood
+|-
+|Crossbow
+|1
+|Weaponsmithing
+|3
+|1 Wood
+|-
+|Mallorn crossbow
+|1
+|Weaponsmithing
+|5
+|1 Mallorn
+|-
+|Bow
+|1
+|Weaponsmithing
+|2
+|1 Wood
+|-
+|Mallorn bow
+|1
+|Weaponsmithing
+|5
+|1 Mallorn
+|-
+|Elven bow<sup>+</sup>
+|1
+|Weaponsmithing
+|5
+|2 Mallorn
+|-
+|Chainmail
+|2
+|Armoursmithing
+|3
+|3 Iron
+|-
+|Laenmail
+|1
+|Armoursmithing
+|9
+|3 Laen
+|-
+|Platemail
+|4
+|Armoursmithing
+|4
+|5 Iron
+|-
+|Ammunition
+|10
+|Quarrying
+|3
+|1 Stone
+|-
+|Shield
+|1
+|Armoursmithing
+|2
+|1 Iron
+|-
+|Laen shield
+|0
+|Armoursmithing
+|7
+|1 Laen
+|}
+
+
+</div>
+== <span id="roads"></span>Roads ==
+
+In order to increase the movement rate of your units, roads can be constructed between regions. These roads allow for faster movement and do not become marshy during rain. They also will not become overgrown with trees, and always span rivers and canyons (bridges are automatically assumed to be part of any roads you build). In Eressea, rivers and such are not in the game because the size of the regions are so large. The scale of the game does not support rivers. Any unit which has the necessary skill and enough stones is able to build a road.
+
+Roads start in the middle of a region, and run towards any bordering region. Any region in Eressea is surrounded by six other regions, therefore any region can have up to six roads. A complete road between two regions consists of two pieces: one road from region A towards region B, and one road from region B towards region A. If you build a road from (6, 3) heading southwest, you must build a road in region (6, 2) heading northeast in order to connect the roads, and therefore connecting the two regions.
+
+Building roads requires a skill of 1, you can use 1 stone per skill level roadwork.
+
+In general, a road does not need any prerequisites. There are however, some region types which are so inhospitable, that they require special buildings before any roads can be built: in Glaciers, a tunnel, in Swamps, a dam, and in deserts, a Caravanserei.
+
+<div align="center">
+
+{|
+|+  Stone required to build roads.<br />
+ <sup>*</sup> A dam is required before roads can be constructed.<br />
+ <sup>+</sup> A caravanserei is required before roads can be constructed.<br />
+ <sup>#</sup> A tunnel is required before roads can be constructed.
+!Terrain
+!Stones Required
+|-
+|Plain
+|50
+|-
+|Forest
+|50
+|-
+|Swamp<sup>*</sup>
+|75
+|-
+|Highland
+|100
+|-
+|Desert<sup>+</sup>
+|100
+|-
+|Mountain
+|250
+|-
+|Glacier<sup>#</sup>
+|250
+|-
+|Volcano
+|250
+|}
+
+
+</div>
+== <span id="ships"></span>Ships ==
+
+Ships are constructed from wood. This table shows how much wood is needed to build a specific ship. The larger the ship, the more difficult it is to build and to maneauver. Constructing ships requires a minimum skill level. Every person in a unit who has the minimum skill level can build the ship larger by one wood per round. Thus, a unit with 25 men, each having shipcraft level 2, would be able to build a longboat in 1 turn (25 men x 2 skill levels = 50 wood used per turn to make the boat).
+
+<div align="center">
+
+{|
+|+  Building ships - materials and skills required
+!width="16%"|
+!width="16%"|Boat
+!width="16%"|Longboat
+!width="16%"|Dragonship
+!width="16%"|Caravel
+!width="16%"|Trireme
+|-
+|Wood
+|5
+|50
+|100
+|250
+|200
+|-
+|Skill
+|1
+|1
+|2
+|3
+|4
+|}
+
+
+</div>
+Ships also have numbers with which they can be referred. Here is an example of a ship:
+
+<pre>Pride of the Seven Winds (f1a8), Longboat, (254/500). This beautiful ship was
+the first one which was used by a family of merchants, the Plötzenbogens.
+Captain Grom stands on the quarterdeck and gives orders to his sailors. He has
+everything under control.</pre>
+Below the ship's entry, all units that are on board are listed (this is noted by indentation in your .nr report). The first unit, the captain, commands the ship. It decides which units are allowed to enter the ship. It can also rename the ship and it counts as a sailor.
+
+Once construction has begun, it is impossible to change. A ship that starts as a caravel cannot be changed to a longboat, etc.
+
+Units which are on board a ship are generally not able to perform any long orders. The captain of a ship can give the [[Orders Reference#MOVE|MOVE]] or [[Orders Reference#ROUTE|ROUTE]] orders to sail the ship.
+
+The Aquarians are the only race which is able to perform long orders on the ocean. Of course, some long orders such as [[Orders Reference#TAX|TAX]] or [[Orders Reference#ENTERTAIN|ENTERTAIN]] do not make any sense while on a ship in the ocean. Up to 100 aquarians per ocean region can [[Orders Reference#WORK|WORK]] on the high seas. They will earn 10 silver a turn.
+
+In the event that a ship is docked in a land region, the units on board may do long orders. If the land region is guarded by a non-allied faction, the units onboard the ship may not [[Orders Reference#TAX|TAX]], [[Orders Reference#ENTERTAIN|ENTERTAIN]], or [[Orders Reference#WORK|WORK]].
+
+Any ship which is too heavily loaded will not be able to sail. After the name and type of the ship, the extent of the cargo is shown. In the above example, 254 out of 500 weight units are currently used.
+
+All ships which are larger than a boat can only land on plains or forest regions. In all other kinds of regions (such as mountains or swamps) a harbour must be built before ships greater than a boat in size can land there. Ships can, however, cast off from any region. One can build a ship and set sail from any region.
+
+=== <span id="shipdamage"></span>Damage to Ships ===
+
+Travelling by ship is dangerous, and ships may be damaged during their voyages. This damage is indicated by a percent rating, and it reduces the capacity and speed of the ship. The time needed to sail is rounded up, making damage time consuming.
+
+The following events will damage a ship. The damage is given in percentage points, and will be added to damage the ship has already suffered. If the damage exceeds 100%, the ship will sink with all units on board.
+
+* The ship was involved in a fight which lasted longer than one round (20% damage).
+* The ship was harmed by a spell (up to 90% damage).
+* A tidal wave damages the ship (50% damage).
+* The ship hits rocks (i.e. it tried to enter a region to which it is not allowed to land at, for example, a caravel trying to land at a region that is not a forest or plain; 10% damage).
+* A ship at sea without enough sailors (30% damage per round).
+* The ship does not have an owner (5% damage per round).
+* The ship is hit by a storm and drifts off course (2% damage).
+
+To repair a damaged ship, a unit must be given the order [[Orders Reference#MAKE|MAKE SHIP &lt;ship id&gt;]]. Repairing and building ships both use the same base order.
+
+== <span id="buildings"></span>Buildings ==
+
+Several buildings in Eressea offer distinct advantages to your faction. Except for castles, all of these buildings require maintenance in some form to ensure they are functioning and will not collapse from disuse. This maintenance can take the form of silver, stone, wood, even horses, and often more than one type of item.
+
+Maintenance costs are independent of the size of the building, and must be paid at the beginning of a round between the [[Orders Reference#GIVE|GIVE command]] and the long orders. Thus a unit is not able to collect taxes first and then pay for the building's maintenance. If you do not have enough money at the beginning of a turn, the building will not work. If you have enough money at the end of the turn, the building will remain unharmed, although you have not benefited from it this turn. If you still do not have enough money, then any allied factions using the [[Orders Reference#HELP|HELP SILVER]] command may have enough silver on hand to save the building. Otherwise, it will collapse and kill some of the units inside. Maintenance costs are charged to the owner of the building, i.e. the first unit in the building.
+
+Maintenance costs have to be paid as soon as the construction has begun (except for the turn a [[Orders Reference#MAKE|MAKE]] command starts the construction of a new building).
+
+Like units on a ship, units in a building are indented beneath the building's name in your .nr report. As previously mentioned, the first unit in a building is the owner. It decides which other units may enter the building, it can name and describe the building and its faction must pay the maintenance upkeep for the building. The owner of the largest castle in a region may also rename and describe the region.
+
+Castles are different from other buildings in that they have multiple purposes, and do not require maintenance.
+
+=== <span id="castles"></span>Castles ===
+
+Castles can be build by giving a unit the [[Orders Reference#MAKE|MAKE CASTLE]] order. Only stone is required to build a castle, or enlarge an existing castle.
+
+Castles offer several benefits to the faction that controls them. The most important is that one cannot buy or sell luxury items in a region that does not have at least a size 2 castle. Furthermore, castles increase the income of peasants in the region, and also protect troops during attacks.
+
+The table below shows when a castle reaches a new size category. In general, one can say the larger the castle, the more difficult it is to enlarge. To enlarge a castle, the given minimum skill level in masonry must be met. Then one can stone can added to a castle for each person and each skill level per unit. A highly skilled unit with enough stones is able to construct a tower in one round.
+
+Like ships, castles have id numbers which are used for commands. Here is an example castle:
+
+<pre>The grand temple of the gold-eyed cat (58), Size 58, Tower; Hit by the sun's
+rays the temple which is surrounded by trees gleams white. The slender tower
+rising above the city can already be seen from a far distance. North of it the
+city Xontormia stretches to the river Whyren which is vaulted next to the
+harbour by an incredible high an long bridge.</pre>
+For every point of size, one person can be protected within the castle. These persons are the only units which will be protected by the castle during an attack. For each point of size, one stone is needed. The larger the castle, the more skilled workers you will need to enlarge it.
+
+A larger castle attracts more peasants, and improves the wealth of the people. All workers and peasants get a bonus to their income which depends on the size of the castle. In addition, the owner of the largest castle in a region receives a certain amount of money other players earn through selling luxury items in the region.
+
+<div align="center">
+
+{|
+|+  Benefits and requirements of various castle sizes.
+!Type
+!Min. Size
+!Min. Masonry Skill
+!Income Bonus
+!Trade Tax
+|-
+|Foundation
+|1
+|1
+|+0 silver
+|0%
+|-
+|Tradepost
+|2
+|1
+|+0 silver
+|6%
+|-
+|Fortification
+|10
+|2
+|+1 silver
+|12%
+|-
+|Tower
+|50
+|3
+|+2 silver
+|18%
+|-
+|Stronghold
+|250
+|4
+|+3 silver
+|24%
+|-
+|Fortress
+|1250
+|5
+|+4 silver
+|30%
+|-
+|Citadel
+|6250
+|6
+|+5 silver
+|36%
+|}
+
+
+</div>
+Production points are calculated for masonry just like for any other production skill. For each production point a unit can extend a building by one size point (one stone in the case of castles). A unit with 20 men and level 1 masonry has 20 production points. Given enough stones it could build a fortification of size 10 but not further as extending a fortification requires at least a masonry skill level of 2. Starting again from scratch and with a skill level of 2 in masonry the unit would have 40 production points which it would use to build a fortification of size 10. In the same turn it can extend this fortification as it has the required minimum skill level but the remaining 30 production points now have to be divided by the minimum skill level of 2, thus it could build a fortification of size 25 within one turn.
+
+=== Other buildings ===
+
+Other buildings can be built using the [[Orders Reference#MAKE|<code>MAKE &lt;building type&gt;</code>]] and can be enlarged by using the [[Orders Reference#MAKE|<code>MAKE &lt;building   type&gt; &lt;building id.&gt;</code>]] order. For example: <code>MAKE   lighthouse</code> or <code>MAKE smithy 3df1</code>. For each building, a different minimum skill level of masonry is needed, which is given in the tables below. There are several buildings which have an upper size limit.
+
+A building only has an effect on a unit if the unit fits entirely into the building. This means that units with too many men to fit into a building do not receive the benefit even if they are the only unit in the building.
+
+If there are several units inside a building, they will be checked from top to bottom in the order listed on your report. The first unit which is too large for the building prevents all following units (even if those '''will''' fit) from receiving the benefits of the building.
+

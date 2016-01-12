@@ -35,3 +35,8 @@ A unit or ship is overloaded when its carrying capacity is exceeded. In all situ
 |- style="background-color:#cccccc"
 |Caravel 	||N/A 	||3000
 |}
+
+== Roads ==
+
+Building roads allows units to move one additional region. On a network of roads, a unit may move up to 2 regions on foot, or 3 regions by horse. In order to take advantage of this, the unit must move continuously on completed roads.
+

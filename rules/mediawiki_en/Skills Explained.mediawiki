@@ -1,5 +1,3 @@
-= Miscellaneous details about certain skills =
-
 == Production of resources and objects ==
 
 All items and resources are made with the [[MAKE]] order. Most resources only need the appropriate region and skill level 1 to be produced. Most objects and items need higher skill levels. This table lists all resources and objects, and what skills and resources are need to produce them.

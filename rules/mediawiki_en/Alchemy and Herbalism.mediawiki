@@ -1,0 +1,230 @@
+Alchemy potions are made from herbs and can be used by any unit. Potions are made using the alchemy skill, and herbs are gathered with the herbalism skill. Learning alchemy costs 200 silver, and only three people per faction may learn this skill. Herbalism also costs 200 silver, but there is no limit to the number of people who can know this skill.
+
+Gathering herbs is essentially a kind of production, the correct order to do so is [[Orders Reference#MAKE|MAKE HERBS]]. The number of herbs found depends on skill level. In addition, only one type of herb grows in any one particular region. If one is not careful in harvesting, all the herbs in a region can be harvested, leaving none to grow back. In this case, the regional herb must be planted again using the [[Orders Reference#GROW|GROW HERBS]] command.
+
+Be careful, fresh herbs don't last forever. Herbs will rot with time.
+
+When an herbalist has reached level 7 in the herbalism skill, he or she may make an estimate of how many herbs are left in the region.
+
+Herbalism has no guarantees. Finding herbs is a long and difficult process. Even with high levels in herbalism it is possible to find only small amounts, or no herbs at all.
+
+== Potions ==
+
+Potions are made from herbs by giving the order [[Orders Reference#MAKE|MAKE &lt;name of potion&gt;]]. At least two different herbs are needed per type of potion. Every second level of skill in alchemy an alchemist reaches, he or she will learn a new recipe for a potion. The potion's level will be up to half of the new level in alchemy.
+
+Each of your alchemists may brew '''level_of_alchemy/level_of_potion''' potions of one type per turn.
+
+The herbs growing in the world of Eressea as well as a list of all (as yet) existing potions is found in the tables below. To help minimize confusion between people speaking different languages, another table lists the German and English names of all herbs and potions.
+
+Using a potion requires the order [[Orders Reference#USE|<code>USE</code>]]. Most potions give their benefits to the unit giving the order. Exceptions are potions which affect a region, then the region where the unit was at the beginning of turn is affected. Another case is the &quot;duncebuns&quot; potion: you can apply it to a certain unit with the order [[Orders Reference#USE|<code>USE &quot;duncebuns&quot;   &lt;unit-id&gt;</code>]]. The application of the potion fails if the STEALTH skill of the acting unit is less or equal to the victim's PERCEPTION+2. In this case, you get an error message and the duncebuns is not used up (thus it remains where it is).
+
+Normally a potion affects 10 people or 10 goods during the turn it is used, as mentioned in its recipe. Its effects end at the end of the turn it is used. Each turn, a unit may only use one type of potion. No two different potions may affect any one unit. However, there are exceptions, such as potions which are used automatically (like the healing potion after a battle). Multiple potions work on more than 10 people in a unit, but in any case the effect only lasts until next week. So a given unit of 50 people may use five potions of one type for all to gain its effect. However, the effects will not last until next week, nor can the effects be spread out over multiple weeks or over only certain units. A potion used on a unit of 10 people will still affect all 10 people, even if that unit is broken up into many smaller units.
+
+If a given unit consists of 12 people, normally this will not matter. The potion will work on only ten of them. The &quot;Beserker's Blood&quot; potion is an exception because during a battle the people of a unit are treated individually. If you want to use this potion make sure that '''all''' people of the unit are affected, or it will not work!
+
+{|
+|+  List of Potions
+!Level
+!Name
+!Effect
+|-
+|1
+|seven mile tea
+|10 men on foot can travel as fast as if mounted
+|-
+|1
+|goliath water
+|10 men can carry as much as 10 horses
+|-
+|1
+|water of life
+|Transforms 10 pieces of wood/mallorn into 10 young (mallorn) trees
+|-
+|1
+|potion of truth
+|Allows to reveal illusions
+|-
+|2
+|busybeer
+|Doubles the productivity of 10 men when using the <code>MAKE</code> order
+|-
+|2
+|ointment
+|Heals up to 400 hit points
+|-
+|2
+|peasant blood
+|Up to 100 demons can do without killing peasants
+|-
+|3
+|brain wax
+|Increases the chances for up to 10 men of [[Orders Reference#LEARN|learning a skill]]
+|-
+|3
+|duncebuns
+|For up to 10 men: either they lose on turn of learning, learning fails or a teacher becomes ineffective for one turn
+|-
+|3
+|potion of nest warmth
+|Allows insects to recruit men even in winter
+|-
+|3
+|horsepower potion
+|50 horses give birth to up to 4 foals
+|-
+|3
+|berserkers blood potion
+|10 men receive a +1 attack modifier in combat
+|-
+|4
+|peasant love potion
+|up to 1000 peasants in the region have a tenfold chance to reproduce
+|-
+|4
+|elixir of power
+|10 men get 5 times their normal hit points
+|-
+|4
+|healing potion
+|4 men survive otherwise lethal hits
+|}
+
+
+{|
+|+  List of Herbs
+!Herbs
+!Terrain
+|-
+|flatroot, tangy temerity, owlsgaze, spider ivy, cobalt fungus, elvendear
+|Plain/Forest
+|-
+|bugleweed, knotroot, bubblemorel
+|Swamp
+|-
+|waterfinder, peyote, sand reeker
+|Desert
+|-
+|windbag, fjord fungus, mandrake
+|Highland
+|-
+|rock weed, gapgrowth, cave lichen
+|Mountain
+|-
+|ice begonia, white hemlock, snowcrystal petal
+|Glacier
+|}
+
+{|
+|+  List of English and German Names of all potions and herbs
+!english
+!german
+|-
+|berserkers blood potion
+|Berserkerblut
+|-
+|brain wax
+|Gehirnschmalz
+|-
+|busybeer
+|Schaffenstrunk
+|-
+|duncebuns
+|Dumpfbackenbrot
+|-
+|elixier of power
+|Elixier der Macht
+|-
+|goliath water
+|Goliathwasser
+|-
+|healing potion
+|Heiltrank
+|-
+|horsepower potion
+|Pferdeglück
+|-
+|ointment
+|Wundsalbe
+|-
+|peasant blood
+|Bauernblut
+|-
+|peasant love potion
+|Bauernlieb
+|-
+|potion of nest warmth
+|Nestwärme
+|-
+|potion of truth
+|Trank der Wahrheit
+|-
+|seven mile tea
+|Siebenmeilentee
+|-
+|water of life
+|Wasser des Lebens
+|-
+|bubblemorel
+|Blasenmorchel
+|-
+|bugleweed
+|Gurgelkraut
+|-
+|cave lichen
+|Höhlenglimm
+|-
+|cobalt fungus
+|Blauer Baumringel
+|-
+|elvendear
+|Elfenlieb
+|-
+|fjord fungus
+|Fjordwuchs
+|-
+|flatroot
+|Flachwurz
+|-
+|gapgrowth
+|Spaltwachs
+|-
+|ice begonia
+|Eisblume
+|-
+|knotroot
+|Knotiger Saugwurz
+|-
+|mandrake
+|Alraune
+|-
+|owlsgaze
+|Eulenauge
+|-
+|peyote
+|Kakteenschwitz
+|-
+|rock weed
+|Steinbeißer
+|-
+|sand reeker
+|Sandfäule
+|-
+|snowcrystal petal
+|Schneekristall
+|-
+|spider ivy
+|Grüner Spinnerich
+|-
+|tangy temerity
+|Würziger Wagemut
+|-
+|waterfinder
+|Wasserfinder
+|-
+|white hemlock
+|Weißer Wüterich
+|-
+|windbag
+|Windbeutel
+|}
+

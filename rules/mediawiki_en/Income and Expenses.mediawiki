@@ -3,3 +3,157 @@ Money makes the world go round; even in Eressea. Many different ways to earn mon
 Working is more of a type of stopgap, units working will earn barely enough to feed themselves. You can make quite a lot of money with entertainment and taxation. Especially at the beginning of your ventures, trading might be the biggest source of income, profits of some thousands of silver are possible! Silver has its own weight: each 100 pieces of silver equal one unit of weight (UW). When calculating weight it is a common rule to round up; even one piece of silver can be too much.
 
 Because persons (of most [[Races|races]]) can carry 5.4 units of weight, they can carry up to 540 silver with them; when carrying 541 silver a single person is overloaded. A boat (50 UWs capacity) for example, can carry one person (10 UWs in most cases) with 4000 silver; even 4001 silver would be too much.
+
+== food, maintenance recruitment costs ==
+
+Every person of a faction and each peasant require 10 silver each turn to buy themselves the supplies needed to survive. Units of a faction help each other with silver when staying in the same region, i.e. it is basically enough if one unit has enough silver for all persons present (which can lead to catastrophes when done wrong and nobody else has any silver!). Units which move have to be suplied where they will arrive. Usually this is done by having the moving unit carry enough silver to feed itself.
+
+Without enough silver, units will suffer from hunger. Each starving unit is damaged by between 13 and 24 points of damage. Halflings are an exception: these greedy small folk suffer between 15 and 28 points of damage whenever there is nothing for dinner. If a person is damaged more than it has hitpoints, it will die. A starving unit is not able to do anything besides WORK, and it cannot give persons to other units. (Exception to that are [[Races|Demons]].) Finally, the skill levels of starving units are reduced by half (i. e. the effective level of skill is reduced by half, rounded down).
+
+Even some buildings require weekly maintenance costs in order to function and not collapse. These maintenance costs are due at the start of each turn, they must be collected the turn before and are due as soon as the construction of the building has started (so it's the same with unfinished buildings). If there is not enough money, the building will not function. If there is enough money by the end of the turn, the building will be protected from collapsing at least. More information on buildings can be found [[Buildings|here]].
+
+If you want to recruit persons, you will not need anything more than some silver, because the peasants to be recruited are often especially hungry and thirsty. For each person that is going to be recruited you must to pay them between 40 and 150 silver per person. The exact cost depends upon the faction's race, more information can be found in the [[Races|races]] chapter.
+
+If a region is guarded by a foreign faction, that has neither set HELP GUARD nor HELP ALL for your faction, you cannot recruit any new persons in that region. There is one exception to this: if your STEALTH exceeds the PERCEPTION of the guarding faction you can recruit new persons. Newly created (empty) TEMP-Units can recruit new persons if the unit issuing the MAKE TEMP command is 'invisible' to the guarding faction.
+
+You can only recruit persons of your own race! Persons from foreign races can only be admitted to human factions and they have to be given to them by other factions.
+
+== Income: work, entertainment and collecting taxes ==
+
+You can earn money by working in the agricultural sector (see the WORK order). However, the bigger the forests in a region are, the smaller the area that can be used for farming, and the smaller amount of peasants (and player units) which are able to work: for each tree, eight peasants or persons in a unit are not able to work in that region (for each young tree: 4). How many persons can work in a region (i.e. without any woods) depends on the type of region. For more information, look at the [[Orders Reference#WORK|WORK]] order.
+
+Normally, a peasant earns 11 silver each turn. This wage may be increased by a castle bonus. A fully constructed citadel raises the wage up to 16 silver for each peasant per turn. See this [[Production#CASTLES|table]] for a chart detailing the effects of castles upon local production. If, for instance, a citadel has been built in a plain and all the trees are cut down, 10000 peasants are able to supply themselves and another 6000 persons.
+
+However, the player controlled units earn less; in the end they are just unskilled workers. How much they are able to earn can be seen in the report. You can determine how much your units will earn by WORKING by looking at this table for the [[Orders Reference#WORK|WORK]] order.
+
+Armed and trained henchmen can squeeze 20 silver out of the peasants for each man and skill level of taxation. For example, 6 men with level 3 taxation can earn a total of 360 silver a turn if there is that much money left to be taxed in a region. In order to tax, the unit needs the taxation skill, weapons, and the corresponding weapon skills (i.e. melee, polearm, bow, or crossbow).
+
+Similarly, each faction can guard a region. If a unit is issued a [[Orders Reference#GUARD|GUARD]] order it will guard the region the next turn. Guarding units are instantly visible to everyone. They prevent other factions from collecting taxes. Other factions may be allowed to tax a region if the GUARDing unit has also issued a [[Orders Reference#HELP|HELP GUARD]] order to allow the specified factions to tax.
+
+If a region is being guarded by more than one faction, only the factions that received HELP GUARD from the guarding factions can collect taxes.
+
+If the number of peasants in a region is close to the maximum capacity, the silver reserves in the region are going to be needed to support and feed the peasants. This leaves no silver available to be taxed, the population is already struggling to support itself. Units may still tax, but this causes peasants to starve to death, reducing the amount of silver produced next turn. In this situation, it is extremely useful to build a castle in order to raise the efficiency and wages of the local peasants. A wage increase of only +1 (i.e. to 12 silver per peasant) would cause 2,000 peasants to earn an additional 2,000 silver for you to tax.
+
+The silver that remains after feeding and paying taxing units is then available for entertainment. Up to 5% of this remaining silver can be be earned by entertainers using the [[Orders Reference#ENTERTAIN|<code>ENTERTAIN</code>]] order. Each entertainer can earn up to 20 silver per skill level in entertainment.
+
+'''Income possibilities:'''
+
+<span id="table1"></span>
+
+{|
+|+  Food and income costs.<br />
+ For each tree, the maximum number of peasants that may work is decreased by 8, for each young tree the number is decreased by 4.
+!Region Type
+!Trees
+!Peasants
+!Wage
+!Total Income
+!Food costs
+!Taxes
+!Entertainment
+|-
+|Plain
+|200
+|3,742
+|11
+|41,162
+|37,420
+|3,742
+|187
+|-
+|Plain
+|200
+|3,742
+|14
+|52,388
+|37,420
+|14,968
+|784
+|-
+|Forest
+|818
+|3,742
+|11
+|38,016
+|37,420
+|596
+|29
+|-
+|Forest
+|818
+|3,742
+|12
+|41,472
+|37,420
+|4,052
+|202
+|}
+
+In the last example, the total income is smaller because not all the peasants can work. This is because too many trees are preventing them from growing food.
+
+The chart also does not take into consideration the peasants' savings. They will live on these savings when overpopulation strikes. The silver available for entertainment are also affected by the amount of savings the peasantry has.
+
+In your reports, these savings appear in the region's description after the amount the of peasants. This silver can be collected via taxation without any danger of starving the peasantry. However, peasants will emigrate to neighboring regions when those regions are richer.
+
+== Theft ==
+
+There is a dishonest way to earn silver as well: theft. Units which are disguised can try to steal silver from other units.
+
+If the stealth skill level of the thief is higher than the best perception skill level of target's faction in the region, the thief will steal 50 silver for each level of difference. In this case, the stolen silver comes from the whole silver pool of the target faction in that region, even if the faction doesn't have the [[OPTION|OPTION SILVERPOOL]] turned on. The faction being stolen from will receive a message, telling it that it was stolen from, but not from who.
+
+If the thief's stealth skill level is as high as the best perception skill level of the target's faction in the region, the theft fails and the target faction receives a message telling it that it was the victim of a theft attempt, but the identity of the thief was unknown. If the thief's stealth skill level is lower than the best perception skill level of the target's faction, then the target's faction will know who the thief was.
+
+== Establishing trade relations ==
+
+In every region, the peasantry produce one special luxury item. Your units may purchase this product. In all regions that do not produce this special luxury product, there is a continuously rising demand. If you are not afraid of the risks involved in long distance travelling, trading is a very lucrative method of earning silver.
+
+In order to trade, a unit needs the trade skill. For every level of trade skill, a unit can buy up to 10 luxury items or sell 10 luxury items. The better the trader is and the more traders are present, the more items can be bought and sold each turn.
+
+Furthermore, some form of castle is needed for the trade to take place. At least a tradepost size castle is required. It does not matter who controls the castle, the owner cannot directly prevent the trading from taking place. However, he can indirectly prevent trading from going on by simply attacking the trading units with his own armed units.
+
+Units can only trade from a ship if the region is not being guarded or if all of the guarding factions have set HELP GUARD to the unit's faction.
+
+The owner of the biggest castle within a region receives part of the trade profits of the region, much like customs. This silver is deducted from the earnings of every trader. If there are two castles of the same size in a region, no one will receive the customs money. The amount deducted for customs can be found in [[Production#CASTLES|this table]].
+
+This table shows the basic prices of luxury goods. The number of units of luxury goods that can be bought without raising the price is 1% of the number of peasants in the region. Every time this amount is bought (the total bought by all factions), the price rises by the basic price. A region with 2,000 peasants means 20 luxury items can be bought without raising the price. The price drops to normal the next turn because more luxury goods are produced.
+
+{|
+|+  Basic prices of luxury goods.
+!Luxury good
+!Basic price
+|-
+|Oil
+|3
+|-
+|Spices
+|5
+|-
+|Silk
+|6
+|-
+|Gems
+|7
+|-
+|Incense
+|4
+|-
+|Myrrh
+|5
+|-
+|Balm
+|4
+|}
+
+The sale price of a luxury item in a region is a multiple of the basic price, and is declared in the report of the region. As soon as 1% of the peasants has bought a certain good, the sale price drops by the basic price and rises again slowly in the following turns. Each turn, there is a 10% chance for each luxury good for its sale price to increase by its basic price. In regions with a harbour, this chance is 20%. For example, in a region with 1,000 peasants, as soon as 10 oil is sold there, the sale price of oil will drop by 3 silver (one basic price). Next turn, there is a 10% chance this sale price will rise again by 3 silver (one basic price).
+
+The sale prices of luxury items are independent of faction. Without trade agreements between players, the selling prices of luxury goods can easily be ruined.
+
+All purchases and sales of luxury goods are divided evenly amongst players. The dropping or raising of prices will affect all players who buy or sell that turn.
+
+In a region with 8,000 peasants, the sale price of incense is 4 silver, and the sale price of spices if 15 silver. 1% of the peasants in this region is 80. If all the traders in the region sell 200 spices, the first 80 units are sold for 15 silver a piece, the next 80 units are sold for 10 silver a piece (down one basic price for spices), and the last 40 spices are sold for only 5 silver a piece.
+
+If 100 incense is bought in the same region, the first 80 are bought at 4 silver a piece, and the next 20 are bought at 8 silver a piece (an increase of one basic price).
+
+The region does not lose any money when luxury items are sold to the local peasantry. The peasants create luxury goods to be sold elsewhere, replacing the silver taken out of the region. The silver does not appear of thin air, rather it is abstracted away under the guise of peasant productivity.
+
+

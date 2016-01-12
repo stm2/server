@@ -1,5 +1,3 @@
-== Factions and Units ==
-
 As a player you lead one faction in Eressea. A faction consists of up to 1000 units. These units can consist of one man, a few men or even thousands of men of the player's race. Every unit can possess as many items and as much silver as desired and learn any skill available in Eressea. Every turn you give orders to the units which they will execute to the best of their ability. You will be eliminated from the game if there are no members of your faction left, i.e. if all your units have been destroyed or dissolved, or if you have not sent any orders for three turns in a row.
 
 You start the game with a single unit consisting of one man with 4200 silver, 30 wood and 30 stones. Additionally, each race gets a small startup bonus (skills, items or other presents). Remember that to find out more about new objects you encounter in the game, you can use the [[SHOW|SHOW "item"]] command.

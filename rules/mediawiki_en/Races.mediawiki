@@ -1,8 +1,93 @@
-== The Races of Eressea ==
-
 When you start the game, you must choose one of the following races. Your faction will consist of people from this race only. A person can carry a weight of up to 5.4 stones (1 st = 14 lb), and weighs 10 st., with the exception of trolls, goblins and several monsters.
 
 Choose carefully, every race has its advantages and disadvantages, encouraging cooperation between players.
 
-# [[Profiles]]
-# [[Modifiers]]
+The following races are available to players:
+
+;Aquarians
+:The Sea-People live by the ocean and on the ocean. Ships are their primary business, and most trade and transportation in Eressea depends upon this race building and sailing them.
+
+* ''Expert Sailors:'' All ships of an aquarian faction can travel an extra region per turn.
+* ''Sea dwellers:'' Aquarians can issue long orders while on the ocean.
+* ''Fishermen:'' Up to 100 aquarians per ocean region can WORK on the high seas. They will earn 10 silver a turn.
+
+;Cats
+:Known for their enhanced senses, the cat people are excellent spies and master guards. Like elves, they do not like heavy labor.
+
+* ''Seven Lives:''' When killed, cats have a one in seven chance of surviving. By some miracle of nature, they will also be restored to full health in this event.
+* ''Silent Hunters:'' Cats cannot use Plate Mail.
+* ''Evasiveness:'' Cats receive a bonus of +1 on defense.
+
+;Demons
+:A fiery heart burns inside these volatile creatures. They instill fear in their enemies and feast on the peasant population. Most demons are feared for their cruel nature, but those who have made pacts with them can profit from their unrivaled skills.
+
+* ''Intrinsic Disguise:'' Demons can change their appearance to become that of any other race.
+* ''Infernal Hunger:'' Demons eat peasants in addition to their upkeep in silver. Ten of them can feed on one peasant per turn. If there are not enough peasants in a region to satisfy their hunger, they feed on the peasants in the order they are listed in the report. Demons, that do not find a peasant this way, starve. They can still execute long orders, though, unlike all other races. They learn at half speed and don't regenerate hitpoints while they starve.
+* ''Volatile:'' All skills with at least one skill point have a 25% chance of shifting. The skill can lose up to 3 skill levels of learning (40%), or rise up to 3 skill levels of learning (60%). No skill can ever fall below level 0.
+* ''Ethereal:'' Demons are not recruited from the peasant population. However, the normal recruitment limits still apply. Also, when a demon unit gives away men (see the GIVE 0 order) these men are not added to the peasant population of the region.
+* ''Panic:'' In combat, taking a hit from a demon causes panic in the victim. The victim receives a modifier of -1 to all combat skills.
+* ''Regeneration:'' Wounded demons regenerate 7.5% of their hitpoints per turn.
+* We '''strongly''' discourage beginners to play demons.
+
+;Dwarves
+:Their homes are the mountains, their weapons are famous, and their fortresses are known for their strength. However, they treat magic and horses with equal skepticism, and their sailing skills are among the worst in the world.
+
+* ''Efficient Miners:'' Dwarves are efficient miners. They can mine 4 pieces of iron from 3 pieces of unmined iron in a region, i.e. only 75% of the iron they mine is substracted from the iron available in a region. This effect can be combined with that of a mine, dramatically increasing the output of a mountain.
+* ''Mountain Dwellers:'' In mountains and glaciers, dwarves get a bonus of +1 to their tactics skill.
+
+;Elves
+:The magical people faery kingdom. They aren't built for heavy labor, but their archers are almost as feared as their magicians.
+
+* ''Green Thumb:'' Each elf (up to one eighth of a region's maximum working population, e.g. 1250 in a plain) increases the chance of a tree to grow a seedling by 0.002%.
+* ''Forest Dwellers:'' In forest regions, elves have a bonus of +1 to stealth and perception, and +2 to tactics.
+* ''Magicians:'' Elf factions can have an additional magician, allowing them to have a maximum of four.
+* ''Expert Archery:'' Elves cause an additional point of damage when using bows. Only elves may build elven bows.
+
+;Halflings
+:Halfings have hairy feet that are made for running. They are fine traders and excellent entertainers. Ships and horses are not their field, but their buildings try to rival those of the dwarves. In the battlefield, they are less renowned for their fighting skills than for their cunning in escaping.
+
+* ''Cunning Escape:'' When trying to flee from a battle, halflings get a bonus of 25%.
+* ''Dragonslayers:'' Halflings get a bonus of +5 on attack and damage when fighting against dragons.
+
+;Humans
+:On good standings with all other races, humans are the jacks of all trades, but masters of none. They are a good choice for solo play, but equally good at helping an ally with everything they can't do as well as a human can.
+
+* ''Immigrants:'' Human factions are the only ones who are allowed to have people of another race in their ranks. However they cannot recruit these themselves, but must get them from other factions. The number of immigrants allowed depends on the number of people in your faction. It is calculated as log10(people/50)*20. If that's Greek to you, don't worry, the current value will be in your weekly report. Immigrants are not allowed to study so-called "expensive skills", like alchemy, magic or tactics.
+
+;Goblins
+:They are petty thieves and like orcs, their strength is in numbers. They may not be the most powerful race on the word, but they might well be the most hated.
+
+* ''Master Thieves:'' Goblins stealing with a skill of at least 4 will always get at least 50 silver, even if they were discovered.
+* ''Unarmed Defense:'' Unarmed Goblins get a bonus of +2 to defense.
+* ''Overpowering:'' When their numbers are ten times those of the opponent, goblins get a bonus to attack.
+* ''Regeneration:'' A wounded Goblin will regenerate 10% of his hitpoints.
+* ''Weight and Capacity:'' Goblins weigh only 6 weight units and they can carry 4.4 weight units.
+
+;Insects
+:The insect warriors mostly live in organised hives. They hate the cold and prefer the swamps and deserts of Eressea. Their hard carapace will protect them in the battlefields, their skills and discipline make them renowned teachers.
+
+* ''Cold Blooded:'' In deserts and swamps, insects get a bonus of +1 on all skills. in mountains, all their skills are reduced by 1.
+* ''Summer Creatures:'' Insects cannot enter glaciers.
+* ''Hibernation:'' During the months of Herdfeuer, Eiswind and Schneebann, insects can only recruit in deserts.
+* ''Carapace Armor:'' Insects are protected by their natural armor. Additional armor adds 50% of its normal protection.
+* ''Tacticians:'' Insects get a bonus on tactics when appearing in strength. An insect tactician gets log10(fighters)-1 to his tactics skill.
+* ''Nomad Traders:'' Insects can trade in deserts and swamps without needing any form of building.
+* We do not recommend insects to beginners.
+
+;Orcs
+:Orcs start their life as fighters, and usually end it as fighters. Their strength is in numbers, but they lack discipline.
+
+* ''Easy Recruitees:'' For two recruited orcs only one peasant is substracted from the peasant pool of the region. Thus you can recruit twice the recuitment limit of a region. Similarly, only for every two orcs given away (see the GIVE 0 order) a peasant is added to the peasant pool of the region.
+* ''Born Fighters:'' Recruited orcs start out with some experience in all weapon skills and they excel other races in melee combat. On the other hand they are slightly handicapped when it comes to learning non-weapon skills.
+* ''Laziness:'' Orcs earn less money than other races with the WORK order.
+
+;Trolls
+:These walking boulders are among the strongest creatures of Eressea. They love to work with rocks. Horses are afraid of them, and swimming has never been known as one of the Troll's favorite pastimes.
+
+* ''Heavy Weights:'' Trolls are strong and they can lift up to 10.8 units of weight, but at 20 units, they also weigh twice as much as other races.
+* ''Foot Soldiers:'' While technically trolls can ride, there is no troll cavalry, and thus no bonus for riding in combat. In return, the enemy's cavalry only gets a +1 bonus against trolls instead of the normal +2.
+* ''Horsepower:'' Four trolls can pull a cart, although only into the next region, making them less dependent on horses.
+* ''Unarmed Combat:'' Unarmed trolls cause 2-6 points of damage.
+* ''Regeneration:'' A wounded Troll will regenerate 7.5% of his hitpoints.
+* ''Quarrying:'' Only 75% of the stones quarried by trolls are substracted from the amount of stones available in a region. This effect can be used accumulatively with a quarry.
+

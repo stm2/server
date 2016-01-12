@@ -1,5 +1,3 @@
-== Taking sides: resolving allegiances ==
-
 Use the [[ATTACK]] order to order one of your units to attack another player's units. The timing of [[ATTACK]] orders is randomly executed. During an attack, all units in the region gather and fight man to man. A battle lasts at most 5 rounds, plus a special round called the tactician's round.
 
 The attackers are all units who had the order [[ATTACK]] against one or more units of the defenders.

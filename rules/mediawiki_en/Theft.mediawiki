@@ -1,5 +1,0 @@
-There is a dishonest way to earn silver as well: theft. Units which are disguised can try to steal silver from other units.
-
-If the stealth skill level of the thief is higher than the best perception skill level of target's faction in the region, the thief will steal 50 silver for each level of difference. In this case, the stolen silver comes from the whole silver pool of the target faction in that region, even if the faction doesn't have the [[OPTION|OPTION SILVERPOOL]] turned on. The faction being stolen from will receive a message, telling it that it was stolen from, but not from who.
-
-If the thief's stealth skill level is as high as the best perception skill level of the target's faction in the region, the theft fails and the target faction receives a message telling it that it was the victim of a theft attempt, but the identity of the thief was unknown. If the thief's stealth skill level is lower than the best perception skill level of the target's faction, then the target's faction will know who the thief was.

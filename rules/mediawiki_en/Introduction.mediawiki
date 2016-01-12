@@ -13,3 +13,4 @@ Each player is the leader of one faction of people in Eressea, all of which belo
 These are the English translated rules for Eressea. They are currently under development and the English version of the game is not yet finished. There may be discrepancies between these rules and the actual game. If you spot any, please let us know immediately.
 
 In case there are any questions or helpful suggestions, please send an E-mail to [mailto:eressea-help@eressea.kn-bremen.de eressea-help@eressea.kn-bremen.de] or use [http://eressea.upb.de/mantis/ Mantis].
+

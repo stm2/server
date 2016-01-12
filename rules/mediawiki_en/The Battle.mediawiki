@@ -1,7 +1,8 @@
 A battle lasts at most 5 rounds plus a possible tactician's ambush. In every round the combatants attack in random order.
 
 Generally, units that participate in combat (these are units showing up in the list of combatants) cannot execute long orders. Exceptions are [[Ships and Piracy|battles on the ocean]] and battles in regions which are guarded by at least one units that has a [[HELP|HELP GUARD]] status or belongs to the combatant's own faction. In this case the unit can carry out further long orders.
-Formations
+
+== Formations ==
 
 In the battle there are four rows, composed of the units that are actually in the battle. For more information consult [[COMBAT]].
 
@@ -19,3 +20,4 @@ Magicians can cast spells in first and second row. If no combat spell is set the
 == Overrunning ==
 
 If a faction and its allies have more than three times more enemies at the front row, all units from second row move to front, making themselves vulnerable to close combat. If the second row is empty, the third and fourth row get drawn into combat. This is checked before every combat turn.
+

@@ -1,0 +1,284 @@
+
+== Terrains ==
+
+{|
+|+  Terrains - Size, Trees and Roads
+!Terrain
+!max. workers
+!max. trees
+!stones for a road
+|-
+|Mountain
+|1000
+|125
+|250
+|-
+|Plain
+|10000
+|1250
+|50
+|-
+|Glacier
+|100
+|13
+|250
+|-
+|Highland
+|4000
+|500
+|100
+|-
+|Swamp
+|2000
+|250
+|75
+|-
+|Desert
+|500
+|63
+|100
+|-
+|Forest
+|10000
+|1250
+|50
+|-
+|Volcano
+|500
+|63
+|250
+|}
+
+
+The column &quot;max. trees&quot; specifies the number of trees (a young tree is counted as 1/2 tree) that can fill up all the space in the region and make working impossible. Note that a region can contain more trees than the amount specified here.
+
+In glaciers, swamps and deserts, roads can only be built in combination with certain buildings.
+
+== Stealth and Perception ==
+
+{|
+|+  Stealth and Perception
+!Stealth - Perception
+!Effect
+|-
+|Stealth = Perception
+|Unit can be seen; thieves cannot steal, but target gets an anonymous message only
+|-
+|Stealth &gt; Perception
+|Unit cannot be seen; thieves are successful and stay undetected.
+|-
+|Stealth &lt; Perception
+|Unit can be seen; Thieves are unsuccessful and identified by their targets.
+|}
+
+
+{| cellpadding="3"
+|+ Buildings
+|-
+! rowspan="2" | Building
+! colspan="4" | Resource Cost
+! rowspan="2" | Skill
+! colspan="2" | Upkeep
+! rowspan="2" | Limit
+! rowspan="2" | Capacity
+|-
+! Stone
+! Wood
+! Iron
+! Silver
+! Silver
+! Resources
+|-
+| Lighthouse
+| 2
+| 1
+| 1
+| 100
+| 3
+| 100
+| -/-
+| none
+| 4 people
+|-
+| Mine
+| 5
+| 10
+| 1
+| 250
+| 4
+| 500
+| -/-
+| none
+| size
+|-
+| Quarry
+| 1
+| 5
+| 1
+| 250
+| 2
+| 250
+| -/-
+| none
+| size
+|-
+| Sawmill
+| 5
+| 5
+| 3
+| 200
+| 3
+| 250
+| -/-
+| none
+| size
+|-
+| Smithy
+| 5
+| 5
+| 2
+| 200
+| 3
+| 300
+| 1 wood
+| none
+| size
+|-
+| Stables
+| 2
+| 4
+| 1
+| 100
+| 2
+| 150
+| -/-
+| none
+| size
+|-
+| Harbour
+| 5
+| 5
+| -/-
+| 250
+| 3
+| 250
+| -/-
+| 25
+| size
+|-
+| Caravanserei
+| 1
+| 5
+| 1
+| 500
+| 2
+| 3000
+| 2 horses
+| 10
+| size
+|-
+| Academy
+| 5
+| 5
+| 1
+| 500
+| 3
+| 1000
+| -/-
+| 25
+| size
+|-
+| Mage Tower (*)
+| 5
+| 3
+| 3
+| 500
+| 5
+| 1000
+| -/-
+| 50
+| 2 people
+|-
+| Dam
+| 5
+| 10
+| 1
+| 500
+| 4
+| 1000
+| 3 wood
+| 50
+| size
+|-
+| Tunnel
+| 10
+| 5
+| 1
+| 300
+| 6
+| 100
+| 2 stone
+| 100
+| size
+|-
+| Inn
+| 4
+| 3
+| 1
+| 200
+| 2
+| 5*size
+| -/-
+| none
+| size
+|-
+| Monument
+| 1
+| 1
+| 1
+| 400
+| 4
+| none
+| -/-
+| none
+| size
+|}
+
+(*) additionally, 2 mallorn und 2 laen per point of size </center></center></div>
+
+== Close Combat Modifiers ==
+
+{|
+|+  Close combat - the modifiers are accumulative.
+!Combatant
+!Attack
+!Defense
+|-
+|Unarmed
+|-2
+|-2
+|-
+|Armed but unskilled
+|-2
+|-2
+|-
+|In castle
+| 
+|+1 ... +5
+|-
+|Rider with skill level 2<br />
+ (only in planes, deserts and<br />
+ highlands; not in castle)
+|+2
+|+2
+|-
+|Rider with lance/spear<br />
+ and riding skill level 2
+|+1
+| 
+|-
+|Spear/halberd vs. rider
+| 
+|+1
+|}
+

@@ -1,0 +1,243 @@
+Magic is a mysterious and powerful means to accomplish your ends. In combat, it can wreak tremendous havoc amongst your enemies.
+
+There are five schools of magic: Illaun, Tybied, Gwyrrd, Cerddor and Draig. Every faction has to choose among those schools of magic by using the [[Orders Reference#LEARN|<code>LEARN MAGIC &lt;school of   magic&gt;</code>]] order. Once a school has been chosen it cannot be changed. Every magician of that faction will learn their school automatically, there is no way to learn another school. It is not possible to change a faction's school of magic once any unit has learnt the magic skill.
+
+Any person with the magic skill counts as a magician and each faction may have only three of those at a time. It is possible to get rid of a magician by using the [[Orders Reference|<code>FORGET</code>]] command to remove the magic skill from a unit. Elves are an exception to the rules, they are allowed four magicians instead of the usual three. Learning the skill magic costs <code>(50 + (50 * (1 + level) * (level / 2)))</code> silver per person.
+
+{|
+|+  The power of a magician's spells increases with his level in the magic skill. The costs indicates how many pieces of silver are needed for one turn of normal learning in order to advance towards this skill level.
+|Skill level
+|1
+|2
+|3
+|4
+|5
+|6
+|7
+|8
+|...
+|19
+|20
+|-
+|Average time to learn
+|1
+|3
+|6
+|10
+|15
+|21
+|28
+|36
+|...
+|190
+|210
+|-
+|Costs
+|100
+|200
+|350
+|550
+|800
+|1100
+|1450
+|1850
+|...
+|9550
+|10550
+|}
+
+Note that these costs can depend on modifiers, e.g. inside an [[Building Types#Academy|academy]] doubles the required amount of silver.
+
+Only magicians of the same school of magic can teach each other, though. Therefore, a Draig-magician cannot teach one of the Illaun school.
+
+When a magician does not have enough silver for learning, his chances of actually learning something in that turn decrease. This effect is proportional to the amount of silver he has and the required amount listed above.
+
+With every skill level the magician gains there is a chance he learns new spells. When a unit gains a new spell, its description will appear in the report once. Store these spell description so you can look them up anytime you need them. In case you lose your spell descriptions you can request them to be appear again in your next report via the [[Orders Reference#SHOW|<code>SHOW</code>]] order (you are strongly discouraged from using this order every turn instead of storing your spells descriptions externally).
+
+A spell description looks like this:
+
+<pre>Big Bang
+
+Description:
+
+ This spell annihilates a complete island. The magician is teleported to a random region.
+
+ Type: Normal Spell
+ Components:
+   1500 Mana
+   10 permanent Mana
+   1 Dragon's head
+ Modifications: None
+ Level: 20
+ Rank: 5
+
+ Syntax:
+ CAST &quot;Big Bang&quot;</pre>
+Note: There is no such spell.
+
+== Spells ==
+
+Normal spells are cast by giving the [[Orders Reference#CAST|<code>CAST</code>]] order. <code>CAST</code> is a pseudo-long order, comparable with <code>ATTACK</code>. A unit can cast multiple spells per round but cannot execute other long orders. However, the Mana costs of subsequent spells multiply exponentially. The first spell in a turn costs the normal amount of mana in the spell description. The second spell costs twice that amount of Mana, the third costs four times the amount etc. Experience in the skill level is only gained for the first spell cast during a turn, i.e. by casting multiple spells a magician cannot improve his magic skill more quickly than other skills can be improved by applying them.
+
+Besides normal spells there are three different types of combat spells: pre-combat, combat, and post-combat. All three kinds can be used by issuing the [[Orders Reference#COMBATSPELL|<code>COMBATSPELL</code>]] order. These spells are not cast normally. The order instead gives the unit permission to use the spell in case it is attacked. Depending on the type of spell, the unit will use it before, during, or after combat. You may also specify a level to use the spell at if you wish e.g. to reduce the consumption of mana. You may also add the <code>NOT</code> suffix to the order to tell the unit to stop using a certain spell in combat.
+
+If a magician has set a pre-combat spell, and is involved in combat, he will cast the spell once before the beginning of the battle.
+
+His combat spell will be cast once every combat round provided he has sufficient mana. Combat spells are not treated as normal spells with multiplicative costs. They always cost the standard amount of mana and do not increase the costs of other spells.
+
+If the magician survives the battle and has enough mana, he may then cast his post-combat spells.
+
+Combat spells are not cast like normal spells. The magician has to take part in the battle, preferrably somewhere in the rear battle row. See the [[Orders Reference#COMBAT|<code>COMBAT</code>]] order for more details.
+
+== Mana ==
+
+Mana is the magical power that magicians use for casting magic spells. Mana is consumed by casting spells and it regenerates over time. A magician can store up to a certain amount of mana depending entirely upon his magic skill level. The rate at which the magician regenerates mana is also solely dependent upon his skill level in magic. The exact numbers may be found in your report but as a rule of thumb it is reasonable that a magician can store up to skill<sup>2</sup> mana at any one time and recover up to his skill level in mana per turn. This number may vary between zero and the actual skill level however. Magic resistant races regerate mana somewhat faster than non-magic resistant races.
+
+The maximum amount of mana is not constant. There is a spell by which one magician can transfer mana to another. The receiving magician can raise his maximum amount of mana for a turn when this spell is used. He may cast spells which cost more mana than his maximum. Surplus mana above his maximum is lost at the end of the turn.
+
+Some spells actually cost permanent mana. After casting the spell, the magician can store less overall mana. Only very potent and powerful spells that cause lasting effects cost permanent mana.
+
+== Components ==
+
+If the spell descriptions shows just a certain amount of mana below the spell the costs of the spell are constant. For example, the Big Bang spell always costs 1,500 mana. If there is a cost like &quot;3 Mana * level&quot;, the amount of mana used per casting is three times the skill level of the magician. Mostly, but not always, the level corresponds with the magic skill level of the magician. The cost of casting these spells can be reduced by casting it at a lower level than the actual skill level of the magician. See the [[Orders Reference#CAST|<code>CAST</code>]] order for more details. If [[permanent mana]] is required to cast the spell, the magician's maximum mana is reduced as well. Further components may include herbs, resources, money, potions, or even more rare items.
+
+== Modifications ==
+
+Some spells can be cast with a variable power level. This level must be lower than the magician's skill level in magic, and can even be lower than the default level of the spell. By casting a spell with a lower power level a spell can be cast to create a lesser effect and cost less mana.
+
+<pre>CAST LEVEL &lt;n&gt; &quot;&lt;spell name&gt;&quot;</pre>
+This also applies to combat spells:
+
+<pre>COMBATMAGIC LEVEL &lt;n&gt; &quot;&lt;combat spell name&gt;&quot;</pre>
+This is useful for saving mana to use on post-combat spells
+
+== Remote Spells ==
+
+Spells may be cast remotely, allowing casters to cause effects in regions other than the one they are currently residing in. To use a remote spell, use the following syntax:
+
+<pre>CAST REGION &lt;x&gt; &lt;y&gt; &quot;&lt;Spell&gt;&quot;</pre>
+In this case, the spell will affect the indicated region. However, this modification raises the costs of all components required by the spell. The material costs are multiplied with 2<sup>(distance)</sup> between the location of the caster and the target. If the magician casts several spells in a round, the costs are multiplied with 2<sup>(X-1)</sup>, where X is the number of spells. The following tables illustrate the costs:
+
+{|
+|distance (regions)
+|0
+|1
+|2
+|3
+|4
+|-
+|required components
+|1 stone / 5 iron / 10 wood
+|2 stones / 10 iron / 20 wood
+|4 stones / 20 iron / 40 wood
+|8 stones / 40 iron / 80 wood
+|16 stones / 80 iron / 160 wood
+|}
+
+<br />
+
+
+{|
+|distance (regions)
+|0
+|1
+|2
+|3
+|4
+|-
+|required mana (1. cast)
+|5 mana
+|10 mana
+|20 mana
+|40 mana
+|80 mana
+|-
+|required mana (2. cast)
+|10 mana
+|20 mana
+|40 mana
+|80 mana
+|160 mana
+|-
+|required mana (3. cast)
+|20 mana
+|40 mana
+|80 mana
+|160 mana
+|320 mana
+|}
+
+The spell's power level can also be changed for a remotely cast spell:
+
+<pre>CAST REGION &lt;x&gt; &lt;y&gt; LEVEL &lt;n&gt; &quot;&lt;spell name&gt;&quot;</pre>
+Note: It is very important to specify the region before the level of the spell.
+
+Besides remote spells there are two other special types of spells. As a rule of thumb, spells cannot be cast on ships that are sailing. The only exceptions are ship-spells. Furthermore, sea-spells can be cast on sea by non-aquarian magicians.
+
+== Rank ==
+
+The order in which spells take effect is based upon the spell's rank. During a turn spells are cast in order of increasing rank. Rank 1 is the lowest (and fastest), while rank 9 is the highest (and slowest). Most spells have a standard rank of 5, while anti-magic spells almost always have a rank of 2. Spells of the same rank are cast in the same order indicated by the orders
+
+== Example: ==
+
+There are three spells, named &quot;A&quot;, &quot;B&quot;, and &quot;C&quot;.<br />
+ A has rank 5 and costs 10 mana.<br />
+ B has rank 2 and costs 20 mana.<br />
+ C has rank 5 and costs 5 mana.<br />
+<br />
+ Assume that a magician has the orders:
+
+<pre>CAST &quot;C&quot;
+CAST &quot;B&quot;
+CAST &quot;A&quot;</pre>
+First B is cast because that spell has rank 2. It is the first spell of the magicians in this turn, and therefore costs the normal 20 mana. Then spell C is cast because it is first in the orders, and has the same rank as spell A. C is the second spell of the turn, and costs double (5 * 2^1 = 10) mana. Lastly, A is cast. Since A is the third spell of the turn, A costs quadruple mana (10 * 2^2 = 40).
+
+== Spell failure: fizzles ==
+
+There are intrinsic risks to using magic. Many spells have hidden risks and may backfire. A spell can simply fail even if all the components are present and the caster has sufficient mana.
+
+This is not a bug - you receive a typical message in your report (&quot;The spell failed.&quot;). Any missing components or mana will also be mentioned. Remember that spells are not failsafe; any spell has a chance of failing.
+
+The probability of a fizzle depends on many factors, such as the skill level of the caster, the power level of the spell, the target, the location, etc. Be warned: fizzles can have very unpleasant side effects!
+
+== Magic Resistance ==
+
+The magic resistance of a unit is each persons inherent ability to resist spells directed against him. The most common effect of magic resistance is reduced damage from combat spells against a unit. The magic resistance of a unit is basically equal to the natural magic resistance of the unit's race. Magic resistance against a spell is also influenced by the unit's experience. The bonus to resistance depends upon the unit's highest skill level, and is compared to the magician's magic skill level. The basic chance of success is approximately 50% if the magician and the target both have equal skill levels.
+
+In combat, magic resistance is also affected by certain weapons and armor, most notably Laen shields or Laen mail. Otherwise, only natural racial magic resistance and experience can protect a unit from a magical assault on the battlefield.
+
+Even inanimate objects like ships, buildings or even regions have a small innate magic resistance.
+
+== Mage towers ==
+
+[[Building Types#Magetower|Mage towers]] increase the mana regeneration of a magician by +50% and increase the effective power level of each spell by 1 in addition to the modifiers incurred by a ring of power without increasing the mana costs. Additionally, the probabiliy of a [[#fizzles|spell failure]] is greatly reduced.
+
+== Familiars ==
+
+Note to first-time readers: If you are a new player, it's safe to skip this section of the manual. Familiars are high-level magic and won't be important for you until sometime later in the game.
+
+During their travel, seasoned magicians will occasionally befriend an extraordinary creature of an unusual species that will join them.
+
+The empathic bond with their familiars makes it possible for magicians to channel spells through them. Spells cast in this way affect the region the familiar is in, and do not to be remote spells. There are a few restrictions to channeling a spell through the familiar. To channel a spell through the familiar, give the [[Orders Reference#CAST|CAST]] order to the familiar instead of the magician. The level of the spell may not be larger than the magic skill level of the familiar or half the skill of the magician. The cost of the spell is doubled.
+
+Very few familiars are given the gift of spellcasting, but all of them can serve as a medium to their masters. This is why they have no mana of their own -- whenever a magician casts a spell through the medium he only uses his own mana. Those few familiars that are skilled in magic are able to learn spells, and these spells can even differ from those of their masters.
+
+Many familiars are able to learn certain skills or have additional special abilities. The familiar gives a bonus on every talent to the magician (except magic) in which the familiar is proficient. The magician can get a description of these abilites using the [[Orders Reference#SHOW|SHOW &lt;race&gt;]] command.
+
+== Astral space ==
+
+Note: You can skip this section if you are reading the manual for the first time because it takes lots of weeks before your faction is able to travel into astral space.
+
+There are about as many opinions about the origins of this phenomenon as there are names for it: some scholars call it the world of spirits, some the astral planes, but most commonly it's called 'astral space'.
+
+Only magic can bend reality in such a way that people can cross over into this other plane, where the laws of nature seem to be mere guidelines, easily ignored. While people and equipment can be sent, horses, carts, catapults and other large objects cannot be taken across. In astral space, the senses are clouded, vision is fogged, noises are dull and dampened.
+
+When you enter astral space, you disappear entirely from the material world. This may be the reason why in astral space, it is still possible to use magic. By blurring the barriers between the two planes, it is possible to gain certain advantages -- this could be the perception of things on the other side without being seen, or a fast journey over large distances. Travel in astral space is swift and distances seem shorter.
+
+But beware that astral space is a dangerous place. There are terrible beasts which cannot be slain by usual weapons, and which mercilessly steal their victims' will and memories. Only those that have powerful magical weapons at their command or able to hide from these abominations will be safe from the horrors of astral space.
+
+== A request to the players ==
+
+We ask all the players to keep the spells as much of a secret as possible. Talking amongst your allies about your faction's powers is all right. We suggest that you keep your spells' exact abilities secret, in order to make you more valuable to your allies. In this manner, they will never know for sure when you are needed, or not needed, and the alliance will be more secure. Please do not create web pages with all the spell descriptions or send information through the mailing lists. We feel that part of the enjoyment from Eressea is learning about new spells through discovery. We know that we cannot control everyone, and we hope there is enough integrity in Eressea that we can rely upon this soft rule to be voluntarily obeyed. Thank you.
+
+

@@ -1,9 +1,0 @@
-<tt>BANNER "text"</tt>
-
-Use this order to change the description of your faction. It will be shown to all players that see at least one of your units in their report, and you should use it to give your real name, alternate email Addresses or information about holiday leave.
-
-Example:
-
-    BANNER "On vacation. My backup until June 7th, 2001 is Henning, faroul@gmx.de"
-
-[[Category:Orders]]

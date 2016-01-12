@@ -1,0 +1,256 @@
+== <span id="tables"></span>Tables ==
+
+{|
+|+  Weapon damages from on foot or on horseback, bonuses/penalties to attack/defense, and skills used.
+!Weapon
+!Damage (foot)
+!Damage (horse)
+!OB
+!DB
+!Skill Used
+|-
+|Catapult
+|(3d10+5) x 6
+|(3d10+5) x 6
+|0
+|0
+|Catapult
+|-
+|Crossbow
+|3d3+5
+|3d3+5
+|0
+|0
+|Crossbow
+|-
+|Mallorn Crossbow
+|3d3+6
+|3d3+6
+|0
+|0
+|Crossbow
+|-
+|Bow
+|1d11+1
+|1d11+1
+|0
+|0
+|Bow
+|-
+|Mallorn Bow
+|1d11+2
+|1d11+2
+|0
+|0
+|Bow
+|-
+|Elven Bow
+|2d6+4
+|2d6+4
+|0
+|0
+|Bow
+|-
+|Spear
+|1d10
+|1d12+2
+|0
+|0
+|Polearm
+|-
+|Mallorn Spear
+|1d10+1
+|1d12+3
+|0
+|0
+|Polearm
+|-
+|Halberd
+|2d6+3
+|2d6+3
+|-1
+|+2
+|Polearm
+|-
+|Lance
+|1d5
+|2d6+5
+|0
+|-2
+|Polearm
+|-
+|Mallorn Lance
+|1d5+1
+|2d6+6
+|0
+|-2
+|Polearm
+|-
+|Sword
+|1d9+2
+|1d9+2
+|0
+|0
+|Melee
+|-
+|Claymore
+|2d8+3
+|2d8+3
+|-1
+|-2
+|Melee
+|-
+|Axe
+|2d6+4
+|2d6+4
+|+1
+|-2
+|Melee
+|-
+|Laensword
+|3d6+10
+|3d6+10
+|+1
+|+1
+|Melee
+|-
+|Unarmed
+|1d5
+|1d6
+|0
+|0
+|N/A
+|}
+
+* d stands for dice. The number after d is the amount of sides the dice have, the number before d the amount of dice rolled.<br />
+ For example: 2d10+5 equals rolling 2 10-sided dice, then adding 5 to the sum. 2d10+5 will give results between 7 (2 times 1, plus 5) and 25 (2 times 10, plus 5).
+* Damage (from on foot) and Damage (from on horse) indicate how much damage that particular weapon does, either from on foot, or mounted. It does not matter whether the target is mounted or on foot, the damage inflicted solely depends upon whether the wielder is on foot or on a horse. Note that the difference in weapon skill level will add or subtract from the damage dealt.
+* OB and DB are the offensive and defensive bonus. The OB is applied whenever a unit attacks (either initiated the attack, or it is counter- attacking). The DB is applied whenever a unit tries to parry. Axes are better at attacking, while halberds are better at defending.
+
+<span id="endurance"></span>
+
+{|
+|+  Hit Points gained from the endurace skill<br />
+ The formula is <code>((skill level / 2) ^ 1.5) * 20%</code>
+!Endurance skill level
+!1
+!2
+!3
+!4
+!...
+!10
+!...
+!15
+|-
+|Bonus Hit Points
+|+7%
+|+20%
+|+37%
+|+56%
+|...
+|+220%
+|...
+|+410%
+|}
+
+<span id="table4"></span>
+
+{|
+!Armor Name
+!Protection
+!Chance to be hit in combat
+|-
+|Laenmail
+|6
+|100% normal
+|-
+|Platemail
+|5
+|130% normal
+|-
+|Chainmail
+|3
+|115% normal
+|-
+|Laenshield
+|2
+|75% normal
+|-
+|Shield
+|1
+|85% normal
+|}
+
+* A man can use only one suit of armor, therefore multiple suits of armor do not provide additional protection. Units can use shields together with armor. Again, a man can only use one shield at a time.
+* Platemail subtracts 5 points of damage per hit, but increases the chance to be hit by 30%. A shield subtracts 1 point of damage and reduces the chance to be hit by 15%. Natural armor only half counts if you wear armor. So a race with 2 natural armor can get an armor value of 9 (6 from Laenmail, 2 from a Laenshield, and 1 from half their natural armor) or 7 (5 from Platemail, 1 from a Shield, and 1 from half their natural armor).
+
+<blockquote>A soldier attacks an unarmed man and has a 60% chance to hit him. If the defender wears chainmail the chance is increased to 69% (60% x 115% = 69%). However, the defender would take 3 less damage per hit. If the defender has a shield instead, the chance of him being hit is reduced to 51% (60% x 85% = 51%). The defender would then take only 1 less damage per hit. With a Laenshield, the chance to be hit is reduced to 45% (60% x 75% = 45%), and the defender would take 2 less damage per hit. Armor and shields are cumulative. With chainmail and a shield, the chance of being hit is 58.65% (60% x 115% x 85% = 58.65%). The defense value is always rounded down.</blockquote>
+<span id="table5"></span>
+
+{|
+|+  Hit Points, Resist Magic, and Natural Armor of all races.
+!Race
+!Hitpoints
+!Resist Magic
+!Natural Armor
+|-
+|Humans
+|20
+|0%
+|0
+|-
+|Aquarians
+|20
+|0%
+|0
+|-
+|Dwarves
+|24
+|5%
+|0
+|-
+|Orcs
+|24
+|-5%
+|0
+|-
+|Elves
+|18
+|10%
+|0
+|-
+|Halflings
+|18
+|5%
+|0
+|-
+|Goblins
+|16
+|-5%
+|0
+|-
+|Trolls
+|30
+|10%
+|1
+|-
+|Demons
+|50
+|15%
+|2
+|-
+|Insects
+|24
+|5%
+|2
+|-
+|Cats
+|20
+|0%
+|0
+|}
+
+Magic resistance indicates what percentage of magic damage is substracted. A negative number means this percentage of damage is instead added to the total.
+
+Natural armor reduces the damage from successful hits. Only half of natural armor is added if armor is worn.
+

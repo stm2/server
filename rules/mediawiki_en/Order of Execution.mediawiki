@@ -1,0 +1,61 @@
+The orders of Eressea are executed in a fixed order. Orders which have the same number below are executed at the same time.
+
+Some orders are first gathered together from all units in the region before being executed. These orders are <code>WORK</code>, <code>ENTERTAIN</code>, <code>TAX</code>, <code>RECRUIT</code>, <code>BUY</code>, <code>SELL</code> and the flavours of <code>MAKE</code> affecting resources . Resources are stone, iron, Laen, wood, Mallorn, herbs and horses. <code>MAKE CASTLE</code> or <code>MAKE   SHIP</code> are executed immediately.
+
+This is to treat all factions evenly instead of giving all resources to the faction that happens to be the first.
+
+ 
+
+# new default orders are set
+# <code>GROUP</code>, <code>MAKE TEMP</code>
+# <code>NAME</code>, <code>DESCRIBE</code>, <code>GUARD NOT</code>, <code>HELP</code>, <code>COMBAT</code>, <code>COMBATSPELL</code>, <code>HIDE</code>, <code>ORIGIN</code>, <code>SHOW</code>
+# <code>BANNER</code>, <code>EMAIL</code>, <code>SCHOOL</code>, <code>OPTION</code>, <code>PASSWORD</code>
+# <code>MESSAGE</code>
+# <code>CLAIM</code>
+# <code>USE</code>
+# <code>ENTER</code>, <code>CONTACT</code>; 1st attempt
+# <code>LEAVE</code>
+# Contacts are removed, then <code>ATTACK</code>
+# <code>RESERVE</code>
+# <code>SIEGE</code>
+# <code>ENTER</code>, <code>CONTACT</code>; 2nd attempt
+# <code>FOLLOW</code> is set
+# <code>GIVE</code>, <code>FORGET</code>, <code>DESTROY</code>
+# <code>RECRUIT</code>, executed on a per-person basis
+# Maintenance costs for buildings are accounted. If they cannot be raised, the building has no effect for that turn.
+# <code>RESTART</code>, <code>QUIT</code>, <code>CAST</code>
+# <code>TEACH</code>
+# <code>LEARN</code>
+# <code>WORK</code>, <code>STEAL</code>, <code>BUY</code>, <code>SELL</code>, <code>MAKE</code>, <code>SABOTAGE</code>, <code>SPY</code>, <code>TAX</code>, <code>ENTERTAIN</code>, <code>GROW</code>, <code>PLANT</code>
+# At this point some orders are executed step by step, e.g. the gathering of resources:
+## gathering of resources (piece by piece)
+## entertainment (piece by piece)
+## work (piece by piece)
+## taxation (in portions of 10 pieces of silver)
+## buy (piece by piece)
+## sell (piece by piece)
+## steal (piece by piece)
+# Ships with a too small crew suffer damage
+# <code>ENTER</code>, <code>CONTACT</code>; 3rd attempt
+# <code>MOVE</code> and <code>ROUTE</code>, including <code>RIDE</code> and <code>TRANSPORT</code> are executed, and units order to follow other units do so
+# <code>GUARD</code> if the unit did not move
+# Ships at sea drift off
+# <code>DEFAULT</code>
+# empty units are removed
+# Peasants, horses and trees grow if possible; the remaining peasants move into other regions
+# costs of food supplies for units are collected
+# maintenance cost for buildings are collected; if the maintenance cannot be afforded, the building can collapse.
+# <code>SORT</code>
+# <code>PROMOTION</code>
+# <code>NUMBER</code>
+
+Your orders do not have to reflect this order of execution. It is perfectly legal to submit these orders:
+
+<pre>    GIVE TEMP 5 300 silver
+    MAKE TEMP 5
+        RECRUIT 1
+        COMBAT NOT
+        LEARN forestry
+    END</pre>
+First, a new unit is created which is ordered not the participate in combat. It receives 300 pieces of silver, recruits 1 man and learns forestry, even though this line up of Eressea orders contradicts their actual order of execution.
+

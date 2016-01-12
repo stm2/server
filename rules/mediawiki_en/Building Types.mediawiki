@@ -1,0 +1,403 @@
+The following is a listing of the types of buildings, their build costs, and what they do for you.
+
+==== <span id="lighthouse"></span>Lighthouse ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|2 stones, 1 wood, 1 iron, 100 silver
+|-
+|Skill required:
+|3
+|-
+|Maintenance per turn:
+|100 silver
+|-
+|Maximum size:
+|None
+|-
+|Capacity:
+|4 persons
+|}
+
+
+</div>
+* Beginning from size 10, a lighthouse reduces the possibility that a ship drifts off. This effect extends log<sub>10</sub>(size of the lighthouse)+1 regions around the building.
+* Beginning from size 10, a lighthouse grants the persons inside reports of all oceans in an area of log<sub>10</sub>(size of the lighthouse)+1 around the building. In order to receive these reports, the unit's perception skill level must be equal or greater than <code>distance     x 3</code>. Therefore you will only get a report of an ocean which is 3 regions away if your unit has at least perception at level 9 and your lighthouse is at least of size 100.
+
+==== <span id="mine"></span>Mine ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|5 stones, 10 wood, 1 iron, 250 silver
+|-
+|Skill required:
+|4
+|-
+|Maintenance per turn:
+|500 silver
+|-
+|Maximum size:
+|None
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* Only half of the iron which is produced by units inside a mine is substracted from the ore in the region. This effect is cumulative to special advantages of certain races.
+* Units inside a mine get +1 on their mining skill.
+* To produce laen you must be inside a mine.
+
+<blockquote>10 dwarfs produce 40 iron in a region. Due to the special ability of the dwarfs the supply of the region is only reduced by 30 iron.<br />
+ If the dwarfs are inside a mine, the supply will be reduced by 15.<br />
+ If there are only 7 iron left in the region, the dwarfs can only produce 9 iron without the help of being in a mine or 18 iron if they are in a mine.</blockquote>
+==== <span id="quarry"></span>Quarry ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|1 stone, 5 wood, 1 iron, 250 silver
+|-
+|Skill required:
+|2
+|-
+|Maintenance per turn:
+|250 silver
+|-
+|Maximum size:
+|None
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* Only half of the stones which are produced by units inside a quarry is deducted from the supply of the region. This effect is cumulative to special advantages of certain races.
+* Units inside a quarry get +1 on their quarrying skill.
+
+<blockquote>10 trolls produce 40 stones in a region. Due to the special ability of the trolls the supply of the region is only reduced by 30 stones.<br />
+ If the trolls are inside a quarry, the supply will be reduced by 15.<br />
+ If there are only 7 stones left in the region, the trolls can only produce 9 stones without the help of being in a quarry or 18 stones if they are in a quarry.</blockquote>
+==== <span id="sawmill"></span>Sawmill ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|5 stones, 5 wood, 3 iron, 200 silver
+|-
+|Skill required:
+|3
+|-
+|Maintenance per turn:
+|250 silver
+|-
+|Maximum size:
+|None
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* Only half of the wood which is produced by units inside a sawmill is substracted from the supply in the region.
+* Units inside a sawmill get a +1 modifier to their forestry skill.
+
+==== <span id="smithy"></span>Smithy ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|5 stones, 5 wood, 2 iron, 200 silver
+|-
+|Skill required:
+|3
+|-
+|Maintenance per turn:
+|300 silver, 1 wood
+|-
+|Maximum size:
+|None
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* Units inside a smithy only need half the normal amount of iron to make iron weapons and armour. Laen is not saved in a smithy.
+* Units inside a smithy receive a +1 modifier to their weaponsmithing and armoursmithing skills.
+
+==== <span id="stable"></span>Stable ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|2 stones, 4 wood, 1 iron, 100 silver
+|-
+|Skill required:
+|2
+|-
+|Maintenance per turn:
+|150 silver
+|-
+|Maximum size:
+|None
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* Units inside a stable can produce horses by using the order GROW HORSE. For this the unit needs the skill taming and at least 2 horses.
+* A man inside a stable has a percent chance to breed a horse equal to his taming skill. In addition, he is allowed multiple attempts, also equal to his taming skill. For example, a man with level 5 taming skill has 5 attempts of 5% each to breed a horse.
+* Per breeding attempt the breeder needs to own one horse. If there are not enough horses available, the additonal attempts are lost.
+
+==== <span id="harbour"></span>Harbour ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|5 stones, 5 wood, 250 silver
+|-
+|Total cost:
+|125 stones, 125 wood, 6250 silver
+|-
+|Skill required:
+|3
+|-
+|Maintenance per turn:
+|250 silver
+|-
+|Maximum size:
+|25
+|-
+|Capacity:
+|persons according to size, unlimited ships
+|}
+
+
+</div>
+* A harbour allows ships which are larger than a boat to land in regions which are not plains or forests.
+* The owner of the harbour receives 10% of all the money which is earned through trade in addition to the possible income through castles.
+* The owner also receives (2*Trade)% of all luxury items which are on board of incoming ships. If the unit which carries the goods is camouflaged on a higher level than the harbour master's perception level is, no goods will be received due to successful smuggling. This also applies if he is allied with the captain.
+* In a region with a harbour, the prices of goods will increase with a probability of 20% instead of the normal 10% (without a harbour).
+* A region with a harbour may used as a canal, that means a ship in the harbour may cast off in every direction where an ocean is. It is neccessary that the owner of the harbour has set HELP GUARD or is a member of the same faction.
+* A harbour will only work if it is completely built. There can be only one harbour per region. The one who finishes a harbour first is the owner. The incomplete harbour can be destroyed with the DESTROY order.
+
+==== <span id="academy"></span>Academy ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|5 stones, 5 wood, 1 iron, 500 silver
+|-
+|Total cost:
+|125 stones, 125 wood, 25 iron, 12500 silver
+|-
+|Skill required:
+|3
+|-
+|Maintenance per turn:
+|1000 silver
+|-
+|Maximum size:
+|25
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* Units studying in an academy get a 33% chance to make a second attempt to learn a skill, or a 66% chance when studying with a teacher.
+* Teachers also get a chance of learning. On average, this way of learning takes them three times as long as normal learning when teaching the maximum amount of pupils; with less pupils the effect decreases. For this to work, both teachers and pupils have to be inside the same academy.
+* Learning in an academy costs 50 silver per person for skills which can be normally learned without any costs and the double amount of silver for skills which cost something to learn them.
+* An academy will only work if it is completely built.
+
+==== <span id="magetower"></span>Mage Tower ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|5 stones, 3 wood, 2 Mallorn, 3 iron, 2 Laen, 500 silver
+|-
+|Total cost:
+|250 stones, 150 wood, 100 Mallorn, 150 iron, 100 Laen,<br />
+ 25000 silver
+|-
+|Skill required:
+|5
+|-
+|Maintenance per turn:
+|1000 silver
+|-
+|Maximum size:
+|50
+|-
+|Capacity:
+|2 persons
+|}
+
+
+</div>
+* Inside a mage tower, a mage regenerates 50% more mana than he usually does.
+* The power of every spell casted inside a mage tower is increased as if the spell was cast one level higher.
+* Casting errors or mistakes occur less often for any mage casting inside a mage tower.
+* A mage tower will only work if it is completely built.
+
+==== <span id="caravanserei"></span>Caravanserei ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|1 stone, 5 wood, 1 iron, 500 silver
+|-
+|Total cost:
+|10 stones, 50 wood, 10 iron, 5000 silver
+|-
+|Skill required:
+|2
+|-
+|Maintenance per turn:
+|3000 silver, 2 Horses
+|-
+|Maximum size:
+|10
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* A caravanserei allows you to build roads in deserts. If the caravanserei is destroyed, half of the roads will also be destroyed.
+* A caravanserei doubles the possible volume of trade. Its owner gets a part of the profit as per the [[Production#CASTLES|castle rules]].
+* A caravanserei will only work if it is completely built.
+
+==== <span id="dam"></span>Dam ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|5 stones, 10 wood, 1 iron, 500 silver
+|-
+|Total cost:
+|250 stones, 500 wood, 50 iron, 25000 silver
+|-
+|Skill required:
+|4
+|-
+|Maintenance per turn:
+|1000 silver, 3 wood
+|-
+|Maximum size:
+|50
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* A dam allows you to build roads in swamps. If the dam is destroyed, half of the roads will also be destroyed.
+* A dam will only work if it is completely built.
+
+==== <span id="tunnel"></span>Tunnel ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|10 stones, 5 wood, 1 iron, 300 silver
+|-
+|Total cost:
+|1000 stones, 500 wood, 100 iron, 30000 silver
+|-
+|Skill required:
+|6
+|-
+|Maintenance per turn:
+|100 silver, 2 stones
+|-
+|Maximum size:
+|100
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* A tunnel allows you to build roads in glaciers. If the tunnel is destroyed, half of the roads will also be destroyed.
+* A tunnel will only work if it is completely built.
+
+==== <span id="inn"></span>Inn ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|4 stone, 3 wood, 1 iron, 200 silver
+|-
+|Skill required:
+|2
+|-
+|Maintenance per turn:
+|5 silver per point of size
+|-
+|Maximum size:
+|None
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* Units inside an inn regenerate their hit points 50% faster than normal.
+* All persons inside an Inn need 14 silver per round to live instead of the normal 10 silver per round.
+
+==== <span id="monument"></span>Monument ====
+
+<div align="center">
+
+{|
+|Costs per point of size:
+|1 stone, 1 wood, 1 iron, 400 silver
+|-
+|Skill required:
+|4
+|-
+|Maintenance per turn:
+|None
+|-
+|Maximum size:
+|None
+|-
+|Capacity:
+|according to size
+|}
+
+
+</div>
+* The name and the description of the monument can only be entered once. This can never be changed again.
+* The monument has no in-game functionality.
+* A monument without anyone inside it will fall down by 10% of total size (but at least by 1 point of size) per round.
+

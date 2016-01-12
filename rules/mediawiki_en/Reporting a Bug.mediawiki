@@ -1,5 +1,3 @@
-== How to report a bug ==
-
 If you encounter a bug, no matter how serious it may seem, please report it. But first, read the manual again. Many of the reported "bugs" stem from simple misunderstandings. Check if there were any recent announcements about the kind of bug you reported. Don't report known bugs. If you can, please ask experienced players if what you see is really a bug. If you find out it is, or if you're really, really sure, send it to the developers, together with a good bug report.
 
 A good bug report should include:

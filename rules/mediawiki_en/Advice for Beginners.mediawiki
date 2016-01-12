@@ -6,7 +6,7 @@ There have been several occasions in the past when careless players lost their f
 
 While there are many players that play Eressea simply for the strategic aspects, the majority does a good deal of socializing and roleplaying. Try adding some atmosphere to the world, or at least don't break the atmosphere intentionally. Names like "Cyborg Elves" are out of place in Eressea.
 
-== How to Get Gelp ==
+== How to Get Help ==
 
 If you have problems when writing your first orders or if you don't understand why something happened, you can be helped. E-mails to [mailto:eressea-help@eressea.kn-bremen.de eressea-help@eressea.kn-bremen.de] are answered by a team of volunteers. Almost everyone makes a mistake in the beginning. Even experienced players have lost half their resources in an initial blunder and recovered. Don't be discouraged if something goes wrong.
 
@@ -62,3 +62,4 @@ If a unit receives a long order, this order will become its persistent default o
 == How to make short orders persistent using @ ==
 
 Sometimes giving the same short order continuously makes sense even for short orders. A weaponsmith might want to always give the swords he made to another unit using a [[GIVE]] order. This can be achieved by prefixing the order with a @ character. The order [[GIVE|@GIVE trsp 100 sword]] for example would become a persistent order that reappears in your order template every week.
+

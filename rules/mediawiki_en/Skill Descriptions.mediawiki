@@ -1,0 +1,120 @@
+Here you find short descriptions of all skills that a unit can learn in the the world of Eressea. For detailed information about how to learn and utilise skills, see the [[skills.html|skills chapter]].
+
+; <span id="Alchemy"></span>Alchemy
+: For producing potions from herbs. Learning this skill requires 200 pieces of silver per turn.
+; <span id="Armoursmithing"></span>Armoursmithing
+: For making armour from iron or laen.
+; <span id="Bow"></span>Bow
+: For utilising bows and for [[#taxation|taxation]].
+; Cartmaking
+: For making carts and catapults from wood.
+; Catapult
+: For utilising catapults. Cannot be used for [[#taxation|taxation]].
+; Crossbow
+: For utilising crossbows and for [[#taxation|taxation]].
+; Endurance
+: Makes a unit more resistant to physical damage in combat or due to lack of food.
+; Entertainment
+: For earning silver by entertaining peasants.
+; Espionage
+: For spying on other units to learn e.g. about their skills. Learning this skill requires 100 pieces of silver per turn.
+; Forestry
+: For making wood or mallorn from a region's trees.
+; Herbalism
+: For picking herbs to make potions, for growing herbs, and for planting seeds.
+; Magic
+: For casting magic spells. Learning this skill requires an [[magic.html#magiccosts|amount of silver]] that depends on the skill level.
+; Masonry
+: For making buildings from various resources.
+; Melee
+: For utilising swords, claymores, and axes and for [[#taxation|taxation]].
+; Mining
+: For making iron and laen from a region's natural resources.
+; Perception
+: For detecting hidden units or to prevent thievery.
+; Polearm
+: For utilising spears, lances, and halberds and for [[#taxation|taxation]].
+; Quarrying
+: For making stones from a region's natural resources.
+; Riding
+: For increasing a unit's movement speed and for beneficial combat modifiers.
+; Roadwork
+: For making roads from stones.
+; Sailing
+: For sailing ships on sea.
+; Shipcraft
+: For making ships from wood.
+; Stealth
+: For hiding from other units, stealing from them or eluding a siege.
+; Tactics
+: For gaining an additional round in combat by surprising the enemy. Learning this skills requires 200 pieces of silver per turn.
+; Taming
+: For taming horses to ride them.
+; Taxation
+: For earning silver by taxing peasants. Taxation also requires that a unit can master a weapon.
+; Trade
+: For earning silver by trading luxury items.
+; Weaponsmithing
+: For making weapons from wood, iron, mallorn or laen.
+
+= Description of Skills =
+
+Here you find short descriptions of all skills that a unit can learn in the the world of Eressea. For detailed information about how to learn and utilise skills, see the [[skills.html|skills chapter]].
+
+; <span id="Alchemy"></span>Alchemy
+: For producing potions from herbs. Learning this skill requires 200 pieces of silver per turn.
+; <span id="Armoursmithing"></span>Armoursmithing
+: For making armour from iron or laen.
+; <span id="Bow"></span>Bow
+: For utilising bows and for [[#taxation|taxation]].
+; Cartmaking
+: For making carts and catapults from wood.
+; Catapult
+: For utilising catapults. Cannot be used for [[#taxation|taxation]].
+; Crossbow
+: For utilising crossbows and for [[#taxation|taxation]].
+; Endurance
+: Makes a unit more resistant to physical damage in combat or due to lack of food.
+; Entertainment
+: For earning silver by entertaining peasants.
+; Espionage
+: For spying on other units to learn e.g. about their skills. Learning this skill requires 100 pieces of silver per turn.
+; Forestry
+: For making wood or mallorn from a region's trees.
+; Herbalism
+: For picking herbs to make potions, for growing herbs, and for planting seeds.
+; Magic
+: For casting magic spells. Learning this skill requires an [[magic.html#magiccosts|amount of silver]] that depends on the skill level.
+; Masonry
+: For making buildings from various resources.
+; Melee
+: For utilising swords, claymores, and axes and for [[#taxation|taxation]].
+; Mining
+: For making iron and laen from a region's natural resources.
+; Perception
+: For detecting hidden units or to prevent thievery.
+; Polearm
+: For utilising spears, lances, and halberds and for [[#taxation|taxation]].
+; Quarrying
+: For making stones from a region's natural resources.
+; Riding
+: For increasing a unit's movement speed and for beneficial combat modifiers.
+; Roadwork
+: For making roads from stones.
+; Sailing
+: For sailing ships on sea.
+; Shipcraft
+: For making ships from wood.
+; Stealth
+: For hiding from other units, stealing from them or eluding a siege.
+; Tactics
+: For gaining an additional round in combat by surprising the enemy. Learning this skills requires 200 pieces of silver per turn.
+; Taming
+: For taming horses to ride them.
+; Taxation
+: For earning silver by taxing peasants. Taxation also requires that a unit can master a weapon.
+; Trade
+: For earning silver by trading luxury items.
+; Weaponsmithing
+: For making weapons from wood, iron, mallorn or laen.
+

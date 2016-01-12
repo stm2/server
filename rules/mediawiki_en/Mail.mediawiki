@@ -1,0 +1,94 @@
+= Mail =
+
+== <span id="addresses"></span>Useful Addresses ==
+
+If you have any questions regarding the game, you can ask the good folks at [mailto:eressea-help@eressea.kn-bremen.de?subject=Frage eressea-help@eressea.kn-bremen.de] for help. These are players helping us out with the support work, and they are extremely knowledgeable and quick to respond.
+
+All automated Mail goes to the eressea-server@eressea.kn-bremen.de address. There are a couple of operations that you can trigger by using the right subject in your emails:
+
+<div align="center">
+
+
+
+</div>
+<div align="center">
+
+
+
+</div>
+== Sending in orders ==
+
+To send in orders, use the subject [mailto:eressea-server@eressea.kn-bremen.de?subject=ERESSEA%20ORDERS ERESSEA ORDERS] in your mail, and put the orders in the body of your email.
+
+== Requesting your password ==
+
+If you've forgotten your password, simply send an email to the server with the subject [mailto:eressea-server@eressea.kn-bremen.de?subject=ERESSEA%20PASSWORD%20faction ERESSEA PASSWORD faction]<br />
+ and your password will be sent to the address that your report is usually sent to. <span id="INDEX-Report_nachfordern"></span>
+
+== Requesting the report manually ==
+
+If for whatever reasons you have not received or have lost your report, or want to retrieve it from another address, send an email to the server with the subject [mailto:eressea-server@eressea.kn-bremen.de?subject=ERESSEA%20REPORT%20faction%20%22password%22 ERESSEA REPORT faction &quot;password&quot;] (filling in your own faction and password of course), and your report will be sent to the address that the request came from.<br />
+
+
+== Mailing lists ==
+
+There are two mailing lists which are hosted by Google.
+
+; '''<code>Eressea-RPG</code>'''
+: Under http://groups.google.com/group/eressea-rpg is the Eressea-'''R'''ole'''P'''lay'''G'''ame list. This is a strictly in-character list, where the faction leaders debate, though mostly in German.
+; '''<code>Eressea-Client</code>'''
+: Under http://groups.google.com/group/eressea-client are discussions about miscellaneous client software and how to write your own.
+
+If you want to participate, you can register there. You must use the address which is used for registration to write and send articles.
+
+An additional list is '''<code>eressea-announce-en</code>''' where you can only read but not write. You need not to register for this list. As long as you are playing Eressea, you will automatically be subscribed to this list with the email address of your faction. Mail sent this list contains information about the game, rule changes and other GM announcements.
+
+If you want to chat with other Eressea players, you can do so on the IRC channel <code>#eressea</code> (on IRCnet), or ask questions about the rules on the channel <code>#e-help</code>. To connect, you can use software such as xchat, mIRC or ChatZilla.
+
+= Mail =
+
+== <span id="addresses"></span>Useful Addresses ==
+
+If you have any questions regarding the game, you can ask the good folks at [mailto:eressea-help@eressea.kn-bremen.de?subject=Frage eressea-help@eressea.kn-bremen.de] for help. These are players helping us out with the support work, and they are extremely knowledgeable and quick to respond.
+
+All automated Mail goes to the eressea-server@eressea.kn-bremen.de address. There are a couple of operations that you can trigger by using the right subject in your emails:
+
+<div align="center">
+
+
+
+</div>
+<div align="center">
+
+
+
+</div>
+== Sending in orders ==
+
+To send in orders, use the subject [mailto:eressea-server@eressea.kn-bremen.de?subject=ERESSEA%20ORDERS ERESSEA ORDERS] in your mail, and put the orders in the body of your email.
+
+== Requesting your password ==
+
+If you've forgotten your password, simply send an email to the server with the subject [mailto:eressea-server@eressea.kn-bremen.de?subject=ERESSEA%20PASSWORD%20faction ERESSEA PASSWORD faction]<br />
+ and your password will be sent to the address that your report is usually sent to. <span id="INDEX-Report_nachfordern"></span>
+
+== Requesting the report manually ==
+
+If for whatever reasons you have not received or have lost your report, or want to retrieve it from another address, send an email to the server with the subject [mailto:eressea-server@eressea.kn-bremen.de?subject=ERESSEA%20REPORT%20faction%20%22password%22 ERESSEA REPORT faction &quot;password&quot;] (filling in your own faction and password of course), and your report will be sent to the address that the request came from.<br />
+
+
+== Mailing lists ==
+
+There are two mailing lists which are hosted by Google.
+
+; '''<code>Eressea-RPG</code>'''
+: Under http://groups.google.com/group/eressea-rpg is the Eressea-'''R'''ole'''P'''lay'''G'''ame list. This is a strictly in-character list, where the faction leaders debate, though mostly in German.
+; '''<code>Eressea-Client</code>'''
+: Under http://groups.google.com/group/eressea-client are discussions about miscellaneous client software and how to write your own.
+
+If you want to participate, you can register there. You must use the address which is used for registration to write and send articles.
+
+An additional list is '''<code>eressea-announce-en</code>''' where you can only read but not write. You need not to register for this list. As long as you are playing Eressea, you will automatically be subscribed to this list with the email address of your faction. Mail sent this list contains information about the game, rule changes and other GM announcements.
+
+If you want to chat with other Eressea players, you can do so on the IRC channel <code>#eressea</code> (on IRCnet), or ask questions about the rules on the channel <code>#e-help</code>. To connect, you can use software such as xchat, mIRC or ChatZilla.
+

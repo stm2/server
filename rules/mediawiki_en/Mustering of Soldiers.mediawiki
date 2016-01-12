@@ -1,0 +1,153 @@
+Now the units arm themselves. Every person in every unit picks one melee and one missile weapon as well as a piece of armor they are able to use. Weapons are preferred in order of the sum of the attack and defense skill of the unit with this weapon. Magicians with a combat spell set use their spell. For defending they need a weapon (and the skill) otherwise they are unarmed.
+
+'''Attention:''' unused weapons and armor are not given to units which are not armed.
+
+During combat, weapons are not exchanged unless a person in the unit with a better set of weapon dies. The surviving fighters always use the best available sets of weapons.
+
+Archers who find themselves moved to the front rows must use a melee weapon (and have an appropriate skill of at least one), or they will defend themselves like unarmed units.
+
+== The tactician's ambush ==
+
+At the beginning of the battle the faction with the best tactician gets an extra round to attack. A tactician, who fights in the front row, gets a +1 bonus to his tactics-skill. If he stands in the 3rd or 4th row his tactics skill will be reduced by 1. If both sides have equally skilled tacticians, both sides can attack.
+
+Every tactician gets a bonus which starts at 0 and can get very high, although the probability of getting an extreme high bonus is relatively low.
+
+== Heroes ==
+
+Heroes are great fighters. To make a unit to heroes, use the [[PROMOTION]] command.
+
+Unlike normal fighters heroes get 10 attacks per combat round.
+
+Attention:That does not work for magical attacks, crossbows and catapults.
+
+For more details check [[PROMOTION|here]].
+
+== Melee Combat ==
+
+Individual fighters face each other according to these rules:
+
+* If both fighters are on the same skill-level the attacker has the base to-hit probability (BP) of 30%.
+* Add/substract bonuses: Some weapons have attack or defense [[#tables|modifiers]]. Missile weapons may have an extra [[#table1|penalty]] to hit, reflecting the difficulty of using these weapons. There are also some other influences, check [[#modifiers|here]].
+* If it's a ranged attack the modified skill level of the defender is halved.
+* The difference of the two skill levels is added to the BP, shifting the to-hit probability by 5% per skill-level difference.<br />
+ BP = ((weaponskill(attacker) + modifiers(attacker)) - (weaponskill(defender) + modifiers(defender)))*5% + 30%.
+* To determine whether the attacker hit, a random number between 0 and 99 is calculated and added to his BP. If the result is greater than 100%, a hit is dealt. If the result is greater than 90% (critical hit), yet another random number between 0 and 99 is added. Thus there is a chance to hit a far better (may be because of skill, may be because of modifiers) opponent.
+
+Every person attacks once per combat round (except heroes).
+
+A hit causes damage depending on the weapon used. Different weapons cause different amounts of damage. It's always helpful to have a high weapon skill level, per two points skill-level-difference between attacker and defender one point is added to the damage. Only the weapon skill levels of the weapons actually used are considered and modifiers e.g. based on horse-back combat do not affect the damage dealt. This applies to both ranged and close combat. For weapon statistics check [[#tables|here]].
+
+If a fighter receives more damage than his current hit points, he dies. The damage taken in a battle is cumulative.
+
+If a fighter wears armor, the protection value of the armor is substracted from the damage of every hit. It is possible to use up to one piece of armor and one shield together. However, armor (but not shields) usually slightly increase the chances that a fighter will be successfully hit in combat. Shields provide less protection, but also slightly reduce the chance a fighter will be successfully struck in combat (check [[#table4|here]]). The effect of armor against crossbows is halved (rounded down).
+
+Lastly, the skill [[#endurance|<code>ENDURANCE</code>]] gives units extra hit points.
+
+<span id="missile"></span>
+
+== Ranged combat ==
+
+Missile weapons and catapults are best used from the second row. There they are screened by the close combat fighters.
+
+On average 67% of people using missile weapons target fighters in the front row, while the other 33% pick a random target from the first two rows.
+
+Crossbows are armor-piercing: The effect of armor against crossbows is halved (rounded down).
+
+[[#table1|This table]] shows the differences between the missile weapons. It is very hard to use a bow, but you can use it every round. Crossbows are much easier to handle but you can use them only every third round. Every catapult fires randomly in one of the 5 first combat rounds, doing heavy damage.
+
+To dodge any missile attack, units defend themselves with only half their skill. Units in the first row defend themselves with their full skill, if the ranged fighter stands in the first row.
+
+'''Attention:''' If a fighter has to defend against a close-combat attack, he has to use a close-combat weapon. If he doesn't have one or lacks the required skill for the weapon he fights [[#modifiers|unarmed]].
+
+Catapults require ammunition. Ammunition is made by units having the quarrying skill. Skill level 3 is required to create one salvo worth of ammunition, enough to fire 6 shots.
+
+All attacks with a missile weapon are penalized by the value in the penalty column of the table.
+
+<span id="table1"></span>
+
+{|
+|+  Missile combat - Ranged penalty to hit and reload times.<br />
+ <sup>*</sup> Units inside a castle get the normal defensive bonus against ranged weapons.
+!Weapon
+!Skill
+!Hit Penalty<sup>*</sup>
+!Reload Time
+|-
+|Crossbow
+|crossbow
+|0
+|2
+|-
+|Catapult
+|catapult
+|4
+|5
+|-
+|bow/elven bow
+|bow
+|2
+|0
+|}
+
+The reload time indicates how many rounds it takes to reload the weapon. Therefore a catapult can be used once in combat. Crossbows fire every third round and bows every round.
+
+<span id="modifiers"></span>
+
+== Bonuses and penalties ==
+
+Various factors affect the chances of succesfully hitting an opponent:
+
+# <span style="font-weight: bold;">unarmed or wrong weapon skill:</span> Unarmed units fight with a skill level of -2 while Orcs with a skill level equal to their highest weapon skill -3. Fighters with weapons but no appropriate skills also fight with skill level -2.
+# <span style="font-weight: bold;">castle bonus:</span> Units in castles get a bonus to defense. This bonus depends on the size of the castle. The different buildings give a bonus from +1 to +5. If units attack from inside the castle they don't get this bonus. The bonus also applies if attacked with missile weapons.
+# <span style="font-weight: bold;">horse bonus:</span> In plains, deserts, and highlands units in the first row can use horses. To ride a horse in battle you need at least a RIDING skill level of 2. Mounted units get a +2 bonus for attack and defense because they are faster and more agile. A unit that is attacked and profits from a castle bonus does not get the horse bonus. Trolls cannot use horses in combat.
+# <span style="font-weight: bold;">lance/spear bonus:</span> mounted lance and spear wielders get another +1 bonus to attack. This is in addition to the standard +1 OB bonus lances (but not spears) give when attacking.
+# <span style="font-weight: bold;">halberd bonus:</span> spear and halberd fighters without horse get a +1 bonus to defense against mounted units. This is in addition to the standard +2 DB bonus halberds always give when defending.
+
+Examples:
+
+Base to-hit probability: 30%<br />
+ Attacker with skill level 3, defender skill level 4 -&gt; BP=25%<br />
+ Defender is inside a citadel -&gt; +5 -&gt; BP=0%<br />
+ The attacker has only a chance of 10% to score a critical hit (above 90%) and therefore receive another roll of the dice. The attacker then has a 90% chance of rolling the remaining needed 10%. This means that the attacker has an overall 9% chance of successfully striking a defender in a Citadel (10% x 90% = 9%). Obviously, Citadels provide excellent defense assuming one does not leave them to attack.
+
+Base to-hit probability: 30%<br />
+ This time the defender is outside the citadel:<br />
+ Attacker with skill level 3, defender skill level 4 -&gt; BP=25%<br />
+ If the attacker has RIDING of at least 2 and uses a horse, he receives a horse bonus of +2 to his attack skill level -&gt; BP=35%
+
+A swordsman with MELEE 3 attacks a horseman with RIDING 1 and POLEARM 2. -&gt; BP=35%<br />
+ The swordsman receives his weapon skill level (MELEE 3) as a bonus to hit, but receives the horseman's weapon skill level (POLEARM 2) as a penalty to hit. The horseman does not receive a +2 horse bonus to defense because his RIDING skill is too low.
+
+An archer with BOW 9 attacks from the 2nd row against a horseman using a lance with RIDING 3 and POLEARM 9. The Archer receives a total attack bonus of +7 (+9 for BOW 9, and -2 for using a bow). The horseman defends at +5 (his defender skill is halved: weapon skill 9; +2 for being mounted -&gt; (9+2)/2=5). BP=(7-5)*5%+30%=40%
+
+A horseman using a lance with RIDING 3 and POLEARM 9 attacks an archer with BOW 9.
+
+* The horseman receives a total attack bonus of +12 (+9 for his POLEARM 9, +2 for using a horse with RIDING of at least 2, and +1 for using a spear or lance while mounted). The archer defends at -2 because the archer does not have a close combat weapon. BP=100%<br />
+ The horseman will hit the archer with every attack.
+* The horseman defends at +11 (9 for his polearm-skill, +2 for being mounted), because the archer stands in the first row. The Archer receives a total attack bonus of +7 (+9 for BOW 9, and -2 for using a bow). The archer attacks with +7 a horseman with +11. BP=(7-11)*5%+30%=10%
+
+A spearman with POLEARM 3 inside a castle attacks a horseman with RIDING 2 and POLEARM 3. The spearman's total attack bonus is +3 (+3 for POLEARM 3, he does not receive the halberd bonus or the castle bonus because he attackes). The horseman's total defense bonus is +5 (+3 for POLEARM 3, +2 horse bonus, no lance bonus because he is defending). BP=(3-5)*5%+30%=20%
+
+A horseman with RIDING 2 and MELEE 2 attacks a spearman holding a halberd with POLEARM 3. The horseman attacks with a +4 attack bonus (+2 skill level, +2 horse bonus) against the spearman's +6 defense bonus (+3 skill level, +2 halberd DB, and a further +1 halberd bonus against mounted units). BP=20%
+
+A spearman holding a halberd with POLEARM 3 attacks a horseman with RIDING 2 and MELEE 2. The spearman attacks with a +2 bonus (+3 from POLEARM 3, -1 for using a halberd to attack. There is no halberd bonus against a mounted unit because the spearman attacked). The horseman defends with a +4 defense bonus (+2 for MELEE 2, and +2 for riding a horse with at least RIDING 2). BP=20%
+
+A horseman with RIDING 2, POLEARM 3 and a lance attacks another horseman with same skill levels. The attacking horseman attacks with a +6 attack bonus (+3 for POLEARM 3, +2 for riding a horse with at least RIDING 2, and +1 for attacking with a lance/spear while mounted). The defending horseman has a defense bonuse of +5 (+3 for POLEARM 3, and +2 for riding a horse with at least RIDING 2). BP=35%
+
+<span id="escape"></span>
+
+== Escaping ==
+
+Men trying to escape will attempt to do so every round, and may take damage before they successfully escape.
+
+Men with [[orders.html#COMBAT|COMBAT FLEE]] will try to flee if they are [[orders.html#ATTACK|ATTACK]]ed.<br />
+ Men with [[orders.html#COMBAT|COMBAT NOT]] or [[orders.html#COMBAT|COMBAT DEFENSIVE]] will try to flee if they fall below 90% of their total hit points.<br />
+ Men with [[orders.html#COMBAT|COMBAT]] or [[orders.html#COMBAT|COMBAT REAR]] will try to flee if they fall below 20% of their total hit points.<br />
+ Men with [[orders.html#COMBAT|COMBAT AGGRESSIVE]] will never flee.
+
+The basic chance to flee is 25% (50% for halflings) plus 10% if one has a horse and 5% for each level in stealth, but its capped at 75% (90% for halflings).
+
+Units that flee retreat from battle and watch its outcome from a safe distance. If during a fight at least one person is fleeing from a unit, then the entire unit leaves the building they were standing in.
+
+All units with STATUS FLEE are allowed to move after the battle, even if they aren't allowed to execute long orders. Units with STATUS FLEE cannot guard the region. If a unit with this status is currently guarding a region, it will stop doing so from this week on.
+

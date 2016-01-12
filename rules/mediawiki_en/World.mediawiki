@@ -8,9 +8,7 @@ The world of Eressea consists of many islands and continents with entirely diffe
 
 Rahel still regarded the map, which was actually secret, when Selen pointed her finger on an island at the margin of the map. "Look at this, Rahel. There is an island that was just sketched in. Do you understand the way our mapmakers work?"
 
-
-http://www.eressea.de/rules/de/pics/Karte.gif
-
+[[Bild:Karte-Beispiel.png]]
 
 
 ::''The novice contemplated the map. Appearently it was confined to the essential, the discovered districts where only roughly classified. Rahel recognised forrests and mountains, many swamps and some plains.''
