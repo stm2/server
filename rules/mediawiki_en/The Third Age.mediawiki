@@ -682,11 +682,11 @@ Riding above level 8 does not give any additional bonus.
 
 == Economy and Morale ==
 
-# Peasants in every region have an initial morale of 2.</li>
-# When a region loses its' owner, morale falls to 0. If the region owner faction changes by GIVE COMMAND, moral only drops by 2 points. Additionally, the peasants will declare the following turn a week of mourning, during which they will only do necessary work (earn 10 silver) and will not pay taxes to the new owner. This means that in case of a region given freely the new owner may receive taxes in the week of handover, and the morale of the peasants will be prefixed with &quot;mourning&quot;. In the ''next'' week the new owner does not receive any taxes.</li>
-# For every few (less than 10 ''on average'') under the same ownership, a region's morale rises by 1 point up to a maximum of 10.</li>
-# Regions owned by halflings have a higher effect on the peasants' morale.</li>
-# A region's taxes are a percentage of the peasants' wealth equal to the region's morale (divided by 2) or the size of the biggest castle or watch, whichever is smaller.</li>
+# Peasants in every region have an initial morale of 2.
+# When a region loses its' owner, morale falls to 0. If the region owner faction changes by GIVE COMMAND, moral only drops by 2 points. Additionally, the peasants will declare the following turn a week of mourning, during which they will only do necessary work (earn 10 silver) and will not pay taxes to the new owner. This means that in case of a region given freely the new owner may receive taxes in the week of handover, and the morale of the peasants will be prefixed with &quot;mourning&quot;. In the ''next'' week the new owner does not receive any taxes.
+# For every few (less than 10 ''on average'') under the same ownership, a region's morale rises by 1 point up to a maximum of 10.
+# Regions owned by halflings have a higher effect on the peasants' morale.
+# A region's taxes are a percentage of the peasants' wealth equal to the region's morale (divided by 2) or the size of the biggest castle or watch, whichever is smaller.
 # Morale in the NR has the following meaning:
 0 = rebellious
 1 = mad?
@@ -698,16 +698,16 @@ Riding above level 8 does not give any additional bonus.
 7 = happy
 8 = loyal
 9 = devoted
-10 = subservient</li>
+10 = subservient
 # A new building, the market, replaces trade and herbalism.
-#With a market, factions can receive herbs and luxury goods produced in the region and its 6 adjacent regions.</li>
-# Each region can only have one market per faction (further markets are ignored).</li>
-# Markets need to have a size of 10, with each size-step costing 1 wood and 1 stone. You need masonry 3 to build a market.</li>
-# Market upkeep is 200 silver/turn.</li>
-# Except for upkeep on the market there is no cost to trade.</li>
-# Markets only allow buying, not selling of goods.</li></ol>
-# Herbs and Luxury items are used as spell ingredients.</li>
-# Herbs do not rot.</li></ol>
+#With a market, factions can receive herbs and luxury goods produced in the region and its 6 adjacent regions.
+# Each region can only have one market per faction (further markets are ignored).
+# Markets need to have a size of 10, with each size-step costing 1 wood and 1 stone. You need masonry 3 to build a market.
+# Market upkeep is 200 silver/turn.
+# Except for upkeep on the market there is no cost to trade.
+# Markets only allow buying, not selling of goods.
+# Herbs and Luxury items are used as spell ingredients.
+# Herbs do not rot.
 
 
 == Ships ==

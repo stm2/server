@@ -7,7 +7,7 @@ This chapter explains all the possible orders that you can give to your units. W
 Long orders are marked with an &lt;L&gt;.
 
 ; ATTACK unit-id &lt;L*&gt;
-: This will cause the unit to attack the specified other unit. You must specify a separate <tt>ATTACK</tt> order for every unit you want to attack. A unit that has set its [#COMBAT combat behaviour] to <tt>FLEE</tt> or <tt>NOT</tt> cannot attack.
+: This will cause the unit to attack the specified other unit. You must specify a separate <tt>ATTACK</tt> order for every unit you want to attack. A unit that has set its [[#COMBAT|combat behaviour]] to <tt>FLEE</tt> or <tt>NOT</tt> cannot attack.
 This order is only considered long if the battle takes more than one round. Otherwise, an additional long order can be executed.
 The ATTACK order is a pseudo-long order. You can issue more than one ATTACK order, but an ATTACK order prevents the execution of other long orders if a battle actually takes place. Note, that for this purpose a unit is only participating in battle if on the average all persons of this unit have attacked or defended at least once during the battle. Thus, if one side defeats the other and not all persons of a unit attacked an enemy or defended against an enemy attack, the unit can execute another long order. This evaluation is done unit by unit. It is recommended to add another long order to be executed after very short battles. Do not count on its execution and do not include any results of these orders (silver, products, etc.) into your plans.
 ; BANNER "text"
@@ -17,9 +17,9 @@ Example:
      BANNER "On vacation. My backup until June 7th, 2001 is Henning, faroul@gmx.de"
 ; BUY amount luxury-item  &lt;L*&gt;
 : Given this order a unit tries to buy the specified amount of the specified luxury item. The unit needs to be skilled in trading, the luxury item needs to be for sale and there has to be a trading post or larger castle in the region. The unit can acquire 10 luxury items per person and trading skill level. For more information see the chapter on [income.html#trade trade].
-<tt>BUY</tt> and [#SELL <tt>SELL</tt>] are pseudo-long orders, i.e. a unit can carry out any number of <tt>BUY</tt> and <tt>SELL</tt> orders in the same turn but no other long order. Note that the limitation of 10 luxury items per person and trading skill level applies to all <tt>BUY</tt> and <tt>SELL</tt> orders of a unit in total.
+<tt>BUY</tt> and [[#SELL|<tt>SELL</tt>]] are pseudo-long orders, i.e. a unit can carry out any number of <tt>BUY</tt> and <tt>SELL</tt> orders in the same turn but no other long order. Note that the limitation of 10 luxury items per person and trading skill level applies to all <tt>BUY</tt> and <tt>SELL</tt> orders of a unit in total.
 ; CARRY unit-id
-: With this order you can give other units a ride. The carried units have to issue the [#RIDE <tt>RIDE</tt>] order for the carrier. One <tt>CARRY</tt> order is required for each unit to be transported.
+: With this order you can give other units a ride. The carried units have to issue the [[#RIDE|<tt>RIDE</tt>]] order for the carrier. One <tt>CARRY</tt> order is required for each unit to be transported.
  
      ERESSEA 125 "FooBar"
          UNIT 311
@@ -35,21 +35,42 @@ Every unit in your faction can claim items from the faction pool, but it is not 
 The faction pool is only used by the game master to give special items to players without giving them to a specific unit. You will not have to worry about it (or the CLAIM order) much.
 NB: Do not mistake the faction pool for the item pool!
 ; CAST [parameter] "spell" [parameter]  &lt;L*&gt;
-: This will make the unit cast a spell. The exact syntax of each spell can be found in the spell description and in the [magic.html chapter on magic]. To get the description of a spell use the [#SHOW <tt>SHOW</tt>] order and it will appear again in your report.
-This order cannot be used to cast combat spells. See the [#COMBATSPELL COMBATSPELL] order in this chapter for more details on how to use magic in battles.
+: This will make the unit cast a spell. The exact syntax of each spell can be found in the spell description and in the [magic.html chapter on magic]. To get the description of a spell use the [[#SHOW|<tt>SHOW</tt>]] order and it will appear again in your report.
+This order cannot be used to cast combat spells. See the [[#COMBATSPELL|COMBATSPELL]] order in this chapter for more details on how to use magic in battles.
 While <tt>CAST</tt> is technically a long order, you may issue multiple <tt>CAST</tt> orders in one week.
 Usually, new spells are obtained by reaching a new skill level in magic.
-; COMBAT<br /> COMBAT AGGRESSIVE<br /> COMBAT NOT<br /> COMBAT REAR<br /> COMBAT DEFENSIVE<br /> COMBAT FLEE<br /> COMBAT HELP [NOT]
-: This order determines a unit's behaviour in [combat.html combat].
+
+<!-- TODO do other orders like this (or even on own pages) -->
+=== COMBAT ===
+
+ COMBAT
+ COMBAT AGGRESSIVE
+ COMBAT NOT
+ COMBAT REAR
+ COMBAT DEFENSIVE
+ COMBAT FLEE
+ COMBAT HELP [NOT]
+
+This order determines a unit's behaviour in [combat.html combat].
+
 <tt>COMBAT AGGRESSIVE</tt><nowiki>: In combat, the unit will take the front and it will fight to the death. This is a reasonable setting for cannon fodder.</nowiki>
+
 <tt>COMBAT</tt><nowiki>: In combat, the unit will take the front row. It will try to flee from the battle field when it is severely wounded (less than 20% of its hit points left). It's a good idea to set this for 'valuable' front row fighters like well-trained swordsmen.</nowiki>
+
 <tt>COMBAT REAR</tt><nowiki>: The unit will take a second row position in combat. It will try to flee from the battle field when it is severely wounded (less than 20% of its hit points left). After the front row is shattered, the units of the second row engage in close combat. You might want to give this order to your bowmen.</nowiki>
+
 <tt>COMBAT DEFENSIVE</tt><nowiki>: This status is identical to </nowiki><tt>COMBAT REAR</tt> except the unit tries to flee after it is slightly wounded (less than 90% of its hit points left). A sensible order for magicians.
+
 <tt>COMBAT NOT</tt><nowiki>: The unit takes part in combat only if it is directly attacked by an enemy unit. The unit tries to flee from the battle field as soon as it gets slightly wounded (less than 90% of its hit points left). This would be a reasonable status for craftsmen and units with advanced stealth skills.</nowiki>
+
 <tt>COMBAT FLEE</tt><nowiki>: Units given this order try to escape from battle field when they would be drawn into combat. For every unit the basic chance of a successful flight is 25% (Halflings: 50%). Another 10% are added for a horse and 5% for each level of the unit's stealth skill. Yet, the best possible chance of escape is 75% (Halflings: 90%).</nowiki>
+
 <tt>COMBAT HELP</tt><nowiki>: The </nowiki><tt>COMBAT HELP NOT</tt> order prevents a fighting unit from involving other units (of your own or allied factions) in the combat. If a unit with this combat status is attacked, no other allied unit participates in the combat - as long as no other unit without this combat status gets attacked. Also see the [HELP <tt>HELP</tt>] order.
+
 Note that you can set only one of the <tt>COMBAT</tt>, <tt>COMBAT AGGRESSIVE</tt>, <tt>REAR</tt>, <tt>DEFENSIVE</tt>, <tt>NOT</tt>, or <tt>FLEE</tt> status but at the same time set <tt>COMBAT HELP</tt> or <tt>COMBAT HELP NOT</tt> for a unit.
+
 For more details, also see the chapters on [combat.html combat] and [alliances.html alliances].
+
 ; COMBATSPELL [LEVEL n] "spell" [NOT]
 : The specified spell is - depending on the spell type - set as normal, pre- or post-combat spell. Optionally, a casting level can be set, e.g. to keep some aura for a post-combat spell. When magicians get involved in a battle they cast their combat spells automatically.
 Note that not all spells can be used as combat spells. The spell description tells you the nature of a spell. To retrieve the spell description, use the [SHOW <tt>SHOW</tt>] order.
@@ -67,20 +88,20 @@ Example:
          CONTACT 311 ; payment is allowed.
 ; DEFAULT "order"
 : This order allows you to specify an order for the following turn(s). It is displayed in your next orders template as the default order.
-Caution! The standard default order will be overwritten by that! Thus, you can even assign [#MOVE <tt>MOVE</tt>] as a default order.
+Caution! The standard default order will be overwritten by that! Thus, you can even assign [[#MOVE|<tt>MOVE</tt>]] as a default order.
 ; DESCRIBE UNIT "text"<br /> DESCRIBE BUILDING "text"<br /> DESCRIBE SHIP "text"<br /> DESCRIBE REGION "text"<br /> DESCRIBE PRIVATE "text"
 : Changes the description of the specified object. A description is displayed behind the object and can contain up to 400 characters. Objects do not receive a description automatically.
-For ships, buildings and regions there are the same rules as for [#NAME <tt>NAME</tt>]<nowiki>: Buildings and ships can only be described by the unit owning them (the first unit under the object in your report). A region can only be described by the lord of the biggest castle in that region.</nowiki>
+For ships, buildings and regions there are the same rules as for [[#NAME|<tt>NAME</tt>]]<nowiki>: Buildings and ships can only be described by the unit owning them (the first unit under the object in your report). A region can only be described by the lord of the biggest castle in that region.</nowiki>
 <tt>DESCRIBE PRIVATE</tt> allows you give a unit a "private" description that is visible to the unit's owner only.
 ; DESTROY [size]<br /> DESTROY [size] ROAD direction
 : A unit owning a ship or building can reduce its size or destroy it completely anytime. There ist no skill needed for doing so. The size parameter determines the amount by which a building is torn down or the percentage by which a ship is damaged. Note that ships can only be disassembled or sunk in a region next to an ocean; a crew would never sink their own ship out on the ocean.
-Streets can be demolished via <tt>DESTROY [size] ROAD direction</tt>. When other factions [#GUARD guard] the region, their [#HELP <tt>HELP GUARD</tt>] status has to be set for your faction. Furhtermore, the unit executing the <tt>DESTROY</tt> order has to be skilled in roadwork. You may decrease the street's size by one per Skill point.
+Streets can be demolished via <tt>DESTROY [size] ROAD direction</tt>. When other factions [[#GUARD|guard]] the region, their [[#HELP|<tt>HELP GUARD</tt>]] status has to be set for your faction. Furhtermore, the unit executing the <tt>DESTROY</tt> order has to be skilled in roadwork. You may decrease the street's size by one per Skill point.
 A unit may destroy only one structure (building, street or ship) per week.
 ; EMAIL e-mail-adress
 : Sets the e-mail address your report will be sent to. Your e-mail address has to be specified 'as is'.
 Correct: EMAIL eressea@beyond.kn-bremen.de<br /> Wrong: EMAIL "email: eressea@beyond.kn-bremen.de"<br /> Wrong: EMAIL "Henning Peters &lt;eressea@beyond.kn-bremen.de&gt; "
 ; END
-: This terminates the order-block of a temporary unit created by [#MAKE <tt>MAKE TEMP</tt>].
+: This terminates the order-block of a temporary unit created by [[#MAKE|<tt>MAKE TEMP</tt>]].
 Example:
  
      MAKE TEMP 1
@@ -89,12 +110,12 @@ Example:
          LEARN magic
      END
 ; ENTER CASTLE building-id<br /> ENTER SHIP ship-id
-: Enter the given building or ship (you have to use <tt>ENTER CASTLE</tt> for all buildings even if you want to enter a port for example). If the owner of the building or ship does not belong to your own or an allied faction, it has to issue the [#CONTACT <tt>CONTACT</tt>] order in the same turn.
-A unit on a ship or in a building [#LEAVE leaves] it automatically when ordered to <tt>ENTER</tt> another one.
+: Enter the given building or ship (you have to use <tt>ENTER CASTLE</tt> for all buildings even if you want to enter a port for example). If the owner of the building or ship does not belong to your own or an allied faction, it has to issue the [[#CONTACT|<tt>CONTACT</tt>]] order in the same turn.
+A unit on a ship or in a building [[#LEAVE|leaves]] it automatically when ordered to <tt>ENTER</tt> another one.
 ; ENTERTAIN [amount]  &lt;L&gt;
 : A unit with this order spends a turn entertaining the peasants. It can earn up to 20 pieces of silver per person and skill level in entertainment. The peasants spend five percent of their silver on entertainment. If there are more entertainers in the region than the peasants would pay, the silver is divided up among the entertaining units. You can specify a maximum amount of silver to be earned through entertainment.
 Example: The peasants of a region own 1200 pieces of silver. Thus, the maximum amount of silver to be earned in this region is 1200 ï¿½ 5% = 60.<br /> Take two units: A with one person and an entertainment skill level of one, B with two persons and an entertainment skill level of two. A could earn 1 ï¿½ 1 ï¿½ 20 = 20 pieces of silver, B 2 ï¿½ 2 ï¿½ 20 = 80 pieces, i.e. a total of 100 pieces of silver.<br /> Since the region will only yield 60 pieces of silver, they are split up at a ratio of about 20:80. Thus, A earns about 12 and B about 48 pieces of silver.
-Units on board a ship in a [#GUARD guarded region] can neither [#WORK work] nor entertain.
+Units on board a ship in a [[#GUARD|guarded region]] can neither [[#WORK|work]] nor entertain.
 ; ERESSEA faction-id "password"
 : This order marks the beginning or your faction's orders in an order file. It is an absolute requirement to use this order.
 ; FOLLOW UNIT unit-id  &lt;(L)&gt;<br /> FOLLOW SHIP ship-id  &lt;L&gt;
@@ -111,9 +132,9 @@ Unit 87b6 will watch unit hz7 and follow it if it moves. If it doesn't, 87b6 wil
 ; FORGET skill
 : This will order a unit to completely forget a skill; all knowledge of the skill is lost to the unit - including knowledge given by birth with some races. This can be useful in situations where a unit knows a quota-limited skill like magic and you want to train another unit in the skill instead.
 ; GIVE unit-id HERBS<br /> GIVE unit-id CONTROL<br /> GIVE unit-id UNIT<br /> GIVE unit-id amount MEN<br /> GIVE unit-id amount item<br /> GIVE unit-id ALL MEN<br /> GIVE unit-id ALL [item]<br /> GIVE 0 amount MEN<br /> GIVE 0 amount item
-: Your unit can hand over any item it possesses to another unit, but only if this unit accepts the given object. The other unit will do this only if it belongs to the same or an [#HELP allied] faction or if it has been ordered to [#CONTACT contact] the giving unit in the same turn. Most items can also be thrown away (<tt>GIVE 0 ...</tt>).
+: Your unit can hand over any item it possesses to another unit, but only if this unit accepts the given object. The other unit will do this only if it belongs to the same or an [[#HELP|allied]] faction or if it has been ordered to [[#CONTACT|contact]] the giving unit in the same turn. Most items can also be thrown away (<tt>GIVE 0 ...</tt>).
 Of course, the giving and the receiving unit have to be in the same region. <tt>GIVE</tt> does also work on the high seas between two ships as well as from a ship to the shore or the other way around.
-Items and silver handed over by <tt>GIVE</tt> are automatically [#RESERVE reserved] and do neither account for the [income.html#pools item pool] nor can they be reserved by another unit.
+Items and silver handed over by <tt>GIVE</tt> are automatically [[#RESERVE|reserved]] and do neither account for the [income.html#pools item pool] nor can they be reserved by another unit.
 Instead of a certain number of items you can also use <tt>ALL</tt>. E.g. <tt>GIVE unit-id ALL silver</tt> makes your unit give away any silver it owns. <tt>GIVE unit-id ALL</tt> hands over all items, herbs, potions and silver, but not the men of a unit. Using <tt>GIVE unit-id ALL MEN</tt> explicitly makes your unit give all its men to the receiver and your unit is afterwards.
 If you want to give men from one unit to another, you can use <tt>GIVE unit-id amount MEN</tt> order. This mixes the skills of the two units. If you give all men of a unit to another one, do not forget to hand over all items as well. Otherwise they are lost to the peasants.
 Using <tt>GIVE unit-id UNIT</tt> you can give a complete unit to another faction including all items the unit owns. Your unit is not 'added' to the foreign unit as usual; instead it joins the other faction. Thus, each faction can gain up to 5 men per turn.
@@ -123,7 +144,7 @@ Example:
      GIVE k3f 300 silver  ; give 300 silver to k3f .
      GIVE 0 5 stones  ; throw away 5 stones.
      GIVE TEMP 3 7 MEN  ; give 7 men to the new unit temp 3.
-Caution! The orders between [#MAKE <tt>MAKE TEMP</tt>] and [#END <tt>END</tt>] are orders for the new unit. The new unit does not have money, so the following orders will not work:
+Caution! The orders between [[#MAKE|<tt>MAKE TEMP</tt>]] and [[#END|<tt>END</tt>]] are orders for the new unit. The new unit does not have money, so the following orders will not work:
  
      MAKE TEMP 1
          GIVE TEMP 1 200 silver  ;  error!
@@ -139,7 +160,7 @@ Better put it this way:
        END
        ; GIVE TEMP 1 200 Silber  ;  or even here!
 ; GROUP ["name"]
-: GROUP allows you to divide your faction into smaller groups being able to have a different [#HELP <tt>HELP</tt>] status than the rest of your faction. E.g. you could form a group of mercenaries helping your client on his island while the rest of your faction does not.
+: GROUP allows you to divide your faction into smaller groups being able to have a different [[#HELP|<tt>HELP</tt>]] status than the rest of your faction. E.g. you could form a group of mercenaries helping your client on his island while the rest of your faction does not.
 You could also delete every <tt>HELP COMBAT</tt> status for a participant of a tournament preventing him from disturbing a single combat. It is also possible to attack an ally with a bunch of disguised warriors without betraying yourself by giving up <tt>HELP COMBAT</tt> for your whole faction. And someone who wants to protect his woods from his allies, too, can form a group of gamekeepers granting <tt>HELP GUARD</tt> to nobody.
 E.g. a unit is ordered to join the group "Pirates of the Seas" via <tt>GROUP "Pirates of the Seas"</tt>. If this group does not yet exist, it is created and initially has the same <tt>HELP</tt> status as the rest of the faction. <tt>GROUP</tt> without a name can be used to leave a group. Each unit can belong to one group only. A unit issuing the <tt>HELP</tt> order changes the <tt>HELP</tt> status of its group if it belongs to one or the status of the whole faction if it does not belong to a group.
 During a battle, each group forms a separate army, just like it happens if units are [#HIDE disguised].
@@ -151,9 +172,9 @@ Growing horses requires a stable with at least two horses and at least one horse
 The <tt>GROW HERBS</tt> order demands a minimum skill level of six in herbalism. The unit tries to grow one herb per skill level; it needs a corresponding amount of the appropriate type of herb as well as a vial of the water of life. You cannot grow a different kind of herb than the one originally found in the region.
 ; GUARD [NOT]
 : Units can guard regions if they are armed and have the appropriate weapon skill. To guard a region prevents non-allied units from collecting taxes, gathering resources and recruiting peasants in that region (from the following turn on) and non-allied units trying to travel through the region will be stopped with a certain probability. There is one exception to this: if your STEALTH exceeds the PERCEPTION of the guarding faction you can collect taxes, recruit new peasants or produce raw materials.
-Your units on ships cannot [#WORK <tt>WORK</tt>] or [#ENTERTAIN <tt>ENTERTAIN</tt>] in a guarded region (except the guarding faction has set [#HELP <tt>HELP GUARD</tt>] status for your faction).
+Your units on ships cannot [[#WORK|<tt>WORK</tt>]] or [#ENTERTAIN <tt>ENTERTAIN</tt>] in a guarded region (except the guarding faction has set [[#HELP|<tt>HELP GUARD</tt>]] status for your faction).
 The <tt>GUARD</tt> order becomes effective only one turn after being issued because the guards have to find out where non-allied units earn money before they can prevent them from doing so. If a guard moves to another region, or is given the order GUARD NOT, it quits its guarding duties.
-A guarding unit will be visible to all units in the same region, no matter well-trained it is in stealth. This gives all other units one turn to react to the new situation. A guarding unit can also [#SIEGE besiege] a castle in that region.
+A guarding unit will be visible to all units in the same region, no matter well-trained it is in stealth. This gives all other units one turn to react to the new situation. A guarding unit can also [[#SIEGE|besiege]] a castle in that region.
 More than one faction can guard a region simultaneously. In that case, only factions [#HELP allied] to all guarding factions can collect taxes, recruit new peasants or produce raw materials in this region.
 Note: Monsters (faction 0) are always regarded as being armed even if they do not carry visible weapons.
 ; HELP faction-id GIVE [NOT]<br /> HELP faction-id COMBAT [NOT]<br /> HELP faction-id SILVER [NOT]<br /> HELP faction-id GUARD [NOT]<br /> HELP faction-id FACTIONSTEALTH [NOT]<br /> HELP faction-id ALL [NOT]
@@ -165,17 +186,17 @@ Example: <tt>HELP 7 GIVE NOT</tt>
 The specified faction needs to appear in your report for this order to be effective.
 Heed the following peculiarities of this order:
 :* The race of a disguised unit remains unmodified. A goblin pretending to belong to the Wood-Elves faction still is a goblin.
-:* Disguised units behave as they would if not disguised. E.g. they do not donate silver to allies of the faction they disguise as. To perfect the disguise, form [#GROUP groups] with the appropriate help status.<br /> The disguise does not give access to buildings or ships where it would be denied otherwise. The same is true for taxation.
+:* Disguised units behave as they would if not disguised. E.g. they do not donate silver to allies of the faction they disguise as. To perfect the disguise, form [[#GROUP|groups]] with the appropriate help status.<br /> The disguise does not give access to buildings or ships where it would be denied otherwise. The same is true for taxation.
 :* Disguised units form a seperate army during combat. Example: Assume there are three factions: the Wood Elves, the River Elves and the Iron Dwarfs. Each faction has one unit: Wood-Elf, River-Elf and Iron-Dwarf. While Wood-Elf pretends to belong to the River Elves, all other units do not disguise their faction.<br /> Now Iron-Dwarf attacks the River Elves, i.e. River-Elf and Wood-Elf, who he believes to be one of the River Elves, too. Hence the battle report shows three armies: The Iron Dwarfes, the River Elves and an army that pretends be of the River Elves faction.<br /> Thus, you can detect that a unit hides its faction, since there are two River Elves armies. The true faction identity of such units is not revealed, though.
 <tt>HIDE FACTION</tt> makes a unit completely conceal which faction it belongs to. Only [skills.html#espionage espionage] can reveal the true identity of such a unit.
 With the <tt>HIDE race</tt> order, demon units can fake their race.
 ; LEARN skill  &lt;L&gt;
-: With this order a unit spends one turn learning the specified skill. On average, a unit can reach skill level 1 after one turn. Getting to level 2 takes two turns and yet another 3 turns of learning result in skill level 3 and so forth. In most cases, a skill level of 2 is two times more effective than level 1 and level 3 three times more effective than level 1 etc. For more details see the [skills.html chapter on skills]. There is also a [apendix_skills.html description of every skill]. You might also want to look at the [#TEACH <tt>TEACH</tt>] order which is one way of increasing the speed of learning.
+: With this order a unit spends one turn learning the specified skill. On average, a unit can reach skill level 1 after one turn. Getting to level 2 takes two turns and yet another 3 turns of learning result in skill level 3 and so forth. In most cases, a skill level of 2 is two times more effective than level 1 and level 3 three times more effective than level 1 etc. For more details see the [skills.html chapter on skills]. There is also a [apendix_skills.html description of every skill]. You might also want to look at the [[#TEACH|<tt>TEACH</tt>]] order which is one way of increasing the speed of learning.
 ; LEAVE
-: A unit with this order leaves the ship or building it currently occupies. The [#ENTER <tt>ENTER</tt>] and [#MOVE <tt>MOVE</tt>] order under certain circumstances force a unit to leave the occupied ship or building. Using the <tt>MOVE</tt> order on board a ship will either make the unit sail the ship to the indicated region (even if it is not an ocean region) or yield the error message that the unit is not the captain of the ship. In that case, the unit has to actively leave the ship before it can travel on land.
+: A unit with this order leaves the ship or building it currently occupies. The [#ENTER <tt>ENTER</tt>] and [[#MOVE|<tt>MOVE</tt>]] order under certain circumstances force a unit to leave the occupied ship or building. Using the <tt>MOVE</tt> order on board a ship will either make the unit sail the ship to the indicated region (even if it is not an ocean region) or yield the error message that the unit is not the captain of the ship. In that case, the unit has to actively leave the ship before it can travel on land.
 A unit leaving a ship can execute a <tt>MOVE</tt> order in the same turn only if it is allied with the faction guarding the region. Otherwise, <tt>MOVE</tt> works not before one turn later. Similarly, an [#ATTACK <tt>ATTACK</tt>] can only take place in the next turn.
 Aquarians may leave their ships anchoring in a coastal ocean region and get on shore with the <tt>MOVE</tt> order. Obviously, they may only do so as long as they can carry all their items by themselves and neither own horses nor carts.
-When the owner of a ship or building leaves, the ownership is not necessarily passed on to the next unit in the report. You should use the [#GIVE <tt>GIVE CONTROL</tt>] order to hand ownership of a ship or building to a certain unit when leaving it. It is guaranteed though, that if there is a unit of your faction in the same building or ship, it becomes the new owner.
+When the owner of a ship or building leaves, the ownership is not necessarily passed on to the next unit in the report. You should use the [[#GIVE|<tt>GIVE CONTROL</tt>]] order to hand ownership of a ship or building to a certain unit when leaving it. It is guaranteed though, that if there is a unit of your faction in the same building or ship, it becomes the new owner.
 ; MAKE  &lt;L&gt;<br /> MAKE TEMP alias ["name"]<br /> MAKE [size] building-type [building-id]  &lt;L&gt;<br /> MAKE [size] ship-type  &lt;L&gt;<br /> MAKE [size] SHIP [ship-id]  &lt;L&gt;<br /> MAKE [size] ROAD direction  &lt;L&gt;<br /> MAKE [amount] HERBS  &lt;L&gt;<br /> MAKE [amount] potion  &lt;L&gt;<br /> MAKE [amount] item  &lt;L&gt;
 : <tt>MAKE</tt> is the basic order for production.
 Items are fabricated via <tt>MAKE [amount] item</tt>. Depending on the item, the unit is required to have a certain skill and certain resources. If you do not specify an amount, the unit produces as many items as possible with the given skill level, number of persons and, if applicable, resources.
@@ -191,7 +212,7 @@ are equivalent to
  
      MAKE TEMP jest "Clowns"
 The amount of units in a faction is limited to 1000. If your faction exceeds 1000 units, the <tt>MAKE TEMP</tt> order becomes ineffective. To create new units you have to remove other units first, e.g. by merging them.
-Each <tt>MAKE TEMP</tt> order eventually has to be followed by the [#END <tt>END</tt>] order. It separates the <tt>TEMP</tt> unit's orders from the orders of the parent unit.
+Each <tt>MAKE TEMP</tt> order eventually has to be followed by the [[#END|<tt>END</tt>]] order. It separates the <tt>TEMP</tt> unit's orders from the orders of the parent unit.
 You can reference <tt>TEMP</tt> units of other factions in your orders as long as you yourself do not create a <tt>TEMP</tt> unit with the same alias as in the other faction. Therefore, accessing other factions' <tt>TEMP</tt> units requires some coordination.
 If you want a new unit to recruit persons (using the [#RECRUIT <tt>RECRUIT</tt>] order) you have to provide it with a sufficient amount of silver. Without it, recruiting fails and the new unit is not created. If there is enough silver but the unit does not recruit peasants, it is not created as well, its silver being lost to the peasants.
 Example:
@@ -251,7 +272,7 @@ As with all other text, a long message can be divided into several lines by usin
 </center></center></div>
 ; NAME [FOREIGN] UNIT "name"<br /> NAME [FOREIGN] FACTION "name"<br /> NAME [FOREIGN] BUILDING "name"<br /> NAME [FOREIGN] SHIP "name"<br /> NAME REGION "name"
 : Renames the addressed object. To rename all sorts of buildings, you have to use <tt>NAME CASTLE</tt>. Ships and buildings can be renamed only if the renaming unit is their owner, i.e. if it appears directly under the object in your report. A region can be renamed by the lord of the biggest castle in that region only.
-The new name can be up to 80 characters long and mustn't contain brackets. Longer descriptions should be applied by [#DESCRIBE <tt>DESCRIBE</tt>].
+The new name can be up to 80 characters long and mustn't contain brackets. Longer descriptions should be applied by [[#DESCRIBE|<tt>DESCRIBE</tt>]].
 The additional <tt>FOREIGN</tt> allows you to rename other factions' units, ships and even buildings if these do not have a name yet (e.g. units called "Number abc"). You can even rename other factions if they are older than ten turns. (i.e., name foreign Building abcd "new name")
 The renaming of a faction has to be executed by a unit, too:
  
@@ -280,7 +301,7 @@ You can change the number of a ship only once after you have built it.
 ; ORIGIN x y
 : This will place the (0,0) origin of the faction's coordinate system into the region (x,y).
 ; PASSWORD "new password"
-: This order sets a new password which is to be used in the [#ERESSEA <tt>ERESSEA</tt>] order from the next turn on. A password must consist only of letters and digits. A password containing invalid characters is rejected; nevertheless, the faction receives a new randomly generated password instead.
+: This order sets a new password which is to be used in the [[#ERESSEA|<tt>ERESSEA</tt>]] order from the next turn on. A password must consist only of letters and digits. A password containing invalid characters is rejected; nevertheless, the faction receives a new randomly generated password instead.
 Example: It's die zweite Woche of the month of Herdfeuer:
  
      ERESSEA 11 "oldpassword"
@@ -299,7 +320,7 @@ Caution:
 :# A order file has to contain either the same password as in the previous turn or the one that was set in the previous turn.<br /> The password of the previous turn is valid even if multiple order files have been submitted for the current turn, which contain the <tt>PASSWORD</tt> order with differing passwords.
 :# The password is only changed successfully if you receive the according message in your next turn's report.
 ; PIRACY [faction-id [faction-id [...]]]
-: With this order, a ship's captain starts waylaying ships that end their movement phase in a neighbouring region. If such a ship arrives, he automatically sails there. Only ships of the specified factions trigger this reaction. If no faction is specified, the captain waylays all ships of factions which his own faction has not set the [#HELP <tt>HELP COMBAT</tt>] status for. See the [combat.html#piracy piracy chapter] for more details.
+: With this order, a ship's captain starts waylaying ships that end their movement phase in a neighbouring region. If such a ship arrives, he automatically sails there. Only ships of the specified factions trigger this reaction. If no faction is specified, the captain waylays all ships of factions which his own faction has not set the [[#HELP|<tt>HELP COMBAT</tt>]] status for. See the [combat.html#piracy piracy chapter] for more details.
 ; PLANT [amount] SEED / "MALLORN SEED" &lt;L&gt;<br /> 
 PLANT [amount] HERBS &lt;L&gt;
 
@@ -308,7 +329,7 @@ The <tt>PLANT HERBS</tt> order demands a minimum skill level of six in herbalism
 ; PREFIX [prefix]
 : This order allows you to prepend the race name of your faction's units with a prefix. The prefix has no other side effects. If no prefix is specified in the order, an existing race name prefix is removed.
 Currently, these prefixes are available: ''dark, light, gully, high, hill, mountain, wood, swamp, snow, sun, moon, sea, valley, shadow, cave, blood, wild, chaos, night, mist, grey, cold, gloom, black.''
-The <tt>PREFIX</tt> order can be used for the whole faction or for a [#GROUP group]. Thus, you can assign different prefixes to different groups in your faction.
+The <tt>PREFIX</tt> order can be used for the whole faction or for a [[#GROUP|group]]. Thus, you can assign different prefixes to different groups in your faction.
 ; PROMOTION
 : This order promotes a unit to heroes.
 Hero units will have ten attacks instead of one. This only applies to weapons that do not need several rounds to reload, not to magic, catapults and crossbows which require multiple rounds.
@@ -344,13 +365,13 @@ Example:
 ; RESERVE amount item<br />
 : With this order a unit can grab and retain items and silver from other units in the same region. Note that the requested items are taken from any unit (usually from top to bottom in the list of units in the orders template) as long as these units do not reserve the items themselves.
 <tt>RESERVE</tt> only becomes effective when the [income.html#pools item pool] or respectively the [income.html#pools silver pool] is activated.
-Caution! TEMP units cannot reserve items or silver. All they need has to be transferred to them via the [#GIVE <tt>GIVE</tt>] order.
+Caution! TEMP units cannot reserve items or silver. All they need has to be transferred to them via the [[#GIVE|<tt>GIVE</tt>]] order.
 All items a unit receives via the [#GIVE <tt>GIVE</tt>] order cannot be taken from it by another unit with the <tt>RESERVE</tt> order (also see the [income.html#pools chapter on pools]).
 ; RESTART race "password"
 : Allows to give up a faction and immediately start with a new one with another race if your faction is older than 81 turns. Your magic school stays the same.
 The new faction sets out in the region where the <tt>RESTART</tt> order is issued. This region must neither be an ocean nor of any other non-standard terrain. Apart from these restrictions, the same rules apply for restarted and 'real' new factions.
 ; RIDE unit-id  &lt;L&gt;
-: Your unit will join a carrier unit. The transporting unit has to explicitely [#CARRY carry] the unit needing a ride. This allows units to travel by horse or cart without the riding skill.
+: Your unit will join a carrier unit. The transporting unit has to explicitely [[#CARRY|carry]] the unit needing a ride. This allows units to travel by horse or cart without the riding skill.
 Example:<br /> Faction 125:
  
      UNIT 311
@@ -363,7 +384,7 @@ Faction 300:
          CARRY 311 ; Ok, climb up!
          CONTACT 311
 ; ROUTE direction [direction [etc.]]  &lt;L&gt;
-: Given this order, a unit travels through the world of Eressea just like with the [#MOVE <tt>MOVE</tt>] order.
+: Given this order, a unit travels through the world of Eressea just like with the [[#MOVE|<tt>MOVE</tt>]] order.
 Additionally, you can establish a circular route, so a unit travels continuously between two or more regions. All directions that were successfully travelled in one turn are taken from the head of the direction list and appended at its end.
 To skip steps in the movement phase (e.g. to halt a ship in a region though it could actually travel farther in one turn) use the <tt>PAUSE</tt> keyword (abbr.: <tt>P</tt>). If a unit halts at the end of its movement phase and the movement phase of the next turn starts with one or more <tt>PAUSE</tt>s, they are put at the end of the direction list so the movement phase of the next turn does begin with a real direction.
 <blockquote> A unit on horseback travels three regions per turn on roads. It has the following <tt>ROUTE</tt> order:
@@ -383,10 +404,10 @@ In the next turn the order looks like in the first turn. </blockquote>
 : Using this order, a spy can try to sink the ship he's on. See the [skills#espionage chapter on espionage] for more details.
 ; SELL amount luxury  &lt;(L)&gt;<br /> SELL ALL luxury  &lt;(L)&gt;
 : A unit skilled in trade can use this order to sell the luxury items it owns to the peasants. As a presupposition, a tradepost needs to be erected in the region and there needs to be a demand for the luxury good. Trade does not require the permission of the local sovereign but it might be more diplomatic to request it, nevertheless.
-When on board a ship in a [#GUARD guarded] region you can trade only if you are either [alliances.html allied] with the guarding factions or they [#CONTACT contact] your merchant.
+When on board a ship in a [[#GUARD|guarded]] region you can trade only if you are either [alliances.html allied] with the guarding factions or they [[#CONTACT|contact]] your merchant.
 For further reference, see the [income.html#trade trade chapter].
 <tt>SELL ALL</tt> automatically sells the amount of the luxury item that is demanded in the region. This will also work if more than one faction gives this order, or if somebody in the region is recruiting.
-<tt>SELL</tt> is a pseudo-long order, just like <tt>[#BUY BUY]</tt>. You can combine both and trade at most skill-level(trade) ï¿½ 10 luxury items per turn but issue no other long order.
+<tt>SELL</tt> is a pseudo-long order, just like <tt>[[#BUY|BUY]]</tt>. You can combine both and trade at most skill-level(trade) ï¿½ 10 luxury items per turn but issue no other long order.
 <tt>BUY</tt> and <tt>SELL</tt> do not appear in the standard report, so it looks as though merchant units had no default order. But this is only to prevent a long list of orders in the report. The computer report and the orders template show these orders only if you add the @ prefix to them.
 ; SHOW "spell"<br /> SHOW "item"<br /> SHOW "potion"<br /> SHOW ALL SPELLS<br /> SHOW ALL POTIONS
 : If you need to see the description for a spell, a special item or a potion, let one of your units issue a SHOW order and you will get the information with next turn's report. Make sure the unit using the order owns the item and knows the spell or how to make the potion.
@@ -413,10 +434,10 @@ If the offender's stealth is equal to the victim's perception the theft fails an
 But beware, the thief always steals with his victim's silver pool activated, even when the other player does not use the pool feature. Doing this he can also steal from other units which have not been the target of his order.
 ; TAX [amount]  &lt;L&gt;
 : Given this order, a unit collects taxes from the peasants in the region. The unit has to be equipped with a weapon and be skilled in the corresponding weapon skill as well as in taxation. It can earn up to 20 pieces of silver per person and skill level; catapults cannot be used for this task. You can optionally specify a maximum amount of silver to be collected.
-If more than one faction tries to tax the peasants of a region the silver is divided up proportionally. To prevent other factions from collecting taxes in a region use the [#GUARD <tt>GUARD</tt>] order.
+If more than one faction tries to tax the peasants of a region the silver is divided up proportionally. To prevent other factions from collecting taxes in a region use the [[#GUARD|<tt>GUARD</tt>]] order.
 ; TEACH unit-id [unit-id etc.]  &lt;L&gt;
 : To reduce the time required to learn a skill, a unit can be taught by another unit. This requires that the teacher is at least two levels better than the pupil in the relevant skill. The pupil learns twice as fast as without teaching
-The units specified in the <tt>TEACH</tt> order all need to give a [#LEARN <tt>LEARN</tt>] order and each teacher can teach up to 10 students at a time. It is not necessary to specify the skill you want to teach, since the students already specify this in their <tt>LEARN</tt> orders. In fact, it's possible for a teacher to teach different skills to his students at the same time.
+The units specified in the <tt>TEACH</tt> order all need to give a [[#LEARN|<tt>LEARN</tt>]] order and each teacher can teach up to 10 students at a time. It is not necessary to specify the skill you want to teach, since the students already specify this in their <tt>LEARN</tt> orders. In fact, it's possible for a teacher to teach different skills to his students at the same time.
 Example:
  
      UNIT 78
