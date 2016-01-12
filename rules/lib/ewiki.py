@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import string, json, logging
+import string, json, re, logging
 import urllib as ul
 import htmlentitydefs as entity
 import xml.etree.ElementTree as ET
@@ -70,3 +70,26 @@ def json_header(title, level=1):
   id = link_id("", title)
   header = { "t" : "Header", "c" : [level, [ id, [], []], [ { "t" : "Str", "c" : title } ] ] }
   return header
+
+tag_pattern = re.compile('<(/{0,1}([A-Za-z][^ >]*)[^>]*)>')
+
+kept_tags={}
+removed_tags={}
+
+def tag_replace(matchobj):
+  global kept_tags, removed_tags
+  if matchobj.group(2) in kept_tags:
+    return matchobj.group(0)
+  elif matchobj.group(2) in removed_tags:
+    return ""
+  
+  return "&lt;"+matchobj.group(1)+"&gt;"
+
+
+def remove_tags(filename, tags_json):
+  global kept_tags, removed_tags
+  kept_tags = json.loads(tags_json)["keep"]
+  removed_tags = json.loads(tags_json)["remove"]
+  with open(filename,'r') as mw_file:
+    for line in mw_file:
+      print tag_pattern.sub(tag_replace, line),

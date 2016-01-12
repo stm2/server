@@ -25,6 +25,8 @@ LATEX_LANGUAGE=en
 #LATEX_BABEL_LANG=german
 LATEX_BABEL_LANG=english
 
+MEDIAWIKI_TAGS='{ "keep": ["blockquote","br","center","div","noinclude","nowiki","pre","s","span","sub","sup"] , "remove": ["tt", "code"] }'
+
 verbose=3
 
 ERROR_LEVEL=1
@@ -135,6 +137,13 @@ function echo_usage {
 	check_dir $3
     fi
 }
+
+function remove_tags {
+    filename=$1
+    tags=$2
+    python -c "from ewiki import remove_tags; remove_tags('$filename', '$tags')"
+}
+    
 
 echo_usage DO_RAW "downloading mediawiki into $RAW_DIR" $RAW_DIR
 echo_usage DO_JSON "creating raw json in $JSON_DIR" $JSON_DIR
@@ -260,7 +269,8 @@ cat $PAGELIST | while read pageline; do
 
     if ((DO_JSON==1)); then
 	check_file "$rawfile"
-	pandoc -f mediawiki -t json -o "$jsonfile" "$rawfile" 
+	remove_tags "$rawfile" "$MEDIAWIKI_TAGS" |
+	pandoc -f mediawiki -t json -o "$jsonfile" 
     fi
 
     if ((DO_HTML0==1)); then
@@ -271,7 +281,7 @@ cat $PAGELIST | while read pageline; do
 	cat "$jsonfile" |
 	pandoc -f json -t html -M id-prefix="$page_id" -M redirects="$redirects" \
 	    --filter="$FILTERS_DIR/ewiki_filter_html0.py" \
-	     -s -V title="$title" -V pagetitle="$title" -V css="$TEMPLATE_DIR/common.css" \
+	     -s -V title="$title" -V pagetitle="$title" -V css="common.css" \
 	    -V contents="Inhalt.html" --template="$html0_templatefile" --toc --toc-depth=2 \
 	    > "$htmlfile" 
 	url=$(url_encode "$page")
@@ -331,7 +341,7 @@ if ((DO_HTML1==1)); then
     python lib/concat_json.py "$concat_file" |
     pandoc -f json -t html  \
 	-s -M title="$main_title" --template="$latex_templatefile" \
-	-V title="$main_title" -V pagetitle="$main_title" -V css="$TEMPLATE_DIR/common.css" \
+	-V title="$main_title" -V pagetitle="$main_title" -V css="common.css" \
 	--template="$html1_templatefile" --toc --toc-depth=2 \
 	> "$html1_file"
     status=$?
