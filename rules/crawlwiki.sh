@@ -17,11 +17,13 @@ PAGELIST=pagelist_en
 #LANGUAGE_SUFFIX=
 LANGUAGE_SUFFIX=_en
 
-main_title="Eressea-Regeln"
+main_title="Eressea Rules"
 
 PAPER_SIZE=a4paper
 #LATEX_LANGUAGE=de
 LATEX_LANGUAGE=en
+#LATEX_BABEL_LANG=german
+LATEX_BABEL_LANG=english
 
 verbose=3
 
@@ -212,7 +214,7 @@ cat $PAGELIST | while read pageline; do
 	title=$page
     fi
 
-#    page_id=${linearray[3]}
+    page_id=${linearray[3]}
     if [ -z "$page_id" ]; then
 	page_id=$page
     fi
@@ -248,7 +250,10 @@ cat $PAGELIST | while read pageline; do
     fi
 
     if [ "$depth" = "R" ]; then
-	redirect=$(pandoc -f mediawiki -t plain --filter="$FILTERS_DIR/ewiki_filter_redirect.py" "$rawfile")
+	redirect=$title
+	if [ -z "$redirect" ]; then
+	    redirect=$(pandoc -f mediawiki -t plain --filter="$FILTERS_DIR/ewiki_filter_redirect.py" "$rawfile")
+	fi
 	add_redirect "$page" "$redirect" 
 	continue
     fi
@@ -348,7 +353,7 @@ if ((DO_PDF==1)); then
     pandoc -f json -t latex  \
 	-s -M title="$main_title" --template="$latex_templatefile" \
 	-V title="$main_title" -V linkcolor=blue -V lot=true --toc --toc-depth=2 \
-	-V lang=$LATEX_LANGUAGE -V babel-lang=german -V papersize=$PAPER_SIZE \
+	-V lang=$LATEX_LANGUAGE -V babel-lang=$LATEX_BABEL_LANG -V papersize=$PAPER_SIZE \
 	-V geometry="top=2cm, bottom=2cm, left=1.5cm, right=1.5cm" \
 	--id-prefix="ewiki." \
 	> "$latex_file"
