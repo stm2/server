@@ -4,7 +4,7 @@ Working is more of a type of stopgap, units working will earn barely enough to f
 
 Because persons (of most [[Races|races]]) can carry 5.4 units of weight, they can carry up to 540 silver with them; when carrying 541 silver a single person is overloaded. A boat (50 UWs capacity) for example, can carry one person (10 UWs in most cases) with 4000 silver; even 4001 silver would be too much.
 
-== food, maintenance recruitment costs ==
+== Food, maintenance, recruitment costs ==
 
 Every person of a faction and each peasant require 10 silver each turn to buy themselves the supplies needed to survive. Units of a faction help each other with silver when staying in the same region, i.e. it is basically enough if one unit has enough silver for all persons present (which can lead to catastrophes when done wrong and nobody else has any silver!). Units which move have to be suplied where they will arrive. Usually this is done by having the moving unit carry enough silver to feed itself.
 
@@ -18,7 +18,7 @@ If a region is guarded by a foreign faction, that has neither set HELP GUARD nor
 
 You can only recruit persons of your own race! Persons from foreign races can only be admitted to human factions and they have to be given to them by other factions.
 
-== Income: work, entertainment and collecting taxes ==
+== Income: Work, entertainment and collecting taxes ==
 
 You can earn money by working in the agricultural sector (see the WORK order). However, the bigger the forests in a region are, the smaller the area that can be used for farming, and the smaller amount of peasants (and player units) which are able to work: for each tree, eight peasants or persons in a unit are not able to work in that region (for each young tree: 4). How many persons can work in a region (i.e. without any woods) depends on the type of region. For more information, look at the [[Orders Reference#WORK|WORK]] order.
 

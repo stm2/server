@@ -1,5 +1,11 @@
 A battle lasts at most 5 rounds plus a possible tactician's ambush. In every round the combatants attack in random order.
 
+== The tactician's ambush ==
+
+At the beginning of the battle the faction with the best tactician gets an extra round to attack. A tactician, who fights in the front row, gets a +1 bonus to his tactics-skill. If he stands in the 3rd or 4th row his tactics skill will be reduced by 1. If both sides have equally skilled tacticians, both sides can attack.
+
+Every tactician gets a bonus which starts at 0 and can get very high, although the probability of getting an extreme high bonus is relatively low.
+
 Generally, units that participate in combat (these are units showing up in the list of combatants) cannot execute long orders. Exceptions are [[Ships and Piracy|battles on the ocean]] and battles in regions which are guarded by at least one units that has a [[HELP|HELP GUARD]] status or belongs to the combatant's own faction. In this case the unit can carry out further long orders.
 
 == Formations ==

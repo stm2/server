@@ -254,31 +254,19 @@ In glaciers, swamps and deserts, roads can only be built in combination with cer
 !Attack
 !Defense
 |-
-|Unarmed
-|-2
-|-2
+|Unarmed || -2 || -2
 |-
-|Armed but unskilled
-|-2
-|-2
+|Armed but unskilled || -2 || -2
 |-
-|In castle
-| 
-|+1 ... +5
+|In castle ||   || +1 ... +5
 |-
 |Rider with skill level 2<br />
  (only in planes, deserts and<br />
- highlands; not in castle)
-|+2
-|+2
+ highlands; not in castle) || +2 || +2
 |-
 |Rider with lance/spear<br />
- and riding skill level 2
-|+1
-| 
+ and riding skill level 2 || +1 ||  
 |-
-|Spear/halberd vs. rider
-| 
-|+1
+|Spear/halberd vs. rider ||   || +1
 |}
 

@@ -11,28 +11,28 @@ While travelling through a region, units can have their movement prevented by ot
 A unit or ship is overloaded when its carrying capacity is exceeded. In all situations, any unit or ship that is overloaded cannot move. The weight a unit is carrying including silver and all items, as well as any units it is carrying. The table below lists the weights and carrying capacities of all races and other vehicles. [[Goods|This]] table lists the weights of all items in the game.
 
 {| border="0" cellspacing="1" align="center"
-|- style="background-color:#aaaaaa"
-!Race/Item 	!!Weight 	!!Carry Capacity
 |+ Weights and carrying capacities of races and vehicles. 
-|- style="background-color:#eeeeee"
+|-
+!Race/Item 	!!Weight 	!!Carry Capacity
+|-
 |Trolls 	||20 	||10.8
-|- style="background-color:#cccccc"
+|-
 |Goblins 	||6 	||4.4
-|- style="background-color:#eeeeee"
+|-
 |Other Races 	||10 	||5.4
-|- style="background-color:#cccccc"
+|-
 |Horse 	||50 	||20
-|- style="background-color:#eeeeee"
+|-
 |Cart 	||40 	||140
-|- style="background-color:#cccccc"
+|-
 |Boat 	||N/A 	||50
-|- style="background-color:#eeeeee"
+|-
 |Longboat 	||N/A 	||500
-|- style="background-color:#cccccc"
+|-
 |Dragonship 	||N/A 	||1000
-|- style="background-color:#eeeeee"
+|-
 |Trireme 	||N/A 	||2000
-|- style="background-color:#cccccc"
+|-
 |Caravel 	||N/A 	||3000
 |}
 

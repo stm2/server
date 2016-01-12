@@ -366,18 +366,18 @@
 |align="center"|+2 	
 |align="center"|0
 |- style="background-color:#eeeeee"
-!align="right" bgcolor="#999999"|Recruitment 	
-|align="center"|80 silver 	
-|align="center"|90 silver 	
-|align="center"|150 silver 	
-|align="center"|110 silver 	
-|align="center"|130 silver 	
-|align="center"|80 silver	
-|align="center"|75 silver 	
-|align="center"|40 silver 	
-|align="center"|80 silver 	
-|align="center"|70 silver 	
-|align="center"|90 silver
+!align="right" bgcolor="#999999"|Recruitment (silver)
+|align="center"|80
+|align="center"|90
+|align="center"|150
+|align="center"|110
+|align="center"|130
+|align="center"|80
+|align="center"|75
+|align="center"|40
+|align="center"|80
+|align="center"|70
+|align="center"|90
 |- style="background-color:#cccccc"
 !align="right" bgcolor="#aaaaaa"|Hitpoints 	
 |align="center"|20 	

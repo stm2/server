@@ -13,7 +13,6 @@ In the future, reports will be [http://en.wikipedia.org/wiki/UTF-8 UTF-8] encode
 
 == I use a very old client! ==
 
-[[Image:CpConverter.png | right | thumb | Code Converter for Windows]]
 Windows users can, for example [http://sourceforge.net/project/downloading.php?group_id=181990&use_mirror=switch&filename=CpConverter_v0.1.3.zip&32502743 Code Converter], and thus the encoding of the report (see Screenshot for proper settings) .
 
 Linux users can simply report their iconv in the old format, they <tt> iconv-f utf8-t latin1 <meinreport.cr> neuer_report.cr </ dd>.
@@ -30,7 +29,7 @@ To test I [http://enno.homeunix.net/tmp/hse-reports.zip here] a ZIP file reports
 
 I have since been a number of tests to ensure that nothing should go wrong. However, if problems should arise with umlauts, please immediately [http://eressea.upb.de/mantis/ Bugreports].
 
-External links == ==
+== External links ==
 
 * [Http://groups.google.com/group/eressea-client Eressea-Client mailing list]
 * [Http://enno.homeunix.net/tmp/hse-reports.zip HSE-Reporte in UTF8]

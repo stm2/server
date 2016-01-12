@@ -8,19 +8,18 @@ On the open sea (ocean regions that are not adjacent to any land regions) it is 
 
 In order to move a ship you need trained a trained crew, that is a unit (or units) that have learned the skill "Sailing". On this chart under "Captain" is listed the minimum skill of the Ship Captain (that is the first unit on your report under the named ship) in order for the unit to move the ship. Example, in order to move a caravel, the ship captain unit must at least have Sailing skill 3. In addition to this, on board the ship must be a certain amount of "Total skill" in sailing skill, depending on the type of ship. The below chart lists the total sailing skill needed on board a ship to move it. This total sailing skill includes the captain unit and also includes any allies of the ship captain unit on board the ship that have sailing skill. The range of the ship is the distance in numbers of region such a ship can move in one week. Note, however, that any ship that has an aquarian Ship Captain receives a bonus of +1 to it's range, therefore a Trireme captained by an aquarian can move 8 regions per week. (Migrant aquarians in a human faction do not receive this bonus).
 
-{| border="0" cellspacing="1" align="center"
-|- style="background-color:#aaaaaa"
-!Type 	!!Range 	!!Capacity 	!!Captain 	!!Total skill
+{|
 |+Ships - Range, Capacity, required skills
-|- style="background-color:#eeeeee"
+!Type 	!!Range 	!!Capacity 	!!Captain 	!!Total skill
+|-
 |Boat   	||2 	||50 	||1 	||2
-|- style="background-color:#cccccc"
+|-
 |Longboat 	||3 	||500 	||1 	||10
-|- style="background-color:#eeeeee"
+|-
 |Dragonship 	||5 	||1000 	||2 	||50
-|- style="background-color:#cccccc"
+|-
 |Caravel 	||5 	||3000 	||3 	||30
-|- style="background-color:#eeeeee"
+|-
 |Trireme 	||7 	||2000 	||4 	||120
 |}
 

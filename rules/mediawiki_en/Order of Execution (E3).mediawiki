@@ -1,0 +1,62 @@
+The orders of Eressea are executed in a fixed order. Orders which have the same number below are executed at the same time.
+
+Some orders are first gathered together from all units in the region before being executed. These orders are WORK, ENTERTAIN, TAX, RECRUIT, BUY, SELL and the flavours of MAKE affecting resources . Resources are stone, iron, Laen, wood, Mallorn, herbs and horses. MAKE CASTLE or MAKE SHIP are executed immediately.
+
+This is to treat all factions evenly instead of giving all resources to the faction that happens to be the first.
+
+
+# new default orders are set
+# [[GROUP]],[[MAKE TEMP]]
+# [[NAME]], [[DESCRIBE]], [[GUARD NOT]], [[web/20110102235833/http://wiki.eressea.de/en/HELP|HELP]], [[web/20110102235833/http://wiki.eressea.de/en/COMBAT|COMBAT]], [[COMBATSPELL]], [[HIDE]], [[ORIGIN]], [[SHOW]]
+# [[web/20110102235833/http://wiki.eressea.de/en/BANNER|BANNER]], [[EMAIL]], [[OPTION]], [[PASSWORD]]
+# [[MESSAGE]]
+# [[USE]]
+# [[ENTER]], [[CONTACT]]; 1st attempt
+# [[LEAVE]]
+# Contacts are removed, then [[web/20110102235833/http://wiki.eressea.de/en/ATTACK|ATTACK]]
+# [[RESERVE]], [[CLAIM]]
+# [[SIEGE]]
+# [[ENTER]], [[CONTACT]]; 2nd attempt
+# [[FOLLOW]] is set
+# [[GIVE]], [[FORGET]], [[DESTROY]]
+# [[RECRUIT]], executed on a per-person basis
+# Maintenance costs for buildings are accounted. If they cannot be raised, the building has no effect for that turn.
+# [[RESTART]], [[QUIT]], [[CAST]]
+# [[TEACH]]
+# [[LEARN]]
+# [[web/20110102235833/http://wiki.eressea.de/en/WORK|WORK]], [[STEAL]], [[web/20110102235833/http://wiki.eressea.de/en/BUY|BUY]], [[web/20110102235833/http://wiki.eressea.de/en/SELL|SELL]], [[MAKE]], [[PLANT]], [[SABOTAGE]], [[SPY]], [[TAX]], [[web/20110102235833/http://wiki.eressea.de/en/ENTERTAIN|ENTERTAIN]], [[GROW]]
+# At this point some orders are executed step by step, e.g. the gathering of resources:
+## gathering of resources (piece by piece)
+## entertainment (piece by piece)
+## work (piece by piece)
+## taxation (in portions of 10 pieces of silver)
+## buy (piece by piece)
+## sell (piece by piece)
+## steal (piece by piece)
+# Ships with a too small crew suffer damage
+# [[ENTER]], [[CONTACT]]; 3rd attempt
+# [[MOVE]] and [[ROUTE]], including [[RIDE]] and [[TRANSPORT]] are executed, and units order to follow other units do so
+# [[web/20110102235833/http://wiki.eressea.de/en/GUARD|GUARD]] if the unit did not move
+# Ships at sea drift off
+# [[DEFAULT]]
+# empty units are removed
+# Peasants, horses and trees grow if possible; the remaining peasants move into other regions
+# costs of food supplies for units are collected
+# maintenance cost for buildings are collected; if the maintenance cannot be afforded, the building can collapse.
+# [[SORT]]
+# [[PROMOTION]]
+# [[NUMBER]]
+
+Your orders do not have to reflect this order of execution. It is perfectly legal to submit these orders:
+
+<pre>   GIVE TEMP 5 300 silver
+   MAKE TEMP 5
+       RECRUIT 1
+       COMBAT NOT
+       LEARN forestry
+   END</pre>
+First, a new unit is created which is ordered not the participate in combat. It receives 300 pieces of silver, recruits 1 man and learns forestry, even though this line up of Eressea orders contradicts their actual order of execution.
+
+;  ENTER 1st/2nd/3rd attempt 
+: This means that you can, for example, enter a castle after attacking and killing the former (unfriendly) inhabitants. It does not mean that units leaving a ship may attack in the same round if the region was guarded by a non-allied faction.
+

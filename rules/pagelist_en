@@ -4,24 +4,24 @@ R	Send Orders	Sending in Orders
 R	Factions	Factions and Units
 R	Profiles	Races
 R	Modifiers	Race Modifiers
-R	Skills explained     Skills Explained
+R	Skills explained	Skills Explained
 R	Muster	Mustering of Soldiers
 R	Pools	Silver and Item Pools
 #1	Rules
 1	Introduction
 1	Preface
-2	Warning	A Warning
+2	A Warning
 2	Questions
 #1	How to play
 1	Getting started
 2	System Requirements
 2	Sending in Orders
 2	Things to Remember
-1	Bugs   Bugs and Exploits
+1	Bugs and Exploits
 2	How to Deal with Bugs
 2	Reporting a Bug
 2	Cheating and Exploits
-1	World	 The World of Eressea
+1	World	The World of Eressea
 1	Factions and Units
 1	Races
 #2	Profiles
@@ -70,6 +70,7 @@ R	Pools	Silver and Item Pools
 2	About this Document
 1	Mail
 1	The Third Age
+1	Order of Execution (E3)
 1	Appendix: Tables
 #1	Orders
 #1	HELP
@@ -81,4 +82,4 @@ R	Pools	Silver and Item Pools
 #1	GUARD
 #1	ENTERTAIN
 #1	WORK
-1	Switch to Unicode	
+#1	Switch to Unicode

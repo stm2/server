@@ -54,57 +54,57 @@ The following table shows all the items which can be found in Eressea. They all 
 |-
 |Silver
 |0.01
-|-
-|-
-|-
+| -
+| -
+| -
 |-
 |Gems
 |1
 |Trade
 |1
-|-
+| -
 |-
 |Incense
 |2
 |Trade
 |1
-|-
+| -
 |-
 |Balm
 |2
 |Trade
 |1
-|-
+| -
 |-
 |Spice
 |2
 |Trade
 |1
-|-
+| -
 |-
 |Myrrh
 |2
 |Trade
 |1
-|-
+| -
 |-
 |Oil
 |3
 |Trade
 |1
-|-
+| -
 |-
 |Silk
 |3
 |Trade
 |1
-|-
+| -
 |-
 |Herbs
 |0
 |Herbalism
 |1
-|-
+| -
 |-
 |Potions
 |0
@@ -116,49 +116,49 @@ The following table shows all the items which can be found in Eressea. They all 
 |0.1
 |Herbalism
 |3
-|-
+| -
 |-
 |Mallorn Seed
 |0.1
 |Herbalism
 |4
-|-
+| -
 |-
 |Iron
 |5
 |Mining
 |1
-|-
+| -
 |-
 |Laen<sup>*</sup>
 |2
 |Mining
 |7
-|-
+| -
 |-
 |Wood
 |5
 |Forestry
 |1
-|-
+| -
 |-
 |Mallorn
 |5
 |Forestry
 |2
-|-
+| -
 |-
 |Stone
 |60
 |Quarrying
 |1
-|-
+| -
 |-
 |Horse
 |50
 |Taming
 |1
-|-
+| -
 |-
 |Cart
 |40

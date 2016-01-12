@@ -1,104 +1,14 @@
-<div id="wm-ipp" style="display: block;" lang="en">
+'''The third age''' (German: [http://wiki.eressea.de/de/Das_dritte_Zeitalter Das dritte Zeitalter]) is the title for a new game based on Eressea with some radically different rules. This page documents the preliminary rules for the game as agreed on and implemented by the design team. Changes may happen at any time (E3A is a play in the river :), we're still figuring things out. Live development updates can be found on [http://twitter.com/eresseadev]
 
-<div style="position:fixed;left:0;top:0;width:100%!important">
-
-<div id="wm-ipp-inside">
-
-[http://web.archive.org/web/ [[File:The%20Third%20Age%20-%20Eressea_files/wayback-toolbar-logo.png|Wayback Machine]]]
-<span id="wm_tb_options" style="display:block;"></span>
-[http://web.archive.org/web/20090813201019/http://wiki.eressea.de/en/The_third_age AUG]
-Jan
-Feb
-[http://web.archive.org/web/20090813201019/http://wiki.eressea.de/en/The_third_age [[File:The%20Third%20Age%20-%20Eressea_files/wm_tb_prv_on.png|Previous capture]]]
-13
-[[File:The%20Third%20Age%20-%20Eressea_files/wm_tb_nxt_off.png|Next capture]]
-[http://web.archive.org/web/20090813201019/http://wiki.eressea.de/en/The_third_age '''2009''']
-2011
-2012
-[http://web.archive.org/web/20110113091639*/http://wiki.eressea.de/en/The_Third_Age 2 captures]
-<div class="r" title="Timespan for captures of this URL">
-
-13 Aug 09 - 13 Jan 11
-
-</div>
-<span id="wm-graph-anchor">[http://web.archive.org/web/20100801000000/http://wiki.eressea.de/en/The_Third_Age ]</span>
-<div id="wm-ipp-sparkline" title="Explore captures for this URL">
-
-[[File:The%20Third%20Age%20-%20Eressea_files/graph.png|sparklines]]
-<div class="yt" style="display: none; width: 25px; height: 27px; left: 350px;">
-
-
-
-</div>
-<div class="mt" style="display: none; width: 2px; height: 27px; left: 365px;">
-
-
-
-</div>
-
-</div>
-[[#close|Close]] [http://faq.web.archive.org/ Help]
-
-</div>
-
-</div>
-
-</div>
-<div id="globalWrapper">
-
-<div id="column-content">
-
-<div id="content">
-
-<span id="top"></span>
-= The Third Age =
-
-<div id="bodyContent">
-
-=== From Eressea ===
-
-<div id="contentSub">
-
-
-
-</div>
-<div id="jump-to-nav">
-
-Jump to: [[#column-one|navigation]], [[#searchInput|search]]
-
-</div>
-'''The third age''' (German: [http://web.archive.org/web/20110113091639/http://wiki.eressea.de/de/Das_dritte_Zeitalter Das dritte Zeitalter]) is the title for a new game based on Eressea with some radically different rules. This page documents the preliminary rules for the game as agreed on and implemented by the design team. Changes may happen at any time (E3A is a play in the river :), we're still figuring things out. Live development updates can be found on [http://web.archive.org/web/20110113091639/http://twitter.com/eresseadev http://twitter.com/eresseadev]
-
-Players are asked to report any errors in the game to the game master, especially if they bring advantages. You may report errors at [http://web.archive.org/web/20110113091639/http://bugs.eressea.de/ Mantis]. The bug report should contain your faction number and the number of a unit and/or affected regions. The given orders may also be helpful.
+Players are asked to report any errors in the game to the game master, especially if they bring advantages. You may report errors at [http://bugs.eressea.de/ Mantis]. The bug report should contain your faction number and the number of a unit and/or affected regions. The given orders may also be helpful.
 
 Registration was free and is curently no longer possible. The game has started on July, 1st 2009 with 452 players.
 
-You may find announcements on changes here: [http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Announcements_%28E3%29 Announcements (E3)]
+You may find announcements on changes here: [http://wiki.eressea.de/en/Announcements_%28E3%29 Announcements (E3)]
 
-{|
-|width="100%"|<div id="toctitle">
+== Miscellaneous ==
 
-== Contents ==
-
-
-</div>
-* [[#Miscellaneous|<span class="tocnumber">1</span> <span class="toctext">Miscellaneous</span>]]
-* [[#Alliances|<span class="tocnumber">2</span> <span class="toctext">Alliances</span>]]
-* [[#Races|<span class="tocnumber">3</span> <span class="toctext">Races</span>]]
-* [[#Racial_characteristics|<span class="tocnumber">4</span> <span class="toctext">Racial characteristics</span>]]
-* [[#Weapons_and_Armor|<span class="tocnumber">5</span> <span class="toctext">Weapons and Armor</span>]]
-* [[#Buildings|<span class="tocnumber">6</span> <span class="toctext">Buildings</span>]]
-* [[#Region_ownership|<span class="tocnumber">7</span> <span class="toctext">Region ownership</span>]]
-* [[#Magic_and_Alchemy|<span class="tocnumber">8</span> <span class="toctext">Magic and Alchemy</span>]]
-* [[#Combat|<span class="tocnumber">9</span> <span class="toctext">Combat</span>]]
-* [[#Economy_and_Morale|<span class="tocnumber">10</span> <span class="toctext">Economy and Morale</span>]]
-* [[#Ships|<span class="tocnumber">11</span> <span class="toctext">Ships</span>]]
-|}
-
-<span id="Miscellaneous"></span>
-== <span class="mw-headline"> Miscellaneous </span> ==
-
-# Orders must be [http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index.php?title=Send_Orderss&action=edit&redlink=1 sent] to eressea-server@eressea.de with the subject line &quot;E3 ORDERS&quot; (for German orders: &quot;E3 Befehle&quot;).
+# Orders must be sent to eressea-server@eressea.de with the subject line &quot;E3 ORDERS&quot; (for German orders: &quot;E3 Befehle&quot;).
 # To reduce the amount of units required, there is no more perception or stealth, and likewise, no stealing.
 # All money-making commands except for WORK (i.e. BUY/SELL/TAX/ENTERTAIN) have been removed.
 # A faction can have a maximum of 200 units.
@@ -119,11 +29,10 @@ You may find announcements on changes here: [http://web.archive.org/web/20110113
 # Building owners have to issue a LEAVE order before being able to move.
 # Natural armor is &quot;symmetrically half-additive&quot; to normal armor, i.e., half of the smaller value is added to the larger value.
 # Allies without silver will be provided with silver by the region owner first, before other unit's reserves are touched.
-# The order of execution of orders has been adapted slightly: [http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Table_of_orders#Order_of_Execution Table of orders#Order of Execution]
+# The order of execution of orders has been adapted slightly: [[Order_of_Execution (E3)]]
 # A unit that flees from a combat is put at the last place in the ordering of units of the region (so it can't enter buildings before victorious units).
 
-<span id="Alliances"></span>
-== <span class="mw-headline"> Alliances </span> ==
+== Alliances ==
 
 # There is no HELP COMBAT option
 # There is a new ALLIANCE command to form an alliance.
@@ -142,10 +51,10 @@ You may find announcements on changes here: [http://web.archive.org/web/20110113
 # Changing alliances will be possible within one turn.
 # Members of your alliance are marked with 'o' in the NR (instead of '*', '+', and '-').
 
-<span id="Races"></span>
-== <span class="mw-headline"> Races </span> ==
 
-See [http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index.php?title=Races_in_the_Third_Age&action=edit&redlink=1 Races in the Third Age] for the philosophy behind the desing of races.
+== Races ==
+
+See [[http://wiki.eressea.de/index.php?title=Rassen_im_Dritten_Zeitalter] for the philosophy behind the desing of races.
 
 # Every faction has a main race that can be recruited for ca. $100/person ($60 for goblins), and a more expensive secondary race.
 # Valid race combinations are (with secondary race): human(elf), halfling(dwarf), goblin(demon), orc(troll)
@@ -174,43 +83,43 @@ See [http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index
 !width="11%"|Trolls
 |-
 |Recruitment cost
-|60
-|360
-|100
-|200
-|100
-|240
-|100
-|260
+| 60
+| 360
+| 100
+| 200
+| 100
+| 240
+| 100
+| 260
 |-
 |Magic resistance
-|-5
-|15
+| -5
+| 15
 |
-|10
-|5
-|5
-|-5
-|10
+| 10
+| 5
+| 5
+| -5
+| 10
 |-
 |Nat. armor
 |
-|2
+| 2
 |
 |
 |
 |
 |
-|1*
+| 1*
 |-
-|Magic
-|N/A
+| Magic
+| N/A
 |
-|N/A
+| N/A
 |
-|N/A
+| N/A
 |
-|N/A
+| N/A
 |
 |-
 |Endurance
@@ -228,7 +137,7 @@ See [http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index
 |
 |
 |
-|2
+| 2
 |
 |
 |
@@ -237,182 +146,176 @@ See [http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index
 |
 |
 |
-|2
-|-1
-|-1
+| 2
+| -1
+| -1
 |
-|-2
+| -2
 |-
 |Catapult
-|1
+| 1
 |
 |
-|-2
-|-1
-|2
+| -2
+| -1
+| 2
 |
-|2
+| 2
 |-
 |Melee
 |
-|1
+| 1
 |
 |
-|-1
-|1
+| -1
+| 1
 |
-|1
+| 1
 |-
 |Polearm
 |
-|1
+| 1
 |
 |
-|-1
+| -1
 |
 |
 |
 |-
 |Tactics
-|-2
-|-1
+| -2
+| -1
 |
 |
 |
 |
-|1
-|-1
+| 1
+| -1
 |-
 |Riding
 |
-|-1
-|1
+| -1
+| 1
 |
-|-1
-|-2
+| -1
+| -2
 |
 |N/A
 |-
 |Taming
 |
-|-3
+| -3
 |
-|2
-|-1
-|-2
-|-1
-|-1
+| 2
+| -1
+| -2
+| -1
+| -1
 |-
 |Mining
-|1
+| 1
 |
 |
-|-2
-|1
-|2
-|1
-|1
+| -2
+| 1
+| 2
+| 1
+| 1
 |-
 |Quarrying
 |
 |
 |
-|-1
+| -1
 |
-|2
-|1
-|2
+| 2
+| 1
+| 2
 |-
 |Forestry
 |
-|1
+| 1
 |
 |
 |
-|-1
-|1
+| -1
+| 1
 |
 |-
 |Armoursmithing
 |
 |
 |
-|-1
+| -1
 |
-|2
+| 2
 |
-|2
+| 2
 |-
 |Weaponsmithing
-|-1
-|1
+| -1
+| 1
 |
 |
 |
-|2
-|2
+| 2
+| 2
 |
 |-
 |Masonry
-|0
+| 0
 |
 |
-|-1
-|1
-|2
-|1
-|2
+| -1
+| 1
+| 2
+| 1
+| 2
 |-
 |Roadwork
-|-2
+| -2
 |
 |
-|-1
-|1
-|2
+| -1
+| 1
+| 2
 |
-|2
+| 2
 |-
 |Cartmaking
-|-1
-|-2
+| -1
+| -2
 |
 |
-|2
+| 2
 |
-|-1
+| -1
 |
 |-
 |Shipcraft
-|-2
-|-1
-|2
-|-1
-|-1
-|-1
-|-1
-|-1
+| -2
+| -1
+| 2
+| -1
+| -1
+| -1
+| -1
+| -1
 |-
 |Sailing
-|-2
-|-1
-|2
-|-1
-|-2
-|-2
-|-1
-|-1
+| -2
+| -1
+| 2
+| -1
+| -2
+| -2
+| -1
+| -1
 |}
-
-{|
-|width="100%"|
-|}
-
 *+1 per 4 levels endurance<br />
-
 N/A: cannot learn
-<span id="Racial_characteristics"></span>
-== <span class="mw-headline"> Racial characteristics </span> ==
+
+== Racial characteristics ==
 
 '''Goblins'''
 
@@ -497,8 +400,8 @@ N/A: cannot learn
 # Do 2-6 hit points damage when fighting unarmed.
 # Regenerate 7.5% of their hit points per round.
 
-<span id="Weapons_and_Armor"></span>
-== <span class="mw-headline"> Weapons and Armor </span> ==
+
+== Weapons and Armor ==
 
 # Goblins cannot use certain heavy weapons and armor. These are plate armor, lance, mallorn lance, elven bow, axe, claymore and halberd.
 # Dwarves get to build and use a new item, the tower shield (Turmschild).
@@ -521,72 +424,23 @@ N/A: cannot learn
 !width="12%"|cost
 !width="12%"|
 !width="12%"|construction
+|- 
+| shield || 0 || * -10% || * -10% || 1 || 1 iron ||  || 2
 |-
-|shield
-|0
-|* -10%
-|* -10%
-|1
-|1 iron
-|
-|2
+|tower shield || 0 || * -15% || * -25% || 2 || 1 iron || (dwarves only) || 4
 |-
-|tower shield
-|0
-|* -15%
-|* -25%
-|2
-|1 iron
-|(dwarves only)
-|4
+|laen shield || 1 || * -10% || * -10% || 0 || 1 laen ||  || 7
 |-
-|laen shield
-|1
-|* -10%
-|* -10%
-|0
-|1 laen
-|
-|7
+|chainmail || 2 || * +10% ||  || 2 || 2 iron ||  || 3
 |-
-|chainmail
-|2
-|* +10%
-|
-|2
-|2 iron
-|
-|3
+|platemail || 3 || * +15% ||  || 4 || 4 iron ||  || 4
 |-
-|platemail
-|3
-|* +15%
-|
-|4
-|4 iron
-|
-|4
+|pangolin || 3 || * +10% || * +5% || 3 || 2 iron || (only Z/H) || 5
 |-
-|pangolin
-|3
-|* +10%
-|* +5%
-|3
-|2 iron
-|(only Z/H)
-|5
-|-
-|laen chainmail
-|3
-|
-|* -10%
-|1
-|2 laen
-|
-|9
+|laen chainmail || 3 ||  || * -10% || 1 || 2 laen ||  || 9
 |}
+:* modifier on to-hit chance for melee or ranged attacks
 
-* modifier on to-hit chance for melee or ranged attacks
 {|
 !width="10%"|Weapons
 !width="10%"|on foot
@@ -599,220 +453,50 @@ N/A: cannot learn
 !width="10%"|costs
 !width="10%"|weight
 |-
-|crossbow
-|3d3+5
-|3d3+5
-|0
-|0
-|
-|
-|3
-|1 wood
-|1GE
+|crossbow || 3d3+5 || 3d3+5 || 0 || 0 ||  ||  || 3 || 1 wood || 1GE
 |-
-|mallorn crossbow
-|3d3+6
-|3d3+6
-|0
-|0
-|
-|
-|5
-|1 mallorn
-|1GE
+|mallorn crossbow || 3d3+6 || 3d3+6 || 0 || 0 ||  ||  || 5 || 1 mallorn || 1GE
 |-
-|repeating crossbow
-|4d3+3
-|4d3+3
-|0
-|0
-|
-|D/H
-|5
-|1w, 1i
-|2GE
+|repeating crossbow || 4d3+3 || 4d3+3 || 0 || 0 ||  || D/H || 5 || 1w, 1i || 2GE
 |-
-|bow
-|1d11+1
-|1d11+1
-|-2
-|0
-|
-|
-|2
-|1 wood
-|1GE
+|bow || 1d11+1 || 1d11+1 ||  -2 ||  0 ||  ||  || 2 || 1 wood || 1GE
 |-
-|mallorn bow
-|1d11+2
-|1d11+2
-|-2
-|0
-|
-|
-|5
-|1 mallorn
-|1GE
+|mallorn bow || 1d11+2 || 1d11+2 ||  -2 ||  0 ||  ||  || 5 || 1 mallorn || 1GE
 |-
-|elven bow
-|2d4+5
-|2d4+5
-|-2
-|0
-|
-|E
-|5
-|2 mallorn
-|1GE
+|elven bow || 2d4+5 || 2d4+5 ||  -2 ||  0 ||  || E || 5 || 2 mallorn || 1GE
 |-
-|catapult
-|3d10+5, 6 times
-|3d10+5, 6 times
-|-4
-|0
-|
-|
-|5
-|10 wood
-|100GE
+|catapult || 3d10+5, 6 times || 3d10+5, 6 times ||  -4 ||  0 ||  ||  || 5 || 10 wood || 100GE
 |-
-|spear
-|1d10
-|1d12+2
-|0
-|0
-|S
-|
-|2
-|1 wood
-|1GE
+|spear || 1d10 || 1d12+2 || 0 || 0 || S ||  || 2 || 1 wood || 1GE
 |-
-|mallorn spear
-|1d10+1
-|1d12+3
-|0
-|0
-|S
-|
-|5
-|1 mallorn
-|1GE
+|mallorn spear || 1d10+1 || 1d12+3 || 0 || 0 || S ||  || 5 || 1 mallorn || 1GE
 |-
-|lance
-|1d5
-|2d6+5
-|0
-|-2
-|S
-|-G,
-|2
-|2 wood
-|2GE
+|lance || 1d5 || 2d6+5 ||  0 ||  -2 ||  S ||  -G, || 2 || 2 wood || 2GE
 |-
-|mallorn lance
-|1d5+2
-|2d6+7
-|0
-|-2
-|S
-|-G,
-|2
-|2 mallorn
-|2GE
+|mallorn lance || 1d5+2 || 2d6+7 ||  0 ||  -2 ||  S ||  -G, || 2 || 2 mallorn || 2GE
 |-
-|halberd
-|2d6+3
-|2d6+3
-|-1
-|+2
-|S
-|-G, -S
-|3
-|2H, 1E
-|2GE
+|halberd || 2d6+3 || 2d6+3 ||  -1 ||  +2 || S ||  -G, -S || 3 || 2H, 1E || 2GE
 |-
-|sword
-|1d9+2
-|1d9+2
-|0
-|0
-|H
-|
-|3
-|1 iron
-|1GE
+|sword || 1d9+2 || 1d9+2 || 0 || 0 || H ||  || 3 || 1 iron || 1GE
 |-
-|laen sword
-|2d9+4
-|2d9+4
-|0
-|0
-|H
-|
-|8
-|1 laen
-|1GE
+|laen sword || 2d9+4 || 2d9+4 || 0 || 0 || H ||  || 8 || 1 laen || 1GE
 |-
-|claymore
-|2d8+3
-|2d8+3
-|-1
-|-2
-|H
-|-G, -S
-|4
-|2 iron
-|2GE
+|claymore || 2d8+3 || 2d8+3 ||  -1 ||  -2 || H ||  -G, -S || 4 || 2 iron || 2GE
 |-
-|axe
-|2d6+4
-|2d6+4
-|+1
-|-2
-|H
-|-G
-|3
-|1w, 1i
-|2GE
+|axe || 2d6+4 || 2d6+4 ||  +1 ||  -2 ||  H ||  -G || 3 || 1w, 1i || 2GE
 |-
-|unarmed
-|1d5
-|1d6
-|-2
-|-2
-|
-|
-|
-|
-|
+|unarmed || 1d5 || 1d6 ||  -2 ||  -2 ||  ||  ||  ||  || 
 |-
-|&quot; goblins
-|1d5
-|1d6
-|-2
-|0
-|
-|
-|
-|
-|
+|&quot; goblins || 1d5 || 1d6 ||  -2 ||  0 ||  ||  ||  ||  || 
 |-
-|&quot; trolls
-|1d5+1
-|-
-|-2
-|-2
-|
-|
-|
-|
-|
+|&quot; trolls || 1d5+1 ||  - ||  -2 ||  -2 ||  ||  ||  ||  || 
 |}
 
 -G: not useable by goblins. E: only useable by elves. D/H: only useable by dwarves nad halflings. -S: not useable together with a shield.
-copied from [http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index.php?title=Kriegstabellen&action=edit&redlink=1 Kriegstabellen]. May contain errors.
-<span id="Buildings"></span>
-== <span class="mw-headline"> Buildings </span> ==
+copied from [[War Tables]].
+
+
+== Buildings ==
 
 # Costs of building and maintaining buildings are identical to E2.<br />
 
@@ -825,79 +509,92 @@ copied from [http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/
 #* A region with a harbour can be used as &quot;channel region&quot;, i.e., you can cast off in any direction (if you have HELP GUARD from the owner).
 #* Harbours only work if they are complete. There can only be one working harbour per region.
 
-Castle
-Building material
-from size*
-Earnings
-peasant wage
-Building talent
-DB
-Frame
-Wood
-1
-0%
-11
-1
-0
-Guard house
-Wood
-5
-0,5%
-11
-2
-0
-Guard tower
-Wood
-10
-1%
-11
-2
-1
-Foundation
-Stone
-1
-0%
-11
-1
-0
-Fortification
-Stone
-10
-1%
-11
-2
-1
-Tower
-Stone
-50
-2%
-12
-3
-2
-Stronghold
-Stone
-250
-3%
-13
-4
-3
-Fortress
-Stone
-1250
-4%
-14
-5
-4
-Citadel
-Stone
-6250
-5%
-15
-6
-5
+{|
+|-
+! Castle
+! Building material
+! from size*
+! Earnings
+! peasant wage
+! Building talent
+! DB
+|-
+| Frame
+| Wood
+| 1
+| 0%
+| 11
+| 1
+| 0
+|-
+| Guard house
+| Wood
+| 5
+| 0,5%
+| 11
+| 2
+| 0
+|-
+| Guard tower
+| Wood
+| 10
+| 1%
+| 11
+| 2
+| 1
+|-
+| Foundation
+| Stone
+| 1
+| 0%
+| 11
+| 1
+| 0
+|-
+| Fortification
+| Stone
+| 10
+| 1%
+| 11
+| 2
+| 1
+|-
+| Tower
+| Stone
+| 50
+| 2%
+| 12
+| 3
+| 2
+|-
+| Stronghold
+| Stone
+| 250
+| 3%
+| 13
+| 4
+| 3
+|-
+| Fortress
+| Stone
+| 1250
+| 4%
+| 14
+| 5
+| 4
+|-
+| Citadel
+| Stone
+| 6250
+| 5%
+| 15
+| 6
+| 5
+|}
 *building skill depends on the current size. Augmenting a foundation from size 9 to 10 requires 1 point of masonry, while augmenting from size 10 to 11 costs 2 points.
-<span id="Region_ownership"></span>
-== <span class="mw-headline"> Region ownership </span> ==
+
+
+== Region ownership ==
 
 # The faction with the biggest castle or watch (see below) in a region is the owner of that region.
 # Regions are de facto guarded by the region owner, even without explicit GUARD order. Weapons are not needed for this.
@@ -910,28 +607,38 @@ Stone
 # When region ownership changes, peasants are mourning in the following week. They work as little as possible (10 silver per peasant) and they don't pay taxes to the new owner.
 # Silver distributed via HELP SILVER is taken from the region owner first. Only if he doesn't have silver left is it taken from other units.
 
-Region
-Peasants
-Cavalry
-Plain/Forest
-4000
-Yes/No
-Highland
-2300
-Yes
-Swamp
-1200
-Mountain
-600
-Volcano
-400
-Desert
-400
-Yes
-Glacier
-150
-<span id="Magic_and_Alchemy"></span>
-== <span class="mw-headline"> Magic and Alchemy </span> ==
+{|
+|-
+! Region
+! Peasants
+! Cavalry
+|-
+| Plain/Forest
+| 4000
+| Yes/No
+|-
+| Highland
+| 2300
+| Yes
+|-
+| Swamp
+| 1200
+|-
+| Mountain
+| 600
+|-
+| Volcano
+| 400
+|-
+| Desert
+| 400
+| Yes
+|-
+| Glacier
+| 150
+|}
+
+== Magic and Alchemy ==
 
 # There is no astral space
 # There are no wormholes (yet)
@@ -942,8 +649,8 @@ Glacier
 # Water of Life is not one of those.
 # There are only 4 magic schools, with reorganized spell-lists. Tybied gets removed.
 
-<span id="Combat"></span>
-== <span class="mw-headline"> Combat </span> ==
+
+== Combat ==
 
 # You will no longer get a skill bonus added to your damage.
 # Halberds and claymores no longer give a bonus when used on horseback.
@@ -962,38 +669,25 @@ Glacier
 !against trolls
 !Damage
 |-
-|T2
-|+1
-|--
-|+1
+|T2 || +1 || -- || +1
 |-
-|T4
-|+2
-|+1
-|+2
+|T4 || +2 || +1 || +2
 |-
-|T6
-|+3
-|+1
-|+3
+|T6 || +3 || +1 || +3
 |-
-|T8
-|+4
-|+2
-|+4
+|T8 || +4 || +2 || +4
 |}
 
 Riding above level 8 does not give any additional bonus.
-<span id="Economy_and_Morale"></span>
-== <span class="mw-headline"> Economy and Morale </span> ==
 
-<ol>
-<li>Peasants in every region have an initial morale of 2.</li>
-<li>When a region loses its' owner, morale falls to 0. If the region owner faction changes by GIVE COMMAND, moral only drops by 2 points. Additionally, the peasants will declare the following turn a week of mourning, during which they will only do necessary work (earn 10 silver) and will not pay taxes to the new owner. This means that in case of a region given freely the new owner may receive taxes in the week of handover, and the morale of the peasants will be prefixed with &quot;mourning&quot;. In the ''next'' week the new owner does not receive any taxes.</li>
-<li>For every few (less than 10 ''on average'') under the same ownership, a region's morale rises by 1 point up to a maximum of 10.</li>
-<li>Regions owned by halflings have a higher effect on the peasants' morale.</li>
-<li>A region's taxes are a percentage of the peasants' wealth equal to the region's morale (divided by 2) or the size of the biggest castle or watch, whichever is smaller.</li>
-<li>Morale in the NR has the following meaning:
+== Economy and Morale ==
+
+# Peasants in every region have an initial morale of 2.</li>
+# When a region loses its' owner, morale falls to 0. If the region owner faction changes by GIVE COMMAND, moral only drops by 2 points. Additionally, the peasants will declare the following turn a week of mourning, during which they will only do necessary work (earn 10 silver) and will not pay taxes to the new owner. This means that in case of a region given freely the new owner may receive taxes in the week of handover, and the morale of the peasants will be prefixed with &quot;mourning&quot;. In the ''next'' week the new owner does not receive any taxes.</li>
+# For every few (less than 10 ''on average'') under the same ownership, a region's morale rises by 1 point up to a maximum of 10.</li>
+# Regions owned by halflings have a higher effect on the peasants' morale.</li>
+# A region's taxes are a percentage of the peasants' wealth equal to the region's morale (divided by 2) or the size of the biggest castle or watch, whichever is smaller.</li>
+# Morale in the NR has the following meaning:
 0 = rebellious
 1 = mad?
 2 = angry?
@@ -1005,20 +699,18 @@ Riding above level 8 does not give any additional bonus.
 8 = loyal
 9 = devoted
 10 = subservient</li>
-<li>A new building, the market, replaces trade and herbalism.
-<ol>
-<li>With a market, factions can receive herbs and luxury goods produced in the region and its 6 adjacent regions.</li>
-<li>Each region can only have one market per faction (further markets are ignored).</li>
-<li>Markets need to have a size of 10, with each size-step costing 1 wood and 1 stone. You need masonry 3 to build a market.</li>
-<li>Market upkeep is 200 silver/turn.</li>
-<li>Except for upkeep on the market there is no cost to trade.</li>
-<li>Markets only allow buying, not selling of goods.</li></ol>
-</li>
-<li>Herbs and Luxury items are used as spell ingredients.</li>
-<li>Herbs do not rot.</li></ol>
+# A new building, the market, replaces trade and herbalism.
+#With a market, factions can receive herbs and luxury goods produced in the region and its 6 adjacent regions.</li>
+# Each region can only have one market per faction (further markets are ignored).</li>
+# Markets need to have a size of 10, with each size-step costing 1 wood and 1 stone. You need masonry 3 to build a market.</li>
+# Market upkeep is 200 silver/turn.</li>
+# Except for upkeep on the market there is no cost to trade.</li>
+# Markets only allow buying, not selling of goods.</li></ol>
+# Herbs and Luxury items are used as spell ingredients.</li>
+# Herbs do not rot.</li></ol>
 
-<span id="Ships"></span>
-== <span class="mw-headline"> Ships </span> ==
+
+== Ships ==
 
 # Ships have been completely redesigned.
 # Ships that drift off do not take damage any more.
@@ -1034,7 +726,6 @@ Riding above level 8 does not give any additional bonus.
 ## war ships for the heavily armored
 ## fast rowing ships for the lightly armored
 
-<br />
 
 
 {|
@@ -1048,125 +739,29 @@ Riding above level 8 does not give any additional bonus.
 !width="11%"|sailing
 !width="11%"|special
 |-
-|''boats''
-|Einbaum (canoe)
-|3
-|2
-|20
-|3 wood
-|1
-|2
-|boat, ''fishing'', ''portable''
+|''boats'' || Einbaum (canoe) || 3 || 2 || 20 || 3 wood || 1 || 2 || boat, ''fishing'', ''portable''
 |-
-|
-|Floß (raft)
-|1
-|5
-|500
-|10 wood
-|1
-|5
-|boat, only shore at plains/swamps/deserts, ''fishing''
+| || Floß (raft) || 1 || 5 || 500 || 10 wood || 1 || 5 || boat, only shore at plains/swamps/deserts, ''fishing''
 |-
-|
-|Kutter (cutter)
-|2
-|5
-|55
-|10 wood
-|2
-|5
-|boat (but may leave shore), ''fishing''
+| || Kutter (cutter) || 2 || 5 || 55 || 10 wood || 2 || 5 || boat (but may leave shore), ''fishing''
 |-
-|
-|Barke (barge)
-|3
-|11
-|50
-|10 wood
-|2
-|5
-|boat, ''fishing''
+| || Barke (barge) || 3 || 11 || 50 || 10 wood || 2 || 5 || boat, ''fishing''
 |-
-|''Mallornships''
-|Königsbarke (royal barge)
-|5
-|11
-|50
-|10 mallorn, 1000 silver
-|5
-|10
-|boat, ''fishing'', ''strong protection from storms''
+|''Mallornships'' || Königsbarke (royal barge) || 5 || 11 || 50 || 10 mallorn, 1000 silver || 5 || 10 || boat, ''fishing'', ''strong protection from storms''
 |-
-|
-|Katamaran (catamaran)
-|7
-|22
-|100
-|30 mallorn, 3000 silver
-|7
-|20
-|''strong protection from storms''
+| || Katamaran (catamaran) || 7 || 22 || 100 || 30 mallorn, 3000 silver || 7 || 20 || ''strong protection from storms''
 |-
-|''trade''
-|Kogge (cog)
-|4
-|50
-|2000
-|100 wood
-|4
-|20
-|''protection from storms''
+|''trade'' || Kogge (cog) || 4 || 50 || 2000 || 100 wood || 4 || 20 || ''protection from storms''
 |-
-|
-|Karavelle (caravel)
-|4
-|150
-|6000
-|300 wood
-|6
-|30
-|''protection from storms''
+| || Karavelle (caravel) || 4 || 150 || 6000 || 300 wood || 6 || 30 || ''protection from storms''
 |-
-|''war''
-|Fregatte (frigate)
-|4
-|110
-|1000
-|100 wood, 1000 silver
-|5
-|40
-|+0/+2 OB/DB
+|''war'' || Fregatte (frigate) || 4 || 110 || 1000 || 100 wood, 1000 silver || 5 || 40 || +0/+2 OB/DB
 |-
-|
-|Galeone (galleon)
-|4
-|310
-|3000
-|300 wood, 3000 silver
-|7
-|60
-|+0/+2 OB/DB
+| || Galeone (galleon) || 4 || 310 || 3000 || 300 wood, 3000 silver || 7 || 60 || +0/+2 OB/DB
 |-
-|''rowing''
-|Drachenschiff (dragonship)
-|6
-|110
-|500
-|100 wood, 1000 silver
-|5
-|60
-|+1/+0 OB/DB, ''ram and enter''
+|''rowing'' || Drachenschiff (dragonship) || 6 || 110 || 500 || 100 wood, 1000 silver || 5 || 60 || +1/+0 OB/DB, ''ram and enter''
 |-
-|
-|Trireme (trireme)
-|6
-|310
-|1500
-|300 wood, 3000 silver
-|7
-|90
-|+1/+0 OB/DB ''ram and enter''
+| || Trireme (trireme) || 6 || 310 || 1500 || 300 wood, 3000 silver || 7 || 90 || +1/+0 OB/DB ''ram and enter''
 |}
 
 *pers: the weight of the people (without gear) on the ship cannot exceed (pers*10)WU
@@ -1177,714 +772,4 @@ Riding above level 8 does not give any additional bonus.
 ''Rowing ships'' give their inmates double chance to attack during tactics round (ram and enter).
 ''protection from storms'' reduces the probability of drifting considerably
 ''strong protection from storms'' minimises the probability of drifting
-<div class="printfooter">
 
-Retrieved from &quot;[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/The_Third_Age http://wiki.eressea.de/en/The_Third_Age]&quot;
-
-</div>
-<div class="visualClear">
-
-
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="column-one">
-
-<div id="p-cactions" class="portlet">
-
-===== Views =====
-
-<div class="pBody">
-
-<ul>
-<li><div id="ca-nstab-main">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/The_Third_Age Page]</li>
-<li><div id="ca-talk">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Talk:The_Third_Age Discussion]</li>
-<li><div id="ca-viewsource">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index.php?title=The_Third_Age&action=edit View source]</li>
-<li><div id="ca-history">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index.php?title=The_Third_Age&action=history History]</li></ul>
-
-
-</div>
-
-</div>
-<div id="p-personal" class="portlet">
-
-===== Personal tools =====
-
-<div class="pBody">
-
-<ul>
-<li><div id="pt-login">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index.php?title=Special:UserLogin&returnto=The_Third_Age Log in / create account]</li></ul>
-
-
-</div>
-
-</div>
-<div id="p-logo" class="portlet">
-
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Main_Page ]
-
-</div>
-<div id="p-navigation" class="generated-sidebar portlet">
-
-===== Navigation =====
-
-<div class="pBody">
-
-<ul>
-<li><div id="n-mainpage-description">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Main_Page Main Page]</li>
-<li><div id="n-Rules">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Rules Rules]</li>
-<li><div id="n-Table-of-Orders">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Table_of_orders Table of Orders]</li>
-<li><div id="n-Production">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Production Production]</li>
-<li><div id="n-recentchanges">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Special:RecentChanges Recent changes]</li>
-<li><div id="n-randompage">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Special:Random Random page]</li>
-<li><div id="n-help">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Help:Contents Help]</li></ul>
-
-
-</div>
-
-</div>
-<div id="p-search" class="portlet">
-
-===== Search =====
-
-<div id="searchBody" class="pBody">
-
-<div>
-
- 
-
-</div>
-
-</div>
-
-</div>
-<div id="p-tb" class="portlet">
-
-===== Toolbox =====
-
-<div class="pBody">
-
-<ul>
-<li><div id="t-whatlinkshere">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Special:WhatLinksHere/The_Third_Age What links here]</li>
-<li><div id="t-recentchangeslinked">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Special:RecentChangesLinked/The_Third_Age Related changes]</li>
-<li><div id="t-specialpages">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Special:SpecialPages Special pages]</li>
-<li><div id="t-print">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index.php?title=The_Third_Age&printable=yes Printable version]</li>
-<li><div id="t-permalink">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/w/en/index.php?title=The_Third_Age&oldid=1710 Permanent link]</li></ul>
-
-
-</div>
-
-</div>
-<div id="p-Rules" class="generated-sidebar portlet">
-
-===== Rules =====
-
-<div class="pBody">
-
-<ul>
-<li><div id="n-Introduction">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Introduction Introduction]</li>
-<li><div id="n-Preface">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Preface Preface]</li>
-<li><div id="n-::A-Warning">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Warning ::A Warning]</li>
-<li><div id="n-::Got-Questions.3F">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Questions ::Got Questions?]</li>
-<li><div id="n-How-to-play">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/How_to_play How to play]</li>
-<li><div id="n-::Getting-started">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Getting_started ::Getting started]</li>
-<li><div id="n-::System-Requirements">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/System_Requirements ::System Requirements]</li>
-<li><div id="n-::Sending-in-your-Orders">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Send_Orders ::Sending in your Orders]</li>
-<li><div id="n-::Things-to-remember">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Things_to_remember ::Things to remember]</li>
-<li><div id="n-Bugs-and-Exploits">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Bugs Bugs and Exploits]</li>
-<li><div id="n-::How-to-deal-with-Bugs">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/How_to_deal_with_Bugs ::How to deal with Bugs]</li>
-<li><div id="n-::Reporting-a-Bug">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Reporting_a_Bug ::Reporting a Bug]</li>
-<li><div id="n-::Cheating-and-Exploits">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Cheating_and_Exploits ::Cheating and Exploits]</li>
-<li><div id="n-The-World">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/World The World]</li>
-<li><div id="n-Your-Faction">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Faction Your Faction]</li>
-<li><div id="n-Races">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Races Races]</li>
-<li><div id="n-::Profiles">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Profiles ::Profiles]</li>
-<li><div id="n-::Modifiers">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Modifiers ::Modifiers]</li>
-<li><div id="n-Skills">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Skills Skills]</li>
-<li><div id="n-::Skills-explained">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Skills_explained ::Skills explained]</li>
-<li><div id="n-Travel">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Travel Travel]</li>
-<li><div id="n-::Roads">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Roads ::Roads]</li>
-<li><div id="n-::Horses-and-Carts">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Horses_and_Carts ::Horses and Carts]</li>
-<li><div id="n-::Ship-Movement">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Ship_Movement ::Ship Movement]</li>
-<li><div id="n-Production">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Production Production]</li>
-<li><div id="n-::Goods">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Goods ::Goods]</li>
-<li><div id="n-::Roads">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Buildings_Roads ::Roads]</li>
-<li><div id="n-::Ships">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Ships ::Ships]</li>
-<li><div id="n-::Castles-and-buildings">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Buildings ::Castles and buildings]</li>
-<li><div id="n-::Types-of-buildings">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Types_of_buildings ::Types of buildings]</li>
-<li><div id="n-Income-and-Expenses">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Income_and_Expenses Income and Expenses]</li>
-<li><div id="n-::Expenses">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Expenses ::Expenses]</li>
-<li><div id="n-::Income">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Income ::Income]</li>
-<li><div id="n-::Theft">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Theft ::Theft]</li>
-<li><div id="n-::Trade">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Trade ::Trade]</li>
-<li><div id="n-::Pools">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Pools ::Pools]</li>
-<li><div id="n-The-Art-of-War">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/The_Art_of_War The Art of War]</li>
-<li><div id="n-::Siege">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Siege ::Siege]</li>
-<li><div id="n-::Taking-Sides">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Taking_Sides ::Taking Sides]</li>
-<li><div id="n-::The-Battle">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/The_Battle ::The Battle]</li>
-<li><div id="n-::Muster">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Muster ::Muster]</li>
-<li><div id="n-::Melee-Combat">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Melee_Combat ::Melee Combat]</li>
-<li><div id="n-::Missile-Combat">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Missile_Combat ::Missile Combat]</li>
-<li><div id="n-::Bonuses-and-Penalties">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Bonuses_and_Penalties ::Bonuses and Penalties]</li>
-<li><div id="n-::Escape">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Escape ::Escape]</li>
-<li><div id="n-::Ships-and-Piracy">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Ships_and_Piracy ::Ships and Piracy]</li>
-<li><div id="n-::The-End">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/The_End ::The End]</li>
-<li><div id="n-::Tables">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Tables ::Tables]</li>
-<li><div id="n-Alliances">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Alliances Alliances]</li>
-<li><div id="n-::Types-of-Support">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Types_of_Support ::Types of Support]</li>
-<li><div id="n-Magic">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Magic Magic]</li>
-<li><div id="n-::Spells">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Spells ::Spells]</li>
-<li><div id="n-Schools-of-Magic">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Schools_of_Magic Schools of Magic]</li>
-<li><div id="n-::Illaun">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Illaun ::Illaun]</li>
-<li><div id="n-::Tybied">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Tybied ::Tybied]</li>
-<li><div id="n-::Cerddor">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Cerddor ::Cerddor]</li>
-<li><div id="n-::Gwyrrd">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Gwyrrd ::Gwyrrd]</li>
-<li><div id="n-::Draig">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Draig ::Draig]</li>
-<li><div id="n-Alchemy-and-Herbalism">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Alchemy_and_Herbalism Alchemy and Herbalism]</li>
-<li><div id="n-::Potions">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Potions ::Potions]</li>
-<li><div id="n-Advice-for-Beginners">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Advice_for_Beginners Advice for Beginners]</li>
-<li><div id="n-Orders-Reference">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Orders_Reference Orders Reference]</li>
-<li><div id="n-::Sample-Turn">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Sample_Turn ::Sample Turn]</li>
-<li><div id="n-Credits">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Credits Credits]</li>
-<li><div id="n-::Acknowledgements">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Acknowledgements ::Acknowledgements]</li>
-<li><div id="n-::Technical-Tidbits">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Technical_Tidbits ::Technical Tidbits]</li>
-<li><div id="n-::About-this-Document">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/About_this_Document ::About this Document]</li>
-<li><div id="n-Appendix">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Appendix Appendix]</li>
-<li><div id="n-Mail">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Mail Mail]</li>
-<li><div id="n-::Useful-Addresses">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Useful_Addresses ::Useful Addresses]</li>
-<li><div id="n-Table-of-orders">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Table_of_orders Table of orders]</li>
-<li><div id="n-Table-of-skills">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Table_of_skills Table of skills]</li>
-<li><div id="n-Table-of-alchemy-and-herbs">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Table_of_alchemy_and_herbs Table of alchemy and herbs]</li>
-<li><div id="n-General-tables">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/General_tables General tables]</li>
-<li><div id="n-Index">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Special:AllPages Index]</li></ul>
-
-
-</div>
-
-</div>
-
-</div>
-<div class="visualClear">
-
-
-
-</div>
-<div id="footer">
-
-<div id="f-poweredbyico">
-
-[http://web.archive.org/web/20110113091639/http://www.mediawiki.org/ [[File:The%20Third%20Age%20-%20Eressea_files/poweredby_mediawiki_88x31.html|Powered by MediaWiki]]]
-
-</div>
-<div id="f-copyrightico">
-
-[http://web.archive.org/web/20110113091639/http://creativecommons.org/licenses/by-nc-sa/3.0/ [[File:The%20Third%20Age%20-%20Eressea_files/88x31.png|Attribution-Noncommercial-Share Alike 3.0 Unported]]]
-
-</div>
-<ul>
-<li><div id="lastmod">
-
-
-
-</div>
-This page was last modified on 26 February 2010, at 13:58.</li>
-<li><div id="viewcount">
-
-
-
-</div>
-This page has been accessed 2,335 times.</li>
-<li><div id="copyright">
-
-
-
-</div>
-Content is available under [http://web.archive.org/web/20110113091639/http://creativecommons.org/licenses/by-nc-sa/3.0/ Attribution-Noncommercial-Share Alike 3.0 Unported].</li>
-<li><div id="privacy">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Eressea:Privacy_policy Privacy policy]</li>
-<li><div id="about">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Eressea:About About Eressea]</li>
-<li><div id="disclaimer">
-
-
-
-</div>
-[http://web.archive.org/web/20110113091639/http://wiki.eressea.de/en/Eressea:General_disclaimer Disclaimers]</li></ul>
-
-
-</div>
-
-</div>
