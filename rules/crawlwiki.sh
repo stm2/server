@@ -40,7 +40,7 @@ fi
 
 PAPER_SIZE=a4paper
 
-MEDIAWIKI_TAGS='{ "keep": ["blockquote","br","center","div","noinclude","nowiki","pre","s","span","sub","sup"] , "remove": ["tt", "code"] }'
+MEDIAWIKI_TAGS='{ "keep": ["blockquote","br","center","div","noinclude","nowiki","pre","s","span","sub","sup","tt", "code"] , "remove": [] }'
 
 verbose=3
 

@@ -34,8 +34,8 @@ def mwiki_specials(key, value, format, meta):
       meta_info(value[1])
       return []
 
-  if key == 'Link' and value[1][1] == 'wikilink':
-    m = category_pattern.match(value[1][0])
+  if key == 'Link' and value[2][1] == 'wikilink':
+    m = category_pattern.match(value[2][0])
     if m:
       meta_info('{{Kategorie|' + m.group(1) + '}}')
       return []

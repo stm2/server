@@ -14,6 +14,8 @@ def nothing(k, v, f, m):
 def elem(k, v):
   return {'t' : k, 'c': v}
 
+nullAttr = ("",[],[])
+
 def url_encode(name):
   if type(name) == type(u''):
     return ul.quote(name.encode('utf-8'))

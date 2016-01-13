@@ -74,14 +74,14 @@ def mwiki_specials(key, value, format, meta):
     if m:
       return []
 
-  if key == 'Link' and value[1][1] == 'wikilink':
+  if key == 'Link' and value[2][1] == 'wikilink':
     if DEBUG:
-      logging.debug((key+"."+value[1][0]))
-    m = category_pattern.match(value[1][0])
+      logging.debug((key+"."+value[2][0]))
+    m = category_pattern.match(value[2][0])
     if m:
       return []
     else:
-      return Link(value[0], [convert_internal_link(value[1][0]), ""])
+      return Link(value[0], value[1], [convert_internal_link(value[2][0]), ""])
       
   if key == "Header":
       value[1][0] = ewiki.link_id(value[1][0], id_prefix)

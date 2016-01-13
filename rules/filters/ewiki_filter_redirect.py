@@ -22,10 +22,10 @@ def mwiki_redirect(key, value, format, meta):
   if DEBUG:
     print ".."+key+"."+str(value)
 
-  if key == 'Link' and value[1][1] == 'wikilink':
+  if key == 'Link' and value[2][1] == 'wikilink':
     if DEBUG:
-      print (key+"."+value[1][0])
-    target=value[1][0]
+      print (key+"."+value[2][0])
+    target=value[2][0]
     
   return None
 
