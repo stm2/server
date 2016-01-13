@@ -13,17 +13,19 @@ DO_HTML1=1
 DO_PDF=1
 DO_CLEAN=0
 
-PAGELIST=pagelist_en
-#LANGUAGE_SUFFIX=
-LANGUAGE_SUFFIX=_en
+PAGELIST=pagelist2
+#PAGELIST=pagelist_en
+LANGUAGE_SUFFIX=
+#LANGUAGE_SUFFIX=_en
 
-main_title="Eressea Rules"
+main_title="Eressea-Regeln"
+#main_title="Eressea Rules"
 
 PAPER_SIZE=a4paper
-#LATEX_LANGUAGE=de
-LATEX_LANGUAGE=en
-#LATEX_BABEL_LANG=german
-LATEX_BABEL_LANG=english
+LATEX_LANGUAGE=de
+#LATEX_LANGUAGE=en
+LATEX_BABEL_LANG=german
+#LATEX_BABEL_LANG=english
 
 MEDIAWIKI_TAGS='{ "keep": ["blockquote","br","center","div","noinclude","nowiki","pre","s","span","sub","sup"] , "remove": ["tt", "code"] }'
 
