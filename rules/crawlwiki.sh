@@ -13,6 +13,9 @@ DO_HTML1=1
 DO_PDF=1
 DO_CLEAN=0
 
+# 1: export all, 2: export files change in git repo
+DO_EXPORT=1
+
 LANGUAGE=de
 #LANGUAGE=en
 
@@ -40,7 +43,7 @@ fi
 
 PAPER_SIZE=a4paper
 
-MEDIAWIKI_TAGS='{ "keep": ["blockquote","br","center","div","noinclude","nowiki","pre","s","span","sub","sup","tt", "code"] , "remove": [] }'
+MEDIAWIKI_TAGS='{ "keep": ["blockquote","br","center","div","noinclude","nowiki","pre","s","span","sub","sup","tt", "code"] , "remove": [translate] }'
 
 verbose=3
 
@@ -78,6 +81,7 @@ real_pagelist=pagelist.real
 redirect_pagelist=pagelist.redirect
 
 redirect_file=$RAW_DIR/redirects.tmp
+diff_file=$RAW_DIR/diffs.tmp
 concat_file=$JSON_DIR/concat.json
 
 html0_contentsfile=$HTML_DIR/$CONTENTS_NAME$HTML_EXT
@@ -89,6 +93,10 @@ doc_templatefile=$TEMPLATE_DIR/wikitemplate.docbook
 
 latex_file=$LATEX_DIR/$ONE_FILE_NAME.tex
 latex_templatefile=$TEMPLATE_DIR/wikitemplate.tex
+
+mw_export_templatefile=$TEMPLATE_DIR/wiki_export.xml
+MW_EDIT_REASON=""
+mw_exportfile=$RAW_DIR/mediawiki_export.xml
 
 export PYTHONPATH=$PYTHONPATH:lib
 
@@ -143,6 +151,16 @@ function add_redirect {
     fi
 }
 
+function add_diff {
+    if [ -z "$diffs" ]; then
+	diffs="{ \"$1\": \"$2\" }"
+    elif [ "$diffs" = "{}" ]; then
+	diffs="{ \"$1\": \"$2\" }"
+    else
+	diffs="${diffs:0:-1}, \"$1\": \"$2\" }"
+    fi
+}
+
 function echo_usage {
     doit=$1
     if ((doit==1)); then
@@ -158,6 +176,7 @@ function remove_tags {
     tags=$2
     python -c "from ewiki import remove_tags; remove_tags('$filename', '$tags')"
 }
+
     
 
 echo_usage DO_RAW "downloading mediawiki into $RAW_DIR" $RAW_DIR
@@ -214,6 +233,9 @@ if ((DO_CONCAT==1)); then
 fi
 
 redirects="{}"
+diffs="{}"
+
+rm "$diff_file"
 
 cat $PAGELIST | while read pageline; do
     if [ -z "$pageline" ]; then
@@ -329,10 +351,29 @@ cat $PAGELIST | while read pageline; do
     fi
 
     echo $redirects > "$redirect_file"
+
+    if ((DO_EXPORT>0)); then
+	if [ ! -z "$rawfile" ]; then
+	    if ((DO_EXPORT==2)); then
+		changed_file=$(git diff --name-only "$rawfile")
+	    else
+		changed_file=$rawfile
+	    fi
+	    if [ ! -z "$changed_file" ]; then
+		add_diff "$page" "$rawfile"
+		echo $diffs > "$diff_file"
+	    fi
+	fi
+    fi
 done
 
 check_file "$redirect_file"
 redirects=$(cat $redirect_file)
+
+if ((DO_EXPORT>0)); then
+    touch "$diff_file"
+    diffs=$(cat "$diff_file")
+fi
 
 if ((DO_HTML0==1)); then
     echo "</ul></body></html>" >> "$html0_contentsfile"
@@ -398,6 +439,15 @@ if ((DO_PDF==1)); then
 		echo "pdflatex -interaction nonstopmode --output-directory $LATEX_DIR $latex_file"
 	    fi
 	fi
+    fi
+fi
+
+if ((DO_EXPORT>0)); then
+    if ((verbose>=INFO_LEVEL)); then
+	echo "creating mediawiki export file"
+    fi
+    if [ "$diffs" != "" ]; then
+	python -c "from ewiki import mediawiki_export; mediawiki_export('$mw_export_templatefile', '$0', 'external edit: $MW_EDIT_REASON', '$diffs')" > "$mw_exportfile"
     fi
 fi
 
