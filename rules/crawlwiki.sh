@@ -218,6 +218,7 @@ cat $PAGELIST | while read pageline; do
     page=${linearray[1]}
     pageurl=$(url_encode "$page")
 
+    redirect=${linearray[2]}
     title=${linearray[2]}
     if [ -z "$title" ]; then
 	title=$page
@@ -259,7 +260,6 @@ cat $PAGELIST | while read pageline; do
     fi
 
     if [ "$depth" = "R" ]; then
-	redirect=$title
 	if [ -z "$redirect" ]; then
 	    redirect=$(pandoc -f mediawiki -t plain --filter="$FILTERS_DIR/ewiki_filter_redirect.py" "$rawfile")
 	fi

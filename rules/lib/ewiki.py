@@ -58,6 +58,7 @@ def parse_redirects(input):
           target = redirects[target]
           if ccc > 999:
             logging.warn('redirect loop for ' + r +'?')
+            break;
           ccc += 1
       redirects[r] = target
 
