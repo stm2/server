@@ -1,7 +1,7 @@
-<tt>'''BESCHREIBE EINHEIT''' "''text''"<br>
-'''BESCHREIBE GEBÄUDE''' "''text''"<br>
-'''BESCHREIBE SCHIFF''' "''text''"<br>
-'''BESCHREIBE REGION''' "''text''"<br>
+<tt>'''BESCHREIBE EINHEIT''' "''text''"<br />
+'''BESCHREIBE GEBÄUDE''' "''text''"<br />
+'''BESCHREIBE SCHIFF''' "''text''"<br />
+'''BESCHREIBE REGION''' "''text''"<br />
 '''BESCHREIBE PRIVAT''' "''text''"</tt>
 
 

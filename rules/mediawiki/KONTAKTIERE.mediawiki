@@ -1,4 +1,4 @@
-<tt>'''KONTAKTIERE''' ''einheit-nr''<br/></tt>
+<tt>'''KONTAKTIERE''' ''einheit-nr''<br /></tt>
 Man darf Einheiten fremder Parteien normalerweise nichts geben ohne daß man mit dieser Partei alliiert ist. Um dies im begrenzten Maße doch zu erlauben, verwendet man den <tt>KONTAKTIERE</tt> Befehl. In dieser Runde - und nur in dieser Runde - verhält man sich der genannten Einheit gegenüber, als wenn man mit ihr alliiert wäre (s.a. unter [[HELFE]], d.h. man nimmt Gegenstände, Silber und Personen von ihr an. Auch das Betreten von Burgen und Schiffen, das Rekrutieren von Personen und der Abbau von Ressourcen ist nicht-alliierten Parteien auf diesem Wege möglich.
 
       <pre>

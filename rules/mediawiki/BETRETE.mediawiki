@@ -1,4 +1,4 @@
-<tt>'''BETRETE''' GEBÄUDE ''gebäude-nr''<br/>
+<tt>'''BETRETE''' GEBÄUDE ''gebäude-nr''<br />
 '''BETRETE''' SCHIFF ''schiff-nr''</tt>
 
 Betritt das angegebene [[Gebäude]] oder [[Schiff]]. Die Einheit mit dem [[Gebäude#Einheiten_und_Gebäude|Kommando]] über das Gebäude oder Schiff muss den Zutritt erlauben. Das tut sie, wenn sie zur eigenen Partei gehört, [[HELFE]] BEWACHE für die eigene Partei gesetzt hat oder in dieser Runde den [[KONTAKTIERE]] Befehl für die Einheit gibt. Anderenfalls wird der Zutritt verweigert.

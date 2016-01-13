@@ -1,7 +1,7 @@
-<tt>'''BOTSCHAFT''' EINHEIT ''einh-nr'' "''text''"<br/>
-'''BOTSCHAFT''' PARTEI ''partei-nr'' "''text''"<br/>
-'''BOTSCHAFT''' SCHIFF ''schiff-nr'' "''text''"<br/>
-'''BOTSCHAFT''' GEBÄUDE ''gebäude-nr'' "''text''"<br/>
+<tt>'''BOTSCHAFT''' EINHEIT ''einh-nr'' "''text''"<br />
+'''BOTSCHAFT''' PARTEI ''partei-nr'' "''text''"<br />
+'''BOTSCHAFT''' SCHIFF ''schiff-nr'' "''text''"<br />
+'''BOTSCHAFT''' GEBÄUDE ''gebäude-nr'' "''text''"<br />
 '''BOTSCHAFT''' REGION "''text''"</tt>
 
 Hiermit können Botschaften an andere Einheiten, an andere Parteien, oder an alle Parteien in einer Region geschickt werden. Absender und Empfänger müssen in der selben Region sein. Schickt man eine Botschaft an eine Einheit, dann wird die Botschaft anonymisiert, wenn der Empfänger die absendende Einheit nicht sehen kann.

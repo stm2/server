@@ -6,7 +6,7 @@ Die folgende Tabelle zeigt die Gegenstände, die es auf Eressea gibt. Sie könne
 
 
 {| border="0" cellspacing="0" align="center"
-|+ Gewicht, Talente und Materialbedarf<br>*) Laen benötigt ein Bergwerk zum Abbau.<br>**) Elfenbögen können nur von Elfen hergestellt werden.
+|+ Gewicht, Talente und Materialbedarf<br />*) Laen benötigt ein Bergwerk zum Abbau.<br />**) Elfenbögen können nur von Elfen hergestellt werden.
 |- style="background-color:#aaaaaa"
 !Gegenstand  	!!Gewicht  	!!Talent  	!!mind.  	!!Rohstoffe
 |- style="background-color:#eeeeee"

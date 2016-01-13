@@ -1,9 +1,9 @@
-<tt>'''KÄMPFE''' VORNE<br/>
-'''KÄMPFE''' AGGRESSIV<br/>
-'''KÄMPFE''' HINTEN<br/>
-'''KÄMPFE''' DEFENSIV<br/>
-'''KÄMPFE''' NICHT<br/>
-'''KÄMPFE''' FLIEHE<br/>
+<tt>'''KÄMPFE''' VORNE<br />
+'''KÄMPFE''' AGGRESSIV<br />
+'''KÄMPFE''' HINTEN<br />
+'''KÄMPFE''' DEFENSIV<br />
+'''KÄMPFE''' NICHT<br />
+'''KÄMPFE''' FLIEHE<br />
 '''KÄMPFE''' HELFE [NICHT]</tt>
 
 Mit diesem Befehl wird die Reaktion einer Einheit im Falle eines Kampfes bestimmt (siehe im Kapitel [[Krieg|Vom Kriege]] auch den Abschnitt [[Schlacht|Kampfreihen]]).
@@ -16,7 +16,7 @@ Mit diesem Befehl wird die Reaktion einer Einheit im Falle eines Kampfes bestimm
 
 * <tt>KÄMPFE DEFENSIV</tt>: Wie <tt>KÄMPFE HINTEN</tt>, aber die Einheit wird schon fliehen, wenn sie noch 90% ihrer Trefferpunkte hat. Dies verwendet man mit Vorteil für Magier.
 
-* <tt>KÄMPFE NICHT</tt>: Die Einheit kämpft nur noch dann mit, wenn sie selber das Ziel eines feindlichen <tt>[[ATTACKIERE]]</tt>-Befehles ist. Dies setzt man mit Vorteil für Einheiten ein, die sich aus dem Kampf raushalten, aber nicht fliehen sollen, weil sie z.B. ein Gebäude besetzt halten sollen. Die Einheit versucht zu fliehen, wenn sie noch 90% ihrer Trefferpunkte hat.<br> ''Achtung''! Die Einheiten kämpfen, wenn sie attackiert werden, d.h. Magier zaubern und Katapultschützen schleudern ihre Steine. Soll dies verhindert werden, weicht man auf <tt>KÄMPFE FLIEHE</tt> aus bzw. deaktiviert bei Magiern die Kampfzauber.
+* <tt>KÄMPFE NICHT</tt>: Die Einheit kämpft nur noch dann mit, wenn sie selber das Ziel eines feindlichen <tt>[[ATTACKIERE]]</tt>-Befehles ist. Dies setzt man mit Vorteil für Einheiten ein, die sich aus dem Kampf raushalten, aber nicht fliehen sollen, weil sie z.B. ein Gebäude besetzt halten sollen. Die Einheit versucht zu fliehen, wenn sie noch 90% ihrer Trefferpunkte hat.<br /> ''Achtung''! Die Einheiten kämpfen, wenn sie attackiert werden, d.h. Magier zaubern und Katapultschützen schleudern ihre Steine. Soll dies verhindert werden, weicht man auf <tt>KÄMPFE FLIEHE</tt> aus bzw. deaktiviert bei Magiern die Kampfzauber.
 
 * <tt>KÄMPFE FLIEHE</tt>: Wird eine fluchtbereite Einheit in einen Kampf verwickelt, versucht sie vor jeder Kampfrunde zu fliehen. Für weitere Informationen über das "Fluchtverhalten", siehe den Abschnitt [[Die Flucht|Flucht]] im Kapitel Kampf. Diesen Kampfstatus setzt man mit Vorteil für fast alle "Zivilisten" ein. Erfolgreich aus einem Kampf geflohene Einheiten verlassen automatisch Gebäude oder an Land liegende Schiffe, in denen sie sich befinden. Es gilt daher abzuwägen, ob dieser Status für Gebäudeinsassen sinnvoll ist. Einheiten mit diesem Kampfstatus können auch nicht [[BEWACHEN]]. Setzt eine bewachende Einheit KÄMPFE FLIEHE, wird das Bewachen sofort aufgehoben, mit entsprechenden Konsequenzen.
 

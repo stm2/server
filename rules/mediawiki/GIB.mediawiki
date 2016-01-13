@@ -1,12 +1,12 @@
-<tt>'''GIB''' ''einheit-nr'' KRÄUTER<br/>
-'''GIB''' ''einheit-nr'' KOMMANDO<br/>
-'''GIB''' ''einheit-nr'' EINHEIT<br/>
-'''GIB''' ''einheit-nr anzahl'' PERSONEN<br/>
-'''GIB''' ''einheit-nr anzahl gegenstand''<br/>
-'''GIB''' ''einheit-nr'' ALLE PERSONEN<br/>
-'''GIB''' ''einheit-nr'' ALLES [''gegenstand'']<br/>
-'''GIB''' ''einheit-nr'' JE ''anzahl'' ''gegenstand''<br/>
-'''GIB''' 0 ''anzahl'' PERSONEN<br/>
+<tt>'''GIB''' ''einheit-nr'' KRÄUTER<br />
+'''GIB''' ''einheit-nr'' KOMMANDO<br />
+'''GIB''' ''einheit-nr'' EINHEIT<br />
+'''GIB''' ''einheit-nr anzahl'' PERSONEN<br />
+'''GIB''' ''einheit-nr anzahl gegenstand''<br />
+'''GIB''' ''einheit-nr'' ALLE PERSONEN<br />
+'''GIB''' ''einheit-nr'' ALLES [''gegenstand'']<br />
+'''GIB''' ''einheit-nr'' JE ''anzahl'' ''gegenstand''<br />
+'''GIB''' 0 ''anzahl'' PERSONEN<br />
 '''GIB''' 0 ''anzahl gegenstand''</tt>
 
 Mit <tt>GIB</tt> können Einheiten alle Waren, die sie haben, an andere Einheiten geben. Bedingung ist, dass die angegebene Einheit Sachen annimmt. Dies tut sie nur, wenn sie zur eigenen oder einer alliierten Partei gehört (<tt>HELFE GIB</tt>), oder wenn sie diese Runde den Befehl <tt>KONTAKTIERE</tt> für die Gebereinheit gegeben hat. Die meisten Sachen können zudem auch weggeworfen, bzw. in Landregionen den Bauern übergeben werden (<tt>GIB 0 ...</tt>). Personen, Silber und Pferde vergrößern den Bauern-, Silber- bzw. Pferdevorrat der Region. Alle anderen Gegenstände verschwinden einfach.

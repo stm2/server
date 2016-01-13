@@ -173,7 +173,7 @@ Dabei ist unter Nachladen angegeben, wie lange es dauert, die Waffe wieder schu�
 == Ausdauer ==
 
 {| border="0" cellspacing="1" align="center"
-|+Erhöhte Trefferpunkte durch Ausdauer<br>Die Formel dazu ist (Talent/2)^(1,5)*20% 
+|+Erhöhte Trefferpunkte durch Ausdauer<br />Die Formel dazu ist (Talent/2)^(1,5)*20% 
 |- style="background-color:#aaaaaa"
 !Talent 	!!1 	!!2 	!!3 	!!4 	!!5 	!!6 	!!7 	!!8 	!!9 	!!10 	!!... 	!!15 	!!... 	!!20
 |- style="background-color:#eeeeee"

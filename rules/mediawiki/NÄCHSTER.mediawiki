@@ -1,4 +1,4 @@
-<tt>'''NÄCHSTER'''<br/></tt>
+<tt>'''NÄCHSTER'''<br /></tt>
 
 Dies beendet die Befehle für eine Partei. Mit <tt>NÄCHSTER</tt> muß man seine Befehlsdatei abschließen.
 

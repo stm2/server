@@ -1,4 +1,4 @@
-<tt>'''SORTIERE''' VOR ''einheit-nr'' <br/>
+<tt>'''SORTIERE''' VOR ''einheit-nr'' <br />
 '''SORTIERE''' HINTER ''einheit-nr''</tt>
 
 Mit diesem Befehl ändert man die Reihenfolge, in der eigene Einheiten im Report und der Zugvorlage auftauchen. Dies ist nützlich, um z.B. Schüler und Lehrer direkt untereinander stehen zu haben.

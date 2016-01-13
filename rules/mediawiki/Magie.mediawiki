@@ -95,7 +95,7 @@ In diesem Fall wird der Zauber in der angegebenen Region 'gezündet'. Diese Modi
 |- style="background-color:#aaaaaa"
 !Entfernung (Regionen) 	!!0 	!!1 	!!2 	!!3 	!!4
 |- style="background-color:#eeeeee"
-|Anzahl der benötigten Komponenten 	||1 Stein<br>5 Eisen<br>10 Holz 	||2 Steine<br>10 Eisen<br>20 Holz 	||4 Steine<br>20 Eisen<br>40 Holz 	||8 Steine<br>40 Eisen<br>80 Holz 	||16 Steine<br>80 Eisen<br>160 Holz
+|Anzahl der benötigten Komponenten 	||1 Stein<br />5 Eisen<br />10 Holz 	||2 Steine<br />10 Eisen<br />20 Holz 	||4 Steine<br />20 Eisen<br />40 Holz 	||8 Steine<br />40 Eisen<br />80 Holz 	||16 Steine<br />80 Eisen<br />160 Holz
 |}
 
 

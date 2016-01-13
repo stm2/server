@@ -1,4 +1,4 @@
-<tt>'''ZÜCHTE''' PFERDE<br/>
+<tt>'''ZÜCHTE''' PFERDE<br />
 '''ZÜCHTE''' [''anzahl''] KRÄUTER</tt>
 
 <tt>'''ZÜCHTE'''</tt> ist ein langer Befehl, mit dem Einheiten in einer [[Andere Gebäude#Pferdezucht|Pferdezucht]] Pferde züchten oder versuchen, in einer Region neue Kräuter zu pflanzen.

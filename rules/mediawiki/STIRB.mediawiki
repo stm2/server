@@ -1,4 +1,4 @@
-<tt>'''STIRB''' "Passwort"<br/></tt>
+<tt>'''STIRB''' "Passwort"<br /></tt>
 
 
 Dies bewirkt, daß die Partei sich auflöst und nicht mehr mitspielt. Das Passwort der Partei muß zur Sicherheit auch angeben werden.

@@ -1,4 +1,4 @@
-<tt>'''FOLGE''' EINHEIT ''einheit-nr''<br/>
+<tt>'''FOLGE''' EINHEIT ''einheit-nr''<br />
 '''FOLGE''' SCHIFF ''schiff-nr'' [''Geschwindigkeit'']</tt>
 
 Hiermit kann man Einheiten bzw. Schiffen folgen.

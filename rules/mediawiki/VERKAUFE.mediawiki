@@ -1,4 +1,4 @@
-<tt>'''VERKAUFE''' ''anzahl'' ''luxusgut''<br/>
+<tt>'''VERKAUFE''' ''anzahl'' ''luxusgut''<br />
 '''VERKAUFE''' ALLES ''luxusgut''</tt>
 
 Die im [[Handel|Handeln]] kundige Einheit kann mit diesem Befehl Luxusgüter, in deren Besitz sie ist, an die Bauern verkaufen. Dies geht nur, wenn sich in der Region erstens ein Handelsposten oder ein größerer [[Burgen|Burgtyp]] befindet, in dessen Nähe der Markt abgehalten werden kann, und wenn zweitens überhaupt eine Nachfrage nach dem Produkt besteht. Um etwas zu verkaufen, ist kein Kontakt zum Burgherren notwendig; trotzdem ist es natürlich diplomatischer, vorher zu fragen...

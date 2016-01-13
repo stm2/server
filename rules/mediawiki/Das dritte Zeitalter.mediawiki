@@ -303,7 +303,7 @@ Zur Design-Philosopie der Rassen siehe [[Rassen im dritten Zeitalter]].
 |align="center"|-1
 |}
 
-:: *+1 je 4 Stufen Ausdauer<br>
+:: *+1 je 4 Stufen Ausdauer<br />
 :: N/A: Kann nicht gelernt werden
 
 === Rasseneigenschaften ===
@@ -514,7 +514,7 @@ Zur Design-Philosopie der Rassen siehe [[Rassen im dritten Zeitalter]].
 | Zitadelle || Stein || 6250/5000 || 5% || 15 || 6 || 5 || 10 ||
 |}
 
-:: *Die Talentkosten jedes Punktes hängen von der aktuellen Größe ab, d.h. der 5. Punkt einer Wache bzw. der 10.<br>einer Burg kosten nur 1 Bautalent, der 6. bzw. 11. kosten 2 usw.
+:: *Die Talentkosten jedes Punktes hängen von der aktuellen Größe ab, d.h. der 5. Punkt einer Wache bzw. der 10.<br />einer Burg kosten nur 1 Bautalent, der 6. bzw. 11. kosten 2 usw.
 
 == Regionsbesitz == 
 

@@ -21,7 +21,7 @@ Hier zunächst eine zusammenfassende Tabelle, nähere Erklärungen folgen darunt
 !Ressourcen
 !
 !
-|+ Gebäude; siehe auch Tabelle [[Burgen|Burgenbau]]<br>Die Kapazität bezieht sich nur auf die Personen, die von dem Gebäude profitieren können.<br>*) außerdem 2 Mallorn und 2 Laen pro Größenpunkt
+|+ Gebäude; siehe auch Tabelle [[Burgen|Burgenbau]]<br />Die Kapazität bezieht sich nur auf die Personen, die von dem Gebäude profitieren können.<br />*) außerdem 2 Mallorn und 2 Laen pro Größenpunkt
 |- style="background-color:#eeeeee"
 |[[#Leuchtturm|Leuchtturm]]
 |align="right"|2     	

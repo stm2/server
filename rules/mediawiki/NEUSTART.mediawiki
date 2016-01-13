@@ -1,4 +1,4 @@
-<tt>'''NEUSTART''' ''rasse'' "''passwort''"<br/></tt>
+<tt>'''NEUSTART''' ''rasse'' "''passwort''"<br /></tt>
 
 Mit diesem Befehl kann man seine Partei auflösen und gleichzeitig mit einer anderen Rassen neu starten. Voraussetzung dafür ist, dass die Partei mindestens 81 Wochen alt ist.
 

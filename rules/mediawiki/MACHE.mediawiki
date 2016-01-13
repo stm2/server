@@ -1,10 +1,10 @@
-<tt>'''MACHE TEMP''' ''unit-alias-nr'' ["''name''"]<br/>
-'''MACHE''' [''stufen''] ''Gebäudetyp'' [''gebäude-nr'']<br/>
-'''MACHE''' [''stufen''] ''schiffs-typ''<br/>
-'''MACHE''' [''stufen''] SCHIFF [''schiff-nr'']<br/>
-'''MACHE''' [''stufen''] STRASSE ''richtung''<br/>
-'''MACHE''' [''anzahl''] KRÄUTER<br/>
-'''MACHE''' [''anzahl''] ''gegenstand''<br/>
+<tt>'''MACHE TEMP''' ''unit-alias-nr'' ["''name''"]<br />
+'''MACHE''' [''stufen''] ''Gebäudetyp'' [''gebäude-nr'']<br />
+'''MACHE''' [''stufen''] ''schiffs-typ''<br />
+'''MACHE''' [''stufen''] SCHIFF [''schiff-nr'']<br />
+'''MACHE''' [''stufen''] STRASSE ''richtung''<br />
+'''MACHE''' [''anzahl''] KRÄUTER<br />
+'''MACHE''' [''anzahl''] ''gegenstand''<br />
 '''MACHE'''</tt>
 
 Der Befehl <tt>MACHE</tt> ist der allgemeine Produktionsbefehl. Mehr dazu auch im Kapitel [[Produktion]].

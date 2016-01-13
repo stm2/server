@@ -46,9 +46,9 @@ siehe [[Trank|Alchemie]]
 |+ Liste der Kräuter und deren Verbreitung
 !Kräuter 	!!Verbreitung
 |-
-|Flachwurz, Würziger Wagemut, Eulenauge,<br>Grüner Spinnerich, Blauer Baumringel,<br>Elfenlieb 	||Wald/Ebene
+|Flachwurz, Würziger Wagemut, Eulenauge,<br />Grüner Spinnerich, Blauer Baumringel,<br />Elfenlieb 	||Wald/Ebene
 |-
-|Gurgelkraut, Knotiger Saugwurz,<br>Blasenmorchel 	||Sumpf
+|Gurgelkraut, Knotiger Saugwurz,<br />Blasenmorchel 	||Sumpf
 |-
 |Wasserfinder, Kakteenschwitz, Sandfäule 	||Wüste
 |-

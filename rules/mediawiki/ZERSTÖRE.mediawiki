@@ -1,4 +1,4 @@
-<tt>'''ZERSTÖRE''' [''stufen'']<br/>
+<tt>'''ZERSTÖRE''' [''stufen'']<br />
 '''ZERSTÖRE''' [''stufen''] STRASSE ''richtung''</tt>
 
 Eine Einheit, die das Kommando über ein [[Schiff]] oder ein [[Gebäude]] hat, kann dieses jederzeit mit diesem [[Befehl]] verkleinern oder ganz zerstören. Dazu braucht sie kein Talent. Der Parameter stufen bezeichnet dabei bei Gebäuden die Größenpunkte, um die das Gebäude verkleinert werden soll, bei Schiffen die Prozentpunkte. Schiffe können allerdings nur in Küstengebieten verkleinert oder versenkt werden, die Besatzung weigert sich, das Schiff auf hoher See zu beschädigen!

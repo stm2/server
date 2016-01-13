@@ -30,18 +30,18 @@ Die in der Region lebenden Bauern können mit dem Befehl [[REKRUTIERE]] in die e
 
 ''"Sehr gut, Rahel. Und was steht in den Zeilen darunter vermerkt?"''
 
-<code>Auf dem Markt wird für Weihrauch 4 Silber verlangt. Geboten wird für Balsam 12 Silber, für Gewürz 10 Silber, für Juwelen 21 Silber, für Myrrhe 15 Silber, für Öl 12 Silber und für Seide 30 Silber.<br/>
-<br/>
-Statistik für Tetos (-1,0):<br/>
-<br/>
-Unterhaltung: max. 547 Silber<br/>
-Lohn für Arbeit: 11 Silber<br/>
-Rekrutieren: max. 26 Bauern<br/>
-Luxusgüter zum angegebenen Preis: 10<br/>
-Personen: 20<br/>
-Silber: 821<br/>
-Holz: 13<br/>
-Schwerter: 2<br/>
+<code>Auf dem Markt wird für Weihrauch 4 Silber verlangt. Geboten wird für Balsam 12 Silber, für Gewürz 10 Silber, für Juwelen 21 Silber, für Myrrhe 15 Silber, für Öl 12 Silber und für Seide 30 Silber.<br />
+<br />
+Statistik für Tetos (-1,0):<br />
+<br />
+Unterhaltung: max. 547 Silber<br />
+Lohn für Arbeit: 11 Silber<br />
+Rekrutieren: max. 26 Bauern<br />
+Luxusgüter zum angegebenen Preis: 10<br />
+Personen: 20<br />
+Silber: 821<br />
+Holz: 13<br />
+Schwerter: 2<br />
 Pferde: 4</code>
 
 ''Stolz strahlte die junge Novizin ihre offenbar zufriedene Lehrerin an. "Dabei, Magistra, handelt um weitere Informationen, die unsere Kundschafter herausgefunden haben. Zunächst scheinen sie sich auf dem Markt umgesehen und die Preise notiert zu haben. In dem Abschnitt darunter ist vermerkt, wieviel Silber die Bewohner der Region für Schausteller und Musiker auszugeben bereit sind, wieviel man für einfache Arbeiten bekommt, wieviele Bauern bereit sind, sich einem Volk anzuschließen und wieviele Güter auf den Markt überhaupt für den oben angegebenen Preis verkauft werden. In den letzten Zeilen ist dann vermerkt, wieviele Personen unseres Volkes sich dort aufhalten, und was sie mit sich führen."''

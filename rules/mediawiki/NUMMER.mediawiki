@@ -1,6 +1,6 @@
-<tt>'''NUMMER EINHEIT''' [''neue-nr'']<br/>
-'''NUMMER PARTEI''' [''neue-nr'']<br/>
-'''NUMMER SCHIFF''' [''neue-nr'']<br/>
+<tt>'''NUMMER EINHEIT''' [''neue-nr'']<br />
+'''NUMMER PARTEI''' [''neue-nr'']<br />
+'''NUMMER SCHIFF''' [''neue-nr'']<br />
 '''NUMMER GEBÄUDE''' [''neue-nr'']</tt>
 
 Hiermit kann man einer Einheit, einem Schiff, einem Gebäude oder gar der eigenen Partei eine neue Nummer zuweisen. Ist die Nummer bereits belegt, so ändert sich die Nummer nicht.
