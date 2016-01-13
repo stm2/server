@@ -7,6 +7,65 @@ R	Modifiers	Race Modifiers
 R	Skills explained	Skills Explained
 R	Muster	Mustering of Soldiers
 R	Pools	Silver and Item Pools
+R	ATTACK	Orders Reference#ATTACK
+R	BANNER	Orders Reference#BANNER
+R	BUY	Orders Reference#BUY
+R	CARRY	Orders Reference#CARRY
+R	CLAIM	Orders Reference#CLAIM
+R	CAST	Orders Reference#CAST
+R	COMBAT	Orders Reference#COMBAT
+R	COMBATSPELL	Orders Reference#COMBATSPELL
+R	CONTACT	Orders Reference#CONTACT
+R	DEFAULT	Orders Reference#DEFAULT
+R	DESCRIBE	Orders Reference#DESCRIBE
+R	DESTROY	Orders Reference#DESTROY
+R	EMAIL	Orders Reference#EMAIL
+R	END	Orders Reference#END
+R	ENTER	Orders Reference#ENTER
+R	ENTERTAIN	Orders Reference#ENTERTAIN
+R	ERESSEA	Orders Reference#ERESSEA
+R	FOLLOW	Orders Reference#FOLLOW
+R	FORGET	Orders Reference#FORGET
+R	GIVE	Orders Reference#GIVE
+R	GROUP	Orders Reference#GROUP
+R	GROW	Orders Reference#BREED
+R	GUARD	Orders Reference#GUARD
+R	HELP	Orders Reference#HELP
+R	HIDE	Orders Reference#HIDE
+R	LEARN	Orders Reference#LEARN
+R	LEAVE	Orders Reference#LEAVE
+R	MAKE	Orders Reference#MAKE
+R	MESSAGE	Orders Reference#MESSAGE
+R	NAME	Orders Reference#NAME
+R	NEXT	Orders Reference#NEXT
+R	NUMBER	Orders Reference#NUMBER
+R	OPTION	Orders Reference#OPTION
+R	ORIGIN	Orders Reference#ORIGIN
+R	PASSWORD	Orders Reference#PASSWORD
+R	PIRACY	Orders Reference#PIRACY
+R	PLANT	Orders Reference#PLANT
+R	PREFIX	Orders Reference#PREFIX
+R	PROMOTION	Orders Reference#PROMOTION
+R	QUIT	Orders Reference#QUIT
+R	RECRUIT	Orders Reference#RECRUIT
+R	REGION	Orders Reference#REGION
+R	RESEARCH	Orders Reference#RESEARCH
+R	RESERVE	Orders Reference#RESERVE
+R	RESTART	Orders Reference#RESTART
+R	RIDE	Orders Reference#RIDE
+R	ROUTE	Orders Reference#ROUTE
+R	SABOTAGE	Orders Reference#SABOTAGE
+R	SELL	Orders Reference#SELL
+R	SHOW	Orders Reference#SHOW
+R	SIEGE	Orders Reference#BESIEGE
+R	SORT	Orders Reference#SORT
+R	SPY	Orders Reference#SPY
+R	STEAL	Orders Reference#STEAL
+R	TAX	Orders Reference#TAX
+R	TEACH	Orders Reference#TEACH
+R	UNIT	Orders Reference#UNIT
+R	USE	Orders Reference#USE
+R	WORK	Orders Reference#WORK
 #1	Rules
 1	Introduction
 1	Preface

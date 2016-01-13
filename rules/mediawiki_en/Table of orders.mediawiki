@@ -23,9 +23,9 @@ The "S/L" column indicates whether an order is [[Advice_for_Beginners|(S)hort or
 |- style="background-color:#eeeeee"
 |<tt>[[COMBAT|COMBAT REAR]]</tt> 	  	|| ||S
 |- style="background-color:#cccccc"
-|<tt>[[COMBAT|COMBATSPELL "spell"]]</tt> 	||set spell for combat 	||S
+|<tt>[[COMBATSPELL|COMBATSPELL "spell"]]</tt> 	||set spell for combat 	||S
 |- style="background-color:#eeeeee"
-|<tt>[[COMBAT|CONTACT unit-id]]</tt> 	||contact foreign unit 	||S
+|<tt>[[CONTACT|CONTACT unit-id]]</tt> 	||contact foreign unit 	||S
 |- style="background-color:#cccccc"
 |<tt>[[DEFAULT|DEFAULT order]]</tt> 	||sets the default order for the next turn 	||S
 |- style="background-color:#eeeeee"

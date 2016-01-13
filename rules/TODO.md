@@ -1,9 +1,8 @@
-- eliminate pseudo-html: `<Gebäude-nr>` and raw html `<div>`
 - Tabelle ARBEITE, Waren, Schiffe
 - tabellenformat latex (passen nicht auf die Seite)
 - Talentmodifikatoren, Kräuter, BEFÖRDERE zu breit
 - Formatierung: Befehlssyntax
-- `<tt>[[PIRATERIE|...`
+- eliminate raw html `<div>`?
 - BEZAHLE: E3A-Vorlage
 - Mediawiki Seiteneinbindungen `{{:subpage}}` wären praktisch, zum Beispiel für Tabellen
 - `__TOC__`

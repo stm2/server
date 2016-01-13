@@ -7,13 +7,13 @@ This is to treat all factions evenly instead of giving all resources to the fact
 
 # new default orders are set
 # [[GROUP]],[[MAKE TEMP]]
-# [[NAME]], [[DESCRIBE]], [[GUARD NOT]], [[web/20110102235833/http://wiki.eressea.de/en/HELP|HELP]], [[web/20110102235833/http://wiki.eressea.de/en/COMBAT|COMBAT]], [[COMBATSPELL]], [[HIDE]], [[ORIGIN]], [[SHOW]]
-# [[web/20110102235833/http://wiki.eressea.de/en/BANNER|BANNER]], [[EMAIL]], [[OPTION]], [[PASSWORD]]
+# [[NAME]], [[DESCRIBE]], [[GUARD NOT]], [[HELP|HELP]], [[COMBAT|COMBAT]], [[COMBATSPELL]], [[HIDE]], [[ORIGIN]], [[SHOW]]
+# [[BANNER|BANNER]], [[EMAIL]], [[OPTION]], [[PASSWORD]]
 # [[MESSAGE]]
 # [[USE]]
 # [[ENTER]], [[CONTACT]]; 1st attempt
 # [[LEAVE]]
-# Contacts are removed, then [[web/20110102235833/http://wiki.eressea.de/en/ATTACK|ATTACK]]
+# Contacts are removed, then [[ATTACK|ATTACK]]
 # [[RESERVE]], [[CLAIM]]
 # [[SIEGE]]
 # [[ENTER]], [[CONTACT]]; 2nd attempt
@@ -24,7 +24,7 @@ This is to treat all factions evenly instead of giving all resources to the fact
 # [[RESTART]], [[QUIT]], [[CAST]]
 # [[TEACH]]
 # [[LEARN]]
-# [[web/20110102235833/http://wiki.eressea.de/en/WORK|WORK]], [[STEAL]], [[web/20110102235833/http://wiki.eressea.de/en/BUY|BUY]], [[web/20110102235833/http://wiki.eressea.de/en/SELL|SELL]], [[MAKE]], [[PLANT]], [[SABOTAGE]], [[SPY]], [[TAX]], [[web/20110102235833/http://wiki.eressea.de/en/ENTERTAIN|ENTERTAIN]], [[GROW]]
+# [[WORK|WORK]], [[STEAL]], [[BUY|BUY]], [[SELL|SELL]], [[MAKE]], [[PLANT]], [[SABOTAGE]], [[SPY]], [[TAX]], [[ENTERTAIN|ENTERTAIN]], [[GROW]]
 # At this point some orders are executed step by step, e.g. the gathering of resources:
 ## gathering of resources (piece by piece)
 ## entertainment (piece by piece)
@@ -36,7 +36,7 @@ This is to treat all factions evenly instead of giving all resources to the fact
 # Ships with a too small crew suffer damage
 # [[ENTER]], [[CONTACT]]; 3rd attempt
 # [[MOVE]] and [[ROUTE]], including [[RIDE]] and [[TRANSPORT]] are executed, and units order to follow other units do so
-# [[web/20110102235833/http://wiki.eressea.de/en/GUARD|GUARD]] if the unit did not move
+# [[GUARD|GUARD]] if the unit did not move
 # Ships at sea drift off
 # [[DEFAULT]]
 # empty units are removed
