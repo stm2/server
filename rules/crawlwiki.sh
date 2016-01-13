@@ -4,7 +4,7 @@
 
 
 DO_PAGELIST=1
-DO_RAW=0
+DO_RAW=1
 DO_JSON=1
 DO_HTML0=1
 DO_DOCBOOK=0
@@ -13,19 +13,32 @@ DO_HTML1=1
 DO_PDF=1
 DO_CLEAN=0
 
-PAGELIST=pagelist2
-#PAGELIST=pagelist_en
-LANGUAGE_SUFFIX=
-#LANGUAGE_SUFFIX=_en
+LANGUAGE=de
+#LANGUAGE=en
 
+PAGELIST=pagelist2
+
+LANGUAGE_SUFFIX=
 main_title="Eressea-Regeln"
-#main_title="Eressea Rules"
+ONE_FILE_NAME=Regeln_komplett
+CONTENTS_NAME=Inhalt
+LATEX_LANGUAGE=de
+LATEX_BABEL_LANG=german
+
+if [ "$LANGUAGE" = "en" ]; then
+    
+    DO_RAW=0
+
+    PAGELIST=pagelist_en
+    LANGUAGE_SUFFIX=_en
+    main_title="Eressea Rules"
+    ONE_FILE_NAME=Rules_complete
+    CONTENTS_NAME=Contents
+    LATEX_LANGUAGE=en
+    LATEX_BABEL_LANG=english
+fi
 
 PAPER_SIZE=a4paper
-LATEX_LANGUAGE=de
-#LATEX_LANGUAGE=en
-LATEX_BABEL_LANG=german
-#LATEX_BABEL_LANG=english
 
 MEDIAWIKI_TAGS='{ "keep": ["blockquote","br","center","div","noinclude","nowiki","pre","s","span","sub","sup"] , "remove": ["tt", "code"] }'
 
@@ -67,14 +80,14 @@ redirect_pagelist=pagelist.redirect
 redirect_file=$RAW_DIR/redirects.tmp
 concat_file=$JSON_DIR/concat.json
 
-html0_contentsfile=$HTML_DIR/Inhalt$HTML_EXT
+html0_contentsfile=$HTML_DIR/$CONTENTS_NAME$HTML_EXT
 html0_templatefile=$TEMPLATE_DIR/wikitemplate0.html
 html1_templatefile=$TEMPLATE_DIR/wikitemplate0.html
-html1_file=$HTML_DIR/Regeln_komplett$HTML_EXT
+html1_file=$HTML_DIR/$ONE_FILE_NAME$HTML_EXT
 
 doc_templatefile=$TEMPLATE_DIR/wikitemplate.docbook
 
-latex_file=$LATEX_DIR/Regeln_komplett.tex
+latex_file=$LATEX_DIR/$ONE_FILE_NAME.tex
 latex_templatefile=$TEMPLATE_DIR/wikitemplate.tex
 
 export PYTHONPATH=$PYTHONPATH:lib
@@ -181,9 +194,9 @@ fi
 if ((DO_HTML0==1)); then
     echo "<html><head>"  > "$html0_contentsfile"
     echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=$charset\">"  >> "$html0_contentsfile"
-    echo "<title>$main_title: Inhalt</title>" >> "$html0_contentsfile"
+    echo "<title>$main_title: $CONTENTS_NAME</title>" >> "$html0_contentsfile"
     echo "</head><body>" >> "$html0_contentsfile"
-    echo "<b>Inhalt</b><br /><div id='content'><ul>" >> "$html0_contentsfile"
+    echo "<b>$CONTENTS_NAME</b><br /><div id='content'><ul>" >> "$html0_contentsfile"
 fi
 
 DO_CONCAT=0
@@ -284,7 +297,7 @@ cat $PAGELIST | while read pageline; do
 	pandoc -f json -t html -M id-prefix="$page_id" -M redirects="$redirects" \
 	    --filter="$FILTERS_DIR/ewiki_filter_html0.py" \
 	     -s -V title="$title" -V pagetitle="$title" -V css="common.css" \
-	    -V contents="Inhalt.html" --template="$html0_templatefile" --toc --toc-depth=2 \
+	    -V contents="$CONTENTS_NAME" --template="$html0_templatefile" --toc --toc-depth=2 \
 	    > "$htmlfile" 
 	url=$(url_encode "$page")
 	url=$(url_encode "$url$HTML_EXT")
