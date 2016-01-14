@@ -4,13 +4,13 @@
 
 
 DO_PAGELIST=1
-DO_RAW=1
-DO_JSON=1
-DO_HTML0=1
+DO_RAW=0
+DO_JSON=0
+DO_HTML0=0
 DO_DOCBOOK=0
 DO_CONCAT=0
-DO_HTML1=1
-DO_PDF=1
+DO_HTML1=0
+DO_PDF=0
 DO_CLEAN=0
 
 # 1: export all, 2: export files change in git repo
@@ -19,7 +19,7 @@ DO_EXPORT=1
 LANGUAGE=de
 #LANGUAGE=en
 
-PAGELIST=pagelist2
+PAGELIST=pagelist.update
 
 LANGUAGE_SUFFIX=
 main_title="Eressea-Regeln"
@@ -95,7 +95,7 @@ latex_file=$LATEX_DIR/$ONE_FILE_NAME.tex
 latex_templatefile=$TEMPLATE_DIR/wikitemplate.tex
 
 mw_export_templatefile=$TEMPLATE_DIR/wiki_export.xml
-MW_EDIT_REASON=""
+MW_EDIT_REASON="external edit"
 mw_exportfile=$RAW_DIR/mediawiki_export.xml
 
 export PYTHONPATH=$PYTHONPATH:lib
@@ -447,7 +447,7 @@ if ((DO_EXPORT>0)); then
 	echo "creating mediawiki export file"
     fi
     if [ "$diffs" != "" ]; then
-	python -c "from ewiki import mediawiki_export; mediawiki_export('$mw_export_templatefile', '$0', 'external edit: $MW_EDIT_REASON', '$diffs')" > "$mw_exportfile"
+	python -c "from ewiki import mediawiki_export; mediawiki_export('$mw_export_templatefile', '$0', '$MW_EDIT_REASON', '$diffs')" > "$mw_exportfile"
     fi
 fi
 
