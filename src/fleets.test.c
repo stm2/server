@@ -119,6 +119,24 @@ static void test_fleet_create_param(CuTest *tc) {
     test_cleanup();
 }
 
+static void test_fleet_missing_param(CuTest *tc) {
+    fleet_fixture ffix;
+    order *ord;
+    struct message* msg;
+
+    test_cleanup();
+    setup_fleet();
+    init_fixture(&ffix);
+
+    ord = create_order(K_FLEET, ffix.f1->locale, "%s", itoa36(ffix.sh1->no+1));
+    unit_addorder(ffix.u11, ord);
+    fleet_cmd(ffix.r);
+
+    msg = test_get_last_message(ffix.u11->faction->msgs);
+    CuAssertStrEquals(tc, "fleet_ship_invalid", test_get_messagetype(msg));
+    CuAssertPtrEquals(tc, 0,  (ship *) ffix.sh1->fleet);
+}
+
 /*
 // TODO
 
@@ -191,5 +209,6 @@ CuSuite *get_fleets_suite(void)
     CuSuite *suite = CuSuiteNew();
     SUITE_ADD_TEST(suite, test_fleet_create);
     SUITE_ADD_TEST(suite, test_fleet_create_param);
+    SUITE_ADD_TEST(suite, test_fleet_missing_param);
     return suite;
 }
