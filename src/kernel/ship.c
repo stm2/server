@@ -500,7 +500,12 @@ void fleet_cmd(region * r)
             if (getkeyword(ord) == K_FLEET) {
                 ship *fleet;
 
-                sh = u->ship;
+                init_order(ord);
+                sh = getship(r);
+                /* FIXME what if there is an invalid ship id? */
+                if (!sh) {
+                    sh = u->ship;
+                }
 
                 const ship_type *fleet_type = st_find("fleet");
                 fleet = new_ship(fleet_type, r, u->faction->locale);
