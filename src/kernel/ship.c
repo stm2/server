@@ -26,6 +26,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include "faction.h"
 #include "unit.h"
 #include "item.h"
+#include "order.h"
 #include "race.h"
 #include "region.h"
 #include "skill.h"
@@ -447,9 +448,16 @@ void ship_update_owner(ship * sh) {
 unit *ship_owner(const ship * sh)
 {
     unit *owner = sh->_owner;
-    if (!owner || (owner->ship != sh || owner->number <= 0)) {
-        unit * heir = ship_owner_ex(sh, owner ? owner->faction : 0);
-        return (heir && heir->number > 0) ? heir : 0;
+    const ship *fleet = sh->fleet;
+
+    if (fleet) {
+        owner = ship_owner(fleet);
+    } else {
+        fleet = sh;
+    }
+    if (!owner || (owner->ship != fleet || owner->number <= 0)) {
+        unit * heir = ship_owner_ex(fleet, owner ? owner->faction : 0);
+        return heir;
     }
     return owner;
 }
@@ -472,4 +480,38 @@ const char *ship_getname(const ship * self)
 
 int ship_damage_percent(const ship *ship) {
     return (ship->damage * 100 + DAMAGE_SCALE - 1) / (ship->size * DAMAGE_SCALE);
+}
+
+bool ship_isfleet(const ship *sh) {
+    return (sh->type == st_find("fleet"));
+}
+
+void fleet_cmd(region * r)
+{
+    unit **uptr;
+    ship *sh;
+
+    for (uptr = &r->units; *uptr;) {
+        unit *u = *uptr;
+        order **ordp = &u->orders;
+
+        while (*ordp) {
+            order *ord = *ordp;
+            if (getkeyword(ord) == K_FLEET) {
+                ship *fleet;
+
+                sh = u->ship;
+
+                const ship_type *fleet_type = st_find("fleet");
+                fleet = new_ship(fleet_type, r, u->faction->locale);
+                u->ship = 0;
+                u_set_ship(u, fleet);
+                sh->fleet = fleet;
+            }
+            if (*ordp == ord)
+                ordp = &ord->next;
+        }
+        if (*uptr == u)
+            uptr = &u->next;
+    }
 }
