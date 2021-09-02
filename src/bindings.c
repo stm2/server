@@ -872,6 +872,13 @@ static int lua_rng_reset(lua_State *L) {
     return 0;
 }
 
+static int tolua_set_debug(lua_State * L)
+{
+    debug = (int)tolua_tonumber(L, 1, 0);
+    return 0;
+}
+
+
 int tolua_bindings_open(lua_State * L, const dictionary *inifile)
 {
     tolua_open(L);
@@ -985,6 +992,7 @@ int tolua_bindings_open(lua_State * L, const dictionary *inifile)
         tolua_function(L, "spells", tolua_get_spells);
         tolua_function(L, "equip_newunits", tolua_equip_newunits);
         tolua_function(L, "clear_reservations", tolua_clear_reservations);
+        tolua_function(L, "set_debug", tolua_set_debug);
     } tolua_endmodule(L);
     return 1;
 }
