@@ -442,6 +442,18 @@ static int tolua_region_set_resource(lua_State * L)
     return 0;
 }
 
+static int tolua_region_add_road(lua_State * L)
+{
+    region *r = (region *)tolua_tousertype(L, 1, NULL);
+    direction_t dir = (direction_t)tolua_tonumber(L, 2, 0);
+    int size = tolua_tonumber(L, 3, 50);
+    if (dir >= 0 && dir < MAXDIRECTIONS) {
+        rsetroad(r, dir, size);
+        return 1;
+    }
+    return 0;
+}
+
 static int tolua_region_destroy(lua_State * L)
 {
     region *self = (region *)tolua_tousertype(L, 1, NULL);
@@ -818,6 +830,7 @@ void tolua_region_open(lua_State * L)
                 tolua_region_reorder_units);
             tolua_function(L, "get_resource", tolua_region_get_resource);
             tolua_function(L, "set_resource", tolua_region_set_resource);
+            tolua_function(L, "add_road", tolua_region_add_road);
             tolua_function(L, "get_flag", tolua_region_get_flag);
             tolua_function(L, "set_flag", tolua_region_set_flag);
             tolua_function(L, "next", tolua_region_get_next);
