@@ -323,6 +323,15 @@ static int tolua_region_get_flag(lua_State * L)
     return 1;
 }
 
+static int tolua_region_get_terrain_flag(lua_State * L)
+{
+    region *self = (region *)tolua_tousertype(L, 1, NULL);
+    int bit = (int)tolua_tonumber(L, 2, 0);
+
+    lua_pushinteger(L, (self->terrain->flags & (1 << bit)));
+    return 1;
+}
+
 static int tolua_region_set_flag(lua_State * L)
 {
     region *self = (region *)tolua_tousertype(L, 1, NULL);
@@ -833,6 +842,7 @@ void tolua_region_open(lua_State * L)
             tolua_function(L, "add_road", tolua_region_add_road);
             tolua_function(L, "get_flag", tolua_region_get_flag);
             tolua_function(L, "set_flag", tolua_region_set_flag);
+            tolua_function(L, "get_terrain_flag", tolua_region_get_terrain_flag);
             tolua_function(L, "next", tolua_region_get_next);
             tolua_variable(L, "adj", tolua_region_get_adj, NULL);
 
