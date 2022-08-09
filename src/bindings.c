@@ -862,8 +862,13 @@ static void parse_inifile(lua_State * L, const dictionary * d, const char *secti
 }
 
 static int lua_rng_default(lua_State *L) {
-    UNUSED_ARG(L);
     random_source_inject_constant(0);
+    return 0;
+}
+
+static int lua_rng_reset(lua_State *L) {
+    UNUSED_ARG(L);
+    random_source_reset();
     return 0;
 }
 
@@ -890,6 +895,7 @@ int tolua_bindings_open(lua_State * L, const dictionary *inifile)
         tolua_beginmodule(L, "rng");
         {
             tolua_function(L, "inject", lua_rng_default);
+            tolua_function(L, "active", lua_rng_reset);
             tolua_function(L, "random", tolua_random);
         }
         tolua_endmodule(L);
