@@ -36,6 +36,7 @@ extern "C" {
     int get_resource(const struct unit *u, const struct resource_type *res);
     int change_resource(struct unit *u, const struct resource_type *res,
         int change);
+    void clear_reservations(struct unit *u);
 
     int get_reservation(const struct unit *u, const struct item_type *res);
     int change_reservation(struct unit *u, const struct item_type *res,
