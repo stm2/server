@@ -414,7 +414,10 @@ static int tolua_region_set_resource(lua_State * L)
 {
     region *r = (region *)tolua_tousertype(L, 1, NULL);
     const char *type = tolua_tostring(L, 2, NULL);
-    int result, value = (int)tolua_tonumber(L, 3, 0);
+    int result,
+      value = (int)tolua_tonumber(L, 3, 0),
+      level = (int)tolua_tonumber(L, 4, 0),
+      divisor = (int)tolua_tonumber(L, 5, 0);
     const resource_type *rtype;
 
     result = special_resource(type);
@@ -430,6 +433,9 @@ static int tolua_region_set_resource(lua_State * L)
     default:
         rtype = rt_find(type);
         if (rtype != NULL) {
+          if (level > 0)
+            region_setresource_level(r, rtype, value, level, divisor);
+          else
             region_setresource(r, rtype, value);
         }
     }
