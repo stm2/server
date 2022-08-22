@@ -1,4 +1,4 @@
-local lunit = require('lunit')
+-- local lunit = require('lunit')
 
 function rules_tame()
     eressea.settings.set("rules.food.flags", "4") -- 4: food is free
@@ -9,6 +9,7 @@ function rules_tame()
 end
 
 function rules_wild()
+    eressea.settings.set("NewbieImmunity", "0")
     eressea.settings.set("rules.food.flags", "0") -- 0: default
     eressea.settings.set("rules.ship.damage.nocrewocean", "1")
     eressea.settings.set("rules.ship.damage.nocrew", "1")
@@ -24,7 +25,38 @@ local function printf(s, ...)
   return io.write(s:format(...))
 end
 
+function get_plane_bounds()
+    local bounds = {x = -2^32, xmin = 2^32, y = -2^32,ymin = 2^32}
+    for r in regions() do
+        if r.x > bounds.x then bounds.x = r.x end
+        if r.y < bounds.xmin then bounds.xmin = r.x end
+        if r.y > bounds.y then bounds.y = r.y end
+        if r.y < bounds.ymin then bounds.ymin = r.y end
+    end
+    if bounds.x < bounds.y then
+        bounds.x = 0
+        bounds.xmin = 0
+        bounds.y = 0
+        bounds.ymin = 0
+    else
+        bounds.x = bounds.x + 100
+        bounds.y = bounds.y + 100
+        bounds.xmin = bounds.xmin - 100
+        bounds.ymin = bounds.ymin - 100
+    end
+    return bounds
+end
+
+local demo_bounds = {}
+
+function get_demo_region(x, y)
+    if demo_bounds == nil or demo_bounds.x == nil then error("bounds not initialized") end
+    return get_region(demo_bounds.x + x, demo_bounds.y + y)
+end
+
 function create_eressea_map()
+    demo_bounds = get_plane_bounds()
+
     local points = {
         {0, 0}, {1 ,0}, {2, 0},
         {4, 0}, {6, 0},
@@ -93,7 +125,7 @@ function create_eressea_map()
             elseif x == -5 or y == -5 or x == 2*xmax+5 or y == 2*ymax+5 then
                 type = 'firewall'
             end
-            r = region.create(x, y, type)
+            r = region.create(demo_bounds.x + x, demo_bounds.y + y, type)
         end
     end
 end
@@ -136,39 +168,6 @@ local function dump(o)
    else
       return tostring(o)
    end
-end
-
-local function test_orc()
-    local r1 = region.create(1, 0, 'plain')
-    local f1 = faction.create('human', "human@eressea.de", "de")
-    local f2 = faction.create('orc', "orc@eressea.de", "de")
-    local h1
-    local o1
-
-    for i = 1,100 do
-      h1 = unit.create(f1, r1, 10)
-      o1 = unit.create(f2, r1, 10)
-      h1:add_item("money", 100*10*h1.number)
-      o1:add_item("money", 100*10*o1.number)
-      h1:add_order("LERNE Holzfällen")
-      o1:add_order("LERNE Holzfällen")
-    end
-    for r = 1, 100 do
-      process_orders()
-      -- info(r, h1:get_skill("forestry"), o1:get_skill("forestry"))
-    end
-
-    -- init_reports()
-    -- write_reports()
-    local skill1, skill2 = 0, 0
-    for u in f1.units do
-       skill1 = skill1 + u:get_skill("forestry") * (u:get_skill("forestry") +1) / 2
-    end
-    for u in f2.units do
-       skill2 = skill2 + u:get_skill("forestry") * (u:get_skill("forestry") +1) / 2
-    end
-    -- info(skill1, skill2, skill1/skill2)
-    assert_true(skill1 > 1.15 * skill2)
 end
 
 local demo_units = { ['factions'] = {}, ['numbers'] = {}, ['units'] = {}}
@@ -231,7 +230,7 @@ function create_demo_unit(f, r, number, name, id, skills, items, orders)
 end
 
 function demo_module_starters()
-    local r0 = get_region(24, 0)
+    local r0 = get_demo_region(24, 0)
     local f0 = demo_units['factions'][1]
     local friends = demo_units['factions'][2]
     local foes = demo_units['factions'][3]
@@ -259,7 +258,7 @@ function demo_module_starters()
 end
 
 function demo_module_paula(f0)
-    local r0 = get_region(24, 0)
+    local r0 = get_demo_region(24, 0)
     r0.terrain = 'highland'
     r0.name = 'Piratenbucht'
 
@@ -281,7 +280,7 @@ function demo_module_paula2(p)
 end
 
 function demo_module_piratenbucht()
-    local r0 = get_region(24, 0)
+    local r0 = get_demo_region(24, 0)
     local bc = building.create(r0, "castle", 250)
     bc.name = 'Paulas Schloss'
 
@@ -329,9 +328,9 @@ function demo_module_piratenbucht()
 end
 
 function demo_module_mages()
-    local r0 = get_region(24, 0)
-    local r1 = get_region(0, 8)
-    local r2 = get_region(8, 8)
+    local r0 = get_demo_region(24, 0)
+    local r1 = get_demo_region(0, 8)
+    local r2 = get_demo_region(8, 8)
 
     local schools = { 'cerddor', 'draig', 'gwyrrd', 'illaun', 'tybied'}
     -- FIXME
@@ -350,7 +349,7 @@ function demo_module_mages()
 end
 
 function try_cerddor(mage1, mage2, mage3)
-    local r = get_region(48, 0)
+    local r = get_demo_region(48, 0)
     create_demo_unit(demo_units['factions'][3], r)
     mage1:add_order("ZAUBERE STUFE 2 Regentanz")
     mage2:add_order("ZAUBERE Aushorchen foe 48 0" )
@@ -363,7 +362,7 @@ function try_draig(mage1, mage2, mage3)
     mage1:add_order("ZAUBERE 'Kleines Blutopfer'")
 --    mage1:add_order("ZAUBERE STUFE 1 'Traumsenden' nice Träumchen")
 
-   get_region(0,5):set_resource("grave", 1000)
+   get_demo_region(0,5):set_resource("grave", 1000)
    mage2:add_order("ZAUBERE REGION 0 5 STUFE 10 'Mächte des Todes'")
    mage2:add_order("ZAUBERE STUFE 10 'Mächte des Todes'")
 
@@ -386,7 +385,7 @@ function try_gwyrrd(mage1, mage2, mage3)
 end
 
 function try_illaun(mage1, mage2, mage3)
-    local r = get_region(2, 0)
+    local r = get_demo_region(2, 0)
     create_demo_unit(demo_units['factions'][2], r, 1, 'Ziel', 'read')
     create_demo_unit(demo_units['factions'][2], r, 1, 'Versteckt', null, { stealth = 100 })
 
@@ -428,7 +427,7 @@ function get_astral(r)
 end
 
 function demo_module_mages2()
-    local r0 = get_region(24, 0)
+    local r0 = get_demo_region(24, 0)
 
     local mage1 = get_unit(atoi36('mort'))
     local mage2 = get_unit(atoi36('zoe'))
@@ -527,4 +526,216 @@ function create_demo()
     rules_tame()
 end
 
-return { create_demo = create_demo }
+function create_battle(r1, f1, f2)
+    local a2 = unit.create(f2, r1, 1000)
+    local a1 = unit.create(f1, r1, 1000)
+    local h1 = unit.create(f1, r1, 1000)
+    local h2 = unit.create(f2, r1, 1000)
+
+    a1:set_skill("stamina", 10)
+    a2:set_skill("stamina", 10)
+    h1:set_skill("stamina", 10)
+    h2:set_skill("stamina", 10)
+
+    a1.hp = a1.hp_max * a1.number
+    a2.hp = a2.hp_max * a1.number
+    h1.hp = h1.hp_max * a1.number
+    h2.hp = h2.hp_max * a1.number
+
+    a1:set_skill("melee", 20)
+    a2:set_skill("melee", 20)
+    h1:set_skill("bow", 20)
+    h2:set_skill("crossbow", 20)
+
+    a1:add_item("sword", 1000)
+    a1:add_item("shield", 1000)
+    a1:add_item("plate", 1000)
+    a2:add_item("sword", 1000)
+    a2:add_item("shield", 1000)
+    a2:add_item("plate", 1000)
+    h1:add_item("bow", 1000)
+    h2:add_item("crossbow", 1000)
+    h1:add_item("shield", 1000)
+    h2:add_item("shield", 1000)
+    a1:add_order("KÄMPFE AGGRESSIV")
+    a2:add_order("KÄMPFE AGGRESSIV")
+    h1:add_order("KÄMPFE HINTEN")
+    h2:add_order("KÄMPFE HINTEN")
+
+    a1:add_item("money", 100 * a1.number)
+    a2:add_item("money", 100 * a2.number)
+    h1:add_item("money", 100 * h1.number)
+    h2:add_item("money", 100 * h2.number)
+
+    a1:add_order("ATTACKIERE " .. itoa36(h2.id))
+    h1:add_order("ATTACKIERE " .. itoa36(h2.id))
+    a1.guard = true
+
+    local mage = unit.create(f1, r1, 1)
+    mage.magic = 'gwyrrd'
+    mage:set_skill('magic', 10)
+    mage.aura = 1000
+    mage:add_spell('eternal_walls')
+    mage:add_spell('hail')
+    mage:add_order('LERNE Magie Gwyrrd')
+    mage:add_order('KAMPFZAUBER STUFE 8 Hagel')
+    mage:add_order('KÄMPFE HINTEN')
+    mage:add_order('ATTACKIERE ' .. itoa36(h2.id))
+
+    return a1, a2, mage
+end
+
+function create_ship(r, f, stype)
+    local s = ship.create(r, stype)
+    local u = nil
+    if f ~= nil then
+       u = unit.create(f, r, 3)
+       u:set_skill("sailing", 50)
+       s.owner = u
+       u.ship = s
+   end
+    return s, u
+end
+
+local minsize = { ['academy'] = 25, ['harbour'] = 10, ['caravan'] = 25, ['magictower'] = 50, ['dam'] = 50, ['tunnel'] = 100, ['stonecircle'] = 100 }
+
+function create_building(r, btype)
+    local b = building.create(r, btype)
+    if minsize[btype] ~= nil then
+        b.size = minsize[btype]
+    else
+        b.size = 10
+    end
+    return b
+end
+
+local example_bounds = {}
+
+function init_example_bounds()
+     example_bounds = get_plane_bounds()
+end
+
+function get_example_region(x, y)
+    if example_bounds.x == nil then error("bounds not initialized") end
+    return get_region(example_bounds.x + x, example_bounds.y + y)
+end
+
+local function create_region(x, y, terrain)
+    if example_bounds.x == nil then error("bounds not initialized") end
+
+    local r1 = region.create(example_bounds.x + x, example_bounds.y + y, terrain)
+
+    if  r1:get_terrain_flag(B_LAND) and not r1:get_terrain_flag(B_FORBIDDEN) then
+        r1:set_flag(F_MALLORN, false) -- no mallorn
+        if r1.terrain ~= 'plain' then
+            r1.peasants = 200
+            make_trees(r1, 10)
+            r1:set_resource("money", 1000)
+            r1:set_resource("horse", 30)
+        else
+            r1.peasants = 2000
+            make_trees(r1, 100)
+            r1:set_resource("money", 10000)
+            r1:set_resource("horse", 20000)
+        end
+    end
+    return r1
+end
+
+function make_trees(r, t)
+    r:set_resource("tree", t)
+    r:set_resource("seed", t/10)
+    r:set_resource("sapling", t/10)
+end
+
+function create_example()
+    set_turn(333)
+    rules_wild()
+    rng.active()
+    init_example_bounds()
+
+    local r0 = create_region(0, 0, 'plain')
+    local rs = create_region(1, 0, 'swamp')
+    local rm = create_region(0, 1, 'mountain')
+    local rh = create_region(-1, 1, 'highland')
+    local rd = create_region(-1, 0, 'desert')
+    local rg = create_region(0, -1, 'glacier')
+    local rv = create_region(1, -1, 'volcano')
+    local ri = create_region(2, 0, 'iceberg')
+    local ro = create_region(1, 1, 'ocean')
+    local rf = create_region(3, 0, 'firewall')
+    local rw = create_region(4, 0, 'wall1')
+    local rc = create_region(5, 0, 'corridor1')
+    local rl = create_region(0, 2, 'plain')
+    make_trees(rl, 600)
+
+    local f = faction.create('human', "fex@eressea.de", "de")
+    f.id = 146
+    -- viewers
+    for r in regions() do
+        if r:get_terrain_flag(B_LAND) and not r:get_terrain_flag(B_FORBIDDEN) then
+            local u = unit.create(f, r, 1)
+            u:clear_orders()
+            u:add_order("KÄMPFE NICHT")
+        end
+    end
+
+    for x = -2, 2 do
+        for y = -2, 3 do
+            local r = get_example_region(x, y)
+            if r == nil then
+                create_region(x, y, 'ocean')
+            end
+        end
+    end
+
+    for _, btype in ipairs { 'lighthouse', 'mine', 'quarry', 'sawmill', 'smithy', 'stables', 'harbour', 'caravan', 'academy', 'magictower', 'dam', 'tunnel', 'inn', 'monument', 'stonecircle' } do
+        create_building(r0, btype)
+    end
+
+    local f2 = faction.create('human', "war@eressea.de", "de")
+    local a1, a2, mage = create_battle(r0, f, f2)
+
+    for _, stype in ipairs { 'boat', 'longboat', 'dragonship', 'caravel', 'trireme', 'galleon' } do
+        create_ship(rl, f, stype)
+    end
+
+    local s, u = create_ship(rl, f, 'caravel')
+    s.coast = 3
+    u:add_order("NACH o nw sw")
+
+    s, u = create_ship(rl, f, 'caravel')
+    s.damage = 30
+    s = create_ship(rl, nil, 'caravel')
+    s.coast = 2
+
+    local light = create_building(rs, 'lighthouse')
+    light.size = 10
+    u = unit.create(f, light.region, 1)
+    u:add_item("money", 1000)
+    u:set_skill("perception", 10)
+    u.building = light
+    u:add_order("BOTSCHAFT REGION 'Hey, Welt'")
+
+    process_orders()
+    init_reports()
+    write_reports()
+end
+
+function create_start()
+    --[[
+    Elfen bekommen Feenstiefel
+   Zwerge bekommen eine Axt, ein Kettenhemd und 30 Lerntage Hiebwaffen
+   Orks bekommen T4 in allen Waffentalenten
+   Katzen bekommen einen RdU
+   Goblins bekommen eine Starteinheit die 10 und nicht nur eine Person gross ist, ausserdem einen RdU.
+   Insekten bekommen neun Nestwärmetränke, genug um einen Winter lang zu rekrutieren.
+   Meermenschen bekommen ein Boot und 30 Lerntage Segeln
+   Menschen bekommen eine Befestigung (Damals bestand diese nur aus 2 Steinen)
+   Halblinge bekommen einen Wagen, zwei Pferde, fünf Luxusgüter jeder sorte und T1 Reiten.
+   Trolle bekommen 10 Steine und Wahrnehmung T3.
+   Dämonen bekommen T15 Ausdauer.
+   --]]
+end
+
+return { create_demo = create_demo, create_example = create_example }

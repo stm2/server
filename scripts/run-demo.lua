@@ -35,6 +35,11 @@ local ok, result = xpcall(demo.create_demo, debug.traceback)
 if not ok then
   print(result)
 end
+
+ok, result = xpcall(demo.create_example, debug.traceback)
+if not ok then
+  print(result)
+end
 --turn_process()
 -- callbacks(rules, 'update')
   -- turn_end() -- ageing, etc.
