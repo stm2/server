@@ -25,7 +25,8 @@ local function printf(s, ...)
   return io.write(s:format(...))
 end
 
-function get_plane_bounds()
+function get_plane_bounds(dist)
+    if dist == nil then dist = 2000 end
     local bounds = {x = -2^32, xmin = 2^32, y = -2^32,ymin = 2^32}
     for r in regions() do
         if r.x > bounds.x then bounds.x = r.x end
@@ -33,16 +34,20 @@ function get_plane_bounds()
         if r.y > bounds.y then bounds.y = r.y end
         if r.y < bounds.ymin then bounds.ymin = r.y end
     end
-    if bounds.x < bounds.y then
+    if bounds.x < bounds.xmin then
         bounds.x = 0
         bounds.xmin = 0
         bounds.y = 0
         bounds.ymin = 0
+        bounds.xoff = 0
+        bounds.yoff = 0
     else
-        bounds.x = bounds.x + 100
-        bounds.y = bounds.y + 100
-        bounds.xmin = bounds.xmin - 100
-        bounds.ymin = bounds.ymin - 100
+        bounds.x = bounds.x
+        bounds.y = bounds.y
+        bounds.xmin = bounds.xmin
+        bounds.ymin = bounds.ymin
+        bounds.xoff = bounds.xmin - dist
+        bounds.yoff = 0
     end
     return bounds
 end
@@ -51,7 +56,7 @@ local demo_bounds = {}
 
 function get_demo_region(x, y)
     if demo_bounds == nil or demo_bounds.x == nil then error("bounds not initialized") end
-    return get_region(demo_bounds.x + x, demo_bounds.y + y)
+    return get_region(demo_bounds.xoff + x, demo_bounds.yoff + y)
 end
 
 function create_eressea_map()
@@ -100,7 +105,7 @@ function create_eressea_map()
     }
     local map = {}
     local xmax, ymax = 0, 0
-    local types = { 'plain', 'swamp', 'highland', 'volcano', 'glacier' }
+    local types = { 'plain', 'swamp', 'highland', 'desert', 'volcano', 'glacier' }
     local ntypes = 5
     for _, p in ipairs(points) do
         local x, y = p[1], p[2]
@@ -125,7 +130,7 @@ function create_eressea_map()
             elseif x == -5 or y == -5 or x == 2*xmax+5 or y == 2*ymax+5 then
                 type = 'firewall'
             end
-            r = region.create(demo_bounds.x + x, demo_bounds.y + y, type)
+            r = region.create(demo_bounds.xoff + x, demo_bounds.yoff + y, type)
         end
     end
 end
@@ -186,6 +191,13 @@ function create_demo_faction(race, email, lang, name, id)
     demo_units['units'][f] = {}
 
     return f
+end
+
+function write_demo_reports()
+    init_reports()
+    for k, f in pairs(demo_units['factions']) do
+        write_report(f)
+    end
 end
 
 function create_demo_unit(f, r, number, name, id, skills, items, orders)
@@ -476,6 +488,7 @@ function spawn_monsters(rounds)
 end
 
 function create_demo()
+    print("---- DEMO ----")
     rules_wild()
     rng.active()
     local races = { 'aquarian', 'cat', 'demon', 'dwarf', 'elf', 'goblin', 'halfling', 'human', 'insect', 'orc'}
@@ -515,13 +528,11 @@ function create_demo()
     demo_module_paula2(p)
     demo_module_mages2()
 
-    init_reports()
-    write_reports()
+    write_demo_reports()
 
     process_orders()
 
-    init_reports()
-    write_reports()
+    write_demo_reports()
 
     rules_tame()
 end
@@ -617,13 +628,13 @@ end
 
 function get_example_region(x, y)
     if example_bounds.x == nil then error("bounds not initialized") end
-    return get_region(example_bounds.x + x, example_bounds.y + y)
+    return get_region(example_bounds.xoff + x, example_bounds.yoff + y)
 end
 
 local function create_region(x, y, terrain)
     if example_bounds.x == nil then error("bounds not initialized") end
 
-    local r1 = region.create(example_bounds.x + x, example_bounds.y + y, terrain)
+    local r1 = region.create(example_bounds.xoff + x, example_bounds.yoff + y, terrain)
 
     if  r1:get_terrain_flag(B_LAND) and not r1:get_terrain_flag(B_FORBIDDEN) then
         r1:set_flag(F_MALLORN, false) -- no mallorn
@@ -649,6 +660,7 @@ function make_trees(r, t)
 end
 
 function create_example()
+    print("---- EXAMPLE ----")
     set_turn(333)
     rules_wild()
     rng.active()
@@ -718,8 +730,10 @@ function create_example()
     u:add_order("BOTSCHAFT REGION 'Hey, Welt'")
 
     process_orders()
+
     init_reports()
-    write_reports()
+    write_report(f)
+    write_report(f2)
 end
 
 function create_start()
