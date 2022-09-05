@@ -1,6 +1,9 @@
 ---
 name: Basis
 description: A very basic CR
-cr: basic.cr
+crs:
+  - basic.cr
+  - basic2.cr
+date: 22-09-01
 ---
-Ein Computerreport, so einfach wie möglich.
+Ein Computerreport, so *einfach* wie möglich.

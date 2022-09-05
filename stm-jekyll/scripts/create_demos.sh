@@ -3,9 +3,9 @@ set -ex
 
 ROOT=$(git rev-parse --show-toplevel)
 cd $ROOT
-./configure
-s/build
-s/runtests
+#./configure
+#s/build
+#s/runtests
 demo/run_demo
 
 cp demo/reports/*cr stm-jekyll/_demos
@@ -18,7 +18,7 @@ for filename in _demos/*cr; do
   if [ ! -e $base.md ]; then
     echo "---" >> $base.md
     echo "name: $basebase" >> $base.md
-    echo "cr: $basebase.cr" >> $base.md
+    echo "crs: $basebase.cr" >> $base.md
     echo "---" >> $base.md
     echo >> $base.md
   fi
