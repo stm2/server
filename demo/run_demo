@@ -3,11 +3,11 @@ set -ex
 
 ROOT=$(git rev-parse --show-toplevel)
 export LUA_PATH="$ROOT/scripts/?.lua;$LUA_PATH"
-[ -z $BUILD ] && BUILD=Debug ; export BUILD
+BUILD=$ROOT/build
 
-RUN_ERESSEA=$ROOT/$BUILD/eressea/eressea
+RUN_ERESSEA=$BUILD/eressea/eressea
 
-if [ ! -e $ROOT/$BUILD ]; then
+if [ ! -e $BUILD ]; then
   echo "cannot find build directory $BUILD in $ROOT. did you run cmake-init?"
   exit
 fi
