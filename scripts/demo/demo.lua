@@ -52,6 +52,22 @@ function get_plane_bounds(dist)
     return bounds
 end
 
+function write_md(filename, title, description, long_description, crs)
+  file = io.open("reports/" .. filename, "w")
+  file:write("---\n")
+  file:write("name: " .. title .. "\n")
+  file:write("description: " .. description .."\n")
+  file:write("crs:\n")
+  for _, v in ipairs(crs) do
+    file:write("  - " .. v .. "\n")
+  end
+  file:write("date: " .. os.date("%Y-%m-%d") .. "\n")
+  file:write("---\n")
+  file:write(long_description)
+  file:write("\n")
+end
+
+
 local demo_bounds = {}
 
 function get_demo_region(x, y)
@@ -195,9 +211,12 @@ end
 
 function write_demo_reports()
     init_reports()
+    local fs = {}
     for k, f in pairs(demo_units['factions']) do
         write_report(f)
+        table.insert(fs, f)
     end
+    return fs
 end
 
 function create_demo_unit(f, r, number, name, id, skills, items, orders)
@@ -528,11 +547,24 @@ function create_demo()
     demo_module_paula2(p)
     demo_module_mages2()
 
-    write_demo_reports()
+    local f1 = write_demo_reports()
+
 
     process_orders()
 
-    write_demo_reports()
+    local f2 = write_demo_reports()
+
+    local reports = {}
+    for _, f in pairs(f1) do
+      table.insert(reports, "999-" .. itoa36(f.id) .. ".cr")
+    end
+    for _, f in pairs(f2) do
+      table.insert(reports, "1000-" .. itoa36(f.id) .. ".cr")
+    end
+
+    write_md("eressea.md", "Eressea Example", "An extensive example",
+    "An example with all sorts of stuff that could go on in an Eressea game",
+    reports)
 
     rules_tame()
 end
@@ -734,6 +766,7 @@ function create_example()
     init_reports()
     write_report(f)
     write_report(f2)
+    write_md("example.md", "Demo 001", "A more complex CR", "An example with different types of terrains, ships, lighthouses, and a battle.", { "334-42.cr" })
 end
 
 function create_start()
