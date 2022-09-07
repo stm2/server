@@ -1,25 +1,40 @@
 <?php
 
-if (empty($argv[1]) || empty($argv[2])) {
-  echo "\n    Usage: $argv[0] [--html] input.cr output.svg\n\n";
-  return;
+include dirname(__FILE__) . "/../vendor/erusev/parsedown/Parsedown.php";
+
+function usage($argv) {
+  echo "\n    Usage: $argv[0] [--html [-md input.md]] input.cr output.svg\n\n";
+  exit(1);
 }
 
+$args=1;
+if (empty($argv[$args]) || empty($argv[$args+1])) {
+  usage($argv);
+}
 
 $htmlMode = false;
-if ($argv[1] == "--html") {
+if ($argv[$args] == '--html') {
   $htmlMode = true;
-  $inputName = $argv[2];
-  $outputName = $argv[3];
-} else {
-  $inputName = $argv[1];
-  $outputName = $argv[2];
+  $args++;
 }
 
+$mdName="";
+if ($argv[$args] == '-md') {
+  if (!$htmlMode || empty($argv[$args+1]))
+    usage($argv);
+  $mdName = $argv[$args+1];
+  $args +=2;
+}
 
-$myfile = fopen($inputName, "r") or die("Unable to open file!");
+if (empty($argv[$args]) || empty($argv[$args+1])) {
+  usage($argv);
+}
 
-$mysvg = fopen($outputName, "w");
+$inputName = $argv[$args];
+$outputName = $argv[$args+1];
+
+$crfile = fopen($inputName, "r") or die("Unable to open file $inputName!\n");
+$svgfile = fopen($outputName, "w") or die("Unable to open file $outputName!\n");
 
 $preg_region = '/^REGION (-{0,1}[0-9]+) (-{0,1}[0-9]+)( (-{0,1}[0-9]+)$){0,1}$/';
 $preg_tagq = '/^"(.*)";(.*)$/';
@@ -97,9 +112,10 @@ $html_template = <<<EOT
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
+<title>%1\$s</title>
 <script>
 window.onload = function(){
-  let element = document.getElementById("description");
+  let element = document.getElementById("details");
   element.innerHTML ="Klicke auf eine Region f&uuml;r mehr Details.";
 }
 function showTooltip(evt, tooltip) {
@@ -114,7 +130,7 @@ function showTooltip(evt, tooltip) {
 function showDescription(e, id) {
   e.preventDefault();
   if (id) {
-    let element = document.getElementById("description");
+    let element = document.getElementById("details");
     let desc = document.getElementById(id).children[1].innerHTML;
     element.innerHTML = desc;
     element.style.display = "block";
@@ -129,16 +145,21 @@ function hideTooltip() {
 </script>
 <body>
 
-<h1>Eressea</h1>
+<h1>%1\$s</h1>
 <div id="tooltip" display="none" style="position: absolute; display: none;"></div>
 
 <div style = "width: 800px; height: 500px; line-height: 3em; overflow:scroll; border: thin #000 solid; padding: 5px;">
-%s
+%2\$s
 </div>
-<div id="description">You need to enable Javascript for this to work.</div>
-
+<div id="details">You need to enable Javascript for this to work.</div>
+%3\$s
 </body>
 </html>
+EOT;
+
+$description_tag=<<<EOT
+
+<div id="description">%s</div>
 EOT;
 
 $front_matter = <<<EOT
@@ -177,7 +198,7 @@ x="%d" y="%d" %s>
 
 EOT;
 
-$description_tag = <<<EOT
+$details_tag = <<<EOT
 <h2>%s</h2><p><b>%s</b><br />%s</p>
 EOT;
 
@@ -231,7 +252,7 @@ function transformy($region) {
 $display_tag = array ("x" => false, "y" => false, "z" => false, "Terrain" => false, "Name" => false);
 
 function output_region($region) {
-  global $default_image, $use_tag, $description_tag, $bounds, $display_tag;
+  global $default_image, $use_tag, $details_tag, $bounds, $display_tag;
   if ($region == null)
   return;
 
@@ -270,7 +291,7 @@ function output_region($region) {
           $b .= "<i>" . $key . "</i> ". $value . "<br />";
         }
       }
-      $desc = sprintf($description_tag, $tt, $region['Terrain'], $b);
+      $desc = sprintf($details_tag, $tt, $region['Terrain'], $b);
     }
     $id = "r_";
     if ($xx < 0) $id .= "m" . -$xx; else $id .= $xx;
@@ -294,8 +315,8 @@ $content = "";
 
 $region = null;
 $block = null;
-while(!feof($myfile)) {
-  $line = fgets($myfile);
+while(!feof($crfile)) {
+  $line = fgets($crfile);
   $tag = null;
   if (preg_match($preg_region, $line, $matches) == 1) {
     $content .= output_region($region);
@@ -323,12 +344,25 @@ $content .= output_region($region);
 $content = output_front() . $content . output_back();
 
 if ($htmlMode) {
-  $content = sprintf($html_template, $content);
+  $description = "";
+  if (!empty($mdName)) {
+    $description = file_get_contents($mdName);
+    preg_match('/^---$.*?(^name: *(.*?) *$).*?^---$(.*)/sm', $description, $matches);
+    $title = $matches[2];
+    $description = $matches[3];
+    $description = Parsedown::instance()->text($description);
+    $description = sprintf($description_tag, $description);
+  }
+  if (empty($title)) {
+    $title = $inputName;
+  }
+
+  $content = sprintf($html_template, $title, $content, $description);
 }
 
-fwrite($mysvg, $content);
+fwrite($svgfile, $content);
 
-fclose($myfile);
-fclose($mysvg);
+fclose($crfile);
+fclose($svgfile);
 
 ?>

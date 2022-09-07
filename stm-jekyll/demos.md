@@ -1,9 +1,7 @@
 ---
 title: Eressea Demo-Reporte
 ---
-<h1>{{ title }}</h1>
 {% for demo in site.demos %}
-
 ## [{{ demo.name }}{% if demo.description %} - {{ demo.description }}{% endif %}]({{ site.baseurl }}{{ demo.url }})
 
   {% if demo.crs.size == 1 %}
@@ -20,5 +18,7 @@ CRs:
 , [{{ cr }}](demos/{{ cr | replace: ".cr", ".html" }})
 <span style="font-size:small;"><a href="demos/{{ cr }}">(download)</a></span>
   {% endfor %}
-{{ demo.content }}
+
+{{ demo.content | split: "." | first | markdownify }}...<br>
+
 {% endfor %}

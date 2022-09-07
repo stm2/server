@@ -15,7 +15,12 @@ cd stm-jekyll
 for filename in _demos/*cr; do
   base=${filename%.*}
   basebase=$(basename "$base")
-  php scripts/cr2svg.php --html $base.cr $base.html
+  if [ -e $base.md ]; then
+    md="-md $base.md"
+  else
+    md=
+  fi
+  php scripts/cr2svg.php --html $md $base.cr $base.html
 #  if [ ! -e $base.md ]; then
 #    echo "---" >> $base.md
 #    echo "name: $basebase" >> $base.md
