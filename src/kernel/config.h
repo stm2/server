@@ -100,6 +100,7 @@ extern "C" {
 
     void free_config(void);
     void free_ids(void);
+    extern int debug;
 
 #ifdef __cplusplus
 }

@@ -1,0 +1,20 @@
+#!/bin/bash
+set -ex
+
+ROOT=$(git rev-parse --show-toplevel)
+export LUA_PATH="$ROOT/scripts/?.lua;$LUA_PATH"
+BUILD=$ROOT/build
+
+RUN_ERESSEA=$BUILD/eressea/eressea
+
+if [ ! -e $BUILD ]; then
+  echo "cannot find build directory $BUILD in $ROOT. did you run cmake-init?"
+  exit
+fi
+
+cd $ROOT/demo
+rm -rf reports orders.txt score score.alliances datum turn
+$RUN_ERESSEA -v1 ../scripts/run-demo.lua
+$RUN_ERESSEA --version
+
+cd -

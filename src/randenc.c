@@ -17,6 +17,7 @@
 
 /* kernel includes */
 #include "kernel/building.h"
+#include "kernel/calendar.h"
 #include "kernel/config.h"
 #include "kernel/curse.h"
 #include "kernel/equipment.h"
@@ -545,8 +546,8 @@ void plagues(region * r)
     }
 
     if (dead > 0) {
-        ADDMSG(&r->msgs, msg_message("pest", "peasants dead",
-            get_resourcetype(R_PEASANT), dead));
+        ADDMSG(&r->msgs, msg_message("pest", "peasants dead round",
+            get_resourcetype(R_PEASANT), dead, turn));
         deathcounts(r, dead);
         rsetpeasants(r, peasants - dead);
     }

@@ -31,6 +31,7 @@
 #include <string.h>
 #include <stdbool.h>          // for bool
 #include <stdio.h>            // for puts
+#include <stdlib.h>
 
 struct allies;
 
@@ -281,6 +282,21 @@ static int tolua_faction_get_messages(lua_State * L)
         }
         return 1;
     }
+    return 0;
+}
+
+static int tolua_faction_free_messages(lua_State * L)
+{
+    faction *f = (faction *)tolua_tousertype(L, 1, NULL);
+    while (f && f->battles) {
+        struct bmsg *bm = f->battles;
+        f->battles = bm->next;
+        if (bm->msgs) {
+            free_messagelist(bm->msgs->begin);
+        }
+    }
+    free_units();
+
     return 0;
 }
 
@@ -682,6 +698,7 @@ void tolua_faction_open(lua_State * L)
             /* tech debt hack, siehe https://paper.dropbox.com/doc/Weihnachten-2015-5tOx5r1xsgGDBpb0gILrv#:h=Probleme-mit-Tests-(Nachtrag-0 */
             tolua_function(L, "count_msg_type", tolua_faction_count_msg_type);
             tolua_variable(L, "messages", tolua_faction_get_messages, NULL);
+            tolua_function(L, "free_messages", tolua_faction_free_messages);
             tolua_function(L, "debug_messages", tolua_faction_debug_messages);
 
             tolua_function(L, "get_key", tolua_faction_getkey);

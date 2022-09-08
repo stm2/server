@@ -65,6 +65,7 @@
 #include <sys/stat.h>
 #endif
 struct settings global;
+int debug = 0;
 
 int findoption(const char *s, const struct locale *lang)
 {
