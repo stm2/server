@@ -1,9 +1,9 @@
 <?php
 
-include dirname(__FILE__) . "/../vendor/erusev/parsedown/Parsedown.php";
+# include dirname(__FILE__) . "/../vendor/erusev/parsedown/Parsedown.php";
 
 function usage($argv) {
-  echo "\n    Usage: $argv[0] [--html [-md input.md]] input.cr output.svg\n\n";
+  echo "\n    Usage: $argv[0] [--html]|[--md input.md] input.cr output.svg\n\n";
   exit(1);
 }
 
@@ -16,14 +16,13 @@ $htmlMode = false;
 if ($argv[$args] == '--html') {
   $htmlMode = true;
   $args++;
-}
-
-$mdName="";
-if ($argv[$args] == '-md') {
-  if (!$htmlMode || empty($argv[$args+1]))
+} else if ($argv[$args] == '--md') {
+  $mdMode = true;
+  $args++;
+  if (empty($argv[$args]))
     usage($argv);
-  $mdName = $argv[$args+1];
-  $args +=2;
+  $mdName = $argv[$args];
+  $args += 1;
 }
 
 if (empty($argv[$args]) || empty($argv[$args+1])) {
@@ -109,52 +108,38 @@ function get_image($terrain) {
 }
 
 $html_template = <<<EOT
-<!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<title>%1\$s</title>
-<script>
-window.onload = function(){
-  let element = document.getElementById("details");
-  element.innerHTML ="Klicke auf eine Region f&uuml;r mehr Details.";
-}
-function showTooltip(evt, tooltip) {
-  if (tooltip) {
-    let element = document.getElementById("tooltip");
-    element.innerHTML = tooltip;
-    element.style.display = "block";
-    element.style.left = evt.pageX + 10 + 'px';
-    element.style.top = evt.pageY + 10 + 'px';
-  }
-}
-function showDescription(e, id) {
-  e.preventDefault();
-  if (id) {
-    let element = document.getElementById("details");
-    let desc = document.getElementById(id).children[1].innerHTML;
-    element.innerHTML = desc;
-    element.style.display = "block";
-  }
-  return false;
-}
-
-function hideTooltip() {
-  var element = document.getElementById("tooltip");
-  element.style.display = "none";
-}
-</script>
-<body>
-
+---
+name: %1\$s
+description: %2\$s
+layout: crsvg
+custom-javascript-list:
+  - crstuff.js
+---
 <h1>%1\$s</h1>
 <div id="tooltip" display="none" style="position: absolute; display: none;"></div>
 
-<div style = "width: 800px; height: 500px; line-height: 3em; overflow:scroll; border: thin #000 solid; padding: 5px;">
-%2\$s
+<div id="svg" style = "max-width: 800px; max-height: 500px; line-height: 3em; overflow:scroll; border: thin #000 solid; padding: 5px;">
+%3\$s
 </div>
 <div id="details">You need to enable Javascript for this to work.</div>
+%4\$s
+EOT;
+
+$md_template = <<<EOT
+---
+%2\$s
+layout: crsvg
+custom-javascript-list:
+  - crstuff.js
+---
+<h1>%1\$s</h1>
+<div id="tooltip" display="none" style="position: absolute; display: none;"></div>
+
+<div id="svg" style = "max-width: 800px; max-height: 500px; line-height: 3em; overflow:scroll; border: thin #000 solid; padding: 5px;">
 %3\$s
-</body>
-</html>
+</div>
+<div id="details">You need to enable Javascript for this to work.</div>
+%4\$s
 EOT;
 
 $description_tag=<<<EOT
@@ -187,13 +172,13 @@ $back_matter=<<<EOT
 EOT;
 
 $use_tag = <<<EOT
-<a href="xxx.html" onmousemove="showTooltip(evt, '%s');"
+<a href="#%1\$s" onmousemove="showTooltip(evt, '%2\$s');"
 onmouseout="hideTooltip();"
-onclick="showDescription(event, '%s');">
-<use xlink:href="#%s" id="%s"
-x="%d" y="%d" %s>
-<title>%s</title>
-<desc>%s</desc>
+onclick="showDescription(event, '%1\$s');">
+<use xlink:href="#%3\$s" id="%1\$s"
+x="%4\$d" y="%5\$d" %6\$s>
+<title>%2\$s</title>
+<desc>%7\$s</desc>
 </use></a>
 
 EOT;
@@ -302,7 +287,7 @@ function output_region($region) {
     if (empty($bounds['xmax']) || $bounds['xmax'] < $x) $bounds['xmax'] = $x;
     if (empty($bounds['ymax']) || $bounds['ymax'] < $y) $bounds['ymax'] = $y;
 
-    return sprintf($use_tag, $tt, $id, $tag, $id, $x, $y, $color, $tt, $desc);
+    return sprintf($use_tag, $id, $tt, $tag, $x, $y, $color, $desc);
   }
 }
 
@@ -344,20 +329,30 @@ $content .= output_region($region);
 $content = output_front() . $content . output_back();
 
 if ($htmlMode) {
+  $details = "";
+  $description = "";
+  $title = basename($inputName);
+
+  $content = sprintf($html_template, $title, $description, $content, $details);
+}
+
+if ($mdMode) {
+  $details = "";
   $description = "";
   if (!empty($mdName)) {
-    $description = file_get_contents($mdName);
-    preg_match('/^---$.*?(^name: *(.*?) *$).*?^---$(.*)/sm', $description, $matches);
-    $title = $matches[2];
-    $description = $matches[3];
-    $description = Parsedown::instance()->text($description);
-    $description = sprintf($description_tag, $description);
+    $details = file_get_contents($mdName);
+    preg_match('/^---$(.*?(^name: *(.*?) *$).*?)^---$(.*)/sm', $details, $matches);
+    $title = $matches[3];
+    $head = $matches[1];
+    $details = $matches[4];
+    # $details = Parsedown::instance()->text($details);
+    // $details = sprintf($description_tag, $details);
   }
   if (empty($title)) {
-    $title = $inputName;
+    $title = basename($inputName);
   }
 
-  $content = sprintf($html_template, $title, $content, $description);
+  $content = sprintf($md_template, $title, $head, $content, $details);
 }
 
 fwrite($svgfile, $content);

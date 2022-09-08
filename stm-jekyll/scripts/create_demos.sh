@@ -8,24 +8,20 @@ cd $ROOT
 #s/runtests
 demo/run_demo
 
-cp demo/reports/*md stm-jekyll/_demos
-cp demo/reports/*cr stm-jekyll/_demos
+cp demo/reports/*md stm-jekyll/_data/crs
+cp demo/reports/*cr stm-jekyll/_data/crs
 cd stm-jekyll
 
-for filename in _demos/*cr; do
+for filename in _data/crs/*md; do
+  cp $filename _demos
+done
+
+for filename in _data/crs/*cr; do
   base=${filename%.*}
   basebase=$(basename "$base")
   if [ -e $base.md ]; then
-    md="-md $base.md"
+    php scripts/cr2svg.php --md $base.md $base.cr _demos/$basebase.md
   else
-    md=
+    php scripts/cr2svg.php --html $base.cr _demos/$basebase.md
   fi
-  php scripts/cr2svg.php --html $md $base.cr $base.html
-#  if [ ! -e $base.md ]; then
-#    echo "---" >> $base.md
-#    echo "name: $basebase" >> $base.md
-#    echo "crs: $basebase.cr" >> $base.md
-#    echo "---" >> $base.md
-#    echo >> $base.md
-#  fi
 done
