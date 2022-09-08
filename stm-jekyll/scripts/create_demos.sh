@@ -13,7 +13,9 @@ cp demo/reports/*cr stm-jekyll/_data/crs
 cd stm-jekyll
 
 for filename in _data/crs/*md; do
-  cp $filename _demos
+  base=${filename%.*}
+  basebase=$(basename "$base")
+  php scripts/cr2svg.php --annotate $base.md _demos/$basebase.md
 done
 
 for filename in _data/crs/*cr; do

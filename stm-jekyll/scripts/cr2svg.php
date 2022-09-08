@@ -3,7 +3,7 @@
 # include dirname(__FILE__) . "/../vendor/erusev/parsedown/Parsedown.php";
 
 function usage($argv) {
-  echo "\n    Usage: $argv[0] [--html]|[--md input.md] input.cr output.svg\n\n";
+  echo "\n    Usage: $argv[0] [--html]|[--md input.md][--annotate] input.cr output.svg\n\n";
   exit(1);
 }
 
@@ -13,18 +13,22 @@ if (empty($argv[$args]) || empty($argv[$args+1])) {
 }
 
 $htmlMode = false;
+$mdMode = false;
+$annotateMode = false;
 if ($argv[$args] == '--html') {
   $htmlMode = true;
   $args++;
 } else if ($argv[$args] == '--md') {
   $mdMode = true;
   $args++;
-  if (empty($argv[$args]))
-    usage($argv);
   $mdName = $argv[$args];
+  if (empty($argv[$args]))
+  usage($argv);
   $args += 1;
+} else if ($argv[$args] == '--annotate') {
+  $annotateMode = true;
+  $args++;
 }
-
 if (empty($argv[$args]) || empty($argv[$args+1])) {
   usage($argv);
 }
@@ -128,6 +132,7 @@ EOT;
 $md_template = <<<EOT
 ---
 %2\$s
+list: true
 layout: crsvg
 custom-javascript-list:
   - crstuff.js
@@ -142,10 +147,19 @@ custom-javascript-list:
 %4\$s
 EOT;
 
-$description_tag=<<<EOT
-
-<div id="description">%s</div>
+$annotation = <<<EOT
+list: true
+layout: crsvg
+custom-javascript-list:
+  - crstuff.js
 EOT;
+
+$annotation2 = <<<EOT
+{% for cr in page.crs %}
+  - [{{ cr }}]({{ cr | replace: ".cr", ".html" }})
+{% endfor %}
+EOT;
+
 
 $front_matter = <<<EOT
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -298,35 +312,39 @@ function warn($string) {
 
 $content = "";
 
-$region = null;
-$block = null;
-while(!feof($crfile)) {
-  $line = fgets($crfile);
-  $tag = null;
-  if (preg_match($preg_region, $line, $matches) == 1) {
-    $content .= output_region($region);
-    $block = "REGION";
-    $region = parse_region($line, $matches);
-  } else if (preg_match($preg_tagq, $line, $matches) == 1) {
-    $value = $matches[1];
-    $tag = $matches[2];
-  } else if (preg_match($preg_tag, $line, $matches) == 1) {
-    $value = $matches[1];
-    $tag = $matches[2];
-  } else if (preg_match($preg_block, $line, $matches) == 1){
-    $block = $matches[1];
-  }
-  if (!empty($tag)) {
-    if ($block == "REGION") {
-      $region[$tag] = $value;
+if ($annotateMode) {
+  $content = file_get_contents($inputName);
+  $content = preg_replace('/^---$(.*)^---$(.*)/sm', "---$1\n$annotation\n---$2\n$annotation2", $content);
+} else {
+  $region = null;
+  $block = null;
+  while(!feof($crfile)) {
+    $line = fgets($crfile);
+    $tag = null;
+    if (preg_match($preg_region, $line, $matches) == 1) {
+      $content .= output_region($region);
+      $block = "REGION";
+      $region = parse_region($line, $matches);
+    } else if (preg_match($preg_tagq, $line, $matches) == 1) {
+      $value = $matches[1];
+      $tag = $matches[2];
+    } else if (preg_match($preg_tag, $line, $matches) == 1) {
+      $value = $matches[1];
+      $tag = $matches[2];
+    } else if (preg_match($preg_block, $line, $matches) == 1){
+      $block = $matches[1];
+    }
+    if (!empty($tag)) {
+      if ($block == "REGION") {
+        $region[$tag] = $value;
+      }
     }
   }
 
+  $content .= output_region($region);
+
+  $content = output_front() . $content . output_back();
 }
-
-$content .= output_region($region);
-
-$content = output_front() . $content . output_back();
 
 if ($htmlMode) {
   $details = "";
@@ -345,8 +363,6 @@ if ($mdMode) {
     $title = $matches[3];
     $head = $matches[1];
     $details = $matches[4];
-    # $details = Parsedown::instance()->text($details);
-    // $details = sprintf($description_tag, $details);
   }
   if (empty($title)) {
     $title = basename($inputName);
