@@ -8,6 +8,6 @@ crs:
   - 1000-demo.cr
   - 1000-nice.cr
   - 1000-foe.cr
-date: 2022-09-08
+date: 2023-08-30
 ---
 An example with all sorts of stuff that could go on in an Eressea game
