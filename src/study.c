@@ -37,10 +37,10 @@
 #include <util/parser.h>
 #include <util/rand.h>
 #include <util/rng.h>
-#include <util/strings.h>
 #include <util/umlaut.h>
 
 #include <selist.h>
+#include <strings.h>
 
 #include <stb_ds.h>
 
@@ -349,8 +349,7 @@ int teach_cmd(unit * teacher, struct order *ord)
                 /* Beginne die Fehlermeldung */
                 if (isparam(token, teacher->faction->locale, P_TEMP)) {
                     token = getstrtoken();
-                    sprintf(tbuf, "%s %s", LOC(teacher->faction->locale,
-                        parameters[P_TEMP]), token);
+                    sprintf(tbuf, "%s %s", param_name(P_TEMP, teacher->faction->locale), token);
                     uid = tbuf;
                 }
                 else {

@@ -8,7 +8,6 @@ end
 
 function setup()
     eressea.free_game()
-    eressea.settings.set("nmr.timeout", "0")
     conf = [[{
         "races": {
             "human" : {
@@ -22,6 +21,12 @@ function setup()
             "de" : {
                 "east" : "OSTEN",
                 "west" : "WESTEN"
+            }
+        },
+        "parameters" : {
+            "de" : {
+                "EINHEIT": "EINHEIT",
+                "PARTEI": "PARTEI"
             }
         },
         "keywords" : {
@@ -113,6 +118,7 @@ function test_default()
     local u = unit.create(f, r, 1)
     u:set_orders('ARBEITE\nDEFAULT UNTERHALTE')
     process_orders()
+    assert_equal(1, #u.orders)
     assert_equal('ARBEITE', u:get_order())
     assert_equal("UNTERHALTE", u.orders[1])
 end
@@ -125,10 +131,38 @@ function test_default_move()
     u:add_order('@GIB 0 1 Silber')
     u:set_orders('DEFAULT "NACH OSTEN"\nARBEITE\n@GIB 0 2 Silber')
     process_orders()
+    assert_equal(2, #u.orders)
     assert_equal("NACH OSTEN", u.orders[1])
     assert_equal("@GIB 0 2 Silber", u.orders[2])
     process_orders()
+    assert_equal(1, #u.orders)
     assert_equal("@GIB 0 2 Silber", u.orders[1])
+end
+
+function test_default_move_infinite()
+    local r = region.create(0, 0, "plain")
+    local r2 = region.create(1, 0, "plain")
+    local f = faction.create("human")
+    local u = unit.create(f, r, 1)
+    u:set_orders('DEFAULT "NACH WESTEN"\nARBEITE')
+    process_orders()
+    assert_equal(r, u.region)
+    assert_equal(1, #u.orders)
+    assert_equal("NACH WESTEN", u.orders[1])
+    u:set_orders('NACH OSTEN')
+    process_orders()
+    assert_equal(r2, u.region)
+    assert_equal(1, #u.orders)
+    assert_equal('NACH WESTEN', u.orders[1])
+    u:set_orders('NACH WESTEN') -- Vorlage neu einsenden
+    process_orders()
+    assert_equal(r, u.region)
+    assert_equal(1, #u.orders)
+    assert_equal('NACH WESTEN', u.orders[1])
+    u.region = r2
+    process_orders() -- NMR führt Default NACH WESTEN aus und löscht ihn
+    assert_equal(r, u.region)
+    assert_nil(u.orders)
 end
 
 function test_default_empty()
@@ -143,6 +177,19 @@ function test_default_empty()
     assert_equal(1, #u.orders)
 end
 
+function test_default_short()
+    local r = region.create(0, 0, "plain")
+    local f = faction.create("human")
+    local u = unit.create(f, r, 1)
+    region.create(1, 0, "plain")
+    u:add_order('UNTERHALTE')
+    u:set_orders('ARBEITE\nDEFAULT "GIB 1 2 Silber"')
+    process_orders()
+    assert_equal(2, #u.orders)
+    assert_equal("GIB 1 2 Silber", u.orders[1])
+    assert_equal("ARBEITE", u.orders[2])
+end
+
 function test_default_default()
     local r = region.create(0, 0, "plain")
     local f = faction.create("human")
@@ -150,10 +197,8 @@ function test_default_default()
     u:add_order('ARBEITE')
     u:set_orders('DEFAULT "DEFAULT UNTERHALTE"')
     process_orders()
-    assert_equal("ARBEITE", u.orders[1])
-    assert_equal("DEFAULT UNTERHALTE", u.orders[2])
-    assert_equal(2, #u.orders)
-    
+    assert_equal("DEFAULT UNTERHALTE", u.orders[1])
+    assert_equal(1, #u.orders)
 end
 
 function test_movement_does_not_replace_default()
@@ -168,4 +213,46 @@ function test_movement_does_not_replace_default()
     assert_equal("ARBEITE", u.orders[1])
     assert_equal("@BEWACHE", u.orders[2])
     assert_equal(r2, u.region)
+end
+
+-- https://bugs.eressea.de/view.php?id=2888
+function test_no_persistent_order()
+    local r = region.create(0, 0, "plain")
+    local f = faction.create("human")
+    local u = unit.create(f, r, 1)
+    u:add_order('ARBEITE')
+    u:add_order('// #call me maybe')
+    u:set_orders('GIB 0 10 Silber')
+    process_orders()
+    assert_nil(u:get_order()) -- no long order
+    assert_nil(u.orders) -- no new persistent orders given
+end
+
+-- https://bugs.eressea.de/view.php?id=2888
+function test_no_long_order()
+    local r = region.create(0, 0, "plain")
+    local f = faction.create("human")
+    local u = unit.create(f, r, 1)
+    u:add_order('ARBEITE')
+    u:add_order('// #call me maybe')
+    u:set_orders('@GIB 0 10 Silber')
+    process_orders()
+    assert_nil(u:get_order()) -- no long order
+    assert_equal('@GIB 0 10 Silber', u.orders[1]) -- no new persistent orders given
+end
+
+-- https://bugs.eressea.de/view.php?id=2888
+function test_read_orders_twice()
+    local r = region.create(0, 0, "plain")
+    local f = faction.create("human")
+    f.password = "passwort"
+    local u = unit.create(f, r, 1)
+    u.id = 7
+    u:add_order('ARBEITE')
+    local cmds = 'PARTEI ' .. itoa36(f.id) .. ' "passwort"\nEINHEIT 7\nNACH W\nNAECHSTER\n'
+    parse_orders(cmds .. cmds)
+    process_orders()
+    assert_equal(1, #u.orders) -- no new persistent orders given
+    assert_equal('ARBEITE', u.orders[1])
+    assert_nil(u:get_order())
 end

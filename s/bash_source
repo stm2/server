@@ -1,4 +1,0 @@
-# luarocks install lunitx
-eval $(luarocks path)
-export LUA_PATH="$LUA_PATH;;"
-

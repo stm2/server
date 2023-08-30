@@ -40,7 +40,6 @@
 #include "util/stats.h"
 #include "util/rand.h"
 #include "util/rng.h"
-#include "util/strings.h"
 
 /* attributes includes */
 #include "attributes/hate.h"
@@ -50,8 +49,10 @@
 
 #include "spells/regioncurse.h"
 
-#include <stb_ds.h>
 #include <selist.h>
+#include <strings.h>
+
+#include <stb_ds.h>
 
 /* libc includes */
 #include <stdio.h>
@@ -147,10 +148,8 @@ static void reduce_weight(unit * u)
 
 static bool monster_is_waiting(const unit * u)
 {
-    int test = fval(u_race(u), RCF_ATTACK_MOVED) ? UFL_ISNEW : UFL_ISNEW | UFL_MOVED;
-    if (fval(u, test))
-        return true;
-    return false;
+    int test = fval(u_race(u), RCF_ATTACK_MOVED) ? UFL_ISNEW : (UFL_ISNEW | UFL_MOVED);
+    return fval(u, test) != 0;
 }
 
 static bool monster_can_attack(const unit * u)
@@ -1152,7 +1151,7 @@ static int scareaway(region * r, int anzahl)
         direction_t dir = (direction_t)(rng_int() % MAXDIRECTIONS);
         region *rc = rconnect(r, dir);
 
-        if (rc && fval(rc->terrain, LAND_REGION)) {
+        if (rc && rc->land) {
             ++diff;
             rc->land->newpeasants++;
             emigrants[dir]++;

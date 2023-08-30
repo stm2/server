@@ -52,11 +52,11 @@
 #include "util/macros.h"
 #include "util/message.h"
 #include "util/parser.h"
-#include "util/strings.h"
 #include "util/stats.h"
 #include "util/rand.h"
 #include "util/rng.h"
 
+#include <strings.h>
 #include <selist.h>
 
 /* libc includes */
@@ -70,8 +70,6 @@
 
 #define TACTICS_BONUS 1         /* when undefined, we have a tactics round. else this is the bonus tactics give */
 #define TACTICS_MODIFIER 1      /* modifier for generals in the front/rear */
-
-#define CATAPULT_INITIAL_RELOAD 4       /* erster schuss in runde 1 + rng_int() % INITIAL */
 
 #define BASE_CHANCE    70       /* 70% Basis-Ueberlebenschance */
 #define TDIFF_CHANGE    5       /* 5% hoeher pro Stufe */
@@ -451,7 +449,7 @@ static void reportcasualties(battle * b, fighter * fig, int dead)
     msg_release(m);
 }
 
-static int
+static bool
 contest_classic(int skilldiff, const armor_type * ar, const armor_type * sh)
 {
     int p, vw = BASE_CHANCE - TDIFF_CHANGE * skilldiff;
@@ -473,7 +471,7 @@ contest_classic(int skilldiff, const armor_type * ar, const armor_type * sh)
 /** new rule for Eressea 1.5
  * \param skilldiff - the attack skill with every modifier applied
  */
-static int
+static bool
 contest_new(int skilldiff, const troop dt, const armor_type * ar,
     const armor_type * sh)
 {
@@ -488,10 +486,10 @@ contest_new(int skilldiff, const troop dt, const armor_type * ar,
         double tosave = defense * 0.05;
         return !chance(tosave);
     }
-    return 0;
+    return false;
 }
 
-static int
+static bool
 contest(int skdiff, const troop dt, const armor_type * ar,
     const armor_type * sh)
 {
@@ -1428,7 +1426,7 @@ troop select_enemy(fighter * af, int minrow, int maxrow, int select)
         /* flying races ignore min- and maxrow and can attack anyone fighting
          * them */
         minrow = FIGHT_ROW;
-        maxrow = BEHIND_ROW;
+        if (maxrow < BEHIND_ROW) maxrow = BEHIND_ROW;
     }
 
     if (minrow < FIGHT_ROW) minrow = FIGHT_ROW;
@@ -1788,7 +1786,7 @@ static void do_combatspell(troop at)
         return;
     }
     sp = mage_get_combatspell(mage, 1, &sl);
-    if (sp == NULL || sl <= 0 || !u_hasspell(u, sp)) {
+    if (sp == NULL || !u_hasspell(u, sp)) {
         fi->magic = 0;              /* Hat keinen Kampfzauber, kaempft nichtmagisch weiter */
         return;
     }
@@ -1797,7 +1795,7 @@ static void do_combatspell(troop at)
         fi->magic = 0;              /* Kann nicht mehr Zaubern, kaempft nichtmagisch weiter */
         return;
     }
-    else if (sl < level) {
+    else if (sl > 0 && sl < level) {
         level = sl;
     }
     if (fumble(r, u, sp, level)) {
@@ -1939,36 +1937,37 @@ int getreload(troop at)
     return at.fighter->person[at.index].reload;
 }
 
-int hits(troop at, troop dt, weapon * awp)
+bool hits(troop at, troop dt, weapon * awp)
 {
     fighter *af = at.fighter, *df = dt.fighter;
     const armor_type *armor, *shield = NULL;
     int skdiff = 0;
-    int dist = get_unitrow(af, df->side) + get_unitrow(df, af->side) - 1;
-    weapon *dwp = select_weapon(dt, false, dist > 1);
+    const int dist = get_unitrow(af, df->side) + get_unitrow(df, af->side) - 1;
+    const bool missiles_only = dist > 1;
+    weapon *dwp = select_weapon(dt, false, missiles_only);
 
     if (!df->alive)
-        return 0;
+        return false;
     if (getreload(at))
-        return 0;
-    if (dist > 1 && (awp == NULL || !fval(awp->type, WTF_MISSILE)))
-        return 0;
+        return false;
+    if (missiles_only && (awp == NULL || !fval(awp->type, WTF_MISSILE)))
+        return false;
 
     /* mark this person as hit. */
     df->person[dt.index].flags |= FL_HIT;
 
     if (af->person[at.index].flags & FL_STUNNED) {
         af->person[at.index].flags &= ~FL_STUNNED;
-        return 0;
+        return false;
     }
     if ((af->person[at.index].flags & FL_TIRED && rng_int() % 100 < 50)
         || (af->person[at.index].flags & FL_SLEEPING))
-        return 0;
+        return false;
 
     /* effect of sp_reeling_arrows combatspell */
     if (af->side->battle->reelarrow && awp && fval(awp->type, WTF_MISSILE)
         && rng_double() < 0.5) {
-        return 0;
+        return false;
     }
 
     skdiff = skilldiff(at, dt, dist);
@@ -1977,10 +1976,10 @@ int hits(troop at, troop dt, weapon * awp)
     if (dwp == NULL || (dwp->type->flags & WTF_USESHIELD)) {
         shield = select_armor(dt, false);
     }
-    if (contest(skdiff, dt, armor, shield)) {
-        return 1;
+    if (!contest(skdiff, dt, armor, shield)) {
+        return false;
     }
-    return 0;
+    return true;
 }
 
 void dazzle(battle * b, troop * td)
@@ -2047,6 +2046,37 @@ static void make_heroes(battle * b)
     }
 }
 
+void structural_damage(troop td, int damage_abs, int chance_pct)
+{
+    unit* du = td.fighter->unit;
+    if (du->ship) {
+        if (chance_pct >= 100 || rng_int() % 100 < chance_pct) {
+            double damage = .0f;
+            ship* sh = du->ship;
+            if (damage_abs > 0) {
+                damage = (double)damage_abs / sh->type->damage / sh->size;
+            }
+            else {
+                damage = config_get_flt("rules.catapult.damage.ship", 0.01);
+            }
+            damage_ship(du->ship, damage);
+        }
+    }
+    else if (du->building) {
+        if (chance_pct >= 100 || rng_int() % 100 < chance_pct) {
+            battle* b = td.fighter->side->battle;
+            if (damage_abs > 0) {
+                damage_building(b, du->building, damage_abs);
+            }
+            else {
+                damage_abs = config_get_int("rules.catapult.damage.building", 1);
+                damage_building(b, du->building, damage_abs);
+            }
+        }
+    }
+
+}
+
 static void attack(battle * b, troop ta, const att * a, int numattack)
 {
     fighter *af = ta.fighter;
@@ -2070,61 +2100,53 @@ static void attack(battle * b, troop ta, const att * a, int numattack)
         break;
     case AT_STANDARD:          /* Waffen, mag. Gegenstaende, Kampfzauber */
         if (numattack > 0 || af->magic <= 0) {
-            weapon *wp = ta.fighter->person[ta.index].missile;
-            int melee =
-                count_enemies(b, af, melee_range[0], melee_range[1],
-                    SELECT_ADVANCE | SELECT_DISTANCE | SELECT_FIND);
-            if (melee)
-                wp = preferred_weapon(ta, true);
-            /* Sonderbehandlungen */
-
             if (getreload(ta)) {
                 ta.fighter->person[ta.index].reload--;
             }
             else {
-                bool standard_attack = true;
-                bool reload = false;
+                weapon* wp = ta.fighter->person[ta.index].missile;
+                bool missile = false;
+                if (count_enemies(b, af, melee_range[0], melee_range[1],
+                    SELECT_ADVANCE | SELECT_DISTANCE | SELECT_FIND) > 0) {
+                    wp = preferred_weapon(ta, true);
+                }
+
+                if (wp && fval(wp->type, WTF_MISSILE))
+                    missile = true;
+                if (missile) {
+                    td = select_opponent(b, ta, missile_range[0], missile_range[1]);
+                }
+                else {
+                    td = select_opponent(b, ta, melee_range[0], melee_range[1]);
+                }
+                if (!td.fighter)
+                    return;
+                if (ta.fighter->person[ta.index].last_action < b->turn) {
+                    ta.fighter->person[ta.index].last_action = b->turn;
+                }
+                if (hits(ta, td, wp)) {
+                    const char* d;
+                    if (wp == NULL)
+                        d = u_race(au)->def_damage;
+                    else if (is_riding(ta))
+                        d = wp->type->damage[1];
+                    else
+                        d = wp->type->damage[0];
+                    terminate(td, ta, a->type, d, missile);
+                }
+
                 /* spezialattacken der waffe nur, wenn erste attacke in der runde.
                  * sonst helden mit feuerschwertern zu maechtig */
                 if (numattack == 0 && wp && wp->type->attack) {
                     int dead = 0;
-                    standard_attack = false;
                     if (wp->type->attack(&ta, wp->type, &dead)) {
-                        reload = true;
                         af->catmsg += dead;
                         if (af->person[ta.index].last_action < b->turn) {
                             af->person[ta.index].last_action = b->turn;
                         }
                     }
                 }
-                if (standard_attack) {
-                    bool missile = false;
-                    if (wp && fval(wp->type, WTF_MISSILE))
-                        missile = true;
-                    if (missile) {
-                        td = select_opponent(b, ta, missile_range[0], missile_range[1]);
-                    }
-                    else {
-                        td = select_opponent(b, ta, melee_range[0], melee_range[1]);
-                    }
-                    if (!td.fighter)
-                        return;
-                    if (ta.fighter->person[ta.index].last_action < b->turn) {
-                        ta.fighter->person[ta.index].last_action = b->turn;
-                    }
-                    reload = true;
-                    if (hits(ta, td, wp)) {
-                        const char *d;
-                        if (wp == NULL)
-                            d = u_race(au)->def_damage;
-                        else if (is_riding(ta))
-                            d = wp->type->damage[1];
-                        else
-                            d = wp->type->damage[0];
-                        terminate(td, ta, a->type, d, missile);
-                    }
-                }
-                if (reload && wp && wp->type->reload && !getreload(ta)) {
+                if (wp && wp->type->reload && !getreload(ta)) {
                     setreload(ta);
                 }
             }
@@ -2193,18 +2215,11 @@ static void attack(battle * b, troop ta, const att * a, int numattack)
         if (ta.fighter->person[ta.index].last_action < b->turn) {
             ta.fighter->person[ta.index].last_action = b->turn;
         }
-        if (td.fighter->unit->ship) {
-            int dice = dice_rand(a->data.dice);
-            ship * sh = td.fighter->unit->ship;
-            damage_ship(sh, dice / sh->type->damage / sh->size);
-        }
-        else if (td.fighter->unit->building) {
-            damage_building(b, td.fighter->unit->building, dice_rand(a->data.dice));
-        }
+        structural_damage(td, dice_rand(a->data.dice), 100);
     }
 }
 
-void do_attack(fighter * af)
+static void do_attack(fighter * af)
 {
     troop ta;
     unit *au = af->unit;
@@ -2420,7 +2435,7 @@ static int loot_quota(const unit * src, const unit * dst,
     return n;
 }
 
-static void loot_items(fighter * corpse)
+void loot_items(fighter * corpse)
 {
     unit *u = corpse->unit;
     item *itm = u->items;
@@ -3071,8 +3086,7 @@ static void equip_weapons(fighter* fig)
     int dwp[WMAX];
     int wcount[WMAX];
     int wused[WMAX];
-    int oi = 0, di = 0, w = 0;
-    int i;
+    int i, oi = 0, di = 0, w = 0;
 
     for (itm = u->items; itm && w != WMAX; itm = itm->next) {
         const weapon_type* wtype = resource2weapon(itm->type->rtype);
@@ -3089,29 +3103,30 @@ static void equip_weapons(fighter* fig)
         assert(w != WMAX);
     }
     fig->weapons = malloc((1 + (size_t)w) * sizeof(weapon));
-    memcpy(fig->weapons, weapons, w * sizeof(weapon));
-    fig->weapons[w].type = NULL;
-
-    for (i = 0; i != w; ++i) {
-        int j, o = 0, d = 0;
-        for (j = 0; j != i; ++j) {
-            if (weapon_weight(fig->weapons + j,
-                true) >= weapon_weight(fig->weapons + i, true))
-                ++d;
-            if (weapon_weight(fig->weapons + j,
-                false) >= weapon_weight(fig->weapons + i, false))
-                ++o;
+    if (fig->weapons) {
+        memcpy(fig->weapons, weapons, w * sizeof(weapon));
+        fig->weapons[w].type = NULL;
+        for (i = 0; i != w; ++i) {
+            int j, o = 0, d = 0;
+            for (j = 0; j != i; ++j) {
+                if (weapon_weight(fig->weapons + j,
+                    true) >= weapon_weight(fig->weapons + i, true))
+                    ++d;
+                if (weapon_weight(fig->weapons + j,
+                    false) >= weapon_weight(fig->weapons + i, false))
+                    ++o;
+            }
+            for (j = i + 1; j != w; ++j) {
+                if (weapon_weight(fig->weapons + j,
+                    true) > weapon_weight(fig->weapons + i, true))
+                    ++d;
+                if (weapon_weight(fig->weapons + j,
+                    false) > weapon_weight(fig->weapons + i, false))
+                    ++o;
+            }
+            owp[o] = i;
+            dwp[d] = i;
         }
-        for (j = i + 1; j != w; ++j) {
-            if (weapon_weight(fig->weapons + j,
-                true) > weapon_weight(fig->weapons + i, true))
-                ++d;
-            if (weapon_weight(fig->weapons + j,
-                false) > weapon_weight(fig->weapons + i, false))
-                ++o;
-        }
-        owp[o] = i;
-        dwp[d] = i;
     }
     /* jetzt enthalten owp und dwp eine absteigend schlechter werdende Liste der Waffen
      * oi and di are the current index to the sorted owp/dwp arrays
@@ -3779,7 +3794,7 @@ static bool start_battle(region * r, battle ** bp)
                         cmistake(u, ord, 47, MSG_BATTLE);
                         continue;
                     }
-                    if (IsImmune(u2->faction, u2->faction->age)) {
+                    if (IsImmune(u2->faction, faction_age(u2->faction))) {
                         add_message(&u->faction->msgs,
                             msg_feedback(u, u->thisorder, "newbie_immunity_error", "turns",
                                 NewbieImmunity()));

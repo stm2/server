@@ -26,12 +26,12 @@
 #include <util/param.h>
 #include <util/resolve.h>
 #include <util/rng.h>
-#include <util/strings.h>
 #include <util/umlaut.h>
 
-#include <storage.h>
-#include <selist.h>
 #include <critbit.h>
+#include <selist.h>
+#include <storage.h>
+#include <strings.h>
 
 /* libc includes */
 #include <assert.h>
@@ -241,7 +241,9 @@ static void free_bnames(void) {
     while (bnames) {
         local_names *bn = bnames;
         bnames = bnames->next;
-        freetokens(bn->names);
+        if (bn->names) {
+            freetokens(bn->names);
+        }
         free(bn);
     }
 }
@@ -397,7 +399,6 @@ building *new_building(const struct building_type * btype, region * r,
     int id = newbuildingid();
     building *b = building_create(id);
     const char *bname;
-    char buffer[32];
 
     assert(size > 0);
     b->type = btype;
@@ -408,13 +409,9 @@ building *new_building(const struct building_type * btype, region * r,
 
     bname = LOC(lang, btype->_name);
     if (!bname) {
-        bname = LOC(lang, parameters[P_GEBAEUDE]);
-        if (!bname) {
-            bname = parameters[P_GEBAEUDE];
-        }
+        bname = param_name(P_GEBAEUDE, lang);
     }
     assert(bname);
-    snprintf(buffer, sizeof(buffer), "%s %s", bname, itoa36(b->no));
     b->name = str_strdup(bname);
     b->size = size;
     return b;
@@ -639,18 +636,25 @@ region *building_getregion(const building * b)
     return b->region;
 }
 
-bool
-buildingtype_exists(const region * r, const building_type * bt, bool working)
+building *
+get_building_of_type(const region * r, const building_type * bt, bool working)
 {
     building *b;
 
     for (b = rbuildings(r); b; b = b->next) {
         if (b->type == bt && !(working && fval(b, BLD_UNMAINTAINED)) && building_finished(b)) {
-            return true;
+            return b;
         }
     }
 
-    return false;
+    return NULL;
+}
+
+bool
+buildingtype_exists(const region* r, const building_type* bt, bool working)
+{
+    building* b = get_building_of_type(r, bt, working);
+    return b != NULL;
 }
 
 bool building_finished(const struct building *b) {

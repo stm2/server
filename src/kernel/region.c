@@ -25,7 +25,6 @@
 /* util includes */
 #include <kernel/attrib.h>
 #include <kernel/gamedata.h>
-#include <util/strings.h>
 #include <util/lists.h>
 #include <util/log.h>
 #include <util/resolve.h>
@@ -33,11 +32,13 @@
 #include <util/language.h>
 #include <util/rand.h>
 #include <util/rng.h>
-#include <util/strings.h>
 
 #include <storage.h>
+#include <strings.h>
 
 #include <modules/autoseed.h>
+
+#include <stb_ds.h>
 
 /* libc includes */
 #include <assert.h>
@@ -247,7 +248,7 @@ static void rhash_uid(region * r)
             }
             assert(uidhash[key].r != r || !"duplicate registration");
         }
-        r->uid = uid = rng_int();
+        r->uid = uid = genrand_int31();
     }
 }
 
@@ -844,19 +845,15 @@ void region_setresource(region * r, const struct resource_type *rtype, int value
 
 void region_setresource_level(region * r, const struct resource_type *rtype, int value, int level, int divisor)
 {
-    rawmaterial *rm = r->resources;
-    while (rm) {
-        if (rm->rtype == rtype) {
-            if (level > 0) {
-              set_resource(rm, level, value, divisor);
-            } else {
-              rm->amount = value;
-            }
-            break;
+    rawmaterial *rm = rm_get(r, rtype);
+    if (rm) {
+        if (level > 0) {
+          set_resource(rm, level, value, divisor);
+        } else {
+          rm->amount = value;
         }
-        rm = rm->next;
     }
-    if (!rm) {
+    else {
         if (rtype == get_resourcetype(R_SILVER))
             rsetmoney(r, value);
         else if (rtype == get_resourcetype(R_PEASANT))
@@ -864,7 +861,6 @@ void region_setresource_level(region * r, const struct resource_type *rtype, int
         else if (rtype == get_resourcetype(R_HORSE))
             rsethorses(r, value);
         else {
-            rawmaterial *rm;
             if (r->terrain->production) {
                 int i;
                 for (i = 0; r->terrain->production[i].type; ++i) {
@@ -876,44 +872,40 @@ void region_setresource_level(region * r, const struct resource_type *rtype, int
                 }
             }
             /* adamantium etc are not usually terraformed: */
-            for (rm = r->resources; rm; rm = rm->next) {
-                if (rm->rtype == rtype) {
-                    rm->amount = value;
-                    return;
-                }
+            rm = rm_get(r, rtype);
+            if (rm) {
+                rm->amount = value;
             }
-            if (!rm) {
+            else {
                 add_resource(r, 1, value, 150, rtype);
             }
         }
     }
 }
 
-int region_getresource_level(const region * r, const struct resource_type * rtype)
+int region_getresource_level(const struct region * r, const struct resource_type * rtype)
 {
-    const rawmaterial *rm;
-    for (rm = r->resources; rm; rm = rm->next) {
-        if (rm->rtype == rtype) {
-            return rm->level;
-        }
-    }
-    return -1;
+    const rawmaterial *rm = rm_get((struct region *)r, rtype);
+    return rm ? rm->level : -1;
 }
 
-int region_getresource(const region * r, const struct resource_type *rtype)
+int region_getresource(const struct region * r, const struct resource_type *rtype)
 {
-    const rawmaterial *rm;
-    for (rm = r->resources; rm; rm = rm->next) {
-        if (rm->rtype == rtype) {
+    if (rtype == get_resourcetype(R_SILVER)) {
+        return rmoney(r);
+    }
+    else if (rtype == get_resourcetype(R_HORSE)) {
+        return rhorses(r);
+    }
+    else if (rtype == get_resourcetype(R_PEASANT)) {
+        return rpeasants(r);
+    }
+    else {
+        const rawmaterial* rm = rm_get((struct region *)r, rtype);
+        if (rm) {
             return rm->amount;
         }
     }
-    if (rtype == get_resourcetype(R_SILVER))
-        return rmoney(r);
-    if (rtype == get_resourcetype(R_HORSE))
-        return rhorses(r);
-    if (rtype == get_resourcetype(R_PEASANT))
-        return rpeasants(r);
     return 0;
 }
 
@@ -940,13 +932,9 @@ void free_region(region * r)
         free(msg);
     }
 
-    while (r->attribs)
-        a_remove(&r->attribs, r->attribs);
-    while (r->resources) {
-        rawmaterial *res = r->resources;
-        r->resources = res->next;
-        free(res);
-    }
+    a_removeall(&r->attribs, NULL);
+    arrfree(r->resources);
+    r->resources = NULL;
 
     while (r->units) {
         unit *u = r->units;
@@ -1050,7 +1038,7 @@ void setluxuries(region * r, const luxury_type * sale)
 
     if (r->land->demands) {
         freelist(r->land->demands);
-        r->land->demands = 0;
+        r->land->demands = NULL;
     }
 
     for (ltype = luxurytypes; ltype; ltype = ltype->next) {
@@ -1142,36 +1130,6 @@ static void reset_herbs(region *r) {
     }
 }
 
-/* Resourcen loeschen, die im aktuellen terrain nicht (mehr) vorkommen koennen */
-static void reset_rawmaterials(region *r) {
-    const terrain_type * terrain = r->terrain;
-    rawmaterial **lrm = &r->resources;
-
-    assert(terrain);
-
-    while (*lrm) {
-        rawmaterial *rm = *lrm;
-        const resource_type *rtype = NULL;
-
-        if (terrain->production != NULL) {
-            int i;
-            for (i = 0; terrain->production[i].type; ++i) {
-                if (rm->rtype == terrain->production[i].type) {
-                    rtype = rm->rtype;
-                    break;
-                }
-            }
-        }
-        if (rtype == NULL) {
-            *lrm = rm->next;
-            free(rm);
-        }
-        else {
-            lrm = &rm->next;
-        }
-    }
-}
-
 static void create_land(region *r) {
     static struct surround {
         struct surround *next;
@@ -1257,7 +1215,6 @@ void terraform_region(region * r, const terrain_type * terrain)
     assert(terrain);
 
     r->terrain = terrain;
-    reset_rawmaterials(r);
     terraform_resources(r);
 
     if (!fval(terrain, LAND_REGION)) {
@@ -1540,8 +1497,8 @@ int owner_change(const region * r)
 
 bool is_mourning(const region * r, int in_turn)
 {
-    int change = owner_change(r);
-    return (change == in_turn - 1 && r->land &&
+    int change = owner_change(r) + 1;
+    return (change == in_turn && r->land &&
         r->land->ownership->last_owner && r->land->ownership->owner &&
         r->land->ownership->last_owner != r->land->ownership->owner);
 }

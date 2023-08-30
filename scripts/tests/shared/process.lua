@@ -11,7 +11,7 @@ local u, r, f
 function setup()
     eressea.free_game()
     r = region.create(0, 0, "plain")
-    f = faction.create("human", "bernd@eressea.de", "de")
+    f = faction.create("human", 'process@example.com', 'de')
     u = unit.create(f, r, 1)
     u:add_item("money", 10)
 end
@@ -34,13 +34,12 @@ end
 function test_process_turn()
     turn_begin()
     turn = get_turn()
-    turn_process()
-    turn_end()
-    assert_equal(turn, get_turn())
     turn_begin()
-    assert_equal(turn+1, get_turn())
+    assert_equal(turn, get_turn())
     turn_process()
+    assert_equal(turn, get_turn())
     turn_end()
+    assert_equal(turn + 1, get_turn())
 end
 
 function test_write_reports()

@@ -8,11 +8,6 @@ end
 
 function setup()
     eressea.game.reset()
-    eressea.settings.set("rules.food.flags", "4")
-end
-
-function teardown()
-    eressea.settings.set("rules.food.flags", "0")
 end
 
 function test_castle_names()
@@ -71,6 +66,7 @@ function test_build_castle_stages()
     local f = faction.create("human")
     local u = unit.create(f, r, 1000)
     local b = building.create(r, "castle")
+    assert_equal("Burg", b.name)
 
     u:add_item("stone", 1000)
 
@@ -105,6 +101,7 @@ function test_build_harbour()
     process_orders()
     assert_not_nil(u.building)
     assert_equal("harbour", u.building.type)
+    assert_equal("Hafen", u.building.name)
     assert_equal(20, u.building.size)
     process_orders()
     assert_equal(25, u.building.size)

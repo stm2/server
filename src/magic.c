@@ -59,12 +59,12 @@
 #include <util/rand.h>
 #include <util/resolve.h>
 #include <util/rng.h>
-#include <util/strings.h>
 #include <util/umlaut.h>
 
-#include <selist.h>
 #include <critbit.h>
+#include <selist.h>
 #include <storage.h>
+#include <strings.h>
 
 #include <stb_ds.h>
 
@@ -1111,19 +1111,12 @@ variant resist_chance(const unit *magician, const void *obj, int objtyp, int bon
     }
 
     case TYP_REGION:
-        /* Bonus durch Zauber
-        probability +=
-            0.01 * get_curseeffect(((region *)obj)->attribs, C_RESIST_MAGIC, 0); */
         a = ((const region *)obj)->attribs;
         break;
 
     case TYP_BUILDING:
-        /* Bonus durch Zauber
-        probability +=
-            0.01 * get_curseeffect(((building *)obj)->attribs, C_RESIST_MAGIC, 0); */
         a = ((const building *)obj)->attribs;
-        /* Bonus durch Typ
-        probability += 0.01 * ((building *)obj)->type->magres; */
+        /* Bonus durch Typ */
         prob = frac_add(prob, ((const building *)obj)->type->magres);
         break;
 
@@ -1505,8 +1498,7 @@ message *msg_unitnotfound(const struct unit * mage, struct order * ord,
     const char *uid = NULL;
 
     if (spobj->typ == SPP_TEMP) {
-        sprintf(tbuf, "%s %s", LOC(mage->faction->locale,
-            parameters[P_TEMP]), itoa36(spobj->data.i));
+        sprintf(tbuf, "%s %s", param_name(P_TEMP, mage->faction->locale), itoa36(spobj->data.i));
         uid = tbuf;
     }
     else if (spobj->typ == SPP_UNIT) {
@@ -1593,15 +1585,15 @@ verify_targets(castorder * co, int *invalid, int *resist, int *success)
             case SPP_TEMP:
             case SPP_UNIT:
                 if (!verify_unit(target_r, caster, sp, spobj, co->order))
-                    ++ * invalid;
+                    ++*invalid;
                 break;
             case SPP_BUILDING:
                 if (!verify_building(target_r, caster, sp, spobj, co->order))
-                    ++ * invalid;
+                    ++*invalid;
                 break;
             case SPP_SHIP:
                 if (!verify_ship(target_r, caster, sp, spobj, co->order))
-                    ++ * invalid;
+                    ++*invalid;
                 break;
             default:
                 break;
@@ -1862,12 +1854,12 @@ addparam_unit(const char *const param[], spllprm ** spobjp, const unit * u,
         otype = SPP_TEMP;
     }
 
-    spobj = *spobjp = malloc(sizeof(spllprm));
-    if (!spobj) abort();
-    spobj->flag = 0;
-    spobj->typ = otype;
-    spobj->data.i = atoi36((const char *)param[i]);
-
+    *spobjp = spobj = malloc(sizeof(spllprm));
+    if (spobj) {
+        spobj->flag = 0;
+        spobj->typ = otype;
+        spobj->data.i = atoi36((const char*)param[i]);
+    }
     return i + 1;
 }
 
@@ -2506,6 +2498,7 @@ static castorder *cast_cmd(unit * u, order * ord)
     unit * mage = NULL;
     param_t param;
 
+    assert(u);
     if (LongHunger(u)) {
         cmistake(u, ord, 224, MSG_MAGIC);
         return 0;
@@ -2518,12 +2511,12 @@ static castorder *cast_cmd(unit * u, order * ord)
 
     init_order(ord, NULL);
     s = gettoken(token, sizeof(token));
-    param = findparam(s, u->faction->locale);
+    param = get_param(s, u->faction->locale);
     /* fuer Syntax ' STUFE x REGION y z ' */
     if (param == P_LEVEL) {
         level = getint();
         s = gettoken(token, sizeof(token));
-        param = findparam(s, u->faction->locale);
+        param = get_param(s, u->faction->locale);
     }
     if (param == P_REGION) {
         int t_x = getint();
@@ -2540,7 +2533,7 @@ static castorder *cast_cmd(unit * u, order * ord)
             return 0;
         }
         s = gettoken(token, sizeof(token));
-        param = findparam(s, u->faction->locale);
+        param = get_param(s, u->faction->locale);
     }
     /* fuer Syntax `REGION x y STUFE z` hier nach REGION nochmal pruefen */
     if (param == P_LEVEL) {
@@ -2864,7 +2857,7 @@ void magic(void)
             }
             /* erst bezahlen, dann Kostenzaehler erhoehen */
             if (co->level > 0) {
-                pay_spell(mage, caster, sp, cast_level, co->distance);
+                pay_spell(mage, caster, sp, co->level, co->distance);
             }
             if (fumbled) {
                 do_fumble(co);

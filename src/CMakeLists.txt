@@ -2,11 +2,6 @@ cmake_minimum_required(VERSION 3.13)
 project (server C)
 
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
-include_directories (${CLIBS_INCLUDE_DIR})
-include_directories (${STORAGE_INCLUDE_DIR})
-include_directories (${TOLUA_INCLUDE_DIR})
-include_directories (${LUA_INCLUDE_DIR})
-include_directories (${INIPARSER_INCLUDE_DIR})
 
 if (CMAKE_COMPILER_IS_GNUCC)
   add_compile_options(-Wvla)
@@ -54,30 +49,53 @@ macro(ADD_LUA_MODULE MODULE_NAME FILES)
   )
 endmacro(ADD_LUA_MODULE)
 
-macro(TOLUA_BINDING PKGFILE FILES)
-  add_custom_command(
-    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/${PKGFILE}.c
-    DEPENDS ${FILES} ${PKGFILE}
+set (_TOLUA_FILES
+  log.pkg.c
+  locale.pkg.c
+  config.pkg.c
+  process.pkg.c
+  game.pkg.c
+  eressea.pkg.c
+  settings.pkg.c
+)
+
+if (TOLUA_EXECUTABLE)
+  macro(TOLUA_BINDING _NAME _FILES)
+    set(_PKGFILE ${_NAME}.pkg)
+    set(_SRCFILE ${_PKGFILE}.c)
+    add_custom_command(
+      OUTPUT ${_SRCFILE}
+    DEPENDS ${_FILES}
+    MAIN_DEPENDENCY ${_PKGFILE}
     COMMAND ${TOLUA_EXECUTABLE}
-    ARGS -o ${CMAKE_CURRENT_SOURCE_DIR}/${PKGFILE}.c ${PKGFILE}
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    ARGS -n ${_NAME} -o ${_SRCFILE} ${CMAKE_CURRENT_SOURCE_DIR}/${_PKGFILE}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
   )
 endmacro(TOLUA_BINDING)
 
-TOLUA_BINDING(log.pkg util/log.h)
-TOLUA_BINDING(locale.pkg bind_locale.h)
-TOLUA_BINDING(config.pkg bind_config.h)
-TOLUA_BINDING(process.pkg bind_process.h)
-TOLUA_BINDING(game.pkg bind_eressea.h config.h)
-TOLUA_BINDING(eressea.pkg bind_eressea.h)
-TOLUA_BINDING(settings.pkg kenel/config.h)
+TOLUA_BINDING(log util/log.h)
+TOLUA_BINDING(locale bind_locale.h)
+TOLUA_BINDING(config bind_config.h)
+TOLUA_BINDING(process bind_process.h)
+TOLUA_BINDING(game bind_eressea.h config.h)
+TOLUA_BINDING(eressea bind_eressea.h)
+TOLUA_BINDING(settings kernel/config.h)
+
+FOREACH(_FILE ${_TOLUA_FILES})
+    LIST(APPEND _SOURCES ${CMAKE_CURRENT_BINARY_DIR}/${_FILE})
+ENDFOREACH(_FILE)
+SET(TOLUA_SRC ${_SOURCES})
+else(TOLUA_EXECUTABLE)
+SET(TOLUA_SRC ${_TOLUA_FILES})
+endif(TOLUA_EXECUTABLE)
 
 set (PARSER_SRC
   ${DB_SRC}
   ${UTIL_SRC}
-  )
+)
 
 set (ERESSEA_SRC
+  ${TOLUA_SRC}
   vortex.c
   alchemy.c
   automate.c
@@ -85,7 +103,6 @@ set (ERESSEA_SRC
   chaos.c
   contact.c
   creport.c
-  direction.c
   defaults.c
   donations.c
   recruit.c
@@ -177,9 +194,14 @@ if(DEFINED ERESSEA_BUILDNO)
 endif()
 add_library(parser ${PARSER_SRC})
 
+target_include_directories (parser PUBLIC ${CLIBS_INCLUDE_DIR})
+target_include_directories (parser PUBLIC ${STORAGE_INCLUDE_DIR})
+target_include_directories (parser PUBLIC ${UTF8PROC_INCLUDE_DIR})
+
 target_link_libraries(parser
   ${CLIBS_LIBRARIES}
   ${CRYPTO_LIBRARIES}
+  ${UTF8PROC_LIBRARY}
   )
 
 add_executable(checker ${CHECK_SRC})
@@ -193,6 +215,9 @@ if (HAVE_LIBM)
 endif (HAVE_LIBM)
 
 add_library(game ${ERESSEA_SRC})
+target_include_directories (game PUBLIC ${INIPARSER_INCLUDE_DIR})
+target_include_directories (game PUBLIC ${TOLUA_INCLUDE_DIR})
+target_include_directories (game PUBLIC ${LUA_INCLUDE_DIR})
 target_link_libraries(game ${EXTRA_LIBS} parser version)
 
 add_executable(eressea ${SERVER_SRC})
@@ -205,13 +230,36 @@ target_link_libraries(eressea
   ${INIPARSER_LIBRARY}
 )
 
+add_test(NAME lua-core
+  COMMAND eressea -v1 ../scripts/run-tests.lua
+  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests)
+set_property(TEST lua-core PROPERTY RUN_SERIAL)
+add_test(NAME lua-e2
+  COMMAND eressea -v1 ../scripts/run-tests-e2.lua
+  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests)
+set_property(TEST lua-e2 PROPERTY RUN_SERIAL)
+add_test(NAME lua-e3
+  COMMAND eressea -v1 ../scripts/run-tests-e3.lua
+  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests)
+set_property(TEST lua-e3 PROPERTY RUN_SERIAL)
+
+find_program(LUAROCKS_EXECUTABLE luarocks)
+if(LUAROCKS_EXECUTABLE)
+execute_process(COMMAND ${LUAROCKS_EXECUTABLE} path --lr-path OUTPUT_VARIABLE LR_PATH)
+execute_process(COMMAND ${LUAROCKS_EXECUTABLE} path --lr-cpath OUTPUT_VARIABLE LR_CPATH)
+string(REPLACE ";" "\;" LUA_PATH "${CMAKE_SOURCE_DIR}/scripts/?.lua;${LR_PATH}")
+string(REPLACE ";" "\;" LUA_CPATH "${LR_CPATH}")
+set_tests_properties(lua-core lua-e2 lua-e3 PROPERTIES ENVIRONMENT "LUA_PATH=${LUA_PATH};LUA_CPATH=${LUA_CPATH}")
+endif(LUAROCKS_EXECUTABLE)
+
+set_tests_properties(lua-core lua-e2 lua-e3 PROPERTIES LABELS "lua;ci-only")
+
 set(TESTS_SRC
   alchemy.test.c
   automate.test.c
   battle.test.c
   contact.test.c
   creport.test.c
-  direction.test.c
   defaults.test.c
   donations.test.c
   economy.test.c
@@ -237,6 +285,7 @@ set(TESTS_SRC
   sort.test.c
   spells.test.c
   spy.test.c
+  steal.test.c
   study.test.c
   summary.test.c
   teleport.test.c
@@ -276,7 +325,7 @@ set_property(TARGET eressea PROPERTY C_INCLUDE_WHAT_YOU_USE ${IWYU_PATH})
 set_property(TARGET test_eressea PROPERTY C_INCLUDE_WHAT_YOU_USE ${IWYU_PATH})
 endif (IWYU_PATH)
 
-add_test(server test_eressea)
+add_test(NAME unit-tests COMMAND test_eressea)
 
 install(TARGETS eressea DESTINATION "bin")
 
@@ -302,6 +351,7 @@ endif (HAVE_LIBBSD)
 
 target_include_directories (game PUBLIC ${CJSON_INCLUDE_DIR})
 target_include_directories (game PUBLIC ${INIPARSER_INCLUDE_DIR})
+target_include_directories (game PUBLIC ${UTF8PROC_INCLUDE_DIR})
 
 target_include_directories (game PRIVATE ${SQLITE3_INCLUDE_DIR})
 target_link_libraries(eressea ${SQLITE3_LIBRARY})
@@ -309,7 +359,7 @@ target_link_libraries(test_eressea ${SQLITE3_LIBRARY})
 target_compile_definitions(game PRIVATE USE_SQLITE)
 
 if (READLINE_FOUND)
-#include_directories (${READLINE_INCLUDE_DIR})
+target_include_directories (eressea PRIVATE ${READLINE_INCLUDE_DIR})
 target_link_libraries(eressea ${READLINE_LIBRARY})
 target_compile_definitions(eressea PRIVATE DUSE_READLINE)
 endif (READLINE_FOUND)

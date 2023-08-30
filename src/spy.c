@@ -31,7 +31,8 @@
 #include <util/parser.h>
 #include <util/rand.h>
 #include <util/rng.h>
-#include <util/strings.h>
+
+#include <strings.h>
 
 #include <stb_ds.h>
 
@@ -59,7 +60,7 @@ void spy_message(int spy, const unit * u, const unit * target)
     if (spy > 20) {
         magic_t mtype = unit_get_magic(target);
         /* for mages, spells and magic school */
-        if (mtype != M_GRAY && mtype < MAXMAGIETYP && mtype != M_NONE) {
+        if (mtype != M_GRAY && mtype < MAXMAGIETYP && mtype >= 0) {
             ADDMSG(&u->faction->msgs, msg_message("spyreport_mage", "spy target type", u,
                 target, magic_school[mtype]));
         }
@@ -77,7 +78,7 @@ void spy_message(int spy, const unit * u, const unit * target)
         int first = 1;
         int found = 0;
         char buf[4096];
-        size_t s, n = arrlen(target->skills);
+        ptrdiff_t s, n = arrlen(target->skills);
 
         buf[0] = 0;
         for (s = 0; s != n; ++s) {
@@ -253,7 +254,7 @@ int setstealth_cmd(unit * u, struct order *ord)
         }
     }
     else {
-        switch (findparam(s, u->faction->locale)) {
+        switch (get_param(s, u->faction->locale)) {
         case P_FACTION:
             /* TARNE PARTEI [NICHT|NUMMER abcd] */
             s = gettoken(token, sizeof(token));
@@ -262,13 +263,13 @@ int setstealth_cmd(unit * u, struct order *ord)
                     u->flags |= UFL_ANON_FACTION;
                     break;
                 }
-                else if (findparam(s, u->faction->locale) == P_NOT) {
+                else if (isparam(s, u->faction->locale, P_NOT)) {
                     u->flags &= ~UFL_ANON_FACTION;
                     break;
                 }
             }
             if (rule_stealth_other()) {
-                if (findparam(s, u->faction->locale) == P_NUMBER) {
+                if (isparam(s, u->faction->locale, P_NUMBER)) {
                     int nr = -1;
 
                     s = gettoken(token, sizeof(token));

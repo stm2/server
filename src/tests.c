@@ -4,53 +4,51 @@
 #include "tests.h"
 
 #include "creport.h"
-#include "direction.h"         // for init_direction, directions, MAXDIRECTIONS
 #include "eressea.h"
 #include "magic.h"             // for spell_component, create_castorder, ...
-#include "prefix.h"
 #include "report.h"
 #include "reports.h"
-#include "vortex.h"
 
+#include "kernel/alliance.h"
 #include "kernel/build.h"
+#include "kernel/building.h"
 #include "kernel/config.h"
 #include "kernel/calendar.h"
 #include "kernel/callbacks.h"
-#include "kernel/alliance.h"
+#include "kernel/direction.h" 
+#include "kernel/faction.h"
+#include "kernel/item.h"
 #include "kernel/messages.h"
+#include "kernel/order.h"
 #include "kernel/plane.h"
 #include "kernel/region.h"
 #include "kernel/skill.h"      // for enable_skill, skillnames, MAXSKILLS
 #include "kernel/status.h"     // for ST_FLEE
 #include "kernel/terrain.h"
 #include "kernel/types.h"      // for MAXMAGIETYP
-#include "kernel/item.h"
 #include "kernel/unit.h"
-#include "kernel/order.h"
 #include "kernel/race.h"
-#include "kernel/faction.h"
-#include "kernel/building.h"
 #include "kernel/ship.h"
 #include "kernel/spell.h"
-#include "util/aliases.h"
-#include "util/functions.h"
+
 #include "util/keyword.h"
 #include "util/language.h"
 #include "util/lists.h"
-#include "util/message.h"
 #include "util/log.h"
-#include "util/stats.h"
-#include "util/strings.h"
+#include "util/message.h"
 #include "util/param.h"
 #include "util/rand.h"
+#include "util/stats.h"
 #include "util/variant.h"      // for variant, VAR_VOIDPTR, VAR_INT
+
+#include <strings.h>
 
 #include <stb_ds.h>
 #include <CuTest.h>
 
 #include <assert.h>
 #include <errno.h>
-#include <stdarg.h>            // for va_list
+#include <stdarg.h>
 #include <stdbool.h>           // for true
 #include <stdio.h>             // for fprintf, stderr
 #include <stdlib.h>
@@ -123,8 +121,8 @@ struct locale * test_create_locale(void) {
     if (!loc) {
         int i;
         loc = get_or_create_locale("test");
-        locale_setstring(loc, "factiondefault", parameters[P_FACTION]);
-        locale_setstring(loc, "unitdefault", parameters[P_UNIT]);
+        locale_setstring(loc, "factiondefault", param_name(P_FACTION, NULL));
+        locale_setstring(loc, "unitdefault", param_name(P_UNIT, NULL));
         locale_setstring(loc, "money", "Silber");
         locale_setstring(loc, "money_p", "Silber");
         locale_setstring(loc, "cart", "Wagen");
@@ -172,8 +170,9 @@ struct locale * test_create_locale(void) {
             }
         }
         for (i = 0; i != MAXPARAMS; ++i) {
-            locale_setstring(loc, parameters[i], parameters[i]);
-            test_translate_param(loc, i, parameters[i]);
+            const char* p = param_name(i, NULL);
+            locale_setstring(loc, p, p);
+            test_translate_param(loc, i, p);
         }
         for (i = 0; i != MAXMAGIETYP; ++i) {
             locale_setstring(loc, mkname("school", magic_school[i]), magic_school[i]);
@@ -200,7 +199,7 @@ struct faction* test_create_faction(void) {
 
 struct unit *test_create_unit(struct faction *f, struct region *r)
 {
-    const struct race * rc = f ? f->race : 0;
+    const struct race * rc = f ? f->race : NULL;
     if (!rc) rc = rc_get_or_create("human");
     if (!f) f = test_create_faction_ex(rc, NULL);
     if (!r) r = test_create_plain(0, 0);
@@ -250,7 +249,7 @@ void test_reset(void)
 static void test_reset_full(void) {
     int i;
     turn = 1;
-    default_locale = 0;
+    default_locale = NULL;
 
     if (errno) {
         int error = errno;
@@ -260,26 +259,14 @@ static void test_reset_full(void) {
     memset(&callbacks, 0, sizeof(callbacks));
 
     test_reset();
-    free_terrains();
-    free_resources();
-    free_functions();
-    free_config();
-    default_locale = 0;
+    free_configuration();
     calendar_cleanup();
     creport_cleanup();
     report_cleanup();
     close_orders();
     log_close();
     stats_close();
-    free_special_directions();
     free_locales();
-    free_spells();
-    free_buildingtypes();
-    free_shiptypes();
-    free_races();
-    free_spellbooks();
-    free_aliases();
-    free_prefixes();
     mt_clear();
 
     for (i = 0; i != MAXSKILLS; ++i) {
@@ -498,12 +485,7 @@ item_type * test_create_itemtype(const char * name) {
 }
 
 void test_create_castorder(castorder *co, unit *u, int level, float force, int range, spellparameter *par) {
-    struct locale * lang;
-    order *ord;
-
-    lang = test_create_locale();
-    create_castorder(co, u, NULL, NULL, u->region, level, force, range, ord = create_order(K_CAST, lang, ""), par);
-    free_order(ord);
+    create_castorder(co, u, NULL, NULL, u->region, level, force, range, NULL, par);
 }
 
 spell * test_create_spell(void)
@@ -630,16 +612,7 @@ message * test_get_last_message(message_list *msgs) {
 }
 
 const char * test_get_messagetype(const message *msg) {
-    const char * name;
-    assert(msg);
-    name = msg->type->name;
-    if (strcmp(name, "missing_message") == 0) {
-        name = (const char *)msg->parameters[0].v;
-    }
-    else if (strcmp(name, "missing_feedback") == 0) {
-        name = (const char *)msg->parameters[3].v;
-    }
-    return name;
+    return get_messagetype_name(msg);
 }
 
 struct message * test_find_messagetype_ex(struct message_list *msgs, const char *name, struct message *prev)
@@ -657,9 +630,28 @@ struct message * test_find_messagetype_ex(struct message_list *msgs, const char 
     return NULL;
 }
 
-struct message * test_find_messagetype(struct message_list *msgs, const char *name)
+struct message *test_find_messagetype(struct message_list *msgs, const char *name)
 {
     return test_find_messagetype_ex(msgs, name, NULL);
+}
+
+struct message *test_find_faction_message(const faction *f, const char *name)
+{
+    return test_find_messagetype_ex(f->msgs, name, NULL);
+}
+
+struct message *test_find_region_message(const region *r, const char *name, const faction *f)
+{
+    if (f) {
+        const struct individual_message *imsg;
+        for (imsg = r->individual_messages; imsg; imsg = imsg->next) {
+            if (imsg->viewer == f) {
+                return test_find_messagetype(imsg->msgs, name);
+            }
+        }
+        return NULL;
+    }
+    return test_find_messagetype(r->msgs, name);
 }
 
 int test_count_messagetype(struct message_list *msgs, const char *name)
@@ -685,9 +677,25 @@ void test_clear_messagelist(message_list **msgs) {
 
 void test_clear_messages(faction *f) {
     if (f->msgs) {
-        free_messagelist(f->msgs->begin);
-        free(f->msgs);
-        f->msgs = NULL;
+        test_clear_messagelist(&f->msgs);
+    }
+}
+
+void test_clear_region_messages(struct region *r)
+{
+    if (r->msgs) {
+        test_clear_messagelist(&r->msgs);
+    }
+    if (r->individual_messages) {
+        struct individual_message *imsg = r->individual_messages;
+        while (imsg)
+        {
+            struct individual_message *inext = imsg->next;
+            test_clear_messagelist(&imsg->msgs);
+            free(imsg);
+            imsg = inext;
+        }
+        r->individual_messages = NULL;
     }
 }
 

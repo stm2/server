@@ -195,7 +195,7 @@ give_item(int want, const item_type * itype, unit * src, unit * dest,
     if (n > want) n = want;
     delta = n;
     if (dest && src->faction != dest->faction
-        && src->faction->age < GiveRestriction()) {
+        && faction_age(src->faction) < GiveRestriction()) {
         if (ord != NULL) {
             ADDMSG(&src->faction->msgs, msg_feedback(src, ord, "giverestriction",
                 "turns", GiveRestriction()));
@@ -337,7 +337,7 @@ message * give_ship(unit *u1, unit *u2, int n, order *ord)
         return msg_error(u1, ord, 146);
     }
     if (u2 == NULL) {
-        if (fval(u1->region->terrain, LAND_REGION) || n < u1->ship->number) {
+        if (u1->region->land || n < u1->ship->number) {
             ship * sh = new_ship(u1->ship->type, u1->region, u1->faction->locale);
             scale_ship(sh, 0);
             transfer_ships(u1->ship, sh, n);
@@ -420,7 +420,7 @@ message * give_men(int n, unit * u, unit * u2, struct order *ord)
         return msg;
     }
 
-    if (u->faction != u2->faction && u->faction->age < GiveRestriction()) {
+    if (u->faction != u2->faction && faction_age(u->faction) < GiveRestriction()) {
         return msg_feedback(u, ord, "giverestriction",
             "turns", GiveRestriction());
     }
@@ -770,7 +770,7 @@ static void give_all_items(unit *u, unit *u2, order *ord) {
         }
     }
     else {
-        param_t p = findparam(s, u->faction->locale);
+        param_t p = get_param(s, u->faction->locale);
         if (p == P_PERSON) {
             if (!(u_race(u)->ec_flags & ECF_GIVEPERSON)) {
                 ADDMSG(&u->faction->msgs,
@@ -814,11 +814,9 @@ void give_unit_cmd(unit* u, order* ord)
     char token[64];
     unit* u2;
     message* msg = NULL;
-    keyword_t kwd;
     int err;
 
-    kwd = init_order(ord, NULL);
-    assert(kwd == K_GIVE);
+    init_order(ord, NULL);
     err = getunit(u->region, u->faction, &u2);
 
     if (err == GET_NOTFOUND || (err != GET_PEASANTS && !can_give_to(u, u2))) {
@@ -835,7 +833,7 @@ void give_unit_cmd(unit* u, order* ord)
         cmistake(u, ord, 167, MSG_COMMERCE);
     }
     else {
-        param_t p = findparam(gettoken(token, sizeof(token)), u->faction->locale);
+        param_t p = get_param(gettoken(token, sizeof(token)), u->faction->locale);
         if (p == P_UNIT) {
             give_unit(u, u2, ord);
         }
@@ -853,15 +851,13 @@ param_t give_cmd(unit * u, order * ord)
     param_t p;
     plane *pl;
     message *msg;
-    keyword_t kwd;
 
-    kwd = init_order(ord, NULL);
-    assert(kwd == K_GIVE);
+    init_order(ord, NULL);
 
     err = getunit(r, u->faction, &u2);
     s = gettoken(token, sizeof(token));
     n = s ? atoip(s) : 0;
-    p = (n > 0) ? NOPARAM : findparam(s, u->faction->locale);
+    p = (n > 0) ? NOPARAM : get_param(s, u->faction->locale);
 
     /* quick exit before any errors are generated: */
     if (p == P_UNIT || p == P_CONTROL) {
@@ -969,7 +965,7 @@ param_t give_cmd(unit * u, order * ord)
         cmistake(u, ord, 113, MSG_COMMERCE);
     }
     else {
-        p = findparam(s, u->faction->locale);
+        p = get_param(s, u->faction->locale);
         if (p == P_SHIP) {
             if (u->ship) {
                 message* msg;
@@ -1033,7 +1029,7 @@ static int reserve_i(unit* u, struct order* ord, int flags)
 {
     if (u->number > 0) {
         char token[128];
-        int use, count;
+        int use, count, res;
         const item_type* itype;
         const char* s;
         param_t p = NOPARAM;
@@ -1042,7 +1038,7 @@ static int reserve_i(unit* u, struct order* ord, int flags)
         s = gettoken(token, sizeof(token));
         count = s ? atoip(s) : 0;
         if (count == 0) {
-            p = findparam(s, u->faction->locale);
+            p = get_param(s, u->faction->locale);
             if (p == P_EACH) {
                 count = getint() * u->number;
             }
@@ -1052,6 +1048,7 @@ static int reserve_i(unit* u, struct order* ord, int flags)
         if (itype == NULL)
             return 0;
 
+        res = get_reservation(u, itype);
         set_resvalue(u, itype, 0);      /* make sure the pool is empty */
 
         if (p == P_ANY) {
@@ -1060,7 +1057,8 @@ static int reserve_i(unit* u, struct order* ord, int flags)
         if (count > 0) {
             use = use_pooled(u, itype->rtype, flags, count);
             if (use) {
-                set_resvalue(u, itype, use);
+                if (use > res) res = use;
+                set_resvalue(u, itype, res);
                 change_resource(u, itype->rtype, use);
                 return use;
             }

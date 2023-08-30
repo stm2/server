@@ -60,20 +60,20 @@
 #include <util/rand.h>
 #include <util/resolve.h>
 #include <util/rng.h>
-#include <util/strings.h>
 #include <util/umlaut.h>
 #include <util/unicode.h>
 
-#include <selist.h>
-#include <stream.h>
-#include <filestream.h>
-#include <limits.h>
-#include <storage.h>
 #include <binarystore.h>
+#include <filestream.h>
+#include <selist.h>
+#include <storage.h>
+#include <stream.h>
+#include <strings.h>
 
 #include <stb_ds.h>
 
 /* libc includes */
+#include <limits.h>
 #include <string.h>
 #include <errno.h>
 #include <stdio.h>
@@ -359,9 +359,11 @@ static void read_skills(gamedata *data, unit *u)
 }
 
 static void write_skills(gamedata *data, const unit *u) {
-    int i, skill_size = (int)arrlen(u->skills);
+    ptrdiff_t i, skill_size = (int)arrlen(u->skills);
+#ifndef NDEBUG
     skill_t sk = NOSKILL;
-    WRITE_INT(data->store, skill_size);
+#endif
+    WRITE_INT(data->store, (int)skill_size);
     for (i = 0; i != skill_size; ++i) {
         skill *sv = u->skills + i;
 #ifndef NDEBUG
@@ -424,13 +426,17 @@ unit *read_unit(gamedata *data)
     }
 
     READ_STR(data->store, obuf, sizeof(obuf));
-    if (unicode_utf8_trim(obuf)!=0) {
-		log_warning("trim unit %s name to '%s'", itoa36(u->no), obuf);
-	}
+    if (data->version <= NOWATCH_VERSION) {
+        if (utf8_trim(obuf) != 0) {
+            log_warning("trim unit %s name to '%s'", itoa36(u->no), obuf);
+        }
+    }
     unit_setname(u, obuf[0] ? obuf : NULL);
     READ_STR(data->store, obuf, sizeof(obuf));
-    if (unicode_utf8_trim(obuf)!=0) {
-        log_warning("trim unit %s info to '%s'", itoa36(u->no), obuf);
+    if (data->version <= NOWATCH_VERSION) {
+        if (utf8_trim(obuf) != 0) {
+            log_warning("trim unit %s info to '%s'", itoa36(u->no), obuf);
+        }
     }
     unit_setinfo(u, obuf[0] ? obuf : NULL);
     READ_INT(data->store, &number);
@@ -441,6 +447,11 @@ unit *read_unit(gamedata *data)
 
     READ_TOK(data->store, rname, sizeof(rname));
     rc = rc_find(rname);
+    if (!rc) {
+        log_error("%s is a unit of unknown race %s", unitname(u), rname);
+        rc = rc_find("template");
+        set_racename(&u->attribs, rname);
+    }
     assert(rc);
     u_setrace(u, rc);
 
@@ -529,10 +540,12 @@ unit *read_unit(gamedata *data)
     read_attribs(data, &u->attribs, u);
     if (rc_demon) {
         if (rc == rc_smurf) {
-            assert(u->faction->race);
-            rc = u->faction->race;
-            log_error("%s was a %s in a %s faction", unitname(u), u->_race->_name, rc->_name);
-            restore_race(u, rc);
+            if (!is_familiar(u)) {
+                assert(u->faction->race);
+                rc = u->faction->race;
+                log_error("%s was a %s in a %s faction", unitname(u), u->_race->_name, rc->_name);
+                restore_race(u, rc);
+            }
         }
         else if (rc == rc_demon) {
             if (data->version < FIX_SHAPESHIFT_VERSION) {
@@ -647,50 +660,139 @@ void write_unit(gamedata *data, const unit * u)
 
 static void read_regioninfo(gamedata *data, const region *r, char *info, size_t len) {
     READ_STR(data->store, info, len);
-    if (unicode_utf8_trim(info) != 0) {
-        log_warning("trim region %d info to '%s'", r->uid, info);
+    if (data->version <= NOWATCH_VERSION) {
+        if (utf8_trim(info) != 0) {
+            log_warning("trim region %d info to '%s'", r->uid, info);
+        }
     }
 }
 
-static void fix_resource_levels(region *r) {
-    struct terrain_production *p;
+static void fix_resource_values(region* r)
+{
+    struct terrain_production* p;
     for (p = r->terrain->production; p->type; ++p) {
-        char *end;
-        long start = (int)strtol(p->startlevel, &end, 10);
-        if (*end == '\0') {
-            rawmaterial *res;
-            for (res = r->resources; res; res = res->next) {
-                if (p->type == res->rtype) {
-                    if (start != res->startlevel) {
-                        log_debug("setting resource start level for %s in %s to %d",
-                            res->rtype->_name, regionname(r, NULL), start);
-                        res->startlevel = start;
-                    }
+        rawmaterial* res = rm_get(r, p->type);
+        if (res) {
+            char* end;
+            int val;
+
+            val = (int)strtol(p->startlevel, &end, 10);
+            if (*end == '\0') {
+                if (val != res->startlevel) {
+                    log_debug("setting resource start level for %s in %s to %d",
+                        res->rtype->_name, regionname(r, NULL), val);
+                    res->startlevel = val;
+                }
+            }
+            val = (int)strtol(p->base, &end, 10);
+            if (*end == '\0') {
+                if (val != res->base) {
+                    log_debug("setting resource base for %s in %s to %d",
+                        res->rtype->_name, regionname(r, NULL), val);
+                    res->base = val;
+                }
+            }
+            val = (int)strtol(p->divisor, &end, 10);
+            if (*end == '\0') {
+                if (val != res->divisor) {
+                    log_debug("setting resource divisor for %s in %s to %d",
+                        res->rtype->_name, regionname(r, NULL), val);
+                    res->divisor = val;
                 }
             }
         }
     }
 }
 
-static void fix_resource_bases(region *r) {
-    struct terrain_production *p;
-    for (p = r->terrain->production; p->type; ++p) {
-        char *end;
-        long base = (int)strtol(p->base, &end, 10);
-        if (*end == '\0') {
-            rawmaterial *res;
-            for (res = r->resources; res; res = res->next) {
-                if (p->type == res->rtype) {
-                    if (base != res->base) {
-                        log_debug("setting resource base for %s in %s to %d",
-                            res->rtype->_name, regionname(r, NULL), base);
-                        res->base = base;
-                    }
-                }
-            }
+static void read_landregion(gamedata* data, region* r)
+{
+    char info[DISPLAYSIZE];
+    char name[NAMESIZE];
+    int n, i;
+    r->land = calloc(1, sizeof(land_region));
+    READ_STR(data->store, name, sizeof(name));
+    if (data->version <= NOWATCH_VERSION) {
+        if (utf8_trim(name) != 0) {
+            log_warning("trim region %d name to '%s'", r->uid, name);
         }
-
     }
+    r->land->name = str_strdup(name);
+
+    if (data->version >= LANDDISPLAY_VERSION) {
+        read_regioninfo(data, r, info, sizeof(info));
+    }
+    region_setinfo(r, info);
+    READ_INT(data->store, &i);
+    if (i < 0) {
+        log_error("number of trees in %s is %d.", regionname(r, NULL), i);
+        i = 0;
+    }
+    rsettrees(r, 0, i);
+    READ_INT(data->store, &i);
+    if (i < 0) {
+        log_error("number of young trees in %s is %d.", regionname(r, NULL), i);
+        i = 0;
+    }
+    rsettrees(r, 1, i);
+    READ_INT(data->store, &i);
+    if (i < 0) {
+        log_error("number of seeds in %s is %d.", regionname(r, NULL), i);
+        i = 0;
+    }
+    rsettrees(r, 2, i);
+
+    READ_INT(data->store, &i);
+    rsethorses(r, i);
+
+    for (;;) {
+        rawmaterial* res;
+        const resource_type* rtype;
+        READ_STR(data->store, name, sizeof(name));
+        if (strcmp(name, "end") == 0)
+            break;
+        rtype = rt_find(name);
+        if (!rtype && strncmp("rm_", name, 3) == 0) {
+            rtype = rt_find(name + 3);
+        }
+        if (!rtype || !rtype->raw) {
+            log_error("invalid resourcetype %s in data.", name);
+        }
+        res = add_resource(r, 0, 0, 0, rtype);
+        READ_INT(data->store, &n);
+        res->level = n;
+        READ_INT(data->store, &n);
+        res->amount = n;
+        res->flags = 0;
+
+        READ_INT(data->store, &n);
+        res->startlevel = n;
+        READ_INT(data->store, &n);
+        res->base = n;
+        READ_INT(data->store, &n);
+        res->divisor = n;
+    }
+    READ_STR(data->store, name, sizeof(name));
+    if (strcmp(name, "noherb") != 0) {
+        const resource_type* rtype = rt_find(name);
+        assert(rtype && rtype->itype && fval(rtype->itype, ITF_HERB));
+        rsetherbtype(r, rtype->itype);
+    }
+    else {
+        rsetherbtype(r, NULL);
+    }
+    READ_INT(data->store, &n);
+    rsetherbs(r, n);
+    READ_INT(data->store, &n);
+    if (n < 0) {
+        /* bug 2182 */
+        log_error("data has negative peasants: %d in %s", n, regionname(r, 0));
+        rsetpeasants(r, 0);
+    }
+    else {
+        rsetpeasants(r, n);
+    }
+    READ_INT(data->store, &n);
+    rsetmoney(r, n);
 }
 
 static region *readregion(gamedata *data, int x, int y)
@@ -740,103 +842,15 @@ static region *readregion(gamedata *data, int x, int y)
     r->age = (unsigned short)n;
 
     if (fval(r->terrain, LAND_REGION)) {
-        r->land = calloc(1, sizeof(land_region));
-        READ_STR(data->store, name, sizeof(name));
-        if (unicode_utf8_trim(name) != 0) {
-            log_warning("trim region %d name to '%s'", uid, name);
-        };
-        r->land->name = str_strdup(name);
-    }
-    if (r->land) {
-        int i;
-        rawmaterial **pres = &r->resources;
-
-        if (data->version >= LANDDISPLAY_VERSION) {
-            read_regioninfo(data, r, info, sizeof(info));
-        }
-        region_setinfo(r, info);
-        READ_INT(data->store, &i);
-        if (i < 0) {
-            log_error("number of trees in %s is %d.", regionname(r, NULL), i);
-            i = 0;
-        }
-        rsettrees(r, 0, i);
-        READ_INT(data->store, &i);
-        if (i < 0) {
-            log_error("number of young trees in %s is %d.", regionname(r, NULL), i);
-            i = 0;
-        }
-        rsettrees(r, 1, i);
-        READ_INT(data->store, &i);
-        if (i < 0) {
-            log_error("number of seeds in %s is %d.", regionname(r, NULL), i);
-            i = 0;
-        }
-        rsettrees(r, 2, i);
-
-        READ_INT(data->store, &i);
-        rsethorses(r, i);
-        assert(*pres == NULL);
-        for (;;) {
-            rawmaterial *res;
-            READ_STR(data->store, name, sizeof(name));
-            if (strcmp(name, "end") == 0)
-                break;
-            res = malloc(sizeof(rawmaterial));
-            if (!res) abort();
-            res->rtype = rt_find(name);
-            if (!res->rtype && strncmp("rm_", name, 3) == 0) {
-                res->rtype = rt_find(name + 3);
+        if (!fval(r->terrain, FORBIDDEN_REGION) || data->version < FORBIDDEN_LAND_VERSION) {
+            read_landregion(data, r);
+            if (data->version < LANDDISPLAY_VERSION) {
+                region_setinfo(r, info);
             }
-            if (!res->rtype || !res->rtype->raw) {
-                log_error("invalid resourcetype %s in data.", name);
-            }
-            assert(res->rtype);
-            READ_INT(data->store, &n);
-            res->level = n;
-            READ_INT(data->store, &n);
-            res->amount = n;
-            res->flags = 0;
-
-            READ_INT(data->store, &n);
-            res->startlevel = n;
-            READ_INT(data->store, &n);
-            res->base = n;
-            READ_INT(data->store, &n);
-            res->divisor = n;
-
-            *pres = res;
-            pres = &res->next;
         }
-        *pres = NULL;
-
-        READ_STR(data->store, name, sizeof(name));
-        if (strcmp(name, "noherb") != 0) {
-            const resource_type *rtype = rt_find(name);
-            assert(rtype && rtype->itype && fval(rtype->itype, ITF_HERB));
-            rsetherbtype(r, rtype->itype);
-        }
-        else {
-            rsetherbtype(r, NULL);
-        }
-        READ_INT(data->store, &n);
-        rsetherbs(r, n);
-        READ_INT(data->store, &n);
-        if (n < 0) {
-            /* bug 2182 */
-            log_error("data has negative peasants: %d in %s", n, regionname(r, 0));
-            rsetpeasants(r, 0);
-        }
-        else {
-            rsetpeasants(r, n);
-        }
-        READ_INT(data->store, &n);
-        rsetmoney(r, n);
     }
-    else {
-        if (info[0]) {
-            log_error("%s %d has a description: %s", r->terrain->_name, r->uid, info);
-        }
+    else if (info[0]) {
+        log_error("%s %d has a description: %s", r->terrain->_name, r->uid, info);
     }
     assert(r->terrain != NULL);
 
@@ -868,13 +882,9 @@ static region *readregion(gamedata *data, int x, int y)
     read_attribs(data, &r->attribs, r);
 
     if (r->resources) {
-        if (data->version < FIX_STARTLEVEL_VERSION) {
+        if (data->version < FIX_RESOURCES_VERSION) {
             /* we had some badly made rawmaterials before this */
-            fix_resource_levels(r);
-        }
-        if (data->version < FIX_RES_BASE_VERSION) {
-            /* we had some badly made rawmaterials before this */
-            fix_resource_bases(r);
+            fix_resource_values(r);
         }
     }
     return r;
@@ -890,6 +900,60 @@ region *read_region(gamedata *data)
     r = readregion(data, x, y);
     resolve_region(r);
     return r;
+}
+
+static void write_landregion(gamedata* data, const region* r)
+{
+    const item_type* rht;
+    struct demand* demand;
+    ptrdiff_t i, len = arrlen(r->resources);
+
+    assert(r->land);
+#if RELEASE_VERSION >= FORBIDDEN_LAND_VERSION
+    if (fval(r->terrain, FORBIDDEN_REGION)) {
+        return;
+    }
+#endif
+    WRITE_STR(data->store, (const char*)r->land->name);
+    WRITE_STR(data->store, region_getinfo(r));
+    assert(rtrees(r, 0) >= 0);
+    assert(rtrees(r, 1) >= 0);
+    assert(rtrees(r, 2) >= 0);
+    WRITE_INT(data->store, rtrees(r, 0));
+    WRITE_INT(data->store, rtrees(r, 1));
+    WRITE_INT(data->store, rtrees(r, 2));
+    WRITE_INT(data->store, rhorses(r));
+
+    for (i = 0; i != len; ++i) {
+        rawmaterial* res = r->resources + i;
+        WRITE_TOK(data->store, res->rtype->_name);
+        WRITE_INT(data->store, res->level);
+        WRITE_INT(data->store, res->amount);
+        WRITE_INT(data->store, res->startlevel);
+        WRITE_INT(data->store, res->base);
+        WRITE_INT(data->store, res->divisor);
+    }
+    WRITE_TOK(data->store, "end");
+
+    rht = rherbtype(r);
+    if (rht) {
+        WRITE_TOK(data->store, resourcename(rht->rtype, 0));
+    }
+    else {
+        WRITE_TOK(data->store, "noherb");
+    }
+    WRITE_INT(data->store, rherbs(r));
+    WRITE_INT(data->store, rpeasants(r));
+    WRITE_INT(data->store, rmoney(r));
+    for (demand = r->land->demands; demand; demand = demand->next) {
+        WRITE_TOK(data->store, resourcename(demand->type->itype->rtype, 0));
+        WRITE_INT(data->store, demand->value);
+    }
+    WRITE_TOK(data->store, "end");
+    WRITE_SECTION(data->store);
+    WRITE_INT(data->store, region_get_morale(r));
+    write_owner(data, r->land->ownership);
+    WRITE_SECTION(data->store);
 }
 
 void writeregion(gamedata *data, const region * r)
@@ -909,50 +973,7 @@ void writeregion(gamedata *data, const region * r)
     WRITE_INT(data->store, r->age);
     WRITE_SECTION(data->store);
     if (r->land) {
-        const item_type *rht;
-        struct demand *demand;
-        rawmaterial *res = r->resources;
-
-        WRITE_STR(data->store, (const char *)r->land->name);
-        WRITE_STR(data->store, region_getinfo(r));
-        assert(rtrees(r, 0) >= 0);
-        assert(rtrees(r, 1) >= 0);
-        assert(rtrees(r, 2) >= 0);
-        WRITE_INT(data->store, rtrees(r, 0));
-        WRITE_INT(data->store, rtrees(r, 1));
-        WRITE_INT(data->store, rtrees(r, 2));
-        WRITE_INT(data->store, rhorses(r));
-
-        while (res) {
-            WRITE_TOK(data->store, res->rtype->_name);
-            WRITE_INT(data->store, res->level);
-            WRITE_INT(data->store, res->amount);
-            WRITE_INT(data->store, res->startlevel);
-            WRITE_INT(data->store, res->base);
-            WRITE_INT(data->store, res->divisor);
-            res = res->next;
-        }
-        WRITE_TOK(data->store, "end");
-
-        rht = rherbtype(r);
-        if (rht) {
-            WRITE_TOK(data->store, resourcename(rht->rtype, 0));
-        }
-        else {
-            WRITE_TOK(data->store, "noherb");
-        }
-        WRITE_INT(data->store, rherbs(r));
-        WRITE_INT(data->store, rpeasants(r));
-        WRITE_INT(data->store, rmoney(r));
-        for (demand = r->land->demands; demand; demand = demand->next) {
-            WRITE_TOK(data->store, resourcename(demand->type->itype->rtype, 0));
-            WRITE_INT(data->store, demand->value);
-        }
-        WRITE_TOK(data->store, "end");
-        WRITE_SECTION(data->store);
-        WRITE_INT(data->store, region_get_morale(r));
-        write_owner(data, r->land->ownership);
-        WRITE_SECTION(data->store);
+        write_landregion(data, r);
     }
     write_attribs(data->store, r->attribs, r);
     WRITE_SECTION(data->store);
@@ -1095,14 +1116,18 @@ faction *read_faction(gamedata * data)
     }
 
     READ_STR(data->store, name, sizeof(name));
-	if (unicode_utf8_trim(name)!=0) {
-		log_warning("trim faction %s name to '%s'", itoa36(f->no), name);
-	};
+    if (data->version <= NOWATCH_VERSION) {
+        if (utf8_trim(name) != 0) {
+            log_warning("trim faction %s name to '%s'", itoa36(f->no), name);
+        }
+    }
     f->name = str_strdup(name);
     READ_STR(data->store, name, sizeof(name));
-	if (unicode_utf8_trim(name)!=0) {
-		log_warning("trim faction %s banner to '%s'", itoa36(f->no), name);
-	};
+    if (data->version <= NOWATCH_VERSION) {
+        if (utf8_trim(name) != 0) {
+            log_warning("trim faction %s banner to '%s'", itoa36(f->no), name);
+        }
+    }
     faction_setbanner(f, name);
 
     log_debug("   - Lese Partei %s (%s)", f->name, itoa36(f->no));
@@ -1124,7 +1149,12 @@ faction *read_faction(gamedata * data)
     f->locale = get_locale(name);
     if (!f->locale) f->locale = default_locale;
     READ_INT(data->store, &f->lastorders);
-    READ_INT(data->store, &f->age);
+    if (data->version < REMOVE_FACTION_AGE_VERSION)
+    {
+        --f->lastorders;
+    }
+    READ_INT(data->store, &n);
+    faction_set_age(f, n);
     READ_STR(data->store, name, sizeof(name));
     f->race = rc_find(name);
     if (!f->race) {
@@ -1214,7 +1244,7 @@ void write_faction(gamedata *data, const faction * f)
     write_password(data, f);
     WRITE_TOK(data->store, locale_name(f->locale));
     WRITE_INT(data->store, f->lastorders);
-    WRITE_INT(data->store, f->age);
+    WRITE_INT(data->store, faction_age(f));
     WRITE_TOK(data->store, f->race->_name);
     WRITE_SECTION(data->store);
     WRITE_INT(data->store, f->magiegebiet);
@@ -1317,13 +1347,17 @@ struct building *read_building(gamedata *data) {
     READ_INT(store, &b->no);
     bhash(b);
     READ_STR(store, name, sizeof(name));
-    if (unicode_utf8_trim(name)!=0) {
-		log_warning("trim building %s name to '%s'", itoa36(b->no), name);
-	}
+    if (data->version <= NOWATCH_VERSION) {
+        if (utf8_trim(name) != 0) {
+            log_warning("trim building %s name to '%s'", itoa36(b->no), name);
+        }
+    }
     b->name = str_strdup(name);
     READ_STR(store, name, sizeof(name));
-    if (unicode_utf8_trim(name)!=0) {
-        log_warning("trim building %s info to '%s'", itoa36(b->no), name);
+    if (data->version <= NOWATCH_VERSION) {
+        if (utf8_trim(name) != 0) {
+            log_warning("trim building %s info to '%s'", itoa36(b->no), name);
+        }
     }
     b->display = str_strdup(name);
     READ_INT(store, &b->size);
@@ -1378,13 +1412,17 @@ ship *read_ship(gamedata *data)
     READ_INT(store, &sh->no);
     shash(sh);
     READ_STR(store, name, sizeof(name));
-    if (unicode_utf8_trim(name)!=0) {
-		log_warning("trim ship %s name to '%s'", itoa36(sh->no), name);
-	}
+    if (data->version <= NOWATCH_VERSION) {
+        if (utf8_trim(name) != 0) {
+            log_warning("trim ship %s name to '%s'", itoa36(sh->no), name);
+        }
+    }
     sh->name = str_strdup(name);
     READ_STR(store, name, sizeof(name));
-    if (unicode_utf8_trim(name)!=0) {
-        log_warning("trim ship %s info to '%s'", itoa36(sh->no), name);
+    if (data->version <= NOWATCH_VERSION) {
+        if (utf8_trim(name) != 0) {
+            log_warning("trim ship %s info to '%s'", itoa36(sh->no), name);
+        }
     }
     sh->display = str_strdup(name);
     READ_STR(store, name, sizeof(name));

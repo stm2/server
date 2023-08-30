@@ -4,6 +4,7 @@
 #include "unit.h"
 
 #include "ally.h"
+#include "alchemy.h"
 #include "attrib.h"
 #include "building.h"
 #include "config.h"
@@ -540,7 +541,7 @@ static void test_unlimited_units(CuTest *tc) {
     test_teardown();
 }
 
-static void test_clone_men_bug_2386(CuTest *tc) {
+static void test_transfermen_bug_2386(CuTest *tc) {
     unit *u1, *u2;
     region *r;
     faction *f;
@@ -553,13 +554,33 @@ static void test_clone_men_bug_2386(CuTest *tc) {
     u1->hp = 39 * u1->number;
     u2 = test_create_unit(f, r);
     scale_number(u2, 0);
-    clone_men(u1, u2, 8100);
+    transfermen(u1, u2, 8100);
+    CuAssertIntEquals(tc, 137, u1->number);
     CuAssertIntEquals(tc, 8100, u2->number);
     CuAssertIntEquals(tc, u2->number * 39, u2->hp);
     test_teardown();
 }
 
-static void test_clone_men(CuTest *tc) {
+static void test_transfermen_bug_2886(CuTest *tc) {
+    unit *u1, *u2;
+    region *r;
+    faction *f;
+
+    test_setup();
+    r = test_create_plain(0, 0);
+    f = test_create_faction();
+    u1 = test_create_unit(f, r);
+    scale_number(u1, 2);
+    set_level(u1, SK_ALCHEMY, 1);
+    u2 = test_create_unit(f, r);
+    transfermen(u1, u2, 1);
+    CuAssertIntEquals(tc, 1, u1->number);
+    CuAssertIntEquals(tc, 2, u2->number);
+    CuAssertPtrEquals(tc, NULL, unit_skill(u2, SK_ALCHEMY));
+    test_teardown();
+}
+
+static void test_transfermen(CuTest *tc) {
     unit *u1, *u2;
     region *r;
     faction *f;
@@ -575,11 +596,127 @@ static void test_clone_men(CuTest *tc) {
     CuAssertIntEquals(tc, 200, u1->hp);
     CuAssertIntEquals(tc, 0, u2->number);
     CuAssertIntEquals(tc, 0, u2->hp);
-    clone_men(u1, u2, 1);
-    CuAssertIntEquals(tc, 10, u1->number);
-    CuAssertIntEquals(tc, 200, u1->hp);
+    transfermen(u1, u2, 1);
+    CuAssertIntEquals(tc, 9, u1->number);
+    CuAssertIntEquals(tc, 180, u1->hp);
     CuAssertIntEquals(tc, 1, u2->number);
     CuAssertIntEquals(tc, 20, u2->hp);
+    test_teardown();
+}
+
+static void test_transfermen_peasants(CuTest *tc) {
+    unit *u;
+    region *r;
+    faction *f;
+    race* rc;
+
+    test_setup();
+    r = test_create_plain(0, 0);
+    rsetpeasants(r, 0);
+    f = test_create_faction();
+    u = test_create_unit(f, r);
+    scale_number(u, 10);
+    transfermen(u, NULL, 1);
+    CuAssertIntEquals(tc, 9, u->number);
+    CuAssertIntEquals(tc, 1, rpeasants(r));
+
+    /* undead don't transfer to peasants */
+    rc = test_create_race("undead");
+    rc->flags -= RCF_PLAYABLE;
+    u_setrace(u, rc);
+    transfermen(u, NULL, 1);
+    CuAssertIntEquals(tc, 8, u->number);
+    CuAssertIntEquals(tc, 1, rpeasants(r));
+
+    /* demons don't transfer to peasants */
+    rc = test_create_race("undead");
+    rc->ec_flags |= ECF_REC_ETHEREAL;
+    u_setrace(u, rc);
+    transfermen(u, NULL, 1);
+    CuAssertIntEquals(tc, 7, u->number);
+    CuAssertIntEquals(tc, 1, rpeasants(r));
+
+    /* orcs transfer max 50% to peasants */
+    rc = test_create_race("orc");
+    rc->recruit_multi = 2;
+    u_setrace(u, rc);
+    transfermen(u, NULL, 1);
+    CuAssertIntEquals(tc, 6, u->number);
+    CuAssertIntEquals(tc, 1, rpeasants(r));
+    transfermen(u, NULL, 2);
+    CuAssertIntEquals(tc, 4, u->number);
+    CuAssertIntEquals(tc, 2, rpeasants(r));
+
+    test_teardown();
+}
+
+static void test_transfer_effects(CuTest* tc) {
+    unit* u1, * u2;
+    region* r;
+    faction* f;
+    int peasants;
+    const struct item_type* itype;
+    test_setup();
+    itype = test_create_itemtype("chickenpox");
+    r = test_create_plain(0, 0);
+    f = test_create_faction();
+    u1 = test_create_unit(f, r);
+    scale_number(u1, 100);
+    u2 = test_create_unit(f, r);
+    scale_number(u2, 100);
+    change_effect(u1, itype, 10);
+
+    CuAssertIntEquals(tc, 10, get_effect(u1, itype));
+    transfermen(u1, u2, 0);
+    CuAssertIntEquals(tc, 100, u1->number);
+    CuAssertIntEquals(tc, 100, u2->number);
+    CuAssertIntEquals(tc, 10, get_effect(u1, itype));
+    CuAssertIntEquals(tc, 0, get_effect(u2, itype));
+
+    transfermen(u1, u2, 50);
+    CuAssertIntEquals(tc, 50, u1->number);
+    CuAssertIntEquals(tc, 150, u2->number);
+    CuAssertIntEquals(tc, 10, get_effect(u1, itype) + get_effect(u2, itype));
+
+    transfermen(u1, u2, 50);
+    CuAssertIntEquals(tc, 0, u1->number);
+    CuAssertIntEquals(tc, 200, u2->number);
+    CuAssertIntEquals(tc, 0, get_effect(u1, itype));
+    CuAssertIntEquals(tc, 10, get_effect(u2, itype));
+
+    peasants = r->land->peasants;
+    transfermen(u2, NULL, 100);
+    CuAssertIntEquals(tc, 100, u2->number);
+    CuAssertIntEquals(tc, 5, get_effect(u2, itype));
+    CuAssertIntEquals(tc, 100, r->land->peasants - peasants);
+
+    test_teardown();
+}
+
+static void test_transfer_effects_rounding(CuTest* tc) {
+    unit* u1, * u2;
+    region* r;
+    faction* f;
+    const struct item_type* itype;
+    test_setup();
+    itype = test_create_itemtype("chickenpox");
+    r = test_create_plain(0, 0);
+    f = test_create_faction();
+    u1 = test_create_unit(f, r);
+    u2 = test_create_unit(f, r);
+    change_effect(u1, itype, 57);
+    change_effect(u2, itype, 11);
+
+    transfermen(u1, u2, 1);
+    CuAssertIntEquals(tc, 68, get_effect(u2, itype));
+    CuAssertIntEquals(tc, 0, get_effect(u1, itype));
+    CuAssertIntEquals(tc, 0, u1->number);
+    CuAssertIntEquals(tc, 2, u2->number);
+    transfermen(u2, u1, 1);
+    CuAssertIntEquals(tc, 1, u1->number);
+    CuAssertIntEquals(tc, 1, u2->number);
+    CuAssertIntEquals(tc, 68, get_effect(u1, itype) + get_effect(u2, itype));
+
     test_teardown();
 }
 
@@ -865,11 +1002,15 @@ CuSuite *get_unit_suite(void)
     SUITE_ADD_TEST(suite, test_unit_name);
     SUITE_ADD_TEST(suite, test_unit_name_from_race);
     SUITE_ADD_TEST(suite, test_update_monster_name);
-    SUITE_ADD_TEST(suite, test_clone_men);
+    SUITE_ADD_TEST(suite, test_transfermen);
+    SUITE_ADD_TEST(suite, test_transfermen_peasants);
+    SUITE_ADD_TEST(suite, test_transfer_effects);
+    SUITE_ADD_TEST(suite, test_transfer_effects_rounding);
     SUITE_ADD_TEST(suite, test_transfer_hitpoints);
     SUITE_ADD_TEST(suite, test_transfer_skills);
     SUITE_ADD_TEST(suite, test_transfer_skills_merge);
-    SUITE_ADD_TEST(suite, test_clone_men_bug_2386);
+    SUITE_ADD_TEST(suite, test_transfermen_bug_2386);
+    SUITE_ADD_TEST(suite, test_transfermen_bug_2886);
     SUITE_ADD_TEST(suite, test_remove_unit);
     SUITE_ADD_TEST(suite, test_remove_empty_units);
     SUITE_ADD_TEST(suite, test_remove_units_without_faction);

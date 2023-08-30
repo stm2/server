@@ -74,7 +74,6 @@
 #include <util/path.h>
 #include <util/rand.h>
 #include <util/rng.h>
-#include <util/strings.h>
 #include <util/umlaut.h>
 #include <util/unicode.h>
 
@@ -89,8 +88,9 @@
 #include <spells/regioncurse.h>
 #include <spells/unitcurse.h>
 
-#include <selist.h>
 #include <iniparser.h>
+#include <selist.h>
+#include <strings.h>
 
 #include <stb_ds.h>
 
@@ -120,7 +120,7 @@
 
 param_t findparam_ex(const char *s, const struct locale * lang)
 {
-    param_t result = findparam(s, lang);
+    param_t result = get_param(s, lang);
 
     if (result == NOPARAM) {
         const building_type *btype = findbuildingtype(s, lang);
@@ -177,7 +177,7 @@ static bool RemoveNMRNewbie(void)
 static void dumbeffect(unit *u) {
     int effect = get_effect(u, oldpotiontype[P_FOOL]);
     if (effect > 0) {           /* Trank "Dumpfbackenbrot" */
-        size_t s, n = arrlen(u->skills);
+        ptrdiff_t s, n = arrlen(u->skills);
         skill *sb = NULL;
         for (s = 0; s != n; ++s) {
             skill* sv = u->skills + s;
@@ -297,7 +297,7 @@ void peasant_migration(region * r)
         int dir = (turn + 1 + i) % MAXDIRECTIONS;
         region *rc = rconnect(r, (direction_t)dir);
 
-        if (rc != NULL && fval(rc->terrain, LAND_REGION)) {
+        if (rc != NULL && rc->land) {
             int rp2 = rpeasants(rc);
             int maxp2 = region_production(rc);
             int max_emigration = MAX_EMIGRATION(rp2 - maxp2);
@@ -693,7 +693,7 @@ growing_trees(region * r, const season_t current_season, const season_t last_wee
             seeds = (rtrees(r, 2) * FORESTGROWTH * 3) / 1000000;
             for (d = 0; d != MAXDIRECTIONS; ++d) {
                 region *r2 = rconnect(r, d);
-                if (r2 && fval(r2->terrain, LAND_REGION) && r2->terrain->size) {
+                if (r2 && r2->land && r2->terrain->size) {
                     /* Eine Landregion, wir versuchen Samen zu verteilen:
                      * Die Chance, das Samen ein Stueck Boden finden, in dem sie
                      * keimen koennen, haengt von der Bewuchsdichte und der
@@ -846,10 +846,12 @@ void demographics(void)
     int horse_rules = config_get_int("rules.horses.growth", 1);
     int peasant_rules = config_get_int("rules.peasants.growth", 1);
     const struct building_type *bt_harbour = bt_find("harbour");
-    season_t current_season = calendar_season(turn);
-    season_t last_weeks_season = calendar_season(turn - 1);
+    season_t current_season = calendar_season(turn + 1);
+    season_t last_weeks_season = calendar_season(turn);
 
     for (r = regions; r; r = r->next) {
+        /** Ageing of regions starts when they are first discovered.
+         * This should prevent monsters from being created there. */
         if (r->age>0 || r->units || r->attribs) {
             ++r->age; /* also oceans. no idea why we didn't always do that */
         }
@@ -952,7 +954,7 @@ void transfer_faction(faction *fsrc, faction *fdst) {
 
     for (u = fdst->units; u != NULL; u = u->nextF) {
         if (u->skills) {
-            size_t s, len = arrlen(u->skills);
+            ptrdiff_t s, len = arrlen(u->skills);
             for (s = 0; s != len; ++s) {
                 skill_t sk = (skill_t)u->skills[s].id;
                 skill_count[sk] += u->number;
@@ -985,7 +987,7 @@ void transfer_faction(faction *fsrc, faction *fdst) {
                 }
 
                 if (u->skills) {
-                    size_t s, len = arrlen(u->skills);
+                    ptrdiff_t s, len = arrlen(u->skills);
                     for (s = 0; s != len; ++s) {
                         const skill *sv = u->skills + s;
                         skill_t sk = (skill_t)sv->id;
@@ -1012,10 +1014,8 @@ int quit_cmd(unit * u, struct order *ord)
     char token[128];
     faction *f = u->faction;
     const char *passwd;
-    keyword_t kwd;
 
-    kwd = init_order(ord, NULL);
-    assert(kwd == K_QUIT);
+    init_order(ord, NULL);
     passwd = gettoken(token, sizeof(token));
     if (checkpasswd(f, (const char *)passwd)) {
         int flags = FFL_QUIT;
@@ -1023,7 +1023,7 @@ int quit_cmd(unit * u, struct order *ord)
             param_t p;
             const char * s = gettoken(token, sizeof(token));
             if (s) {
-                p = findparam(s, f->locale);
+                p = get_param(s, f->locale);
                 if (p != P_FACTION) {
                     log_error("faction %s: QUIT FACTION syntax error.", factionname(f));
                     cmistake(u, ord, 209, MSG_EVENT);
@@ -1169,10 +1169,11 @@ int enter_building(unit * u, order * ord, int id, bool report)
 {
     region *r = u->region;
     building *b;
+    const struct race* rc = u_race(u);
 
     /* Schwimmer koennen keine Gebaeude betreten, ausser diese sind
      * auf dem Ozean */
-    if (!fval(u_race(u), RCF_WALK) && !fval(u_race(u), RCF_FLY)) {
+    if (fval(rc, RCF_SWIM|RCF_WALK|RCF_FLY) == RCF_SWIM) {
         if (!fval(r->terrain, SEA_REGION)) {
             if (report) {
                 cmistake(u, ord, 232, MSG_MOVE);
@@ -1308,7 +1309,7 @@ int dropouts[2];
 
 bool nmr_death(const faction * f, int turn, int timeout)
 {
-    if (f->age >= timeout && turn - f->lastorders >= timeout) {
+    if (faction_age(f) >= timeout && turn - f->lastorders >= timeout) {
         static bool rule_destroy;
         static int config;
         
@@ -1358,12 +1359,13 @@ static void remove_idle_players(void)
             faction* f = *fp;
             if (!is_monsters(f)) {
                 if (!fval(f, FFL_PAUSED | FFL_NOIDLEOUT)) {
-                    if (f->age >= 0 && f->age < MAXNEWPLAYERS) {
-                        ++newbies[f->age];
+                    int age = faction_age(f);
+                    if (age >= 0 && age < MAXNEWPLAYERS) {
+                        ++newbies[age];
                     }
-                    if (f->age == 2 || f->age == 3) {
+                    if (age == 2 || age == 3) {
                         if (f->lastorders == turn - 2) {
-                            ++dropouts[f->age - 2];
+                            ++dropouts[age - 2];
                             destroyfaction(fp);
                             continue;
                         }
@@ -1384,7 +1386,6 @@ void quit(void)
             destroyfaction(fptr);
         }
         else {
-            ++f->age;
             fptr = &f->next;
         }
     }
@@ -1421,7 +1422,7 @@ int ally_cmd(unit * u, struct order *ord)
         keyword = P_ANY;
     }
     else {
-        keyword = findparam(s, u->faction->locale);
+        keyword = get_param(s, u->faction->locale);
     }
 
     sfp = &u->faction->allies;
@@ -1636,7 +1637,8 @@ int display_cmd(unit * u, struct order *ord)
     case P_UNIT:
         str = getstrtoken();
         if (str) {
-            unicode_utf8_trim(str);
+            utf8_trim(str);
+            utf8_clean(str);
         }
         unit_setinfo(u, str);
         break;
@@ -1644,7 +1646,8 @@ int display_cmd(unit * u, struct order *ord)
     case P_PRIVAT:
         str = getstrtoken();
         if (str) {
-            unicode_utf8_trim(str);
+            utf8_trim(str);
+            utf8_clean(str);
         }
         usetprivate(u, str);
         break;
@@ -1668,9 +1671,10 @@ int display_cmd(unit * u, struct order *ord)
         free(*s);
         if (s2) {
             char * sdup = str_strdup(s2);
-            if (unicode_utf8_trim(sdup) != 0) {
+            if (utf8_trim(sdup) != 0) {
                 log_info("trimming info: %s", s2);
             }
+            utf8_clean(str);
             if (strlen(sdup) >= DISPLAYSIZE) {
                 sdup[DISPLAYSIZE-1] = 0;
             }
@@ -1712,16 +1716,17 @@ static int rename_cmd(unit * u, order * ord, char **s, const char *s2)
     /* TODO: Validate to make sure people don't have illegal characters in
      * names, phishing-style? () come to mind. */
     str_strlcpy(name, s2, sizeof(name));
-    if (unicode_utf8_trim(name) != 0) {
+    if (utf8_trim(name) != 0) {
         log_info("trimming name: %s", s2);
     }
+    utf8_clean(name);
 
     free(*s);
     *s = str_strdup(name);
     return 0;
 }
 
-static bool try_rename(unit *u, building *b, order *ord) {
+static bool can_rename_building(unit *u, building *b, order *ord) {
     unit *owner = b ? building_owner(b) : NULL;
     bool foreign = !(owner && owner->faction == u->faction);
 
@@ -1761,16 +1766,6 @@ static bool try_rename(unit *u, building *b, order *ord) {
     return true;
 }
 
-int
-rename_building(unit * u, order * ord, building * b, const char *name)
-{
-    assert(name);
-    if (!try_rename(u, b, ord)) {
-        return -1;
-    }
-    return rename_cmd(u, ord, &b->name, name);
-}
-
 int name_cmd(struct unit *u, struct order *ord)
 {
     char token[128];
@@ -1780,6 +1775,7 @@ int name_cmd(struct unit *u, struct order *ord)
     param_t p;
     bool foreign = false;
     const char *str;
+    const char* name = NULL;
 
     init_order(ord, u->faction->locale);
     str = gettoken(token, sizeof(token));
@@ -1806,7 +1802,7 @@ int name_cmd(struct unit *u, struct order *ord)
         if (foreign) {
             b = getbuilding(u->region);
         }
-        if (try_rename(u, b, ord)) {
+        if (can_rename_building(u, b, ord)) {
             s = &b->name;
         }
         break;
@@ -1819,7 +1815,7 @@ int name_cmd(struct unit *u, struct order *ord)
                 cmistake(u, ord, 66, MSG_EVENT);
                 break;
             }
-            if (f->age < 10) {
+            if (faction_age(f) < 10) {
                 cmistake(u, ord, 248, MSG_EVENT);
                 break;
             }
@@ -1871,7 +1867,7 @@ int name_cmd(struct unit *u, struct order *ord)
                         break;
                     }
 
-                    sdname = LOC(lang, parameters[P_SHIP]);
+                    sdname = param_name(P_SHIP, lang);
                     sdlen = strlen(sdname);
                     if (sh_len >= sdlen && strncmp(sh->name, sdname, sdlen) == 0) {
                         break;
@@ -1956,7 +1952,17 @@ int name_cmd(struct unit *u, struct order *ord)
     {
         group *g = get_group(u);
         if (g) {
-            s = &g->name;
+            name = getstrtoken();
+            if (name == NULL) {
+                cmistake(u, ord, 84, MSG_EVENT);
+                return 0;
+            }
+            if (find_groupbyname(u->faction, name)) {
+                cmistake(u, ord, 332, MSG_EVENT);
+            }
+            else {
+                s = &g->name;
+            }
             break;
         }
         else {
@@ -1971,12 +1977,14 @@ int name_cmd(struct unit *u, struct order *ord)
     }
 
     if (s != NULL) {
-        const char *name = getstrtoken();
-        if (name) {
-            rename_cmd(u, ord, s, name);
+        if (name == NULL) {
+            name = getstrtoken();
+        }
+        if (name == NULL) {
+            cmistake(u, ord, 84, MSG_EVENT);
         }
         else {
-            cmistake(u, ord, 84, MSG_EVENT);
+            rename_cmd(u, ord, s, name);
         }
     }
 
@@ -2426,10 +2434,7 @@ int promotion_cmd(unit * u, struct order *ord)
 
 int group_cmd(unit * u, struct order *ord)
 {
-    keyword_t kwd;
-
-    kwd = init_order(ord, NULL);
-    assert(kwd == K_GROUP);
+    init_order(ord, NULL);
     join_group(u, getstrtoken());
     return 0;
 }
@@ -2483,7 +2488,7 @@ int status_cmd(unit * u, struct order *ord)
 
     init_order(ord, NULL);
     s = gettoken(token, sizeof(token));
-    switch (findparam(s, u->faction->locale)) {
+    switch (get_param(s, u->faction->locale)) {
     case P_NOT:
         unit_setstatus(u, ST_AVOID);
         break;
@@ -2533,13 +2538,13 @@ int combatspell_cmd(unit * u, struct order *ord)
     s = gettoken(token, sizeof(token));
 
     /* KAMPFZAUBER [NICHT] loescht alle gesetzten Kampfzauber */
-    if (!s || *s == 0 || findparam(s, u->faction->locale) == P_NOT) {
+    if (!s || *s == 0 || isparam(s, u->faction->locale, P_NOT)) {
         unset_combatspell(u, 0);
         return 0;
     }
 
     /* Optional: STUFE n */
-    if (findparam(s, u->faction->locale) == P_LEVEL) {
+    if (isparam(s, u->faction->locale, P_LEVEL)) {
         /* Merken, setzen kommt erst spaeter */
         level = getuint();
         s = gettoken(token, sizeof(token));
@@ -2553,7 +2558,7 @@ int combatspell_cmd(unit * u, struct order *ord)
 
     s = gettoken(token, sizeof(token));
 
-    if (findparam(s, u->faction->locale) == P_NOT) {
+    if (isparam(s, u->faction->locale, P_NOT)) {
         /* KAMPFZAUBER "<Spruchname>" NICHT  loescht diesen speziellen
          * Kampfzauber */
         unset_combatspell(u, sp);
@@ -2905,8 +2910,8 @@ static void maketemp_cmd(unit *u, order **olist)
         ship *sh;
         unit *u2;
         order **ordp, **oinsert;
-        keyword_t kwd = init_order(makeord, NULL);
-        assert(kwd == K_MAKETEMP);
+        
+        init_order(makeord, NULL);
         alias = getid();
         s = gettoken(token, sizeof(token));
         if (s && s[0] == '\0') {
@@ -3603,12 +3608,12 @@ int armedmen(const unit * u, bool siege_weapons)
 
 static void enter_1(region * r)
 {
-    do_enter(r, 0);
+    do_enter(r, false);
 }
 
 static void enter_2(region * r)
 {
-    do_enter(r, 1);
+    do_enter(r, true);
 }
 
 bool help_enter(unit *uo, unit *u) {
@@ -3817,7 +3822,6 @@ void turn_begin(void)
         /* this should only happen during tests */
         turn = handle_start;
     }
-    ++turn;
     reset_game();
 }
 
@@ -3838,7 +3842,7 @@ void turn_end(void)
     remove_empty_units();
 
     /* must happen AFTER age, because that would destroy them right away */
-    if (config_get_int("modules.wormhole", 0)) {
+    if (config_get_int("modules.wormhole", 1)) {
         wormholes_update();
     }
 
@@ -3848,6 +3852,9 @@ void turn_end(void)
 
     /* am Ende der Auswertung die neuen Defaults zu den Befehlen dazu */
     update_defaults();
+
+    /* start the next week */
+    ++turn;
 }
 
 typedef enum cansee_t {

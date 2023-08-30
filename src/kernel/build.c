@@ -39,7 +39,8 @@
 #include <util/param.h>
 #include <util/parser.h>
 #include <util/resolve.h>
-#include <util/strings.h>
+
+#include <strings.h>
 
 /* from libc */
 #include <assert.h>
@@ -448,18 +449,20 @@ message *msg_materials_required(unit * u, order * ord,
 int maxbuild(const unit * u, const construction * cons)
 /* calculate maximum size that can be built from available material */
 {
-    int c;
     int maximum = INT_MAX;
-    for (c = 0; cons->materials[c].number; c++) {
-        const resource_type *rtype = cons->materials[c].rtype;
-        int have = get_pooled(u, rtype, GET_DEFAULT, INT_MAX);
-        int need = required(1, cons->reqsize, cons->materials[c].number);
-        if (have < need) {
-            return 0;
-        }
-        else {
-            int b = have / need;
-            if (maximum > b) maximum = b;
+    if (cons->materials) {
+        int c;
+        for (c = 0; cons->materials[c].number; c++) {
+            const resource_type* rtype = cons->materials[c].rtype;
+            int have = get_pooled(u, rtype, GET_DEFAULT, INT_MAX);
+            int need = required(1, cons->reqsize, cons->materials[c].number);
+            if (have < need) {
+                return 0;
+            }
+            else {
+                int b = have / need;
+                if (maximum > b) maximum = b;
+            }
         }
     }
     return maximum;
@@ -593,7 +596,7 @@ build_building(unit * u, const building_type * btype, int id, int want, order * 
         cmistake(u, ord, 221, MSG_PRODUCE);
         return 0;
     }
-    if ((r->terrain->flags & LAND_REGION) == 0) {
+    if (!r->land) {
         /* special terrain, cannot build */
         cmistake(u, ord, 221, MSG_PRODUCE);
         return 0;

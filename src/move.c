@@ -1,6 +1,5 @@
 #include "alchemy.h"
 #include "contact.h"
-#include "direction.h"
 #include "guard.h"
 #include "laws.h"
 #include "lighthouse.h"
@@ -23,6 +22,7 @@
 #include "kernel/config.h"
 #include "kernel/connection.h"
 #include "kernel/curse.h"
+#include "kernel/direction.h"
 #include "kernel/faction.h"
 #include "kernel/gamedata.h"
 #include "kernel/item.h"
@@ -59,9 +59,9 @@
 #include <util/parser.h>
 #include <util/rand.h>
 #include <util/rng.h>
-#include <util/strings.h>
 
 #include <storage.h>
+#include <strings.h>
 #include <stb_ds.h>
 
 /* libc includes */
@@ -667,34 +667,65 @@ static bool is_freezing(const unit * u)
     return true;
 }
 
+void deny_ship_entry(unit *u, struct region* current_point, struct region* next_point, int reason)
+{
+    ship* sh = u->ship;
+    faction* f = u->faction;
+    if (reason == SA_INSECT_DENIED) {
+        ADDMSG(&f->msgs, msg_message("detectforbidden", "unit region", u, next_point));
+    }
+    else if (reason == SA_HARBOUR_DENIED) {
+        ADDMSG(&f->msgs, msg_message("harbor_denied", "ship region", sh, next_point));
+    }
+    else if (lighthouse_guarded(current_point)) {
+        ADDMSG(&f->msgs, msg_message("sailnolandingstorm", "ship region", sh, next_point));
+    }
+    else {
+        double dmg = config_get_flt("rules.ship.damage.nolanding", 0.1);
+        ADDMSG(&f->msgs, msg_message("sailnolanding", "ship region", sh,
+            next_point));
+        if (reason != SA_HARBOUR_DISABLED) {
+            damage_ship(sh, dmg);
+        }
+        /* we handle destruction at the end */
+    }
+}
+
 int check_ship_allowed(struct ship *sh, const region * r)
 {
     if (fval(r->terrain, SEA_REGION)) {
-        return SA_COAST;
+        return SA_ALLOWED;
     }
     else {
-        int reason = SA_NO_COAST;
+        int reason = SA_DENIED;
         const building_type* bt_harbour = bt_find("harbour");
         if (sh->type->coasts) {
-            unsigned c;
-            size_t n = arrlen(sh->type->coasts);
+            ptrdiff_t c, n = arrlen(sh->type->coasts);
             for (c = 0; c != n; ++c) {
                 if (sh->type->coasts[c] == r->terrain) {
-                    reason = SA_COAST;
+                    reason = SA_ALLOWED;
                     break;
                 }
             }
         }
-        if (reason != SA_COAST && bt_harbour && buildingtype_exists(r, bt_harbour, true)) {
-            unit* harbourmaster = owner_buildingtyp(r, bt_harbour);
-            if (!harbourmaster || !sh->_owner) {
-                reason = SA_HARBOUR;
-            }
-            else if ((sh->_owner->faction == harbourmaster->faction) || (ucontact(harbourmaster, sh->_owner)) || (alliedunit(harbourmaster, sh->_owner->faction, HELP_GUARD))) {
-                reason = SA_HARBOUR;
-            }
-            else {
-                return SA_NO_HARBOUR;
+        if (reason != SA_ALLOWED && bt_harbour) {
+            building* b = get_building_of_type(r, bt_harbour, false);
+            if (b) {
+                if (fval(b, BLD_UNMAINTAINED)) {
+                    reason = SA_HARBOUR_DISABLED;
+                }
+                else {
+                    unit* harbourmaster = owner_buildingtyp(r, bt_harbour);
+                    if (!harbourmaster || !sh->_owner) {
+                        reason = SA_HARBOUR_ALLOWED;
+                    }
+                    else if ((sh->_owner->faction == harbourmaster->faction) || (ucontact(harbourmaster, sh->_owner)) || (alliedunit(harbourmaster, sh->_owner->faction, HELP_GUARD))) {
+                        reason = SA_HARBOUR_ALLOWED;
+                    }
+                    else {
+                        reason = SA_HARBOUR_DENIED;
+                    }
+                }
             }
         }
         if (reason >= 0 && sh->region && r_insectstalled(r)) {
@@ -702,7 +733,7 @@ int check_ship_allowed(struct ship *sh, const region * r)
             unit* u = ship_owner(sh);
 
             if (u && is_freezing(u)) {
-                return SA_NO_INSECT;
+                reason = SA_INSECT_DENIED;
             }
         }
         return reason;
@@ -1122,7 +1153,7 @@ order * cycle_route(order * ord, const struct locale *lang, int gereist)
         else if (strlen(neworder) > sizeof(neworder) / 2)
             break;
         else if (cm == gereist && !paused && (d == D_PAUSE)) {
-            const char *loc = LOC(lang, parameters[P_PAUSE]);
+            const char *loc = param_name(P_PAUSE, lang);
             sbs_strcat(&sbtail, " ");
             sbs_strcat(&sbtail, loc);
             paused = true;
@@ -1135,7 +1166,7 @@ order * cycle_route(order * ord, const struct locale *lang, int gereist)
                 /* da PAUSE nicht in ein shortdirections[d] umgesetzt wird (ist
                  * hier keine normale direction), muss jede PAUSE einzeln
                  * herausgefiltert und explizit gesetzt werden */
-                sbs_strcat(&sborder, LOC(lang, parameters[P_PAUSE]));
+                sbs_strcat(&sborder, param_name(P_PAUSE, lang));
             }
             else {
                 sbs_strcat(&sborder, LOC(lang, shortdirections[d]));
@@ -1221,11 +1252,6 @@ static void init_movement(void)
 
                 init_order(u->thisorder, NULL);
                 if (getunit(r, u->faction, &ut) != GET_UNIT || ut->region != u->region) {
-                    ADDMSG(&u->faction->msgs, msg_feedback(u, u->thisorder,
-                        "feedback_unit_not_found", NULL));
-                    continue;
-                }
-                if (!cansee(u->faction, r, ut, 0)) {
                     ADDMSG(&u->faction->msgs, msg_feedback(u, u->thisorder,
                         "feedback_unit_not_found", NULL));
                 }
@@ -1905,22 +1931,7 @@ static void sail(unit * u, order * ord, bool drifting)
             reason = check_ship_allowed(sh, next_point);
             if (reason < 0) {
                 /* for some reason or another, we aren't allowed in there. */
-                if (reason == SA_NO_INSECT) {
-                    ADDMSG(&f->msgs, msg_message("detectforbidden", "unit region", u, next_point));
-                }
-                else if (reason == SA_NO_HARBOUR) {
-                    ADDMSG(&f->msgs, msg_message("harbor_denied", "ship region", sh, next_point));
-                }
-                else if (lighthouse_guarded(current_point)) {
-                    ADDMSG(&f->msgs, msg_message("sailnolandingstorm", "ship region", sh, next_point));
-                }
-                else {
-                    double dmg = config_get_flt("rules.ship.damage.nolanding", 0.1);
-                    ADDMSG(&f->msgs, msg_message("sailnolanding", "ship region", sh,
-                        next_point));
-                    damage_ship(sh, dmg);
-                    /* we handle destruction at the end */
-                }
+                deny_ship_entry(u, current_point, next_point, reason);
                 break;
             }
 
@@ -2218,7 +2229,7 @@ static void travel(unit * u, order *ord)
             if (uf->region == r) {
                 order *follow_order;
                 const struct locale *lang = u->faction->locale;
-                const char *s = LOC(uf->faction->locale, parameters[P_UNIT]);
+                const char *s = param_name(P_UNIT, uf->faction->locale);
                 /* construct an order */
                 assert(s || !"missing translation for UNIT keyword");
                 follow_order = create_order(K_FOLLOW, lang, "%s %i",
@@ -2373,7 +2384,7 @@ int follow_ship(unit * u, order * ord)
 
 /* Bewegung, Verfolgung, Piraterie */
 
-/** ships that folow other ships
+/** ships that follow other ships
  * Dann generieren die jagenden Einheiten ihre Befehle und
  * bewegen sich.
  * Following the trails of other ships.

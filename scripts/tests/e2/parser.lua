@@ -1,4 +1,4 @@
-local tcname = 'tests.shared.parser'
+local tcname = 'tests.e2.parser'
 local lunit = require('lunit')
 if _VERSION >= 'Lua 5.2' then
   _ENV = module(tcname, 'seeall')
@@ -8,7 +8,6 @@ end
 
 function setup()
     eressea.free_game()
-    eressea.settings.set("rules.food.flags", "4") -- FOOD_IS_FREE
     eressea.settings.set("rules.move.owner_leave", "0")
 end
 
@@ -268,4 +267,21 @@ function test_defaults_make_temp()
     assert_equal("@RESERVIERE 1 Schwert", u.orders[2])
     -- should get only the LERNE error:
     assert_equal('error65', f.messages[1])
+end
+
+function test_read_own_units_only()
+    local r = region.create(0, 0, "plain")
+    local f = faction.create("human")
+    local f2 = faction.create("human")
+    local u = unit.create(f, r, 1)
+    u:add_order("ARBEITE")
+    -- suppress NMR check:
+    f.flags = f.flags + 16777216
+    
+    f2.id = 7
+    u.id = 8
+    parse_orders("PARTEI 7 password\nEINHEIT 8\nUNTERHALTE\nNAECHSTER")
+
+    process_orders()
+    assert_equal("ARBEITE", u:get_order())
 end

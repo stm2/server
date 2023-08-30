@@ -40,6 +40,8 @@
 #define UFL_GUARD         (1<<27)
 #define UFL_GROUP         (1<<28)
 
+#define UFL_ORDERS        (1<<29)       /* Einheit hat Befehle bekommen */
+
     /* Flags, die gespeichert werden sollen: */
 #define UFL_SAVEMASK (UFL_MOVED|UFL_NOAID|UFL_ANON_FACTION|UFL_LOCKED|UFL_HUNGER|UFL_TAKEALL|UFL_GUARD|UFL_STEALTH|UFL_GROUP|UFL_HERO)
 
@@ -84,7 +86,7 @@ typedef struct unit {
     struct attrib* attribs;
     status_t status;
     int n;                      /* helper temporary variable, used in economy, enno: attribut? */
-    int wants;                  /* enno: attribut? */
+    int wants;                  /* enno: attribut, econ_request.qty? */
 } unit;
 
 extern struct attrib_type at_creator;
@@ -131,10 +133,9 @@ struct skill* unit_skill(const struct unit* u, enum skill_t id);
 bool has_skill(const unit* u, enum skill_t sk);
 int effskill(const struct unit* u, enum skill_t sk, const struct region* r);
 
-void set_level(struct unit* u, enum skill_t id, unsigned int level);
+void set_level(struct unit* u, enum skill_t sk, unsigned int value);
 unsigned int get_level(const struct unit* u, enum skill_t id);
 void transfermen(struct unit* src, struct unit* dst, int n);
-void clone_men(const struct unit* src, struct unit* dst, int n); /* like transfer, but do not subtract from src */
 
 int eff_skill(const struct unit* u, const struct skill* sv, const struct region* r);
 int effskill_study(const struct unit* u, enum skill_t sk);
@@ -211,6 +212,7 @@ int unit_getcapacity(const unit* u);
 void unit_addorder(unit* u, struct order* ord);
 int unit_max_hp(const struct unit* u);
 void scale_number(struct unit* u, int n);
+void remove_skills(unit* u);
 
 void remove_empty_units_in_region(struct region* r);
 void remove_empty_units(void);

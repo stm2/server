@@ -406,7 +406,7 @@ static void test_stype_defaults(CuTest *tc) {
     CuAssertStrEquals(tc, "hodor", stype->_name);
     CuAssertPtrEquals(tc, NULL, stype->construction);
     CuAssertPtrEquals(tc, NULL, (void *)stype->coasts);
-    CuAssertDblEquals(tc, 0.0, stype->damage, 0.0);
+    CuAssertDblEquals(tc, 1.0, stype->damage, 0.01);
     CuAssertDblEquals(tc, 1.0, stype->storm, 0.0);
     CuAssertDblEquals(tc, 1.0, stype->tac_bonus, 0.01);
     CuAssertIntEquals(tc, 0, stype->cabins);
@@ -728,17 +728,12 @@ static void test_shipspeed(CuTest *tc) {
 static void test_shipspeed_max_range(CuTest *tc) {
     ship *sh;
     ship_type *stype;
-    region *r;
-    struct faction *f;
     unit *cap, *crew;
 
     test_setup();
     sh = setup_ship();
     setup_crew(sh, NULL, &cap, &crew);
     config_set("movement.shipspeed.skillbonus", "5");
-    r = sh->region;
-    f = test_create_faction();
-    assert(r && f);
     stype = st_get_or_create(sh->type->_name);
 
     set_level(cap, SK_SAILING, stype->cptskill + 4);

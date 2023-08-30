@@ -43,10 +43,10 @@
 #include <util/rand.h>
 #include <util/resolve.h>
 #include <util/rng.h>
-#include <util/strings.h>
 #include <util/variant.h>
 
 #include <storage.h>
+#include <strings.h>
 
 #include <stb_ds.h>
 
@@ -561,7 +561,7 @@ unsigned int get_level(const unit * u, enum skill_t id)
     return 0;
 }
 
-void set_level(unit * u, enum skill_t sk, unsigned int value)
+void set_level(struct unit * u, enum skill_t sk, unsigned int value)
 {
     size_t s, len;
 
@@ -767,18 +767,20 @@ void move_unit(unit * u, region * r, unit ** ulist)
 /* ist mist, aber wegen nicht skalierender attribute notwendig: */
 #include "alchemy.h"
 
-void clone_men(const unit * u, unit * dst, int n)
+void transfermen(unit* u, unit* dst, int n)
 {
     region *r = u->region;
 
     if (n == 0)
         return;
     assert(n > 0);
+    assert(u != dst);
     /* "hat attackiert"-status wird uebergeben */
 
     if (dst) {
         enum skill_t sk;
         ship *sh;
+        int delta;
 
         assert(dst->number + n > 0);
 
@@ -797,8 +799,10 @@ void clone_men(const unit * u, unit * dst, int n)
                 sn->level = result.level;
                 sn->weeks = result.weeks;
             }
+            else if (sn) {
+                remove_skill(dst, sk);
+            }
         }
-        clone_effects(u, dst);
         sh = leftship(u);
         if (sh != NULL)
             set_leftship(dst, sh);
@@ -807,26 +811,31 @@ void clone_men(const unit * u, unit * dst, int n)
                 UFL_ENTER);
         if (u->attribs) {
             transfer_curse(u, dst, n);
+            transfer_effects(u, dst, n);
         }
+        delta = (long long)u->hp * n / u->number;
+        dst->hp += delta;
+        u->hp -= delta;
+        /* cannot use scale_number here, because it changes hp+effects: */
         set_number(dst, dst->number + n);
-        dst->hp += (long long)u->hp * n / u->number;
+        set_number(u, u->number - n);
+        if (u->number == 0) {
+            remove_skills(u);
+        }
         assert(dst->hp >= dst->number);
-        clone_effects(u, dst);
+        assert(u->hp >= u->number);
     }
-    else if (r->land) {
-        if ((u_race(u)->ec_flags & ECF_REC_ETHEREAL) == 0) {
-            const race *rc = u_race(u);
-            int p = rpeasants(r);
-            p += (n / rc->recruit_multi);
-            rsetpeasants(r, p);
+    else {
+        scale_number(u, u->number - n);
+        if (r->land) {
+            const race* rc = u_race(u);
+            if (playerrace(rc) && (rc->ec_flags & ECF_REC_ETHEREAL) == 0) {
+                int p = rpeasants(r);
+                p += (n / rc->recruit_multi);
+                rsetpeasants(r, p);
+            }
         }
     }
-}
-
-void transfermen(unit * u, unit * dst, int n)
-{
-    clone_men(u, dst, n);
-    scale_number(u, u->number - n);
 }
 
 struct building *inside_building(const struct unit *u)
@@ -927,12 +936,12 @@ void set_number(unit * u, int count)
 
 void remove_skill(unit * u, enum skill_t sk)
 {
-    size_t len = arrlen(u->skills);
+    ptrdiff_t len = arrlen(u->skills);
     if (len == 1) {
         arrfree(u->skills);
     }
     else if (len > 1) {
-        size_t s;
+        ptrdiff_t s;
         for (s = 0; s != len; ++s) {
             if (u->skills[s].id == sk) {
                 arrdel(u->skills, s);
@@ -942,7 +951,7 @@ void remove_skill(unit * u, enum skill_t sk)
     }
 }
 
-static void remove_skills(unit * u) {
+void remove_skills(unit * u) {
     arrfree(u->skills);
 }
 
@@ -952,7 +961,7 @@ skill *add_skill(unit * u, enum skill_t sk)
     skill skins = { .id = sk, .level = 0, .weeks = 1, .old = 0 };
     assert(u);
     if (u->skills) {
-        size_t s, len = arrlen(u->skills);
+        ptrdiff_t s, len = arrlen(u->skills);
         for (s = 0; s != len; ++s) {
             sv = u->skills + s;
             if (sv->id >= sk) break;
@@ -976,7 +985,7 @@ skill *unit_skill(const unit * u, enum skill_t sk)
     assert(u);
 
     if (u->skills) {
-        size_t len = arrlen(u->skills);
+        ptrdiff_t len = arrlen(u->skills);
         skill* sv = u->skills;
         while (sv != u->skills + len && sv->id <= sk) {
             if (sv->id == sk) {
@@ -990,7 +999,7 @@ skill *unit_skill(const unit * u, enum skill_t sk)
 
 bool has_skill(const unit * u, enum skill_t sk)
 {
-    size_t len = arrlen(u->skills);
+    ptrdiff_t len = arrlen(u->skills);
     skill *sv = u->skills;
     while (sv != u->skills + len && sv->id <= sk) {
         if (sv->id == sk) {
@@ -1257,12 +1266,12 @@ void default_name(const unit *u, char name[], int len) {
         const char * prefix;
         prefix = LOC(lang, "unitdefault");
         if (!prefix) {
-            prefix = parameters[P_UNIT];
+            prefix = param_name(P_UNIT, lang);
         }
         result = prefix;
     }
     else {
-        result = parameters[P_UNIT];
+        result = param_name(P_UNIT, lang);
     }
     snprintf(name, len, "%s %s", result, itoa36(u->no));
 }
@@ -1332,7 +1341,9 @@ unit *create_unit(region * r, faction * f, int number, const struct race *urace,
 
         /* erbt Kampfstatus und Tarnung */
         unit_setstatus(u, creator->status);
-        u->irace = creator->irace;
+        if (u->_race == creator->_race) {
+            u->irace = creator->irace;
+        }
 
         /* erbt Gebaeude/Schiff */
         if (creator->region == r) {
@@ -1554,6 +1565,7 @@ void scale_number(unit * u, int n)
             scale_effects(u->attribs, n, u->number);
         }
         else {
+            a_removeall(&u->attribs, &at_effect);
             u->hp = 0;
         }
     }
@@ -1604,7 +1616,7 @@ int effskill(const unit * u, enum skill_t sk, const region *r)
     assert(u);
 
     if (skill_enabled(sk)) {
-        size_t len = arrlen(u->skills);
+        ptrdiff_t len = arrlen(u->skills);
         skill *sv = u->skills;
         while (sv != u->skills + len) {
             if (sv->id == sk) {
@@ -1776,7 +1788,7 @@ bool is_limited_skill(skill_t sk)
 
 bool has_limited_skills(const struct unit * u)
 {
-    size_t s, len = arrlen(u->skills);
+    ptrdiff_t s, len = arrlen(u->skills);
 
     for (s = 0; s != len; ++s) {
         if (is_limited_skill(u->skills[s].id)) {

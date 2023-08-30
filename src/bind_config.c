@@ -3,19 +3,16 @@
 #endif
 #include "bind_config.h"
 
+#include "eressea.h"
 #include "jsonconf.h"
-#include "magic.h"
 
-#include <kernel/config.h>
-#include <kernel/building.h>
-#include <kernel/race.h>
-#include <kernel/ship.h>
-#include <kernel/spell.h>
+#include <kernel/item.h>
 
+#include <util/language.h>
 #include <util/log.h>
-#include <util/nrmessage.h>
 #include <util/path.h>
-#include <util/strings.h>
+
+#include <strings.h>
 
 #include <cJSON.h>
 
@@ -25,21 +22,17 @@
 #include <stdlib.h>
 
 void config_reset(void) {
-    free_config();
-    free_nrmesssages();
-    free_spells();
-    free_buildingtypes();
-    free_shiptypes();
-    free_races();
-    free_spellbooks();
+    free_configuration();
 }
 
 int config_parse(const char *json)
 {
     cJSON * conf = cJSON_Parse(json);
     if (conf) {
+        reset_locales();
         json_config(conf);
         cJSON_Delete(conf);
+        init_resources();
         return 0;
     }
     else {

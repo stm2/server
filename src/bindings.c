@@ -9,19 +9,21 @@
 #include "helpers.h"
 #include "laws.h"
 #include "magic.h"
+#include "orderfile.h"
 #include "reports.h"
 #include "summary.h"
 #include "teleport.h"
 
-#include "kernel/attrib.h"
-#include "kernel/calendar.h"
-#include "kernel/config.h"
 #include "kernel/alliance.h"
+#include "kernel/attrib.h"
 #include "kernel/building.h"
 #include "kernel/build.h"
+#include "kernel/calendar.h"
+#include "kernel/config.h"
 #include "kernel/curse.h"
-#include "kernel/unit.h"
-#include "kernel/terrain.h"
+#include "kernel/direction.h"
+#include "kernel/faction.h"
+#include "kernel/item.h"
 #include "kernel/messages.h"
 #include "kernel/plane.h"
 #include "kernel/pool.h"
@@ -30,9 +32,9 @@
 #include "kernel/ship.h"
 #include "kernel/skill.h"
 #include "kernel/spell.h"
-#include "kernel/item.h"
-#include "kernel/faction.h"
 #include "kernel/spellbook.h"
+#include "kernel/terrain.h"
+#include "kernel/unit.h"
 #include "races/races.h"
 
 #include "bind_unit.h"
@@ -51,6 +53,7 @@
 #include <util/language.h>
 #include <util/log.h>
 #include <util/macros.h>
+#include <util/order_parser.h>        // for OP_Parser, OrderParserStruct
 #include <util/rand.h>
 #include <util/rng.h>
 
@@ -66,6 +69,7 @@
 #include <assert.h>
 #include <errno.h>
 #include <stdbool.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -352,7 +356,7 @@ static int tolua_get_nmrs(lua_State * L)
     int n = (int)tolua_tonumber(L, 1, 0);
     if (n >= 0 && n <= NMRTimeout()) {
         if (nmrs == NULL) {
-            update_nmrs();
+            update_nmrs(turn);
         }
         result = nmrs[n];
     }
@@ -737,8 +741,7 @@ static int config_get_stype(lua_State * L)
             lua_pushinteger(L, stype->fishing);
             lua_settable(L, -3);
             if (stype->coasts) {
-                unsigned c;
-                size_t n = arrlen(stype->coasts);
+                ptrdiff_t c, n = arrlen(stype->coasts);
                 lua_pushstring(L, "coasts");
                 lua_newtable(L);
                 for (c = 0; c != n; ++c) {
@@ -862,6 +865,7 @@ static void parse_inifile(lua_State * L, const dictionary * d, const char *secti
 }
 
 static int lua_rng_default(lua_State *L) {
+    UNUSED_ARG(L);
     random_source_inject_constant(0);
     return 0;
 }
@@ -878,6 +882,22 @@ static int tolua_set_debug(lua_State * L)
     return 0;
 }
 
+static int tolua_parse_orders(lua_State* L)
+{
+    const char* input = tolua_tostring(L, 1, NULL);
+    if (input) {
+        parser_state state = { NULL };
+        OP_Parser parser = parser_create(&state);
+        if (parser) {
+            int err;
+            err = parser_parse(parser, input, strlen(input), true);
+            parser_free(parser);
+            lua_pushinteger(L, err);
+            return 1;
+        }
+    }
+    return 0;
+}
 
 int tolua_bindings_open(lua_State * L, const dictionary *inifile)
 {
@@ -898,6 +918,17 @@ int tolua_bindings_open(lua_State * L, const dictionary *inifile)
     tolua_module(L, NULL, 0);
     tolua_beginmodule(L, NULL);
     {
+        tolua_function(L, "parse_orders", tolua_parse_orders);
+        tolua_module(L, "directions", 1);
+        tolua_beginmodule(L, "directions");
+        {
+            tolua_constant(L, "WEST", D_WEST);
+            tolua_constant(L, "EAST", D_EAST);
+            tolua_constant(L, "SOUTHWEST", D_SOUTHWEST);
+            tolua_constant(L, "SOUTHEAST", D_SOUTHEAST);
+            tolua_constant(L, "NORTHWEST", D_NORTHWEST);
+            tolua_constant(L, "NORTHEAST", D_NORTHEAST);
+        } tolua_endmodule(L);
         tolua_module(L, "rng", 1);
         tolua_beginmodule(L, "rng");
         {

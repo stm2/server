@@ -19,6 +19,7 @@
 #endif
 
 #include "signals.h"
+#include "spells.h"
 #include "bindings.h"
 
 #include <iniparser.h>
@@ -176,7 +177,7 @@ static int parse_args(int argc, char **argv)
         else if (argi[1] == '-') {     /* long format */
             if (strcmp(argi + 2, "version") == 0) {
                 printf("Eressea version %s, "
-                    "Copyright (C) 2022 Enno Rehling et al.\n",
+                    "Copyright (C) 2023 Enno Rehling et al.\n",
                     eressea_version());
                 return 1;
 #ifdef USE_CURSES          
@@ -282,6 +283,7 @@ int main(int argc, char **argv)
 
     L = lua_init(d);
     game_init();
+    init_spells();
     bind_monsters(L);
     err = eressea_run(L, luafile);
     if (err) {

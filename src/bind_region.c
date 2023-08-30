@@ -4,12 +4,12 @@
 #include "bind_building.h"
 
 #include "teleport.h"
-#include "direction.h"
 
 #include <kernel/building.h>
 #include <kernel/calendar.h>
 #include <kernel/curse.h>
 #include <kernel/region.h>
+#include "kernel/direction.h"
 #include <kernel/resources.h>
 #include <kernel/unit.h>
 #include <kernel/item.h>
@@ -22,7 +22,8 @@
 #include <util/base36.h>
 #include <util/log.h>
 #include <util/message.h>
-#include <util/strings.h>
+
+#include <strings.h>
 
 #include <attributes/key.h>
 #include <attributes/racename.h>
@@ -228,7 +229,7 @@ static int tolua_region_set_morale(lua_State * L)
 static int tolua_region_get_is_mourning(lua_State * L)
 {
     region *r = (region *)tolua_tousertype(L, 1, NULL);
-    lua_pushboolean(L, is_mourning(r, turn+1));
+    lua_pushboolean(L, is_mourning(r, turn));
     return 1;
 }
 
@@ -358,12 +359,10 @@ static int tolua_region_get_resourcelevel(lua_State * L)
     const char *type = tolua_tostring(L, 2, NULL);
     const resource_type *rtype = rt_find(type);
     if (rtype != NULL) {
-        const rawmaterial *rm;
-        for (rm = r->resources; rm; rm = rm->next) {
-            if (rm->rtype == rtype) {
-                lua_pushinteger(L, rm->level);
-                return 1;
-            }
+        const rawmaterial *rm = rm_get(r, rtype);
+        if (rm != NULL) {
+            lua_pushinteger(L, rm->level);
+            return 1;
         }
     }
     return 0;

@@ -13,6 +13,7 @@
 #include "util/param.h"
 #include "util/parser.h"
 #include "util/password.h"
+#include "util/unicode.h"
 
 #include <assert.h>
 #include <errno.h>
@@ -20,11 +21,12 @@
 #include <string.h>
 
 static void begin_orders(unit *u) {
-    if (!u->defaults) {
-        u->defaults = u->orders;
+    if (u->flags & UFL_ORDERS) {
+        free_orders(&u->orders);
     }
     else {
-        free_orders(&u->orders);
+        u->flags |= UFL_ORDERS;
+        u->defaults = u->orders;
     }
     u->orders = NULL;
 }
@@ -51,13 +53,11 @@ static void handle_unit(void *userData, int no) {
     parser_state *state = (parser_state *)userData;
     unit * u = findunit(no);
 
-    if (!u) {
-        /* TODO: error message */
+    if (!u || u->faction != state->f) {
+        if (state->f) {
+            ADDMSG(&state->f->msgs, msg_message("unit_not_found", "unit", no));
+        }
         parser_set_unit(state, NULL);
-    }
-    else if (u->faction != state->f) {
-        /* TODO: error message */
-        parser_set_unit(state, u);
     }
     else {
         parser_set_unit(state, u);
@@ -72,12 +72,12 @@ static void handle_order(void *userData, const char *str) {
     faction * f = state->f;
 
     lang = f ? f->locale : default_locale;
-    ltrim(&str);
+    str = utf8_ltrim(str);
     if (*str == 0) return;
     input = str;
     tok = parse_token(&input, buffer, sizeof(buffer));
     if (tok) {
-        param_t p = findparam(tok, lang);
+        param_t p = get_param(tok, lang);
         if (p == P_FACTION || p == P_GAMENAME) {
             tok = parse_token(&input, buffer, sizeof(buffer));
             if (tok) {

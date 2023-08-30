@@ -19,6 +19,8 @@
 #include <kernel/terrain.h>
 #include <kernel/unit.h>
 
+#include <stb_ds.h>
+
 #include <assert.h>
 #include <limits.h>
 #include <stdlib.h>
@@ -42,10 +44,10 @@ void expandstealing(region * r, econ_request * stealorders)
      */
 
     for (j = 0; j != norders; j++) {
-        unit *u;
+        unit *u = requests[j]->unit;
         int n = 0;
 
-        if (requests[j]->unit->n > requests[j]->unit->wants) {
+        if (u->n > u->wants) {
             break;
         }
 
@@ -118,10 +120,8 @@ void steal_cmd(unit * u, struct order *ord, econ_request ** stealorders)
     region *r = u->region;
     faction *f = NULL;
     message * msg;
-    keyword_t kwd;
 
-    kwd = init_order(ord, NULL);
-    assert(kwd == K_STEAL);
+    init_order(ord, NULL);
 
     assert(skill_enabled(SK_PERCEPTION) && skill_enabled(SK_STEALTH));
 
@@ -154,7 +154,7 @@ void steal_cmd(unit * u, struct order *ord, econ_request ** stealorders)
         return;
     }
 
-    if (IsImmune(u2->faction, u2->faction->age)) {
+    if (IsImmune(u2->faction, faction_age(u2->faction))) {
         ADDMSG(&u->faction->msgs,
             msg_feedback(u, ord, "newbie_immunity_error", "turns", NewbieImmunity()));
         return;
@@ -173,7 +173,7 @@ void steal_cmd(unit * u, struct order *ord, econ_request ** stealorders)
     if (n <= 0) {
         /* Wenn Goblins mit einem Tarnungstalent von mindestens 4 klauen, bekommen 
          * sie mindestens 50 Silber, selbst dann, wenn sie erwischt werden. */
-        if (u_race(u) == get_race(RC_GOBLIN) && effsk >= 4) {
+        if (effsk >= 4 && u_race(u) == get_race(RC_GOBLIN)) {
             ADDMSG(&u->faction->msgs, msg_message("stealfatal", "unit target", u,
                 u2));
             ADDMSG(&u2->faction->msgs, msg_message("thiefdiscover", "unit target", u,
@@ -194,29 +194,28 @@ void steal_cmd(unit * u, struct order *ord, econ_request ** stealorders)
         }
     }
 
-    i = i_get(u->items, rring->itype);
-    if (i > u->number) i = u->number;
-    if (i > 0) {
-        n *= STEALINCOME * (u->number + i * (roqf_factor() - 1));
+    if (rring) {
+        i = i_get(u->items, rring->itype);
+        if (i > u->number) i = u->number;
+        if (i > 0) {
+            n *= (u->number + i * (roqf_factor() - 1));
+        }
+        else {
+            n *= u->number;
+        }
     }
-    else {
-        n *= u->number * STEALINCOME;
-    }
-
+    n *= STEALINCOME;
     u->wants = n;
 
     /* wer dank unsichtbarkeitsringen klauen kann, muss nicht unbedingt ein
      * guter dieb sein, schliesslich macht man immer noch sehr viel laerm */
 
-    o = (econ_request *)calloc(1, sizeof(econ_request));
-    if (!o) abort();
+    o = arraddnptr(*stealorders, 1);
     o->unit = u;
     o->qty = 1;                   /* Betrag steht in u->wants */
     o->type = ECON_STEAL;
     o->data.steal.no = u2->no;
     o->data.steal.goblin = goblin;      /* Merken, wenn Goblin-Spezialklau */
-    o->next = *stealorders;
-    *stealorders = o;
 
     /* Nur soviel PRODUCEEXP wie auch tatsaechlich gemacht wurde */
     if (n > u->number) n = u->number;

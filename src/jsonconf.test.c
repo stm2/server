@@ -5,13 +5,18 @@
 #include "jsonconf.h"
 
 #include "eressea.h"
+#include "move.h"
+#include "prefix.h"
 
 #include "kernel/build.h"     // for construction, requirement
 #include "kernel/building.h"
+#include "kernel/calendar.h"
 #include "kernel/config.h"
+#include "kernel/direction.h"
 #include "kernel/item.h"
 #include "kernel/order.h"
 #include "kernel/race.h"
+#include "kernel/resources.h"
 #include "kernel/ship.h"
 #include "kernel/spell.h"
 #include "kernel/skill.h"     // for get_skill, skill_enabled, SK_ALCHEMY
@@ -19,12 +24,8 @@
 
 #include "util/keyword.h"
 #include "util/language.h"
+#include "util/param.h"
 #include "util/variant.h"     // for frac_equal, frac_one
-
-#include "kernel/calendar.h"
-#include "direction.h"
-#include "move.h"
-#include "prefix.h"
 
 #include <tests.h>
 
@@ -54,10 +55,10 @@ static void check_ec_flag(CuTest *tc, const char *name, int flag) {
     CuAssertIntEquals(tc, flag, rc->ec_flags);
 }
 
-static void check_flag(CuTest *tc, const char *name, int flag) {
-    const struct race *rc = race_with_flag(name);
+static void check_flag(CuTest* tc, const char* name, int flag) {
+    const struct race* rc = race_with_flag(name);
     CuAssertPtrNotNull(tc, rc);
-    CuAssertIntEquals(tc, flag, rc->flags);
+    CuAssertIntEquals(tc, RCF_DEFAULT | flag, rc->flags);
 }
 
 static void test_flags(CuTest *tc) {
@@ -188,6 +189,11 @@ static void test_races(CuTest * tc)
         "\"hp\" : 5,"
         "\"ac\" : 6,"
         "\"flags\" : [ \"player\", \"walk\", \"undead\" ]"
+        "},"
+        "\"human\" : {"
+        " \"player\": true,"
+        " \"migrants\": true,"
+        " \"cansail\": false"
         "}}}";
     cJSON *json = cJSON_Parse(data);
     const struct race *rc;
@@ -199,9 +205,13 @@ static void test_races(CuTest * tc)
     json_config(json);
 
     CuAssertPtrNotNull(tc, races);
+    rc = rc_find("human");
+    CuAssertPtrNotNull(tc, rc);
+    CuAssertIntEquals(tc, (RCF_DEFAULT - RCF_CANSAIL) | RCF_PLAYABLE | RCF_MIGRANTS, rc->flags);
+
     rc = rc_find("orc");
     CuAssertPtrNotNull(tc, rc);
-    CuAssertIntEquals(tc, RCF_PLAYABLE | RCF_WALK | RCF_UNDEAD, rc->flags);
+    CuAssertIntEquals(tc, RCF_DEFAULT | RCF_PLAYABLE | RCF_WALK | RCF_UNDEAD, rc->flags);
     CuAssertStrEquals(tc, "1d4", rc->def_damage);
     CuAssertTrue(tc, frac_equal(frac_one, rc->magres));
     CuAssertIntEquals(tc, 200, rc->maxaura);
@@ -242,8 +252,11 @@ static void test_findrace(CuTest *tc) {
 static void test_items(CuTest * tc)
 {
     const char * data = "{\"items\": { "
-        "\"axe\" : { \"weight\" : 2},"
-        "\"horse\" : { \"flags\" : [ \"animal\", \"big\" ], \"capacity\" : 20 }"
+        "\"crossbow\" : { \"weight\" : 2, \"weapon\": { \"skill\": \"crossbow\", \"damage\" : \"2d4\", \"pierce\" : true } },"
+        "\"iron\" : { \"weight\" : 50, \"construction\": { \"skill\": \"mining\", \"minskill\" : 1 }, \"limited\" : true, \"material\" : true },"
+        "\"log\" : { \"weight\" : 50, \"construction\": { \"skill\": \"forestry\", \"minskill\" : 1 }, \"limited\" : true },"
+        "\"horse\" : { \"flags\" : [ \"animal\", \"big\" ], \"capacity\" : 20, \"pooled\" : true },"
+        "\"unicorn\" : { \"animal\" : true, \"big\" : true, \"capacity\" : 20, \"pooled\" : false }"
         "}}";
     cJSON *json = cJSON_Parse(data);
     const item_type * itype;
@@ -251,23 +264,57 @@ static void test_items(CuTest * tc)
     test_setup();
 
     CuAssertPtrNotNull(tc, json);
-    CuAssertPtrEquals(tc, NULL, it_find("axe"));
-    CuAssertPtrEquals(tc, NULL, rt_find("axe"));
+    CuAssertPtrEquals(tc, NULL, it_find("crossbow"));
+    CuAssertPtrEquals(tc, NULL, rt_find("crossbow"));
     CuAssertPtrEquals(tc, NULL, (void *)get_resourcetype(R_HORSE));
 
     json_config(json);
 
-    itype = it_find("axe");
+    itype = it_find("crossbow");
     CuAssertPtrNotNull(tc, itype);
+    CuAssertPtrNotNull(tc, itype->rtype);
+    CuAssertIntEquals(tc, RTF_POOLED | RTF_ITEM, itype->rtype->flags);
+    CuAssertPtrNotNull(tc, itype->rtype->wtype);
+    CuAssertIntEquals(tc, WTF_PIERCE, itype->rtype->wtype->flags);
+    CuAssertIntEquals(tc, SK_CROSSBOW, itype->rtype->wtype->skill);
     CuAssertIntEquals(tc, 2, itype->weight);
     CuAssertIntEquals(tc, 0, itype->flags);
 
+    itype = it_find("iron");
+    CuAssertPtrNotNull(tc, itype);
+    CuAssertPtrNotNull(tc, itype->rtype);
+    CuAssertIntEquals(tc, RTF_LIMITED | RTF_POOLED | RTF_ITEM, itype->rtype->flags);
+    CuAssertPtrNotNull(tc, itype->rtype->raw);
+    CuAssertPtrEquals(tc, itype->rtype, (void *)itype->rtype->raw->rtype);
+    CuAssertPtrEquals(tc, NULL, itype->rtype->wtype);
+    CuAssertPtrNotNull(tc, itype->construction);
+    CuAssertIntEquals(tc, SK_MINING, itype->construction->skill);
+    CuAssertIntEquals(tc, 1, itype->construction->minskill);
+    CuAssertIntEquals(tc, 50, itype->weight);
+    CuAssertIntEquals(tc, 0, itype->flags);
+
+    itype = it_find("log");
+    CuAssertPtrNotNull(tc, itype);
+    CuAssertPtrNotNull(tc, itype->rtype);
+    CuAssertPtrNotNull(tc, itype);
+    CuAssertPtrEquals(tc, NULL, itype->rtype->raw);
+
     itype = it_find("horse");
     CuAssertPtrNotNull(tc, itype);
+    CuAssertPtrNotNull(tc, itype->rtype);
+    CuAssertIntEquals(tc, RTF_ITEM | RTF_POOLED, itype->rtype->flags);
     CuAssertIntEquals(tc, 20, itype->capacity);
     CuAssertIntEquals(tc, ITF_ANIMAL | ITF_BIG, itype->flags);
 
-    CuAssertPtrNotNull(tc, rt_find("axe"));
+    itype = it_find("unicorn");
+    CuAssertPtrNotNull(tc, itype);
+    CuAssertPtrNotNull(tc, itype->rtype);
+    CuAssertIntEquals(tc, RTF_ITEM, itype->rtype->flags);
+    CuAssertIntEquals(tc, 20, itype->capacity);
+    CuAssertIntEquals(tc, ITF_ANIMAL | ITF_BIG, itype->flags);
+
+    CuAssertPtrNotNull(tc, rt_find("crossbow"));
+    CuAssertPtrNotNull(tc, it_find("crossbow"));
     CuAssertPtrNotNull(tc, (void *)get_resourcetype(R_HORSE));
     cJSON_Delete(json);
     test_teardown();
@@ -279,7 +326,12 @@ static void test_ships(CuTest * tc)
         "\"construction\" : { \"maxsize\" : 20, \"reqsize\" : 10, \"minskill\" : 1 },"
         "\"coasts\" : [ \"plain\" ],"
         "\"range\" : 8,"
-        "\"maxrange\" : 16"
+        "\"maxrange\" : 16,"
+        "\"cargo\" : 5000,"
+        "\"cabins\" : 5,"
+        "\"minskill\" : 2,"
+        "\"captain\" : 3,"
+        "\"skills\" : 6"
         "}}}";
 
     cJSON *json = cJSON_Parse(data);
@@ -296,11 +348,17 @@ static void test_ships(CuTest * tc)
     st = st_find("boat");
     CuAssertPtrNotNull(tc, st);
     CuAssertPtrNotNull(tc, st->construction);
+    CuAssertIntEquals(tc, SK_SHIPBUILDING, st->construction->skill);
     CuAssertIntEquals(tc, 10, st->construction->reqsize);
     CuAssertIntEquals(tc, 20, st->construction->maxsize);
     CuAssertIntEquals(tc, 1, st->construction->minskill);
     CuAssertIntEquals(tc, 8, st->range);
     CuAssertIntEquals(tc, 16, st->range_max);
+    CuAssertIntEquals(tc, 2, st->minskill);
+    CuAssertIntEquals(tc, 3, st->cptskill);
+    CuAssertIntEquals(tc, 6, st->sumskill);
+    CuAssertIntEquals(tc, 5000, st->cargo);
+    CuAssertIntEquals(tc, 5, st->cabins);
 
     ter = get_terrain("plain");
     CuAssertPtrNotNull(tc, ter);
@@ -317,8 +375,8 @@ static void test_castles(CuTest *tc) {
     const char * data = "{\"buildings\": { \"castle\" : { "
         "\"stages\" : ["
         "{ \"construction\": { \"maxsize\" : 2 }, \"name\": \"site\" },"
-        "{ \"construction\": { \"maxsize\" : 8 } },"
-        "{ \"construction\": { \"maxsize\" : -1 } }"
+        "{ \"construction\": { \"maxsize\" : 8, \"skill\" : \"building\" } },"
+        "{ \"construction\": { \"maxsize\" : -1, \"skill\" : \"shipcraft\" } }"
         "]}}}";
 
     cJSON *json = cJSON_Parse(data);
@@ -337,13 +395,16 @@ static void test_castles(CuTest *tc) {
     CuAssertPtrNotNull(tc, stage = bt->stages);
     CuAssertStrEquals(tc, "site", stage->name);
     CuAssertIntEquals(tc, 2, stage->construction.maxsize);
+    CuAssertIntEquals(tc, SK_BUILDING, stage->construction.skill);
 
     CuAssertPtrNotNull(tc, stage = stage->next);
     CuAssertPtrEquals(tc, NULL, stage->name);
     CuAssertIntEquals(tc, 6, stage->construction.maxsize);
+    CuAssertIntEquals(tc, SK_BUILDING, stage->construction.skill);
 
     CuAssertPtrNotNull(tc, stage = stage->next);
     CuAssertIntEquals(tc, -1, stage->construction.maxsize);
+    CuAssertIntEquals(tc, SK_SHIPBUILDING, stage->construction.skill);
 
     CuAssertPtrEquals(tc, NULL, stage->next);
 
@@ -377,6 +438,9 @@ static const char * building_data = "{\"buildings\": { "
 "\"maintenance\" : "
 "{ \"type\" : \"iron\", \"amount\" : 1, \"flags\" : [ \"variable\" ] }"
 ","
+"\"maxsize\" : 10,"
+"\"capacity\" : 2,"
+"\"maxcapacity\" : 20,"
 "\"construction\" : {"
 "\"maxsize\" : 20,"
 "\"reqsize\" : 10,"
@@ -413,10 +477,16 @@ static void test_buildings(CuTest * tc)
     CuAssertIntEquals(tc, 1, bt->maintenance[0].number);
     CuAssertIntEquals(tc, 2, bt->maintenance[1].number);
     CuAssertIntEquals(tc, 0, bt->maintenance[2].number);
+    CuAssertIntEquals(tc, 1, bt->capacity);
+    CuAssertIntEquals(tc, -1, bt->maxcapacity);
+    CuAssertIntEquals(tc, -1, bt->maxsize);
 
     bt = bt_find("house");
     CuAssertPtrNotNull(tc, bt);
 
+    CuAssertIntEquals(tc, 2, bt->capacity);
+    CuAssertIntEquals(tc, 20, bt->maxcapacity);
+    CuAssertIntEquals(tc, 10, bt->maxsize);
     CuAssertPtrNotNull(tc, bt->maintenance);
     CuAssertIntEquals(tc, 1, bt->maintenance[0].number);
     CuAssertPtrEquals(tc, (void *)get_resourcetype(R_IRON), (void *)bt->maintenance[0].rtype);
@@ -625,6 +695,30 @@ static void test_keywords(CuTest * tc)
     test_teardown();
 }
 
+static void test_parameters(CuTest * tc)
+{
+    const char * data = "{\"parameters\": { \"de\" : { \"EINHEIT\" : \"EINHEIT\", \"PARTEI\" : [ \"ERESSEA\", \"PARTEI\" ] }}}";
+    const struct locale * lang;
+
+    cJSON *json = cJSON_Parse(data);
+
+    test_setup();
+    lang = get_or_create_locale("de");
+    CuAssertPtrNotNull(tc, json);
+    CuAssertIntEquals(tc, NOPARAM, get_param("potato", lang));
+
+    json_config(json);
+    CuAssertIntEquals(tc, P_UNIT, get_param("einheit", lang));
+    CuAssertIntEquals(tc, P_FACTION, get_param("eressea", lang));
+    CuAssertIntEquals(tc, P_FACTION, get_param("partei", lang));
+
+    CuAssertStrEquals(tc, "ERESSEA", LOC(lang, "PARTEI"));
+    CuAssertStrEquals(tc, "EINHEIT", LOC(lang, "EINHEIT"));
+
+    cJSON_Delete(json);
+    test_teardown();
+}
+
 static void test_strings(CuTest * tc)
 {
     const char * data = "{\"strings\": { \"de\" : { \"move\" : \"NACH\", \"study\" : \"LERNEN\" }}}";
@@ -671,6 +765,7 @@ CuSuite *get_jsonconf_suite(void)
 {
     CuSuite *suite = CuSuiteNew();
     SUITE_ADD_TEST(suite, test_keywords);
+    SUITE_ADD_TEST(suite, test_parameters);
     SUITE_ADD_TEST(suite, test_skills);
     SUITE_ADD_TEST(suite, test_directions);
     SUITE_ADD_TEST(suite, test_items);

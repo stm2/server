@@ -20,9 +20,10 @@
 
 /* util includes */
 #include "util/log.h"
-#include "util/rand.h"
 #include "util/message.h"
+#include "util/rand.h"
 #include "util/rng.h"
+#include "util/stats.h"
 
 /* libc includes */
 #include <assert.h>
@@ -214,7 +215,7 @@ void volcano_outbreak(region * r, region *rn)
             freset(f, FFL_SELECT);
         }
     }
-
+    stats_count("volcano.outbreak", 1);
     volcano_destruction(r, r, "4d10");
     if (rn) {
         volcano_destruction(r, rn, "3d10");
@@ -256,11 +257,7 @@ void volcano_update(void)
                     ADDMSG(&r->msgs, msg_message("volcanostopsmoke", "region", r));
                     r->terrain = t_volcano;
                 }
-                else if (r->uid == 1246051340 || outbreak_chance()) {
-                    /* HACK: a fixed E4-only region-uid in Code.
-                     * FIXME: In E4 gibt es eine Ebene #1246051340, die Smalland heisst.
-                     * da das kein aktiver Vulkan ist, ist dieser Test da nicht idiotisch?
-                     * das sollte bestimmt rn betreffen? */
+                else if (outbreak_chance()) {
                     region *rn;
                     rn = rrandneighbour(r);
                     volcano_outbreak(r, rn);

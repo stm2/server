@@ -60,11 +60,11 @@
 #include "util/message.h"
 #include "util/path.h"
 #include "util/password.h"
-#include "util/strings.h"
 #include "util/translation.h"
 
-#include <stream.h>
 #include <selist.h>
+#include <stream.h>
+#include <strings.h>
 
 #include <stb_ds.h>
 
@@ -197,8 +197,8 @@ const char *hp_status(const unit * u)
     return NULL;
 }
 
-bool see_schemes(const region *r) {
-    return r->seen.mode >= seen_unit && is_astral(r) && !is_cursed(r->attribs, &ct_astralblock);
+bool see_schemes(const region *r, seen_mode mode) {
+    return mode >= seen_unit && is_astral(r) && !is_cursed(r->attribs, &ct_astralblock);
 }
 
 void
@@ -484,44 +484,58 @@ report_resources(const region * r, resource_report result[MAX_RAWMATERIALS],
     const faction * viewer, enum seen_mode mode)
 {
     int n = 0;
+    const resource_type* rtype;
 
     if (r->land) {
         int peasants = rpeasants(r);
         if (peasants) {
-            report_resource(result + n, get_resourcetype(R_PEASANT), peasants, -1);
-            ++n;
+            rtype = get_resourcetype(R_PEASANT);
+            if (rtype) {
+                report_resource(result + n, rtype, peasants, -1);
+                ++n;
+            }
         }
 
         if (mode >= seen_lighthouse_land) {
-            const resource_type *rtype;
             int trees = rtrees(r, 2);
             int saplings = rtrees(r, 1);
             bool mallorn = fval(r, RF_MALLORN) != 0;
             if (trees) {
                 rtype = get_resourcetype(mallorn ? R_MALLORN_TREE : R_TREE);
-                report_resource(result + n, rtype, trees, -1);
-                ++n;
+                if (rtype) {
+                    report_resource(result + n, rtype, trees, -1);
+                    ++n;
+                }
             }
             if (saplings) {
                 rtype = get_resourcetype(mallorn ? R_MALLORN_SAPLING : R_SAPLING);
-                report_resource(result + n, rtype, saplings, -1);
-                ++n;
+                if (rtype) {
+                    report_resource(result + n, rtype, saplings, -1);
+                    ++n;
+                }
             }
         }
     }
     if (mode >= seen_travel) {
-        rawmaterial *res = r->resources;
+        ptrdiff_t i, len = arrlen(r->resources);
         int money = rmoney(r);
         int horses = rhorses(r);
         if (money) {
-            report_resource(result + n, get_resourcetype(R_SILVER), money, -1);
-            ++n;
+            rtype = get_resourcetype(R_SILVER);
+            if (rtype) {
+                report_resource(result + n, rtype, money, -1);
+                ++n;
+            }
         }
         if (horses) {
-            report_resource(result + n, get_resourcetype(R_HORSE), horses, -1);
-            ++n;
+            rtype = get_resourcetype(R_HORSE);
+            if (rtype) {
+                report_resource(result + n, rtype, horses, -1);
+                ++n;
+            }
         }
-        while (res) {
+        for (i = 0; i != len ; ++i) {
+            rawmaterial* res = r->resources + i;
             const item_type *itype = resource2item(res->rtype);
             int minskill = itype->construction->minskill;
             skill_t skill = itype->construction->skill;
@@ -554,7 +568,6 @@ report_resources(const region * r, resource_report result[MAX_RAWMATERIALS],
                     ++n;
                 }
             }
-            res = res->next;
         }
     }
     return n;
@@ -667,7 +680,13 @@ static void bufunit_race(const faction* f, const unit* u, struct sbstring* sbp)
     const struct locale* lang = f->locale;
     const char *str = get_racename(u->attribs);
     if (str) {
-        const char* name = locale_string(lang, mkname("race", str), false);
+        char buffer[64];
+        const char* name;
+        if (u->number != 1) {
+            snprintf(buffer, sizeof(buffer), "%s_p", str);
+            str = buffer;
+        }
+        name = locale_string(lang, mkname("race", str), false);
         sbs_strcat(sbp, name ? name : str);
         if (u->faction == f) {
             sbs_strcat(sbp, " (");
@@ -1064,7 +1083,7 @@ typedef struct address_data {
     int stealthmod;
 } address_data;
 
-static void cb_add_address(region *r, unit *ut, void *cbdata) {
+static void cb_add_address(region *r, const unit *ut, void *cbdata) {
     address_data *data = (address_data *)cbdata;
     faction *f = data->f;
 
@@ -1195,12 +1214,12 @@ void reports_done(void) {
     }
 }
 
-int get_regions_distance_arr(region *rc, int radius, region *result[], int size)
+size_t get_regions_distance_arr(region *rc, int radius, region *result[], size_t size)
 {
-    int n = 0, i;
+    size_t n = 1, i;
 
-    if (size > n) {
-        result[n++] = rc;
+    if (size > 0) {
+        result[0] = rc;
         fset(rc, RF_MARK);
     }
     for (i = 0; i != n; ++i) {
@@ -1236,34 +1255,33 @@ int get_regions_distance_arr(region *rc, int radius, region *result[], int size)
     return n;
 }
 
-selist *get_regions_distance(region * root, int radius)
+region **get_regions_distance(region * root, int radius)
 {
-    selist *ql, *rlist = NULL;
-    int qi = 0;
+    region** arr = NULL;
+    ptrdiff_t qi;
 
-    selist_push(&rlist, root);
+    arrpush(arr, root);
     fset(root, RF_MARK);
-    ql = rlist;
 
-    while (ql) {
-        region *r = (region *)selist_get(ql, qi);
-        region * next[MAXDIRECTIONS];
+    for (qi = 0; qi != arrlen(arr); ++qi) {
+        region *r = arr[qi];
+        region *next[MAXDIRECTIONS];
         int d;
         get_neighbours(r, next);
 
         for (d = 0; d != MAXDIRECTIONS; ++d) {
             if (next[d] && !fval(next[d], RF_MARK) && distance(next[d], root) <= radius) {
-                selist_push(&rlist, next[d]);
-                fset(next[d], RF_MARK);
+                r = next[d];
+                arrpush(arr, r);
+                fset(r, RF_MARK);
             }
         }
-        selist_advance(&ql, &qi, 1);
     }
-    for (ql = rlist, qi = 0; ql; selist_advance(&ql, &qi, 1)) {
-        region *r = (region *)selist_get(ql, qi);
+    for (qi = arrlen(arr); qi > 0; --qi) {
+        region *r = arr[qi - 1];
         freset(r, RF_MARK);
     }
-    return rlist;
+    return arr;
 }
 
 static void add_seen(region *r, seen_mode mode) {
@@ -1302,35 +1320,28 @@ static void add_seen_lighthouse(region *r, faction *f)
     }
 }
 
-/** mark all regions seen by the lighthouse.
- */
-static void prepare_lighthouse_ql(faction *f, selist *rlist) {
-    selist *ql;
-    int qi;
-
-    for (ql = rlist, qi = 0; ql; selist_advance(&ql, &qi, 1)) {
-        region *rl = (region *)selist_get(ql, qi);
-        add_seen_lighthouse(rl, f);
+static void add_seen_from_lighthouses(faction* f, region** arr, size_t len)
+{
+    size_t i;
+    for (i = 0; i != len; ++i) {
+        add_seen_lighthouse(arr[i], f);
     }
 }
 
 static void prepare_lighthouse(faction *f, region *r, int range)
 {
     if (range > 3) {
-        selist *rlist = get_regions_distance(r, range);
-        prepare_lighthouse_ql(f, rlist);
-        selist_free(rlist);
+        region ** arr = get_regions_distance(r, range);
+        add_seen_from_lighthouses(f, arr, arrlenu(arr));
+        arrfree(arr);
     }
     else {
         region *result[64];
-        int n, i;
+        size_t n;
 
         n = get_regions_distance_arr(r, range, result, 64);
         assert(n > 0 && n <= 64);
-        for (i = 0; i != n; ++i) {
-            region *rl = result[i];
-            add_seen_lighthouse(rl, f);
-        }
+        add_seen_from_lighthouses(f, result, n);
     }
 }
 
@@ -1354,7 +1365,7 @@ static region *firstregion(faction * f)
     return f->first = regions;
 }
 
-static void cb_add_seen(region *r, unit *u, void *cbdata) {
+static void cb_add_seen(region *r, const unit *u, void *cbdata) {
     faction *f = (faction *)cbdata;
     if (u->faction == f) {
         add_seen_nb(f, r, seen_travel);
@@ -1363,11 +1374,12 @@ static void cb_add_seen(region *r, unit *u, void *cbdata) {
 
 void report_warnings(faction *f, int now)
 {
-    if (f->age < NewbieImmunity()) {
-        if (f->age + 2 < NewbieImmunity()) {
+    int age = faction_age(f);
+    if (age < NewbieImmunity()) {
+        if (age + 2 < NewbieImmunity()) {
             ADDMSG(&f->msgs, msg_message("newbieimmunity", "turns",
-                NewbieImmunity() - f->age - 1));
-        } else if (f->age +1 < NewbieImmunity()) {
+                NewbieImmunity() - age - 1));
+        } else if (age + 1 < NewbieImmunity()) {
             ADDMSG(&f->msgs, msg_message("newbieimmunityending", ""));
         } else {
             ADDMSG(&f->msgs, msg_message("newbieimmunityended", ""));
@@ -1423,7 +1435,7 @@ void prepare_report(report_context *ctx, faction *f, const char *password)
         for (r = ctx->first; r != ctx->last; r = r->next) {
             unit *u;
             building *b;
-            int br = 0, c = 0, range = 0;
+            int c = 0, range = 0;
             if (fval(r, RF_OBSERVER)) {
                 int skill = get_observer(r, f);
                 if (skill >= 0) {
@@ -1457,11 +1469,10 @@ void prepare_report(report_context *ctx, faction *f, const char *password)
                         break;
                     }
                 }
-                if (range == 0 && u->building && u->building->type == bt_lighthouse) {
+                if (u->building && u->building->type == bt_lighthouse) {
                     if (u->building && b != u->building) {
                         b = u->building;
                         c = buildingcapacity(b);
-                        br = 0;
                     }
                     if (rule_lighthouse_units) {
                         --c;
@@ -1471,12 +1482,9 @@ void prepare_report(report_context *ctx, faction *f, const char *password)
                     }
                     if (u->faction == f && c >= 0) {
                         /* unit is one of ours, and inside the current lighthouse */
-                        if (br == 0) {
-                            /* lazy-calculate the range */
-                            br = lighthouse_view_distance(b, u);
-                            if (br > range) {
-                                range = br;
-                            }
+                        int br = lighthouse_view_distance(b, u);
+                        if (br > range) {
+                            range = br;
                         }
                     }
                 }
@@ -1618,7 +1626,7 @@ int reports(void)
     for (f = factions; f; f = f->next) {
         if (f->email && !fval(f, FFL_NPC)) {
             char* password = NULL;
-            if (f->lastorders == 0 || f->age <= 1) {
+            if (f->lastorders == 0 || faction_age(f) <= 1) {
                 /* neue Parteien, oder solche die noch NIE einen Zug gemacht haben,
                  * kriegen ein neues Passwort: */
                 password = faction_genpassword(f, buffer);
@@ -2291,7 +2299,7 @@ typedef struct count_data {
     const struct faction *f;
 } count_data;
 
-static void count_cb(region *r, unit *u, void *cbdata) {
+static void count_cb(region *r, const unit *u, void *cbdata) {
     count_data *data = (count_data *)cbdata;
     const struct faction *f = data->f;
     if (r != u->region && (!u->ship || ship_owner(u->ship) == u)) {

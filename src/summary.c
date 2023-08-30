@@ -66,29 +66,28 @@ typedef struct summary {
 
 int *nmrs = NULL;
 
-int update_nmrs(void)
+int update_nmrs(int since)
 {
     int newplayers = 0;
     faction *f;
     int timeout = NMRTimeout();
 
     if (timeout>0) {
-        int i;
         if (nmrs == NULL) {
-            nmrs = malloc(sizeof(int) * (timeout + 1));
+            nmrs = calloc((1 + (size_t)timeout), sizeof(int));
             if (!nmrs) abort();
         }
-        for (i = 0; i <= timeout; ++i) {
-            nmrs[i] = 0;
+        else {
+            memset(nmrs, 0, sizeof(int) * timeout);
         }
     }
     
     for (f = factions; f; f = f->next) {
-        if (f->age<=1) {
+        if (faction_age(f)<=1) {
             ++newplayers;
         }
         else if (!fval(f, FFL_NOIDLEOUT | FFL_CURSED)) {
-            int nmr = turn - f->lastorders;
+            int nmr = since - f->lastorders;
             if (timeout>0) {
                 if (nmr < 0 || nmr > timeout) {
                     log_error("faction %s has %d NMR", itoa36(f->no), nmr);
@@ -111,13 +110,13 @@ static void out_faction(FILE * file, const struct faction *f)
         fprintf(file, "%s (%s/%d) (%.3s/%.3s), %d Einh., %d Pers., %d NMR\n",
             f->name, itoa36(f->no), f_get_alliance(f) ? f->alliance->id : 0,
             LOC(default_locale, rc_name_s(f->race, NAME_SINGULAR)), magic_school[f->magiegebiet],
-            f->num_units, f->num_people, turn - f->lastorders);
+            f->num_units, f->num_people, turn - f->lastorders - 1);
     }
     else {
         fprintf(file, "%s (%.3s/%.3s), %d Einh., %d Pers., %d NMR\n",
             factionname(f), LOC(default_locale, rc_name_s(f->race, NAME_SINGULAR)),
             magic_school[f->magiegebiet], f->num_units, f->num_people,
-            turn - f->lastorders);
+            turn - f->lastorders - 1);
     }
 }
 
@@ -172,7 +171,7 @@ static int count_umlaut(const char *s)
         if (wc & 0x80) {
             size_t size;
             int err;
-            err = unicode_utf8_decode(&wc, cp, &size);
+            err = utf8_decode(&wc, cp, &size);
             if (err != 0) {
                 log_error("illegal utf8 encoding %s at %s", s, cp);
                 return result;
@@ -306,7 +305,7 @@ void report_summary(const summary * s, bool full)
 
     fprintf(F, "\n");
 
-    newplayers = update_nmrs();
+    newplayers = update_nmrs(turn - 1);
 
     if (nmrs) {
         int i;

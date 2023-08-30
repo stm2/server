@@ -41,8 +41,8 @@ extern "C" {
     void reports_done(void);
 
     bool omniscient(const struct faction *f);
-    struct selist *get_regions_distance(struct region * root, int radius);
-    int get_regions_distance_arr(struct region *r, int radius, struct region *result[], int size);
+    struct region **get_regions_distance(struct region * root, int radius);
+    size_t get_regions_distance_arr(struct region *r, int radius, struct region *result[], size_t size);
     /* funktionen zum schreiben eines reports */
     void sparagraph(struct strlist **SP, const char *s, unsigned int indent, char mark);
     const char *hp_status(const struct unit *u);
@@ -123,7 +123,7 @@ extern "C" {
 
     bool visible_unit(const struct unit *u, const struct faction *f, int stealthmod, enum seen_mode mode);
 
-    bool see_schemes(const struct region *r);
+    bool see_schemes(const struct region *r, enum seen_mode mode);
 
 #ifdef __cplusplus
 }

@@ -23,9 +23,9 @@ function build() {
 assert_dir $SOURCE
 cd $SOURCE
 rm -rf tolua
-git fetch || abort "failed to update source. do you have local changes?"
-[ -z $1 ] || git checkout $1
-git pull --rebase -q
+git fetch
+[ -z $1 ] || git checkout $1 
+git pull --rebase -q || abort "failed to update source. do you have local changes?"
 git submodule update
 s/cmake-init
 s/build > /dev/null || abort "build failed."
@@ -76,7 +76,7 @@ rm -rf reports
 mkdir -p reports
 
 SUPP="$SOURCE/share/debian-7_8.supp"
-SERVER="$SOURCE/Debug/eressea/eressea"
+SERVER="$SOURCE/build/eressea/eressea"
 VALGRIND=$(which valgrind)
 if [ ! -z $VALGRIND ]; then
 SERVER="$VALGRIND --quiet --suppressions=$SUPP --error-exitcode=1 --leak-check=no $SERVER"
