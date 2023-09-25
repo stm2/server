@@ -40,6 +40,10 @@ void equip_newunits(struct unit *u)
         scale_number(u, 10);
 	
         break;
+    case RC_INSECT:
+        rtype = rt_find("nestwarmth");
+        display_item(u->faction, rtype->itype);
+        break;
     case RC_HUMAN:
         if (u->building == NULL) {
             const building_type *btype = bt_find("castle");
@@ -65,6 +69,17 @@ void equip_newunits(struct unit *u)
         break;
     }
 }
+
+void show_items(struct unit *u, int flags, const char *name) {
+    item *it;
+
+    for(it = u->items; it; it = it->next) {
+        if (it->type->flags & (ITF_CURSED | ITF_NOTLOST | ITF_ANIMAL | ITF_POTION) || it->type->score >= 100) {
+            display_item(u->faction, it->type);
+        }
+    }
+}
+
 
 /* Die Funktionen werden ueber den hier registrierten Namen in races.xml
  * in die jeweilige Rassendefiniton eingebunden */

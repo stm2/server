@@ -803,6 +803,15 @@ static int tolua_equip_newunits(lua_State * L) {
     return 0;
 }
 
+static int tolua_show_items(lua_State * L) {
+    unit *u = (unit *)tolua_tousertype(L, 1, NULL);
+    int flags = tolua_tonumber(L, 2, 255);
+    const char* name = tolua_tostring(L, 1, NULL);
+
+    show_items(u, flags, name);
+    return 0;
+}
+
 static int tolua_report_unit(lua_State * L)
 {
     char buffer[512];
@@ -997,6 +1006,7 @@ int tolua_bindings_open(lua_State * L, const dictionary *inifile)
         tolua_function(L, "translate", &tolua_translate);
         tolua_function(L, "spells", tolua_get_spells);
         tolua_function(L, "equip_newunits", tolua_equip_newunits);
+        tolua_function(L, "show_items", tolua_show_items);
     } tolua_endmodule(L);
     return 1;
 }

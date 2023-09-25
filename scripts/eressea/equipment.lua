@@ -91,7 +91,8 @@ local mysets = {
     ['seed_insect'] = {
         ['items'] = {
             ['nestwarmth'] = 9
-        }
+        },
+        ['callback'] = equip_newunits
     },
     ['seed_halfling'] = {
         ['items'] = {
@@ -148,8 +149,9 @@ function equip_unit(u, name, flags)
         end
         local callback = set['callback']
         if callback and type(callback) == 'function' then
-            callback(u, flags)
+            callback(u, flags, name)
         end
+        show_items(u, flags, name)
         return true
     end
     return false

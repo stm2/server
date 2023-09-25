@@ -8,6 +8,7 @@ extern "C" {
 
     void register_races(void);
     void equip_newunits(struct unit *u);
+    void show_items(struct unit *u, int flags, const char *name);
 
 #ifdef __cplusplus
 }
