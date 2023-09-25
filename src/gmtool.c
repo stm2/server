@@ -35,6 +35,8 @@
 #include "teleport.h"
 
 #include <selist.h>
+#include <strings.h>
+
 #include <stb_ds.h>
 
 #include <assert.h>
@@ -394,8 +396,8 @@ static void paint_status(window * wnd, const state * st)
         terrain = mr->r->terrain->_name;
     }
     cnormalize(&st->cursor, &nx, &ny);
-    umvwprintw(win, 0, 0, "%4d %4d | %.4s | %.20s (%d)", nx, ny, terrain, name,
-        uid);
+    umvwprintw(win, 0, 0, "%4d %4d | %.4s | %.20s (%d) | %s", nx, ny, terrain, name,
+        uid, st->statusmsg);
     wclrtoeol(win);
 }
 
@@ -506,6 +508,12 @@ static void statusline(WINDOW * win, const char *str)
     wclrtoeol(win);
     wnoutrefresh(win);
 }
+
+static void status_msg(state *st, const char *str)
+{
+    str_strlcpy(st->statusmsg, str, sizeof(st->statusmsg));
+}
+
 
 static void reset_region(region *r) {
     unit **up = &r->units;
@@ -853,7 +861,7 @@ static void select_regions(state * st, int selectmode)
     findmode = getch();
     if (findmode == 'n') {        /* none */
         sprintf(sbuffer, "%snone", status);
-        statusline(st->wnd_status->handle, sbuffer);
+        status_msg(st, sbuffer);
         if (selectmode & MODE_SELECT) {
             int i;
             for (i = 0; i != MAXTHASH; ++i) {
@@ -876,7 +884,7 @@ static void select_regions(state * st, int selectmode)
         region *r;
         /* fresh virgin regions */
         sprintf(sbuffer, "%svirgin", status);
-        statusline(st->wnd_status->handle, sbuffer);
+        status_msg(st, sbuffer);
         for (r = regions; r; r = r->next) {
             if (r->age == 0) {
                 if (selectmode & MODE_SELECT) {
@@ -892,7 +900,7 @@ static void select_regions(state * st, int selectmode)
     else if (findmode == 'c') {
         region *r;
         sprintf(sbuffer, "%schaos", status);
-        statusline(st->wnd_status->handle, sbuffer);
+        status_msg(st, sbuffer);
         for (r = regions; r; r = r->next) {
             if (fval(r, RF_CHAOTIC)) {
                 if (selectmode & MODE_SELECT) {
@@ -908,7 +916,7 @@ static void select_regions(state * st, int selectmode)
     else if (findmode == 'm') {
         region *r;
         sprintf(sbuffer, "%smonsters", status);
-        statusline(st->wnd_status->handle, sbuffer);
+        status_msg(st, sbuffer);
         for (r = regions; r; r = r->next) {
             unit *u = r->units;
             for (; u; u = u->next) {
@@ -929,7 +937,7 @@ static void select_regions(state * st, int selectmode)
     else if (findmode == 'p') {
         region *r;
         sprintf(sbuffer, "%splayers", status);
-        statusline(st->wnd_status->handle, sbuffer);
+        status_msg(st, sbuffer);
         for (r = regions; r; r = r->next) {
             unit *u = r->units;
             for (; u; u = u->next) {
@@ -950,7 +958,7 @@ static void select_regions(state * st, int selectmode)
     else if (findmode == 'u') {
         region *r;
         sprintf(sbuffer, "%sunits", status);
-        statusline(st->wnd_status->handle, sbuffer);
+        status_msg(st, sbuffer);
         for (r = regions; r; r = r->next) {
             if (r->units) {
                 if (selectmode & MODE_SELECT) {
@@ -966,7 +974,7 @@ static void select_regions(state * st, int selectmode)
     else if (findmode == 's') {
         region *r;
         sprintf(sbuffer, "%sships", status);
-        statusline(st->wnd_status->handle, sbuffer);
+        status_msg(st, sbuffer);
         for (r = regions; r; r = r->next) {
             if (r->ships) {
                 if (selectmode & MODE_SELECT) {
@@ -990,7 +998,7 @@ static void select_regions(state * st, int selectmode)
                 unit *u;
 
                 sprintf(sbuffer, "%sfaction: %s", status, itoa36(f->no));
-                statusline(st->wnd_status->handle, sbuffer);
+                status_msg(st, sbuffer);
                 for (u = f->units; u; u = u->nextF) {
                     region *r = u->region;
                     if (selectmode & MODE_SELECT) {
@@ -1003,26 +1011,26 @@ static void select_regions(state * st, int selectmode)
                 }
             }
             else {
-                statusline(st->wnd_status->handle, "faction not found.");
+                status_msg(st, "faction not found.");
                 beep();
                 return;
             }
         }
     }
     else if (findmode == 'i') {
-        sprintf(sbuffer, "%swand: ", status);
-        statusline(st->wnd_status->handle, sbuffer);
+        sprintf(sbuffer, "%sisland: ", status);
+        status_msg(st, sbuffer);
         select_island(st, selectmode);
     }
     else if (findmode == 't') {
         const struct terrain_type *terrain;
         sprintf(sbuffer, "%sterrain: ", status);
-        statusline(st->wnd_status->handle, sbuffer);
+        status_msg(st, sbuffer);
         terrain = select_terrain(st, NULL);
         if (terrain != NULL) {
             region *r;
             sprintf(sbuffer, "%sterrain: %s", status, terrain->_name);
-            statusline(st->wnd_status->handle, sbuffer);
+            status_msg(st, sbuffer);
             for (r = regions; r; r = r->next) {
                 if (r->terrain == terrain) {
                     if (selectmode & MODE_SELECT) {
@@ -1037,8 +1045,9 @@ static void select_regions(state * st, int selectmode)
         }
     }
     else {
-        statusline(st->wnd_status->handle, "unknown command.");
+        status_msg(st, "unknown select mode");
         beep();
+        st->wnd_status->update |= 3;
         return;
     }
     st->wnd_info->update |= 3;
@@ -1079,11 +1088,17 @@ static bool seed_player(state *st, const newfaction *player) {
             if (r->land) {
                 faction *f = addfaction(player->email, player->password,
                     player->race, player->lang);
+                char buffer[256];
                 addplayer(r, f);
+                sprintf(buffer, "added player %s", itoa36(f->no));
+                status_msg(st, buffer);
                 return true;
+            } else {
+                status_msg(st, "no land");
             }
         }
     }
+    status_msg(st, "no region");
     return false;
 }
 
@@ -1244,6 +1259,7 @@ static void handlekey(state * st, int c)
     const char *loc = locate;
     int n, nx, ny, minpop, maxpop;
 
+    st->statusmsg[0] = 0;
     switch (c) {
     case FAST_RIGHT:
         cursor->x += 10;
@@ -1314,6 +1330,7 @@ static void handlekey(state * st, int c)
         if (new_players) {
             int seeded = 0, count = count_newfactions(new_players);
             seeded = build_island(nx, ny, n, &new_players, count);
+            sprintf(st->statusmsg, "seeded %d / %d new players", seeded, count);
         } else {
             build_island(nx, ny, n, NULL, 0);
         }
@@ -1445,30 +1462,30 @@ static void handlekey(state * st, int c)
             case 's':
                 st->info_flags ^= IFL_SHIPS;
                 if (st->info_flags & IFL_SHIPS)
-                    statusline(st->wnd_status->handle, "info-ships true");
+                    status_msg(st, "info-ships true");
                 else
-                    statusline(st->wnd_status->handle, "info-ships false");
+                    status_msg(st, "info-ships false");
                 break;
             case 'b':
                 st->info_flags ^= IFL_BUILDINGS;
                 if (st->info_flags & IFL_BUILDINGS)
-                    statusline(st->wnd_status->handle, "info-buildings true");
+                    status_msg(st, "info-buildings true");
                 else
-                    statusline(st->wnd_status->handle, "info-buildings false");
+                    status_msg(st, "info-buildings false");
                 break;
             case 'f':
                 st->info_flags ^= IFL_FACTIONS;
                 if (st->info_flags & IFL_FACTIONS)
-                    statusline(st->wnd_status->handle, "info-factions true");
+                    status_msg(st, "info-factions true");
                 else
-                    statusline(st->wnd_status->handle, "info-factions false");
+                    status_msg(st, "info-factions false");
                 break;
             case 'u':
                 st->info_flags ^= IFL_UNITS;
                 if (st->info_flags & IFL_UNITS)
-                    statusline(st->wnd_status->handle, "info-units true");
+                    status_msg(st, "info-units true");
                 else
-                    statusline(st->wnd_status->handle, "info-units false");
+                    status_msg(st, "info-units false");
                 break;
             case 27:             /* esc */
                 break;
@@ -1528,7 +1545,7 @@ static void handlekey(state * st, int c)
         case 'm':
             break;
         default:
-            statusline(st->wnd_status->handle, "unknown command.");
+            status_msg(st, "unknown command.");
             beep();
         }
         break;
@@ -1547,10 +1564,17 @@ static void handlekey(state * st, int c)
                 free(new_players->password);
                 free(new_players);
                 new_players = next;
+                status_msg(st, "seeded one player");
                 st->wnd_info->update |= 1;
                 /*st->wnd_map->update |= 3;*/
+            } else {
+                status_msg(st, "nothing seeded");
             }
+        } else {
+            status_msg(st, "no new players");
         }
+        st->wnd_status->update |= 1;
+
         break;
     case '/':
         statusline(st->wnd_status->handle, "find-");
@@ -1578,7 +1602,7 @@ static void handlekey(state * st, int c)
             }
         }
         else {
-            statusline(st->wnd_status->handle, "unknown command.");
+            status_msg(st, "unknown command.");
             beep();
             break;
         }
@@ -1599,10 +1623,10 @@ static void handlekey(state * st, int c)
 
             if (findmode == 'f') {
                 snprintf(sbuffer, sizeof(sbuffer), "find-faction: %.40s", loc);
-                statusline(st->wnd_status->handle, sbuffer);
+                status_msg(st, sbuffer);
                 f = findfaction(atoi36(loc));
                 if (f == NULL) {
-                    statusline(st->wnd_status->handle, "faction not found.");
+                    status_msg(st, "faction not found.");
                     beep();
                     break;
                 }
@@ -1627,7 +1651,7 @@ static void handlekey(state * st, int c)
                     r = regions;
                 if (r == first) {
                     r = NULL;
-                    statusline(st->wnd_status->handle, "not found.");
+                    status_msg(st, "not found.");
                     beep();
                     break;
                 }
@@ -1647,12 +1671,12 @@ static void handlekey(state * st, int c)
         doupdate();
         findmode = getch();
         if (findmode == 't') {
-            statusline(st->wnd_status->handle, "draw-terrain");
+            status_msg(st, "draw-terrain");
             st->wnd_map->data = (void*)draw_terrain;
             st->wnd_map->update |= 1;
         }
         else if (findmode == 'l') {
-            statusline(st->wnd_status->handle, "draw-luxury");
+            status_msg(st, "draw-luxury");
             st->wnd_map->data = (void*)draw_luxury;
             st->wnd_map->update |= 1;
         }

@@ -55,6 +55,7 @@ typedef struct state {
     struct window* wnd_info;
     struct window* wnd_map;
     struct window* wnd_status;
+    char statusmsg[256];
 } state;
 
 typedef struct window {
