@@ -807,17 +807,17 @@ enum select_t { MODE_MARK, MODE_SELECT, MODE_UNMARK, MODE_UNSELECT };
 
 static void select_island(state *st, int selectmode)
 {
-    region *r;
+    region *start;
     int nx = st->cursor.x;
     int ny = st->cursor.y;
 
     pnormalize(&nx, &ny, st->cursor.pl);
-    r = findregion(nx, ny);
-    if (r && r->land) {
+    start = findregion(nx, ny);
+    if (start && start->land) {
         selist *ql, *stack = NULL;
         int qi = 0;
 
-        selist_push(&stack, r);
+        selist_push(&stack, start);
         for (ql = stack, qi = 0; ql; selist_advance(&ql, &qi, 1)) {
             region *r = (region *)selist_get(ql, qi);
             region *rnext[MAXDIRECTIONS];

@@ -789,16 +789,18 @@ static void oceans_around(region * r, region * rn[])
 
 #define SWAP_INTS(a, b) { a^=b; b^=a; a^=b; }
 
+/** make sure every region has at least two land neighbors */
 static void smooth_island(region_list * island)
 {
     region *rn[MAXDIRECTIONS];
     region_list *rlist = NULL;
     for (rlist = island; rlist; rlist = rlist->next) {
-        region *r = rlist->data;
+        region *start = rlist->data;
+        region *r;
 
-        if (r->land) {
+        if (start->land) {
             int n, nland = 0;
-            get_neighbours(r, rn);
+            get_neighbours(start, rn);
             for (n = 0; n != MAXDIRECTIONS && nland <= 1; ++n) {
                 if (rn[n] && rn[n]->land) {
                     ++nland;
@@ -811,17 +813,16 @@ static void smooth_island(region_list * island)
                 oceans_around(r, rn);
                 for (n = 0; n != MAXDIRECTIONS; ++n) {
                     int n1 = (n + 1) % MAXDIRECTIONS;
-                    int n2 = (n + 1 + MAXDIRECTIONS) % MAXDIRECTIONS;
-                    if (rn[n] && !rn[n]->land && rn[n1] != r && rn[n2] != r) {
-                        r = rlist->data;
-                        runhash(r);
+                    int n2 = (n - 1 + MAXDIRECTIONS) % MAXDIRECTIONS;
+                    if (rn[n] && !rn[n]->land && ((rn[n1]->land && rn[n1] != start) || (rn[n2]->land && rn[n2] != start))) {
+                        runhash(start);
                         runhash(rn[n]);
-                        SWAP_INTS(r->x, rn[n]->x);
-                        SWAP_INTS(r->y, rn[n]->y);
-                        rhash(r);
+                        SWAP_INTS(start->x, rn[n]->x);
+                        SWAP_INTS(start->y, rn[n]->y);
+                        rhash(start);
                         rhash(rn[n]);
-                        rlist->data = r;
-                        oceans_around(r, rn);
+                        rlist->data = start;
+                        oceans_around(start, rn);
                         break;
                     }
                 }
@@ -871,8 +872,8 @@ int build_island(int x, int y, int minsize, newfaction ** players, int numfactio
     } while (!r->land);
 
     while (r) {
-        fset(r, RF_MARK);
         if (r->land) {
+            fset(r, RF_MARK);
             if (nsize < minsize) {
                 int new_lands = random_neighbours(r, &rlist, random_terrain, minsize - nsize);
                 if (new_lands == 0) {
@@ -945,6 +946,10 @@ int build_island(int x, int y, int minsize, newfaction ** players, int numfactio
         else if (r->land) {
             rsetmoney(r, rmoney(r) * 4);
         }
+    }
+
+    for (rlist = island; rlist; rlist = rlist->next) {
+        freset(rlist->data, RF_MARK);
     }
 
     free_regionlist(island);
