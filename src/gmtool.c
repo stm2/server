@@ -1156,7 +1156,7 @@ static void show_help(void)
         "B: build island E3 style",
         "s: seed next player from newfactions at current region",
         "A: reset area (set region age to 0) for whole contiguos region",
-        "c: clear (reset resources) region under cursor",
+        "c: clear (reset resources and monsters) region under cursor",
         "C: clear rectangle under cursor (2 regions up and to the right)"
         "",
         "h: mark regions ... n: none,   i: island under cursor, t: terrain type, s: with ships,",
@@ -1248,6 +1248,18 @@ static void show_help(void)
     }
 }
 
+static void position_modified(state *st) {
+    st->wnd_info->update |= 1;
+    st->wnd_status->update |= 1;
+}
+
+static void map_modified(state *st) {
+    st->modified = 1;
+    st->wnd_info->update |= 1;
+    st->wnd_status->update |= 1;
+    st->wnd_map->update |= 3;
+}
+
 static void handlekey(state * st, int c)
 {
     window *wnd;
@@ -1263,43 +1275,35 @@ static void handlekey(state * st, int c)
     switch (c) {
     case FAST_RIGHT:
         cursor->x += 10;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
+        position_modified(st);
         break;
     case FAST_LEFT:
         cursor->x -= 10;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
+        position_modified(st);
         break;
     case FAST_UP:
         cursor->y += 10;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
+        position_modified(st);
         break;
     case FAST_DOWN:
         cursor->y -= 10;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
+        position_modified(st);
         break;
     case KEY_UP:
         cursor->y++;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
+        position_modified(st);
         break;
     case KEY_DOWN:
         cursor->y--;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
+        position_modified(st);
         break;
     case KEY_RIGHT:
         cursor->x++;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
+        position_modified(st);
         break;
     case KEY_LEFT:
         cursor->x--;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
+        position_modified(st);
         break;
     case 'S':
     case KEY_SAVE:
@@ -1307,14 +1311,12 @@ static void handlekey(state * st, int c)
         break;
     case 'O':
     case KEY_OPEN:
+        map_modified(st);
         loaddata(st);
         break;
     case '?': /* help */
         show_help();
-        st->modified = 1;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
-        st->wnd_map->update |= 3;
+        map_modified(st);
         break;
     case 'B':
         cnormalize(&st->cursor, &nx, &ny);
@@ -1334,18 +1336,12 @@ static void handlekey(state * st, int c)
         } else {
             build_island(nx, ny, n, NULL, 0);
         }
-        st->modified = 1;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
-        st->wnd_map->update |= 1;
+        map_modified(st);
         break;
     case 0x02:                 /* CTRL+b */
         cnormalize(&st->cursor, &nx, &ny);
         make_block(nx, ny, 6, newterrain(T_OCEAN));
-        st->modified = 1;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
-        st->wnd_map->update |= 1;
+        map_modified(st);
         break;
     case 'A': /* clear/reset area */
         if (confirm(st->wnd_status->handle, "Are you sure you want to reset this entire area?")) {
@@ -1357,12 +1353,12 @@ static void handlekey(state * st, int c)
     case 'c': /* clear/reset */
         reset_cursor(st);
         st->modified = 1;
-        st->wnd_map->update |= 1;
+        st->wnd_info->update |= 1;
         break;
     case 'C': /* clear/reset */
         reset_rect(st);
         st->modified = 1;
-        st->wnd_map->update |= 1;
+        st->wnd_info->update |= 1;
         break;
     case 0x09:                 /* tab = next selected */
         if (regions != NULL) {
@@ -1406,6 +1402,7 @@ static void handlekey(state * st, int c)
             else {
                 cursor->pl = planes;
             }
+            position_modified(st);
         }
         break;
 
@@ -1430,6 +1427,7 @@ static void handlekey(state * st, int c)
                 else {
                     beep();
                 }
+                position_modified(st);
             }
         }
         break;
@@ -1440,18 +1438,14 @@ static void handlekey(state * st, int c)
             if (sbuffer[16]) {
                 st->cursor.x = atoi(sbuffer);
                 st->cursor.y = atoi(sbuffer + 16);
-                st->wnd_info->update |= 1;
-                st->wnd_status->update |= 1;
+                position_modified(st);
             }
         }
         break;
     case 'f':
     case 0x14:                 /* C-t */
         terraform_at(&st->cursor, select_terrain(st, NULL));
-        st->modified = 1;
-        st->wnd_info->update |= 1;
-        st->wnd_status->update |= 1;
-        st->wnd_map->update |= 3;
+        map_modified(st);
         break;
     case 'I':
         statusline(st->wnd_status->handle, "info-");
@@ -1494,6 +1488,7 @@ static void handlekey(state * st, int c)
                 c = 0;
             }
         } while (c == 0);
+        st->wnd_info->update |= 1;
         break;
     case 'L':
         if (global.vm_state) {
@@ -1502,9 +1497,7 @@ static void handlekey(state * st, int c)
             lua_do((struct lua_State *)global.vm_state);
             /* todo: do this from inside the script */
             clear();
-            st->wnd_info->update |= 1;
-            st->wnd_status->update |= 1;
-            st->wnd_map->update |= 3;
+            map_modified(st);
         }
         break;
     case 12:                   /* Ctrl-L */
@@ -1531,16 +1524,15 @@ static void handlekey(state * st, int c)
         switch (getch()) {
         case 'r':
             reset_selection(st->selected);
+            map_modified(st);
             break;
         case 'f':
             fix_selection(st->selected);
+            map_modified(st);
             break;
         case 't':
             terraform_selection(st->selected, select_terrain(st, NULL));
-            st->modified = 1;
-            st->wnd_info->update |= 1;
-            st->wnd_status->update |= 1;
-            st->wnd_map->update |= 1;
+            map_modified(st);
             break;
         case 'm':
             break;
@@ -1565,8 +1557,7 @@ static void handlekey(state * st, int c)
                 free(new_players);
                 new_players = next;
                 status_msg(st, "seeded one player");
-                st->wnd_info->update |= 1;
-                /*st->wnd_map->update |= 3;*/
+                map_modified(st);
             } else {
                 status_msg(st, "nothing seeded");
             }
@@ -1662,8 +1653,7 @@ static void handlekey(state * st, int c)
         }
         if (r != NULL) {
             region2coord(r, &st->cursor);
-            st->wnd_info->update |= 1;
-            st->wnd_status->update |= 1;
+            position_modified(st);
         }
         break;
     case 'd':

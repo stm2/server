@@ -50,6 +50,7 @@ typedef struct state {
     selection* selected;
     struct state* prev;
     view display;
+    /* indicates that the map state is modified since last save, but is not used anywhere */
     int modified;
     unsigned int info_flags;
     struct window* wnd_info;
