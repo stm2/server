@@ -14,6 +14,7 @@ import socket
 from stat import ST_MTIME
 from email.utils import parseaddr, parsedate_tz, mktime_tz
 from email.parser import Parser
+from enum import Enum
 
 if 'ERESSEA' in os.environ:
     dir = os.environ['ERESSEA']
@@ -69,7 +70,7 @@ messages = {
         "multipart-de" :
                 u"FEHLER: Die von dir eingeschickte Mail enthält keinen " \
                 u"Text. Evtl. hast Du den Zug als HTML oder als anderweitig " \
-                u"ungültig formatierte Mail ingeschickt. Wir können ihn " \
+                u"ungültig formatierte Mail eingeschickt. Wir können ihn " \
                 u"deshalb nicht berücksichtigen. Schicke den Zug nochmals " \
                 u"als reinen Text ohne Formatierungen ein.",
 
@@ -93,6 +94,16 @@ messages = {
 
         "nodate-de":
                 u"Deine Nachricht enthielt keinen gueltigen Date: header nach RFC2822.",
+
+        "encoding-en":
+                u"There was a problem with the character encoding of your message. It may not " \
+                u"be understood correctly. Please try to ensure that your message is encoded as " \
+                u"'plain text' (not HTML, for example) and preferably with UTF-8 encoding.",
+
+        "encoding-de":
+                u"Deine Nachricht enthielt ungültige Zeichen und wird möglicherweise nicht " \
+                u"richtig verstanden. Bitte stelle sicher, dass deine Nachricht als 'nur Text' " \
+                u"(nicht HTML) und am besten mit der Kodierung UTF-8 verschickt wird.",
 
         "error-de":
                 u"Fehler",
@@ -201,29 +212,50 @@ def store_message(message, filename):
     outfile.close()
     return
 
+class Success(Enum):
+    FAILURE = 0
+    PARTIAL = 1
+    FULL = 2
+    #
+    def better(a, b):
+        return Success(max(a.value, b.value))
+    #
+    def worse(a,b):
+        return Success(min(a.value, b.value))
+
 def write_part(outfile, part, sender):
     content_type = part.get_content_type()
-    logger.debug("found content type %s for %s" % (content_type, sender))
-    if content_type != "text/plain":
-        return False
     charset = part.get_content_charset()
+    logger.debug("found content type %s, charset %s for %s" % (content_type, charset, sender))
+    if content_type != "text/plain":
+        return Success.FAILURE
     payload = part.get_payload(decode=True)
+    success = Success.FULL
 
     if charset is None:
+        success = Success.PARTIAL
         charset = "latin1"
     try:
-        msg = payload.decode(charset, "ignore")
+        msg = payload.decode(charset, "strict")
     except:
-        msg = payload
-        charset = None
+        success = Success.PARTIAL
+        logger.debug("strict decoding failed")
+        try:
+            msg = payload.decode(charset, "ignore")
+        except:
+            logger.debug("non-strict decoding failed")
+            msg = payload
+            charset = None
+
     try:
         utf8 = msg.encode("utf-8", "ignore")
         outfile.write(utf8)
     except:
+        logger.debug("encoding failed")
         outfile.write(msg)
-        return False
+        return Success.FAILURE
     outfile.write("\n".encode('ascii'));
-    return True
+    return success
 
 def copy_orders(message, filename, sender, mtime):
     # print the header first
@@ -236,15 +268,13 @@ def copy_orders(message, filename, sender, mtime):
             outfile.write((name + ": " + value + "\n").encode('utf8', 'ignore'))
         outfile.close()
 
-    found = False
+    found = Success.FAILURE
     outfile = io.open(filename, "wb")
     if message.is_multipart():
         for part in message.get_payload():
-            if write_part(outfile, part, sender):
-                found = True
+            found = found.better(write_part(outfile, part, sender))
     else:
-        if write_part(outfile, message, sender):
-            found = True
+        found = found.better(write_part(outfile, message, sender))
     outfile.close()
 
     return found
@@ -301,7 +331,12 @@ def accept(game, locale, stream, extend=None):
     print('ACCEPT_MAIL=' + email)
     print('ACCEPT_FILE="' + filename + '"')
 
-    if not text_ok:
+    if text_ok == Success.PARTIAL:
+        logger.warning("partial success for " + email)
+        warning = " (" + messages["warning-" + locale] + ")"
+        msg = msg + formatpar(messages["encoding-" + locale], 76, 2) + "\n"
+
+    if text_ok == Success.FAILURE:
         warning = " (" + messages["error-" + locale] + ")"
         msg = msg + formatpar(messages["multipart-" + locale], 76, 2) + "\n"
         logger.warning("rejected - no text/plain in orders from " + email)
@@ -316,10 +351,10 @@ def accept(game, locale, stream, extend=None):
         fail = True
 
     if sendmail and warning is not None:
-        logger.warning(warning)
         subject = gamename + " " + messages["subject-"+locale] + warning
+        logger.warning(subject)
         ps = subprocess.Popen(['mutt', '-s', subject, email], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output = ps.communicate(msg.encode("utf8", "ignore"))
+        output = ps.communicate(msg.encode("utf8", "replace"))
         if output[0] != '':
             logger.warning(output[0])
 
