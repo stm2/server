@@ -226,26 +226,40 @@ class Success(Enum):
 def write_part(outfile, part, sender):
     content_type = part.get_content_type()
     charset = part.get_content_charset()
-    logger.debug("found content type %s, charset %s for %s" % (content_type, charset, sender))
+    transfer = part.get("Content-Transfer-Encoding")
+    logger.debug("found content type %s, charset %s, transfer %s for %s" % (content_type, charset, transfer, sender))
     if content_type != "text/plain":
         return Success.FAILURE
-    payload = part.get_payload(decode=True)
+
+    # https://docs.python.org/3/library/email.compat32-message.html#email.message.Message
+    # "When decode is False (the default) the body is returned as a string without
+    # decoding the Content-Transfer-Encoding. However, for a
+    # Content-Transfer-Encoding of 8bit, an attempt is made to decode the
+    # original bytes using the charset specified by the Content-Type header,
+    # using the replace error handler. If no charset is specified, or if the
+    # charset given is not recognized by the email package, the body is decoded
+    # using the default ASCII charset."
+    payload = part.get_payload(decode= (transfer != "8bit"))
+
     success = Success.FULL
 
-    if charset is None:
-        success = Success.PARTIAL
-        charset = "latin1"
-    try:
-        msg = payload.decode(charset, "strict")
-    except:
-        success = Success.PARTIAL
-        logger.debug("strict decoding failed")
+    if transfer != "8bit":
+        if charset is None:
+            success = Success.PARTIAL
+            charset = "latin1"
         try:
-            msg = payload.decode(charset, "ignore")
+            msg = payload.decode(charset, "strict")
         except:
-            logger.debug("non-strict decoding failed")
-            msg = payload
-            charset = None
+            success = Success.PARTIAL
+            logger.debug("strict decoding failed")
+            try:
+                msg = payload.decode(charset, "ignore")
+            except:
+                logger.debug("non-strict decoding failed")
+                msg = payload
+                charset = None
+    else:
+        msg = payload
 
     try:
         utf8 = msg.encode("utf-8", "ignore")
@@ -254,6 +268,7 @@ def write_part(outfile, part, sender):
         logger.debug("encoding failed")
         outfile.write(msg)
         return Success.FAILURE
+
     outfile.write("\n".encode('ascii'));
     return success
 
@@ -305,7 +320,7 @@ def accept(game, locale, stream, extend=None):
         logger.warning("more than " + str(maxfiles) + " orders from " + email)
         return -1
     # copy the orders to the file
-    
+
     turndate = None
     maildate = message.get("Date")
     if maildate is None:
