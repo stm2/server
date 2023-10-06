@@ -12,7 +12,7 @@ import subprocess
 import time
 import socket
 from stat import ST_MTIME
-from email.utils import parseaddr, parsedate_tz, mktime_tz
+from email.utils import parseaddr, parsedate_tz, mktime_tz, formatdate
 from email.parser import Parser
 from enum import Enum
 
@@ -337,7 +337,7 @@ def accept(game, locale, stream, extend=None):
         if turndate < maxdate:
             logger.warning("inconsistent message date " + email)
             warning = " (" + messages["warning-" + locale] + ")"
-            msg = msg + formatpar(messages["maildate-" + locale] % (time.ctime(maxdate), time.ctime(turndate)), 76, 2) + "\n"
+            msg = msg + formatpar(messages["maildate-" + locale] % (formatdate(maxdate), formatdate(turndate)), 76, 2) + "\n"
     else:
         logger.warning("missing message date " + email)
         warning = " (" + messages["warning-" + locale] + ")"
