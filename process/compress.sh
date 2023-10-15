@@ -23,5 +23,5 @@ fi
 
 cd "$GAME/reports" || exit
 "$BINDIR/compress.py" "$TURN" "$GAME_NAME"
-cd - || exit
+cd $OLDPWD || exit
 

@@ -19,5 +19,5 @@ for REPORT in *.sh
 do
   bash "$REPORT"
 done
-cd - || exit
+cd $OLDPWD || exit
 
