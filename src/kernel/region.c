@@ -839,11 +839,19 @@ void free_land(land_region * lr)
     free(lr);
 }
 
-void region_setresource(region * r, const struct resource_type *rtype, int value)
+void region_setresource(region * r, const struct resource_type *rtype, int value) {
+  region_setresource_level(r, rtype, value, -1, -1);
+}
+
+void region_setresource_level(region * r, const struct resource_type *rtype, int value, int level, int divisor)
 {
     rawmaterial *rm = rm_get(r, rtype);
     if (rm) {
-        rm->amount = value;
+        if (level > 0) {
+          set_resource(rm, level, value, divisor);
+        } else {
+          rm->amount = value;
+        }
     }
     else {
         if (rtype == get_resourcetype(R_SILVER))

@@ -26,6 +26,7 @@
 #include "kernel/item.h"
 #include "kernel/messages.h"
 #include "kernel/plane.h"
+#include "kernel/pool.h"
 #include "kernel/region.h"
 #include "kernel/save.h"
 #include "kernel/ship.h"
@@ -334,6 +335,19 @@ static int tolua_remove_empty_units(lua_State * L)
     UNUSED_ARG(L);
     remove_empty_units();
     return 0;
+}
+
+static int tolua_clear_reservations(lua_State *L)
+{
+  region *r;
+  unit *u;
+  UNUSED_ARG(L);
+  for (r = regions; r; r = r->next) {
+    for (u = r->units; u; u = u->next) {
+      clear_reservations(u);
+    }
+  }
+  return 0;
 }
 
 static int tolua_get_nmrs(lua_State * L)
@@ -856,6 +870,18 @@ static int lua_rng_default(lua_State *L) {
     return 0;
 }
 
+static int lua_rng_reset(lua_State *L) {
+    UNUSED_ARG(L);
+    random_source_reset();
+    return 0;
+}
+
+static int tolua_set_debug(lua_State * L)
+{
+    debug = (int)tolua_tonumber(L, 1, 0);
+    return 0;
+}
+
 static int tolua_parse_orders(lua_State* L)
 {
     const char* input = tolua_tostring(L, 1, NULL);
@@ -907,6 +933,7 @@ int tolua_bindings_open(lua_State * L, const dictionary *inifile)
         tolua_beginmodule(L, "rng");
         {
             tolua_function(L, "inject", lua_rng_default);
+            tolua_function(L, "active", lua_rng_reset);
             tolua_function(L, "random", tolua_random);
         }
         tolua_endmodule(L);
@@ -995,6 +1022,8 @@ int tolua_bindings_open(lua_State * L, const dictionary *inifile)
         tolua_function(L, "translate", &tolua_translate);
         tolua_function(L, "spells", tolua_get_spells);
         tolua_function(L, "equip_newunits", tolua_equip_newunits);
+        tolua_function(L, "clear_reservations", tolua_clear_reservations);
+        tolua_function(L, "set_debug", tolua_set_debug);
     } tolua_endmodule(L);
     return 1;
 }

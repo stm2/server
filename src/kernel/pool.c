@@ -133,6 +133,18 @@ int set_resvalue(unit * u, const item_type * itype, int value)
     return res->value;
 }
 
+void
+clear_reservations(unit * u)
+{
+   struct reservation **pres = &u->reservations;
+
+    while (*pres) {
+        struct reservation *res = *pres;
+        *pres = res->next;
+        free(res);
+    }
+}
+
 int
 get_pooled(const unit * u, const resource_type * rtype, int mode,
 int count)

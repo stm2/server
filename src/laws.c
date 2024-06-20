@@ -784,7 +784,7 @@ void immigration(void)
             int peasants = rpeasants(r);
             bool mourn = is_mourning(r, turn);
             int income = peasant_wage(r, mourn) - maintenance_cost(NULL) + 1;
-            if (income >= 0 && r->land && (peasants < repopulate) && region_production(r) >(peasants + 30) * 2) {
+            if (income >= 0 && r->land && (peasants < repopulate) && region_maxworkers(r, max_production(r)) >(peasants + 30) * 2) {
                 int badunit = 0;
                 unit *u;
                 for (u = r->units; u; u = u->next) {

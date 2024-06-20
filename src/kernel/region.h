@@ -261,6 +261,8 @@ int region_getresource(const struct region *r,
     const struct resource_type *rtype);
 void region_setresource(struct region *r, const struct resource_type *rtype,
     int value);
+void region_setresource_level(struct region *r, const struct resource_type *rtype,
+        int value, int level, int divisor);
 int owner_change(const region * r);
 bool is_mourning(const region * r, int in_turn);
 const struct item_type *r_luxury(const struct region *r);

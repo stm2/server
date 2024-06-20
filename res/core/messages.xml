@@ -5447,6 +5447,7 @@
     <type>
       <arg name="dead" type="int"/>
       <arg name="peasants" type="resource"/>
+      <arg name="round" type="int"/>
     </type>
   </message>
   <message name="error131" section="errors">

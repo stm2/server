@@ -324,6 +324,15 @@ static int tolua_region_get_flag(lua_State * L)
     return 1;
 }
 
+static int tolua_region_get_terrain_flag(lua_State * L)
+{
+    region *self = (region *)tolua_tousertype(L, 1, NULL);
+    int bit = (int)tolua_tonumber(L, 2, 0);
+
+    lua_pushinteger(L, (self->terrain->flags & (1 << bit)));
+    return 1;
+}
+
 static int tolua_region_set_flag(lua_State * L)
 {
     region *self = (region *)tolua_tousertype(L, 1, NULL);
@@ -413,7 +422,10 @@ static int tolua_region_set_resource(lua_State * L)
 {
     region *r = (region *)tolua_tousertype(L, 1, NULL);
     const char *type = tolua_tostring(L, 2, NULL);
-    int result, value = (int)tolua_tonumber(L, 3, 0);
+    int result,
+      value = (int)tolua_tonumber(L, 3, 0),
+      level = (int)tolua_tonumber(L, 4, 0),
+      divisor = (int)tolua_tonumber(L, 5, 0);
     const resource_type *rtype;
 
     result = special_resource(type);
@@ -429,8 +441,23 @@ static int tolua_region_set_resource(lua_State * L)
     default:
         rtype = rt_find(type);
         if (rtype != NULL) {
+          if (level > 0)
+            region_setresource_level(r, rtype, value, level, divisor);
+          else
             region_setresource(r, rtype, value);
         }
+    }
+    return 0;
+}
+
+static int tolua_region_add_road(lua_State * L)
+{
+    region *r = (region *)tolua_tousertype(L, 1, NULL);
+    direction_t dir = (direction_t)tolua_tonumber(L, 2, 0);
+    int size = tolua_tonumber(L, 3, 50);
+    if (dir >= 0 && dir < MAXDIRECTIONS) {
+        rsetroad(r, dir, size);
+        return 1;
     }
     return 0;
 }
@@ -811,8 +838,10 @@ void tolua_region_open(lua_State * L)
                 tolua_region_reorder_units);
             tolua_function(L, "get_resource", tolua_region_get_resource);
             tolua_function(L, "set_resource", tolua_region_set_resource);
+            tolua_function(L, "add_road", tolua_region_add_road);
             tolua_function(L, "get_flag", tolua_region_get_flag);
             tolua_function(L, "set_flag", tolua_region_set_flag);
+            tolua_function(L, "get_terrain_flag", tolua_region_get_terrain_flag);
             tolua_function(L, "next", tolua_region_get_next);
             tolua_variable(L, "adj", tolua_region_get_adj, NULL);
 
